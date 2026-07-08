@@ -1,0 +1,947 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Case Study — Browsing the World's Economy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="../style.css" />
+
+    <script>
+      /* ============================================= AVOID FLICKER
+    ============================================= */
+      (function () {
+        const themes = [
+          {
+            bg: "#F9F9F9",
+            text: "#1A1A1A",
+            muted: "rgba(0,0,0,0.6)",
+            p1: "#FCDEA4",
+            p2: "#b8ebda",
+            p3: "#528AAF",
+            p4: "#8862AA",
+            p5: "#287E70",
+          },
+          {
+            bg: "#1A1A1A",
+            text: "#F9F9F9",
+            muted: "rgba(255,255,255,0.4)",
+            p1: "#FFB72C",
+            p2: "#4bad8c",
+            p3: "#572F7A",
+            p4: "#19537A",
+            p5: "#16584D",
+          },
+          {
+            bg: "#FFD2B4",
+            text: "#9D4434",
+            muted: "rgba(233,79,16,0.7)",
+            p1: "#F4A367",
+            p2: "#657749",
+            p3: "#B05A6B",
+            p4: "#90726E",
+            p5: "#776B49",
+          },
+          {
+            bg: "#E5E8FF",
+            text: "#D45D5D",
+            muted: "rgba(212, 93, 93, 0.8)",
+            p1: "#F4CC99",
+            p2: "#81c0ab",
+            p3: "#BCD2EE",
+            p4: "#9B7EDE",
+            p5: "#3A4E48",
+          },
+        ];
+        const i = parseInt(localStorage.getItem("theme-index"), 10) || 0;
+        const t = themes[i];
+        const root = document.documentElement.style;
+        root.setProperty("--color-bg", t.bg);
+        root.setProperty("--color-text", t.text);
+        root.setProperty("--color-text-muted", t.muted);
+        root.setProperty("--project-1", t.p1);
+        root.setProperty("--project-2", t.p2);
+        root.setProperty("--project-3", t.p3);
+        root.setProperty("--project-4", t.p4);
+        root.setProperty("--project-5", t.p5);
+        root.setProperty("--moon-rotation", `${i * 90}deg`);
+        root.setProperty("--image-filter", t.imageFilter);
+      })();
+    </script>
+  </head>
+  <body class="case-page" style="--project-accent: var(--project-3)">
+    <div id="cursor"></div>
+    <!-- =============================================
+       NAV HTML  —  DO NOT MODIFY
+  ============================================= -->
+    <nav>
+      <a class="logo" href="/" data-home-link>
+        <span class="logo-first"
+          ><span class="l" data-i="0">A</span
+          ><span class="l hide" data-i="1">n</span
+          ><span class="l hide" data-i="2">o</span
+          ><span class="l hide" data-i="3">u</span
+          ><span class="l hide" data-i="4">k</span></span
+        ><span class="logo-last"
+          ><span class="l space hide" data-i="5">&nbsp;</span
+          ><span class="l dot">&middot;</span
+          ><span class="l space hide" data-i="6">&nbsp;</span
+          ><span class="l" data-i="7">F</span
+          ><span class="l hide" data-i="8">o</span
+          ><span class="l hide" data-i="9">n</span
+          ><span class="l hide" data-i="10">t</span
+          ><span class="l hide" data-i="11">a</span
+          ><span class="l hide" data-i="12">i</span
+          ><span class="l hide" data-i="13">n</span
+          ><span class="l hide" data-i="14">e</span></span
+        >
+      </a>
+
+      <div class="nav-right">
+        <div class="nav-controls">
+          <button class="nav-lang" aria-label="Switch language">
+            EN<span class="lang-orbit-dot"></span>
+          </button>
+          <button class="nav-theme" id="theme-toggle" aria-label="Toggle theme">
+            <span class="moon-glyph">&#9680;</span
+            ><span class="orbit-dot"></span>
+          </button>
+          <button class="nav-hamburger" id="nav-hamburger" aria-label="Menu">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+      <div class="mobile-menu" id="mobile-menu">
+        <a href="#services" class="mobile-menu-link">Services</a>
+        <a href="#work" class="mobile-menu-link">Work</a>
+        <a href="#about" class="mobile-menu-link">About</a>
+        <a href="#contact" class="mobile-menu-link">Contact</a>
+      </div>
+    </nav>
+    <main>
+      <!-- OVERVIEW -->
+
+      <section class="cs-overview card-container" id="section-overview">
+        <nav class="left-sidebar" aria-label="Case study sections">
+          <div class="left-sidebar-home">
+            <a class="left-sidebar-ghost" href="../index.html#services"
+              >Services</a
+            >
+            <a href="../index.html#work">Work</a>
+            <a class="left-sidebar-ghost" href="../index.html#about">About</a>
+            <a class="left-sidebar-ghost" href="../index.html#contact"
+              >Contact</a
+            >
+          </div>
+
+          <a href="#section-overview" data-target="section-overview"
+            >Overview</a
+          >
+          <a href="#section-problem" data-target="section-problem">Problem</a>
+          <a href="#section-process" data-target="section-process">Process</a>
+
+          <div class="left-sidebar-sub">
+            <a
+              class="left-sidebar-sub-item"
+              href="#section-research"
+              data-target="section-research"
+              >01 Research</a
+            >
+            <a
+              class="left-sidebar-sub-item"
+              href="#section-design"
+              data-target="section-design"
+              >02 Design</a
+            >
+            <a
+              class="left-sidebar-sub-item"
+              href="#section-develop"
+              data-target="section-develop"
+              >03 Iterate</a
+            >
+            <a
+              class="left-sidebar-sub-item"
+              href="#section-test"
+              data-target="section-test"
+              >04 Launch</a
+            >
+          </div>
+
+          <a href="#section-product" data-target="section-product">Product</a>
+          <a href="#section-reflection" data-target="section-reflection"
+            >Impact</a
+          >
+          <a href="#section-afterlife" data-target="section-afterlife"
+            >Afterlife</a
+          >
+        </nav>
+
+        <div class="cs-overview-content">
+          <p class="label label-muted">Case Study</p>
+          <h1 class="cs-headline">Browsing the World's Economy</h1>
+          <div class="cs-overview-tags">
+            <span class="cs-overview-tag">Data Visualization</span>
+            <span class="cs-overview-tag">Dashboard Design</span>
+            <span class="cs-overview-tag">UX/UI Design</span>
+            <span class="cs-overview-tag">UX Review</span>
+          </div>
+
+          <p class="cs-overview-description">
+            Transforming static country reports into an interactive public
+            dashboard that makes economic information accessible, searchable and
+            automatically updated.
+          </p>
+          <a
+            class="big-link"
+            href="https://www.seco.admin.ch/en/country-cockpit"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span>View live product</span>
+            <span class="link-arrow">↗</span>
+          </a>
+        </div>
+
+        <div class="cs-overview-image-wrap">
+          <div class="cs-overview-image">
+            <img
+              src="../Images/BW/0_hero.png"
+              alt="Browsing the World's Economy dashboard mockup"
+            />
+          </div>
+        </div>
+
+        <div class="cs-overview-meta">
+          <div class="cs-overview-meta-block">
+            <p class="label label-muted">Role</p>
+            <p class="cs-overview-meta-value">
+              UX Designer<br />Data Visualization Specialist
+            </p>
+          </div>
+          <div class="cs-overview-meta-block">
+            <p class="label label-muted">Timeline</p>
+            <p class="cs-overview-meta-value">6 months<br />2025–2026 (20%)</p>
+          </div>
+          <div class="cs-overview-meta-block">
+            <p class="label label-muted">Platform</p>
+            <p class="cs-overview-meta-value">Power BI<br />Web Dashboard</p>
+          </div>
+          <div class="cs-overview-meta-block">
+            <p class="label label-muted">Status</p>
+            <p class="cs-overview-meta-value">Live<br />Public dashboard</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="cs-context card-container" id="section-context">
+        <p class="label label-muted">Overview</p>
+        <h2 class="section-title">
+          Replacing manual reporting with
+          <strong>a living data experience.</strong>
+        </h2>
+        <div class="cs-context-bottom">
+          <p class="cs-context-description">
+            The project replaced manually produced Word-based country reports
+            with an interactive Power BI dashboard visualizing key economic
+            indicators and country-specific information. Instead of browsing
+            static documents, users can now search, compare and explore
+            countries through a multilingual dashboard that updates
+            automatically.
+          </p>
+
+          <div class="cs-context-right">
+            <div class="cs-context-row">
+              <p class="label label-muted">Product</p>
+              <p class="cs-context-row-value">
+                A multilingual public Power BI dashboard exploring
+                country-specific economic data.
+              </p>
+            </div>
+            <div class="cs-context-row">
+              <p class="label label-muted">Users</p>
+              <p class="cs-context-row-value">
+                Businesses, policymakers, researchers, the general public and
+                SECO collaborators.
+              </p>
+            </div>
+            <div class="cs-context-row">
+              <p class="label label-muted">Team</p>
+              <p class="cs-context-row-value">
+                Cross-functional team of 1 UX Designer, 2 Developers and 3
+                Subject Matter Experts from SECO's Bilateral Economic Relations
+                Division
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- THE PROBLEM -->
+      <section class="cs-section card-container" id="section-problem">
+        <div class="cs-dark-card">
+          <div class="cs-problem-top">
+            <div class="cs-problem-top-left">
+              <p class="label label-light">Problem</p>
+              <h2 class="section-title section-title--light">
+                Death by <strong>screenshot.</strong>
+              </h2>
+              <p class="cs-context-description--light">
+                For each country, economic information had to be manually
+                assembled into a Word document. Data was exported from Excel,
+                charts were captured as screenshots and content was updated by
+                hand. The process was repetitive, time-consuming and highly
+                error-prone. The potential to replace this manual process with
+                an interactive public dashboard was enormous.
+              </p>
+            </div>
+            <div class="cs-problem-top-right">
+              <div class="cs-problem-image">
+                <img
+                  src="../Images/BW/2_problem-1.png"
+                  alt="Original country report screenshot"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="cs-problem-points">
+            <div class="cs-problem-point">
+              <p class="cs-problem-point-title">Manual reports</p>
+              <p class="cs-problem-point-text">
+                Every country report had to be created and updated manually.
+              </p>
+            </div>
+            <div class="cs-problem-point">
+              <p class="cs-problem-point-title">Outdated information</p>
+              <p class="cs-problem-point-text">
+                Screenshots and copied data increased the risk of outdated or
+                inconsistent information.
+              </p>
+            </div>
+            <div class="cs-problem-point">
+              <p class="cs-problem-point-title">Hard to explore</p>
+              <p class="cs-problem-point-text">
+                Users could not easily search, compare or interact with the
+                data.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- THE PROCESS -->
+
+      <section class="cs-process-section card-container" id="section-process">
+        <div class="cs-process-bar">
+          <p class="cs-process-bar-label">Process</p>
+          <div class="cs-process-bar-steps" style="--steps: 4">
+            <div class="cs-process-bar-step">
+              <span class="cs-process-bar-step-name">01 Research</span>
+              <div class="cs-process-bar-line">
+                <span class="cs-process-bar-dot"></span
+                ><span class="cs-process-bar-track"></span>
+              </div>
+              <div class="cs-process-bar-deliverables">
+                <span class="cs-process-bar-deliverable">Assumptions</span>
+                <span class="cs-process-bar-deliverable">Context</span>
+              </div>
+            </div>
+            <div class="cs-process-bar-step">
+              <span class="cs-process-bar-step-name">02 Design</span>
+              <div class="cs-process-bar-line">
+                <span class="cs-process-bar-dot"></span
+                ><span class="cs-process-bar-track"></span>
+              </div>
+              <div class="cs-process-bar-deliverables">
+                <span class="cs-process-bar-deliverable"
+                  >Information Architecture</span
+                >
+                <span class="cs-process-bar-deliverable">Visual System</span>
+              </div>
+            </div>
+            <div class="cs-process-bar-step">
+              <span class="cs-process-bar-step-name">03 Iterate</span>
+              <div class="cs-process-bar-line">
+                <span class="cs-process-bar-dot"></span
+                ><span class="cs-process-bar-track"></span>
+              </div>
+              <div class="cs-process-bar-deliverables">
+                <span class="cs-process-bar-deliverable">Feedback</span>
+                <span class="cs-process-bar-deliverable">Alternatives</span>
+              </div>
+            </div>
+            <div class="cs-process-bar-step">
+              <span class="cs-process-bar-step-name">04 Launch</span>
+              <div class="cs-process-bar-line">
+                <span class="cs-process-bar-dot"></span>
+              </div>
+              <div class="cs-process-bar-deliverables">
+                <span class="cs-process-bar-deliverable">Internal Release</span>
+                <span class="cs-process-bar-deliverable"
+                  >Public Website Launch</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="cs-process-intro-cards">
+          <div class="cs-process-intro-card">
+            <p class="cs-process-card-title">Role</p>
+            <p class="cs-process-card-text">
+              I acted as the bridge between subject matter experts and technical
+              implementation. As the project's sole UX and data visualization
+              designer, I translated complex economic information into a clear,
+              accessible and engaging dashboard experience.
+            </p>
+          </div>
+          <div class="cs-process-intro-card">
+            <p class="cs-process-card-title">Constraints</p>
+            <p class="cs-process-card-text">
+              Limited budget, a fixed website go-live deadline, delayed access
+              to data, no formal user research, four languages to support and
+              initially unclear project ownership were constraints we needed to
+              navigate.
+            </p>
+          </div>
+        </div>
+
+        <!-- 01 Research -->
+        <div class="cs-process-step-section first" id="section-research">
+          <div class="cs-process-step-card">
+            <div class="cs-process-step-card-top">
+              <p class="cs-process-step-card-num">01</p>
+              <div class="cs-process-step-card-right">
+                <p class="label label-muted">Research</p>
+                <h2 class="section-title section-title--process">
+                  Missing the start of <strong>the party.</strong>
+                </h2>
+                <p class="cs-process-step-text">
+                  I joined the project six months after it had officially
+                  started. Despite this, very little progress had been made
+                  because access to the data was delayed. The consultants
+                  believed design work could only begin once the data became
+                  available. I saw it differently.
+                </p>
+                <p class="cs-process-step-text">
+                  The time could have been used to better understand future
+                  users, explore initial concepts and validate key design
+                  decisions. Instead, early decisions were based almost entirely
+                  on internal expertise, even though one of the dashboard's main
+                  audiences would ultimately be the public.
+                </p>
+                <div class="cs-process-cards">
+                  <div class="cs-process-card">
+                    <p class="cs-process-card-title">Challenge</p>
+                    <p class="cs-process-card-text">
+                      No formal user research had been conducted and the public,
+                      one of the key user groups, had not been involved.
+                    </p>
+                  </div>
+                  <div class="cs-process-card">
+                    <p class="cs-process-card-title">Solution</p>
+                    <p class="cs-process-card-text">
+                      Continuously question assumptions and advocate for user
+                      needs throughout the project, despite joining after many
+                      early decisions had already been made.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <p class="cs-image-caption cs-image-caption--center">
+              Pictures from the kick-off workshop
+            </p>
+
+            <img
+              src="../Images/BW/3_research.png"
+              alt="Information architecture exercise"
+              class="cs-process-step-image cs-lightbox-trigger cursor-grow"
+            />
+          </div>
+        </div>
+
+        <!-- 02 Design -->
+        <div
+          class="cs-process-step-section cs-process-step-section--overlap"
+          id="section-design"
+        >
+          <div class="cs-process-step-card">
+            <div class="cs-process-step-card-top">
+              <p class="cs-process-step-card-num">02</p>
+              <div class="cs-process-step-card-right">
+                <p class="label label-muted">Design</p>
+                <h2 class="section-title section-title--process">
+                  Cutting word <strong>into pieces.</strong>
+                </h2>
+                <p class="cs-process-step-text">
+                  Together with one consultant, I revisited the report's
+                  structure from scratch. A first mockup already existed, but
+                  navigating it was difficult and the information architecture
+                  felt overwhelming.
+                </p>
+                <p class="cs-process-step-text">
+                  We literally cut the Word document apart and explored how the
+                  information could be reorganized into a more intuitive
+                  dashboard experience. We also asked what deserved to become a
+                  visualization instead of remaining a table.
+                </p>
+                <div class="cs-process-cards">
+                  <div class="cs-process-card">
+                    <p class="cs-process-card-title">Challenge</p>
+                    <p class="cs-process-card-text">
+                      The implemented product did not always match the
+                      prototypes. Colors differed, alignments shifted and
+                      implementation inconsistencies required continuous
+                      follow-up.
+                    </p>
+                  </div>
+                  <div class="cs-process-card">
+                    <p class="cs-process-card-title">Solution</p>
+                    <p class="cs-process-card-text">
+                      Continuously review the implementation, prioritize the
+                      design elements that had the greatest impact on usability,
+                      and come up with alternative solutions when technical
+                      limitations occurred.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <p class="cs-image-caption cs-image-caption--center">
+            Revisiting the information architecture and generating first data
+            visualization ideas
+          </p>
+
+          <img
+            src="../Images/BW/4_information_architecture.png"
+            alt="Information architecture exercise"
+            class="cs-process-step-image cs-lightbox-trigger cursor-grow"
+          />
+
+          <p class="cs-image-caption cs-image-caption--center">
+            Design decisions (hover to discover)
+          </p>
+
+          <div class="cs-spotlight-image">
+            <img
+              src="../Images/BW/4_decisions.png"
+              alt="Design system overview"
+              class="cs-process-step-image cs-lightbox-trigger cursor-grow"
+            />
+
+            <div
+              class="cs-spotlight-zone cs-spotlight-zone--detail initial-active cursor-grow"
+              style="top: 0%; left: 0%; width: 14.7%; height: 100%"
+            >
+              <div class="cs-spotlight-card">
+                <p class="cs-design-card-title">Color with purpose</p>
+                <p class="cs-process-card-text">
+                  The color palette builds on existing federal dashboards to
+                  create a familiar and trustworthy experience. Federal red is
+                  reserved exclusively for Switzerland, making comparisons
+                  immediate and intuitive. Only the country name is highlighted,
+                  while numerical values remain neutral to avoid unintended
+                  negative associations.
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="cs-spotlight-zone cursor-grow"
+              style="top: 0%; left: 15.8%; width: 15.5%; height: 24.9%"
+            >
+              <div class="cs-spotlight-card">
+                <p class="cs-design-card-title">Designing within constraints</p>
+                <p class="cs-process-card-text">
+                  Typography followed the federal design guidelines, with Arial
+                  as the required typeface. Its familiarity and readability
+                  support efficient information scanning. Technical limitations
+                  prevented adjustments to letter and line spacing, requiring
+                  the design to work within a denser typographic layout.
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="cs-spotlight-zone cursor-grow"
+              style="top: 0%; left: 32.4%; width: 25.1%; height: 34.3%"
+            >
+              <div class="cs-spotlight-card">
+                <p class="cs-design-card-title">Guiding the eye</p>
+                <p class="cs-process-card-text">
+                  Icons were used sparingly to improve orientation and
+                  scanability without competing with the data.
+                </p>
+              </div>
+            </div>
+            <div
+              class="cs-spotlight-zone cursor-grow"
+              style="top: 26.9%; left: 15.8%; width: 15.5%; height: 73.1%"
+            >
+              <div class="cs-spotlight-card">
+                <p class="cs-design-card-title">Stay oriented</p>
+                <p class="cs-process-card-text">
+                  A persistent sidebar provides clear orientation, while the
+                  country filter lets users seamlessly switch between country
+                  profiles from any page.
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="cs-spotlight-zone cursor-grow"
+              style="top: 0%; left: 58.5%; width: 41.5%; height: 100%"
+            >
+              <div class="cs-spotlight-card cs-spotlight-card--left">
+                <p class="cs-design-card-title">Choosing the right chart</p>
+                <p class="cs-process-card-text">
+                  Rather than relying on a single chart type, each visualization
+                  was selected for the data it communicates best. Consistent
+                  colors, with blue for exports and mint for imports, reinforce
+                  recognition across charts, while neutral tones prevent visual
+                  clutter.
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="cs-spotlight-zone cursor-grow"
+              style="top: 36.4%; left: 32.4%; width: 25.1%; height: 28.8%"
+            >
+              <div class="cs-spotlight-card">
+                <p class="cs-design-card-title">Organizing complexity</p>
+                <p class="cs-process-card-text">
+                  A consistent card-based layout organizes both information and
+                  key indicators into clear, easy-to-scan sections. Key figures
+                  are immediately visible, while consistent color coding
+                  distinguishes export and import metrics. Displaying data
+                  sources directly on each card reinforces transparency and
+                  trust.
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="cs-spotlight-zone cursor-grow"
+              style="top: 67.1%; left: 32.4%; width: 25.1%; height: 32.9%"
+            >
+              <div class="cs-spotlight-card">
+                <p class="cs-design-card-title">Exact figures, when needed</p>
+                <p class="cs-process-card-text">
+                  Tables complement the visualizations by providing precise
+                  values for users who need exact figures. They can also be
+                  exported to Excel, supporting further analysis and reporting.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 03 Iterate -->
+        <div class="cs-process-step-section" id="section-develop">
+          <div class="cs-process-step-card">
+            <div class="cs-process-step-card-top">
+              <p class="cs-process-step-card-num">03</p>
+              <div class="cs-process-step-card-right">
+                <p class="label label-muted">Iterate</p>
+                <h2 class="section-title section-title--process">
+                  Good things come in <strong>threes.</strong>
+                </h2>
+                <p class="cs-process-step-text">
+                  The project evolved through three major phases: developing an
+                  MVP, refining it through multiple feedback and implementation
+                  rounds until the first internal version was ready, and a final
+                  round of refinements before the public release.
+                </p>
+                <div class="cs-process-cards">
+                  <div class="cs-process-card">
+                    <p class="cs-process-card-title">Challenge</p>
+                    <p class="cs-process-card-text">
+                      Feedback was continuous but highly unstructured, while
+                      technical limitations frequently reshaped what was
+                      possible.
+                    </p>
+                  </div>
+                  <div class="cs-process-card">
+                    <p class="cs-process-card-title">Solution</p>
+                    <p class="cs-process-card-text">
+                      Deadlines were introduced in the feedback tracker, and
+                      regular exchange sessions with the developers helped
+                      improve alignment and keep the project moving forward.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <p class="cs-image-caption cs-image-caption--center">
+            Page example of feedback document
+          </p>
+          <img
+            src="../Images/BW/5_iteration.png"
+            alt="Iteration and feedback process"
+            class="cs-process-step-image cs-lightbox-trigger cursor-grow"
+          />
+        </div>
+
+        <!-- 04 Launch -->
+        <div class="cs-process-step-section" id="section-test">
+          <div class="cs-process-step-card">
+            <div class="cs-process-step-card-top">
+              <p class="cs-process-step-card-num">04</p>
+              <div class="cs-process-step-card-right">
+                <p class="label label-muted">Launch</p>
+                <h2 class="section-title section-title--process">
+                  Going <strong>public.</strong>
+                </h2>
+                <p class="cs-process-step-text">
+                  The final version was released as a public Power BI dashboard
+                  and integrated into SECO's new website. Instead of manually
+                  assembled country reports, users with very different levels of
+                  expertise can now explore economic information through an
+                  automated, multilingual and interactive experience.
+                </p>
+                <div class="cs-process-cards">
+                  <div class="cs-process-card">
+                    <p class="cs-process-card-title">Challenge</p>
+                    <p class="cs-process-card-text">
+                      The dashboard had to be ready for the website go-live
+                      while still meeting public-facing quality standards across
+                      four languages.
+                    </p>
+                  </div>
+                  <div class="cs-process-card">
+                    <p class="cs-process-card-title">Solution</p>
+                    <p class="cs-process-card-text">
+                      Maintain close collaboration with the developers by
+                      responding quickly, preparing implementation-ready
+                      documentation and resolving questions as they arose.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <p class="cs-image-caption cs-image-caption--center">
+            Country Cockpit on the public SECO Website
+          </p>
+          <img
+            src="../Images/BW/6_release.png"
+            alt="Public release of the dashboard"
+            class="cs-process-step-image cs-lightbox-trigger cursor-grow"
+          />
+        </div>
+      </section>
+
+      <!-- THE PRODUCT -->
+      <section class="cs-product" id="section-product">
+        <p class="label label-muted">The Final Product</p>
+
+        <h2
+          class="section-title"
+          style="text-align: left; margin-bottom: var(--element-gap)"
+        >
+          Browsing the <strong>World's Economy</strong>
+        </h2>
+
+        <div class="cs-product-showcase">
+          <div class="cs-product-card cs-product-card-large">
+            <img
+              src="../Images/BW/7_product-1.png"
+              alt="Final public dashboard"
+            />
+          </div>
+
+          <div class="cs-product-details">
+            <div class="cs-product-card">
+              <img src="../Images/BW/7_product-2.png" alt="Dashboard detail" />
+            </div>
+
+            <div class="cs-product-card">
+              <img src="../Images/BW/7_product-3.png" alt="Dashboard detail" />
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- IMPACT -->
+
+      <section class="cs-impact card-container" id="section-reflection">
+        <div class="cs-dark-card">
+          <div class="cs-impact-card-top">
+            <p class="label label-light">Impact</p>
+            <h2 class="cs-impact-title">
+              From weeks of manual reporting to
+              <strong>near real-time insights.</strong>
+            </h2>
+          </div>
+          <div class="cs-impact-numbers">
+            <div class="cs-impact-number">
+              <p class="cs-impact-num">1 month</p>
+              <p class="cs-impact-num-label">of manual work eliminated.</p>
+            </div>
+            <div class="cs-impact-number">
+              <p class="cs-impact-num">100 → 1</p>
+              <p class="cs-impact-num-label">
+                One dashboard replacing 100+ Word reports.
+              </p>
+            </div>
+            <div class="cs-impact-number">
+              <p class="cs-impact-num">95%</p>
+              <p class="cs-impact-num-label">of process automation.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- TESTIMONIALS -->
+      <section class="cs-testimonials card-container" id="section-testimonials">
+        <p class="label label-muted">Testimonial</p>
+        <div class="cs-testimonials-grid">
+          <div class="cs-testimonial-card">
+            <p class="cs-testimonial-quote">
+              "Anouk developed the visual concepts, data visualizations, and
+              prototypes for our digital Country Cockpit. She transformed a
+              rather dry subject into something that is both clear and visually
+              engaging. We are very proud of the result!"
+            </p>
+            <p class="cs-testimonial-author">
+              Andrea Rauber Saxer, Ambassador, Head of Bilateral Economic
+              Relations, SECO
+            </p>
+          </div>
+          <div class="cs-testimonial-highlight">
+            <p class="cs-testimonial-highlight-text">
+              "Anouk [...] transformed a rather dry subject into a
+              <strong>highly engaging experience. </strong>[...]"
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ROAD AHEAD -->
+      <section class="cs-afterlife" id="section-afterlife">
+        <div class="cs-afterlife-content">
+          <p class="label label-muted">The Afterlife</p>
+
+          <h2 class="section-title">
+            A public dashboard that can <strong>keep growing.</strong>
+          </h2>
+
+          <div class="cs-context-bottom">
+            <p class="cs-context-description">
+              The dashboard is live and publicly accessible. SECO is planning to
+              expand it with additional data, and other departments of the Swiss
+              Confederation are expected to use it as inspiration for future
+              public dashboards.
+            </p>
+
+            <div class="accordion cs-afterlife-accordion">
+              <div class="accordion-item open">
+                <button class="accordion-trigger cursor-grow" type="button">
+                  <span>Public access</span>
+                  <span class="accordion-icon">+</span>
+                </button>
+                <div class="accordion-body">
+                  <div class="accordion-content">
+                    The dashboard turns static country reports into a public,
+                    searchable and multilingual data experience.
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <button class="accordion-trigger cursor-grow" type="button">
+                  <span>Future data growth</span>
+                  <span class="accordion-icon">+</span>
+                </button>
+                <div class="accordion-body">
+                  <div class="accordion-content">
+                    The structure is designed to support additional data and
+                    future extensions beyond the initial release.
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <button class="accordion-trigger cursor-grow" type="button">
+                  <span>Internal inspiration</span>
+                  <span class="accordion-icon">+</span>
+                </button>
+                <div class="accordion-body">
+                  <div class="accordion-content">
+                    The project can serve as a reference for other public
+                    dashboards within the Swiss Confederation.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- NEXT PROJECTS -->
+    <section class="cs-next">
+      <div class="cs-next-inner">
+        <div class="cs-next-left">
+          <p class="label label-light">Next Projects</p>
+          <h2 class="cs-next-title">Continue exploring.</h2>
+          <a class="big-link big-link--light" href="../index.html#work">
+            <span>Back to work overview</span>
+            <span class="link-arrow">↗</span>
+          </a>
+          <a class="big-link big-link--light" href="../index.html#contact">
+            <p class="link-text">Get in touch</p>
+            <p class="link-arrow">↗</p>
+          </a>
+        </div>
+        <div class="cs-next-right">
+          <a
+            class="cs-next-row big-link big-link--project"
+            href="../work/yellow.html"
+          >
+            <span>Yellow is the new green</span>
+            <span class="link-arrow">↗</span>
+          </a>
+
+          <a
+            class="cs-next-row big-link big-link--project"
+            href="../work/kunstatelier.html"
+          >
+            <span>Heard of KunstAtelier? Me neither.</span>
+            <span class="link-arrow">↗</span>
+          </a>
+          <a
+            class="cs-next-row big-link big-link--project"
+            href="../work/skills.html"
+          >
+            <span>Upskilling the Public Sector</span>
+            <span class="link-arrow">↗</span>
+          </a>
+          <a
+            class="cs-next-row big-link big-link--project"
+            href="../work/climate.html"
+          >
+            <span>100 Billion USD for Climate </span>
+            <span class="link-arrow">↗</span>
+          </a>
+        </div>
+      </div>
+    </section>
+    <div id="footer"></div>
+
+    <div class="cs-lightbox" id="lightbox">
+      <button class="cs-lightbox-close" id="lightbox-close">✕</button>
+      <img class="cs-lightbox-img" id="lightbox-img" src="" alt="" />
+    </div>
+
+    <script src="../loader.js"></script>
+    <script src="../script.js"></script>
+  </body>
+</html>

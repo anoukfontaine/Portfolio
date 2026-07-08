@@ -1,0 +1,1100 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Case Study — 100 Billion USD for Climate</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="../style.css" />
+
+    <script>
+      /* ============================================= AVOID FLICKER
+    ============================================= */
+      (function () {
+        const themes = [
+          {
+            bg: "#F9F9F9",
+            text: "#1A1A1A",
+            muted: "rgba(0,0,0,0.6)",
+            p1: "#FCDEA4",
+            p2: "#b8ebda",
+            p3: "#528AAF",
+            p4: "#8862AA",
+            p5: "#287E70",
+          },
+          {
+            bg: "#1A1A1A",
+            text: "#F9F9F9",
+            muted: "rgba(255,255,255,0.4)",
+            p1: "#FFB72C",
+            p2: "#4bad8c",
+            p3: "#572F7A",
+            p4: "#19537A",
+            p5: "#16584D",
+          },
+          {
+            bg: "#FFD2B4",
+            text: "#9D4434",
+            muted: "rgba(233,79,16,0.7)",
+            p1: "#F4A367",
+            p2: "#657749",
+            p3: "#B05A6B",
+            p4: "#90726E",
+            p5: "#776B49",
+          },
+          {
+            bg: "#E5E8FF",
+            text: "#D45D5D",
+            muted: "rgba(212, 93, 93, 0.8)",
+            p1: "#F4CC99",
+            p2: "#81c0ab",
+            p3: "#BCD2EE",
+            p4: "#9B7EDE",
+            p5: "#3A4E48",
+          },
+        ];
+        const i = parseInt(localStorage.getItem("theme-index"), 10) || 0;
+        const t = themes[i];
+        const root = document.documentElement.style;
+        root.setProperty("--color-bg", t.bg);
+        root.setProperty("--color-text", t.text);
+        root.setProperty("--color-text-muted", t.muted);
+        root.setProperty("--project-1", t.p1);
+        root.setProperty("--project-2", t.p2);
+        root.setProperty("--project-3", t.p3);
+        root.setProperty("--project-4", t.p4);
+        root.setProperty("--project-5", t.p5);
+        root.setProperty("--project-accent", t.p5);
+        root.setProperty("--moon-rotation", `${i * 90}deg`);
+        root.setProperty("--image-filter", t.imageFilter);
+      })();
+    </script>
+
+    <style>
+      :root {
+        --project-accent: var(--project-5);
+      }
+
+      .cs-process-images {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-5);
+        margin-top: var(--space-5);
+      }
+
+      .cs-process-images img {
+        width: 100%;
+        height: auto;
+        display: block;
+        border-radius: var(--radius-md);
+        filter: var(--image-filter);
+      }
+    </style>
+  </head>
+
+  <body class="case-page">
+    <div id="cursor"></div>
+
+    <!-- NAV -->
+    <nav>
+      <a class="logo" href="/" data-home-link>
+        <span class="logo-first"
+          ><span class="l" data-i="0">A</span
+          ><span class="l hide" data-i="1">n</span
+          ><span class="l hide" data-i="2">o</span
+          ><span class="l hide" data-i="3">u</span
+          ><span class="l hide" data-i="4">k</span></span
+        ><span class="logo-last"
+          ><span class="l space hide" data-i="5">&nbsp;</span
+          ><span class="l dot">&middot;</span
+          ><span class="l space hide" data-i="6">&nbsp;</span
+          ><span class="l" data-i="7">F</span
+          ><span class="l hide" data-i="8">o</span
+          ><span class="l hide" data-i="9">n</span
+          ><span class="l hide" data-i="10">t</span
+          ><span class="l hide" data-i="11">a</span
+          ><span class="l hide" data-i="12">i</span
+          ><span class="l hide" data-i="13">n</span
+          ><span class="l hide" data-i="14">e</span></span
+        >
+      </a>
+
+      <div class="nav-right">
+        <div class="nav-controls">
+          <button class="nav-lang" aria-label="Switch language">
+            EN<span class="lang-orbit-dot"></span>
+          </button>
+          <button class="nav-theme" id="theme-toggle" aria-label="Toggle theme">
+            <span class="moon-glyph">&#9680;</span
+            ><span class="orbit-dot"></span>
+          </button>
+          <button class="nav-hamburger" id="nav-hamburger" aria-label="Menu">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+      <div class="mobile-menu" id="mobile-menu">
+        <a href="../index.html#services" class="mobile-menu-link">Services</a>
+        <a href="../index.html#work" class="mobile-menu-link">Work</a>
+        <a href="../index.html#about" class="mobile-menu-link">About</a>
+        <a href="../index.html#contact" class="mobile-menu-link">Contact</a>
+      </div>
+    </nav>
+
+    <main>
+      <!-- OVERVIEW -->
+      <section class="cs-overview card-container" id="section-overview">
+        <nav class="left-sidebar" aria-label="Case study sections">
+          <div class="left-sidebar-home">
+            <a class="left-sidebar-ghost" href="../index.html#services"
+              >Services</a
+            >
+            <a href="../index.html#work">Work</a>
+            <a class="left-sidebar-ghost" href="../index.html#about">About</a>
+            <a class="left-sidebar-ghost" href="../index.html#contact"
+              >Contact</a
+            >
+          </div>
+
+          <a href="#section-overview" data-target="section-overview"
+            >Overview</a
+          >
+          <a href="#section-problem" data-target="section-problem">Problem</a>
+          <a href="#section-process" data-target="section-process">Process</a>
+
+          <div class="left-sidebar-sub">
+            <a
+              class="left-sidebar-sub-item"
+              href="#section-exploring"
+              data-target="section-exploring"
+              >01 Exploring</a
+            >
+            <a
+              class="left-sidebar-sub-item"
+              href="#section-designing"
+              data-target="section-designing"
+              >02 Designing</a
+            >
+            <a
+              class="left-sidebar-sub-item"
+              href="#section-building"
+              data-target="section-building"
+              >03 Building</a
+            >
+            <a
+              class="left-sidebar-sub-item"
+              href="#section-evolving"
+              data-target="section-evolving"
+              >04 Evolving</a
+            >
+          </div>
+
+          <a href="#section-product" data-target="section-product">Product</a>
+          <a href="#section-impact" data-target="section-impact">Impact</a>
+        </nav>
+
+        <div class="cs-overview-content">
+          <p class="label label-muted">Case Study</p>
+          <h1 class="cs-headline"><em>100 Billion USD</em> for Climate</h1>
+
+          <div class="cs-overview-tags">
+            <span class="cs-overview-tag">Dashboard Design</span>
+            <span class="cs-overview-tag">Data Visualization</span>
+            <span class="cs-overview-tag">Information Design</span>
+            <span class="cs-overview-tag">End-to-End</span>
+            <span class="cs-overview-tag">Development</span>
+          </div>
+
+          <p class="cs-overview-description">
+            From experimental concept to real-world implementation: exploring
+            how data visualization can help stakeholders understand where Swiss
+            climate investments go and support more informed decisions.
+          </p>
+        </div>
+
+        <div class="cs-overview-image-wrap">
+          <div class="cs-overview-image">
+            <img
+              src="../Images/Climate/0_hero.png"
+              alt="100 Billion USD for Climate dashboard screenshot"
+            />
+          </div>
+        </div>
+
+        <div class="cs-overview-meta">
+          <div class="cs-overview-meta-block">
+            <p class="label label-muted">Role</p>
+            <p class="cs-overview-meta-value">
+              UX/UI Designer<br />Data Visualization Designer<br />Power BI
+              Developer
+            </p>
+          </div>
+          <div class="cs-overview-meta-block">
+            <p class="label label-muted">Timeline</p>
+            <p class="cs-overview-meta-value">6 months<br />2025</p>
+          </div>
+          <div class="cs-overview-meta-block">
+            <p class="label label-muted">Platform</p>
+            <p class="cs-overview-meta-value">Power BI Dashboard</p>
+          </div>
+          <div class="cs-overview-meta-block">
+            <p class="label label-muted">Status</p>
+            <p class="cs-overview-meta-value">
+              CAS Final Project<br />Evolved into SECO's live Climate Cockpit
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTEXT -->
+      <section class="cs-context card-container" id="section-context">
+        <p class="label label-muted">Overview</p>
+        <h2 class="section-title">
+          Are climate funds being invested
+          <strong>where they are needed most?</strong>
+        </h2>
+
+        <div class="cs-context-bottom">
+          <p class="cs-context-description">
+            In 2009, industrialized countries pledged to mobilize USD 100
+            billion per year to help developing countries address climate
+            change. The State Secretariat for Economic Affairs (SECO)
+            contributes to Switzerland's commitment through its international
+            cooperation programs.
+            <br /><br />While climate investments were managed within individual
+            projects, there was no country-level overview to support strategic
+            decision-making. <br /><br />
+            This project explored how data visualization could transform climate
+            finance data into an interactive dashboard that supports exploration
+            and strategic decision-making. Building on this foundation, I later
+            developed SECO's live Climate Cockpit.
+          </p>
+
+          <div class="cs-context-right">
+            <div class="cs-context-row">
+              <p class="label label-muted">Product</p>
+              <p class="cs-context-row-value">
+                Interactive Power BI dashboard visualizing Swiss climate finance
+                across countries, themes and projects. Later evolved into SECO's
+                live Climate Cockpit.
+              </p>
+            </div>
+            <div class="cs-context-row">
+              <p class="label label-muted">Users</p>
+              <p class="cs-context-row-value">
+                Climate Network members, Financial Controllers and Country Focal
+                Points within SECO's Economic Cooperation and Development
+                Division.
+              </p>
+            </div>
+            <div class="cs-context-row">
+              <p class="label label-muted">Team</p>
+              <p class="cs-context-row-value">Individual project</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROBLEM -->
+      <section class="cs-section card-container" id="section-problem">
+        <div class="cs-dark-card">
+          <div class="cs-problem-top">
+            <div class="cs-problem-top-left">
+              <p class="label label-light">Problem</p>
+              <h2 class="section-title section-title--light">
+                Where are the <strong>millions going?</strong>
+              </h2>
+            </div>
+
+            <div class="cs-problem-top-right">
+              <div class="cs-problem-image">
+                <img
+                  src="../Images/Climate/1_problem.png"
+                  alt="Climate finance problem illustration"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="cs-problem-points">
+            <div class="cs-problem-point">
+              <p class="cs-problem-point-title">Reporting over insight</p>
+              <p class="cs-problem-point-text">
+                Data was collected to report on climate finance, not to explore
+                patterns or support strategic decisions.
+              </p>
+            </div>
+            <div class="cs-problem-point">
+              <p class="cs-problem-point-title">No country-level insights</p>
+              <p class="cs-problem-point-text">
+                Stakeholders could not see how climate investments differed
+                across countries.
+              </p>
+            </div>
+            <div class="cs-problem-point">
+              <p class="cs-problem-point-title">Manual and static reporting</p>
+              <p class="cs-problem-point-text">
+                Reporting relied on scattered and manually maintained Excel
+                files with limited interactivity.
+              </p>
+            </div>
+            <div class="cs-problem-point">
+              <p class="cs-problem-point-title">Hidden insights</p>
+              <p class="cs-problem-point-text">
+                Patterns, trends and opportunities for action remained difficult
+                to discover.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROCESS -->
+      <section class="cs-process-section card-container" id="section-process">
+        <div class="cs-process-bar">
+          <p class="cs-process-bar-label">Process</p>
+
+          <div class="cs-process-bar-steps" style="--steps: 4">
+            <div class="cs-process-bar-step">
+              <span class="cs-process-bar-step-name">01 Exploring</span>
+              <div class="cs-process-bar-line">
+                <span class="cs-process-bar-dot"></span>
+                <span class="cs-process-bar-track"></span>
+              </div>
+              <div class="cs-process-bar-deliverables">
+                <span class="cs-process-bar-deliverable">Experimentation</span>
+                <span class="cs-process-bar-deliverable">Failure</span>
+                <span class="cs-process-bar-deliverable">Learning</span>
+                <span class="cs-process-bar-deliverable">Iteration</span>
+              </div>
+            </div>
+
+            <div class="cs-process-bar-step">
+              <span class="cs-process-bar-step-name">02 Designing</span>
+              <div class="cs-process-bar-line">
+                <span class="cs-process-bar-dot"></span>
+                <span class="cs-process-bar-track"></span>
+              </div>
+              <div class="cs-process-bar-deliverables">
+                <span class="cs-process-bar-deliverable"
+                  >Information Design</span
+                >
+                <span class="cs-process-bar-deliverable">Storytelling</span>
+                <span class="cs-process-bar-deliverable">Design Decisions</span>
+              </div>
+            </div>
+
+            <div class="cs-process-bar-step">
+              <span class="cs-process-bar-step-name">03 Building</span>
+              <div class="cs-process-bar-line">
+                <span class="cs-process-bar-dot"></span>
+                <span class="cs-process-bar-track"></span>
+              </div>
+              <div class="cs-process-bar-deliverables">
+                <span class="cs-process-bar-deliverable">Power BI</span>
+                <span class="cs-process-bar-deliverable">Constraints</span>
+                <span class="cs-process-bar-deliverable">Adaptation</span>
+              </div>
+            </div>
+
+            <div class="cs-process-bar-step">
+              <span class="cs-process-bar-step-name">04 Evolving</span>
+              <div class="cs-process-bar-line">
+                <span class="cs-process-bar-dot"></span>
+              </div>
+              <div class="cs-process-bar-deliverables">
+                <span class="cs-process-bar-deliverable">User Feedback</span>
+                <span class="cs-process-bar-deliverable">Implementation</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="cs-process-intro-cards">
+          <div class="cs-process-intro-card">
+            <p class="cs-process-card-title">Role</p>
+            <p class="cs-process-card-text">
+              End-to-end ownership from concept to implementation, including
+              information architecture, data visualization, UI design, Power BI
+              development, and the evolution of the concept into SECO's live
+              Climate Cockpit.
+            </p>
+          </div>
+          <div class="cs-process-intro-card">
+            <p class="cs-process-card-title">Constraints</p>
+            <p class="cs-process-card-text">
+              Balancing creative exploration with real-world implementation.
+              While the concept phase encouraged experimentation, the production
+              dashboard had to meet technical constraints and organizational
+              policies on Power BI visuals as well as real users and
+              organizational needs.
+            </p>
+          </div>
+        </div>
+
+        <!-- 01 EXPLORING -->
+        <div class="cs-process-step-section first" id="section-exploring">
+          <div class="cs-process-step-card">
+            <div class="cs-process-step-card-top">
+              <p class="cs-process-step-card-num">01</p>
+              <div class="cs-process-step-card-right">
+                <p class="label label-muted">Exploring</p>
+                <h2 class="section-title section-title--process">
+                  <strong>Killing</strong> my favorite charts.
+                </h2>
+
+                <p class="cs-process-step-text">
+                  I explored numerous visual approaches, from Sankey diagrams
+                  and radar charts to bubble charts and sunburst diagrams. Some
+                  looked impressive but were difficult to read. Others were
+                  technically impossible to implement in Power BI. Many simply
+                  did not communicate the story I wanted to tell.
+                </p>
+
+                <p class="cs-process-step-text">
+                  Every failed attempt became a learning opportunity and
+                  deepened my understanding of the strengths and limitations of
+                  data visualization.
+                </p>
+
+                <div class="cs-process-cards">
+                  <div class="cs-process-card">
+                    <p class="cs-process-card-title">Challenge</p>
+                    <p class="cs-process-card-text">
+                      Finding visualizations that were informative,
+                      aesthetically pleasing, technically feasible and
+                      understandable to non-experts.
+                    </p>
+                  </div>
+
+                  <div class="cs-process-card">
+                    <p class="cs-process-card-title">Solution</p>
+                    <p class="cs-process-card-text">
+                      Embrace experimentation and allow unsuccessful ideas to
+                      become part of the design process rather than treating
+                      them as failures.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="cs-process-images">
+            <p class="cs-image-caption cs-image-caption--center">
+              First ideas on paper
+            </p>
+            <img
+              src="../Images/Climate/2_skizzen.png"
+              alt="Sketches and chart experiments"
+              class="cs-lightbox-trigger cursor-grow"
+            />
+            <p class="cs-image-caption cs-image-caption--center">
+              First attempts in Power BI
+            </p>
+            <img
+              src="../Images/Climate/2_design_fail.png"
+              alt="Moodboard and visual exploration"
+              class="cs-lightbox-trigger cursor-grow"
+            />
+          </div>
+        </div>
+
+        <!-- 02 DESIGNING -->
+        <div class="cs-process-step-section" id="section-designing">
+          <div class="cs-process-step-card">
+            <div class="cs-process-step-card-top">
+              <p class="cs-process-step-card-num">02</p>
+              <div class="cs-process-step-card-right">
+                <p class="label label-muted">Designing</p>
+                <h2 class="section-title section-title--process">
+                  Designing the <strong>experience.</strong>
+                </h2>
+
+                <p class="cs-process-step-text">
+                  After exploring different visual approaches, I focused on
+                  turning the findings into a coherent and engaging experience.
+                  The final dashboard combines storytelling, information design
+                  and exploratory interactions to help users discover patterns
+                  hidden in climate finance data.
+                </p>
+
+                <div class="cs-process-cards">
+                  <div class="cs-process-card">
+                    <p class="cs-process-card-title">Challenge</p>
+                    <p class="cs-process-card-text">
+                      How do you make climate finance data feel engaging and
+                      exploratory without overwhelming users?
+                    </p>
+                  </div>
+
+                  <div class="cs-process-card">
+                    <p class="cs-process-card-title">Solution</p>
+                    <p class="cs-process-card-text">
+                      Combine clear structure, minimal visual design and
+                      interactive storytelling to guide users from overview to
+                      detail.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <p class="cs-image-caption cs-image-caption--center">
+            Design decisions
+          </p>
+
+          <div class="cs-decision-tabs">
+            <button
+              class="pill-btn pill-btn--toggle active cursor-grow"
+              data-decision-tab="ia"
+            >
+              Information architecture
+            </button>
+            <button
+              class="pill-btn pill-btn--toggle cursor-grow"
+              data-decision-tab="visual"
+            >
+              Visual design
+            </button>
+            <button
+              class="pill-btn pill-btn--toggle cursor-grow"
+              data-decision-tab="story"
+            >
+              Data storytelling
+            </button>
+          </div>
+
+          <div class="cs-hotspot-image">
+            <img
+              src="../Images/Climate/3_design.png"
+              alt="Climate dashboard design with hotspots"
+            />
+
+            <div
+              class="cs-hotspot"
+              data-decision-category="ia"
+              style="top: 9%; left: 18%"
+            >
+              <div class="cs-hotspot-dot" aria-hidden="true"></div>
+              <div class="cs-hotspot-card">
+                <p class="cs-design-card-title">Introduce before exploring</p>
+                <p class="cs-process-card-text">
+                  An introduction and intuitive filters provide context before
+                  users start exploring the data. This helps them understand
+                  what they are looking at.
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="cs-hotspot"
+              data-decision-category="ia"
+              style="top: 4%; left: 42%"
+            >
+              <div class="cs-hotspot-dot" aria-hidden="true"></div>
+              <div class="cs-hotspot-card">
+                <p class="cs-design-card-title">Progressive exploration</p>
+                <p class="cs-process-card-text">
+                  The dashboard progresses from a broad overview to increasingly
+                  detailed project information. Users can choose the level of
+                  detail they want to explore without feeling overwhelmed.
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="cs-hotspot"
+              data-decision-category="ia"
+              style="top: 2.6%; left: 66%"
+            >
+              <div class="cs-hotspot-dot" aria-hidden="true"></div>
+              <div class="cs-hotspot-card cs-hotspot-card--left">
+                <p class="cs-design-card-title">Group by topic</p>
+                <p class="cs-process-card-text">
+                  Visualizations are organized by theme, allowing users to scan
+                  the topics that interest them and connect related insights
+                  across multiple charts.
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="cs-hotspot"
+              data-decision-category="story"
+              style="top: 20.5%; left: 17%"
+            >
+              <div class="cs-hotspot-dot" aria-hidden="true"></div>
+              <div class="cs-hotspot-card">
+                <p class="cs-design-card-title">Reveal meaningful patterns</p>
+                <p class="cs-process-card-text">
+                  The dashboard is designed to highlight differences and
+                  similarities between countries, helping users identify trends,
+                  compare contexts and uncover meaningful patterns in the data.
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="cs-hotspot"
+              data-decision-category="story"
+              style="top: 63.5%; left: 43%"
+            >
+              <div class="cs-hotspot-dot" aria-hidden="true"></div>
+              <div class="cs-hotspot-card">
+                <p class="cs-design-card-title">Understand change over time</p>
+                <p class="cs-process-card-text">
+                  Time-series visualizations help users explore how climate
+                  investments have evolved over the past years, making long-term
+                  trends and emerging shifts easier to identify.
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="cs-hotspot"
+              data-decision-category="story"
+              style="top: 21%; left: 89.5%"
+            >
+              <div class="cs-hotspot-dot" aria-hidden="true"></div>
+              <div class="cs-hotspot-card cs-hotspot-card--left">
+                <p class="cs-design-card-title">Interactive navigation</p>
+                <p class="cs-process-card-text">
+                  Interactive navigation allows users to move seamlessly between
+                  high-level patterns and project-level information, making it
+                  easy to explore the data at different levels of detail.
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="cs-hotspot"
+              data-decision-category="visual"
+              style="top: 85%; left: 35%"
+            >
+              <div class="cs-hotspot-dot" aria-hidden="true"></div>
+              <div class="cs-hotspot-card cs-hotspot-card--left">
+                <p class="cs-design-card-title">Less is more</p>
+                <p class="cs-process-card-text">
+                  A restrained color palette keeps the focus on the data rather
+                  than the interface, reducing visual noise and allowing
+                  important information to stand out.
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="cs-hotspot"
+              data-decision-category="visual"
+              style="top: 45%; left: 58%"
+            >
+              <div class="cs-hotspot-dot" aria-hidden="true"></div>
+              <div class="cs-hotspot-card">
+                <p class="cs-design-card-title">
+                  Prioritize clarity over decoration
+                </p>
+                <p class="cs-process-card-text">
+                  Icons and additional color coding were deliberately avoided in
+                  some areas to prevent unnecessary cognitive load.
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="cs-hotspot"
+              data-decision-category="visual"
+              style="top: 43%; left: 10%"
+            >
+              <div class="cs-hotspot-dot" aria-hidden="true"></div>
+              <div class="cs-hotspot-card">
+                <p class="cs-design-card-title">Design for readability</p>
+                <p class="cs-process-card-text">
+                  Typography and spacing were carefully chosen to keep dense
+                  information easy to scan, making numerical values and chart
+                  labels readable at a glance.
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="cs-hotspot"
+              data-decision-category="visual"
+              style="top: 88%; left: 2%"
+            >
+              <div class="cs-hotspot-dot" aria-hidden="true"></div>
+              <div class="cs-hotspot-card cs-hotspot-card--left">
+                <p class="cs-design-card-title">Illustrations as atmosphere</p>
+                <p class="cs-process-card-text">
+                  Custom illustrations created in Adobe Illustrator add visual
+                  personality and reinforce the climate theme without competing
+                  with the data for attention.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 03 BUILDING -->
+        <div class="cs-process-step-section" id="section-building">
+          <div class="cs-process-step-card">
+            <div class="cs-process-step-card-top">
+              <p class="cs-process-step-card-num">03</p>
+              <div class="cs-process-step-card-right">
+                <p class="label label-muted">Building</p>
+                <h2 class="section-title section-title--process">
+                  Building within <strong>limitations.</strong>
+                </h2>
+
+                <p class="cs-process-step-text">
+                  Power BI turned out to be both empowering and frustrating.
+                  Many of the visual ideas that seemed promising in theory could
+                  not be implemented because of technical constraints, custom
+                  visual limitations or performance issues.
+                </p>
+
+                <p class="cs-process-step-text">
+                  In addition, some custom visuals were not approved by my
+                  organization and therefore could never be used in a production
+                  environment. The challenge became finding creative
+                  alternatives while preserving the original vision of the
+                  dashboard.
+                </p>
+
+                <div class="cs-process-cards">
+                  <div class="cs-process-card">
+                    <p class="cs-process-card-title">Challenge</p>
+                    <p class="cs-process-card-text">
+                      Balancing design ambitions with technical and
+                      organizational constraints.
+                    </p>
+                  </div>
+
+                  <div class="cs-process-card">
+                    <p class="cs-process-card-title">Solution</p>
+                    <p class="cs-process-card-text">
+                      Focus on the underlying user need rather than on a
+                      specific visualization and continuously adapt the design
+                      to what was technically and organizationally feasible.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="cs-process-images">
+            <p class="cs-image-caption cs-image-caption--center">
+              Me trying to make ambitious ideas come true.
+            </p>
+            <img
+              src="../Images/Climate/4_dev.jpeg"
+              alt="Sketches and chart experiments"
+              class="cs-lightbox-trigger cursor-grow"
+              style="width: 40%; display: block; margin: 24px auto"
+            />
+          </div>
+        </div>
+
+        <!-- 04 EVOLVING -->
+        <div class="cs-process-step-section" id="section-evolving">
+          <div class="cs-process-step-card cs-process-step-card--highlight">
+            <div class="cs-process-step-card-top">
+              <p class="cs-process-step-card-num">04</p>
+              <div class="cs-process-step-card-right">
+                <p class="label label-muted">Evolving</p>
+                <h2 class="section-title section-title--process">
+                  From concept to <strong>reality.</strong>
+                </h2>
+
+                <p class="cs-process-step-text">
+                  Although the original dashboard remained a conceptual
+                  prototype, I later built on its foundation to develop SECO's
+                  live Climate Cockpit. The dashboard was adapted to address
+                  concrete business needs and integrated into the Financial
+                  Cockpit ecosystem (see case study "Yellow is the new green").
+                </p>
+
+                <p class="cs-process-step-text">
+                  Together with the Climate Network, I tested the dashboard,
+                  iteratively refined it based on user feedback and successfully
+                  rolled it out for everyday use.
+                </p>
+
+                <div class="cs-process-cards">
+                  <div class="cs-process-card">
+                    <p class="cs-process-card-title">Challenge</p>
+                    <p class="cs-process-card-text">
+                      How do you translate an experimental student project into
+                      a practical tool that addresses real organizational needs?
+                    </p>
+                  </div>
+
+                  <div class="cs-process-card">
+                    <p class="cs-process-card-title">Solution</p>
+                    <p class="cs-process-card-text">
+                      Preserve the underlying ideas and adapt the dashboard to
+                      new requirements, users and technical constraints through
+                      continuous feedback and iteration.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="cs-process-images">
+              <img
+                src="../Images/Climate/5_afterlife2.png"
+                alt="Climate Cockpit evolution"
+                class="cs-lightbox-trigger cursor-grow"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="cs-lightbox" id="lightbox">
+          <button class="cs-lightbox-close" id="lightbox-close">✕</button>
+          <img class="cs-lightbox-img" id="lightbox-img" src="" alt="" />
+        </div>
+      </section>
+
+      <!-- PRODUCT -->
+      <section class="cs-product" id="section-product">
+        <p class="label label-muted">Final Product</p>
+        <h2
+          class="section-title"
+          style="text-align: left; margin-bottom: var(--element-gap)"
+        >
+          Where the <strong>millions are.</strong>
+        </h2>
+
+        <div class="cs-product-showcase">
+          <div class="cs-product-card cs-product-card-large">
+            <div class="cs-pdf-gallery">
+              <button
+                class="cs-gallery-arrow cs-gallery-prev"
+                aria-label="Previous"
+              >
+                &#8249;
+              </button>
+              <img
+                src="../Images/Climate/6_product/climatecockpit_1.png"
+                class="active"
+                alt=""
+              />
+              <img
+                src="../Images/Climate/6_product/climatecockpit_2.png"
+                alt=""
+              />
+              <img
+                src="../Images/Climate/6_product/climatecockpit_3.png"
+                alt=""
+              />
+              <img
+                src="../Images/Climate/6_product/climatecockpit_4.png"
+                alt=""
+              />
+              <img
+                src="../Images/Climate/6_product/climatecockpit_5.png"
+                alt=""
+              />
+              <img
+                src="../Images/Climate/6_product/climatecockpit_6.png"
+                alt=""
+              />
+              <img
+                src="../Images/Climate/6_product/climatecockpit_7.png"
+                alt=""
+              />
+              <img
+                src="../Images/Climate/6_product/climatecockpit_8.png"
+                alt=""
+              />
+              <img
+                src="../Images/Climate/6_product/climatecockpit_9.png"
+                alt=""
+              />
+              <img
+                src="../Images/Climate/6_product/climatecockpit_10.png"
+                alt=""
+              />
+              <img
+                src="../Images/Climate/6_product/climatecockpit_11.png"
+                alt=""
+              />
+              <img
+                src="../Images/Climate/6_product/climatecockpit_12.png"
+                alt=""
+              />
+              <img
+                src="../Images/Climate/6_product/climatecockpit_13.png"
+                alt=""
+              />
+              <img
+                src="../Images/Climate/6_product/climatecockpit_14.png"
+                alt=""
+              />
+              <button
+                class="cs-gallery-arrow cs-gallery-next"
+                aria-label="Next"
+              >
+                &#8250;
+              </button>
+            </div>
+          </div>
+
+          <div class="cs-product-details">
+            <div class="cs-product-card">
+              <img
+                src="../Images/Climate/6_product2.png"
+                alt="Final climate dashboard screen 2"
+              />
+            </div>
+
+            <div class="cs-product-card">
+              <img
+                src="../Images/Climate/6_product3.png"
+                alt="Final climate dashboard screen 3"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- IMPACT -->
+      <section class="cs-impact card-container" id="section-impact">
+        <div class="cs-dark-card">
+          <div class="cs-impact-card-top">
+            <p class="label label-light">Impact</p>
+            <h2 class="cs-impact-title">
+              From climate reporting to <strong>climate insight.</strong>
+            </h2>
+          </div>
+
+          <div class="cs-impact-numbers">
+            <div class="cs-impact-number">
+              <p class="cs-impact-num">100M+</p>
+              <p class="cs-impact-num-label">
+                CHF yearly Swiss climate finance tracked geographically and
+                thematically through one interactive dashboard.
+              </p>
+            </div>
+
+            <div class="cs-impact-number">
+              <p class="cs-impact-num">95%</p>
+              <p class="cs-impact-num-label">
+                Reduction in reporting time for financial controllers by
+                replacing manual Excel analysis with automated reporting.
+              </p>
+            </div>
+
+            <div class="cs-impact-number">
+              <p class="cs-impact-num">3×</p>
+              <p class="cs-impact-num-label">
+                More environmental information available than before, expanding
+                reporting beyond climate change to include biodiversity and
+                private sector mobilisation.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TESTIMONIALS -->
+      <section class="cs-testimonials card-container" id="section-testimonials">
+        <p class="label label-muted">Testimonial</p>
+        <div class="cs-testimonials-grid">
+          <div class="cs-testimonial-card">
+            <p class="cs-testimonial-quote">
+              "Anouk developed the <em>Climate Cockpit</em> for the SECO
+              Economic Development Climate Network. Throughout the project, she
+              proactively gathered user requirements and, using interactive
+              prototypes, tailored the dashboard to meet the specific needs of
+              the network.
+            </p>
+            <p class="cs-testimonial-quote">
+              The result is a clear and flexible analysis tool that—unlike the
+              previous cockpit—enables fast and versatile data queries while
+              presenting the results in a visually clear and accessible way. The
+              new cockpit is already being widely used and has received
+              consistently positive feedback throughout the network. Thanks to
+              her friendly and positive approach, Anouk also succeeded in
+              engaging network members enthusiastically in the development of
+              the new cockpit.
+            </p>
+            <p class="cs-testimonial-quote">
+              We sincerely thank Anouk for her valuable contribution."
+            </p>
+            <p class="cs-testimonial-author">
+              Daniel Bruderer, Head of the SECO Economic Development Climate
+              Network.
+            </p>
+          </div>
+          <div class="cs-testimonial-highlight">
+            <p class="cs-testimonial-highlight-text">
+              "[...] A <strong>clear and flexible</strong> analysis tool that
+              enables <strong>fast, versatile</strong> data queries and has
+              received consistently <strong>positive feedback</strong>
+              across the network.[...]"
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- NEXT PROJECTS -->
+    <section class="cs-next">
+      <div class="cs-next-inner">
+        <div class="cs-next-left">
+          <p class="label label-light">Next Projects</p>
+          <h2 class="cs-next-title">Continue exploring.</h2>
+          <a class="big-link big-link--light" href="../index.html#work">
+            <span>Back to work overview</span>
+            <span class="link-arrow">↗</span>
+          </a>
+          <a class="big-link big-link--light" href="../index.html#contact">
+            <p class="link-text">Get in touch</p>
+            <p class="link-arrow">↗</p>
+          </a>
+        </div>
+        <div class="cs-next-right">
+          <a
+            class="cs-next-row big-link big-link--project"
+            href="../work/yellow.html"
+          >
+            <span>Yellow is the new green</span>
+            <span class="link-arrow">↗</span>
+          </a>
+          <a
+            class="cs-next-row big-link big-link--project"
+            href="../work/bw.html"
+          >
+            <span>Browsing the world's economy</span>
+            <span class="link-arrow">↗</span>
+          </a>
+          <a
+            class="cs-next-row big-link big-link--project"
+            href="../work/kunstatelier.html"
+          >
+            <span>Heard of KunstAtelier? Me neither.</span>
+            <span class="link-arrow">↗</span>
+          </a>
+          <a
+            class="cs-next-row big-link big-link--project"
+            href="../work/skills.html"
+          >
+            <span>Upskilling the Public Sector</span>
+            <span class="link-arrow">↗</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <div id="footer"></div>
+
+    <script src="../loader.js"></script>
+    <script src="../script.js"></script>
+  </body>
+</html>

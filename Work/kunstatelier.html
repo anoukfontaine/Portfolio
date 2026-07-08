@@ -1,0 +1,987 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Case Study — KunstAtelier</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300;0,400;0,700;1,300;1,400&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link href="../style.css" rel="stylesheet" />
+    <script>
+      /* ============================================= AVOID FLICKER
+    ============================================= */
+      (function () {
+        const themes = [
+          {
+            bg: "#F9F9F9",
+            text: "#1A1A1A",
+            muted: "rgba(0,0,0,0.6)",
+            p1: "#FCDEA4",
+            p2: "#b8ebda",
+            p3: "#528AAF",
+            p4: "#8862AA",
+            p5: "#287E70",
+          },
+          {
+            bg: "#1A1A1A",
+            text: "#F9F9F9",
+            muted: "rgba(255,255,255,0.4)",
+            p1: "#FFB72C",
+            p2: "#4bad8c",
+            p3: "#572F7A",
+            p4: "#19537A",
+            p5: "#16584D",
+          },
+          {
+            bg: "#FFD2B4",
+            text: "#9D4434",
+            muted: "rgba(233,79,16,0.7)",
+            p1: "#F4A367",
+            p2: "#657749",
+            p3: "#B05A6B",
+            p4: "#90726E",
+            p5: "#776B49",
+          },
+          {
+            bg: "#E5E8FF",
+            text: "#D45D5D",
+            muted: "rgba(212, 93, 93, 0.8)",
+            p1: "#F4CC99",
+            p2: "#81c0ab",
+            p3: "#BCD2EE",
+            p4: "#9B7EDE",
+            p5: "#3A4E48",
+          },
+        ];
+        const i = parseInt(localStorage.getItem("theme-index"), 10) || 0;
+        const t = themes[i];
+        const root = document.documentElement.style;
+        root.setProperty("--color-bg", t.bg);
+        root.setProperty("--color-text", t.text);
+        root.setProperty("--color-text-muted", t.muted);
+        root.setProperty("--project-1", t.p1);
+        root.setProperty("--project-2", t.p2);
+        root.setProperty("--project-3", t.p3);
+        root.setProperty("--project-4", t.p4);
+        root.setProperty("--moon-rotation", `${i * 90}deg`);
+        root.setProperty("--image-filter", t.imageFilter);
+      })();
+    </script>
+  </head>
+
+  <body class="case-page" style="--project-accent: var(--project-4)">
+    <div id="cursor"></div>
+    <nav>
+      <a class="logo" data-home-link="" href="/">
+        <span class="logo-first"
+          ><span class="l" data-i="0">A</span
+          ><span class="l hide" data-i="1">n</span
+          ><span class="l hide" data-i="2">o</span
+          ><span class="l hide" data-i="3">u</span
+          ><span class="l hide" data-i="4">k</span></span
+        ><span class="logo-last"
+          ><span class="l space hide" data-i="5"> </span
+          ><span class="l dot">·</span
+          ><span class="l space hide" data-i="6"> </span
+          ><span class="l" data-i="7">F</span
+          ><span class="l hide" data-i="8">o</span
+          ><span class="l hide" data-i="9">n</span
+          ><span class="l hide" data-i="10">t</span
+          ><span class="l hide" data-i="11">a</span
+          ><span class="l hide" data-i="12">i</span
+          ><span class="l hide" data-i="13">n</span
+          ><span class="l hide" data-i="14">e</span></span
+        >
+      </a>
+      <div class="nav-right">
+        <div class="nav-controls">
+          <button aria-label="Switch language" class="nav-lang">
+            EN<span class="lang-orbit-dot"></span>
+          </button>
+          <button aria-label="Toggle theme" class="nav-theme" id="theme-toggle">
+            <span class="moon-glyph">◐</span><span class="orbit-dot"></span>
+          </button>
+          <button aria-label="Menu" class="nav-hamburger" id="nav-hamburger">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+      <div class="mobile-menu" id="mobile-menu">
+        <a class="mobile-menu-link" href="#services">Services</a>
+        <a class="mobile-menu-link" href="#work">Work</a>
+        <a class="mobile-menu-link" href="#about">About</a>
+        <a class="mobile-menu-link" href="#contact">Contact</a>
+      </div>
+    </nav>
+    <main>
+      <!-- OVERVIEW -->
+      <section class="cs-overview card-container" id="section-overview">
+        <nav class="left-sidebar" aria-label="Case study sections">
+          <div class="left-sidebar-home">
+            <a class="left-sidebar-ghost" href="../index.html#services"
+              >Services</a
+            >
+            <a href="../index.html#work">Work</a>
+            <a class="left-sidebar-ghost" href="../index.html#about">About</a>
+            <a class="left-sidebar-ghost" href="../index.html#contact"
+              >Contact</a
+            >
+          </div>
+          <a href="#section-overview" data-target="section-overview"
+            >Overview</a
+          >
+          <a href="#section-problem" data-target="section-problem">Problem</a>
+          <a href="#section-process" data-target="section-process">Process</a>
+          <div class="left-sidebar-sub">
+            <a
+              class="left-sidebar-sub-item"
+              href="#section-understanding"
+              data-target="section-understanding"
+              >01 Understanding</a
+            >
+            <a
+              class="left-sidebar-sub-item"
+              href="#section-exploring"
+              data-target="section-exploring"
+              >02 Exploring</a
+            >
+            <a
+              class="left-sidebar-sub-item"
+              href="#section-testing"
+              data-target="section-testing"
+              >03 Testing</a
+            >
+            <a
+              class="left-sidebar-sub-item"
+              href="#section-refining"
+              data-target="section-refining"
+              >04 Refining</a
+            >
+          </div>
+          <a href="#section-product" data-target="section-product">Prototype</a>
+          <a href="#section-afterlife" data-target="section-afterlife"
+            >Reflection</a
+          >
+        </nav>
+
+        <div class="cs-overview-content">
+          <p class="label label-muted">Case study</p>
+          <h1 class="cs-headline">
+            Heard of KunstAtelier?<em>Me neither</em>.
+          </h1>
+          <div class="cs-overview-tags">
+            <span class="cs-overview-tag">UX Design</span>
+            <span class="cs-overview-tag">UI Design</span>
+            <span class="cs-overview-tag">User Research</span>
+            <span class="cs-overview-tag">Prototyping</span>
+            <span class="cs-overview-tag">Accessibility</span>
+          </div>
+          <p class="cs-overview-description">
+            Designing a fictional museum app that makes discovering exhibitions
+            and booking tickets accessible to people with different levels of
+            technical confidence and language proficiency.
+          </p>
+        </div>
+
+        <div class="cs-overview-image-wrap">
+          <div class="cs-overview-image" style="background: var(--project-4)">
+            <img
+              src="../Images/KunstAtelier/0_hero.png"
+              alt="KunstAtelier app hero image"
+              style="height: 90%"
+            />
+          </div>
+        </div>
+
+        <div class="cs-overview-meta">
+          <div class="cs-overview-meta-block">
+            <p class="label label-muted">Role</p>
+            <p class="cs-overview-meta-value">UX Designer</p>
+          </div>
+          <div class="cs-overview-meta-block">
+            <p class="label label-muted">Timeline</p>
+            <p class="cs-overview-meta-value">3 months<br />2025</p>
+          </div>
+          <div class="cs-overview-meta-block">
+            <p class="label label-muted">Platform</p>
+            <p class="cs-overview-meta-value">
+              Mobile App<br />Responsive Website
+            </p>
+          </div>
+          <div class="cs-overview-meta-block">
+            <p class="label label-muted">Status</p>
+            <p class="cs-overview-meta-value">
+              Google UX Design Certificate Project
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="cs-context card-container" id="section-context">
+        <p class="label label-muted">Overview</p>
+        <h2 class="section-title">
+          The ultimate <strong>design challenge.</strong>
+        </h2>
+        <div class="cs-context-bottom">
+          <p class="cs-context-description">
+            As a kid, going to the museum was probably the worst activity you
+            could take me to. I hated the waiting, wasn't particularly
+            interested in history or culture, and much preferred doing things
+            rather than looking at them. Even today, museums are still not my
+            go-to activity. So how well would I do stepping into the shoes of
+            museum lovers? That became the ultimate UX design challenge.<br /><br />
+            The result was KunstAtelier, a museum app concept focused on
+            discovery, accessibility and simple booking experiences.
+          </p>
+          <div class="cs-context-right">
+            <div class="cs-context-row">
+              <p class="label label-muted">Product</p>
+              <p class="cs-context-row-value">
+                Museum App concept with clickable prototype in Figma
+              </p>
+            </div>
+            <div class="cs-context-row">
+              <p class="label label-muted">Team</p>
+              <p class="cs-context-row-value">Individual project</p>
+            </div>
+
+            <div class="cs-context-row">
+              <p class="label label-muted">Users</p>
+              <p class="cs-context-row-value">
+                International newcomers and grandparents planning cultural
+                activities with their grandchildren.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- THE PROBLEM -->
+      <!-- THE PROBLEM -->
+      <section class="cs-section card-container" id="section-problem">
+        <div class="cs-dark-card">
+          <div class="cs-problem-top">
+            <div class="cs-problem-top-left">
+              <p class="label label-light">Problem</p>
+              <h2 class="section-title section-title--light">
+                Visiting a museum should feel inspiring,
+                <strong>not overwhelming.</strong>
+              </h2>
+            </div>
+            <div class="cs-problem-top-right">
+              <div class="cs-problem-image">
+                <img
+                  alt="Problem illustration"
+                  src="../Images/KunstAtelier/0_problem.png"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="cs-problem-points">
+            <div class="cs-problem-point">
+              <p class="cs-problem-point-title">
+                Confusing UX and feature overload
+              </p>
+              <p class="cs-problem-point-text">
+                Users struggle to access the content they actually want.
+              </p>
+            </div>
+            <div class="cs-problem-point">
+              <p class="cs-problem-point-title">
+                Lack of personalized, digestible content
+              </p>
+              <p class="cs-problem-point-text">
+                Visitors feel overwhelmed or miss exhibits that match their
+                interests.
+              </p>
+            </div>
+            <div class="cs-problem-point">
+              <p class="cs-problem-point-title">
+                Limited accessibility and inclusivity
+              </p>
+              <p class="cs-problem-point-text">
+                Some visitors struggle to use the app due to language, visual,
+                hearing, or mobility barriers.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- THE PROCESS -->
+      <section class="cs-process-section card-container" id="section-process">
+        <div class="cs-process-bar">
+          <p class="cs-process-bar-label">Process</p>
+          <div class="cs-process-bar-steps" style="--steps: 4">
+            <div class="cs-process-bar-step">
+              <span class="cs-process-bar-step-name">01 Understanding</span>
+              <div class="cs-process-bar-line">
+                <span class="cs-process-bar-dot"></span
+                ><span class="cs-process-bar-track"></span>
+              </div>
+              <div class="cs-process-bar-deliverables">
+                <span class="cs-process-bar-deliverable"
+                  >Competitive Audit</span
+                >
+                <span class="cs-process-bar-deliverable">Personas</span>
+                <span class="cs-process-bar-deliverable"
+                  >User Journey Maps</span
+                >
+                <span class="cs-process-bar-deliverable">Storyboards</span>
+              </div>
+            </div>
+            <div class="cs-process-bar-step">
+              <span class="cs-process-bar-step-name">02 Exploring</span>
+              <div class="cs-process-bar-line">
+                <span class="cs-process-bar-dot"></span
+                ><span class="cs-process-bar-track"></span>
+              </div>
+              <div class="cs-process-bar-deliverables">
+                <span class="cs-process-bar-deliverable">User Flow</span>
+                <span class="cs-process-bar-deliverable">Wireframes</span>
+                <span class="cs-process-bar-deliverable">Lo-Fi Prototype</span>
+              </div>
+            </div>
+            <div class="cs-process-bar-step">
+              <span class="cs-process-bar-step-name">03 Testing</span>
+              <div class="cs-process-bar-line">
+                <span class="cs-process-bar-dot"></span
+                ><span class="cs-process-bar-track"></span>
+              </div>
+              <div class="cs-process-bar-deliverables">
+                <span class="cs-process-bar-deliverable">Feedback</span>
+                <span class="cs-process-bar-deliverable"
+                  >Usability Testing</span
+                >
+                <span class="cs-process-bar-deliverable">Questionnaire</span>
+              </div>
+            </div>
+            <div class="cs-process-bar-step">
+              <span class="cs-process-bar-step-name">04 Refining</span>
+              <div class="cs-process-bar-line">
+                <span class="cs-process-bar-dot"></span>
+              </div>
+              <div class="cs-process-bar-deliverables">
+                <span class="cs-process-bar-deliverable">Design System</span>
+                <span class="cs-process-bar-deliverable">Hi-Fi Prototype</span>
+                <span class="cs-process-bar-deliverable"
+                  >AI Image Creation</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="cs-process-intro-cards">
+          <div class="cs-process-intro-card">
+            <p class="cs-process-card-title">Role</p>
+            <p class="cs-process-card-text">
+              End-to-end ownership of the UX design process, from understanding
+              user needs to designing, testing and refining the final prototype.
+            </p>
+          </div>
+          <div class="cs-process-intro-card">
+            <p class="cs-process-card-title">Constraints</p>
+            <p class="cs-process-card-text">
+              Designing for users whose needs and motivations were very
+              different from my own. As my first complete UX project, I also had
+              to apply newly learned methods and tools while building the
+              solution from scratch.
+            </p>
+          </div>
+        </div>
+
+        <!-- 01 Understanding -->
+        <div class="cs-process-step-section first" id="section-understanding">
+          <div class="cs-process-step-card">
+            <div class="cs-process-step-card-top">
+              <p class="cs-process-step-card-num">01</p>
+              <div class="cs-process-step-card-right">
+                <p class="label label-muted">Understanding</p>
+                <h2 class="section-title section-title--process">
+                  Stepping into the shoes of <strong>museum lovers.</strong>
+                </h2>
+                <p class="cs-process-step-text">
+                  Because museums were not naturally part of my world, I had to
+                  consciously build empathy for the people I was designing for.
+                  Through competitive research and persona development, I
+                  explored different motivations, expectations and levels of
+                  technical confidence. Two personas ultimately guided the
+                  design process and helped me understand how differently people
+                  experience museums.
+                </p>
+                <div class="cs-process-cards">
+                  <div class="cs-process-card">
+                    <p class="cs-process-card-title">Challenge</p>
+                    <p class="cs-process-card-text">
+                      Design for people with different levels of technical
+                      confidence and cultural expectations.
+                    </p>
+                  </div>
+                  <div class="cs-process-card">
+                    <p class="cs-process-card-title">Solution</p>
+                    <p class="cs-process-card-text">
+                      Use personas and journey maps to uncover pain points and
+                      prioritize inclusiveness, accessibility and simplicity.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="cs-design-cards" style="display: block">
+            <p class="cs-image-caption cs-image-caption--center">
+              Competitive audit
+            </p>
+            <img
+              src="../Images/KunstAtelier/1_competitive_audit.png"
+              alt="Competitive audit"
+              class="cs-process-step-image cs-lightbox-trigger cursor-grow"
+            />
+            <p class="cs-image-caption cs-image-caption--center">Personas</p>
+            <img
+              src="../Images/KunstAtelier/1_persona_1.png"
+              alt="Persona 1"
+              class="cs-process-step-image cs-lightbox-trigger cursor-grow"
+            />
+            <img
+              src="../Images/KunstAtelier/1_persona_2.png"
+              alt="Persona 2"
+              class="cs-process-step-image cs-lightbox-trigger cursor-grow"
+            />
+            <p class="cs-image-caption cs-image-caption--center">
+              User journey maps
+            </p>
+            <div class="cs-image-container">
+              <img
+                src="../Images/KunstAtelier/1_user_journey_1.png"
+                alt="User journey map 1"
+                class="cs-process-step-image cs-lightbox-trigger cursor-grow"
+              />
+              <img
+                src="../Images/KunstAtelier/1_user_journey_2.png"
+                alt="User journey map 2"
+                class="cs-process-step-image cs-lightbox-trigger cursor-grow"
+              />
+            </div>
+            <p class="cs-image-caption cs-image-caption--center">Storyboard</p>
+            <img
+              src="../Images/KunstAtelier/1_storyboard.png"
+              alt="Storyboard"
+              class="cs-process-step-image cs-lightbox-trigger cursor-grow"
+            />
+          </div>
+        </div>
+
+        <!-- 02 Exploring -->
+        <div class="cs-process-step-section" id="section-exploring">
+          <div class="cs-process-step-card">
+            <div class="cs-process-step-card-top">
+              <p class="cs-process-step-card-num">02</p>
+              <div class="cs-process-step-card-right">
+                <p class="label label-muted">Exploring</p>
+                <h2 class="section-title section-title--process">
+                  Designing <strong>the experience</strong>
+                </h2>
+                <p class="cs-process-step-text">
+                  Thanks to my background in process modelling and business
+                  analysis, the user flow came quite naturally. I designed the
+                  app around a simple journey: Explore → Book → Plan → Visit.
+                  This structure mirrors how people naturally prepare for a
+                  museum visit. Paper sketches then helped me move beyond the
+                  obvious solutions and rapidly explore different layouts and
+                  features.
+                </p>
+                <div class="cs-process-cards">
+                  <div class="cs-process-card">
+                    <p class="cs-process-card-title">Challenge</p>
+                    <p class="cs-process-card-text">
+                      How do you make an information-heavy experience feel
+                      simple and intuitive?
+                    </p>
+                  </div>
+                  <div class="cs-process-card">
+                    <p class="cs-process-card-title">Solution</p>
+                    <p class="cs-process-card-text">
+                      Reduce cognitive load by simplifying navigation and
+                      surfacing important information earlier in the journey.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="cs-design-cards" style="display: block">
+            <p class="cs-image-caption cs-image-caption--center">User flow</p>
+            <img
+              src="../Images/KunstAtelier/2_1_flow_chart.png"
+              alt="Flow chart"
+              class="cs-process-step-image cs-lightbox-trigger cursor-grow"
+            />
+            <p class="cs-image-caption cs-image-caption--center">Wireframes</p>
+            <img
+              src="../Images/KunstAtelier/2_2_wireframe.png"
+              alt="Wireframe"
+              class="cs-process-step-image cs-lightbox-trigger cursor-grow"
+            />
+            <p class="cs-image-caption cs-image-caption--center">
+              Low-fidelity prototype
+            </p>
+            <img
+              src="../Images/KunstAtelier/2_3_lo-fi.png"
+              alt="Low fidelity prototype"
+              class="cs-process-step-image cs-lightbox-trigger cursor-grow"
+            />
+          </div>
+        </div>
+
+        <!-- 03 Testing -->
+        <div class="cs-process-step-section" id="section-testing">
+          <div class="cs-process-step-card">
+            <div class="cs-process-step-card-top">
+              <p class="cs-process-step-card-num">03</p>
+              <div class="cs-process-step-card-right">
+                <p class="label label-muted">Testing</p>
+                <h2 class="section-title section-title--process">
+                  The value of <strong>watching users struggle.</strong>
+                </h2>
+                <p class="cs-process-step-text">
+                  I conducted a moderated usability study with five participants
+                  representing different ages, technical confidence levels and
+                  language backgrounds. Participants were asked to book a
+                  ticket, share an exhibition and find opening hours. The
+                  sessions quickly revealed an important lesson: what felt
+                  intuitive to me was not always intuitive for others.
+                </p>
+                <div class="cs-process-cards">
+                  <div class="cs-process-card">
+                    <p class="cs-process-card-title">Challenge</p>
+                    <p class="cs-process-card-text">
+                      Designing for inclusiveness meant balancing the needs of
+                      users with different expectations, languages and levels of
+                      technical confidence.
+                    </p>
+                  </div>
+                  <div class="cs-process-card">
+                    <p class="cs-process-card-title">Solution</p>
+                    <p class="cs-process-card-text">
+                      Test with a diverse group of participants, identify
+                      recurring patterns and prioritize changes that improve the
+                      experience for the widest range of users.
+                    </p>
+                  </div>
+                </div>
+                <div class="cs-process-cards">
+                  <div class="cs-process-card">
+                    <p class="cs-process-card-title">Key Findings</p>
+                    <p class="cs-process-card-text">
+                      Opening hours were difficult to find.<br />The booking
+                      flow created uncertainty.<br />Sharing exhibitions felt
+                      intuitive.
+                    </p>
+                  </div>
+                  <div class="cs-process-card">
+                    <p class="cs-process-card-title">Design Changes</p>
+                    <p class="cs-process-card-text">
+                      Opening hours became more prominent.<br />The booking flow
+                      was reorganized.<br />An additional checkout step was
+                      introduced to reduce overwhelm.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <p class="cs-image-caption cs-image-caption--center">
+            Iterating the Lo-Fi
+          </p>
+          <img
+            src="../Images/KunstAtelier/3_refine.png"
+            alt="Testing refinements"
+            class="cs-process-step-image cs-lightbox-trigger cursor-grow"
+          />
+        </div>
+
+        <!-- 04 Refining -->
+        <div class="cs-process-step-section" id="section-refining">
+          <div class="cs-process-step-card">
+            <div class="cs-process-step-card-top">
+              <p class="cs-process-step-card-num">04</p>
+              <div class="cs-process-step-card-right">
+                <p class="label label-muted">Refining</p>
+                <h2 class="section-title section-title--process">
+                  Designing a calm and <strong>approachable experience.</strong>
+                </h2>
+                <p class="cs-process-step-text">
+                  After validating and iterating on the core flows, I focused on
+                  the visual identity of the app. The goal was to create an
+                  experience that felt cultural and refined while remaining
+                  approachable and easy to navigate. I developed the
+                  high-fidelity prototype and design library simultaneously to
+                  ensure consistency across the entire experience.
+                </p>
+
+                <div class="cs-process-cards">
+                  <div class="cs-process-card">
+                    <p class="cs-process-card-title">Challenge</p>
+                    <p class="cs-process-card-text">
+                      How do you create an experience that feels cultural and
+                      refined without becoming intimidating or difficult to use?
+                    </p>
+                  </div>
+                  <div class="cs-process-card">
+                    <p class="cs-process-card-title">Solution</p>
+                    <p class="cs-process-card-text">
+                      Use a restrained visual language, clear hierarchy and
+                      accessible design patterns to create an experience that
+                      feels both elegant and approachable.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="cs-image-caption cs-image-caption--center">
+            Design decisions (hover to discover)
+          </div>
+          <div class="cs-spotlight-image">
+            <img
+              src="../Images/KunstAtelier/4_1_library_2.png"
+              alt="KunstAtelier design system overview"
+              class="cs-process-step-image cs-lightbox-trigger cursor-grow"
+            />
+
+            <!-- Colors -->
+            <div
+              class="cs-spotlight-zone cursor-grow"
+              style="top: 0%; left: 0%; width: 20.7%; height: 51%"
+            >
+              <div class="cs-spotlight-card">
+                <p class="cs-design-card-title">
+                  Creativity and sophistication
+                </p>
+                <p class="cs-process-card-text">
+                  A restrained and neutral color palette keeps the focus on
+                  exhibitions and artworks instead of the interface itself.
+                  Violet is used intentionally as an accent color to guide
+                  attention and add a sense of creativity and sophistication.
+                </p>
+              </div>
+            </div>
+
+            <!-- Typography -->
+            <div
+              class="cs-spotlight-zone cursor-grow"
+              style="top: 0%; left: 23%; width: 46.3%; height: 51%"
+            >
+              <div class="cs-spotlight-card">
+                <p class="cs-design-card-title">A refined cultural aesthetic</p>
+                <p class="cs-process-card-text">
+                  The combination of Inria Serif and Inter balances a refined
+                  cultural aesthetic with strong readability across different
+                  age groups and levels of technical confidence. A consistent
+                  spacing system based on the golden ratio creates visual rhythm
+                  and harmony throughout the interface.
+                </p>
+              </div>
+            </div>
+
+            <!-- Buttons -->
+            <div
+              class="cs-spotlight-zone cursor-grow"
+              style="top: 0%; left: 71.7%; width: 28.4%; height: 40.7%"
+            >
+              <div class="cs-spotlight-card cs-spotlight-card--left">
+                <p class="cs-design-card-title">Design for confidence</p>
+                <p class="cs-process-card-text">
+                  Clear visual hierarchy distinguishes primary, secondary and
+                  disabled actions, helping users immediately understand what
+                  they can do. Important contextual information, such as ticket
+                  prices, is integrated directly into buttons to support
+                  confident decision-making.
+                </p>
+              </div>
+            </div>
+
+            <!-- Icons -->
+            <div
+              class="cs-spotlight-zone cursor-grow"
+              style="top: 42.5%; left: 71.7%; width: 28.4%; height: 25.3%"
+            >
+              <div class="cs-spotlight-card cs-spotlight-card--left">
+                <p class="cs-design-card-title">Communicate at a glance</p>
+                <p class="cs-process-card-text">
+                  Icons support orientation without dominating the interface.
+                  They also communicate key exhibition characteristics at a
+                  glance, such as accessibility, family-friendliness and
+                  available translations. This helps visitors quickly understand
+                  whether an exhibition is right for them before reading more
+                  detailed information.
+                </p>
+              </div>
+            </div>
+
+            <!-- Other elements -->
+            <div
+              class="cs-spotlight-zone cursor-grow"
+              style="top: 69.7%; left: 71.7%; width: 28.4%; height: 30.3%"
+            >
+              <div class="cs-spotlight-card cs-spotlight-card--left">
+                <p class="cs-design-card-title">Inspired by gallery spaces</p>
+                <p class="cs-process-card-text">
+                  Square cards and framed components echo the proportions of
+                  picture frames, subtly extending the visual language of the
+                  museum into the interface. This creates a cohesive experience
+                  between the digital and physical worlds.
+                </p>
+              </div>
+            </div>
+
+            <!-- Calendar -->
+            <div
+              class="cs-spotlight-zone cursor-grow"
+              style="top: 52.7%; left: 0%; width: 33.8%; height: 47.4%"
+            >
+              <div class="cs-spotlight-card">
+                <p class="cs-design-card-title">A familiar way to book</p>
+                <p class="cs-process-card-text">
+                  A full-month calendar view provides a familiar overview,
+                  allowing visitors to quickly choose a suitable date for both
+                  spontaneous and future visits.
+                </p>
+              </div>
+            </div>
+
+            <!-- Top and bottom bars -->
+            <div
+              class="cs-spotlight-zone cursor-grow"
+              style="top: 52.7%; left: 36.3%; width: 33%; height: 47.4%"
+            >
+              <div class="cs-spotlight-card">
+                <p class="cs-design-card-title">
+                  Following the visitor's journey
+                </p>
+                <p class="cs-process-card-text">
+                  The bottom navigation is organized around the natural museum
+                  journey: discover exhibitions, book tickets, plan the visit
+                  and access your bookings. This creates an intuitive flow that
+                  matches users' mental model.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="cs-process-step-section" id="section-refining">
+        <div class="cs-image-caption cs-image-caption--center">
+          Bringing my dream museum to life with chatGPT
+        </div>
+        <div class="cs-design-cards" style="display: block">
+          <img
+            src="../Images/KunstAtelier/4_3_ai.png"
+            alt="AI generated visual exploration"
+            class="cs-process-step-image cs-lightbox-trigger cursor-grow"
+          />
+          <div class="cs-image-caption cs-image-caption--center">
+            High-Fidelity Prototype
+          </div>
+          <img
+            src="../Images/KunstAtelier/4_2_hi-fi.png"
+            alt="High fidelity prototype"
+            class="cs-process-step-image cs-lightbox-trigger cursor-grow"
+          />
+        </div>
+      </div>
+
+      <div class="cs-lightbox" id="lightbox">
+        <button class="cs-lightbox-close" id="lightbox-close">✕</button>
+        <img class="cs-lightbox-img" id="lightbox-img" src="" alt="" />
+      </div>
+      <div class="cs-image-caption cs-image-caption--center">
+        Final prototype video
+      </div>
+
+      <div class="cs-product-video-wrap">
+        <video
+          src="../Images/KunstAtelier/5_final_product_video.mp4"
+          autoplay
+          muted
+          loop
+          playsinline
+          class="cs-product-video"
+        ></video>
+      </div>
+
+      <!-- THE PRODUCT -->
+      <section class="cs-product" id="section-product">
+        <p class="label label-muted">Final Prototype</p>
+        <h2
+          class="section-title"
+          style="text-align: left; margin-bottom: var(--element-gap)"
+        >
+          A museum experience <strong>without friction.</strong>
+        </h2>
+
+        <div class="cs-product-showcase">
+          <div
+            class="cs-product-card cs-product-card-large"
+            style="background: var(--project-4)"
+          >
+            <img
+              src="../Images/KunstAtelier/6_product_1.png"
+              alt="Final product screen 1"
+              style="
+                width: 80%;
+                height: auto;
+                display: block;
+                margin: 2rem auto;
+              "
+            />
+          </div>
+          <div class="cs-product-details">
+            <div class="cs-product-card">
+              <img
+                src="../Images/KunstAtelier/6_product_2.png"
+                alt="Final product screen 2"
+                style="
+                  width: 80%;
+                  height: auto;
+                  display: block;
+                  margin: 2rem auto;
+                "
+              />
+            </div>
+            <div class="cs-product-card">
+              <img
+                src="../Images/KunstAtelier/6_product_3.png"
+                alt="Final product screen 3"
+                style="
+                  width: 80%;
+                  height: auto;
+                  display: block;
+                  margin: 2rem auto;
+                "
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- REFLECTION -->
+
+      <section class="cs-afterlife" id="section-afterlife">
+        <div class="cs-afterlife-content">
+          <p class="label label-muted">Reflection</p>
+          <h2 class="section-title">
+            Growth begins outside your <strong>comfort zone.</strong>
+          </h2>
+          <div class="cs-context-bottom">
+            <p class="cs-context-description">
+              This project challenged me to design for people whose interests,
+              motivations and experiences were very different from my own. Along
+              the way, I not only learned more about UX design and user testing,
+              but also discovered that stepping outside your comfort zone can
+              lead to unexpected curiosity and growth.
+            </p>
+            <div class="accordion cs-afterlife-accordion">
+              <div class="accordion-item open">
+                <button class="accordion-trigger cursor-grow" type="button">
+                  <span>Impact</span>
+                  <span class="accordion-icon">+</span>
+                </button>
+                <div class="accordion-body">
+                  <div class="accordion-content">
+                    Strengthened my skills in user research, accessibility and
+                    end-to-end UX design.
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <button class="accordion-trigger cursor-grow" type="button">
+                  <span>Key takeaway</span>
+                  <span class="accordion-icon">+</span>
+                </button>
+                <div class="accordion-body">
+                  <div class="accordion-content">
+                    Good UX has very little to do with personal preferences and
+                    everything to do with understanding people. What felt
+                    intuitive to me was not always intuitive for others.
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <button class="accordion-trigger cursor-grow" type="button">
+                  <span>What now</span>
+                  <span class="accordion-icon">+</span>
+                </button>
+                <div class="accordion-body">
+                  <div class="accordion-content">
+                    KunstAtelier may only exist in Figma, but it left me with a
+                    newfound curiosity for museums. I might even visit a real
+                    exhibition this time.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- NEXT PROJECTS -->
+    <section class="cs-next">
+      <div class="cs-next-inner">
+        <div class="cs-next-left">
+          <p class="label label-light">Next Projects</p>
+          <h2 class="cs-next-title">Continue exploring.</h2>
+          <a class="big-link big-link--light" href="../index.html#work">
+            <span>Back to work overview</span>
+            <span class="link-arrow">↗</span>
+          </a>
+          <a class="big-link big-link--light" href="../index.html#contact">
+            <p class="link-text">Get in touch</p>
+            <p class="link-arrow">↗</p>
+          </a>
+        </div>
+        <div class="cs-next-right">
+          <a
+            class="cs-next-row big-link big-link--project"
+            href="../work/yellow.html"
+          >
+            <span>Yellow is the new green</span>
+            <span class="link-arrow">↗</span>
+          </a>
+          <a
+            class="cs-next-row big-link big-link--project"
+            href="../work/bw.html"
+          >
+            <span>Browsing the world's economy</span>
+            <span class="link-arrow">↗</span>
+          </a>
+
+          <a
+            class="cs-next-row big-link big-link--project"
+            href="../work/skills.html"
+          >
+            <span>Upskilling the Public Sector</span>
+            <span class="link-arrow">↗</span>
+          </a>
+          <a
+            class="cs-next-row big-link big-link--project"
+            href="../work/climate.html"
+          >
+            <span>100 Billion USD for Climate </span>
+            <span class="link-arrow">↗</span>
+          </a>
+        </div>
+      </div>
+    </section>
+    <div id="footer"></div>
+    <script src="../loader.js"></script>
+    <script src="../script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,957 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Anouk Fontaine | UX Designer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script>
+      (function () {
+        const themes = [
+          {
+            bg: "#F9F9F9",
+            text: "#1A1A1A",
+            muted: "rgba(0,0,0,0.6)",
+            p1: "#FCDEA4",
+            p2: "#b8ebda",
+            p3: "#528AAF",
+            p4: "#8862AA",
+            p5: "#287E70",
+          },
+          {
+            bg: "#1A1A1A",
+            text: "#F9F9F9",
+            muted: "rgba(255,255,255,0.4)",
+            p1: "#FFB72C",
+            p2: "#4bad8c",
+            p3: "#572F7A",
+            p4: "#19537A",
+            p5: "#16584D",
+          },
+          {
+            bg: "#FFD2B4",
+            text: "#9D4434",
+            muted: "rgba(233,79,16,0.7)",
+            p1: "#F4A367",
+            p2: "#657749",
+            p3: "#B05A6B",
+            p4: "#90726E",
+            p5: "#776B49",
+          },
+          {
+            bg: "#E5E8FF",
+            text: "#D45D5D",
+            muted: "rgba(212, 93, 93, 0.8)",
+            p1: "#F4CC99",
+            p2: "#81c0ab",
+            p3: "#BCD2EE",
+            p4: "#9B7EDE",
+            p5: "#3A4E48",
+          },
+        ];
+        const i = parseInt(localStorage.getItem("theme-index"), 10) || 0;
+        const t = themes[i];
+        const root = document.documentElement.style;
+        root.setProperty("--color-bg", t.bg);
+        root.setProperty("--color-text", t.text);
+        root.setProperty("--color-text-muted", t.muted);
+        root.setProperty("--project-1", t.p1);
+        root.setProperty("--project-2", t.p2);
+        root.setProperty("--project-3", t.p3);
+        root.setProperty("--project-4", t.p4);
+        root.setProperty("--project-5", t.p5);
+        root.setProperty("--moon-rotation", `${i * 90}deg`);
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="cursor"></div>
+
+    <!-- =============================================
+       NAV HTML  —  DO NOT MODIFY
+  ============================================= -->
+    <nav>
+      <a class="logo" href="/" data-home-link>
+        <span class="logo-first"
+          ><span class="l" data-i="0">A</span><span class="l" data-i="1">n</span
+          ><span class="l" data-i="2">o</span><span class="l" data-i="3">u</span
+          ><span class="l" data-i="4">k</span></span
+        ><span class="logo-last"
+          ><span class="l space" data-i="5">&nbsp;</span
+          ><span class="l dot">&middot;</span
+          ><span class="l space" data-i="6">&nbsp;</span
+          ><span class="l" data-i="7">F</span><span class="l" data-i="8">o</span
+          ><span class="l" data-i="9">n</span
+          ><span class="l" data-i="10">t</span
+          ><span class="l" data-i="11">a</span
+          ><span class="l" data-i="12">i</span
+          ><span class="l" data-i="13">n</span
+          ><span class="l" data-i="14">e</span></span
+        >
+      </a>
+      <div class="nav-right">
+        <div class="nav-controls">
+          <button class="nav-lang" aria-label="Switch language">
+            EN<span class="lang-orbit-dot"></span>
+          </button>
+          <button class="nav-theme" id="theme-toggle" aria-label="Toggle theme">
+            <span class="moon-glyph">&#9680;</span
+            ><span class="orbit-dot"></span>
+          </button>
+          <button class="nav-hamburger" id="nav-hamburger" aria-label="Menu">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+      <div class="mobile-menu" id="mobile-menu">
+        <a href="#services" class="mobile-menu-link">Services</a>
+        <a href="#work" class="mobile-menu-link">Work</a>
+        <a href="#about" class="mobile-menu-link">About</a>
+        <a href="#contact" class="mobile-menu-link">Contact</a>
+      </div>
+    </nav>
+
+    <!-- =============================================
+       LEFT SIDEBAR
+  ============================================= -->
+    <aside class="left-sidebar">
+      <a href="#services" data-target="services">Services</a>
+      <a href="#work" data-target="work">Work</a>
+      <a href="#about" data-target="about">About</a>
+      <a href="#contact" data-target="contact">Contact</a>
+    </aside>
+
+    <main>
+      <!-- =============================================
+         HERO
+    ============================================= -->
+      <div class="hero-location-wrap">
+        <p class="hero-location">
+          Bern, Switzerland &middot; CET <span id="cet-clock"></span>
+          <span class="availability-text">&middot; Available 1 day/week</span>
+        </p>
+        <!--  <p class="hero-availability">
+          <span class="availability-dot" aria-hidden="true">&#9677;</span>
+          <span class="availability-text">Available 1 day / week</span>
+        </p>
+      --></div>
+      <section class="hero">
+        <div class="hero-headline-wrap">
+          <div style="display: flex; align-items: flex-start; gap: 32px">
+            <div>
+              <h1 class="hero-headline">
+                <strong>Designing data experiences</strong> people actually
+                understand.
+              </h1>
+
+              <div class="hero-links-row">
+                <div class="hero-links">
+                  <a href="#work" class="big-link">
+                    <span class="link-text">See the work</span>
+                    <span class="link-arrow">↗</span>
+                  </a>
+
+                  <a href="#contact" class="big-link big-link--muted">
+                    <span class="link-text">Get in touch</span>
+                    <span class="link-arrow">↗</span>
+                  </a>
+                </div>
+                <button
+                  class="clean-data-btn"
+                  id="clean-data-btn"
+                  aria-label="Tidy up data"
+                >
+                  <svg
+                    class="chart-icon"
+                    viewBox="0 0 100 100"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <defs>
+                      <clipPath id="chart-clip">
+                        <circle cx="50" cy="50" r="49" />
+                      </clipPath>
+                    </defs>
+                    <circle
+                      class="chart-bg"
+                      cx="50"
+                      cy="50"
+                      r="49"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                    />
+                    <g clip-path="url(#chart-clip)">
+                      <rect
+                        class="chart-bar"
+                        x="0"
+                        y="70"
+                        width="26"
+                        height="30"
+                        fill="currentColor"
+                      />
+                      <rect
+                        class="chart-bar"
+                        x="30"
+                        y="46"
+                        width="26"
+                        height="54"
+                        fill="currentColor"
+                      />
+                      <rect
+                        class="chart-bar"
+                        x="60"
+                        y="18"
+                        width="26"
+                        height="82"
+                        fill="currentColor"
+                      />
+                    </g>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-bio">
+            <p class="hero-description">
+              As a UX &amp; Data Designer, I help organizations untangle complex
+              data and shape it into intuitive experiences that empower users to
+              make informed decisions with confidence.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- =============================================
+         SERVICES HTML
+    ============================================= -->
+      <section class="services" id="services">
+        <div class="services-inner">
+          <div class="section-heading section-heading--center">
+            <p class="label label-muted">Services</p>
+            <h2>A multidisciplinary approach</h2>
+          </div>
+
+          <svg
+            class="venn-svg cursor-grow"
+            viewBox="0 0 1440 950"
+            preserveAspectRatio="xMidYMid meet"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g class="venn-group" data-key="design">
+              <circle class="venn-circle" cx="720" cy="330" r="280" />
+              <text
+                class="venn-label-short"
+                x="720"
+                y="145"
+                text-anchor="middle"
+              >
+                Design
+              </text>
+              <g class="venn-label-expanded">
+                <text
+                  class="venn-expanded-title"
+                  style="text-transform: uppercase"
+                  x="720"
+                  y="254"
+                  text-anchor="middle"
+                >
+                  UX/UI Design
+                </text>
+                <text
+                  class="venn-expanded-item"
+                  x="720"
+                  y="308"
+                  text-anchor="middle"
+                >
+                  UX reviews
+                </text>
+                <text
+                  class="venn-expanded-item venn-dot"
+                  x="720"
+                  y="335"
+                  text-anchor="middle"
+                >
+                  &middot;
+                </text>
+                <text
+                  class="venn-expanded-item"
+                  x="720"
+                  y="352"
+                  text-anchor="middle"
+                >
+                  User flows &amp; information architecture
+                </text>
+                <text
+                  class="venn-expanded-item venn-dot"
+                  x="720"
+                  y="379"
+                  text-anchor="middle"
+                >
+                  &middot;
+                </text>
+                <text
+                  class="venn-expanded-item"
+                  x="720"
+                  y="396"
+                  text-anchor="middle"
+                >
+                  Wireframes &amp; prototyping
+                </text>
+                <text
+                  class="venn-expanded-item venn-dot"
+                  x="720"
+                  y="423"
+                  text-anchor="middle"
+                >
+                  &middot;
+                </text>
+                <text
+                  class="venn-expanded-item"
+                  x="720"
+                  y="440"
+                  text-anchor="middle"
+                >
+                  Usability improvements
+                </text>
+              </g>
+            </g>
+            <g class="venn-group" data-key="data">
+              <circle class="venn-circle" cx="510" cy="580" r="230" />
+              <text
+                class="venn-label-short"
+                x="304"
+                y="565"
+                text-anchor="start"
+              >
+                Data
+              </text>
+              <g class="venn-label-expanded">
+                <text
+                  class="venn-expanded-title"
+                  style="text-transform: uppercase"
+                  x="510"
+                  y="484"
+                  text-anchor="middle"
+                >
+                  Data Visualization
+                </text>
+                <text
+                  class="venn-expanded-item"
+                  x="510"
+                  y="538"
+                  text-anchor="middle"
+                >
+                  Dashboard strategy &amp; design
+                </text>
+                <text
+                  class="venn-expanded-item venn-dot"
+                  x="510"
+                  y="563"
+                  text-anchor="middle"
+                >
+                  &middot;
+                </text>
+                <text
+                  class="venn-expanded-item"
+                  x="510"
+                  y="578"
+                  text-anchor="middle"
+                >
+                  Reporting optimization
+                </text>
+                <text
+                  class="venn-expanded-item venn-dot"
+                  x="510"
+                  y="603"
+                  text-anchor="middle"
+                >
+                  &middot;
+                </text>
+                <text
+                  class="venn-expanded-item"
+                  x="510"
+                  y="618"
+                  text-anchor="middle"
+                >
+                  KPI &amp; metric frameworks
+                </text>
+                <text
+                  class="venn-expanded-item venn-dot"
+                  x="510"
+                  y="643"
+                  text-anchor="middle"
+                >
+                  &middot;
+                </text>
+                <text
+                  class="venn-expanded-item"
+                  x="510"
+                  y="658"
+                  text-anchor="middle"
+                >
+                  Data storytelling
+                </text>
+              </g>
+            </g>
+            <g class="venn-group" data-key="business">
+              <circle class="venn-circle" cx="930" cy="580" r="230" />
+              <text class="venn-label-short" x="1136" y="565" text-anchor="end">
+                Business
+              </text>
+              <g class="venn-label-expanded">
+                <text
+                  class="venn-expanded-title"
+                  style="text-transform: uppercase"
+                  x="930"
+                  y="484"
+                  text-anchor="middle"
+                >
+                  Business Analysis
+                </text>
+                <text
+                  class="venn-expanded-item"
+                  x="930"
+                  y="538"
+                  text-anchor="middle"
+                >
+                  Requirement analysis
+                </text>
+                <text
+                  class="venn-expanded-item venn-dot"
+                  x="930"
+                  y="563"
+                  text-anchor="middle"
+                >
+                  &middot;
+                </text>
+                <text
+                  class="venn-expanded-item"
+                  x="930"
+                  y="578"
+                  text-anchor="middle"
+                >
+                  Stakeholder alignment
+                </text>
+                <text
+                  class="venn-expanded-item venn-dot"
+                  x="930"
+                  y="603"
+                  text-anchor="middle"
+                >
+                  &middot;
+                </text>
+                <text
+                  class="venn-expanded-item"
+                  x="930"
+                  y="618"
+                  text-anchor="middle"
+                >
+                  Process optimization
+                </text>
+                <text
+                  class="venn-expanded-item venn-dot"
+                  x="930"
+                  y="643"
+                  text-anchor="middle"
+                >
+                  &middot;
+                </text>
+                <text
+                  class="venn-expanded-item"
+                  x="930"
+                  y="658"
+                  text-anchor="middle"
+                >
+                  Digital product strategy
+                </text>
+              </g>
+            </g>
+            <g class="venn-group" data-key="development">
+              <circle class="venn-circle" cx="720" cy="750" r="180" />
+              <text
+                class="venn-label-short"
+                x="720"
+                y="850"
+                text-anchor="middle"
+              >
+                Development
+              </text>
+              <g class="venn-label-expanded">
+                <text
+                  class="venn-expanded-title"
+                  style="text-transform: uppercase"
+                  x="720"
+                  y="644"
+                  text-anchor="middle"
+                >
+                  Technical Implementation
+                </text>
+                <text
+                  class="venn-expanded-item"
+                  x="720"
+                  y="698"
+                  text-anchor="middle"
+                >
+                  Landing pages
+                </text>
+                <text
+                  class="venn-expanded-item venn-dot"
+                  x="720"
+                  y="723"
+                  text-anchor="middle"
+                >
+                  &middot;
+                </text>
+                <text
+                  class="venn-expanded-item"
+                  x="720"
+                  y="738"
+                  text-anchor="middle"
+                >
+                  Power BI development
+                </text>
+                <text
+                  class="venn-expanded-item venn-dot"
+                  x="720"
+                  y="763"
+                  text-anchor="middle"
+                >
+                  &middot;
+                </text>
+                <text
+                  class="venn-expanded-item"
+                  x="720"
+                  y="778"
+                  text-anchor="middle"
+                >
+                  Front-end implementation
+                </text>
+                <text
+                  class="venn-expanded-item venn-dot"
+                  x="720"
+                  y="803"
+                  text-anchor="middle"
+                >
+                  &middot;
+                </text>
+                <text
+                  class="venn-expanded-item"
+                  x="720"
+                  y="818"
+                  text-anchor="middle"
+                >
+                  AI-assisted development
+                </text>
+              </g>
+            </g>
+          </svg>
+
+          <div
+            class="service-cards-overlay cursor-grow"
+            id="service-cards-overlay"
+          >
+            <div class="service-cards">
+              <div class="service-card" data-key="design">
+                <p class="service-card-title">UX/UI Design</p>
+                <div class="service-card-items">
+                  <p>UX reviews</p>
+                  <hr class="service-card-divider" />
+                  <p>User flows &amp; information architecture</p>
+                  <hr class="service-card-divider" />
+                  <p>Wireframes &amp; prototyping</p>
+                  <hr class="service-card-divider" />
+                  <p>Usability improvements</p>
+                </div>
+              </div>
+              <div class="service-card" data-key="data">
+                <p class="service-card-title">Data Visualization</p>
+                <div class="service-card-items">
+                  <p>Dashboard strategy &amp; design</p>
+                  <hr class="service-card-divider" />
+                  <p>Reporting optimization</p>
+                  <hr class="service-card-divider" />
+                  <p>KPI &amp; metric frameworks</p>
+                  <hr class="service-card-divider" />
+                  <p>Data storytelling</p>
+                </div>
+              </div>
+              <div class="service-card" data-key="business">
+                <p class="service-card-title">Business Analysis</p>
+                <div class="service-card-items">
+                  <p>Requirement analysis</p>
+                  <hr class="service-card-divider" />
+                  <p>Stakeholder alignment</p>
+                  <hr class="service-card-divider" />
+                  <p>Process optimization</p>
+                  <hr class="service-card-divider" />
+                  <p>Digital product strategy</p>
+                </div>
+              </div>
+              <div class="service-card" data-key="development">
+                <p class="service-card-title">Technical Implementation</p>
+                <div class="service-card-items">
+                  <p>Landing pages</p>
+                  <hr class="service-card-divider" />
+                  <p>Power BI development</p>
+                  <hr class="service-card-divider" />
+                  <p>Front-end implementation</p>
+                  <hr class="service-card-divider" />
+                  <p>AI-assisted development</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =============================================
+     WORK HTML
+============================================= -->
+      <section class="work" id="work">
+        <div class="section-heading section-heading--center">
+          <p class="label label-muted">Work</p>
+          <h2>Show, don't talk.</h2>
+        </div>
+
+        <div class="work-list">
+          <a href="work/yellow.html" class="work-card cursor-grow">
+            <div class="work-card-footer">
+              <p class="work-card-title work-card-title--dark">
+                Yellow is the New Green
+              </p>
+              <div class="work-card-tags">
+                <span class="work-tag work-tag--dark">Dashboard design</span>
+                <span class="work-tag work-tag--dark">UX/UI design</span>
+                <span class="work-tag work-tag--dark">End-to-end</span>
+                <span class="work-tag work-tag--dark">Development</span>
+              </div>
+            </div>
+            <div class="work-card-inner" style="background: var(--project-1)">
+              <img
+                class="work-card-img"
+                src="Images/Home/0_work_1.png"
+                alt="Yellow is the New Green"
+              />
+            </div>
+          </a>
+
+          <a href="work/bw.html" class="work-card cursor-grow">
+            <div class="work-card-footer">
+              <p class="work-card-title work-card-title--light">
+                Browsing the World's Economy
+              </p>
+              <div class="work-card-tags">
+                <span class="work-tag work-tag--light">Consulting</span>
+                <span class="work-tag work-tag--light">UX/UI Design</span>
+                <span class="work-tag work-tag--light">Data Visualization</span>
+              </div>
+            </div>
+            <div class="work-card-inner" style="background: var(--project-3)">
+              <img
+                class="work-card-img"
+                src="Images/Home/0_work_3.png"
+                alt="Browsing the World's Economy"
+              />
+            </div>
+          </a>
+          <a href="work/skills.html" class="work-card cursor-grow">
+            <div class="work-card-footer">
+              <p class="work-card-title work-card-title--dark">
+                Upskilling the Public Sector
+              </p>
+              <div class="work-card-tags">
+                <span class="cs-overview-tag">Design Thinking</span>
+                <span class="cs-overview-tag">UX Design</span>
+
+                <span class="cs-overview-tag">Rapid Prototyping</span>
+                <span class="cs-overview-tag">AI-assisted Workflow</span>
+              </div>
+            </div>
+            <div class="work-card-inner" style="background: var(--project-2)">
+              <img
+                class="work-card-img"
+                src="Images/Home/0_work_2.png"
+                alt="Gamified Skills Management"
+              />
+            </div>
+          </a>
+
+          <a href="work/kunstatelier.html" class="work-card cursor-grow">
+            <div class="work-card-footer">
+              <p class="work-card-title work-card-title--light">
+                Heard of KunstAtelier? Me Neither.
+              </p>
+              <div class="work-card-tags">
+                <span class="work-tag work-tag--light">UX/UI Design</span>
+                <span class="work-tag work-tag--light">Experimental</span>
+                <span class="work-tag work-tag--light"
+                  >Full Design Process</span
+                >
+              </div>
+            </div>
+            <div class="work-card-inner" style="background: var(--project-4)">
+              <img
+                class="work-card-img"
+                src="Images/Home/0_work_4.png"
+                alt="Heard of KunstAtelier? Me Neither."
+              />
+            </div>
+          </a>
+          <a href="work/climate.html" class="work-card cursor-grow">
+            <div class="work-card-footer">
+              <p class="work-card-title work-card-title--light">
+                100 Billion USD for Climate
+              </p>
+              <div class="work-card-tags">
+                <span class="work-tag work-tag--light">Dashboard Design</span>
+                <span class="work-tag work-tag--light">Data Visualization</span>
+
+                <span class="work-tag work-tag--light">End-to-end</span>
+                <span class="work-tag work-tag--light">Development</span>
+              </div>
+            </div>
+            <div class="work-card-inner" style="background: var(--project-5)">
+              <img
+                class="work-card-img"
+                src="Images/Home/0_work_5.png"
+                alt="100 Billion for Climate"
+              />
+            </div>
+          </a>
+        </div>
+      </section>
+      <!-- =============================================
+         ABOUT
+    ============================================= -->
+      <section class="about" id="about">
+        <div class="about-photo-top"></div>
+        <div class="about-content">
+          <p class="label label-muted">About</p>
+          <h2>It's nice to meet you.</h2>
+          <p class="about-intro">
+            Hello, visitor! I'm Anouk Fontaine, a UX Designer and BI Analyst at
+            the State Secretariat for Economic Affairs (SECO) in Bern,
+            Switzerland, where I help colleagues make better decisions through
+            intuitive tools and interfaces. You can talk to me in French,
+            (Swiss) German, English, or a mix of all three.
+          </p>
+          <!--design dashboards and tools that take the
+            friction out of my colleagues' everyday work. -->
+          <div class="accordion">
+            <div class="accordion-item">
+              <button class="accordion-trigger">
+                <span>I've been designing undercover for over 10 years.</span
+                ><span class="accordion-icon">+</span>
+              </button>
+              <div class="accordion-body">
+                <p class="accordion-content">
+                  I've worked across public administration, finance, human
+                  resources, and the hotel industry, giving me firsthand insight
+                  into a wide range of organizational challenges. My constant
+                  drive to make things easier for both my colleagues and myself
+                  has led me to apply UX design principles in every role I've
+                  held, whether UX was part of my job title or not. If you're
+                  curious about my journey, feel free to explore my detailed
+                  <a
+                    href="https://www.linkedin.com/in/anouk-fontaine-a92309145/"
+                    target="_blank"
+                  >
+                    LinkedIn profile </a
+                  >.
+                </p>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <button class="accordion-trigger">
+                <span>I have a background in business.</span
+                ><span class="accordion-icon">+</span>
+              </button>
+              <div class="accordion-body">
+                <p class="accordion-content">
+                  My Master's degree in Business Administration, combined with
+                  further education in UX design and data visualization, allows
+                  me to bridge business strategy, analytical thinking, and user
+                  experience.
+                </p>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <button class="accordion-trigger">
+                <span>My personality type is INFP.</span
+                ><span class="accordion-icon">+</span>
+              </button>
+              <div class="accordion-body">
+                <p class="accordion-content">
+                  I care about harmony, both in my designs and in the teams I
+                  work with. I'm always eager to learn, preferably by doing,
+                  which is how I ended up coding this entire portfolio myself
+                  despite having no prior coding experience. I also believe that
+                  humour makes collaboration and problem-solving better.
+                </p>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <button class="accordion-trigger">
+                <span>I'm also ah nuk.</span
+                ><span class="accordion-icon">+</span>
+              </button>
+              <div class="accordion-body">
+                <p class="accordion-content">
+                  In my free time, I'm also <a href="#">ah nuk</a>, writing and
+                  recording songs in my bedroom, or outside taking
+                  <a href="#">snapshots</a>.<br />I'm also really into noodle
+                  soups. My favourite one is at Mondo in Bern, got any worthy
+                  contender?
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="about-links">
+            <a href="#">LinkedIn</a>
+            <a href="#">Email</a>
+            <a href="#">Dribbble</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- =============================================
+     CONTACT HTML
+============================================= -->
+      <section class="contact" id="contact">
+        <div class="contact-inner">
+          <div class="contact-left">
+            <div class="section-heading">
+              <p class="label label-muted">Contact</p>
+            </div>
+
+            <div class="contact-headline">
+              <div class="contact-line1">
+                let's
+                <button class="contact-plus" id="contact-plus">&#8635;</button>
+              </div>
+
+              <div class="contact-line2">
+                <div id="contact-verb">work</div>
+                <span class="contact-verb-spacer">create</span>
+              </div>
+
+              <div class="contact-line3">together.</div>
+            </div>
+          </div>
+
+          <div class="big-links contact-links">
+            <a
+              href="mailto:bonjour@anoukfontaine.com"
+              class="big-link big-link--muted"
+            >
+              <span class="link-text">bonjour@anoukfontaine.com</span>
+              <span class="link-arrow">↗</span>
+            </a>
+
+            <a
+              href="https://linkedin.com/in/yourprofile"
+              target="_blank"
+              class="big-link big-link--muted"
+            >
+              <span class="link-text">LinkedIn</span>
+              <span class="link-arrow">↗</span>
+            </a>
+            <p class="contact-intro">
+              Open to full-time opportunities, freelance collaborations and
+              interesting conversations.
+            </p>
+          </div>
+        </div>
+      </section>
+      <!-- =============================================
+         CONTACT HTML
+    ============================================= -->
+      <!--     <section class="contact" id="contact">
+        <div class="contact-inner">
+          <div class="contact-left">
+            <div class="contact-headline">
+              <div class="contact-line1">
+                let's
+                <button class="contact-plus" id="contact-plus">&#8635;</button>
+              </div>
+              <div class="contact-line2">
+                <div id="contact-verb">work</div>
+                <span class="contact-verb-spacer">create</span>
+              </div>
+              <div class="contact-line3">together.</div>
+            </div>
+            <div class="big-links">
+              <a
+                href="https://linkedin.com/in/yourprofile"
+                target="_blank"
+                class="big-link big-link--muted"
+              >
+                <span class="link-text">LinkedIn</span>
+                <span class="link-arrow">↗</span>
+              </a>
+
+              <a
+                href="mailto:hello@anoukfontaine.com"
+                class="big-link big-link--muted"
+              >
+                <span class="link-text">Email</span>
+                <span class="link-arrow">↗</span>
+              </a>
+            </div>
+          </div>
+
+          <form class="contact-form" onsubmit="return false;">
+            <div class="section-heading section-heading--center">
+              <p class="label label-muted">Contact</p>
+            </div>
+            <div class="contact-field">
+              <input type="text" placeholder="Name" required />
+            </div>
+
+            <div class="contact-field">
+              <input type="email" placeholder="Email" required />
+            </div>
+            <div class="contact-field">
+              <input type="text" placeholder="Subject" required />
+            </div>
+
+            <div class="contact-field">
+              <textarea
+                rows="6"
+                placeholder="I'm interested in..."
+                oninput="
+                  this.style.height = 'auto';
+                  this.style.height = this.scrollHeight + 'px';
+                "
+                required
+              ></textarea>
+            </div>
+            <div class="contact-send">
+              <button type="submit" id="contact-send-btn">send note</button>
+            </div>
+          </form>
+        </div>
+      </section>
+      -->
+    </main>
+
+    <!-- =============================================
+       FOOTER
+  ============================================= -->
+    <div id="footer"></div>
+
+    <!-- =============================================
+   LOAD SCRIPT
+  ============================================= -->
+    <script src="loader.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -101,6 +101,22 @@ h2 {
               GLOBAL RULES
 ============================================= */
 
+.link-arrow {
+  display: inline-flex;
+  width: 1em;
+  height: 1em;
+  margin-left: 0.2em;
+  flex-shrink: 0;
+}
+
+.link-arrow svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+.big-link:hover .link-arrow {
+  transform: translate(3px, -3px);
+}
 /* heading container*/
 
 .section-heading {
@@ -1047,7 +1063,7 @@ body.case-page .left-sidebar > *:not(.left-sidebar-home):nth-child(8) {
 .about-photo-top {
   width: 45%;
   flex-shrink: 0;
-  background: var(--color-bg) url("images/Home/0_about.png") center center /
+  background: var(--color-bg) url("Images/Home/0_about.png") center center /
     cover no-repeat;
   margin: clamp(16px, 4vw, 64px);
   margin-right: 0;
@@ -4698,6 +4714,28 @@ img.cs-process-step-image {
   pointer-events: none;
 }
 
+body.gate-locked .nav-hamburger {
+  display: none !important;
+}
+
+body.gate-locked .nav-controls {
+  gap: 20px;
+  margin-left: 0;
+}
+
+body.gate-locked .nav-right {
+  gap: 0;
+}
+
+@media (max-width: 900px) {
+  body.gate-locked nav {
+    padding: 0 32px;
+  }
+
+  body.gate-locked .nav-controls {
+    margin-left: 0;
+  }
+}
 .site-gate-box {
   width: 100%;
   max-width: 420px;

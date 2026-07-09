@@ -203,14 +203,34 @@
                       <span class="link-text" data-i18n="hero.cta_work"
                         >See the work</span
                       >
-                      <span class="link-arrow">↗</span>
+                      <span class="link-arrow" aria-hidden="true">
+                        <svg viewBox="0 0 16 16" fill="none">
+                          <path
+                            d="M0 16L13 3M7.6 3H13V8.4"
+                            stroke="currentColor"
+                            stroke-width="1"
+                            stroke-linecap="butt"
+                            stroke-linejoin="miter"
+                          />
+                        </svg>
+                      </span>
                     </a>
 
                     <a href="#contact" class="big-link big-link--muted">
                       <span class="link-text" data-i18n="hero.cta_contact"
                         >Get in touch</span
                       >
-                      <span class="link-arrow">↗</span>
+                      <span class="link-arrow" aria-hidden="true">
+                        <svg viewBox="0 0 16 16" fill="none">
+                          <path
+                            d="M0 16L13 3M7.6 3H13V8.4"
+                            stroke="currentColor"
+                            stroke-width="1"
+                            stroke-linecap="butt"
+                            stroke-linejoin="miter"
+                          />
+                        </svg>
+                      </span>
                     </a>
                   </div>
                   <button
@@ -753,7 +773,7 @@
           </div>
 
           <div class="work-list">
-            <a href="work/yellow.html" class="work-card cursor-grow">
+            <a href="Work/yellow.html" class="work-card cursor-grow">
               <div class="work-card-footer">
                 <p
                   class="work-card-title work-card-title--dark"
@@ -793,7 +813,7 @@
               </div>
             </a>
 
-            <a href="work/bw.html" class="work-card cursor-grow">
+            <a href="Work/bw.html" class="work-card cursor-grow">
               <div class="work-card-footer">
                 <p
                   class="work-card-title work-card-title--light"
@@ -827,7 +847,7 @@
                 />
               </div>
             </a>
-            <a href="work/skills.html" class="work-card cursor-grow">
+            <a href="Work/skills.html" class="work-card cursor-grow">
               <div class="work-card-footer">
                 <p
                   class="work-card-title work-card-title--dark"
@@ -860,7 +880,7 @@
               </div>
             </a>
 
-            <a href="work/kunstatelier.html" class="work-card cursor-grow">
+            <a href="Work/kunstatelier.html" class="work-card cursor-grow">
               <div class="work-card-footer">
                 <p
                   class="work-card-title work-card-title--light"
@@ -894,7 +914,7 @@
                 />
               </div>
             </a>
-            <a href="work/climate.html" class="work-card cursor-grow">
+            <a href="Work/climate.html" class="work-card cursor-grow">
               <div class="work-card-footer">
                 <p
                   class="work-card-title work-card-title--light"
@@ -1100,7 +1120,17 @@
                 class="big-link big-link--muted"
               >
                 <span class="link-text">bonjour@anoukfontaine.com</span>
-                <span class="link-arrow">↗</span>
+                <span class="link-arrow" aria-hidden="true">
+                  <svg viewBox="0 0 16 16" fill="none">
+                    <path
+                      d="M0 16L13 3M7.6 3H13V8.4"
+                      stroke="currentColor"
+                      stroke-width="1"
+                      stroke-linecap="butt"
+                      stroke-linejoin="miter"
+                    />
+                  </svg>
+                </span>
               </a>
 
               <a
@@ -1110,7 +1140,17 @@
                 class="big-link big-link--muted"
               >
                 <span class="link-text">LinkedIn</span>
-                <span class="link-arrow">↗</span>
+                <span class="link-arrow" aria-hidden="true">
+                  <svg viewBox="0 0 16 16" fill="none">
+                    <path
+                      d="M0 16L13 3M7.6 3H13V8.4"
+                      stroke="currentColor"
+                      stroke-width="1"
+                      stroke-linecap="butt"
+                      stroke-linejoin="miter"
+                    />
+                  </svg>
+                </span>
               </a>
               <p class="contact-intro" data-i18n="contact.intro">
                 Open to full-time opportunities, freelance collaborations and
@@ -1122,73 +1162,96 @@
         <!-- =============================================
          CONTACT HTML
     ============================================= -->
-        <!--     <section class="contact" id="contact">
-        <div class="contact-inner">
-          <div class="contact-left">
-            <div class="contact-headline">
-              <div class="contact-line1">
-                let's
-                <button class="contact-plus" id="contact-plus">&#8635;</button>
+        <!--    <section class="contact" id="contact">
+          <div class="contact-inner">
+            <div class="contact-left">
+              <div class="contact-headline">
+                <div class="contact-line1">
+                  let's
+                  <button class="contact-plus" id="contact-plus">
+                    &#8635;
+                  </button>
+                </div>
+                <div class="contact-line2">
+                  <div id="contact-verb">work</div>
+                  <span class="contact-verb-spacer">create</span>
+                </div>
+                <div class="contact-line3">together.</div>
               </div>
-              <div class="contact-line2">
-                <div id="contact-verb">work</div>
-                <span class="contact-verb-spacer">create</span>
-              </div>
-              <div class="contact-line3">together.</div>
-            </div>
-            <div class="big-links">
-              <a
-                href="https://linkedin.com/in/yourprofile"
-                target="_blank"
-                class="big-link big-link--muted"
-              >
-                <span class="link-text">LinkedIn</span>
-                <span class="link-arrow">↗</span>
-              </a>
+              <div class="big-links">
+                <a
+                  href="https://linkedin.com/in/yourprofile"
+                  target="_blank"
+                  class="big-link big-link--muted"
+                >
+                  <span class="link-text">LinkedIn</span>
+                  <span class="link-arrow" aria-hidden="true">
+  <svg viewBox="0 0 16 16" fill="none">
+    <path
+      d="M0 16L13 3M7.6 3H13V8.4"
+      stroke="currentColor"
+      stroke-width="1"
+      stroke-linecap="butt"
+      stroke-linejoin="miter"
+    />
+  </svg>
+</span>
+                </a>
 
-              <a
-                href="mailto:hello@anoukfontaine.com"
-                class="big-link big-link--muted"
-              >
-                <span class="link-text">Email</span>
-                <span class="link-arrow">↗</span>
-              </a>
+                <a
+                  href="mailto:hello@anoukfontaine.com"
+                  class="big-link big-link--muted"
+                >
+                  <span class="link-text">Email</span>
+                  <span class="link-arrow" aria-hidden="true">
+  <svg viewBox="0 0 16 16" fill="none">
+    <path
+      d="M0 16L13 3M7.6 3H13V8.4"
+      stroke="currentColor"
+      stroke-width="1"
+      stroke-linecap="butt"
+      stroke-linejoin="miter"
+    />
+  </svg>
+</span>
+                </a>
+              </div>
             </div>
+
+            <form class="contact-form" onsubmit="return false;">
+              <div class="section-heading section-heading--center">
+                <p class="label label-muted">Contact</p>
+              </div>
+              <div class="contact-field">
+                <input type="text" placeholder="Name" required />
+              </div>
+
+              <div class="contact-field">
+                <input type="email" placeholder="Email" required />
+              </div>
+              <div class="contact-field">
+                <input type="text" placeholder="Subject" required />
+              </div>
+
+              <div class="contact-field">
+                <textarea
+                  rows="6"
+                  placeholder="I'm interested in..."
+                  oninput="
+                    this.style.height = 'auto';
+                    this.style.height = this.scrollHeight + 'px';
+                  "
+                  required
+                ></textarea>
+              </div>
+              <div class="contact-send">
+                <button type="submit" id="contact-send-btn">send note</button>
+              </div>
+            </form>
           </div>
-
-          <form class="contact-form" onsubmit="return false;">
-            <div class="section-heading section-heading--center">
-              <p class="label label-muted">Contact</p>
-            </div>
-            <div class="contact-field">
-              <input type="text" placeholder="Name" required />
-            </div>
-
-            <div class="contact-field">
-              <input type="email" placeholder="Email" required />
-            </div>
-            <div class="contact-field">
-              <input type="text" placeholder="Subject" required />
-            </div>
-
-            <div class="contact-field">
-              <textarea
-                rows="6"
-                placeholder="I'm interested in..."
-                oninput="
-                  this.style.height = 'auto';
-                  this.style.height = this.scrollHeight + 'px';
-                "
-                required
-              ></textarea>
-            </div>
-            <div class="contact-send">
-              <button type="submit" id="contact-send-btn">send note</button>
-            </div>
-          </form>
-        </div>
-      </section>
-      --></main>
+        </section>
+        -->
+      </main>
 
       <!-- =============================================
        FOOTER

@@ -5,28 +5,29 @@
   document.addEventListener("DOMContentLoaded", () => {
     const gate = document.getElementById("site-gate");
     const content = document.getElementById("site-content");
-
-    if (!gate || !content) return;
-
-    // Already unlocked
-    if (localStorage.getItem(STORAGE_KEY) === "true") {
-      gate.style.display = "none";
-      return;
-    }
-
-    // Hide portfolio
-    content.style.visibility = "hidden";
-    content.style.position = "absolute";
-    content.style.inset = "0";
-
     const input = document.getElementById("site-gate-input");
     const button = document.getElementById("site-gate-submit");
     const error = document.getElementById("site-gate-error");
+
+    if (!gate || !content || !input || !button || !error) return;
+
+    if (localStorage.getItem(STORAGE_KEY) === "true") {
+      gate.style.display = "none";
+      document.body.classList.remove("gate-locked");
+      return;
+    }
+
+    document.body.classList.add("gate-locked");
+
+    content.style.visibility = "hidden";
+    content.style.position = "absolute";
+    content.style.inset = "0";
 
     function unlock() {
       if (input.value === PASSWORD) {
         localStorage.setItem(STORAGE_KEY, "true");
 
+        document.body.classList.remove("gate-locked");
         gate.classList.add("site-gate-hide");
 
         setTimeout(() => {

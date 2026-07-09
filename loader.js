@@ -21,7 +21,7 @@ function loadScript(path) {
   document.body.appendChild(script);
 }
 function getPath(path) {
-  const isInWorkFolder = window.location.pathname.includes("/work/");
+  const isInWorkFolder = window.location.pathname.includes("/Work/");
   return isInWorkFolder ? "../" + path : path;
 }
 

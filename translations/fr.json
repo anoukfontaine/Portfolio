@@ -1,4 +1,12 @@
 {
+  "gate": {
+    "title": "Portfolio privé",
+    "description": "Ce portfolio est actuellement partagé avec un nombre limité de personnes.<br>Veuillez saisir le mot de passe pour continuer.",
+    "button": "Accéder au portfolio",
+    "placeholder": "Mot de passe",
+    "error": "Mot de passe incorrect."
+  },
+
   "nav": {
     "services": "Services",
     "work": "Projets",

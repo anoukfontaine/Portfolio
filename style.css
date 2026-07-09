@@ -4675,3 +4675,101 @@ img.cs-process-step-image {
     padding: 2rem;
   }
 }
+
+/* =============================================
+   PASSWORD
+============================================= */
+/* =============================================
+   SITE GATE
+============================================= */
+
+#site-gate {
+  min-height: calc(100vh - 72px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-8);
+  opacity: 1;
+  transition: opacity 0.35s ease;
+}
+
+#site-gate.site-gate-hide {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.site-gate-box {
+  width: 100%;
+  max-width: 420px;
+  text-align: center;
+}
+
+.site-gate-title {
+  margin-bottom: 16px;
+}
+
+.site-gate-text {
+  width: 600px;
+  max-width: calc(100vw - 64px);
+  margin-left: 50%;
+  transform: translateX(-50%);
+  margin-bottom: 40px;
+
+  color: var(--color-text-muted);
+  line-height: 1.7;
+}
+
+#site-gate-input {
+  width: 100%;
+  box-sizing: border-box;
+
+  padding: 14px 18px;
+  margin-bottom: 16px;
+
+  background: transparent;
+
+  border: var(--border-muted);
+  border-radius: var(--radius-pill);
+
+  color: var(--color-text);
+
+  font-family: var(--font);
+  font-size: 15px;
+
+  transition: all 0.2s ease;
+}
+
+#site-gate-input:focus {
+  outline: none;
+  border-color: var(--color-text);
+}
+
+#site-gate-submit {
+  width: 100%;
+
+  padding: 14px 18px;
+
+  border: none;
+  border-radius: var(--radius-pill);
+
+  background: var(--color-text);
+  color: var(--color-bg);
+
+  font-family: var(--font);
+  font-size: 15px;
+  font-weight: 500;
+
+  cursor: pointer;
+
+  transition: all 0.25s ease;
+}
+
+#site-gate-submit:hover {
+  transform: translateY(-2px);
+}
+
+#site-gate-error {
+  margin-top: 16px;
+  color: #d44;
+  display: none;
+}

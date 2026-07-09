@@ -1,4 +1,12 @@
 {
+  "gate": {
+    "title": "Privates Portfolio",
+    "description": "Dieses Portfolio wird derzeit mit ausgewählten Personen geteilt.<br>Bitte geben Sie das Passwort ein, um fortzufahren.",
+    "button": "Portfolio öffnen",
+    "placeholder": "Passwort",
+    "error": "Falsches Passwort."
+  },
+
   "nav": {
     "services": "Leistungen",
     "work": "Projekte",

@@ -55,6 +55,13 @@
           el.innerHTML = el.dataset.i18nOriginal;
         }
       });
+
+      // Translate placeholders
+      document.querySelectorAll("[data-i18n-placeholder]").forEach((el) => {
+        el.placeholder = "Password";
+      });
+      //
+
       applyContactVerbs(DEFAULT_CONTACT_VERBS);
       localStorage.setItem("lang", "en");
       document.documentElement.lang = "en";
@@ -79,6 +86,15 @@
       }
       el.innerHTML = value;
     });
+
+    // Translate placeholders
+    document.querySelectorAll("[data-i18n-placeholder]").forEach((el) => {
+      const value = resolveKey(dict, el.dataset.i18nPlaceholder);
+      if (value !== undefined) {
+        el.placeholder = value;
+      }
+    });
+    //
 
     applyContactVerbs(
       (dict.contact && dict.contact.verbs) || DEFAULT_CONTACT_VERBS,

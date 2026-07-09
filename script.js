@@ -134,6 +134,10 @@ const mobileMenu = document.getElementById("mobile-menu");
 hamburger.addEventListener("click", () => {
   hamburger.classList.toggle("open");
   mobileMenu.classList.toggle("open");
+  document.body.classList.toggle(
+    "menu-open",
+    mobileMenu.classList.contains("open"),
+  );
 });
 
 function smoothScrollTo(href, offset) {

@@ -13,7 +13,7 @@
   var PASSWORD = "noodlesoup";
 
   // 2. Filenames of the pages that should be protected.
-  var PROTECTED_PAGES = ["yellow.html", "climate.html"];
+  //var PROTECTED_PAGES = ["yellow.html", "climate.html"];
 
   function filenameOf(pathOrHref) {
     return pathOrHref.split("?")[0].split("#")[0].split("/").pop();

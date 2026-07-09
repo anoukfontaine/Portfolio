@@ -2,6 +2,7 @@
 
 <html lang="en">
   <head>
+    <script src="../password-gate.js"></script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Anouk Fontaine | UX Designer</title>
@@ -111,10 +112,16 @@
         </div>
       </div>
       <div class="mobile-menu" id="mobile-menu">
-        <a href="#services" class="mobile-menu-link">Services</a>
-        <a href="#work" class="mobile-menu-link">Work</a>
-        <a href="#about" class="mobile-menu-link">About</a>
-        <a href="#contact" class="mobile-menu-link">Contact</a>
+        <a href="#services" class="mobile-menu-link" data-i18n="nav.services"
+          >Services</a
+        >
+        <a href="#work" class="mobile-menu-link" data-i18n="nav.work">Work</a>
+        <a href="#about" class="mobile-menu-link" data-i18n="nav.about"
+          >About</a
+        >
+        <a href="#contact" class="mobile-menu-link" data-i18n="nav.contact"
+          >Contact</a
+        >
       </div>
     </nav>
 
@@ -122,10 +129,14 @@
        LEFT SIDEBAR
   ============================================= -->
     <aside class="left-sidebar">
-      <a href="#services" data-target="services">Services</a>
-      <a href="#work" data-target="work">Work</a>
-      <a href="#about" data-target="about">About</a>
-      <a href="#contact" data-target="contact">Contact</a>
+      <a href="#services" data-target="services" data-i18n="nav.services"
+        >Services</a
+      >
+      <a href="#work" data-target="work" data-i18n="nav.work">Work</a>
+      <a href="#about" data-target="about" data-i18n="nav.about">About</a>
+      <a href="#contact" data-target="contact" data-i18n="nav.contact"
+        >Contact</a
+      >
     </aside>
 
     <main>
@@ -134,8 +145,11 @@
     ============================================= -->
       <div class="hero-location-wrap">
         <p class="hero-location">
-          Bern, Switzerland &middot; CET <span id="cet-clock"></span>
-          <span class="availability-text">&middot; Available 1 day/week</span>
+          <span data-i18n="hero.location">Bern, Switzerland &middot; CET</span>
+          <span id="cet-clock"></span>
+          <span class="availability-text" data-i18n="hero.availability"
+            >&middot; Available 1 day/week</span
+          >
         </p>
         <!--  <p class="hero-availability">
           <span class="availability-dot" aria-hidden="true">&#9677;</span>
@@ -146,7 +160,7 @@
         <div class="hero-headline-wrap">
           <div style="display: flex; align-items: flex-start; gap: 32px">
             <div>
-              <h1 class="hero-headline">
+              <h1 class="hero-headline" data-i18n="hero.headline">
                 <strong>Designing data experiences</strong> people actually
                 understand.
               </h1>
@@ -154,12 +168,16 @@
               <div class="hero-links-row">
                 <div class="hero-links">
                   <a href="#work" class="big-link">
-                    <span class="link-text">See the work</span>
+                    <span class="link-text" data-i18n="hero.cta_work"
+                      >See the work</span
+                    >
                     <span class="link-arrow">↗</span>
                   </a>
 
                   <a href="#contact" class="big-link big-link--muted">
-                    <span class="link-text">Get in touch</span>
+                    <span class="link-text" data-i18n="hero.cta_contact"
+                      >Get in touch</span
+                    >
                     <span class="link-arrow">↗</span>
                   </a>
                 </div>
@@ -220,7 +238,7 @@
           </div>
 
           <div class="hero-bio">
-            <p class="hero-description">
+            <p class="hero-description" data-i18n="hero.description">
               As a UX &amp; Data Designer, I help organizations untangle complex
               data and shape it into intuitive experiences that empower users to
               make informed decisions with confidence.
@@ -235,8 +253,8 @@
       <section class="services" id="services">
         <div class="services-inner">
           <div class="section-heading section-heading--center">
-            <p class="label label-muted">Services</p>
-            <h2>A multidisciplinary approach</h2>
+            <p class="label label-muted" data-i18n="services.label">Services</p>
+            <h2 data-i18n="services.heading">A multidisciplinary approach</h2>
           </div>
 
           <svg
@@ -252,6 +270,7 @@
                 x="720"
                 y="145"
                 text-anchor="middle"
+                data-i18n="services_detail.design.short"
               >
                 Design
               </text>
@@ -262,6 +281,7 @@
                   x="720"
                   y="254"
                   text-anchor="middle"
+                  data-i18n="services_detail.design.title"
                 >
                   UX/UI Design
                 </text>
@@ -270,6 +290,7 @@
                   x="720"
                   y="308"
                   text-anchor="middle"
+                  data-i18n="services_detail.design.item1"
                 >
                   UX reviews
                 </text>
@@ -286,6 +307,7 @@
                   x="720"
                   y="352"
                   text-anchor="middle"
+                  data-i18n="services_detail.design.item2"
                 >
                   User flows &amp; information architecture
                 </text>
@@ -302,6 +324,7 @@
                   x="720"
                   y="396"
                   text-anchor="middle"
+                  data-i18n="services_detail.design.item3"
                 >
                   Wireframes &amp; prototyping
                 </text>
@@ -318,6 +341,7 @@
                   x="720"
                   y="440"
                   text-anchor="middle"
+                  data-i18n="services_detail.design.item4"
                 >
                   Usability improvements
                 </text>
@@ -330,6 +354,7 @@
                 x="304"
                 y="565"
                 text-anchor="start"
+                data-i18n="services_detail.data.short"
               >
                 Data
               </text>
@@ -340,6 +365,7 @@
                   x="510"
                   y="484"
                   text-anchor="middle"
+                  data-i18n="services_detail.data.title"
                 >
                   Data Visualization
                 </text>
@@ -348,6 +374,7 @@
                   x="510"
                   y="538"
                   text-anchor="middle"
+                  data-i18n="services_detail.data.item1"
                 >
                   Dashboard strategy &amp; design
                 </text>
@@ -364,6 +391,7 @@
                   x="510"
                   y="578"
                   text-anchor="middle"
+                  data-i18n="services_detail.data.item2"
                 >
                   Reporting optimization
                 </text>
@@ -380,6 +408,7 @@
                   x="510"
                   y="618"
                   text-anchor="middle"
+                  data-i18n="services_detail.data.item3"
                 >
                   KPI &amp; metric frameworks
                 </text>
@@ -396,6 +425,7 @@
                   x="510"
                   y="658"
                   text-anchor="middle"
+                  data-i18n="services_detail.data.item4"
                 >
                   Data storytelling
                 </text>
@@ -403,7 +433,13 @@
             </g>
             <g class="venn-group" data-key="business">
               <circle class="venn-circle" cx="930" cy="580" r="230" />
-              <text class="venn-label-short" x="1136" y="565" text-anchor="end">
+              <text
+                class="venn-label-short"
+                x="1136"
+                y="565"
+                text-anchor="end"
+                data-i18n="services_detail.business.short"
+              >
                 Business
               </text>
               <g class="venn-label-expanded">
@@ -413,6 +449,7 @@
                   x="930"
                   y="484"
                   text-anchor="middle"
+                  data-i18n="services_detail.business.title"
                 >
                   Business Analysis
                 </text>
@@ -421,6 +458,7 @@
                   x="930"
                   y="538"
                   text-anchor="middle"
+                  data-i18n="services_detail.business.item1"
                 >
                   Requirement analysis
                 </text>
@@ -437,6 +475,7 @@
                   x="930"
                   y="578"
                   text-anchor="middle"
+                  data-i18n="services_detail.business.item2"
                 >
                   Stakeholder alignment
                 </text>
@@ -453,6 +492,7 @@
                   x="930"
                   y="618"
                   text-anchor="middle"
+                  data-i18n="services_detail.business.item3"
                 >
                   Process optimization
                 </text>
@@ -469,6 +509,7 @@
                   x="930"
                   y="658"
                   text-anchor="middle"
+                  data-i18n="services_detail.business.item4"
                 >
                   Digital product strategy
                 </text>
@@ -481,6 +522,7 @@
                 x="720"
                 y="850"
                 text-anchor="middle"
+                data-i18n="services_detail.development.short"
               >
                 Development
               </text>
@@ -491,6 +533,7 @@
                   x="720"
                   y="644"
                   text-anchor="middle"
+                  data-i18n="services_detail.development.title"
                 >
                   Technical Implementation
                 </text>
@@ -499,6 +542,7 @@
                   x="720"
                   y="698"
                   text-anchor="middle"
+                  data-i18n="services_detail.development.item1"
                 >
                   Landing pages
                 </text>
@@ -515,6 +559,7 @@
                   x="720"
                   y="738"
                   text-anchor="middle"
+                  data-i18n="services_detail.development.item2"
                 >
                   Power BI development
                 </text>
@@ -531,6 +576,7 @@
                   x="720"
                   y="778"
                   text-anchor="middle"
+                  data-i18n="services_detail.development.item3"
                 >
                   Front-end implementation
                 </text>
@@ -547,6 +593,7 @@
                   x="720"
                   y="818"
                   text-anchor="middle"
+                  data-i18n="services_detail.development.item4"
                 >
                   AI-assisted development
                 </text>
@@ -560,51 +607,101 @@
           >
             <div class="service-cards">
               <div class="service-card" data-key="design">
-                <p class="service-card-title">UX/UI Design</p>
+                <p
+                  class="service-card-title"
+                  data-i18n="services_detail.design.title"
+                >
+                  UX/UI Design
+                </p>
                 <div class="service-card-items">
-                  <p>UX reviews</p>
+                  <p data-i18n="services_detail.design.item1">UX reviews</p>
                   <hr class="service-card-divider" />
-                  <p>User flows &amp; information architecture</p>
+                  <p data-i18n="services_detail.design.item2">
+                    User flows &amp; information architecture
+                  </p>
                   <hr class="service-card-divider" />
-                  <p>Wireframes &amp; prototyping</p>
+                  <p data-i18n="services_detail.design.item3">
+                    Wireframes &amp; prototyping
+                  </p>
                   <hr class="service-card-divider" />
-                  <p>Usability improvements</p>
+                  <p data-i18n="services_detail.design.item4">
+                    Usability improvements
+                  </p>
                 </div>
               </div>
               <div class="service-card" data-key="data">
-                <p class="service-card-title">Data Visualization</p>
+                <p
+                  class="service-card-title"
+                  data-i18n="services_detail.data.title"
+                >
+                  Data Visualization
+                </p>
                 <div class="service-card-items">
-                  <p>Dashboard strategy &amp; design</p>
+                  <p data-i18n="services_detail.data.item1">
+                    Dashboard strategy &amp; design
+                  </p>
                   <hr class="service-card-divider" />
-                  <p>Reporting optimization</p>
+                  <p data-i18n="services_detail.data.item2">
+                    Reporting optimization
+                  </p>
                   <hr class="service-card-divider" />
-                  <p>KPI &amp; metric frameworks</p>
+                  <p data-i18n="services_detail.data.item3">
+                    KPI &amp; metric frameworks
+                  </p>
                   <hr class="service-card-divider" />
-                  <p>Data storytelling</p>
+                  <p data-i18n="services_detail.data.item4">
+                    Data storytelling
+                  </p>
                 </div>
               </div>
               <div class="service-card" data-key="business">
-                <p class="service-card-title">Business Analysis</p>
+                <p
+                  class="service-card-title"
+                  data-i18n="services_detail.business.title"
+                >
+                  Business Analysis
+                </p>
                 <div class="service-card-items">
-                  <p>Requirement analysis</p>
+                  <p data-i18n="services_detail.business.item1">
+                    Requirement analysis
+                  </p>
                   <hr class="service-card-divider" />
-                  <p>Stakeholder alignment</p>
+                  <p data-i18n="services_detail.business.item2">
+                    Stakeholder alignment
+                  </p>
                   <hr class="service-card-divider" />
-                  <p>Process optimization</p>
+                  <p data-i18n="services_detail.business.item3">
+                    Process optimization
+                  </p>
                   <hr class="service-card-divider" />
-                  <p>Digital product strategy</p>
+                  <p data-i18n="services_detail.business.item4">
+                    Digital product strategy
+                  </p>
                 </div>
               </div>
               <div class="service-card" data-key="development">
-                <p class="service-card-title">Technical Implementation</p>
+                <p
+                  class="service-card-title"
+                  data-i18n="services_detail.development.title"
+                >
+                  Technical Implementation
+                </p>
                 <div class="service-card-items">
-                  <p>Landing pages</p>
+                  <p data-i18n="services_detail.development.item1">
+                    Landing pages
+                  </p>
                   <hr class="service-card-divider" />
-                  <p>Power BI development</p>
+                  <p data-i18n="services_detail.development.item2">
+                    Power BI development
+                  </p>
                   <hr class="service-card-divider" />
-                  <p>Front-end implementation</p>
+                  <p data-i18n="services_detail.development.item3">
+                    Front-end implementation
+                  </p>
                   <hr class="service-card-divider" />
-                  <p>AI-assisted development</p>
+                  <p data-i18n="services_detail.development.item4">
+                    AI-assisted development
+                  </p>
                 </div>
               </div>
             </div>
@@ -617,21 +714,40 @@
 ============================================= -->
       <section class="work" id="work">
         <div class="section-heading section-heading--center">
-          <p class="label label-muted">Work</p>
-          <h2>Show, don't talk.</h2>
+          <p class="label label-muted" data-i18n="work.label">Work</p>
+          <h2 data-i18n="work.heading">Show, don't talk.</h2>
         </div>
 
         <div class="work-list">
           <a href="work/yellow.html" class="work-card cursor-grow">
             <div class="work-card-footer">
-              <p class="work-card-title work-card-title--dark">
+              <p
+                class="work-card-title work-card-title--dark"
+                data-i18n="project_titles.yellow"
+              >
                 Yellow is the New Green
               </p>
               <div class="work-card-tags">
-                <span class="work-tag work-tag--dark">Dashboard design</span>
-                <span class="work-tag work-tag--dark">UX/UI design</span>
-                <span class="work-tag work-tag--dark">End-to-end</span>
-                <span class="work-tag work-tag--dark">Development</span>
+                <span
+                  class="work-tag work-tag--dark"
+                  data-i18n="work.yellow.tag1"
+                  >Dashboard design</span
+                >
+                <span
+                  class="work-tag work-tag--dark"
+                  data-i18n="work.yellow.tag2"
+                  >UX/UI design</span
+                >
+                <span
+                  class="work-tag work-tag--dark"
+                  data-i18n="work.yellow.tag3"
+                  >End-to-end</span
+                >
+                <span
+                  class="work-tag work-tag--dark"
+                  data-i18n="work.yellow.tag4"
+                  >Development</span
+                >
               </div>
             </div>
             <div class="work-card-inner" style="background: var(--project-1)">
@@ -645,13 +761,22 @@
 
           <a href="work/bw.html" class="work-card cursor-grow">
             <div class="work-card-footer">
-              <p class="work-card-title work-card-title--light">
+              <p
+                class="work-card-title work-card-title--light"
+                data-i18n="project_titles.bw"
+              >
                 Browsing the World's Economy
               </p>
               <div class="work-card-tags">
-                <span class="work-tag work-tag--light">Consulting</span>
-                <span class="work-tag work-tag--light">UX/UI Design</span>
-                <span class="work-tag work-tag--light">Data Visualization</span>
+                <span class="work-tag work-tag--light" data-i18n="work.bw.tag1"
+                  >Consulting</span
+                >
+                <span class="work-tag work-tag--light" data-i18n="work.bw.tag2"
+                  >UX/UI Design</span
+                >
+                <span class="work-tag work-tag--light" data-i18n="work.bw.tag3"
+                  >Data Visualization</span
+                >
               </div>
             </div>
             <div class="work-card-inner" style="background: var(--project-3)">
@@ -664,15 +789,26 @@
           </a>
           <a href="work/skills.html" class="work-card cursor-grow">
             <div class="work-card-footer">
-              <p class="work-card-title work-card-title--dark">
+              <p
+                class="work-card-title work-card-title--dark"
+                data-i18n="project_titles.skills"
+              >
                 Upskilling the Public Sector
               </p>
               <div class="work-card-tags">
-                <span class="cs-overview-tag">Design Thinking</span>
-                <span class="cs-overview-tag">UX Design</span>
+                <span class="cs-overview-tag" data-i18n="work.skills.tag1"
+                  >Design Thinking</span
+                >
+                <span class="cs-overview-tag" data-i18n="work.skills.tag2"
+                  >UX Design</span
+                >
 
-                <span class="cs-overview-tag">Rapid Prototyping</span>
-                <span class="cs-overview-tag">AI-assisted Workflow</span>
+                <span class="cs-overview-tag" data-i18n="work.skills.tag3"
+                  >Rapid Prototyping</span
+                >
+                <span class="cs-overview-tag" data-i18n="work.skills.tag4"
+                  >AI-assisted Workflow</span
+                >
               </div>
             </div>
             <div class="work-card-inner" style="background: var(--project-2)">
@@ -686,13 +822,26 @@
 
           <a href="work/kunstatelier.html" class="work-card cursor-grow">
             <div class="work-card-footer">
-              <p class="work-card-title work-card-title--light">
+              <p
+                class="work-card-title work-card-title--light"
+                data-i18n="project_titles.kunstatelier"
+              >
                 Heard of KunstAtelier? Me Neither.
               </p>
               <div class="work-card-tags">
-                <span class="work-tag work-tag--light">UX/UI Design</span>
-                <span class="work-tag work-tag--light">Experimental</span>
-                <span class="work-tag work-tag--light"
+                <span
+                  class="work-tag work-tag--light"
+                  data-i18n="work.kunstatelier.tag1"
+                  >UX/UI Design</span
+                >
+                <span
+                  class="work-tag work-tag--light"
+                  data-i18n="work.kunstatelier.tag2"
+                  >Experimental</span
+                >
+                <span
+                  class="work-tag work-tag--light"
+                  data-i18n="work.kunstatelier.tag3"
                   >Full Design Process</span
                 >
               </div>
@@ -707,15 +856,34 @@
           </a>
           <a href="work/climate.html" class="work-card cursor-grow">
             <div class="work-card-footer">
-              <p class="work-card-title work-card-title--light">
+              <p
+                class="work-card-title work-card-title--light"
+                data-i18n="project_titles.climate"
+              >
                 100 Billion USD for Climate
               </p>
               <div class="work-card-tags">
-                <span class="work-tag work-tag--light">Dashboard Design</span>
-                <span class="work-tag work-tag--light">Data Visualization</span>
+                <span
+                  class="work-tag work-tag--light"
+                  data-i18n="work.climate.tag1"
+                  >Dashboard Design</span
+                >
+                <span
+                  class="work-tag work-tag--light"
+                  data-i18n="work.climate.tag2"
+                  >Data Visualization</span
+                >
 
-                <span class="work-tag work-tag--light">End-to-end</span>
-                <span class="work-tag work-tag--light">Development</span>
+                <span
+                  class="work-tag work-tag--light"
+                  data-i18n="work.climate.tag3"
+                  >End-to-end</span
+                >
+                <span
+                  class="work-tag work-tag--light"
+                  data-i18n="work.climate.tag4"
+                  >Development</span
+                >
               </div>
             </div>
             <div class="work-card-inner" style="background: var(--project-5)">
@@ -734,9 +902,9 @@
       <section class="about" id="about">
         <div class="about-photo-top"></div>
         <div class="about-content">
-          <p class="label label-muted">About</p>
-          <h2>It's nice to meet you.</h2>
-          <p class="about-intro">
+          <p class="label label-muted" data-i18n="about.label">About</p>
+          <h2 data-i18n="about.heading">It's nice to meet you.</h2>
+          <p class="about-intro" data-i18n="about.intro">
             Hello, visitor! I'm Anouk Fontaine, a UX Designer and BI Analyst at
             the State Secretariat for Economic Affairs (SECO) in Bern,
             Switzerland, where I help colleagues make better decisions through
@@ -748,11 +916,15 @@
           <div class="accordion">
             <div class="accordion-item">
               <button class="accordion-trigger">
-                <span>I've been designing undercover for over 10 years.</span
+                <span data-i18n="about.accordion1.trigger"
+                  >I've been designing undercover for over 10 years.</span
                 ><span class="accordion-icon">+</span>
               </button>
               <div class="accordion-body">
-                <p class="accordion-content">
+                <p
+                  class="accordion-content"
+                  data-i18n="about.accordion1.content"
+                >
                   I've worked across public administration, finance, human
                   resources, and the hotel industry, giving me firsthand insight
                   into a wide range of organizational challenges. My constant
@@ -761,7 +933,7 @@
                   held, whether UX was part of my job title or not. If you're
                   curious about my journey, feel free to explore my detailed
                   <a
-                    href="https://www.linkedin.com/in/anouk-fontaine-a92309145/"
+                    href="https://www.linkedin.com/in/anoukfontaine/"
                     target="_blank"
                   >
                     LinkedIn profile </a
@@ -771,11 +943,15 @@
             </div>
             <div class="accordion-item">
               <button class="accordion-trigger">
-                <span>I have a background in business.</span
+                <span data-i18n="about.accordion2.trigger"
+                  >I have a background in business.</span
                 ><span class="accordion-icon">+</span>
               </button>
               <div class="accordion-body">
-                <p class="accordion-content">
+                <p
+                  class="accordion-content"
+                  data-i18n="about.accordion2.content"
+                >
                   My Master's degree in Business Administration, combined with
                   further education in UX design and data visualization, allows
                   me to bridge business strategy, analytical thinking, and user
@@ -785,11 +961,15 @@
             </div>
             <div class="accordion-item">
               <button class="accordion-trigger">
-                <span>My personality type is INFP.</span
+                <span data-i18n="about.accordion3.trigger"
+                  >My personality type is INFP.</span
                 ><span class="accordion-icon">+</span>
               </button>
               <div class="accordion-body">
-                <p class="accordion-content">
+                <p
+                  class="accordion-content"
+                  data-i18n="about.accordion3.content"
+                >
                   I care about harmony, both in my designs and in the teams I
                   work with. I'm always eager to learn, preferably by doing,
                   which is how I ended up coding this entire portfolio myself
@@ -800,24 +980,43 @@
             </div>
             <div class="accordion-item">
               <button class="accordion-trigger">
-                <span>I'm also ah nuk.</span
+                <span data-i18n="about.accordion4.trigger"
+                  >I'm also ah nuk.</span
                 ><span class="accordion-icon">+</span>
               </button>
               <div class="accordion-body">
-                <p class="accordion-content">
-                  In my free time, I'm also <a href="#">ah nuk</a>, writing and
-                  recording songs in my bedroom, or outside taking
-                  <a href="#">snapshots</a>.<br />I'm also really into noodle
-                  soups. My favourite one is at Mondo in Bern, got any worthy
-                  contender?
+                <p
+                  class="accordion-content"
+                  data-i18n="about.accordion4.content"
+                >
+                  In my free time, I'm also
+                  <a href="https://bio.site/ah.nuk" target="_blank"> ah nuk</a>,
+                  writing and recording songs in my bedroom, or outside taking
+                  <a
+                    href="https://www.instagram.com/anoukfontaine?igsh=MWZzYjhjYzB1Y2p5aQ%3D%3D&utm_source=qr"
+                    target="_blank"
+                  >
+                    snapshots</a
+                  >.<br />I'm also really into noodle soups. My favourite one is
+                  at Mondo in Bern, got any worthy contender?
                 </p>
               </div>
             </div>
           </div>
           <div class="about-links">
-            <a href="#">LinkedIn</a>
-            <a href="#">Email</a>
-            <a href="#">Dribbble</a>
+            <a
+              href="https://www.linkedin.com/in/anoukfontaine/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >LinkedIn</a
+            >
+            <a href="mailto:bonjour@anoukfontaine.com">Email</a>
+            <a
+              href="https://dribbble.com/anoukfontaine"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Dribbble</a
+            >
           </div>
         </div>
       </section>
@@ -829,12 +1028,12 @@
         <div class="contact-inner">
           <div class="contact-left">
             <div class="section-heading">
-              <p class="label label-muted">Contact</p>
+              <p class="label label-muted" data-i18n="contact.label">Contact</p>
             </div>
 
             <div class="contact-headline">
               <div class="contact-line1">
-                let's
+                <span data-i18n="contact.line1">let's</span>
                 <button class="contact-plus" id="contact-plus">&#8635;</button>
               </div>
 
@@ -843,7 +1042,9 @@
                 <span class="contact-verb-spacer">create</span>
               </div>
 
-              <div class="contact-line3">together.</div>
+              <div class="contact-line3" data-i18n="contact.line3">
+                together.
+              </div>
             </div>
           </div>
 
@@ -857,14 +1058,15 @@
             </a>
 
             <a
-              href="https://linkedin.com/in/yourprofile"
+              href="https://www.linkedin.com/in/anoukfontaine/"
               target="_blank"
+              rel="noopener noreferrer"
               class="big-link big-link--muted"
             >
               <span class="link-text">LinkedIn</span>
               <span class="link-arrow">↗</span>
             </a>
-            <p class="contact-intro">
+            <p class="contact-intro" data-i18n="contact.intro">
               Open to full-time opportunities, freelance collaborations and
               interesting conversations.
             </p>

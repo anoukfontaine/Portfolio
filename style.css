@@ -1200,15 +1200,35 @@ body.case-page .left-sidebar > *:not(.left-sidebar-home):nth-child(8) {
   align-items: center;
   gap: 24px;
   white-space: nowrap;
+  order: 1;
 }
 
 .contact-line2 {
   display: block;
   position: relative;
+  order: 2;
 }
 
 .contact-line3 {
   display: block;
+  order: 3;
+}
+
+/* German reads "Lass uns zusammen arbeiten", not "Lass uns arbeiten zusammen" -
+   so for German only, swap the visual order of the "zusammen" line and the
+   cycling verb line. The trailing period moves with it, from "zusammen." to
+   after whichever verb is currently showing. */
+html[lang="de"] .contact-line2 {
+  order: 3;
+}
+
+html[lang="de"] .contact-line3 {
+  order: 2;
+}
+
+html[lang="de"] #contact-verb::after,
+html[lang="de"] .contact-verb-spacer::after {
+  content: ".";
 }
 
 .contact-verb-spacer {

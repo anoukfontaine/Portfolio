@@ -28,5 +28,6 @@ function getPath(path) {
 Promise.all([loadComponent("#footer", getPath("components/footer.html"))]).then(
   () => {
     loadScript(getPath("script.js"));
+    loadScript(getPath("translations/i18n.js"));
   },
 );

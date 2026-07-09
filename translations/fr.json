@@ -1,0 +1,806 @@
+{
+  "nav": {
+    "services": "Services",
+    "work": "Projets",
+    "about": "À propos",
+    "contact": "Contact"
+  },
+  "hero": {
+    "location": "Berne, Suisse &middot; HEC",
+    "availability": "&middot; Disponible 1 jour/semaine",
+    "headline": "<strong>Transformer les données en expériences </strong> intuitives et compréhensibles.",
+    "cta_work": "Voir les projets",
+    "cta_contact": "Me contacter",
+    "description": "En tant que designeuse UX et data, j'aide les organisations à démêler des données complexes et à les transformer en expériences intuitives, pour permettre aux utilisateurs de prendre des décisions éclairées en toute confiance."
+  },
+  "services": {
+    "label": "Prestations",
+    "heading": "Une approche pluridisciplinaire"
+  },
+  "services_detail": {
+    "design": {
+      "short": "Design",
+      "title": "Design UX/UI",
+      "item1": "Revues UX",
+      "item2": "Parcours utilisateurs & architecture de l'information",
+      "item3": "Wireframes & prototypage",
+      "item4": "Améliorations d'utilisabilité"
+    },
+    "data": {
+      "short": "Data",
+      "title": "Visualisation de données",
+      "item1": "Stratégie & design de tableaux de bord",
+      "item2": "Optimisation du reporting",
+      "item3": "Cadres KPI & indicateurs",
+      "item4": "Data storytelling"
+    },
+    "business": {
+      "short": "Business",
+      "title": "Analyse métier",
+      "item1": "Analyse des besoins",
+      "item2": "Alignement des parties prenantes",
+      "item3": "Optimisation des processus",
+      "item4": "Stratégie de produit digital"
+    },
+    "development": {
+      "short": "Développement",
+      "title": "Mise en œuvre technique",
+      "item1": "Pages d'atterrissage",
+      "item2": "Développement Power BI",
+      "item3": "Développement front-end",
+      "item4": "Développement assisté par IA"
+    }
+  },
+  "work": {
+    "label": "Projets",
+    "heading": "Les actes plutôt que les mots.",
+    "yellow": {
+      "tag1": "Design de tableau de bord",
+      "tag2": "Design UX/UI",
+      "tag3": "De bout en bout",
+      "tag4": "Développement"
+    },
+    "bw": {
+      "tag1": "Conseil",
+      "tag2": "Design UX/UI",
+      "tag3": "Visualisation de données"
+    },
+    "skills": {
+      "tag1": "Design Thinking",
+      "tag2": "Design UX",
+      "tag3": "Prototypage rapide",
+      "tag4": "Workflow assisté par IA"
+    },
+    "kunstatelier": {
+      "tag1": "Design UX/UI",
+      "tag2": "Expérimental",
+      "tag3": "Processus de design complet"
+    },
+    "climate": {
+      "tag1": "Design de tableau de bord",
+      "tag2": "Visualisation de données",
+      "tag3": "De bout en bout",
+      "tag4": "Développement"
+    }
+  },
+  "about": {
+    "label": "À propos",
+    "heading": "Ravie de faire ta connaissance.",
+    "intro": "Bonjour ! Je suis Anouk Fontaine, UX designeuse et analyste BI au Secrétariat d'État à l'économie (SECO), à Berne. J'y conçois des outils et des interfaces qui aident mes collègues à prendre de meilleures décisions au quotidien. Tu peux me parler en français, en (suisse) allemand, en anglais, ou dans un joyeux mélange des trois.",
+    "accordion1": {
+      "trigger": "Je fais du design depuis plus de 10 ans, même si ça n'a pas toujours figuré dans mon titre.",
+      "content": "J'ai travaillé dans l'administration publique, la finance, les ressources humaines et l'hôtellerie. Ces expériences m'ont permis de découvrir des réalités très différentes et de comprendre de nombreux défis organisationnels. J'ai toujours eu envie de simplifier les choses, autant pour mes collègues que pour moi-même. C'est ce qui m'a naturellement amenée à appliquer les principes du design UX dans chacun de mes postes, bien avant que l'UX fasse partie de mon intitulé. Si tu veux en savoir plus sur mon parcours, tu peux jeter un œil à mon <a href=\"https://www.linkedin.com/in/anoukfontaine/\" target=\"_blank\">profil LinkedIn</a>."
+    },
+    "accordion2": {
+      "trigger": "J'ai une formation en économie d'entreprise.",
+      "content": "Mon master en économie d'entreprise, complété par des formations en design UX et en visualisation de données, me permet de faire le lien entre stratégie d'entreprise, analyse et expérience utilisateur."
+    },
+    "accordion3": {
+      "trigger": "Mon type de personnalité est INFP.",
+      "content": "L'harmonie est importante pour moi, autant dans ce que je conçois que dans les équipes avec lesquelles je travaille. J'adore apprendre de nouvelles choses, surtout en mettant directement les mains dans le cambouis. C'est d'ailleurs comme ça que j'ai appris à coder ce portfolio, sans aucune expérience préalable. Et je suis convaincue qu'une bonne dose d'humour rend la collaboration et la résolution de problèmes bien plus agréables."
+    },
+    "accordion4": {
+      "trigger": "Je suis aussi ah nuk.",
+      "content": "Pendant mon temps libre, je suis aussi <a href=\"https://bio.site/ah.nuk\" target=\"_blank\">ah nuk</a>, writing and recording songs in my bedroom, or outside taking <a href=\"https://www.instagram.com/anoukfontaine?igsh=MWZzYjhjYzB1Y2p5aQ%3D%3D&utm_source=qr\" target=\"_blank\">snapshots</a>.<br />I'm also really into noodle soups. My favourite one is at Mondo in Bern, got any worthy contender?"
+    }
+  },
+  "contact": {
+    "label": "Contact",
+    "line1": "",
+    "line3": "ensemble.",
+    "intro": "Ouverte à un poste fixe, à des missions freelance et aux discussions intéressantes.",
+    "verbs": [
+      "travaillons",
+      "rêvons",
+      "imaginons",
+      "construisons",
+      "améliorons",
+      "optimisons",
+      "concevons",
+      "créons"
+    ]
+  },
+  "footer": {
+    "availability_label": "Disponibilité actuelle",
+    "availability_text": "Disponible &middot; un jour par semaine",
+    "made_with": "fait avec &#9825; et patience"
+  },
+  "cs_shared": {
+    "_case_study": "===== SHARED CASE STUDY LABELS =====",
+    "back_to_work": "Retour aux projets",
+    "case_study_label": "Étude de cas",
+    "challenge": "Défi",
+    "context_product": "Produit",
+    "context_team": "Équipe",
+    "context_users": "Utilisateurs",
+    "continue_exploring": "Continuer à explorer.",
+    "label_design": "Design",
+    "label_develop": "Développement",
+    "label_research": "Recherche",
+    "label_test": "Test",
+    "legend_agree": "d'accord",
+    "legend_disagree": "pas d'accord",
+    "legend_neutral": "neutre",
+    "legend_strongly_agree": "tout à fait d'accord",
+    "legend_strongly_disagree": "pas du tout d'accord",
+    "meta_platform": "Plateforme",
+    "meta_role": "Rôle",
+    "meta_scope": "Périmètre",
+    "meta_status": "Statut",
+    "next_projects_label": "Projets suivants",
+    "process_constraints": "Contraintes",
+    "sidebar_afterlife": "Et après",
+    "sidebar_design": "02 Design",
+    "sidebar_develop": "03 Développement",
+    "sidebar_impact": "Impact",
+    "sidebar_overview": "Aperçu",
+    "sidebar_problem": "Problème",
+    "sidebar_process": "Processus",
+    "sidebar_product": "Produit",
+    "sidebar_research": "01 Recherche",
+    "sidebar_test": "04 Test",
+    "solution": "Solution",
+    "survey_results": "Résultats du sondage",
+    "testimonials_label": "Témoignages",
+    "sidebar_iterate": "03 Itérer",
+    "sidebar_launch": "04 Lancement",
+    "label_iterate": "Itérer",
+    "label_launch": "Lancement",
+    "meta_timeline": "Calendrier",
+    "sidebar_reflection": "Réflexion",
+    "sidebar_prototype": "Prototype"
+  },
+
+  "yellow": {
+    "_case_study": "===== YELLOW IS THE NEW GREEN =====",
+
+    "overview_description": "Transformer un processus de planification financière fragmenté, basé sur Excel, en un tableau de bord interactif qui aide les décideurs à comprendre leurs données, à les explorer et à prendre des décisions en toute confiance.",
+    "meta": {
+      "role_value": "UX et data designer",
+      "scope_value": "Conception du produit et responsabilité de bout en bout",
+      "platform_value": "Power BI<br />Application web",
+      "status_value": "En évolution continue<br />Produit déployé"
+    },
+    "context": {
+      "heading": "De données éparpillées à <strong>une source unique de vérité.</strong>",
+      "description": "Au sein de la division Coopération et développement économiques du SECO, la planification financière reposait sur des fichiers Excel mis à jour manuellement, des captures d'écran et de nombreux échanges pour expliquer les chiffres. Préparer les discussions budgétaires prenait souvent plusieurs jours, et les informations devenaient rapidement obsolètes. L'objectif du projet était de créer une source unique, interactive et fiable, rendant les données financières plus accessibles, plus compréhensibles et plus faciles à exploiter.",
+      "product_value": "Un cockpit financier interactif permettant de planifier et de suivre un budget annuel de plus de 400 millions de francs suisses.",
+      "users_value": "Chefs de section, analystes de données, responsables des bureaux de coopération et chefs de projet de la division Coopération et développement économiques du SECO.",
+      "team_value": "Projet individuel"
+    },
+    "problem": {
+      "heading": "Des décisions importantes freinées par des <strong>informations dispersées.</strong>",
+      "point1_title": "Chronophage",
+      "point1_text": "Les utilisateurs passaient plusieurs jours à rassembler et préparer les informations avant même de pouvoir les analyser ou en discuter.",
+      "point2_title": "Analyse limitée",
+      "point2_text": "Filtrer, comparer ou approfondir les données nécessitait souvent de créer des vues ou des calculs supplémentaires.",
+      "point3_title": "Manque de confiance",
+      "point3_text": "Les informations étant réparties dans plusieurs fichiers, les utilisateurs n'étaient jamais certains de travailler avec les données les plus récentes et les plus fiables."
+    },
+    "process_bar": {
+      "research_d1": "Parcours utilisateurs",
+      "research_d2": "Points de friction",
+      "design_d1": "Moodboard",
+      "design_d2": "Wireframes",
+      "develop_d1": "Apprentissage",
+      "develop_d2": "Développement",
+      "test_d1": "Tests d'utilisabilité",
+      "test_d2": "Questionnaire"
+    },
+    "process": {
+      "role_text": "J'ai été responsable du produit de bout en bout, de la recherche utilisateur au design UX/UI, en passant par le développement Power BI, le déploiement et l'amélioration continue.",
+      "constraints_text": "Je n'avais encore jamais travaillé avec Power BI. J'ai donc développé la solution en parallèle de mes responsabilités habituelles, en apprenant continuellement et en appliquant directement ce que j'apprenais."
+    },
+
+    "research": {
+      "heading": "<strong>Remettre mes hypothèses</strong> à l'épreuve.",
+      "text": "Même si je connaissais déjà bien les utilisateurs et leur façon de travailler, je voulais confronter mes hypothèses à la réalité et mieux comprendre leur manière d'utiliser les données financières. La \"User Journey Map\" a mis en évidence des frustrations récurrentes, révélé les besoins propres à chaque profil et permis d'identifier les principaux points de friction qui ont guidé la conception du tableau de bord.",
+      "challenge_text": "Les différents groupes d'utilisateurs n'avaient pas les mêmes besoins. Concevoir une solution qui convienne à tout le monde risquait d'aboutir à un tableau de bord trop générique.",
+      "solution_text": "User Journey Map, identifier les utilisateurs principaux et concevoir en priorité pour les personnes qui pilotent la planification et les décisions budgétaires, plutôt que pour le groupe le plus nombreux.",
+      "who_caption": "Pour qui je conçois",
+      "persona1": "Analyste de données",
+      "persona2": "Chef de section",
+      "persona3": "Responsable de bureau de coopération",
+      "persona4": "Chef de projet",
+      "journey_caption": "User Journey Map"
+    },
+
+    "design": {
+      "heading": "<strong>Concevoir</strong> pour rendre les choses claires.",
+      "text": "Les données financières peuvent vite sembler denses et intimidantes. Le design visuel a donc joué un rôle essentiel pour rendre des informations complexes plus faciles à comprendre et faciliter la prise de décision. Dans le contexte de l'administration publique, j'ai volontairement opté pour un langage visuel sobre, inspiré des tableaux de bord existants de l'administration fédérale suisse. L'objectif n'était pas de décorer, mais de créer une interface claire, accessible et digne de confiance.",
+      "challenge_text": "Rendre compréhensible, en un coup d'œil, un processus de planification financière de plus de 400 millions de francs, sans perdre le niveau de détail nécessaire aux décisions opérationnelles, tout en respectant les limites techniques de Power BI.",
+      "solution_text": "Une hiérarchie visuelle claire, des filtres pertinents, une divulgation progressive de l'information, une palette de couleurs sobre et des explorations interactives permettent de passer facilement d'une vue d'ensemble aux détails des projets. Chaque décision de design a été confrontée aux possibilités techniques de Power BI.",
+      "paper_caption": "Explorer des idées sur papier",
+      "decisions_caption": "Décisions de design",
+      "spotlight1_title": "Créer de la confiance grâce à la cohérence",
+      "spotlight1_text": "Des mises en page cohérentes, des indicateurs standardisés et une source unique de vérité permettent de comprendre les données plus rapidement et renforcent la confiance dans les informations.",
+      "spotlight2_title": "Concevoir pour les utilisateurs qui ont le plus d'impact",
+      "spotlight2_text": "Même si plusieurs profils utilisaient le tableau de bord, l'expérience a été pensée avant tout pour les personnes qui pilotent la planification et les décisions budgétaires.",
+      "spotlight3_title": "Ne laisser personne de côté",
+      "spotlight3_text": "Des filtres supplémentaires ont été ajoutés pour les utilisateurs secondaires afin que chacun retrouve rapidement les informations qui lui sont utiles.",
+      "spotlight4_title": "Choisir le bon graphique",
+      "spotlight4_text": "Les visualisations existantes ont été conservées lorsqu'elles remplissaient déjà leur rôle. De nouvelles ont été introduites uniquement lorsqu'elles apportaient une réelle valeur ajoutée.",
+      "spotlight5_title": "Moins de couleurs, plus de clarté",
+      "spotlight5_text": "Plutôt que de reprendre toute la palette de couleurs du département, j'ai privilégié des tons neutres qui mettent les données au premier plan. Le rouge fédéral reste la seule couleur d'accent et attire l'attention uniquement là où c'est utile.",
+      "spotlight6_title": "Faire en sorte que chaque pixel compte",
+      "spotlight6_text": "Le tableau de bord étant destiné à un usage interne, il n'était pas nécessaire de suivre strictement les consignes officielles. Une police plus compacte m'a permis d'afficher des titres de projets plus longs sans nuire à la lisibilité."
+    },
+
+    "develop": {
+      "heading": "Apprendre <strong>en faisant.</strong>",
+      "text": "Power BI était un terrain totalement nouveau pour moi. Grâce à des formations en ligne et à beaucoup d'expérimentation, j'ai réussi à développer le tableau de bord tout en continuant à assurer mes tâches habituelles. Mais introduire une nouvelle technologie ne se résume pas à son développement : il a aussi fallu accompagner les parties prenantes, gérer le changement et mettre en place de nouveaux processus d'accès et de gouvernance. En moins d'un an, je suis devenue la personne de référence pour le design de tableaux de bord et Power BI au sein de l'organisation.",
+      "challenge_text": "Concevoir un tableau de bord ambitieux sur une plateforme que je ne connaissais pas, tout en introduisant une nouvelle technologie, en définissant des processus de gouvernance et en remplaçant un processus métier critique.",
+      "solution_text": "Découper les problèmes complexes en étapes plus simples, m'appuyer sur des experts et sur l'IA lorsque c'était nécessaire, puis accompagner les parties prenantes grâce à une communication transparente, une implication précoce et un suivi continu.",
+      "model_caption": "Modèle de données Power BI"
+    },
+    "test": {
+      "heading": "<strong>Est-ce que ça fonctionne vraiment ?</strong>",
+      "text": "Avant le lancement, j'ai mené un test d'utilisabilité modéré avec une chef de section et un chef de projet. Quatre améliorations importantes en sont ressorties. Quatre mois après la mise en service du tableau de bord, un questionnaire a été envoyé à tous les chefs de section afin d'évaluer son adoption, sa facilité d'utilisation et le niveau de satisfaction. Dix chefs de section sur douze y ont répondu. Les résultats ont confirmé une forte adhésion au tableau de bord et à cette nouvelle façon de travailler.",
+      "challenge_text": "Les tests ayant été réalisés sur un produit déjà fonctionnel, chaque amélioration impliquait un effort de développement supplémentaire et devait être soigneusement priorisée. Au-delà de l'utilisabilité, je voulais aussi savoir si les utilisateurs adopteraient réellement cette nouvelle manière de travailler.",
+      "solution_text": "Les tests d'utilisabilité ont permis d'identifier les améliorations les plus importantes avant le lancement. Quelques mois plus tard, un questionnaire est venu confirmer l'adoption du tableau de bord, la satisfaction des utilisateurs et son intégration dans leur quotidien.",
+      "iterations_label": "Itérations",
+      "before_btn": "Avant",
+      "after_btn": "Après",
+      "survey1_label": "Ont trouvé le tableau de bord facile à utiliser.",
+      "survey2_label": "L'ont jugé meilleur que le fichier Excel.",
+      "survey3_label": "Chefs de section ayant répondu.",
+      "group_usability": "Utilisabilité",
+      "group_visual_design": "Design visuel",
+      "row1": "Je travaille désormais plus efficacement",
+      "row2": "Le tableau de bord contient toutes les informations dont j'ai besoin",
+      "row3": "Je trouve facilement les informations recherchées",
+      "row4": "Le tableau de bord est une nette amélioration par rapport au fichier Excel",
+      "row5": "Les visualisations sont claires et faciles à comprendre",
+      "row6": "Les couleurs et la typographie facilitent la lecture",
+      "feedback_caption": "Retours qualitatifs du questionnaire",
+      "quote1": "meilleure vue d'ensemble à tous les niveaux, [...] beaucoup plus intuitif",
+      "quote2": "vue d'ensemble nettement simplifiée, facilite la priorisation",
+      "quote3": "je dois moins souvent solliciter les chefs de projet",
+      "quote4": "je n'y vois que des avantages"
+    },
+
+    "product": {
+      "label": "Le produit final",
+      "heading": "Le futur est <strong>Jaune</strong>"
+    },
+    "impact": {
+      "heading": "D'un projet parallèle à un <strong>outil stratégique.</strong>",
+      "num1_label": "de travail de préparation manuel en moins.",
+      "num2_label": "des chefs de section considèrent le tableau de bord comme une amélioration par rapport au fichier Excel.",
+      "num3_label": "de demandes de clarification récurrentes en moins."
+    },
+    "afterlife": {
+      "heading": "L'histoire ne s'arrête <strong>pas au lancement.</strong>",
+      "text": "Ce qui avait commencé comme un cockpit financier est progressivement devenu un véritable écosystème de reporting. Au fil du temps, trois nouvelles pages sont venues répondre à de nouveaux besoins, dont deux tableaux de bord consacrés au climat, inspirés de mon projet de fin d'études du CAS en Data Visualization (voir l'étude de cas dédiée).",
+      "accordion1_trigger": "Climate Cockpit",
+      "accordion1_content": "Tableau de bord interactif consacré au déboursements climat, à la biodiversité et à la mobilisation du secteur privé.",
+      "accordion2_trigger": "Vue d'ensemble des projets",
+      "accordion2_content": "Tous les projets en cours et terminés réunis au même endroit.",
+      "accordion3_trigger": "Budget global",
+      "accordion3_content": "Vue d'ensemble des dépenses centrales et des autres coûts transversaux de la division.",
+      "caption": "Projet de fin d'études du CAS en Data Visualization à la HKB, qui a servi de base au Climate Cockpit ensuite développé pour le SECO."
+    }
+  },
+
+  "bw": {
+    "_case_study": "===== BROWSING THE WORLD'S ECONOMY =====",
+    "tag1": "Visualisation de données",
+    "tag2": "Design de tableau de bord",
+    "tag3": "Design UX/UI",
+    "tag4": "Revue UX",
+    "overview_description": "Remplacer des rapports de pays statiques par un tableau de bord public interactif qui rend l'information économique accessible, facile à explorer et toujours à jour.",
+    "view_live": "Voir le projet",
+    "meta": {
+      "role_value": "UX designer<br />Spécialiste en visualisation de données",
+      "timeline_value": "6 mois<br />2025–2026 (20 %)",
+      "platform_value": "Power BI<br />Tableau de bord web",
+      "status_value": "En ligne<br />Utilisé par le public"
+    },
+    "context": {
+      "heading": "Remplacer le reporting manuel par <strong>une expérience de données vivante.</strong>",
+      "description": "Le projet remplace des rapports de pays créés manuellement dans Word par un tableau de bord Power BI interactif présentant les principaux indicateurs économiques et des informations propres à chaque pays. Au lieu de parcourir des documents statiques, les utilisateurs peuvent désormais rechercher, comparer et explorer les données dans un tableau de bord multilingue mis à jour automatiquement.",
+      "product_value": "Un tableau de bord Power BI public et multilingue présentant des données économiques par pays.",
+      "users_value": "Entreprises, responsables politiques, chercheurs, grand public et collaborateurs du SECO.",
+      "team_value": "Une équipe pluridisciplinaire composée d'une UX designer, de deux développeurs et de trois expert(e)s métier de la division Relations économiques bilatérales du SECO."
+    },
+    "problem": {
+      "heading": "La mort par <strong>capture d'écran.</strong>",
+      "description": "Pour chaque pays, les informations économiques étaient assemblées manuellement dans un document Word. Les données étaient exportées depuis Excel, les graphiques intégrés sous forme de captures d'écran et l'ensemble devait être mis à jour à la main. Un processus répétitif, chronophage et propice aux erreurs, qui laissait très peu de place à l'exploration des données. Le potentiel d'un tableau de bord public interactif était immense.",
+      "point1_title": "Reporting manuel",
+      "point1_text": "Chaque rapport de pays devait être créé et mis à jour manuellement.",
+      "point2_title": "Informations rapidement obsolètes",
+      "point2_text": "Les captures d'écran et les copier-coller augmentaient le risque de diffuser des informations dépassées ou incohérentes.",
+      "point3_title": "Exploration limitée",
+      "point3_text": "Il était difficile de rechercher, comparer ou analyser les données de manière interactive."
+    },
+    "process_bar": {
+      "research_d1": "Hypothèses",
+      "research_d2": "Contexte",
+      "design_d1": "Architecture de l'information",
+      "design_d2": "Système visuel",
+      "iterate_d1": "Retours",
+      "iterate_d2": "Alternatives",
+      "launch_d1": "Publication interne",
+      "launch_d2": "Mise en ligne"
+    },
+    "process": {
+      "role_text": "J'ai fait le lien entre les expert(e)s métier et l'équipe de développement. En tant que seule UX et data designer du projet, j'ai transformé des informations économiques complexes en une expérience claire, accessible et agréable à utiliser.",
+      "constraints_text": "Le projet devait composer avec un budget limité, une date de mise en ligne fixe, un accès tardif aux données, l'absence de recherche utilisateur, quatre langues à gérer et des responsabilités de projet initialement peu claires."
+    },
+
+    "research": {
+      "heading": "Arriver <strong>après le début de l'histoire.</strong>",
+      "text1": "J'ai rejoint le projet six mois après son lancement officiel. Pourtant, très peu de progrès avaient été réalisés jusque-là, faute d'accès aux données. Les consultants estimaient qu'il fallait attendre que les données soient disponibles avant de commencer le design. Je n'étais pas du même avis.",
+      "text2": "Ce temps aurait pu être mis à profit pour mieux comprendre les futurs utilisateurs, explorer des premières pistes et valider les décisions de design les plus importantes. À la place, la plupart des choix reposaient presque exclusivement sur l'expertise interne, alors que le grand public ferait finalement partie des principaux utilisateurs du tableau de bord.",
+      "challenge_text": "Aucune véritable recherche utilisateur n'avait été menée et le grand public, pourtant l'un des principaux groupes cibles, n'avait jamais été impliqué dans le processus.",
+      "solution_text": "Remettre systématiquement les hypothèses en question et défendre le point de vue des utilisateurs tout au long du projet, même si de nombreuses décisions avaient déjà été prises avant mon arrivée.",
+      "caption": "Photos de l'atelier de lancement"
+    },
+    "design": {
+      "heading": "Découper le document Word <strong>pour tout repenser.</strong>",
+      "text1": "Avec un consultant, nous avons repris la structure du rapport de pays depuis le début. Une première version existait déjà, mais l'architecture de l'information manquait de clarté et il était difficile de s'y retrouver.",
+      "text2": "Nous avons littéralement découpé le document Word pour réfléchir à une nouvelle manière d'organiser son contenu dans un tableau de bord plus intuitif. Nous nous sommes aussi demandé quelles informations méritaient une visualisation et lesquelles étaient plus pertinentes sous forme de tableau.",
+      "challenge_text": "Le produit développé ne correspondait pas toujours aux prototypes. Les couleurs, les alignements et d'autres éléments visuels variaient selon les implémentations, ce qui nécessitait un suivi constant.",
+      "solution_text": "Vérifier régulièrement les développements, prioriser les décisions de design qui avaient le plus d'impact sur l'expérience utilisateur et trouver, avec les développeurs, des alternatives lorsque des contraintes techniques apparaissaient.",
+      "ia_caption": "Repenser l'architecture de l'information et explorer les premières idées de visualisation",
+      "decisions_caption": "Décisions de design",
+      "spotlight1_title": "Une couleur qui a du sens",
+      "spotlight1_text": "La palette de couleurs s'inspire des tableaux de bord existants de l'administration fédérale afin de créer une expérience familière et rassurante. Le rouge fédéral est réservé à la Suisse, ce qui facilite immédiatement les comparaisons. Seul le nom du pays est mis en évidence, tandis que les valeurs restent neutres afin d'éviter toute interprétation involontaire.",
+      "spotlight2_title": "Concevoir dans un cadre défini",
+      "spotlight2_text": "La typographie suit les directives graphiques de la Confédération, avec Arial comme police imposée. Sa lisibilité facilite une lecture rapide des informations. En revanche, certaines contraintes techniques empêchaient d'ajuster l'espacement des lettres ou des lignes, ce qui imposait une mise en page plus compacte.",
+      "spotlight3_title": "Guider le regard",
+      "spotlight3_text": "Les icônes ont été utilisées avec parcimonie afin de faciliter l'orientation sans détourner l'attention des données.",
+      "spotlight4_title": "Toujours garder ses repères",
+      "spotlight4_text": "Une barre latérale toujours visible permet de se repérer facilement, tandis que le filtre pays offre la possibilité de passer d'un profil à l'autre à tout moment.",
+      "spotlight5_title": "Choisir le graphique le plus adapté",
+      "spotlight5_text": "Chaque visualisation a été choisie en fonction du message qu'elle devait transmettre. Des couleurs cohérentes pour les exportations et les importations facilitent les comparaisons, tandis qu'une palette discrète évite toute surcharge visuelle.",
+      "spotlight6_title": "Structurer la complexité",
+      "spotlight6_text": "Une mise en page cohérente sous forme de cartes organise clairement les indicateurs et les informations. Les données importantes ressortent immédiatement, les couleurs distinguent les exportations des importations et les sources affichées directement sur chaque carte renforcent la transparence.",
+      "spotlight7_title": "Les chiffres quand ils comptent",
+      "spotlight7_text": "Les tableaux complètent les visualisations lorsqu'une valeur précise est nécessaire. Ils peuvent également être exportés vers Excel pour permettre des analyses plus approfondies."
+    },
+
+    "iterate": {
+      "heading": "Jamais deux <strong>sans trois.</strong>",
+      "text": "Le projet a évolué en trois grandes étapes. Nous avons d'abord développé un MVP, puis l'avons amélioré au fil de plusieurs cycles de retours et d'implémentation jusqu'à obtenir une première version interne. Une dernière phase d'ajustements a ensuite permis de préparer la mise en ligne publique.",
+      "challenge_text": "Les retours arrivaient en continu, mais sans véritable structure. En parallèle, les contraintes techniques faisaient régulièrement évoluer ce qu'il était possible de réaliser.",
+      "solution_text": "Mettre en place un processus de suivi plus structuré, avec des échéances claires et des échanges réguliers avec les développeurs, a permis d'améliorer la collaboration et de faire avancer le projet de manière plus fluide.",
+      "caption": "Exemple d'une page du document de suivi des retours"
+    },
+    "launch": {
+      "heading": "Prêt pour le <strong>grand public.</strong>",
+      "text": "Le tableau de bord final a été publié sous la forme d'un tableau de bord Power BI public et intégré au nouveau site internet du SECO. À la place de rapports de pays statiques, les utilisateurs peuvent désormais explorer des données économiques de manière interactive, dans quatre langues et avec des informations mises à jour automatiquement.",
+      "challenge_text": "Le tableau de bord devait être prêt pour le lancement du nouveau site internet tout en répondant aux exigences de qualité d'un produit public disponible en quatre langues.",
+      "solution_text": "Une collaboration étroite avec les développeurs, une documentation directement exploitable et des décisions rapides ont permis de résoudre les questions au fur et à mesure et de respecter les délais.",
+      "release_caption": "Le Country Cockpit sur le site internet du SECO"
+    },
+
+    "product": {
+      "label": "Le produit final",
+      "heading": "<strong>Browsing the World's Economy</strong>"
+    },
+    "impact": {
+      "heading": "Passer de plusieurs semaines de reporting manuel à des <strong>insights presque en temps réel.</strong>",
+      "num1_label": "de travail manuel éliminé.",
+      "num2_label": "Un seul tableau de bord remplace plus de 100 rapports Word.",
+      "num3_label": "du processus automatisé."
+    },
+    "testimonial_label": "Témoignage",
+    "testimonial": {
+      "quote": "« Anouk a conçu les concepts visuels, les visualisations de données et les prototypes de notre Country Cockpit numérique. Elle a réussi à transformer un sujet plutôt aride en une expérience claire, engageante et agréable à explorer. Nous sommes très fiers du résultat ! »",
+      "author": "Andrea Rauber Saxer, Ambassadrice et cheffe des Relations économiques bilatérales, SECO",
+      "highlight": "« Anouk [...] a transformé un sujet plutôt aride en une <strong>expérience engageante</strong> [...] »"
+    },
+    "afterlife": {
+      "heading": "Un tableau de bord public conçu pour <strong>évoluer.</strong>",
+      "text": "Le tableau de bord est désormais accessible au public et constitue une base solide pour de futures évolutions. Le SECO prévoit d'y intégrer de nouvelles données, et d'autres offices fédéraux souhaitent déjà s'en inspirer pour leurs propres tableaux de bord publics.",
+      "accordion1_trigger": "Accessible au public",
+      "accordion1_content": "Le tableau de bord remplace les rapports de pays statiques par une expérience de données interactive, multilingue et accessible à toutes et tous.",
+      "accordion2_trigger": "Pensé pour évoluer",
+      "accordion2_content": "Sa structure a été conçue pour intégrer facilement de nouvelles données et fonctionnalités à l'avenir.",
+      "accordion3_trigger": "Une source d'inspiration",
+      "accordion3_content": "Le projet sert de référence pour le développement de futurs tableaux de bord publics au sein de l'administration fédérale."
+    }
+  },
+
+  "project_titles": {
+    "yellow": "Le jaune est le nouveau vert",
+    "bw": "Surfer l'économie mondiale",
+    "skills": "Renforcer les compétences dans le secteur public",
+    "kunstatelier": "Déjà entendu parler de KunstAtelier ? Moi non plus.",
+    "climate": "100 milliards USD pour le climat"
+  },
+
+  "skills": {
+    "_case_study": "===== UPSKILLING THE PUBLIC SECTOR =====",
+    "overview_description": "Un sprint de Design Thinking explorant comment l'apprentissage personnalisé et la gamification peuvent accompagner la transformation numérique au sein de l'administration fédérale suisse.",
+    "constraint_label": "Défi",
+    "learning_label": "Enseignement",
+    "label_empathize": "Comprendre",
+    "label_define": "Définir",
+    "label_ideate": "Imaginer",
+    "label_prototype": "Prototyper",
+    "sidebar": {
+      "empathize": "01 Comprendre",
+      "define": "02 Définir",
+      "ideate": "03 Imaginer",
+      "prototype": "04 Prototyper",
+      "test": "05 Tester"
+    },
+    "meta": {
+      "role_value": "Membre de l'équipe Design Thinking<br />Initiatrice du défi & UX designer",
+      "timeline_value": "3,5 jours",
+      "platform_value": "Prototype web<br />Claude AI",
+      "status_value": "Design Sprint<br />Prototype conceptuel"
+    },
+    "context": {
+      "heading": "Un sprint de trois jours pour <strong>un immense défi.</strong>",
+      "description": "La transformation numérique est une priorité stratégique de l'administration fédérale suisse depuis plusieurs années. Pourtant, de nombreuses organisations peinent encore à la traduire en actions concrètes. À partir d'un défi rencontré dans mon quotidien professionnel, notre équipe interdisciplinaire a exploré, pendant un sprint de Design Thinking de trois jours, comment l'apprentissage personnalisé pouvait aider les collaborateurs à développer les compétences nécessaires à cette transformation.",
+      "product_value": "Le concept d'une plateforme d'apprentissage qui encourage et récompense les collaborateurs pour développer les compétences dont l'organisation aura réellement besoin.",
+      "users_value": "Collaborateurs de l'administration fédérale & RH",
+      "team_value": "Équipe interdisciplinaire de cinq personnes issues de l'informatique, de la gestion de projet et de l'UX."
+    },
+    "problem": {
+      "heading": "Tout le monde parle de transformation numérique. <strong>Mais au fond, qu'est-ce que ça veut dire ?</strong>",
+      "point1_title": "Manque de vision",
+      "point1_text": "La transformation numérique est une priorité stratégique, mais il est souvent difficile de savoir ce qu'elle implique concrètement au quotidien.",
+      "point2_title": "Peu de ressources",
+      "point2_text": "Les collaborateurs sont censés porter le changement avec peu de temps, peu de moyens et des attentes souvent floues.",
+      "point3_title": "Une grande complexité",
+      "point3_text": "La taille de l'organisation rend les transformations difficiles à coordonner et à prioriser."
+    },
+    "process_bar": {
+      "empathize_d1": "Entretiens",
+      "empathize_d2": "Insights",
+      "define_d1": "Affinity mapping",
+      "define_d2": "Questions HMW",
+      "ideate_d1": "Random Word",
+      "ideate_d2": "Boîte morphologique",
+      "prototype_d1": "Prompting IA",
+      "prototype_d2": "Prototype interactif",
+      "test_d1": "Retours",
+      "test_d2": "Reality Check"
+    },
+    "process": {
+      "role_text": "J'ai participé à la recherche utilisateur, à l'analyse des enseignements avec l'aide de l'IA, à l'idéation et au prototypage interactif. J'ai également proposé le défi qui est devenu le point de départ du projet.",
+      "constraint_text": "Le sujet était volontairement très large alors que le temps était extrêmement limité. En seulement trois jours, nous devions comprendre le problème, mener des entretiens, imaginer des solutions et créer un prototype interactif."
+    },
+    "empathize": {
+      "heading": "Comment les collaborateurs <strong>vivent-ils la transformation numérique ?</strong>",
+      "text1": "Pour mieux comprendre les défis liés à la transformation numérique, chaque membre de l'équipe a mené des entretiens avec des collaborateurs issus de différents domaines de l'administration fédérale. Au total, nous avons interrogé quatre responsables, cinq collaborateurs et un expert métier.",
+      "text2": "Les entretiens ont été enregistrés avec Microsoft Teams, puis automatiquement retranscrits. Nous avons ensuite utilisé l'IA pour dégager les premiers enseignements avant de les analyser et de les discuter ensemble.",
+      "challenge_text": "Préparer un guide d'entretien sans savoir où la recherche allait nous mener.",
+      "solution_text": "Nous avons utilisé un guide d'entretien structuré tout en laissant suffisamment de place pour approfondir les sujets inattendus.",
+      "caption1": "Matériel d'entretien",
+      "caption2": "Utiliser ChatGPT pour analyser les retranscriptions des entretiens"
+    },
+    "define": {
+      "heading": "Trouver <strong>le bon problème</strong> à résoudre.",
+      "text1": "Nous avons regroupé les enseignements des entretiens grâce à un affinity mapping. Ensemble, nous avons identifié les difficultés récurrentes, remis nos hypothèses en question avec l'aide de l'IA et formulé plusieurs questions « How Might We » :",
+      "text2": "Comment rendre les compétences des collaborateurs visibles ? <br />\n                  À quoi pourrait ressembler un apprentissage personnalisé ? <br />\n                  Comment accompagner les collaborateurs dans leur transformation numérique ?",
+      "challenge_text": "Identifier, parmi de nombreux points de friction, l'opportunité ayant le plus fort potentiel.",
+      "solution_text": "Regrouper les enseignements, faire émerger les tendances et transformer les principaux défis en questions « How Might We » nous a permis de concentrer nos efforts sur l'opportunité la plus prometteuse.",
+      "caption": "Quand le numérique rencontre le papier."
+    },
+    "ideate": {
+      "heading": "<strong>Explorer</strong> un maximum d'idées.",
+      "text": "Nous avons généré des idées en équipe à l'aide de techniques comme la boîte morphologique et la méthode Random Word, puis les avons enrichies avec l'IA. Les concepts ont ensuite été discutés, évalués et priorisés avant de développer la solution la plus prometteuse.",
+      "challenge_text": "Sortir de nos habitudes de pensée pour imaginer des solutions réellement innovantes.",
+      "solution_text": "La boîte morphologique, la méthode Random Word et l'IA nous ont aidés à élargir notre réflexion et à explorer des pistes auxquelles nous n'aurions probablement pas pensé seuls.",
+      "caption": "Méthode Random Word, boîte morphologique et priorisation"
+    },
+    "prototype": {
+      "heading": "20 minutes pour créer un <strong>prototype interactif.</strong>",
+      "text": "Pendant qu'une partie de l'équipe affinait le concept d'apprentissage personnalisé, je me suis concentrée sur le prototype interactif de la plateforme. L'idée était de motiver et de récompenser les collaborateurs qui développent les compétences dont l'organisation aura besoin demain. Sans l'IA, créer un prototype fonctionnel en seulement vingt minutes aurait été tout simplement impossible.",
+      "challenge_text": "Transformer un concept en une expérience interactive en seulement vingt minutes.",
+      "solution_text": "En utilisant Claude comme partenaire de développement, j'ai pu créer un prototype fonctionnel en un temps record et l'améliorer progressivement afin qu'il puisse être directement testé.",
+      "caption1": "Prompting dans Claude",
+      "caption2": "Prototype réalisé en 20 minutes"
+    },
+
+    "test": {
+      "heading": "Le <strong>reality check.</strong>",
+      "text": "Nous avons présenté le prototype à une deuxième équipe de Design Thinking afin de recueillir ses retours. Très vite, la discussion a quitté l'interface pour se concentrer sur les enjeux organisationnels et les obstacles qui pourraient freiner l'adoption d'une telle plateforme. Il est également apparu qu'une solution de ce type représenterait un investissement important.",
+      "challenge_text": "Encourager les collaborateurs à développer leurs compétences sans susciter d'inquiétudes liées à la transparence ou à l'utilisation des données personnelles.",
+      "learning_text": "Une telle plateforme ne pourrait être mise en place sans un véritable accompagnement du changement et une communication transparente sur l'utilisation des données des collaborateurs."
+    },
+    "product": {
+      "label": "Le prototype",
+      "heading": "Un concept interactif pour <strong>un apprentissage personnalisé.</strong>",
+      "try_it": "Essayez-le !"
+    },
+    "reflection": {
+      "heading": "Ce que je retiens <strong>de cette expérience.</strong>",
+      "text": "Avec le recul, je suis surtout impressionnée par tout ce que nous avons réussi à accomplir en seulement trois jours. Les méthodes et workflows IA découverts pendant ce sprint font aujourd'hui encore partie de ma façon de travailler au quotidien.",
+      "accordion1_trigger": "La complexité a besoin d'un cap",
+      "accordion1_content": "Définir clairement le problème a été l'une des décisions les plus importantes du projet. Sans ce travail de cadrage, le sujet de la transformation numérique serait resté beaucoup trop vaste.",
+      "accordion2_trigger": "L'IA accélère, mais ne réfléchit pas à notre place",
+      "accordion2_content": "L'IA nous a aidés à analyser les entretiens, à remettre en question nos hypothèses et à explorer davantage d'idées. Mais elle n'a jamais remplacé l'esprit critique ni le jugement humain.",
+      "accordion3_trigger": "La transformation est avant tout une aventure humaine",
+      "accordion3_content": "La réussite d'une transformation numérique dépend rarement de la technologie seule. Elle repose surtout sur la confiance, la communication, l'implication des collaborateurs et leur envie de faire partie du changement."
+    }
+  },
+
+  "kunstatelier": {
+    "_case_study": "===== KUNSTATELIER =====",
+    "tag1": "Design UX",
+    "tag2": "Design UI",
+    "tag3": "Recherche utilisateur",
+    "tag4": "Prototypage",
+    "tag5": "Accessibilité",
+    "overview_description": "Concevoir une application de musée qui facilite la découverte des expositions et la réservation de billets pour des visiteurs aux besoins, aux habitudes numériques et aux langues différentes.",
+    "label_understanding": "Comprendre",
+    "label_exploring": "Explorer",
+    "label_testing": "Tester",
+    "label_refining": "Affiner",
+    "key_findings_label": "Principaux enseignements",
+    "design_changes_label": "Évolutions du design",
+    "product": {
+      "label": "Le prototype final",
+      "heading": "Une visite au musée <strong>sans friction.</strong>"
+    },
+    "sidebar": {
+      "understanding": "01 Comprendre",
+      "exploring": "02 Explorer",
+      "testing": "03 Tester",
+      "refining": "04 Affiner"
+    },
+    "meta": {
+      "role_value": "UX designer",
+      "timeline_value": "3 mois<br />2025",
+      "platform_value": "Application mobile<br/>Figma",
+      "status_value": "Projet réalisé dans le cadre du Google UX Design Certificate"
+    },
+    "context": {
+      "heading": "<strong>Le défi de design</strong> par excellence.",
+      "description": "Quand j'étais enfant, aller au musée était probablement l'activité que j'aimais le moins. Je détestais attendre, l'histoire et la culture ne me passionnaient pas particulièrement, et je préférais largement faire que regarder. Aujourd'hui encore, les musées ne font pas partie de mes loisirs favoris. Alors, comment concevoir une application pour des personnes qui, elles, adorent ça ? C'est devenu mon plus grand défi UX.<br /><br />Le résultat est KunstAtelier, un concept d'application centré sur la découverte, l'accessibilité et une réservation simple et rassurante.",
+      "product_value": "Concept d'application de musée accompagné d'un prototype interactif réalisé dans Figma.",
+      "team_value": "Projet individuel",
+      "users_value": "Nouveaux arrivants internationaux et grands-parents organisant une sortie au musée avec leurs petits-enfants."
+    },
+    "problem": {
+      "heading": "Une visite au musée devrait être inspirante, <strong>pas décourageante.</strong>",
+      "point1_title": "Une expérience confuse",
+      "point1_text": "Les visiteurs ont de la peine à trouver rapidement ce qui les intéresse réellement.",
+      "point2_title": "Des contenus difficiles à parcourir",
+      "point2_text": "Les utilisateurs passent parfois à côté d'expositions qui pourraient pourtant leur plaire.",
+      "point3_title": "Des barrières à l'accessibilité",
+      "point3_text": "La langue, la mobilité ou certains handicaps rendent l'expérience plus difficile pour une partie des visiteurs."
+    },
+
+    "process_bar": {
+      "understanding_d1": "Analyse concurrentielle",
+      "understanding_d2": "Personas",
+      "understanding_d3": "Parcours utilisateurs",
+      "understanding_d4": "Storyboards",
+      "exploring_d1": "User flow",
+      "exploring_d2": "Wireframes",
+      "exploring_d3": "Prototype basse fidélité",
+      "testing_d1": "Retours",
+      "testing_d2": "Tests utilisateurs",
+      "testing_d3": "Questionnaire",
+      "refining_d1": "Design system",
+      "refining_d2": "Prototype haute fidélité",
+      "refining_d3": "Images générées par IA"
+    },
+    "process": {
+      "role_text": "J'ai pris en charge l'ensemble du processus UX, de la compréhension des besoins utilisateurs jusqu'à la conception, aux tests et au perfectionnement du prototype final.",
+      "constraints_text": "Concevoir pour des personnes dont les attentes et les motivations étaient très différentes des miennes représentait déjà un défi. C'était aussi mon premier projet UX de bout en bout, ce qui m'a amenée à apprendre et à appliquer de nouvelles méthodes tout au long du projet."
+    },
+    "understanding": {
+      "heading": "Se mettre à la place des <strong>amateurs de musées.</strong>",
+      "text": "Comme les musées ne font pas naturellement partie de mon univers, j'ai dû faire un véritable effort pour comprendre les personnes pour lesquelles je concevais cette application. Grâce à une analyse concurrentielle et à la création de personas, j'ai exploré différentes motivations, attentes et habitudes numériques. Deux personas ont ensuite guidé tout le processus de conception et m'ont rappelé que chacun vit une visite au musée différemment.",
+      "challenge_text": "Concevoir une expérience adaptée à des personnes ayant des attentes, des habitudes numériques et des profils très différents.",
+      "solution_text": "Les personas et les parcours utilisateurs m'ont permis d'identifier les principaux points de friction et de faire de l'accessibilité, de l'inclusion et de la simplicité des priorités de conception.",
+      "caption1": "Analyse concurrentielle",
+      "caption2": "Personas",
+      "caption3": "Parcours utilisateurs",
+      "caption4": "Storyboard"
+    },
+    "exploring": {
+      "heading": "Concevoir <strong>l'expérience.</strong>",
+      "text": "Grâce à mon expérience en analyse métier et en modélisation de processus, le user flow s'est dessiné assez naturellement. J'ai structuré l'application autour d'un parcours simple : Découvrir → Réserver → Planifier → Visiter. Cette logique reflète la manière dont les visiteurs préparent réellement leur visite. Les croquis sur papier m'ont ensuite permis d'explorer rapidement différentes idées de mise en page et de fonctionnalités.",
+      "challenge_text": "Comment rendre une expérience riche en contenu à la fois simple, intuitive et agréable à utiliser ?",
+      "solution_text": "Réduire la charge cognitive en simplifiant la navigation et en faisant apparaître les informations essentielles au bon moment.",
+      "caption1": "User flow",
+      "caption2": "Wireframes",
+      "caption3": "Prototype basse fidélité"
+    },
+    "testing": {
+      "heading": "Observer les utilisateurs <strong>se tromper.</strong>",
+      "text": "J'ai mené un test d'utilisabilité modéré avec cinq participants d'âges, de niveaux de compétences numériques et d'horizons linguistiques différents. Ils devaient réserver un billet, partager une exposition et trouver les horaires d'ouverture. Ces sessions m'ont rappelé une chose essentielle : ce qui me paraît évident ne l'est pas forcément pour les autres.",
+      "challenge_text": "Concevoir une expérience inclusive pour des utilisateurs ayant des attentes, des langues et des niveaux de familiarité avec le numérique très différents.",
+      "solution_text": "Tester avec un groupe varié de participants, identifier les difficultés récurrentes et prioriser les améliorations ayant le plus d'impact pour le plus grand nombre.",
+      "findings_text": "Les horaires d'ouverture étaient difficiles à trouver.<br />Le parcours de réservation manquait de clarté.<br />Le partage d'une exposition semblait intuitif.",
+      "changes_text": "Les horaires d'ouverture sont devenus plus visibles.<br />Le parcours de réservation a été réorganisé.<br />Une étape de confirmation a été ajoutée afin de rassurer les utilisateurs.",
+      "caption": "Évolution du prototype basse fidélité"
+    },
+
+    "refining": {
+      "heading": "Créer une expérience <strong>à la fois élégante et accessible.</strong>",
+      "text": "Une fois les principaux parcours validés, je me suis concentrée sur l'identité visuelle de l'application. Mon objectif était de créer une expérience à la fois culturelle, raffinée et accueillante, sans jamais devenir intimidante. J'ai développé le prototype haute fidélité et le design system en parallèle afin de garantir une expérience cohérente du début à la fin.",
+      "challenge_text": "Comment créer une interface qui évoque l'univers des musées tout en restant simple, chaleureuse et facile à utiliser ?",
+      "solution_text": "Miser sur un langage visuel épuré, une hiérarchie claire et des composants accessibles pour concevoir une expérience élégante, mais jamais intimidante.",
+      "decisions_caption": "Décisions de design",
+      "spotlight1_title": "Créativité et élégance",
+      "spotlight1_text": "Une palette de couleurs sobre laisse toute la place aux œuvres et aux expositions. Le violet, utilisé comme couleur d'accent, guide le regard tout en apportant une touche de créativité et d'élégance.",
+      "spotlight2_title": "Une identité inspirée des musées",
+      "spotlight2_text": "L'association d'Inria Serif et d'Inter apporte un équilibre entre une esthétique culturelle et une excellente lisibilité. Un système d'espacement cohérent, inspiré du nombre d'or, crée un rythme harmonieux dans toute l'interface.",
+      "spotlight3_title": "Inspirer confiance",
+      "spotlight3_text": "Une hiérarchie visuelle claire distingue les actions principales, secondaires et désactivées afin que les utilisateurs comprennent immédiatement ce qu'ils peuvent faire. Les informations importantes, comme le prix des billets, sont directement intégrées aux boutons pour faciliter la prise de décision.",
+      "spotlight4_title": "Comprendre en un coup d'œil",
+      "spotlight4_text": "Les icônes facilitent l'orientation sans dominer l'interface. Elles permettent aussi d'identifier rapidement les caractéristiques importantes d'une exposition, comme l'accessibilité, les activités pour les familles ou les langues disponibles.",
+      "spotlight5_title": "Inspiré des cadres de galerie",
+      "spotlight5_text": "Les cartes carrées et les encadrements rappellent subtilement les cadres des œuvres exposées, créant un lien visuel entre le musée physique et son expérience numérique.",
+      "spotlight6_title": "Une réservation familière",
+      "spotlight6_text": "L'affichage mensuel du calendrier reprend un schéma familier, permettant de choisir facilement une date, qu'il s'agisse d'une visite spontanée ou planifiée.",
+      "spotlight7_title": "Suivre le parcours naturel du visiteur",
+      "spotlight7_text": "La navigation reprend les étapes naturelles d'une visite : découvrir, réserver, planifier, puis retrouver ses billets. Une structure qui correspond au modèle mental des utilisateurs.",
+      "ai_caption": "Donner vie à mon musée imaginaire avec ChatGPT",
+      "hifi_caption": "Prototype haute fidélité"
+    },
+    "video_caption": "Vidéo du prototype final",
+    "reflection": {
+      "heading": "Grandir en sortant de sa <strong>zone de confort.</strong>",
+      "text": "Ce projet m'a obligée à concevoir pour des personnes dont les intérêts, les habitudes et les attentes étaient très différents des miens. Au-delà des compétences acquises en UX et en recherche utilisateur, il m'a surtout appris que les meilleures idées naissent souvent lorsqu'on accepte de sortir de sa propre perspective.",
+      "accordion1_trigger": "Impact",
+      "accordion1_content": "J'ai renforcé mes compétences en recherche utilisateur, en accessibilité et en conception UX de bout en bout.",
+      "accordion2_trigger": "Le principal enseignement",
+      "accordion2_content": "Une bonne expérience utilisateur ne dépend pas de mes préférences personnelles, mais de ma capacité à comprendre celles des autres. Ce qui me semblait évident ne l'était pas forcément pour les utilisateurs.",
+      "accordion3_trigger": "Et maintenant ?",
+      "accordion3_content": "KunstAtelier n'existe peut-être que dans Figma, mais il m'a donné envie de retourner dans de vrais musées. Comme quoi, tout peut arriver."
+    }
+  },
+
+  "climate": {
+    "_case_study": "===== 100 BILLION USD FOR CLIMATE =====",
+    "info_design_tag": "Design de l'information",
+    "overview_description": "D'un projet de CAS à un produit utilisé au quotidien : explorer comment la visualisation de données peut aider les décideurs à comprendre où sont investis les financements climatiques suisses et à prendre de meilleures décisions.",
+    "testimonial_label": "Témoignage",
+    "label_exploring": "Comprendre",
+    "label_designing": "Concevoir",
+    "label_building": "Développer",
+    "label_evolving": "Faire évoluer",
+    "product": {
+      "label": "Produit final",
+      "heading": "Là où vont les <strong>millions.</strong>"
+    },
+    "sidebar": {
+      "exploring": "01 Comprendre",
+      "designing": "02 Concevoir",
+      "building": "03 Développer",
+      "evolving": "04 Faire évoluer"
+    },
+    "meta": {
+      "role_value": "UX designer<br />Data designer<br />Développeuse Power BI",
+      "timeline_value": "6 mois<br />2025",
+      "platform_value": "Tableau de bord Power BI",
+      "status_value": "Projet de fin de CAS<br />À l'origine du Climate Cockpit en production au SECO"
+    },
+    "context": {
+      "heading": "Les fonds climatiques sont-ils investis <strong>là où ils sont le plus nécessaires ?</strong>",
+      "description": "En 2009, les pays industrialisés se sont engagés à mobiliser 100 milliards USD par an afin d'aider les pays en développement à faire face au changement climatique. Au SECO, cet engagement se traduit par de nombreux projets de coopération internationale.<br /><br />Si les investissements étaient suivis au niveau des projets, il n'existait aucune vue d'ensemble permettant d'analyser les financements par pays ou de soutenir la prise de décision stratégique.<br /><br />Ce projet explore comment la visualisation de données peut transformer ces informations en un tableau de bord interactif favorisant l'exploration et la prise de décision. Il a ensuite servi de base au développement du Climate Cockpit aujourd'hui utilisé au SECO.",
+      "product_value": "Tableau de bord Power BI interactif visualisant le financement climatique suisse par pays, thème et projet, devenu par la suite le Climate Cockpit du SECO.",
+      "users_value": "Membres du réseau climat, contrôleurs financiers et points focaux pays de la division Coopération et développement économiques du SECO.",
+      "team_value": "Projet individuel"
+    },
+    "problem": {
+      "heading": "Où vont les <strong>millions ?</strong>",
+      "point1_title": "Du reporting, peu d'insights",
+      "point1_text": "Les données étaient collectées pour le reporting, mais pas pour explorer des tendances ou soutenir des décisions stratégiques.",
+      "point2_title": "Aucune vue par pays",
+      "point2_text": "Les parties prenantes ne pouvaient pas comparer facilement les investissements climatiques d'un pays à l'autre.",
+      "point3_title": "Un reporting manuel",
+      "point3_text": "Le suivi reposait sur des fichiers Excel dispersés et mis à jour manuellement, avec très peu d'interactivité.",
+      "point4_title": "Des informations difficiles à découvrir",
+      "point4_text": "Les tendances, les schémas et les opportunités d'action restaient largement invisibles."
+    },
+    "process_bar": {
+      "exploring_d1": "Expérimentation",
+      "exploring_d2": "Échecs",
+      "exploring_d3": "Apprentissages",
+      "exploring_d4": "Itérations",
+      "designing_d1": "Architecture",
+      "designing_d2": "Storytelling",
+      "designing_d3": "Décisions de design",
+      "building_d1": "Power BI",
+      "building_d2": "Contraintes",
+      "building_d3": "Adaptation",
+      "evolving_d1": "Retours utilisateurs",
+      "evolving_d2": "Mise en production"
+    },
+    "process": {
+      "role_text": "J'ai piloté le projet de bout en bout, de l'exploration initiale à l'architecture de l'information, la visualisation de données, le design UI, le développement dans Power BI, puis son évolution vers le Climate Cockpit aujourd'hui utilisé au SECO.",
+      "constraints_text": "Le principal défi consistait à concilier une phase d'exploration très créative avec les exigences d'un futur produit en production. Si le projet de CAS laissait une grande liberté d'expérimentation, la version finale devait respecter les contraintes techniques de Power BI, les exigences de l'organisation et les besoins réels des utilisateurs."
+    },
+
+    "exploring": {
+      "heading": "<strong>Abandonner</strong> mes graphiques préférés.",
+      "text1": "J'ai exploré de nombreuses approches visuelles, des diagrammes de Sankey aux graphiques radar, en passant par les bubble charts et les sunbursts. Certains étaient spectaculaires, mais difficiles à comprendre. D'autres étaient impossibles à réaliser dans Power BI. Et plusieurs ne racontaient tout simplement pas l'histoire que je voulais transmettre.",
+      "text2": "Chaque idée abandonnée est devenue une occasion d'apprendre et m'a permis de mieux comprendre ce qui fait réellement une bonne visualisation de données.",
+      "challenge_text": "Trouver des visualisations à la fois compréhensibles, esthétiques, techniquement réalisables et accessibles à des personnes non expertes.",
+      "solution_text": "Faire de l'expérimentation une partie intégrante du processus de design et considérer les idées abandonnées comme des apprentissages plutôt que comme des échecs.",
+      "caption1": "Premières idées sur papier",
+      "caption2": "Premiers essais dans Power BI"
+    },
+    "designing": {
+      "heading": "Concevoir <strong>l'expérience.</strong>",
+      "text": "Après avoir exploré différentes approches visuelles, je me suis concentrée sur la création d'une expérience cohérente. Le tableau de bord final associe data storytelling, design de l'information et interactions exploratoires afin d'aider les utilisateurs à découvrir eux-mêmes les schémas cachés dans les données de financement climatique.",
+      "challenge_text": "Comment rendre les données de financement climatique engageantes et faciles à explorer sans surcharger les utilisateurs ?",
+      "solution_text": "Associer une architecture de l'information claire, un design visuel épuré et un storytelling interactif pour guider progressivement les utilisateurs de la vue d'ensemble jusqu'au détail.",
+      "decisions_caption": "Décisions de design",
+      "tab_ia": "Architecture de l'information",
+      "tab_visual": "Design visuel",
+      "tab_story": "Data storytelling",
+      "spotlight1_title": "Comprendre avant d'explorer",
+      "spotlight1_text": "Une introduction et des filtres intuitifs apportent le contexte nécessaire avant l'exploration des données afin que les utilisateurs comprennent immédiatement ce qu'ils regardent.",
+      "spotlight2_title": "Explorer progressivement",
+      "spotlight2_text": "Le tableau de bord guide les utilisateurs d'une vue d'ensemble vers des informations de projet de plus en plus détaillées. Chacun peut choisir le niveau de détail qui lui convient.",
+      "spotlight3_title": "Regrouper par thème",
+      "spotlight3_text": "Les visualisations sont organisées par grands thèmes afin de faciliter la découverte d'informations liées et de créer des liens entre plusieurs graphiques.",
+      "spotlight4_title": "Révéler des schémas utiles",
+      "spotlight4_text": "Le tableau de bord met en évidence les différences et similitudes entre les pays afin de faciliter l'identification de tendances, la comparaison des contextes et la découverte de schémas significatifs.",
+      "spotlight5_title": "Comprendre l'évolution dans le temps",
+      "spotlight5_text": "Les séries temporelles montrent comment les investissements climatiques évoluent au fil des années et rendent les tendances de fond comme les évolutions récentes plus faciles à identifier.",
+      "spotlight6_title": "Naviguer sans rupture",
+      "spotlight6_text": "La navigation interactive permet de passer facilement des tendances globales aux informations détaillées sur les projets, sans perdre le contexte.",
+      "spotlight7_title": "Moins, c'est mieux",
+      "spotlight7_text": "Une palette de couleurs sobre met les données au premier plan, réduit le bruit visuel et fait ressortir les informations importantes.",
+      "spotlight8_title": "La clarté avant la décoration",
+      "spotlight8_text": "Dans certaines zones, les icônes et les codes couleur supplémentaires ont été volontairement supprimés afin d'éviter toute charge cognitive inutile.",
+      "spotlight9_title": "Pensé pour être lisible",
+      "spotlight9_text": "La typographie et les espacements ont été soigneusement travaillés afin que même des informations denses puissent être parcourues rapidement et comprises en un coup d'œil.",
+      "spotlight10_title": "Des illustrations pour créer une ambiance",
+      "spotlight10_text": "Les illustrations réalisées dans Adobe Illustrator apportent de la personnalité au tableau de bord et renforcent l'univers climatique sans détourner l'attention des données."
+    },
+    "building": {
+      "heading": "Concevoir malgré les <strong>contraintes.</strong>",
+      "text1": "Power BI s'est révélé aussi puissant que frustrant. De nombreuses idées qui semblaient excellentes sur le papier se sont heurtées à des limites techniques, aux restrictions des visuels personnalisés ou à des problèmes de performance.",
+      "text2": "À cela s'ajoutait le fait que certains visuels personnalisés n'étaient pas autorisés par mon organisation et ne pouvaient donc jamais être utilisés en production. Le véritable défi consistait à trouver des alternatives créatives sans perdre l'intention initiale du tableau de bord.",
+      "challenge_text": "Concilier des ambitions de design élevées avec les contraintes techniques et organisationnelles.",
+      "solution_text": "Toujours revenir au besoin utilisateur plutôt qu'à une visualisation précise, puis adapter continuellement le design aux possibilités techniques et aux contraintes de l'organisation.",
+      "caption": "Moi, en train d'essayer de transformer des idées ambitieuses en réalité."
+    },
+    "evolving": {
+      "heading": "Du concept à la <strong>réalité.</strong>",
+      "text1": "Même si le tableau de bord initial est resté un projet de CAS, il a ensuite servi de base au développement du Climate Cockpit aujourd'hui utilisé au SECO. Le concept a été adapté aux besoins métiers et intégré à l'écosystème du Financial Cockpit (voir l'étude de cas « Yellow is the New Green »).",
+      "text2": "En collaboration avec le réseau climat, j'ai testé le tableau de bord, l'ai amélioré de manière itérative grâce aux retours utilisateurs et l'ai déployé avec succès pour un usage quotidien.",
+      "challenge_text": "Comment transformer un projet expérimental en un outil réellement utilisé au quotidien ?",
+      "solution_text": "Conserver les idées fondatrices tout en faisant évoluer le tableau de bord grâce aux retours utilisateurs, aux nouvelles exigences métier et aux contraintes techniques."
+    },
+
+    "impact": {
+      "heading": "Du reporting climatique à de <strong>meilleures décisions.</strong>",
+      "num1_label": "CHF de financement climatique suisse peuvent être analysés par pays et par thème dans un seul tableau de bord interactif.",
+      "num2_label": "Moins de temps consacré au reporting grâce au remplacement des analyses Excel manuelles par un reporting automatisé.",
+      "num3_label": "Davantage d'informations environnementales disponibles, avec un périmètre élargi au-delà du climat pour inclure la biodiversité et la mobilisation du secteur privé."
+    },
+    "testimonial": {
+      "quote1": "« Anouk a développé le <em>Climate Cockpit</em> pour le réseau climat Développement économique du SECO. Tout au long du projet, elle a identifié de manière proactive les besoins des utilisateurs et a adapté le tableau de bord aux attentes du réseau grâce à des prototypes interactifs.",
+      "quote2": "Le résultat est un outil d'analyse clair et flexible qui, contrairement à l'ancien cockpit, permet des analyses rapides et variées tout en présentant les résultats de manière claire et accessible. Le nouveau cockpit est déjà largement utilisé et a reçu des retours très positifs dans l'ensemble du réseau. Grâce à son approche ouverte et enthousiaste, Anouk a également su impliquer les membres du réseau tout au long du développement du nouveau cockpit.",
+      "quote3": "Nous remercions chaleureusement Anouk pour sa précieuse contribution. »",
+      "author": "Daniel Bruderer, responsable du réseau climat Développement économique du SECO",
+      "highlight": "« [...] Un outil d'analyse <strong>clair et flexible</strong>, permettant des analyses <strong>rapides et variées</strong> et ayant reçu des retours <strong>très positifs</strong> dans l'ensemble du réseau. [...] »"
+    }
+  }
+}

@@ -19,8 +19,9 @@ const themes = [
     muted: "rgba(255,255,255,0.4)",
     p1: "#FFB72C",
     p2: "#4bad8c",
-    p3: "#572F7A",
-    p4: "#19537A",
+    p3: "#19537A",
+    p4: "#572F7A",
+
     p5: "#16584D",
     imageFilter: "brightness(.97) saturate(.95) contrast(.97)",
   },
@@ -91,8 +92,12 @@ document.addEventListener("mouseout", (e) => {
    NAV — language switch & theme toggle
 ============================================= */
 const languages = ["EN", "DE", "FR"];
-let langIndex = 0;
+let langIndex = Math.max(
+  0,
+  languages.indexOf((localStorage.getItem("lang") || "en").toUpperCase()),
+);
 const langBtn = document.querySelector(".nav-lang");
+langBtn.childNodes[0].textContent = languages[langIndex];
 
 langBtn.addEventListener("mouseenter", () => {
   const nextIndex = (langIndex + 1) % languages.length;
@@ -106,6 +111,9 @@ langBtn.addEventListener("mouseleave", () => {
 langBtn.addEventListener("click", () => {
   langIndex = (langIndex + 1) % languages.length;
   langBtn.childNodes[0].textContent = languages[langIndex];
+  if (window.applyLanguage) {
+    window.applyLanguage(languages[langIndex].toLowerCase());
+  }
 });
 
 let moonRotation = themeIndex * 90;
@@ -1103,7 +1111,7 @@ document.querySelectorAll(".accordion-trigger").forEach((trigger) => {
                    CONTACT JS— cycling verb
                 ============================================= */
 const contactVerb = document.getElementById("contact-verb");
-const verbs = [
+const defaultVerbs = [
   "work",
   "dream",
   "imagine",
@@ -1114,14 +1122,17 @@ const verbs = [
 
   "create",
 ];
-let verbIndex = 0;
 
 const contactPlusBtn = document.getElementById("contact-plus");
 
 if (contactPlusBtn && contactVerb) {
   contactPlusBtn.addEventListener("click", () => {
-    verbIndex = (verbIndex + 1) % verbs.length;
-    contactVerb.textContent = verbs[verbIndex];
+    const verbs = window.contactVerbs || defaultVerbs;
+    const currentIndex = window.contactVerbIndex || 0;
+    const nextIndex = (currentIndex + 1) % verbs.length;
+
+    window.contactVerbIndex = nextIndex;
+    contactVerb.textContent = verbs[nextIndex];
 
     contactPlusBtn.classList.add("spinning");
 

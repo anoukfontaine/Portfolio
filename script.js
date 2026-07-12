@@ -166,21 +166,45 @@ function smoothScrollTo(href, offset) {
 
 document.querySelectorAll(".mobile-menu-link").forEach((link) => {
   link.addEventListener("click", (e) => {
-    e.preventDefault();
-
     const href = link.getAttribute("href");
+    const target = document.querySelector(href);
 
     hamburger.classList.remove("open");
     mobileMenu.classList.remove("open");
     document.body.classList.remove("menu-open");
     document.documentElement.classList.remove("menu-open");
 
-    requestAnimationFrame(() => {
-      smoothScrollTo(href, href === "#contact" ? 100 : 72);
-    });
+    /*
+     * Homepage:
+     * The section exists, so scroll to it smoothly.
+     */
+    if (target) {
+      e.preventDefault();
+
+      requestAnimationFrame(() => {
+        smoothScrollTo(href, href === "#contact" ? 100 : 72);
+      });
+
+      return;
+    }
+
+    /*
+     * Case-study page:
+     * The section does not exist here, so go back to
+     * the homepage and open the requested section.
+     */
+    e.preventDefault();
+    window.location.href = getHomeSectionUrl(href);
   });
 });
 
+function getHomeSectionUrl(hash) {
+  const isInWorkFolder =
+    window.location.pathname.includes("/work/") ||
+    window.location.pathname.includes("/Work/");
+
+  return isInWorkFolder ? `../index.html${hash}` : `index.html${hash}`;
+}
 /* =============================================
    GLOBAL LEFT SIDEBAR NAVIGATION
 ============================================= */

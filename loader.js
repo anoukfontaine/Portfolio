@@ -21,10 +21,12 @@ function loadScript(path) {
   document.body.appendChild(script);
 }
 function getPath(path) {
-  const isInWorkFolder = window.location.pathname.includes("/Work/");
+  const isInWorkFolder =
+    window.location.pathname.includes("/work/") ||
+    window.location.pathname.includes("/Work/");
+
   return isInWorkFolder ? "../" + path : path;
 }
-
 Promise.all([loadComponent("#footer", getPath("components/footer.html"))]).then(
   () => {
     loadScript(getPath("translations/i18n.js"));

@@ -143,12 +143,16 @@ themeNavBtn.addEventListener("click", function () {
 const hamburger = document.getElementById("nav-hamburger");
 const mobileMenu = document.getElementById("mobile-menu");
 hamburger.addEventListener("click", () => {
-  hamburger.classList.toggle("open");
-  mobileMenu.classList.toggle("open");
-  document.body.classList.toggle(
-    "menu-open",
-    mobileMenu.classList.contains("open"),
-  );
+  const isOpen = !mobileMenu.classList.contains("open");
+
+  hamburger.classList.toggle("open", isOpen);
+  mobileMenu.classList.toggle("open", isOpen);
+
+  document.body.classList.toggle("menu-open", isOpen);
+  document.documentElement.classList.toggle("menu-open", isOpen);
+
+  hamburger.setAttribute("aria-expanded", String(isOpen));
+  mobileMenu.setAttribute("aria-hidden", String(!isOpen));
 });
 
 function smoothScrollTo(href, offset) {
@@ -163,10 +167,17 @@ function smoothScrollTo(href, offset) {
 document.querySelectorAll(".mobile-menu-link").forEach((link) => {
   link.addEventListener("click", (e) => {
     e.preventDefault();
+
     const href = link.getAttribute("href");
-    smoothScrollTo(href, href === "#contact" ? 150 : 72);
+
     hamburger.classList.remove("open");
     mobileMenu.classList.remove("open");
+    document.body.classList.remove("menu-open");
+    document.documentElement.classList.remove("menu-open");
+
+    requestAnimationFrame(() => {
+      smoothScrollTo(href, href === "#contact" ? 100 : 72);
+    });
   });
 });
 

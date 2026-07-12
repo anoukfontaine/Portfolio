@@ -69,24 +69,35 @@ document.getElementById("theme-toggle").addEventListener("click", () => {
   applyTheme(themeIndex);
   localStorage.setItem("theme-index", themeIndex);
 });
+
 /* =============================================
                    CUSTOM CURSOR
-                ============================================= */
+============================================= */
 const cursor = document.getElementById("cursor");
-document.addEventListener("mousemove", (e) => {
-  cursor.style.opacity = "1";
-  cursor.style.left = e.clientX + "px";
-  cursor.style.top = e.clientY + "px";
-});
-const hoverables = 'a, button, [role="button"], .cursor-grow';
-document.addEventListener("mouseover", (e) => {
-  if (e.target.matches(hoverables) || e.target.closest(hoverables))
-    cursor.classList.add("hovering");
-});
-document.addEventListener("mouseout", (e) => {
-  if (e.target.matches(hoverables) || e.target.closest(hoverables))
-    cursor.classList.remove("hovering");
-});
+
+if (cursor) {
+  document.documentElement.classList.add("custom-cursor");
+
+  document.addEventListener("mousemove", (e) => {
+    cursor.style.opacity = "1";
+    cursor.style.left = e.clientX + "px";
+    cursor.style.top = e.clientY + "px";
+  });
+
+  const hoverables = 'a, button, [role="button"], .cursor-grow';
+
+  document.addEventListener("mouseover", (e) => {
+    if (e.target.matches(hoverables) || e.target.closest(hoverables)) {
+      cursor.classList.add("hovering");
+    }
+  });
+
+  document.addEventListener("mouseout", (e) => {
+    if (e.target.matches(hoverables) || e.target.closest(hoverables)) {
+      cursor.classList.remove("hovering");
+    }
+  });
+}
 
 /* =============================================
    NAV — language switch & theme toggle
@@ -1053,7 +1064,7 @@ if (serviceCardsEl) {
   });
 }
 
-function initServiceCarousel() {
+/*function initServiceCarousel() {
   const track = document.querySelector(".service-cards");
 
   if (!track || !track.children.length) return;
@@ -1096,7 +1107,7 @@ function initServiceCarousel() {
 }
 window.addEventListener("resize", initServiceCarousel);
 initServiceCarousel();
-
+*/
 /* =============================================
                    ABOUT — accordion
                 ============================================= */

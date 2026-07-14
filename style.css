@@ -718,6 +718,12 @@ body.case-page .left-sidebar > *:not(.left-sidebar-home):nth-child(8) {
   margin-bottom: 24px;
   max-width: 800px;
 }
+
+html[lang="fr"] .hero-headline,
+html[lang="de"] .hero-headline {
+  max-width: 900px;
+  font-size: clamp(44px, 6.5vw, 88px);
+}
 .headline-strong {
   font-weight: 600;
 }

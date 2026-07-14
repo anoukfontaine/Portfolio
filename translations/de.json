@@ -539,7 +539,8 @@
     "product": {
       "label": "Der Prototyp",
       "heading": "Ein klickbares Konzept für <strong>personalisiertes Lernen.</strong>",
-      "try_it": "Jetzt ausprobieren!"
+      "try_it": "Jetzt ausprobieren!",
+      "desktop_only": "Interaktiver Prototyp auf dem Desktop verfügbar."
     },
     "reflection": {
       "heading": "<strong>Erkenntnisse</strong>, die geblieben sind.",

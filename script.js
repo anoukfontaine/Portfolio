@@ -142,6 +142,7 @@ themeNavBtn.addEventListener("click", function () {
 ============================================= */
 const hamburger = document.getElementById("nav-hamburger");
 const mobileMenu = document.getElementById("mobile-menu");
+
 hamburger.addEventListener("click", () => {
   const isOpen = !mobileMenu.classList.contains("open");
 

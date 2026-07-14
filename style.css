@@ -202,7 +202,7 @@ h2 {
   border-radius: 50%;
   pointer-events: none;
   transform: translate(-50%, -50%);
-  z-index: 9999;
+  z-index: 99999;
   mix-blend-mode: difference;
   transition:
     width 0.3s ease,
@@ -231,7 +231,7 @@ nav {
   justify-content: space-between;
   padding: 0 48px;
   background: transparent;
-  z-index: 100;
+  z-index: 9999;
 }
 .logo {
   display: flex;
@@ -242,6 +242,7 @@ nav {
   font-size: 20px;
   text-transform: uppercase;
   color: var(--color-text);
+  z-index: 10000;
 }
 .logo-first {
   font-weight: 700;
@@ -415,7 +416,7 @@ nav {
   color: var(--color-text);
 
   cursor: none !important;
-  z-index: 3;
+  z-index: 10001;
 }
 
 .nav-hamburger span {
@@ -1651,7 +1652,7 @@ html[lang="de"] .contact-verb-spacer::after {
   position: fixed;
   inset: 0;
   background: rgba(0, 0, 0, 0.85);
-  z-index: 9000;
+  z-index: 10002;
   align-items: center;
   justify-content: center;
   padding: var(--space-6);
@@ -2790,6 +2791,9 @@ img.cs-process-step-image {
 
   color: var(--color-bg);
   pointer-events: none;
+}
+.cs-prototype-mobile-note {
+  display: none;
 }
 
 /*GALLERY*/
@@ -3936,8 +3940,29 @@ body.gate-locked .nav-right {
   .cs-impact-left {
     gap: 40px;
   }
-}
 
+  .cs-product-card iframe {
+    display: none;
+  }
+
+  .cs-prototype-note {
+    display: none;
+  }
+
+  .cs-prototype-mobile-note {
+    display: block;
+
+    padding: 80px 32px;
+
+    text-align: center;
+
+    font-size: 18px;
+    line-height: 1.6;
+    font-weight: 400;
+
+    color: var(--color-text);
+  }
+}
 /* =============================================
    RESPONSIVE — MOBILE (≤ 768px)
    - uses mobile spacing and typography
@@ -4320,43 +4345,43 @@ body.gate-locked .nav-right {
     opacity: 1 !important;
     transform: none !important;
   }
-}
 
-/* =============================================
+  /* =============================================
    SURVEY FEEDBACK — MOBILE
    Show the affinity-map image first, then stack
    the qualitative feedback cards underneath.
 ============================================= */
 
-.cs-survey-feedback-overlay {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-4);
-}
+  .cs-survey-feedback-overlay {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+  }
 
-.cs-survey-feedback-bg {
-  position: static;
-  width: 100%;
-  height: auto;
-  opacity: 0.5;
-}
+  .cs-survey-feedback-bg {
+    position: static;
+    width: 100%;
+    height: auto;
+    opacity: 0.5;
+  }
 
-.cs-survey-feedback-overlay .cs-survey-quotes {
-  position: static;
-  inset: auto;
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-4);
-  width: 100%;
-  padding: 0;
-}
+  .cs-survey-feedback-overlay .cs-survey-quotes {
+    position: static;
+    inset: auto;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    width: 100%;
+    padding: 0;
+  }
 
-.cs-survey-feedback-overlay .cs-survey-quote {
-  width: 100%;
-  min-height: 0;
-  padding: var(--space-5);
-  font-size: 18px;
-  box-sizing: border-box;
+  .cs-survey-feedback-overlay .cs-survey-quote {
+    width: 100%;
+    min-height: 0;
+    padding: var(--space-5);
+    font-size: 18px;
+    box-sizing: border-box;
+  }
 }
 
 /* =============================================

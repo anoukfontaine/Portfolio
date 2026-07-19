@@ -270,7 +270,23 @@
               >Afterlife</a
             >
           </nav>
+          <div class="cs-overview-content">
+            <p class="label label-muted" data-i18n="cs_shared.case_study_label">
+              Case Study
+            </p>
+            <h1 class="cs-headline" data-i18n="project_titles.yellow">
+              <em>Yellow</em> is the new Green
+            </h1>
 
+            <p
+              class="cs-overview-description"
+              data-i18n="yellow.overview_description"
+            >
+              Transforming a fragmented, Excel-based financial planning process
+              into an interactive dashboard that helps decision-makers
+              understand, explore and trust their data.
+            </p>
+          </div>
           <div class="cs-overview-image-wrap">
             <div class="cs-overview-image">
               <img
@@ -324,23 +340,6 @@
                 Evolving<br />Live product
               </p>
             </div>
-          </div>
-          <div class="cs-overview-content">
-            <p class="label label-muted" data-i18n="cs_shared.case_study_label">
-              Case Study
-            </p>
-            <h1 class="cs-headline" data-i18n="project_titles.yellow">
-              <em>Yellow</em> is the new Green
-            </h1>
-
-            <p
-              class="cs-overview-description"
-              data-i18n="yellow.overview_description"
-            >
-              Transforming a fragmented, Excel-based financial planning process
-              into an interactive dashboard that helps decision-makers
-              understand, explore and trust their data.
-            </p>
           </div>
         </section>
         <section class="cs-context card-container" id="section-context">
@@ -1754,7 +1753,7 @@
           </p>
         </section>
         <!-- TESTIMONIALS -->
-        <section
+        <!--  <section
           class="cs-testimonials card-container"
           id="section-testimonials"
         >
@@ -1809,6 +1808,7 @@
             </div>
           </div>
         </section>
+        -->
       </main>
       <!-- NEXT PROJECTS -->
       <section class="cs-next">
@@ -1841,13 +1841,25 @@
             </a>
             <a class="big-link big-link--light" href="../index.html#contact">
               <p class="link-text" data-i18n="hero.cta_contact">Get in touch</p>
-              <p class="link-arrow" aria-hidden="true"></p>
+              <span class="link-arrow" aria-hidden="true">
+                <svg viewBox="0 0 16 16" fill="none">
+                  <path
+                    d="M0 16L13 3M7.6 3H13V8.4"
+                    stroke="currentColor"
+                    stroke-width="1"
+                    stroke-linecap="butt"
+                    stroke-linejoin="miter"
+                  />
+                </svg>
+              </span>
             </a>
           </div>
           <div class="cs-next-right">
             <a
               class="cs-next-row big-link big-link--project"
               href="../Work/bw.html"
+              data-preview="../Images/Home/0_work_3.png"
+              data-preview-color="var(--project-3)"
             >
               <span data-i18n="project_titles.bw"
                 >Browsing the world's economy</span
@@ -1864,9 +1876,12 @@
                 </svg>
               </span>
             </a>
+
             <a
               class="cs-next-row big-link big-link--project"
               href="../Work/kunstatelier.html"
+              data-preview="../Images/Home/0_work_4.png"
+              data-preview-color="var(--project-4)"
             >
               <span data-i18n="project_titles.kunstatelier"
                 >Heard of KunstAtelier? Me neither.</span
@@ -1886,6 +1901,8 @@
             <a
               class="cs-next-row big-link big-link--project"
               href="../Work/skills.html"
+              data-preview="../Images/Home/0_work_2.png"
+              data-preview-color="var(--project-2)"
             >
               <span data-i18n="project_titles.skills"
                 >Upskilling the Public Sector</span
@@ -1905,6 +1922,8 @@
             <a
               class="cs-next-row big-link big-link--project"
               href="../Work/climate.html"
+              data-preview="../Images/Home/0_work_5.png"
+              data-preview-color="var(--project-5)"
             >
               <span data-i18n="project_titles.climate"
                 >100 Billion USD for Climate
@@ -1923,6 +1942,13 @@
             </a>
           </div>
         </div>
+        <!-- ============Preview============-->
+        <div class="cs-project-preview" aria-hidden="true">
+          <div class="cs-project-preview-card">
+            <img src="" alt="" />
+          </div>
+        </div>
+        <!--=====End Preview====-->
       </section>
       <div id="footer"></div>
       <!-- =============================================

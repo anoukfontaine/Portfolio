@@ -1194,3 +1194,61 @@ if (contactPlusBtn && contactVerb) {
     );
   });
 }
+
+/* =============================================
+   NEXT PROJECT HOVER PREVIEW
+============================================= */
+
+function initProjectHoverPreview() {
+  const preview = document.querySelector(".cs-project-preview");
+  const projectLinks = document.querySelectorAll(".cs-next-row[data-preview]");
+
+  if (!preview || !projectLinks.length) return;
+
+  const previewImage = preview.querySelector("img");
+
+  if (!previewImage) return;
+
+  const cursorOffset = 24;
+  const viewportPadding = 16;
+
+  function positionPreview(event) {
+    const previewWidth = preview.offsetWidth;
+    const previewHeight = preview.offsetHeight;
+
+    let x = event.clientX + cursorOffset;
+    let y = event.clientY - previewHeight - cursorOffset;
+
+    if (x + previewWidth > window.innerWidth - viewportPadding) {
+      x = event.clientX - previewWidth - cursorOffset;
+    }
+
+    if (y < viewportPadding) {
+      y = event.clientY + cursorOffset;
+    }
+
+    preview.style.setProperty("--preview-x", `${x}px`);
+    preview.style.setProperty("--preview-y", `${y}px`);
+  }
+
+  projectLinks.forEach((link) => {
+    link.addEventListener("mouseenter", (event) => {
+      const imagePath = link.dataset.preview;
+
+      if (!imagePath) return;
+
+      previewImage.src = imagePath;
+      preview.style.background = link.dataset.previewColor;
+      preview.classList.add("is-visible");
+      positionPreview(event);
+    });
+
+    link.addEventListener("mousemove", positionPreview);
+
+    link.addEventListener("mouseleave", () => {
+      preview.classList.remove("is-visible");
+    });
+  });
+}
+
+initProjectHoverPreview();

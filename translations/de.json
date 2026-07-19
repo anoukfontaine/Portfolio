@@ -105,7 +105,7 @@
     },
     "accordion3": {
       "trigger": "Mein Persönlichkeitstyp ist INFP.",
-      "content": "Harmonie ist mir wichtig – sowohl in meinen Designs als auch in den Teams, mit denen ich zusammenarbeite. Ich lerne unglaublich gern Neues und am liebsten, indem ich Dinge einfach ausprobiere. Deshalb habe ich auch dieses gesamte Portfolio selbst programmiert, obwohl ich vorher keinerlei Coding-Erfahrung hatte. Und ich bin überzeugt: Mit einer Prise Humor lassen sich Zusammenarbeit und Problemlösung deutlich einfacher machen."
+      "content": "Harmonie ist mir wichtig, sowohl in meinen Designs als auch in den Teams, mit denen ich zusammenarbeite. Ich tauche gerne in neue Themen ein und lerne am liebsten durch Ausprobieren. So ist auch dieses Portfolio entstanden: Selbstentwickelt von A bis Z, während ich mir die Webentwicklung Schritt für Schritt angeeignet habe. Ausserdem bin ich überzeugt: Eine Prise Humor macht die Zusammenarbeit und Problemlösung deutlich einfacher."
     },
     "accordion4": {
       "trigger": "Ich bin auch ah nuk.",
@@ -416,7 +416,7 @@
     },
     "testimonial_label": "Testimonial",
     "testimonial": {
-      "quote": "„Anouk entwickelte die visuellen Konzepte, Datenvisualisierungen und Prototypen für unser digitales Country Cockpit. Es ist ihr gelungen, ein eher trockenes Thema in ein klares, ansprechendes und visuell überzeugendes Nutzererlebnis zu verwandeln. Wir sind sehr stolz auf das Ergebnis!“",
+      "quote": "Anouk hat für unser digitales Ländercockpit die Graphiken erstellt und die visuellen Konzepte, Datenvisualisierungen und Prototypen erarbeitet. Sie hat es geschafft, eine eher trockene Materie sachlich, aber sehr ansprechend darzustellen. Wir sind sehr stolz auf das Ergebnis!",
       "author": "Andrea Rauber Saxer, Botschafterin und Leiterin Bilaterale Wirtschaftsbeziehungen, SECO",
       "highlight": "„Anouk [...] hat ein eher trockenes Thema in ein <strong>ansprechendes Nutzererlebnis</strong> verwandelt [...]“"
     },

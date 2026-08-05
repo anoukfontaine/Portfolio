@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kompetenzhub 2025</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #ffffff;
+    --bg-secondary: #f5f5f3;
+    --bg-tertiary: #efefed;
+    --text: #1a1a18;
+    --text-secondary: #6b6b67;
+    --text-tertiary: #a0a09b;
+    --border: rgba(0,0,0,0.10);
+    --border-strong: rgba(0,0,0,0.18);
+    --nav-h: 64px;
+    --sidebar-w: 220px;
+    --radius: 10px;
+    --radius-sm: 6px;
+    --blue-bg: #E6F1FB; --blue-text: #0C447C;
+    --green-bg: #EAF3DE; --green-text: #27500A;
+    --amber-bg: #FAEEDA; --amber-text: #633806;
+    --red-bg: #FCEBEB; --red-text: #A32D2D;
+    --purple-bg: #EEEDFE; --purple-text: #3C3489;
+    --teal-bg: #E1F5EE; --teal-text: #085041;
+    --pink-bg: #FBEAF0; --pink-text: #72243E;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Figtree', sans-serif;
+    background: var(--bg-secondary);
+    color: var(--text);
+    font-size: 15px;
+    line-height: 1.6;
+    min-height: 100vh;
+  }
+
+  /* NAV */
+  .topnav {
+    position: fixed; top: 0; left: 0; right: 0; height: var(--nav-h);
+    background: var(--bg);
+    border-bottom: 0.5px solid var(--border);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 2rem; z-index: 100;
+  }
+  .topnav-brand { font-size: 16px; font-weight: 600; color: var(--text); }
+  .topnav-sub { font-size: 12px; color: var(--text-tertiary); margin-top: 1px; }
+  .topnav-right { display: flex; align-items: center; gap: 12px; }
+  .avatar { display: flex; align-items: center; justify-content: center; border-radius: 50%; font-weight: 600; flex-shrink: 0; }
+  .btn-ghost { font-size: 12px; padding: 5px 12px; border: 0.5px solid var(--border-strong); border-radius: var(--radius-sm); background: transparent; color: var(--text-secondary); cursor: pointer; font-family: inherit; display: flex; align-items: center; gap: 5px; transition: background 0.1s; }
+  .btn-ghost:hover { background: var(--red-bg); color: var(--red-text); border-color: #E24B4A; }
+
+  /* SIDEBAR */
+  .sidebar {
+    position: fixed; top: var(--nav-h); left: 0; bottom: 0; width: var(--sidebar-w);
+    background: var(--bg);
+    border-right: 0.5px solid var(--border);
+    padding: 1.5rem 1rem;
+    display: flex; flex-direction: column; gap: 2px;
+    overflow-y: auto;
+  }
+  .nav-item {
+    display: flex; align-items: center; gap: 10px;
+    padding: 8px 10px; border-radius: var(--radius-sm);
+    font-size: 13px; color: var(--text-secondary);
+    cursor: pointer; transition: background 0.1s; border: none; background: transparent; font-family: inherit; width: 100%; text-align: left;
+  }
+  .nav-item:hover { background: var(--bg-secondary); color: var(--text); }
+  .nav-item.active { background: var(--bg-tertiary); color: var(--text); font-weight: 500; }
+  .nav-item svg { flex-shrink: 0; opacity: 0.6; }
+  .nav-item.active svg { opacity: 1; }
+  .nav-section { font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-tertiary); padding: 12px 10px 4px; }
+
+  /* MAIN */
+  .main { margin-left: var(--sidebar-w); margin-top: var(--nav-h); padding: 2rem; min-height: calc(100vh - var(--nav-h)); }
+
+  .page { display: none; }
+  .page.active { display: block; }
+
+  .page-title { font-size: 22px; font-weight: 600; margin-bottom: 4px; }
+  .page-sub { font-size: 13px; color: var(--text-secondary); margin-bottom: 1.75rem; }
+
+  /* CARDS */
+  .card { background: var(--bg); border: 0.5px solid var(--border); border-radius: var(--radius); padding: 1.25rem 1.5rem; margin-bottom: 12px; }
+  .card-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+  .divider { border: none; border-top: 0.5px solid var(--border); margin: 12px 0; }
+
+  /* STAT GRID */
+  .stat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 1.75rem; }
+  .stat-card { background: var(--bg); border: 0.5px solid var(--border); border-radius: var(--radius); padding: 1rem 1.25rem; }
+  .stat-label { font-size: 12px; color: var(--text-secondary); margin-bottom: 4px; }
+  .stat-val { font-size: 26px; font-weight: 600; }
+
+  /* SECTION LABEL */
+  .section-label { font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-tertiary); margin-bottom: 10px; }
+
+  /* PILLS + TAGS */
+  .pill { font-size: 11px; padding: 3px 10px; border-radius: 20px; font-weight: 500; white-space: nowrap; }
+  .pill-hot { background: var(--amber-bg); color: var(--amber-text); }
+  .pill-core { background: var(--green-bg); color: var(--green-text); }
+  .pill-new { background: var(--blue-bg); color: var(--blue-text); }
+
+  .tag { font-size: 11px; padding: 2px 8px; border-radius: var(--radius-sm); font-weight: 500; }
+  .tag-done { background: var(--green-bg); color: var(--green-text); }
+  .tag-inprog { background: var(--blue-bg); color: var(--blue-text); }
+  .tag-failed { background: var(--red-bg); color: var(--red-text); }
+  .tag-todo { background: var(--bg-secondary); color: var(--text-secondary); }
+
+  /* BUTTONS */
+  .btn { font-size: 12px; padding: 6px 14px; border: 0.5px solid var(--border-strong); border-radius: var(--radius-sm); cursor: pointer; font-family: inherit; transition: background 0.1s; }
+  .btn-primary { background: var(--text); color: var(--bg); border-color: var(--text); }
+  .btn-primary:hover { opacity: 0.85; }
+  .btn-secondary { background: transparent; color: var(--text); }
+  .btn-secondary:hover { background: var(--bg-secondary); }
+  .btn-disabled { background: var(--bg-secondary); color: var(--text-tertiary); border-color: var(--border); pointer-events: none; cursor: default; }
+
+  /* PROGRESS */
+  .progress-wrap { background: var(--bg-tertiary); border-radius: 4px; height: 5px; flex: 1; }
+  .progress-bar { height: 5px; border-radius: 4px; background: #378ADD; }
+  .progress-bar.done { background: #639922; }
+
+  /* LEVEL DOTS */
+  .dots { display: flex; gap: 4px; align-items: center; }
+  .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--border-strong); }
+  .dot.on { background: #378ADD; }
+  .dot.on.done { background: #639922; }
+
+  /* COMP CARD */
+  .comp-title { font-size: 15px; font-weight: 500; }
+  .comp-desc { font-size: 13px; color: var(--text-secondary); margin-top: 2px; }
+
+  /* BADGE BLOCK */
+  .badge-block { display: flex; align-items: center; gap: 10px; background: var(--green-bg); border-radius: var(--radius-sm); padding: 10px 14px; margin-top: 10px; }
+  .badge-block-title { font-size: 13px; font-weight: 500; color: var(--green-text); }
+  .badge-block-sub { font-size: 12px; color: #3B6D11; }
+
+  /* MODAL */
+  .modal-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.4); z-index: 200; align-items: center; justify-content: center; }
+  .modal-overlay.open { display: flex; }
+  .modal-box { background: var(--bg); border-radius: var(--radius); border: 0.5px solid var(--border); padding: 1.75rem; max-width: 400px; width: 90%; }
+  .modal-box h3 { font-size: 17px; font-weight: 600; margin-bottom: 8px; }
+  .modal-box p { font-size: 13px; color: var(--text-secondary); margin-bottom: 16px; }
+  .modal-info { background: var(--bg-secondary); border-radius: var(--radius-sm); padding: 10px 14px; margin-bottom: 16px; font-size: 13px; }
+  .modal-info-row { display: flex; justify-content: space-between; padding: 2px 0; }
+  .modal-actions { display: flex; gap: 8px; justify-content: flex-end; }
+
+  /* BANNER */
+  .banner { background: var(--green-bg); border-radius: var(--radius-sm); padding: 10px 14px; display: flex; align-items: center; gap: 8px; margin-bottom: 14px; }
+  .banner span { font-size: 13px; color: var(--green-text); }
+
+  /* ORG SEARCH */
+  .filter-row { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 14px; }
+  .filter-chip { font-size: 12px; padding: 5px 12px; border: 0.5px solid var(--border-strong); border-radius: 20px; background: var(--bg); color: var(--text-secondary); cursor: pointer; font-family: inherit; transition: background 0.1s; }
+  .filter-chip:hover { background: var(--bg-secondary); }
+  .filter-chip.active { background: var(--text); color: var(--bg); border-color: var(--text); }
+
+  .search-wrap { position: relative; margin-bottom: 12px; }
+  .search-wrap input { width: 100%; padding: 9px 12px 9px 36px; font-size: 13px; border: 0.5px solid var(--border-strong); border-radius: var(--radius-sm); background: var(--bg); color: var(--text); font-family: inherit; outline: none; }
+  .search-wrap input:focus { border-color: #378ADD; box-shadow: 0 0 0 2px rgba(55,138,221,0.15); }
+  .search-icon { position: absolute; left: 11px; top: 50%; transform: translateY(-50%); color: var(--text-tertiary); pointer-events: none; }
+
+  .person-row { display: flex; align-items: center; gap: 12px; padding: 10px 0; border-bottom: 0.5px solid var(--border); }
+  .person-row:last-child { border-bottom: none; }
+  .person-name { font-size: 13px; font-weight: 500; }
+  .person-dept { font-size: 11px; color: var(--text-tertiary); }
+  .chips-wrap { display: flex; gap: 4px; flex-wrap: wrap; justify-content: flex-end; flex: 1; }
+  .skill-chip { font-size: 11px; padding: 2px 8px; border-radius: 12px; white-space: nowrap; }
+  .skill-chip.badge { background: var(--green-bg); color: var(--green-text); }
+  .skill-chip.inprog { background: var(--blue-bg); color: var(--blue-text); }
+  .skill-chip.none { background: var(--bg-secondary); color: var(--text-tertiary); }
+  .result-count { font-size: 12px; color: var(--text-secondary); margin-bottom: 10px; }
+
+  /* EMP ROW */
+  .emp-row { display: flex; align-items: center; gap: 10px; padding: 8px 0; }
+
+  /* YEAR PILLS */
+  .year-pill { font-size: 11px; padding: 2px 10px; border-radius: 12px; font-weight: 500; }
+  .year-kept { background: var(--green-bg); color: var(--green-text); }
+  .year-new { background: var(--blue-bg); color: var(--blue-text); }
+  .year-drop { background: var(--red-bg); color: var(--red-text); text-decoration: line-through; }
+
+  /* ALERT */
+  .alert { background: var(--amber-bg); border-radius: var(--radius-sm); padding: 10px 14px; display: flex; align-items: center; gap: 8px; margin-bottom: 1rem; }
+  .alert span { font-size: 13px; color: var(--amber-text); }
+
+  /* SCROLLABLE LIST */
+  .org-list-wrap { max-height: 540px; overflow-y: auto; }
+
+  @media (max-width: 700px) {
+    .sidebar { display: none; }
+    .main { margin-left: 0; padding: 1rem; }
+    .stat-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+</style>
+</head>
+<body>
+
+<!-- TOP NAV -->
+<nav class="topnav">
+  <div>
+    <div class="topnav-brand">Kompetenzhub 2025</div>
+    <div class="topnav-sub">Staatssekretariat – Digitalisierung</div>
+  </div>
+  <div class="topnav-right">
+    <button class="btn-ghost" onclick="confirmReset()">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
+      Reset
+    </button>
+    <div style="display:flex;align-items:center;gap:8px;">
+      <div class="avatar" style="width:34px;height:34px;background:var(--purple-bg);color:var(--purple-text);font-size:12px;font-weight:600;">AF</div>
+      <div>
+        <div style="font-size:13px;font-weight:500;">Anouk F.</div>
+        <div style="font-size:11px;color:var(--text-tertiary);">UX Designerin</div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- SIDEBAR -->
+<aside class="sidebar">
+  <div class="nav-section">Mein Bereich</div>
+  <button class="nav-item active" onclick="showPage('overview', this)">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+    Übersicht
+  </button>
+  <button class="nav-item" onclick="showPage('my', this)">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+    Meine Weiterbildungen
+  </button>
+
+  <div class="nav-section">Organisation</div>
+  <button class="nav-item" onclick="showPage('team', this)">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="7" r="3"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><circle cx="17" cy="9" r="2"/><path d="M21 20c0-2.2-1.8-4-4-4"/></svg>
+    Team
+  </button>
+  <button class="nav-item" onclick="showPage('org', this)">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="9" width="18" height="12" rx="1"/><path d="M8 9V6a4 4 0 0 1 8 0v3"/><line x1="12" y1="13" x2="12" y2="17"/></svg>
+    Unternehmen
+  </button>
+
+  <div class="nav-section">Planung</div>
+  <button class="nav-item" onclick="showPage('next', this)">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+    Rahmen 2026
+  </button>
+</aside>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modal-overlay">
+  <div class="modal-box">
+    <h3 id="modal-title"></h3>
+    <p id="modal-body"></p>
+    <div class="modal-info" id="modal-info">
+      <div class="modal-info-row"><span style="color:var(--text-secondary);">Bei Bestehen:</span><span style="font-weight:500;">Badge + CHF 500 Prämie</span></div>
+      <div class="modal-info-row"><span style="color:var(--text-secondary);">Deadline:</span><span>31. Dez. 2025</span></div>
+    </div>
+    <div class="modal-actions" id="modal-actions"></div>
+  </div>
+</div>
+
+<!-- MAIN -->
+<main class="main">
+
+  <!-- OVERVIEW -->
+  <div id="page-overview" class="page active">
+    <div class="page-title">Übersicht</div>
+    <div class="page-sub">Kompetenzbereiche 2025 — genehmigt vom Management</div>
+    <div class="stat-grid">
+      <div class="stat-card"><div class="stat-label">Kompetenzbereiche</div><div class="stat-val">5</div></div>
+      <div class="stat-card"><div class="stat-label">Mitarbeitende total</div><div class="stat-val">100</div></div>
+      <div class="stat-card"><div class="stat-label">Badges vergeben</div><div class="stat-val" id="total-badges-ov">–</div></div>
+    </div>
+
+    <div class="section-label">Priorisierte Kompetenzen</div>
+
+    <div class="card">
+      <div class="card-row"><div><div class="comp-title">KI & Automatisierung</div><div class="comp-desc">Prompt Engineering, No-Code-Tools, AI-Workflows</div></div><span class="pill pill-hot">🔥 Priorität</span></div>
+      <hr class="divider">
+      <div class="card-row"><span style="font-size:13px;color:var(--text-secondary);">Ziel-Level</span><div class="dots"><div class="dot on"></div><div class="dot on"></div><div class="dot"></div><span style="font-size:11px;color:var(--text-secondary);margin-left:4px;">Level 2/3</span></div><button class="btn btn-primary" id="btn-ai" onclick="openModal('ai')">Anmelden</button></div>
+    </div>
+    <div class="card">
+      <div class="card-row"><div><div class="comp-title">Datenanalyse & Visualisierung</div><div class="comp-desc">Power BI, Excel Advanced, Datenstorytelling</div></div><span class="pill pill-core">Core</span></div>
+      <hr class="divider">
+      <div class="card-row"><span style="font-size:13px;color:var(--text-secondary);">Ziel-Level</span><div class="dots"><div class="dot on done"></div><div class="dot on done"></div><div class="dot on done"></div><span style="font-size:11px;color:var(--text-secondary);margin-left:4px;">Level 3/3</span></div><button class="btn btn-disabled">Abgeschlossen</button></div>
+    </div>
+    <div class="card">
+      <div class="card-row"><div><div class="comp-title">Cybersicherheit Basics</div><div class="comp-desc">Phishing, Datenschutz DSGVO, sichere Zusammenarbeit</div></div><span class="pill pill-core">Core</span></div>
+      <hr class="divider">
+      <div class="card-row"><span style="font-size:13px;color:var(--text-secondary);">Ziel-Level</span><div class="dots"><div class="dot on"></div><div class="dot"></div><div class="dot"></div><span style="font-size:11px;color:var(--text-secondary);margin-left:4px;">Level 1/3</span></div><button class="btn btn-primary" id="btn-cyber" onclick="openModal('cyber')">Anmelden</button></div>
+    </div>
+    <div class="card">
+      <div class="card-row"><div><div class="comp-title">Agile Projektführung</div><div class="comp-desc">Scrum, Kanban, OKR-Frameworks</div></div><span class="pill pill-new">Neu 2025</span></div>
+      <hr class="divider">
+      <div class="card-row"><span style="font-size:13px;color:var(--text-secondary);">Ziel-Level</span><div class="dots"><div class="dot on"></div><div class="dot on"></div><div class="dot"></div><span style="font-size:11px;color:var(--text-secondary);margin-left:4px;">Level 2/3</span></div><button class="btn btn-primary" id="btn-agile" onclick="openModal('agile')">Anmelden</button></div>
+    </div>
+    <div class="card">
+      <div class="card-row"><div><div class="comp-title">Digitale Kommunikation</div><div class="comp-desc">Kollaboration, Remote-Tools, digitales Schreiben</div></div><span class="pill pill-core">Core</span></div>
+      <hr class="divider">
+      <div class="card-row"><span style="font-size:13px;color:var(--text-secondary);">Ziel-Level</span><div class="dots"><div class="dot on"></div><div class="dot"></div><div class="dot"></div><span style="font-size:11px;color:var(--text-secondary);margin-left:4px;">Level 1/3</span></div><button class="btn btn-primary" id="btn-comm" onclick="openModal('comm')">Anmelden</button></div>
+    </div>
+  </div>
+
+  <!-- MY WB -->
+  <div id="page-my" class="page">
+    <div class="page-title">Meine Weiterbildungen</div>
+    <div class="page-sub">Dein persönlicher Fortschritt</div>
+    <div id="enroll-banner" class="banner" style="display:none;">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#639922" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+      <span id="enroll-msg"></span>
+    </div>
+
+    <div class="card" id="my-data">
+      <div class="card-row"><div><div class="comp-title">Datenanalyse & Visualisierung</div><div class="comp-desc">Abgeschlossen Okt. 2025</div></div><span class="tag tag-done">✓ Abgeschlossen</span></div>
+      <hr class="divider">
+      <div style="display:flex;align-items:center;gap:10px;"><div class="progress-wrap" style="flex:1;"><div class="progress-bar done" style="width:100%;"></div></div><span style="font-size:12px;color:var(--text-secondary);">5/5 Module</span></div>
+      <div class="badge-block"><span style="font-size:22px;">🏅</span><div><div class="badge-block-title">Badge erhalten: Datenprofi</div><div class="badge-block-sub">Prämie CHF 500 ausbezahlt — Okt. 2025</div></div></div>
+    </div>
+
+    <div class="card" id="my-ai" style="display:none;"><div class="card-row"><div><div class="comp-title">KI & Automatisierung</div><div class="comp-desc">Abschluss bis 31. Dez. 2025</div></div><span class="tag tag-inprog">Laufend</span></div><hr class="divider"><div style="display:flex;align-items:center;gap:10px;"><div class="progress-wrap" style="flex:1;"><div class="progress-bar" style="width:40%;"></div></div><span style="font-size:12px;color:var(--text-secondary);">2/5 Module</span></div></div>
+    <div class="card" id="my-cyber" style="display:none;"><div class="card-row"><div><div class="comp-title">Cybersicherheit Basics</div><div class="comp-desc">Abschluss bis 31. Dez. 2025</div></div><span class="tag tag-inprog">Laufend</span></div><hr class="divider"><div style="display:flex;align-items:center;gap:10px;"><div class="progress-wrap" style="flex:1;"><div class="progress-bar" style="width:20%;"></div></div><span style="font-size:12px;color:var(--text-secondary);">1/5 Module</span></div></div>
+    <div class="card" id="my-agile" style="display:none;"><div class="card-row"><div><div class="comp-title">Agile Projektführung</div><div class="comp-desc">Abschluss bis 31. Dez. 2025</div></div><span class="tag tag-inprog">Laufend</span></div><hr class="divider"><div style="display:flex;align-items:center;gap:10px;"><div class="progress-wrap" style="flex:1;"><div class="progress-bar" style="width:60%;"></div></div><span style="font-size:12px;color:var(--text-secondary);">3/5 Module</span></div></div>
+    <div class="card" id="my-comm" style="display:none;"><div class="card-row"><div><div class="comp-title">Digitale Kommunikation</div><div class="comp-desc">Abschluss bis 31. Dez. 2025</div></div><span class="tag tag-inprog">Laufend</span></div><hr class="divider"><div style="display:flex;align-items:center;gap:10px;"><div class="progress-wrap" style="flex:1;"><div class="progress-bar" style="width:10%;"></div></div><span style="font-size:12px;color:var(--text-secondary);">0/5 Module</span></div></div>
+
+    <div id="my-empty" style="display:none;padding:2rem 0;text-align:center;color:var(--text-secondary);font-size:14px;">
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="display:block;margin:0 auto 8px;opacity:0.3;"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+      Noch keine weiteren Anmeldungen — geh zur Übersicht.
+    </div>
+  </div>
+
+  <!-- TEAM -->
+  <div id="page-team" class="page">
+    <div class="page-title">Team</div>
+    <div class="page-sub">Direkte Kolleginnen und Kollegen</div>
+    <div class="stat-grid">
+      <div class="stat-card"><div class="stat-label">Abgeschlossen</div><div class="stat-val" style="color:#639922;">7</div></div>
+      <div class="stat-card"><div class="stat-label">In Bearbeitung</div><div class="stat-val" style="color:#378ADD;">9</div></div>
+      <div class="stat-card"><div class="stat-label">Nicht begonnen</div><div class="stat-val" style="color:var(--text-tertiary);">2</div></div>
+    </div>
+    <div class="section-label">Mitarbeitende</div>
+    <div class="card">
+      <div class="emp-row"><div class="avatar" style="width:32px;height:32px;background:var(--purple-bg);color:var(--purple-text);font-size:11px;">SF</div><div style="flex:1;"><div style="font-size:14px;font-weight:500;">Sofia F.</div><div style="font-size:12px;color:var(--text-secondary);">KI & Automatisierung</div></div><span class="tag tag-done">✓ Badge</span></div>
+      <hr class="divider" style="margin:6px 0;">
+      <div class="emp-row"><div class="avatar" style="width:32px;height:32px;background:var(--teal-bg);color:var(--teal-text);font-size:11px;">MK</div><div style="flex:1;"><div style="font-size:14px;font-weight:500;">Markus K.</div><div style="font-size:12px;color:var(--text-secondary);">Cybersicherheit · Agile</div></div><span class="tag tag-inprog">Laufend</span></div>
+      <hr class="divider" style="margin:6px 0;">
+      <div class="emp-row"><div class="avatar" style="width:32px;height:32px;background:var(--amber-bg);color:var(--amber-text);font-size:11px;">LB</div><div style="flex:1;"><div style="font-size:14px;font-weight:500;">Laura B.</div><div style="font-size:12px;color:var(--text-secondary);">KI & Automatisierung</div></div><span class="tag tag-failed">Test nicht bestanden</span></div>
+      <hr class="divider" style="margin:6px 0;">
+      <div class="emp-row"><div class="avatar" style="width:32px;height:32px;background:var(--pink-bg);color:var(--pink-text);font-size:11px;">JN</div><div style="flex:1;"><div style="font-size:14px;font-weight:500;">Jan N.</div><div style="font-size:12px;color:var(--text-secondary);">Datenanalyse</div></div><span class="tag tag-todo">Nicht begonnen</span></div>
+    </div>
+    <div class="section-label">Badges im Team</div>
+    <div class="card">
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;text-align:center;">
+        <div><div style="font-size:26px;margin-bottom:4px;">🏅</div><div style="font-size:12px;font-weight:500;">Datenprofi</div><div style="font-size:11px;color:var(--text-secondary);">3 MA</div></div>
+        <div><div style="font-size:26px;margin-bottom:4px;">🤖</div><div style="font-size:12px;font-weight:500;">KI-Ready</div><div style="font-size:11px;color:var(--text-secondary);">2 MA</div></div>
+        <div><div style="font-size:26px;margin-bottom:4px;">🔒</div><div style="font-size:12px;font-weight:500;">Cyber Safe</div><div style="font-size:11px;color:var(--text-secondary);">2 MA</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ORG -->
+  <div id="page-org" class="page">
+    <div class="page-title">Unternehmen</div>
+    <div class="page-sub">Wer kann was — 100 Mitarbeitende</div>
+    <div class="stat-grid">
+      <div class="stat-card"><div class="stat-label">Mitarbeitende</div><div class="stat-val">100</div></div>
+      <div class="stat-card"><div class="stat-label">Mit mind. 1 Badge</div><div class="stat-val" id="org-with-badge">–</div></div>
+      <div class="stat-card"><div class="stat-label">Badges total</div><div class="stat-val" id="org-total">–</div></div>
+    </div>
+    <div class="section-label">Filter nach Kompetenz / Badge</div>
+    <div class="filter-row" id="filter-row"></div>
+    <div class="search-wrap">
+      <svg class="search-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <input type="text" id="org-search" placeholder="Name oder Abteilung suchen…" oninput="renderOrg()">
+    </div>
+    <div class="result-count" id="org-count"></div>
+    <div class="card" style="padding:0 1.5rem;">
+      <div class="org-list-wrap">
+        <div id="org-list"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2026 -->
+  <div id="page-next" class="page">
+    <div class="page-title">Rahmen 2026</div>
+    <div class="page-sub">Benchmarking-Entwurf — ausstehend Genehmigung</div>
+    <div class="alert">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--amber-text);flex-shrink:0;"><path d="m10.29 3.86-8.16 14.12A2 2 0 0 0 3.86 21h16.28a2 2 0 0 0 1.73-3.02L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+      <span>Noch nicht freigegeben. Genehmigung durch GL ausstehend.</span>
+    </div>
+    <div class="card">
+      <div style="font-size:15px;font-weight:500;margin-bottom:14px;">Kompetenzrahmen 2026</div>
+      <div style="display:flex;flex-direction:column;gap:10px;">
+        <div style="display:flex;align-items:center;justify-content:space-between;"><span style="font-size:13px;">KI & Automatisierung</span><span class="year-pill year-kept">Weitergeführt</span></div>
+        <div style="display:flex;align-items:center;justify-content:space-between;"><span style="font-size:13px;">Datenanalyse & Visualisierung</span><span class="year-pill year-kept">Weitergeführt</span></div>
+        <div style="display:flex;align-items:center;justify-content:space-between;"><span style="font-size:13px;">Cloud & SaaS-Kompetenz</span><span class="year-pill year-new">Neu 2026</span></div>
+        <div style="display:flex;align-items:center;justify-content:space-between;"><span style="font-size:13px;">Digitale Kommunikation</span><span class="year-pill year-drop">Entfällt</span></div>
+        <div style="display:flex;align-items:center;justify-content:space-between;"><span style="font-size:13px;">Cybersicherheit Basics</span><span class="year-pill year-kept">Weitergeführt</span></div>
+        <div style="display:flex;align-items:center;justify-content:space-between;"><span style="font-size:13px;">Agile Projektführung</span><span class="year-pill year-new">Aufgewertet Level 3</span></div>
+      </div>
+    </div>
+    <div class="card">
+      <div style="font-size:15px;font-weight:500;margin-bottom:8px;">Basis: Benchmarking-Analyse</div>
+      <div style="font-size:13px;color:var(--text-secondary);line-height:1.65;">Vergleich mit 12 Bundesstellen · Externe Studie Digitalisierungsindex 2025 · Gap-Analyse interne Kompetenzen vs. Markt</div>
+    </div>
+  </div>
+
+</main>
+
+<script>
+const compNames = { ai:'KI & Automatisierung', data:'Datenanalyse & Visualisierung', cyber:'Cybersicherheit Basics', agile:'Agile Projektführung', comm:'Digitale Kommunikation' };
+const compKeys = ['ai','data','cyber','agile','comm'];
+const badgeNames = { ai:'KI-Ready', data:'Datenprofi', cyber:'Cyber Safe', agile:'Agile Pro', comm:'Komm-Profi' };
+const depts = ['Strategie','Finanzen','IT','HR','Kommunikation','Recht','Digitalisierung','Controlling','Projektmgmt','Operations'];
+const firstNames = ['Anna','Beat','Carmen','David','Elena','Fabian','Greta','Hans','Iris','Jonas','Katrin','Lukas','Maria','Nils','Olivia','Pascal','Rahel','Stefan','Tamara','Urs','Vera','Walter','Xenia','Yannick','Zoe','Adrian','Bianca','Christoph','Diana','Emil','Franziska','Georg','Hannah','Ivan','Julia','Kevin','Laura','Marco','Nina','Oliver','Petra','Quentin','Rosa','Simon','Tanja','Ueli','Vanessa','Wolfgang','Yvonne','Zara'];
+const lastNames = ['Müller','Meier','Schmid','Keller','Weber','Huber','Schneider','Fischer','Zimmermann','Graf','Brunner','Wyss','Roth','Baumann','Frei','Maurer','Gerber','Steiner','Moser','Lehmann','Vogel','Bärtsch','Suter','Dürr','Kälin','Lüthi','Niklaus','Odermatt','Pfister','Reichlin'];
+const avatarCols = [
+  {bg:'#EEEDFE',fg:'#3C3489'},{bg:'#E1F5EE',fg:'#085041'},{bg:'#FAEEDA',fg:'#633806'},
+  {bg:'#FBEAF0',fg:'#72243E'},{bg:'#E6F1FB',fg:'#0C447C'},{bg:'#EAF3DE',fg:'#27500A'}
+];
+
+let employees = [];
+let activeFilters = new Set();
+let enrolled = new Set();
+let currentEnroll = null;
+
+function seededRand(seed) {
+  let s = seed;
+  return () => { s = (s * 1664525 + 1013904223) & 0xffffffff; return (s >>> 0) / 0xffffffff; };
+}
+
+function generateEmployees() {
+  const r = seededRand(42);
+  employees = [];
+  for (let i = 0; i < 100; i++) {
+    const fn = firstNames[Math.floor(r() * firstNames.length)];
+    const ln = lastNames[Math.floor(r() * lastNames.length)];
+    const dept = depts[Math.floor(r() * depts.length)];
+    const badges = [], inprog = [];
+    compKeys.forEach(k => {
+      const roll = r();
+      if (roll < 0.22) badges.push(k);
+      else if (roll < 0.58) inprog.push(k);
+    });
+    employees.push({ id: i, name: fn + ' ' + ln, initials: fn[0] + ln[0], dept, badges, inprog });
+  }
+  const total = employees.reduce((s, e) => s + e.badges.length, 0);
+  const withBadge = employees.filter(e => e.badges.length > 0).length;
+  document.getElementById('org-with-badge').textContent = withBadge;
+  document.getElementById('org-total').textContent = total;
+  document.getElementById('total-badges-ov').textContent = total;
+}
+
+function buildFilters() {
+  const row = document.getElementById('filter-row');
+  const filters = [
+    { key: 'all', label: 'Alle' },
+    ...compKeys.map(k => ({ key: 'b_' + k, label: '🏅 ' + badgeNames[k] })),
+    ...compKeys.map(k => ({ key: 'i_' + k, label: compNames[k] + ' (laufend)' }))
+  ];
+  row.innerHTML = filters.map(f =>
+    `<button class="filter-chip${f.key === 'all' ? ' active' : ''}" data-key="${f.key}" onclick="toggleFilter('${f.key}')">${f.label}</button>`
+  ).join('');
+}
+
+function toggleFilter(key) {
+  if (key === 'all') {
+    activeFilters.clear();
+    document.querySelectorAll('.filter-chip').forEach(c => c.classList.remove('active'));
+    document.querySelector('[data-key="all"]').classList.add('active');
+  } else {
+    document.querySelector('[data-key="all"]').classList.remove('active');
+    const btn = document.querySelector(`[data-key="${key}"]`);
+    if (activeFilters.has(key)) { activeFilters.delete(key); btn.classList.remove('active'); }
+    else { activeFilters.add(key); btn.classList.add('active'); }
+    if (activeFilters.size === 0) document.querySelector('[data-key="all"]').classList.add('active');
+  }
+  renderOrg();
+}
+
+function renderOrg() {
+  const q = (document.getElementById('org-search').value || '').toLowerCase();
+  let filtered = employees.filter(e => {
+    const matchText = !q || e.name.toLowerCase().includes(q) || e.dept.toLowerCase().includes(q);
+    if (!matchText) return false;
+    if (activeFilters.size === 0) return true;
+    return [...activeFilters].every(f => {
+      if (f.startsWith('b_')) return e.badges.includes(f.slice(2));
+      if (f.startsWith('i_')) return e.inprog.includes(f.slice(2));
+      return true;
+    });
+  });
+  document.getElementById('org-count').textContent = filtered.length + ' Mitarbeitende';
+  const list = document.getElementById('org-list');
+  const shown = filtered.slice(0, 60);
+  list.innerHTML = shown.map(e => {
+    const col = avatarCols[e.id % avatarCols.length];
+    const chips = [
+      ...e.badges.map(k => `<span class="skill-chip badge">🏅 ${badgeNames[k]}</span>`),
+      ...e.inprog.map(k => `<span class="skill-chip inprog">${compNames[k]}</span>`)
+    ].join('') || '<span class="skill-chip none">Keine</span>';
+    return `<div class="person-row">
+      <div class="avatar" style="width:32px;height:32px;border-radius:50%;background:${col.bg};color:${col.fg};font-size:11px;font-weight:600;flex-shrink:0;">${e.initials}</div>
+      <div style="min-width:0;flex:0 0 160px;">
+        <div class="person-name">${e.name}</div>
+        <div class="person-dept">${e.dept}</div>
+      </div>
+      <div class="chips-wrap">${chips}</div>
+    </div>`;
+  }).join('');
+  if (filtered.length > 60) {
+    list.innerHTML += `<div style="padding:10px 0;text-align:center;font-size:12px;color:var(--text-secondary);">+ ${filtered.length - 60} weitere — Suche verfeinern</div>`;
+  }
+  if (filtered.length === 0) {
+    list.innerHTML = '<div style="padding:1.5rem 0;text-align:center;color:var(--text-secondary);font-size:13px;">Keine Treffer.</div>';
+  }
+}
+
+function showPage(id, btn) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nav-item').forEach(b => b.classList.remove('active'));
+  document.getElementById('page-' + id).classList.add('active');
+  if (btn) btn.classList.add('active');
+  if (id === 'org') renderOrg();
+  if (id === 'my') updateMyPage();
+}
+
+function updateMyPage() {
+  const others = ['ai','cyber','agile','comm'];
+  const hasOthers = others.some(k => enrolled.has(k));
+  document.getElementById('my-empty').style.display = hasOthers ? 'none' : 'block';
+  others.forEach(k => { document.getElementById('my-' + k).style.display = enrolled.has(k) ? 'block' : 'none'; });
+}
+
+function openModal(course) {
+  currentEnroll = course;
+  document.getElementById('modal-title').textContent = compNames[course];
+  document.getElementById('modal-body').textContent = 'Möchtest du dich für diesen Kurs anmelden? Du hast bis 31. Dezember 2025 Zeit, das Ziel-Level zu erreichen und den Abschlusstest zu bestehen.';
+  document.getElementById('modal-info').style.display = 'block';
+  document.getElementById('modal-actions').innerHTML = `<button class="btn btn-secondary" onclick="closeModal()">Abbrechen</button><button class="btn btn-primary" onclick="confirmEnroll()">Jetzt anmelden</button>`;
+  document.getElementById('modal-overlay').classList.add('open');
+}
+
+function closeModal() {
+  document.getElementById('modal-overlay').classList.remove('open');
+  currentEnroll = null;
+}
+
+function confirmEnroll() {
+  if (!currentEnroll) return;
+  enrolled.add(currentEnroll);
+  const btn = document.getElementById('btn-' + currentEnroll);
+  if (btn) { btn.textContent = 'Angemeldet'; btn.className = 'btn btn-disabled'; }
+  document.getElementById('enroll-msg').textContent = '✓ Angemeldet: ' + compNames[currentEnroll];
+  closeModal();
+  showPage('my', document.querySelector('[onclick="showPage(\'my\', this)"]'));
+  const banner = document.getElementById('enroll-banner');
+  banner.style.display = 'flex';
+  setTimeout(() => banner.style.display = 'none', 3000);
+}
+
+function confirmReset() {
+  document.getElementById('modal-title').textContent = 'Prototype zurücksetzen';
+  document.getElementById('modal-body').textContent = 'Alle deine Anmeldungen werden gelöscht und der Prototype startet von vorne.';
+  document.getElementById('modal-info').style.display = 'none';
+  document.getElementById('modal-actions').innerHTML = `<button class="btn btn-secondary" onclick="closeModal()">Abbrechen</button><button class="btn" style="background:var(--red-bg);color:var(--red-text);border-color:#E24B4A;" onclick="doReset()">Zurücksetzen</button>`;
+  document.getElementById('modal-overlay').classList.add('open');
+}
+
+function doReset() {
+  enrolled.clear();
+  ['ai','cyber','agile','comm'].forEach(k => {
+    const btn = document.getElementById('btn-' + k);
+    if (btn) { btn.textContent = 'Anmelden'; btn.className = 'btn btn-primary'; btn.onclick = () => openModal(k); }
+  });
+  closeModal();
+  showPage('overview', document.querySelector('[onclick="showPage(\'overview\', this)"]'));
+}
+
+document.getElementById('modal-overlay').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
+
+generateEmployees();
+buildFilters();
+</script>
+</body>
+</html>

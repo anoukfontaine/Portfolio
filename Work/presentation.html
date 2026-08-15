@@ -1,0 +1,2931 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!--<script src="../password-gate.js"></script> -->
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Presentation — Yellow is the new Green</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300;0,400;0,700;1,300;1,400&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/png" href="../Images/General/favicon.png" />
+    <link href="../style.css" rel="stylesheet" />
+
+    <script>
+      /* =============================================
+         AVOID THEME FLICKER — same theme setup as portfolio
+         ============================================= */
+      (function () {
+        const themes = [
+          {
+            bg: "#F9F9F9",
+            text: "#1A1A1A",
+            muted: "rgba(0,0,0,0.6)",
+            p1: "#FCDEA4",
+            p2: "#b8ebda",
+            p3: "#528AAF",
+            p4: "#8862AA",
+            p5: "#287E70",
+          },
+          {
+            bg: "#1A1A1A",
+            text: "#F9F9F9",
+            muted: "rgba(255,255,255,0.4)",
+            p1: "#FFB72C",
+            p2: "#4bad8c",
+            p3: "#572F7A",
+            p4: "#19537A",
+            p5: "#16584D",
+          },
+          {
+            bg: "#FFD2B4",
+            text: "#9D4434",
+            muted: "rgba(233,79,16,0.7)",
+            p1: "#F4A367",
+            p2: "#657749",
+            p3: "#B05A6B",
+            p4: "#90726E",
+            p5: "#776B49",
+          },
+          {
+            bg: "#E5E8FF",
+            text: "#D45D5D",
+            muted: "rgba(212, 93, 93, 0.8)",
+            p1: "#F4CC99",
+            p2: "#81c0ab",
+            p3: "#BCD2EE",
+            p4: "#9B7EDE",
+            p5: "#3A4E48",
+          },
+        ];
+
+        const i = parseInt(localStorage.getItem("theme-index"), 10) || 0;
+        const t = themes[i];
+        const root = document.documentElement.style;
+        root.setProperty("--color-bg", t.bg);
+        root.setProperty("--color-text", t.text);
+        root.setProperty("--color-text-muted", t.muted);
+        root.setProperty("--project-1", t.p1);
+        root.setProperty("--project-2", t.p2);
+        root.setProperty("--project-3", t.p3);
+        root.setProperty("--project-4", t.p4);
+        root.setProperty("--project-5", t.p5);
+        root.setProperty("--moon-rotation", `${i * 90}deg`);
+      })();
+    </script>
+
+    <style>
+      /* ==========================================================
+         PRESENTATION PAGE ONLY
+         Everything below is scoped to .presentation-page so the
+         official portfolio CSS stays untouched.
+         ========================================================== */
+
+      .presentation-page {
+        height: 100vh;
+        overflow: hidden;
+        background: var(--color-bg);
+      }
+
+      .presentation-page main {
+        padding: 0;
+      }
+
+      .presentation-page #site-content {
+        height: 100vh;
+        overflow-y: auto;
+        overflow-x: hidden;
+        scroll-snap-type: y mandatory;
+        scroll-behavior: smooth;
+        overscroll-behavior-y: contain;
+        scrollbar-width: none;
+      }
+
+      .presentation-page #site-content::-webkit-scrollbar {
+        display: none;
+      }
+
+      .presentation-page .presentation-deck {
+        width: 100%;
+      }
+
+      .presentation-page .presentation-slide {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        height: 100svh;
+        overflow: hidden;
+        scroll-snap-align: start;
+        scroll-snap-stop: always;
+        background: var(--color-bg);
+        color: var(--color-text);
+      }
+
+      .presentation-page .presentation-slide--accent {
+        background: var(--project-1);
+      }
+      .presentation-page .presentation-slide-inner {
+        width: min(100%, 1600px);
+        height: 100%;
+        margin: 0 auto;
+        padding: calc(var(--nav-height) + clamp(28px, 5vh, 64px))
+          clamp(40px, 6vw, 96px) clamp(48px, 7vh, 84px) clamp(64px, 9vw, 150px);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: relative;
+      }
+
+      /* Process intro needs room for the large process timeline below */
+      .presentation-page #slide-process .presentation-slide-inner {
+        justify-content: flex-start;
+        padding-top: calc(var(--nav-height) + 10vh);
+      }
+
+      .presentation-page .presentation-slide-number {
+        position: absolute;
+        top: calc(var(--nav-height) + 20px);
+        left: clamp(64px, 9vw, 150px);
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--color-text-muted);
+      }
+
+      .presentation-page .presentation-kicker {
+        margin: 0 0 16px;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        line-height: 1.2;
+        text-transform: uppercase;
+        color: var(--color-text-muted);
+      }
+
+      .presentation-page .presentation-title {
+        margin: 0;
+        max-width: 1050px;
+        font-size: clamp(48px, 6.5vw, 104px);
+        font-weight: 300;
+        letter-spacing: -0.055em;
+        line-height: 0.96;
+        color: var(--color-text);
+      }
+
+      .presentation-page .presentation-title strong {
+        font-weight: 700;
+      }
+
+      .presentation-page .presentation-title em {
+        font-style: italic;
+        font-weight: 300;
+      }
+
+      .presentation-page .presentation-title--medium {
+        max-width: 900px;
+        font-size: clamp(44px, 5.3vw, 82px);
+      }
+
+      .presentation-page .presentation-copy {
+        max-width: 720px;
+        margin-top: 28px;
+        font-size: clamp(18px, 1.55vw, 25px);
+        font-weight: 300;
+        line-height: 1.45;
+        letter-spacing: -0.015em;
+        color: var(--color-text);
+      }
+
+      .presentation-page .presentation-copy strong {
+        font-weight: 700;
+      }
+
+      .presentation-page .presentation-note {
+        max-width: 620px;
+        margin-top: 20px;
+        font-size: 13px;
+        font-weight: 300;
+        line-height: 1.55;
+        color: var(--color-text-muted);
+      }
+
+      .presentation-page .presentation-grid-2 {
+        display: grid;
+        grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+        gap: clamp(48px, 7vw, 110px);
+        align-items: center;
+        width: 100%;
+      }
+
+      .presentation-page .presentation-grid-2--wide-image {
+        grid-template-columns: minmax(300px, 0.72fr) minmax(0, 1.28fr);
+      }
+
+      .presentation-page .presentation-image-frame {
+        width: 100%;
+        max-height: min(62vh, 650px);
+        border: var(--border-text);
+        border-radius: var(--radius-xs);
+        overflow: hidden;
+        background: rgba(255, 255, 255, 0.15);
+      }
+
+      .presentation-page .presentation-image-frame img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        max-height: min(62vh, 650px);
+        object-fit: contain;
+      }
+
+      .presentation-page .presentation-image-frame--plain {
+        border: 0;
+        background: transparent;
+      }
+
+      /* Yellow image container on first slide */
+      .presentation-page #slide-overview .presentation-image-frame {
+        width: 100%;
+        height: min(62vh, 650px);
+
+        border: 0;
+        background: var(--project-1);
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .presentation-page #slide-overview .presentation-image-frame img {
+        width: 88%;
+        height: 88%;
+        object-fit: contain;
+      }
+
+      .presentation-page .presentation-image-frame--plain img {
+        object-fit: contain;
+      }
+
+      .presentation-page .presentation-meta {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 40px;
+        margin-top: clamp(40px, 6vh, 72px);
+        padding-top: 24px;
+        border-top: var(--border-muted);
+        max-width: 1100px;
+      }
+
+      .presentation-page .presentation-meta-label,
+      .presentation-page .presentation-card-label {
+        margin: 0 0 9px;
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--color-text-muted);
+      }
+
+      .presentation-page .presentation-meta-value {
+        margin: 0;
+        max-width: 280px;
+        font-size: 15px;
+        font-weight: 300;
+        line-height: 1.45;
+      }
+
+      /* Larger project summary when used as its own slide */
+      .presentation-page .presentation-meta--standalone {
+        max-width: 1200px;
+        margin-top: clamp(64px, 10vh, 110px);
+        gap: clamp(40px, 6vw, 90px);
+      }
+
+      .presentation-page
+        .presentation-meta--standalone
+        .presentation-meta-value {
+        max-width: 330px;
+        font-size: clamp(20px, 1.7vw, 27px);
+        line-height: 1.4;
+      }
+
+      /* ==========================================================
+   ABOUT SLIDE
+   ========================================================== */
+
+      .presentation-page .presentation-about-layout {
+        display: grid;
+        grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+        gap: clamp(28px, 5vw, 72px);
+        align-items: center;
+        width: 100%;
+      }
+
+      .presentation-page .presentation-about-text {
+        max-width: 560px;
+      }
+
+      .presentation-page .presentation-about-copy {
+        margin-top: 28px;
+        max-width: 560px;
+        font-size: clamp(22px, 2vw, 30px);
+        line-height: 1.45;
+      }
+
+      .presentation-page .presentation-about-note {
+        margin: 28px 0 0;
+        max-width: 520px;
+        font-size: 15px;
+        font-weight: 300;
+        line-height: 1.6;
+        color: var(--color-text-muted);
+      }
+
+      .presentation-page .presentation-about-images {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: clamp(16px, 2vw, 24px);
+        align-items: end;
+      }
+
+      .presentation-page .presentation-about-image-card {
+        margin: 0;
+      }
+
+      .presentation-page .presentation-about-image-frame {
+        aspect-ratio: 4 / 5;
+        overflow: hidden;
+        background: color-mix(in srgb, var(--color-text) 6%, transparent);
+      }
+
+      .presentation-page .presentation-about-image-frame img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .presentation-page .presentation-about-image-card figcaption {
+        margin-top: 10px;
+        font-size: 12px;
+        font-weight: 300;
+        color: var(--color-text-muted);
+      }
+
+      @media (max-width: 900px) {
+        .presentation-page .presentation-about-layout {
+          grid-template-columns: 1fr;
+        }
+
+        .presentation-page .presentation-about-images {
+          max-width: 700px;
+        }
+      }
+
+      .presentation-page .presentation-points {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: clamp(20px, 3vw, 44px);
+        margin-top: clamp(36px, 6vh, 72px);
+      }
+
+      .presentation-page .presentation-point {
+        padding-top: 18px;
+        border-top: var(--border-text);
+      }
+
+      .presentation-page .presentation-point-title {
+        margin: 0 0 8px;
+        font-size: clamp(20px, 2vw, 30px);
+        font-weight: 400;
+        letter-spacing: -0.025em;
+      }
+
+      .presentation-page .presentation-point-text {
+        margin: 0;
+        max-width: 340px;
+        font-size: 15px;
+        font-weight: 300;
+        line-height: 1.55;
+        color: var(--color-text-muted);
+      }
+
+      .presentation-page .presentation-process {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 0;
+        margin-top: clamp(48px, 8vh, 90px);
+        width: 100%;
+      }
+
+      .presentation-page .presentation-process-step {
+        position: relative;
+        padding-right: 28px;
+      }
+
+      .presentation-page .presentation-process-step:not(:last-child)::after {
+        content: "";
+        position: absolute;
+        left: 8px;
+        right: 0;
+        top: 49px;
+        border-top: var(--border-muted);
+      }
+
+      .presentation-page .presentation-process-num {
+        display: block;
+        margin-bottom: 26px;
+        font-size: 13px;
+        font-weight: 700;
+        color: var(--color-text);
+      }
+
+      .presentation-page .presentation-process-dot {
+        position: absolute;
+        top: 45px;
+        left: 0;
+        width: 9px;
+        height: 9px;
+        border-radius: 50%;
+        background: var(--color-text);
+        z-index: 2;
+      }
+
+      .presentation-page .presentation-process-name {
+        display: block;
+        margin-top: 48px;
+        font-size: clamp(21px, 2vw, 30px);
+        font-weight: 400;
+        letter-spacing: -0.025em;
+      }
+
+      .presentation-page .presentation-process-detail {
+        display: block;
+        margin-top: 10px;
+        max-width: 220px;
+        font-size: 13px;
+        font-weight: 300;
+        line-height: 1.5;
+        color: var(--color-text-muted);
+      }
+
+      .presentation-page .presentation-callout {
+        margin-top: 32px;
+        padding-left: 22px;
+        border-left: 2px solid var(--color-text);
+        max-width: 640px;
+        font-size: clamp(18px, 1.6vw, 25px);
+        font-weight: 400;
+        line-height: 1.4;
+      }
+
+      .presentation-page .presentation-tag-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 30px;
+      }
+
+      .presentation-page .presentation-tag {
+        padding: 8px 13px;
+        border: var(--border-text);
+        border-radius: var(--radius-pill);
+        font-size: 12px;
+        font-weight: 400;
+        white-space: nowrap;
+      }
+
+      /* Design — two views inside one slide */
+
+      .presentation-page .presentation-design-view {
+        display: none;
+        width: 100%;
+      }
+
+      .presentation-page .presentation-design-view.is-active {
+        display: block;
+      }
+
+      .presentation-page .presentation-design-spotlight {
+        width: 100%;
+        overflow: visible;
+      }
+
+      .presentation-page .presentation-design-spotlight .cs-spotlight-image {
+        width: 100%;
+        overflow: visible;
+      }
+
+      .presentation-page
+        .presentation-design-spotlight
+        .cs-spotlight-image
+        > img {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+
+      .presentation-page .presentation-design-spotlight .cs-spotlight-card {
+        width: 230px;
+        padding: 14px;
+      }
+
+      .presentation-page .presentation-design-spotlight .cs-design-card-title {
+        font-size: 13px;
+        line-height: 1.3;
+      }
+
+      .presentation-page .presentation-design-spotlight .cs-process-card-text {
+        font-size: 12px;
+        line-height: 1.4;
+      }
+
+      /* Design decisions slide */
+
+      .presentation-page .presentation-design-decisions-head {
+        max-width: 900px;
+      }
+
+      .presentation-page #slide-design-decisions .presentation-copy {
+        max-width: 760px;
+        margin-top: 18px;
+        font-size: clamp(16px, 1.25vw, 20px);
+      }
+
+      .presentation-page #slide-design-decisions .presentation-note {
+        margin-top: 12px;
+      }
+
+      .presentation-page .presentation-design-decisions {
+        width: min(900px, 62vw);
+        margin: clamp(24px, 3vh, 34px) auto 0;
+        overflow: visible;
+      }
+
+      .presentation-page #slide-design-decisions .cs-spotlight-image {
+        width: 100%;
+        overflow: visible;
+      }
+
+      .presentation-page #slide-design-decisions .cs-spotlight-image > img {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+
+      .presentation-page #slide-design-decisions .cs-spotlight-card {
+        width: 230px;
+        padding: 14px;
+      }
+
+      .presentation-page #slide-design-decisions .cs-design-card-title {
+        font-size: 13px;
+        line-height: 1.3;
+      }
+
+      .presentation-page #slide-design-decisions .cs-process-card-text {
+        font-size: 12px;
+        line-height: 1.4;
+      }
+
+      .presentation-page .presentation-before-after {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+        margin-top: 28px;
+      }
+
+      .presentation-page .presentation-before-after figure {
+        margin: 0;
+      }
+
+      .presentation-page .presentation-before-after img {
+        display: block;
+        width: 100%;
+        max-height: 34vh;
+        object-fit: contain;
+        border: var(--border-text);
+        border-radius: var(--radius-xs);
+      }
+
+      .presentation-page .presentation-before-after figcaption {
+        margin-top: 8px;
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--color-text-muted);
+      }
+
+      .presentation-page .presentation-stat-row {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: clamp(24px, 4vw, 56px);
+        margin-top: 34px;
+      }
+
+      .presentation-page .presentation-stat {
+        padding-top: 16px;
+        border-top: var(--border-text);
+      }
+
+      .presentation-page .presentation-stat-num {
+        display: block;
+        font-size: clamp(34px, 4vw, 64px);
+        font-weight: 300;
+        letter-spacing: -0.05em;
+        line-height: 1;
+      }
+
+      .presentation-page .presentation-stat-text {
+        display: block;
+        margin-top: 10px;
+        max-width: 230px;
+        font-size: 13px;
+        font-weight: 300;
+        line-height: 1.45;
+      }
+
+      .presentation-page .presentation-product-layout {
+        display: grid;
+        grid-template-columns: minmax(0, 1.5fr) minmax(190px, 0.5fr);
+        gap: 24px;
+        width: 100%;
+        margin-top: 34px;
+        min-height: 0;
+      }
+
+      .presentation-page .presentation-product-main,
+      .presentation-page .presentation-product-small {
+        border: var(--border-text);
+        border-radius: var(--radius-xs);
+        overflow: hidden;
+        min-height: 0;
+      }
+
+      .presentation-page .presentation-product-main img,
+      .presentation-page .presentation-product-small img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+
+      .presentation-page .presentation-product-main {
+        height: min(56vh, 570px);
+      }
+
+      .presentation-page .presentation-product-side {
+        display: grid;
+        grid-template-rows: repeat(2, minmax(0, 1fr));
+        gap: 24px;
+        height: min(56vh, 570px);
+      }
+
+      .presentation-page .presentation-impact-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: clamp(28px, 5vw, 72px);
+        width: 100%;
+        margin-top: clamp(54px, 8vh, 100px);
+      }
+
+      .presentation-page .presentation-impact-item {
+        padding-top: 22px;
+        border-top: 1px solid currentColor;
+      }
+
+      .presentation-page .presentation-impact-num {
+        display: block;
+        font-size: clamp(64px, 8vw, 126px);
+        font-weight: 300;
+        letter-spacing: -0.065em;
+        line-height: 0.9;
+      }
+
+      .presentation-page .presentation-impact-label {
+        display: block;
+        margin-top: 22px;
+        max-width: 280px;
+        font-size: clamp(16px, 1.4vw, 22px);
+        font-weight: 400;
+        line-height: 1.35;
+      }
+
+      .presentation-page .presentation-lessons {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: clamp(22px, 3vw, 44px);
+        margin-top: clamp(42px, 7vh, 80px);
+      }
+
+      .presentation-page .presentation-lesson {
+        padding-top: 18px;
+        border-top: var(--border-text);
+      }
+
+      .presentation-page .presentation-lesson-num {
+        margin: 0 0 28px;
+        font-size: 12px;
+        font-weight: 700;
+        color: var(--color-text-muted);
+      }
+
+      .presentation-page .presentation-lesson-title {
+        margin: 0 0 12px;
+        font-size: clamp(21px, 2vw, 30px);
+        font-weight: 400;
+        letter-spacing: -0.025em;
+      }
+
+      .presentation-page .presentation-lesson-text {
+        margin: 0;
+        max-width: 330px;
+        font-size: 14px;
+        font-weight: 300;
+        line-height: 1.55;
+        color: var(--color-text-muted);
+      }
+
+      .presentation-page .presentation-end-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        width: fit-content;
+        margin-top: 36px;
+        color: var(--color-text);
+        text-decoration: none;
+        font-size: 15px;
+        font-weight: 400;
+      }
+
+      .presentation-page .presentation-end-link svg {
+        width: 15px;
+        height: 15px;
+        transition: transform 0.25s ease;
+      }
+
+      .presentation-page .presentation-end-link:hover svg {
+        transform: translate(3px, -3px);
+      }
+
+      /* ==========================================================
+         PRESENTATION STORY MAP
+         Major chapters stay visible; process substeps appear while
+         moving through Research / Design / Build / Test.
+         ========================================================== */
+      .presentation-page .presentation-story-map {
+        position: fixed;
+        top: calc(var(--nav-height) + 18px);
+        left: 0;
+        right: 0;
+
+        height: auto;
+        display: block;
+        padding: 0;
+
+        z-index: 180;
+        pointer-events: none;
+      }
+
+      .presentation-page .presentation-story-main,
+      .presentation-page .presentation-story-process {
+        display: flex;
+        align-items: flex-start;
+        width: 100%;
+      }
+
+      .presentation-page .presentation-story-main {
+        gap: 0;
+      }
+
+      .presentation-page .presentation-story-item {
+        position: relative;
+        flex: 1 1 0;
+        min-width: 0;
+        padding-right: 18px;
+        border: 0;
+        background: transparent;
+        color: var(--color-text-muted);
+        text-align: left;
+        font-family: var(--font);
+        pointer-events: auto;
+        opacity: 0.48;
+        transition:
+          opacity 0.3s ease,
+          color 0.3s ease;
+      }
+
+      .presentation-page .presentation-story-item:not(:last-child)::after {
+        content: "";
+        position: absolute;
+        top: 26px;
+        left: 7px;
+        right: 0;
+        border-top: 0.5px solid var(--color-text-muted);
+        opacity: 0.55;
+      }
+
+      .presentation-page .presentation-story-dot {
+        position: relative;
+        display: block;
+        width: 7px;
+        height: 7px;
+        margin-top: 14px;
+        border-radius: 50%;
+        background: var(--color-bg);
+        border: 1px solid var(--color-text-muted);
+        z-index: 2;
+        transition:
+          background-color 0.3s ease,
+          border-color 0.3s ease,
+          transform 0.3s ease;
+      }
+
+      .presentation-page .presentation-story-label {
+        display: block;
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        white-space: nowrap;
+      }
+
+      .presentation-page .presentation-story-item:hover,
+      .presentation-page .presentation-story-item.is-active,
+      .presentation-page .presentation-story-item.is-past {
+        color: var(--color-text);
+      }
+
+      .presentation-page .presentation-story-item:hover,
+      .presentation-page .presentation-story-item.is-active {
+        opacity: 1;
+      }
+
+      .presentation-page .presentation-story-item.is-past {
+        opacity: 0.72;
+      }
+
+      .presentation-page
+        .presentation-story-item.is-active
+        .presentation-story-dot,
+      .presentation-page
+        .presentation-story-item.is-past
+        .presentation-story-dot {
+        background: var(--color-text);
+        border-color: var(--color-text);
+      }
+
+      .presentation-page
+        .presentation-story-item.is-active
+        .presentation-story-dot {
+        transform: scale(1.35);
+      }
+
+      /* =============================================
+   MORPHING PROCESS BAR
+   ============================================= */
+
+      .presentation-page .presentation-story-process-wrap {
+        width: calc(100% - clamp(64px, 9vw, 150px));
+        margin-left: 0;
+
+        opacity: 0;
+        pointer-events: none;
+
+        transform: translateY(0);
+
+        transition:
+          width 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+          margin-left 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+          transform 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+          opacity 0.3s ease;
+      }
+
+      .presentation-page .presentation-story-process-wrap.is-visible {
+        opacity: 1;
+        pointer-events: auto;
+      }
+
+      /* =========================
+   LARGE — PROCESS SLIDE
+   ========================= */
+
+      .presentation-page .presentation-story-process-wrap.is-expanded {
+        width: min(1100px, 82vw);
+
+        margin-left: max(
+          clamp(64px, 9vw, 150px),
+          calc((100vw - 1600px) / 2 + clamp(64px, 9vw, 150px))
+        );
+
+        margin-right: auto;
+
+        transform: translateY(52vh);
+      }
+      .presentation-page .presentation-story-process {
+        display: flex;
+        width: 100%;
+        gap: 0;
+      }
+
+      .presentation-page .presentation-story-subitem {
+        position: relative;
+
+        flex: 1 1 0;
+
+        border: 0;
+        padding: 0 28px 0 0;
+        background: transparent;
+
+        color: var(--color-text);
+
+        font-family: var(--font);
+        text-align: left;
+
+        opacity: 1;
+        pointer-events: auto;
+
+        transition:
+          color 0.4s ease,
+          opacity 0.4s ease,
+          font-weight 0.4s ease,
+          padding 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+
+      /* line */
+
+      .presentation-page .presentation-story-subitem:not(:last-child)::after {
+        content: "";
+        position: absolute;
+
+        left: 5px;
+        right: 0;
+        top: 37px;
+
+        border-top: var(--border-muted);
+
+        transition: top 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+
+      /* dot */
+
+      .presentation-page .presentation-story-subitem::before {
+        content: "";
+
+        position: absolute;
+        left: 0;
+        top: 33px;
+
+        width: 9px;
+        height: 9px;
+
+        margin: 0;
+
+        border-radius: 50%;
+        border: 1px solid var(--color-text);
+
+        background: var(--color-bg);
+
+        z-index: 2;
+
+        transition:
+          width 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+          height 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+          top 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+          background-color 0.3s ease;
+      }
+
+      /* number + name */
+
+      .presentation-page .presentation-story-step-title {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .presentation-page .presentation-story-step-num {
+        font-size: 13px;
+        font-weight: 700;
+
+        transition: font-size 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+
+      .presentation-page .presentation-story-step-name {
+        margin-top: 52px;
+
+        font-size: clamp(21px, 2vw, 30px);
+        font-weight: 400;
+        letter-spacing: -0.025em;
+
+        transition:
+          font-size 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+          margin-top 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+
+      /* descriptions */
+
+      .presentation-page .presentation-story-step-detail {
+        display: block;
+
+        margin-top: 10px;
+        max-width: 220px;
+
+        font-size: 13px;
+        font-weight: 300;
+        line-height: 1.5;
+
+        color: var(--color-text-muted);
+
+        opacity: 1;
+        max-height: 50px;
+
+        transition:
+          opacity 0.25s ease,
+          max-height 0.45s ease,
+          margin-top 0.45s ease;
+      }
+
+      /* =========================
+   SMALL — PROCESS STEPS
+   ========================= */
+      .presentation-page .presentation-story-process-wrap.is-compact {
+        width: min(620px, 58vw);
+        margin-left: auto;
+        margin-right: auto;
+
+        transform: translateY(-14px);
+      }
+
+      .presentation-page
+        .presentation-story-process-wrap.is-compact
+        .presentation-story-process {
+        gap: 22px;
+      }
+
+      .presentation-page
+        .presentation-story-process-wrap.is-compact
+        .presentation-story-subitem {
+        flex: 0 0 auto;
+        padding: 0;
+
+        color: var(--color-text-muted);
+
+        font-size: 12px;
+        font-weight: 300;
+
+        opacity: 0.5;
+      }
+
+      /* hide connecting line in compact mode */
+
+      .presentation-page
+        .presentation-story-process-wrap.is-compact
+        .presentation-story-subitem::after {
+        display: none;
+      }
+
+      /* compact dots */
+
+      .presentation-page
+        .presentation-story-process-wrap.is-compact
+        .presentation-story-subitem::before {
+        position: static;
+
+        display: inline-block;
+
+        width: 5px;
+        height: 5px;
+
+        margin-right: 8px;
+
+        vertical-align: 1px;
+
+        border: 1px solid var(--color-text-muted);
+      }
+
+      /* compact title becomes horizontal */
+
+      .presentation-page
+        .presentation-story-process-wrap.is-compact
+        .presentation-story-step-title {
+        display: inline-flex;
+        flex-direction: row;
+        gap: 4px;
+      }
+
+      .presentation-page
+        .presentation-story-process-wrap.is-compact
+        .presentation-story-step-num,
+      .presentation-page
+        .presentation-story-process-wrap.is-compact
+        .presentation-story-step-name {
+        margin: 0;
+
+        font-size: 12px;
+        font-weight: inherit;
+        letter-spacing: 0;
+      }
+
+      /* description disappears */
+
+      .presentation-page
+        .presentation-story-process-wrap.is-compact
+        .presentation-story-step-detail {
+        opacity: 0;
+        max-height: 0;
+        margin-top: 0;
+        overflow: hidden;
+      }
+
+      /* current / completed steps */
+
+      .presentation-page
+        .presentation-story-process-wrap.is-compact
+        .presentation-story-subitem.is-active,
+      .presentation-page
+        .presentation-story-process-wrap.is-compact
+        .presentation-story-subitem.is-past {
+        color: var(--color-text);
+      }
+
+      .presentation-page
+        .presentation-story-process-wrap.is-compact
+        .presentation-story-subitem.is-active {
+        opacity: 1;
+        font-weight: 600;
+      }
+
+      .presentation-page
+        .presentation-story-process-wrap.is-compact
+        .presentation-story-subitem.is-past {
+        opacity: 0.72;
+      }
+
+      .presentation-page
+        .presentation-story-process-wrap.is-compact
+        .presentation-story-subitem.is-active::before,
+      .presentation-page
+        .presentation-story-process-wrap.is-compact
+        .presentation-story-subitem.is-past::before {
+        background: var(--color-text);
+        border-color: var(--color-text);
+      }
+
+      /* The story map replaces the old per-slide 01 / 10 label. */
+      .presentation-page .presentation-slide-number {
+        display: none;
+      }
+
+      /* ==========================================================
+   MORE WORK — FINAL SLIDE
+   ========================================================== */
+
+      .presentation-page .presentation-more-work-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: clamp(18px, 2.5vw, 36px);
+        width: 100%;
+        max-width: 1250px;
+        margin-top: clamp(40px, 6vh, 70px);
+      }
+
+      .presentation-page .presentation-project-card {
+        display: block;
+        color: var(--color-text);
+        text-decoration: none;
+      }
+
+      .presentation-page .presentation-project-image {
+        width: 100%;
+        aspect-ratio: 16 / 10;
+        overflow: hidden;
+
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+      }
+
+      .presentation-page .presentation-project-image img {
+        display: block;
+        width: 88%;
+        height: 88%;
+        object-fit: contain;
+
+        transition: transform 0.35s ease;
+      }
+
+      .presentation-page .presentation-project-card:hover img {
+        transform: scale(1.04);
+      }
+
+      .presentation-page .presentation-project-info {
+        padding-top: 16px;
+      }
+
+      .presentation-page .presentation-project-title {
+        margin: 0;
+        font-size: clamp(18px, 1.6vw, 25px);
+        font-weight: 400;
+        letter-spacing: -0.025em;
+      }
+
+      .presentation-page .presentation-project-type {
+        margin: 7px 0 0;
+        font-size: 12px;
+        font-weight: 300;
+        color: var(--color-text-muted);
+      }
+
+      .presentation-page .presentation-more-work-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+
+        width: fit-content;
+        margin-top: clamp(32px, 5vh, 54px);
+
+        color: var(--color-text);
+        text-decoration: none;
+
+        font-size: 15px;
+        font-weight: 400;
+      }
+
+      .presentation-page .presentation-more-work-link svg {
+        width: 15px;
+        height: 15px;
+
+        transition: transform 0.25s ease;
+      }
+
+      .presentation-page .presentation-more-work-link:hover svg {
+        transform: translate(3px, -3px);
+      }
+
+      /* Fixed slide navigation */
+      .presentation-page .presentation-controls {
+        position: fixed;
+        right: clamp(28px, 3.4vw, 54px);
+        bottom: clamp(24px, 3.5vh, 44px);
+        z-index: 9000;
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        color: #ffffff;
+        mix-blend-mode: difference;
+      }
+
+      .presentation-page .presentation-counter {
+        margin-right: 4px;
+        font-size: 11px;
+        font-weight: 400;
+        letter-spacing: 0.08em;
+        font-variant-numeric: tabular-nums;
+      }
+
+      .presentation-page .presentation-arrow {
+        position: relative;
+        width: 28px;
+        height: 28px;
+        padding: 0;
+        border: 0;
+        background: transparent;
+        color: inherit;
+        opacity: 1;
+        transition:
+          opacity 0.25s ease,
+          transform 0.25s ease;
+      }
+
+      .presentation-page .presentation-arrow::before {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: 11px;
+        height: 11px;
+        border-right: 1.5px solid currentColor;
+        border-bottom: 1.5px solid currentColor;
+      }
+
+      .presentation-page .presentation-arrow--up::before {
+        transform: translate(-50%, -30%) rotate(225deg);
+      }
+
+      .presentation-page .presentation-arrow--down::before {
+        transform: translate(-50%, -70%) rotate(45deg);
+      }
+
+      .presentation-page .presentation-arrow:not(:disabled):hover {
+        transform: scale(1.22);
+      }
+
+      .presentation-page .presentation-arrow:disabled {
+        opacity: 0.22;
+        pointer-events: none;
+      }
+
+      @media (max-width: 980px) {
+        .presentation-page .presentation-slide-inner {
+          padding: calc(var(--nav-height) + 34px) 40px 70px 40px;
+        }
+
+        .presentation-page .presentation-slide-number {
+          left: 40px;
+        }
+
+        .presentation-page .presentation-grid-2,
+        .presentation-page .presentation-grid-2--wide-image {
+          grid-template-columns: 1fr 1fr;
+          gap: 32px;
+        }
+
+        .presentation-page .presentation-title {
+          font-size: clamp(44px, 7vw, 76px);
+        }
+
+        .presentation-page .presentation-copy {
+          font-size: clamp(17px, 2vw, 21px);
+        }
+      }
+
+      @media (max-width: 720px) {
+        .presentation-page .presentation-slide-inner {
+          justify-content: center;
+          padding: calc(var(--nav-height) + 32px) 24px 66px 24px;
+        }
+
+        .presentation-page .presentation-slide-number {
+          left: 24px;
+          top: calc(var(--nav-height) + 12px);
+        }
+
+        .presentation-page .presentation-grid-2,
+        .presentation-page .presentation-grid-2--wide-image {
+          grid-template-columns: 1fr;
+          gap: 24px;
+        }
+
+        .presentation-page .presentation-title,
+        .presentation-page .presentation-title--medium {
+          font-size: clamp(38px, 11vw, 58px);
+        }
+
+        .presentation-page .presentation-copy {
+          margin-top: 20px;
+          font-size: 17px;
+        }
+
+        .presentation-page .presentation-note {
+          display: none;
+        }
+
+        .presentation-page .presentation-image-frame,
+        .presentation-page .presentation-image-frame img {
+          max-height: 34vh;
+        }
+
+        .presentation-page .presentation-meta,
+        .presentation-page .presentation-points,
+        .presentation-page .presentation-stat-row,
+        .presentation-page .presentation-impact-grid,
+        .presentation-page .presentation-lessons {
+          grid-template-columns: 1fr;
+          gap: 14px;
+        }
+
+        .presentation-page .presentation-meta {
+          margin-top: 28px;
+          gap: 14px;
+        }
+
+        .presentation-page .presentation-meta-block:nth-child(3) {
+          display: none;
+        }
+
+        .presentation-page .presentation-point {
+          padding-top: 10px;
+        }
+
+        .presentation-page .presentation-point-text {
+          font-size: 13px;
+        }
+
+        .presentation-page .presentation-process {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          row-gap: 34px;
+          margin-top: 36px;
+        }
+
+        .presentation-page .presentation-process-step::after,
+        .presentation-page .presentation-process-dot {
+          display: none;
+        }
+
+        .presentation-page .presentation-process-num {
+          margin-bottom: 8px;
+        }
+
+        .presentation-page .presentation-process-name {
+          margin-top: 0;
+          font-size: 22px;
+        }
+
+        .presentation-page .presentation-process-detail {
+          margin-top: 5px;
+          font-size: 12px;
+        }
+
+        .presentation-page .presentation-before-after img {
+          max-height: 20vh;
+        }
+
+        .presentation-page .presentation-stat-row {
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+
+        .presentation-page .presentation-stat-num {
+          font-size: 32px;
+        }
+
+        .presentation-page .presentation-stat-text {
+          font-size: 11px;
+        }
+
+        .presentation-page .presentation-product-layout {
+          grid-template-columns: 1fr;
+          gap: 12px;
+        }
+
+        .presentation-page .presentation-product-main {
+          height: 42vh;
+        }
+
+        .presentation-page .presentation-product-side {
+          display: none;
+        }
+
+        .presentation-page .presentation-impact-grid {
+          margin-top: 30px;
+        }
+
+        .presentation-page .presentation-impact-item {
+          display: grid;
+          grid-template-columns: 110px 1fr;
+          align-items: baseline;
+          gap: 18px;
+          padding-top: 10px;
+        }
+
+        .presentation-page .presentation-impact-num {
+          font-size: 48px;
+        }
+
+        .presentation-page .presentation-impact-label {
+          margin-top: 0;
+          font-size: 14px;
+        }
+
+        .presentation-page .presentation-lessons {
+          margin-top: 28px;
+        }
+
+        .presentation-page .presentation-lesson {
+          display: grid;
+          grid-template-columns: 26px 1fr;
+          column-gap: 12px;
+          padding-top: 10px;
+        }
+
+        .presentation-page .presentation-lesson-num {
+          grid-row: 1 / span 2;
+          margin: 4px 0 0;
+        }
+
+        .presentation-page .presentation-lesson-title {
+          margin-bottom: 4px;
+          font-size: 19px;
+        }
+
+        .presentation-page .presentation-lesson-text {
+          font-size: 12px;
+        }
+
+        .presentation-page .presentation-controls {
+          right: 20px;
+          bottom: 18px;
+          gap: 12px;
+        }
+
+        .presentation-page .presentation-counter {
+          font-size: 10px;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .presentation-page #site-content {
+          scroll-behavior: auto;
+        }
+      }
+
+      @media (max-width: 900px) {
+        .presentation-page .presentation-story-map {
+          left: 28px;
+          right: 28px;
+          top: calc(var(--nav-height) + 12px);
+        }
+
+        .presentation-page .presentation-story-main {
+          overflow-x: auto;
+          scrollbar-width: none;
+          gap: 24px;
+          padding-bottom: 4px;
+        }
+
+        .presentation-page .presentation-story-main::-webkit-scrollbar {
+          display: none;
+        }
+
+        .presentation-page .presentation-story-item {
+          flex: 0 0 auto;
+          min-width: 78px;
+          padding-right: 0;
+        }
+
+        .presentation-page .presentation-story-item:not(:last-child)::after,
+        .presentation-page .presentation-story-dot {
+          display: none;
+        }
+
+        .presentation-page .presentation-story-process-wrap {
+          margin-left: 0;
+          width: 100%;
+          overflow-x: auto;
+          scrollbar-width: none;
+        }
+
+        .presentation-page .presentation-story-process-wrap::-webkit-scrollbar {
+          display: none;
+        }
+      }
+
+      @media (max-width: 620px) {
+        .presentation-page .presentation-story-label {
+          font-size: 10px;
+        }
+
+        .presentation-page .presentation-story-process {
+          gap: 16px;
+        }
+
+        .presentation-page .presentation-story-subitem {
+          font-size: 11px;
+        }
+      }
+    </style>
+  </head>
+
+  <body class="case-page presentation-page">
+    <div id="cursor"></div>
+
+    <!-- =============================================
+         NAV HTML — kept from the portfolio
+         ============================================= -->
+    <nav>
+      <a class="logo" data-home-link="" href="/">
+        <span class="logo-first"
+          ><span class="l" data-i="0">A</span
+          ><span class="l hide" data-i="1">n</span
+          ><span class="l hide" data-i="2">o</span
+          ><span class="l hide" data-i="3">u</span
+          ><span class="l hide" data-i="4">k</span></span
+        ><span class="logo-last"
+          ><span class="l space hide" data-i="5">&nbsp;</span
+          ><span class="l dot">·</span
+          ><span class="l space hide" data-i="6">&nbsp;</span
+          ><span class="l" data-i="7">F</span
+          ><span class="l hide" data-i="8">o</span
+          ><span class="l hide" data-i="9">n</span
+          ><span class="l hide" data-i="10">t</span
+          ><span class="l hide" data-i="11">a</span
+          ><span class="l hide" data-i="12">i</span
+          ><span class="l hide" data-i="13">n</span
+          ><span class="l hide" data-i="14">e</span></span
+        >
+      </a>
+
+      <div class="nav-right">
+        <div class="nav-controls">
+          <button aria-label="Switch language" class="nav-lang">
+            EN<span class="lang-orbit-dot"></span>
+          </button>
+          <button aria-label="Toggle theme" class="nav-theme" id="theme-toggle">
+            <span class="moon-glyph">◐</span><span class="orbit-dot"></span>
+          </button>
+          <button
+            class="nav-hamburger"
+            id="nav-hamburger"
+            type="button"
+            aria-label="Open menu"
+            aria-expanded="false"
+            aria-controls="mobile-menu"
+          >
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+
+      <div class="mobile-menu" id="mobile-menu">
+        <a
+          class="mobile-menu-link"
+          href="../index.html#services"
+          data-i18n="nav.services"
+          >Services</a
+        >
+        <a
+          class="mobile-menu-link"
+          href="../index.html#work"
+          data-i18n="nav.work"
+          >Work</a
+        >
+        <a
+          class="mobile-menu-link"
+          href="../index.html#about"
+          data-i18n="nav.about"
+          >About</a
+        >
+        <a
+          class="mobile-menu-link"
+          href="../index.html#contact"
+          data-i18n="nav.contact"
+          >Contact</a
+        >
+      </div>
+    </nav>
+
+    <!-- =============================================
+         PASSWORD GATE — kept from the portfolio
+         ============================================= -->
+    <section id="site-gate">
+      <div class="site-gate-box">
+        <p class="site-gate-title" data-i18n="gate.title">Private Portfolio</p>
+        <p class="site-gate-text" data-i18n="gate.description">
+          This portfolio is currently shared with selected reviewers.<br />
+          Please enter the password to continue.
+        </p>
+        <input
+          type="password"
+          id="site-gate-input"
+          data-i18n-placeholder="gate.placeholder"
+          placeholder="Password"
+          autofocus
+        />
+        <button id="site-gate-submit" data-i18n="gate.button">
+          Enter portfolio
+        </button>
+        <p id="site-gate-error" data-i18n="gate.error">Incorrect password.</p>
+      </div>
+    </section>
+
+    <div id="site-content">
+      <main class="presentation-deck" aria-label="Yellow project presentation">
+        <!-- 01 — OVERVIEW -->
+        <section
+          class="presentation-slide"
+          id="slide-overview"
+          data-slide-title="Overview"
+        >
+          <div class="presentation-slide-inner">
+            <span class="presentation-slide-number">01 / 10</span>
+
+            <div class="presentation-grid-2 presentation-grid-2--wide-image">
+              <div>
+                <p class="presentation-kicker">Case Study</p>
+                <h1 class="presentation-title">
+                  <em>Yellow</em> is the new <strong>Green</strong>
+                </h1>
+                <p class="presentation-copy">
+                  From fragmented Excel planning to an interactive financial
+                  dashboard built for faster, clearer decisions.
+                </p>
+                <p class="presentation-note">
+                  Note: Internal information has been anonymized and simplified.
+                  The dashboard mockups are fictional and communicate only the
+                  type and structure of the solution.
+                </p>
+              </div>
+
+              <div class="presentation-image-frame">
+                <img
+                  src="../Images/Yellow/1_screen1.png"
+                  alt="Financial dashboard mockup"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 02 — ABOUT ME -->
+        <section
+          class="presentation-slide"
+          id="slide-about"
+          data-slide-title="About me"
+        >
+          <div class="presentation-slide-inner">
+            <div class="presentation-about-layout">
+              <div class="presentation-about-text">
+                <p class="presentation-kicker">About me</p>
+
+                <h2 class="presentation-title presentation-title--medium">
+                  Anouk Fontaine<br />
+                  <strong>UX Designer &amp; BI Analyst.</strong>
+                </h2>
+
+                <p class="presentation-copy presentation-about-copy">
+                  I untangle complex data and shape it into intuitive
+                  experiences that empower users to make informed decisions with
+                  confidence.
+                </p>
+
+                <p class="presentation-about-note">
+                  Outside work: songwriting, swimming in the Aare and eating
+                  noodle soups.
+                </p>
+              </div>
+
+              <div class="presentation-about-images">
+                <figure class="presentation-about-image-card">
+                  <div class="presentation-about-image-frame">
+                    <img
+                      src="../Images/Home/0_about_presentation1.png"
+                      alt="Songwriting"
+                    />
+                  </div>
+                  <figcaption>Songwriting</figcaption>
+                </figure>
+
+                <figure class="presentation-about-image-card">
+                  <div class="presentation-about-image-frame">
+                    <img
+                      src="../Images/Home/0_about_presentation2.png"
+                      alt="Noodle soup"
+                    />
+                  </div>
+                  <figcaption>Noodle soups</figcaption>
+                </figure>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 03 — CONTEXT -->
+        <section
+          class="presentation-slide"
+          id="slide-context"
+          data-slide-title="Context"
+          style="
+            background-image: url(&quot;../Images/Yellow/9_worldmap.png&quot;);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+          "
+        >
+          <div class="presentation-slide-inner">
+            <p class="presentation-kicker">Context</p>
+
+            <h2 class="presentation-title presentation-title--medium">
+              Managing public funds across an
+              <strong>international project portfolio.</strong>
+            </h2>
+
+            <div
+              class="presentation-meta presentation-meta--standalone"
+              aria-label="Project context"
+            >
+              <div class="presentation-meta-block">
+                <p class="presentation-meta-label">Environment</p>
+                <p class="presentation-meta-value">
+                  Official development assistance and international cooperation,
+                  with projects implemented across multiple countries.
+                </p>
+              </div>
+
+              <div class="presentation-meta-block">
+                <p class="presentation-meta-label">Scale & people</p>
+                <p class="presentation-meta-value">
+                  Teams were responsible for planning and steering more than CHF
+                  400M annually, involving section heads, project managers and
+                  financial specialists.
+                </p>
+              </div>
+
+              <div class="presentation-meta-block">
+                <p class="presentation-meta-label">My position</p>
+                <p class="presentation-meta-value">
+                  I was working in financial controlling, supporting the
+                  planning process through financial systems, Excel and internal
+                  reporting tools.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 03 — PROBLEM -->
+        <section
+          class="presentation-slide"
+          id="slide-problem"
+          data-slide-title="Problem"
+        >
+          <div class="presentation-slide-inner">
+            <span class="presentation-slide-number">02 / 10</span>
+
+            <div class="presentation-grid-2">
+              <div>
+                <p class="presentation-kicker">Problem</p>
+                <h2 class="presentation-title presentation-title--medium">
+                  Important decisions were slowed down by
+                  <strong>fragmented information.</strong>
+                </h2>
+              </div>
+
+              <div
+                class="presentation-image-frame presentation-image-frame--plain"
+              >
+                <img
+                  src="../Images/Yellow/2_problem.png"
+                  alt="Fragmented information illustration"
+                />
+              </div>
+            </div>
+
+            <div class="presentation-points">
+              <div class="presentation-point">
+                <h3 class="presentation-point-title">Days of preparation</h3>
+                <p class="presentation-point-text">
+                  Analysts prepared data before they could actually discuss it.
+                </p>
+              </div>
+              <div class="presentation-point">
+                <h3 class="presentation-point-title">Hard to explore</h3>
+                <p class="presentation-point-text">
+                  Comparing, filtering or drilling down required extra views and
+                  calculations.
+                </p>
+              </div>
+              <div class="presentation-point">
+                <h3 class="presentation-point-title">Hard to trust</h3>
+                <p class="presentation-point-text">
+                  Multiple files made the latest and most reliable version
+                  unclear.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 03 — PROCESS -->
+        <section
+          class="presentation-slide"
+          id="slide-process"
+          data-slide-title="Process"
+        >
+          <div class="presentation-slide-inner">
+            <span class="presentation-slide-number">03 / 10</span>
+            <p class="presentation-kicker">Process</p>
+            <h2 class="presentation-title presentation-title--medium">
+              I initiated and owned the <strong>full journey.</strong>
+            </h2>
+            <p class="presentation-copy">
+              without prior Power BI experience, regular responsibilities
+              needing 80% and a rather change-averse environment.
+            </p>
+
+            <p class="presentation-note">
+              Constraint: I started with no prior Power BI experience and
+              developed the solution alongside my regular responsibilities.
+            </p>
+          </div>
+        </section>
+
+        <!-- 04 — RESEARCH -->
+        <section
+          class="presentation-slide"
+          id="slide-research"
+          data-slide-title="Research"
+        >
+          <div class="presentation-slide-inner">
+            <span class="presentation-slide-number">04 / 10</span>
+
+            <div class="presentation-grid-2">
+              <div>
+                <p class="presentation-kicker">01 — Research</p>
+                <h2 class="presentation-title presentation-title--medium">
+                  From assumptions to <strong>insights.</strong>
+                </h2>
+                <p class="presentation-copy">
+                  Interviews and user journeys revealed that several user groups
+                  needed the same data for very different decisions.
+                </p>
+                <p class="presentation-callout">
+                  Prioritize the people driving planning decisions — without
+                  excluding secondary users.
+                </p>
+                <div class="presentation-tag-row" aria-label="Research methods">
+                  <span class="presentation-tag">User interviews</span>
+                  <span class="presentation-tag">User journeys</span>
+                  <span class="presentation-tag">Needs prioritization</span>
+                </div>
+              </div>
+
+              <div
+                class="presentation-image-frame presentation-image-frame--plain"
+              >
+                <img
+                  src="../Images/Yellow/3_research.png"
+                  alt="User journey map"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 05 — DESIGN -->
+        <section
+          class="presentation-slide"
+          id="slide-design"
+          data-slide-title="Design"
+        >
+          <div class="presentation-slide-inner">
+            <!-- DESIGN VIEW 1 — EXPLORE -->
+            <div
+              class="presentation-design-view is-active"
+              data-design-view="explore"
+            >
+              <div class="presentation-grid-2 presentation-grid-2--wide-image">
+                <div>
+                  <p class="presentation-kicker">02 — Design · Explore</p>
+
+                  <h2 class="presentation-title presentation-title--medium">
+                    Exploring before <strong>committing.</strong>
+                  </h2>
+
+                  <p class="presentation-copy">
+                    I used paper sketches and Figma prototypes to explore
+                    different structures and interactions quickly before
+                    committing to a final direction.
+                  </p>
+
+                  <div
+                    class="presentation-tag-row"
+                    aria-label="Design exploration"
+                  >
+                    <span class="presentation-tag">Paper sketches</span>
+                    <span class="presentation-tag">Figma</span>
+                    <span class="presentation-tag">Rapid prototyping</span>
+                    <span class="presentation-tag">Iteration</span>
+                  </div>
+
+                  <p class="presentation-callout">
+                    Figma made it possible to iterate quickly before committing
+                    changes to Power BI.
+                  </p>
+                </div>
+
+                <div
+                  class="presentation-image-frame presentation-image-frame--plain"
+                  style="overflow: visible"
+                >
+                  <img
+                    src="../Images/Yellow/4_design.png"
+                    alt="Paper sketches and Figma prototypes"
+                    style="transform: scale(1.18)"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <!-- DESIGN VIEW 2 — DECISIONS -->
+            <div class="presentation-design-view" data-design-view="decisions">
+              <div class="presentation-grid-2 presentation-grid-2--wide-image">
+                <div>
+                  <p class="presentation-kicker">02 — Design · Decisions</p>
+
+                  <h2 class="presentation-title presentation-title--medium">
+                    Designing for <strong>clarity.</strong>
+                  </h2>
+
+                  <p class="presentation-copy">
+                    The exploration translated into concrete decisions around
+                    user priorities, visual hierarchy, graphics, color and
+                    typography.
+                  </p>
+
+                  <div
+                    class="presentation-tag-row"
+                    aria-label="Design decisions"
+                  >
+                    <span class="presentation-tag">User priorities</span>
+                    <span class="presentation-tag">Visual hierarchy</span>
+                    <span class="presentation-tag">Color</span>
+                    <span class="presentation-tag">Typography</span>
+                  </div>
+
+                  <p class="presentation-note">
+                    Hover over the visual to explore the design decisions.
+                  </p>
+                </div>
+
+                <div class="presentation-design-spotlight">
+                  <div
+                    class="cs-spotlight-image cs-spotlight-image--visible cs-hotspot-image"
+                  >
+                    <img
+                      src="../Images/Yellow/4_decisions.png"
+                      alt="Dashboard design decisions"
+                    />
+
+                    <div
+                      class="cs-spotlight-zone cursor-grow"
+                      data-group="consistency"
+                      style="top: 0%; left: 0%; width: 100%; height: 100%"
+                    >
+                      <div class="cs-spotlight-card">
+                        <p class="cs-design-card-title">
+                          Build trust through consistency
+                        </p>
+                        <p class="cs-process-card-text">
+                          Consistent layouts, standardized metrics and a single
+                          source of truth help users understand the data faster
+                          and increase confidence in the information.
+                        </p>
+                      </div>
+                    </div>
+
+                    <div
+                      class="cs-spotlight-zone cs-spotlight-zone--detail initial-active"
+                      style="top: 12%; left: 0.5%; width: 12%; height: 25%"
+                    >
+                      <div class="cs-spotlight-card">
+                        <p class="cs-design-card-title">
+                          Optimize for high-impact users
+                        </p>
+                        <p class="cs-process-card-text">
+                          Although several user groups used the dashboard, the
+                          experience was primarily designed around the needs of
+                          the people driving planning and budget decisions.
+                          Secondary users could still access the information
+                          they needed through filtering and drill-downs.
+                        </p>
+                      </div>
+                    </div>
+
+                    <div
+                      class="cs-spotlight-zone cs-spotlight-zone--detail"
+                      style="top: 37.5%; left: 0.5%; width: 17%; height: 45%"
+                    >
+                      <div class="cs-spotlight-card">
+                        <p class="cs-design-card-title">
+                          Leaving no one behind
+                        </p>
+                        <p class="cs-process-card-text">
+                          Specific filters for non-primary user groups were
+                          added to ensure that all users could access the
+                          information they needed.
+                        </p>
+                      </div>
+                    </div>
+
+                    <div
+                      class="cs-spotlight-zone cs-spotlight-zone--detail"
+                      style="top: 1%; left: 18%; width: 41.5%; height: 45%"
+                    >
+                      <div class="cs-spotlight-card">
+                        <p class="cs-design-card-title">
+                          Choosing the right graphics
+                        </p>
+                        <p class="cs-process-card-text">
+                          Preserving existing graphics where appropriate, while
+                          adding new ones where they added value.
+                        </p>
+                      </div>
+                    </div>
+
+                    <div
+                      class="cs-spotlight-zone cs-spotlight-zone--detail"
+                      style="top: 1%; left: 82%; width: 17.5%; height: 5%"
+                    >
+                      <div class="cs-spotlight-card cs-spotlight-card--left">
+                        <p class="cs-design-card-title">
+                          Less color, more clarity
+                        </p>
+                        <p class="cs-process-card-text">
+                          Rather than adopting the full departmental color
+                          palette, a restrained set of neutral tones was used to
+                          create a calm, data-focused interface. Federal red
+                          remains the only accent color, drawing attention where
+                          it matters without creating unnecessary visual
+                          clutter.
+                        </p>
+                      </div>
+                    </div>
+
+                    <div
+                      class="cs-spotlight-zone cs-spotlight-zone--detail"
+                      style="top: 47%; left: 18%; width: 31%; height: 52%"
+                    >
+                      <div class="cs-spotlight-card">
+                        <p class="cs-design-card-title">
+                          Make every pixel count
+                        </p>
+                        <p class="cs-process-card-text">
+                          As the dashboard was intended for internal use, strict
+                          adherence to the official design system was not
+                          required. A more compact typeface was chosen to
+                          accommodate longer project titles.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 06 — BUILD -->
+        <section
+          class="presentation-slide"
+          id="slide-build"
+          data-slide-title="Build"
+        >
+          <div class="presentation-slide-inner">
+            <span class="presentation-slide-number">06 / 10</span>
+
+            <div class="presentation-grid-2">
+              <div>
+                <p class="presentation-kicker">03 — Build</p>
+                <h2 class="presentation-title presentation-title--medium">
+                  Learning by <strong>doing.</strong>
+                </h2>
+                <p class="presentation-copy">
+                  Power BI was new territory. I learned the tool while turning
+                  the prototype into a working product and setting up the
+                  processes around it.
+                </p>
+                <p class="presentation-callout">
+                  Learn → test → build → repeat.
+                </p>
+                <div class="presentation-tag-row" aria-label="Build topics">
+                  <span class="presentation-tag">Power BI</span>
+                  <span class="presentation-tag">DAX</span>
+                  <span class="presentation-tag">Data modelling</span>
+                  <span class="presentation-tag">Governance</span>
+                  <span class="presentation-tag">Stakeholder buy-in</span>
+                </div>
+              </div>
+
+              <div
+                class="presentation-image-frame presentation-image-frame--plain"
+              >
+                <img
+                  src="../Images/Yellow/5_dev.png"
+                  alt="Power BI data model"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 07 — TEST -->
+        <section
+          class="presentation-slide"
+          id="slide-test"
+          data-slide-title="Test"
+        >
+          <div class="presentation-slide-inner">
+            <span class="presentation-slide-number">07 / 10</span>
+
+            <div class="presentation-grid-2">
+              <div>
+                <p class="presentation-kicker">04 — Test</p>
+                <h2 class="presentation-title presentation-title--medium">
+                  Does it actually <strong>work?</strong>
+                </h2>
+                <p class="presentation-copy">
+                  Usability testing uncovered four improvements before launch. A
+                  post-launch survey then tested adoption and satisfaction.
+                </p>
+
+                <div class="presentation-stat-row" aria-label="Testing results">
+                  <div class="presentation-stat">
+                    <span class="presentation-stat-num">83%</span>
+                    <span class="presentation-stat-text"
+                      >Found the dashboard easy to use.</span
+                    >
+                  </div>
+                  <div class="presentation-stat">
+                    <span class="presentation-stat-num">100%</span>
+                    <span class="presentation-stat-text"
+                      >Considered it an improvement over Excel.</span
+                    >
+                  </div>
+                  <div class="presentation-stat">
+                    <span class="presentation-stat-num">10/12</span>
+                    <span class="presentation-stat-text"
+                      >Primary users responded.</span
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <div class="cs-iterations">
+                <div class="cs-iterations-toggle">
+                  <button
+                    class="pill-btn pill-btn--toggle active cursor-grow"
+                    type="button"
+                    data-target="before"
+                  >
+                    Before
+                  </button>
+
+                  <button
+                    class="pill-btn pill-btn--toggle cursor-grow"
+                    type="button"
+                    data-target="after"
+                  >
+                    After
+                  </button>
+                </div>
+
+                <img
+                  src="../Images/Yellow/6_before.png"
+                  alt="Dashboard before usability iteration"
+                  class="cs-iterations-image"
+                  id="iterations-before"
+                />
+
+                <img
+                  src="../Images/Yellow/6_after.png"
+                  alt="Dashboard after usability iteration"
+                  class="cs-iterations-image hidden"
+                  id="iterations-after"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 08 — PRODUCT -->
+        <section
+          class="presentation-slide"
+          id="slide-product"
+          data-slide-title="Product"
+        >
+          <div class="presentation-slide-inner">
+            <span class="presentation-slide-number">08 / 10</span>
+            <p class="presentation-kicker">The final product</p>
+            <h2 class="presentation-title presentation-title--medium">
+              The future is <strong>Yellow.</strong>
+            </h2>
+
+            <div class="presentation-product-layout">
+              <div class="presentation-product-main">
+                <img
+                  src="../Images/Yellow/7_product_1.png"
+                  alt="Final dashboard overview"
+                />
+              </div>
+              <div class="presentation-product-side">
+                <div class="presentation-product-small">
+                  <img
+                    src="../Images/Yellow/7_product_2.png"
+                    alt="Final dashboard detail"
+                  />
+                </div>
+                <div class="presentation-product-small">
+                  <img
+                    src="../Images/Yellow/7_product_3.png"
+                    alt="Final dashboard detail"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 09 — IMPACT -->
+        <section
+          class="presentation-slide presentation-slide--accent"
+          id="slide-impact"
+          data-slide-title="Impact"
+        >
+          <div class="presentation-slide-inner">
+            <span class="presentation-slide-number">09 / 10</span>
+            <p class="presentation-kicker">Impact</p>
+            <h2 class="presentation-title presentation-title--medium">
+              From side project to <strong>strategic tool.</strong>
+            </h2>
+
+            <div class="presentation-impact-grid" aria-label="Project impact">
+              <div class="presentation-impact-item">
+                <span class="presentation-impact-num">70%</span>
+                <span class="presentation-impact-label"
+                  >less manual preparation work</span
+                >
+              </div>
+              <div class="presentation-impact-item">
+                <span class="presentation-impact-num">100%</span>
+                <span class="presentation-impact-label"
+                  >of primary users saw an improvement over Excel</span
+                >
+              </div>
+              <div class="presentation-impact-item">
+                <span class="presentation-impact-num">60%</span>
+                <span class="presentation-impact-label"
+                  >fewer recurring clarification requests</span
+                >
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 10 — REFLECTION -->
+        <section
+          class="presentation-slide"
+          id="slide-reflection"
+          data-slide-title="Reflection"
+        >
+          <div class="presentation-slide-inner">
+            <span class="presentation-slide-number">10 / 10</span>
+            <p class="presentation-kicker">Reflection</p>
+            <h2 class="presentation-title presentation-title--medium">
+              Owning the whole process changed how I
+              <strong>build products.</strong>
+            </h2>
+
+            <div class="presentation-lessons">
+              <article class="presentation-lesson">
+                <p class="presentation-lesson-num">01</p>
+                <h3 class="presentation-lesson-title">Learning by doing</h3>
+                <p class="presentation-lesson-text">
+                  Hands-on experimentation made a new tool faster to learn — and
+                  AI accelerated the moments where I got stuck.
+                </p>
+              </article>
+
+              <article class="presentation-lesson">
+                <p class="presentation-lesson-num">02</p>
+                <h3 class="presentation-lesson-title">
+                  Bring stakeholders in early
+                </h3>
+                <p class="presentation-lesson-text">
+                  People do not need to be users to accelerate or slow a
+                  product. Shared ownership removes blockers.
+                </p>
+              </article>
+
+              <article class="presentation-lesson">
+                <p class="presentation-lesson-num">03</p>
+                <h3 class="presentation-lesson-title">
+                  Prototype before building
+                </h3>
+                <p class="presentation-lesson-text">
+                  Iterating in Figma takes minutes. The same design change in
+                  Power BI can take considerably longer.
+                </p>
+              </article>
+            </div>
+
+            <a
+              class="presentation-end-link cursor-grow"
+              href="../index.html#work"
+            >
+              <span>Back to work overview</span>
+              <svg viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path
+                  d="M0 16L13 3M7.6 3H13V8.4"
+                  stroke="currentColor"
+                  stroke-width="1"
+                />
+              </svg>
+            </a>
+          </div>
+        </section>
+
+        <!-- MORE WORK -->
+        <section
+          class="presentation-slide"
+          id="slide-more-work"
+          data-slide-title="More work"
+        >
+          <div class="presentation-slide-inner">
+            <p class="presentation-kicker">More work</p>
+
+            <h2 class="presentation-title presentation-title--medium">
+              <strong>Thank you</strong> for your attention.
+            </h2>
+
+            <div class="presentation-more-work-grid">
+              <!-- BW -->
+              <a
+                href="../Work/bw.html"
+                class="presentation-project-card cursor-grow"
+              >
+                <div
+                  class="presentation-project-image"
+                  style="background: var(--project-3)"
+                >
+                  <img
+                    src="../Images/Home/0_work_3.png"
+                    alt="Browsing the World's Economy"
+                  />
+                </div>
+
+                <div class="presentation-project-info">
+                  <p class="presentation-project-title">
+                    Browsing the World's Economy
+                  </p>
+                  <p class="presentation-project-type">
+                    UX/UI · Data visualization
+                  </p>
+                </div>
+              </a>
+
+              <!-- CLIMATE -->
+              <a
+                href="../Work/climate.html"
+                class="presentation-project-card cursor-grow"
+              >
+                <div
+                  class="presentation-project-image"
+                  style="background: var(--project-5)"
+                >
+                  <img
+                    src="../Images/Home/0_work_5.png"
+                    alt="Millions for Climate"
+                  />
+                </div>
+
+                <div class="presentation-project-info">
+                  <p class="presentation-project-title">Millions for Climate</p>
+                  <p class="presentation-project-type">
+                    Dashboard design · Data visualization
+                  </p>
+                </div>
+              </a>
+
+              <!-- SKILLS -->
+              <a
+                href="../Work/skills.html"
+                class="presentation-project-card cursor-grow"
+              >
+                <div
+                  class="presentation-project-image"
+                  style="background: var(--project-2)"
+                >
+                  <img
+                    src="../Images/Home/0_work_2.png"
+                    alt="Upskilling the Public Sector"
+                  />
+                </div>
+
+                <div class="presentation-project-info">
+                  <p class="presentation-project-title">
+                    Upskilling the Public Sector
+                  </p>
+                  <p class="presentation-project-type">
+                    Design Thinking · Rapid prototyping
+                  </p>
+                </div>
+              </a>
+            </div>
+
+            <a
+              class="presentation-more-work-link cursor-grow"
+              href="../index.html#work"
+            >
+              <span>See more work on anoukfontaine</span>
+
+              <svg viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path
+                  d="M0 16L13 3M7.6 3H13V8.4"
+                  stroke="currentColor"
+                  stroke-width="1"
+                />
+              </svg>
+            </a>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <!-- Persistent presentation story map -->
+    <nav class="presentation-story-map" aria-label="Presentation chapters">
+      <div class="presentation-story-process-wrap" aria-label="Process steps">
+        <div class="presentation-story-process">
+          <button
+            class="presentation-story-subitem cursor-grow"
+            type="button"
+            data-story-target="slide-research"
+            data-story-step="research"
+          >
+            <span class="presentation-story-step-title">
+              <span class="presentation-story-step-num">01</span>
+              <span class="presentation-story-step-name">Research</span>
+            </span>
+            <span class="presentation-story-step-detail">
+              Interviews · user journeys · prioritization
+            </span>
+          </button>
+
+          <button
+            class="presentation-story-subitem cursor-grow"
+            type="button"
+            data-story-target="slide-design"
+            data-story-step="design"
+          >
+            <span class="presentation-story-step-title">
+              <span class="presentation-story-step-num">02</span>
+              <span class="presentation-story-step-name">Design</span>
+            </span>
+            <span class="presentation-story-step-detail">
+              Sketches · prototypes · design decisions
+            </span>
+          </button>
+
+          <button
+            class="presentation-story-subitem cursor-grow"
+            type="button"
+            data-story-target="slide-build"
+            data-story-step="build"
+          >
+            <span class="presentation-story-step-title">
+              <span class="presentation-story-step-num">03</span>
+              <span class="presentation-story-step-name">Build</span>
+            </span>
+            <span class="presentation-story-step-detail">
+              Power BI · DAX · data modelling
+            </span>
+          </button>
+
+          <button
+            class="presentation-story-subitem cursor-grow"
+            type="button"
+            data-story-target="slide-test"
+            data-story-step="test"
+          >
+            <span class="presentation-story-step-title">
+              <span class="presentation-story-step-num">04</span>
+              <span class="presentation-story-step-name">Test</span>
+            </span>
+            <span class="presentation-story-step-detail">
+              Usability testing · survey · iterations
+            </span>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Fixed up/down controls -->
+    <div class="presentation-controls" aria-label="Slide navigation">
+      <span class="presentation-counter" aria-live="polite">01 / 10</span>
+      <button
+        class="presentation-arrow presentation-arrow--up cursor-grow"
+        type="button"
+        aria-label="Previous slide"
+        disabled
+      ></button>
+      <button
+        class="presentation-arrow presentation-arrow--down cursor-grow"
+        type="button"
+        aria-label="Next slide"
+      ></button>
+    </div>
+
+    <script src="../loader.js"></script>
+    <script src="../script.js"></script>
+    <script src="../site-gate.js"></script>
+
+    <script>
+      /* ==========================================================
+         PRESENTATION NAVIGATION ONLY
+         Lives here so no portfolio JavaScript needs to be changed.
+         ========================================================== */
+      (() => {
+        const scroller = document.getElementById("site-content");
+        const slides = Array.from(
+          document.querySelectorAll(".presentation-slide"),
+        );
+        const previousButton = document.querySelector(
+          ".presentation-arrow--up",
+        );
+        const nextButton = document.querySelector(".presentation-arrow--down");
+        const counter = document.querySelector(".presentation-counter");
+        const storyItems = Array.from(
+          document.querySelectorAll(".presentation-story-item"),
+        );
+        const storySubitems = Array.from(
+          document.querySelectorAll(".presentation-story-subitem"),
+        );
+        const processStory = document.querySelector(
+          ".presentation-story-process-wrap",
+        );
+
+        if (
+          !scroller ||
+          !slides.length ||
+          !previousButton ||
+          !nextButton ||
+          !counter
+        ) {
+          return;
+        }
+
+        let currentIndex = 0;
+        let navigationLocked = false;
+        let unlockTimer;
+
+        let designView = "explore";
+
+        const setDesignView = (view) => {
+          designView = view;
+
+          document
+            .querySelectorAll(".presentation-design-view")
+            .forEach((element) => {
+              element.classList.toggle(
+                "is-active",
+                element.dataset.designView === view,
+              );
+            });
+        };
+
+        const formatNumber = (number) => String(number).padStart(2, "0");
+
+        const chapterForSlide = (slideId) => {
+          if (
+            [
+              "slide-process",
+              "slide-research",
+              "slide-design",
+              "slide-build",
+              "slide-test",
+            ].includes(slideId)
+          ) {
+            return "process";
+          }
+
+          return slideId.replace("slide-", "");
+        };
+
+        const processStepForSlide = (slideId) => {
+          const map = {
+            "slide-research": "research",
+            "slide-design": "design",
+            "slide-build": "build",
+            "slide-test": "test",
+          };
+
+          return map[slideId] || null;
+        };
+
+        const chapterOrder = [
+          "overview",
+          "problem",
+          "process",
+          "product",
+          "impact",
+          "reflection",
+        ];
+        const processOrder = ["research", "design", "build", "test"];
+
+        const updateStoryMap = (index) => {
+          const slide = slides[index];
+          if (!slide) return;
+
+          const currentChapter = chapterForSlide(slide.id);
+          const currentStep = processStepForSlide(slide.id);
+          const currentChapterIndex = chapterOrder.indexOf(currentChapter);
+
+          storyItems.forEach((item) => {
+            const itemChapter = item.dataset.storyChapter;
+            const itemIndex = chapterOrder.indexOf(itemChapter);
+            item.classList.toggle("is-active", itemChapter === currentChapter);
+            item.classList.toggle(
+              "is-past",
+              itemIndex !== -1 && itemIndex < currentChapterIndex,
+            );
+          });
+
+          const isProcessIntro = slide.id === "slide-process";
+          const isProcessStep = currentStep !== null;
+
+          processStory?.classList.toggle(
+            "is-visible",
+            isProcessIntro || isProcessStep,
+          );
+
+          processStory?.classList.toggle("is-expanded", isProcessIntro);
+
+          processStory?.classList.toggle("is-compact", isProcessStep);
+
+          const currentStepIndex = currentStep
+            ? processOrder.indexOf(currentStep)
+            : -1;
+          storySubitems.forEach((item) => {
+            const step = item.dataset.storyStep;
+            const stepIndex = processOrder.indexOf(step);
+            item.classList.toggle("is-active", step === currentStep);
+            item.classList.toggle(
+              "is-past",
+              currentStepIndex !== -1 && stepIndex < currentStepIndex,
+            );
+          });
+        };
+
+        const updateControls = (index) => {
+          currentIndex = Math.max(0, Math.min(index, slides.length - 1));
+          previousButton.disabled = currentIndex === 0;
+          nextButton.disabled = currentIndex === slides.length - 1;
+          counter.textContent = `${formatNumber(currentIndex + 1)} / ${formatNumber(slides.length)}`;
+          updateStoryMap(currentIndex);
+        };
+
+        const goToSlide = (index) => {
+          const targetIndex = Math.max(0, Math.min(index, slides.length - 1));
+          if (targetIndex === currentIndex && navigationLocked) return;
+
+          navigationLocked = true;
+          clearTimeout(unlockTimer);
+
+          slides[targetIndex].scrollIntoView({
+            behavior: window.matchMedia("(prefers-reduced-motion: reduce)")
+              .matches
+              ? "auto"
+              : "smooth",
+            block: "start",
+          });
+
+          updateControls(targetIndex);
+          unlockTimer = setTimeout(() => {
+            navigationLocked = false;
+          }, 650);
+        };
+
+        [...storyItems, ...storySubitems].forEach((item) => {
+          item.addEventListener("click", () => {
+            const targetId = item.dataset.storyTarget;
+            const targetIndex = slides.findIndex(
+              (slide) => slide.id === targetId,
+            );
+            if (targetIndex !== -1) goToSlide(targetIndex);
+          });
+        });
+
+        const goNext = () => {
+          const currentSlide = slides[currentIndex];
+
+          if (currentSlide?.id === "slide-design" && designView === "explore") {
+            setDesignView("decisions");
+            return;
+          }
+
+          const targetIndex = currentIndex + 1;
+
+          if (slides[targetIndex]?.id === "slide-design") {
+            setDesignView("explore");
+          }
+
+          goToSlide(targetIndex);
+        };
+
+        const goPrevious = () => {
+          const currentSlide = slides[currentIndex];
+
+          if (
+            currentSlide?.id === "slide-design" &&
+            designView === "decisions"
+          ) {
+            setDesignView("explore");
+            return;
+          }
+
+          const targetIndex = currentIndex - 1;
+
+          if (slides[targetIndex]?.id === "slide-design") {
+            setDesignView("decisions");
+          }
+
+          goToSlide(targetIndex);
+        };
+
+        previousButton.addEventListener("click", goPrevious);
+        nextButton.addEventListener("click", goNext);
+
+        /* Keep both Design views inside the same physical slide */
+        let designSwitchLocked = false;
+
+        scroller.addEventListener(
+          "wheel",
+          (event) => {
+            const currentSlide = slides[currentIndex];
+
+            if (currentSlide?.id !== "slide-design") return;
+
+            /*
+             * After switching views, briefly absorb trackpad momentum
+             * so one swipe does not immediately continue to the next slide.
+             */
+            if (designSwitchLocked) {
+              event.preventDefault();
+              return;
+            }
+
+            /* Explore → Decisions */
+            if (event.deltaY > 0 && designView === "explore") {
+              event.preventDefault();
+
+              setDesignView("decisions");
+
+              designSwitchLocked = true;
+              setTimeout(() => {
+                designSwitchLocked = false;
+              }, 500);
+
+              return;
+            }
+
+            /* Decisions → Explore */
+            if (event.deltaY < 0 && designView === "decisions") {
+              event.preventDefault();
+
+              setDesignView("explore");
+
+              designSwitchLocked = true;
+              setTimeout(() => {
+                designSwitchLocked = false;
+              }, 500);
+            }
+          },
+          { passive: false },
+        );
+
+        document.addEventListener("keydown", (event) => {
+          const active = document.activeElement;
+          const tagName = active?.tagName?.toLowerCase();
+          const isTyping =
+            tagName === "input" ||
+            tagName === "textarea" ||
+            tagName === "select" ||
+            active?.isContentEditable;
+
+          if (isTyping) return;
+
+          if (["ArrowDown", "PageDown"].includes(event.key)) {
+            event.preventDefault();
+            goNext();
+          }
+
+          if (["ArrowUp", "PageUp"].includes(event.key)) {
+            event.preventDefault();
+            goPrevious();
+          }
+
+          if (event.key === "Home") {
+            event.preventDefault();
+            goToSlide(0);
+          }
+
+          if (event.key === "End") {
+            event.preventDefault();
+            goToSlide(slides.length - 1);
+          }
+        });
+
+        const observer = new IntersectionObserver(
+          (entries) => {
+            const visible = entries
+              .filter((entry) => entry.isIntersecting)
+              .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+
+            if (!visible) return;
+            const index = slides.indexOf(visible.target);
+            if (index !== -1) updateControls(index);
+          },
+          {
+            root: scroller,
+            threshold: [0.55, 0.7, 0.9],
+          },
+        );
+
+        slides.forEach((slide) => observer.observe(slide));
+        updateControls(0);
+      })();
+    </script>
+  </body>
+</html>

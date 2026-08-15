@@ -5,7 +5,7 @@
     <!-- <script src="../password-gate.js"></script> -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Case Study — 100 Billion USD for Climate</title>
+    <title>Case Study — Millions for Climate</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -288,6 +288,13 @@
               data-i18n="cs_shared.sidebar_impact"
               >Impact</a
             >
+            <a
+              href="#section-afterlife"
+              data-target="section-afterlife"
+              data-i18n="cs_shared.sidebar_afterlife"
+            >
+              Reflect
+            </a>
           </nav>
 
           <div class="cs-overview-content">
@@ -295,7 +302,7 @@
               Case Study
             </p>
             <h1 class="cs-headline" data-i18n="project_titles.climate">
-              <em>100 Billion USD</em> for Climate
+              <em>Millions</em> for Climate
             </h1>
 
             <div class="cs-overview-intro">
@@ -322,7 +329,7 @@
             <div class="cs-overview-image">
               <img
                 src="../Images/Climate/0_hero.png"
-                alt="100 Billion USD for Climate dashboard screenshot"
+                alt="Millions for Climate dashboard screenshot"
               />
             </div>
           </div>
@@ -336,9 +343,9 @@
                 class="cs-overview-meta-value"
                 data-i18n="kunstatelier.meta.role_value"
               >
-                An Interactive Power BI dashboard visualizing Swiss climate
-                finance across countries, themes and projects. Later evolved
-                into a live Climate Cockpit.
+                An interactive Power BI dashboard visualizing Swiss climate
+                finance across countries, themes and projects, later evolved
+                into a live Climate Cockpit
               </p>
             </div>
             <div class="cs-overview-meta-block">
@@ -349,9 +356,8 @@
                 class="cs-overview-meta-value"
                 data-i18n="kunstatelier.meta.timeline_value"
               >
-                This project explored how data visualization could transform
-                climate finance data into an interactive dashboard that supports
-                exploration and strategic decision-making.
+                Make existing climate finance data easier to explore at country
+                level and more useful for internal decision-making
               </p>
             </div>
             <div class="cs-overview-meta-block">
@@ -362,9 +368,9 @@
                 class="cs-overview-meta-value"
                 data-i18n="kunstatelier.meta.platform_value"
               >
-                I designed and developed a Power BI dashboard while benefiting
-                from expert's feedbacks and learning new data visualization
-                tools and good practises.
+                Using expert feedback and new data visualization techniques, I
+                designed and developed a Power BI prototype that became the
+                starting point for the live Climate Cockpit
               </p>
             </div>
           </div>
@@ -496,11 +502,7 @@
                     data-i18n="climate.process_bar.exploring_d2"
                     >Failure</span
                   >
-                  <span
-                    class="cs-process-bar-deliverable"
-                    data-i18n="climate.process_bar.exploring_d3"
-                    >Learning</span
-                  >
+
                   <span
                     class="cs-process-bar-deliverable"
                     data-i18n="climate.process_bar.exploring_d4"
@@ -533,7 +535,7 @@
                   <span
                     class="cs-process-bar-deliverable"
                     data-i18n="climate.process_bar.designing_d3"
-                    >Design Decisions</span
+                    >Coaching</span
                   >
                 </div>
               </div>
@@ -552,17 +554,17 @@
                   <span
                     class="cs-process-bar-deliverable"
                     data-i18n="climate.process_bar.building_d1"
-                    >Power BI</span
+                    >Power BI DAX</span
                   >
                   <span
                     class="cs-process-bar-deliverable"
                     data-i18n="climate.process_bar.building_d2"
-                    >Constraints</span
+                    >Data Modeling</span
                   >
                   <span
                     class="cs-process-bar-deliverable"
                     data-i18n="climate.process_bar.building_d3"
-                    >Adaptation</span
+                    >Technical Limitations</span
                   >
                 </div>
               </div>
@@ -581,6 +583,11 @@
                     class="cs-process-bar-deliverable"
                     data-i18n="climate.process_bar.evolving_d1"
                     >User Feedback</span
+                  >
+                  <span
+                    class="cs-process-bar-deliverable"
+                    data-i18n="climate.process_bar.evolving_d2"
+                    >Iterations</span
                   >
                   <span
                     class="cs-process-bar-deliverable"
@@ -654,15 +661,6 @@
                     Some looked impressive but were difficult to read. Others
                     were technically impossible to implement in Power BI. Many
                     simply did not communicate the story I wanted to tell.
-                  </p>
-
-                  <p
-                    class="cs-process-step-text"
-                    data-i18n="climate.exploring.text2"
-                  >
-                    Every failed attempt became a learning opportunity and
-                    deepened my understanding of the strengths and limitations
-                    of data visualization.
                   </p>
 
                   <div class="cs-process-cards">
@@ -755,9 +753,11 @@
                   >
                     After exploring different visual approaches, I focused on
                     turning the findings into a coherent and engaging
-                    experience. The final dashboard combines storytelling,
-                    information design and exploratory interactions to help
-                    users discover patterns hidden in climate finance data.
+                    experience. I tested different information architectures and
+                    explored fonts and colors that best supported the data.
+                    Feedback from three one-on-one coaching sessions with a data
+                    visualization expert and another UX designer helped me
+                    further refine the design.
                   </p>
 
                   <div class="cs-process-cards">
@@ -1104,18 +1104,7 @@
                     Power BI turned out to be both empowering and frustrating.
                     Many of the visual ideas that seemed promising in theory
                     could not be implemented because of technical constraints,
-                    custom visual limitations or performance issues.
-                  </p>
-
-                  <p
-                    class="cs-process-step-text"
-                    data-i18n="climate.building.text2"
-                  >
-                    In addition, some custom visuals were not approved by my
-                    organization and therefore could never be used in a
-                    production environment. The challenge became finding
-                    creative alternatives while preserving the original vision
-                    of the dashboard.
+                    implementation complexity or custom visual limitations.
                   </p>
 
                   <div class="cs-process-cards">
@@ -1197,9 +1186,8 @@
                     Although the original dashboard remained a conceptual
                     prototype, I later built on its foundation to develop SECO's
                     live Climate Cockpit. The dashboard was adapted to address
-                    concrete business needs and integrated into the Financial
-                    Cockpit ecosystem (see case study "Yellow is the new
-                    green").
+                    concrete business needs and integrated into a broader
+                    Financial Cockpit ecosystem.
                   </p>
 
                   <p
@@ -1400,8 +1388,8 @@
                   class="cs-impact-num-label"
                   data-i18n="climate.impact.num2_label"
                 >
-                  Reduction in reporting time for financial controllers by
-                  replacing manual Excel analysis with automated reporting.
+                  Reduction in reporting time for data analysts by replacing
+                  manual Excel analysis with automated reporting.
                 </p>
               </div>
 
@@ -1428,44 +1416,15 @@
           <p class="label label-muted" data-i18n="climate.testimonial_label">
             Testimonial
           </p>
-          <div class="cs-testimonials-grid">
-            <div class="cs-testimonial-card">
-              <p
-                class="cs-testimonial-quote"
-                data-i18n="climate.testimonial.quote1"
-              >
-                "Throughout the project, Anouk proactively gathered user
-                requirements and, using interactive prototypes, tailored the
-                dashboard to meet the specific needs of the network.
-              </p>
-              <p
-                class="cs-testimonial-quote"
-                data-i18n="climate.testimonial.quote2"
-              >
-                The result is a clear and flexible analysis tool that—unlike the
-                previous cockpit—enables fast and versatile data queries while
-                presenting the results in a visually clear and accessible way.
-                The new cockpit is already being widely used and has received
-                consistently positive feedback throughout the network. Thanks to
-                her friendly and positive approach, Anouk also succeeded in
-                engaging network members enthusiastically in the development of
-                the new cockpit.
-              </p>
-              <p
-                class="cs-testimonial-quote"
-                data-i18n="climate.testimonial.quote3"
-              >
-                We sincerely thank Anouk for her valuable contribution."
-              </p>
-              <p
-                class="cs-testimonial-author"
-                data-i18n="climate.testimonial.author"
-              >
-                Daniel Bruderer, Climate Network lead, Economic Development and
-                Cooperation, Swiss federal administration
-              </p>
-            </div>
-            <div class="cs-testimonial-highlight">
+
+          <div class="cs-testimonials-grid cs-testimonials-grid--compact">
+            <div
+              class="cs-testimonial-card cs-testimonial-card--interactive cursor-grow"
+              data-testimonial
+              role="button"
+              tabindex="0"
+              aria-haspopup="dialog"
+            >
               <p
                 class="cs-testimonial-highlight-text"
                 data-i18n="climate.testimonial.highlight"
@@ -1473,8 +1432,172 @@
                 "[...] A <strong>clear and flexible</strong> analysis tool that
                 enables <strong>fast, versatile</strong> data queries and has
                 received consistently <strong>positive feedback</strong>
-                across the network.[...]"
+                across the network. [...]"
               </p>
+
+              <div class="cs-testimonial-card-footer">
+                <p
+                  class="cs-testimonial-author"
+                  data-i18n="climate.testimonial.author"
+                >
+                  Daniel Bruderer, Climate Network lead, Economic Development
+                  and Cooperation, Swiss federal administration
+                </p>
+
+                <span class="cs-testimonial-reveal">
+                  <span>Reveal full testimonial</span>
+
+                  <span class="link-arrow" aria-hidden="true">
+                    <svg viewBox="0 0 16 16" fill="none">
+                      <path
+                        d="M0 16L13 3M7.6 3H13V8.4"
+                        stroke="currentColor"
+                        stroke-width="1"
+                        stroke-linecap="butt"
+                        stroke-linejoin="miter"
+                      />
+                    </svg>
+                  </span>
+                </span>
+              </div>
+
+              <!-- Hidden full testimonial used by modal -->
+              <div class="cs-testimonial-full" hidden>
+                <p class="cs-testimonial-full-quote">
+                  <span data-i18n="climate.testimonial.quote1">
+                    "Throughout the project, Anouk proactively gathered user
+                    requirements and, using interactive prototypes, tailored the
+                    dashboard to meet the specific needs of the network.
+                  </span>
+
+                  <br /><br />
+
+                  <span data-i18n="climate.testimonial.quote2">
+                    The result is a clear and flexible analysis tool that—unlike
+                    the previous cockpit—enables fast and versatile data queries
+                    while presenting the results in a visually clear and
+                    accessible way. The new cockpit is already being widely used
+                    and has received consistently positive feedback throughout
+                    the network. Thanks to her friendly and positive approach,
+                    Anouk also succeeded in engaging network members
+                    enthusiastically in the development of the new cockpit.
+                  </span>
+
+                  <br /><br />
+
+                  <span data-i18n="climate.testimonial.quote3">
+                    We sincerely thank Anouk for her valuable contribution."
+                  </span>
+                </p>
+
+                <p
+                  class="cs-testimonial-full-author"
+                  data-i18n="climate.testimonial.author"
+                >
+                  Daniel Bruderer, Climate Network lead, Economic Development
+                  and Cooperation, Swiss federal administration
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- REFLECTION -->
+        <!-- REFLECTION -->
+        <section class="cs-afterlife" id="section-afterlife">
+          <div class="cs-afterlife-content">
+            <p
+              class="label label-muted"
+              data-i18n="cs_shared.sidebar_afterlife"
+            >
+              Reflection
+            </p>
+
+            <h2 class="section-title" data-i18n="climate.afterlife.heading">
+              From experiment to <strong>everyday use.</strong>
+            </h2>
+
+            <div class="cs-context-bottom">
+              <p
+                class="cs-context-description"
+                data-i18n="climate.afterlife.text"
+              >
+                What started as an experimental learning project eventually
+                became the foundation for a tool used in everyday work. Along
+                the way, I learned how much value there is in exploring freely,
+                letting go of ideas that do not work and adapting ambitious
+                concepts to real-world constraints.
+              </p>
+
+              <div class="accordion cs-afterlife-accordion">
+                <!-- 1 -->
+                <div class="accordion-item open">
+                  <button class="accordion-trigger cursor-grow" type="button">
+                    <span data-i18n="climate.afterlife.accordion1_trigger">
+                      Good ideas rarely appear on the first try
+                    </span>
+                    <span class="accordion-icon">+</span>
+                  </button>
+
+                  <div class="accordion-body">
+                    <div
+                      class="accordion-content"
+                      data-i18n="climate.afterlife.accordion1_content"
+                    >
+                      Exploring many different visualizations also meant letting
+                      go of ideas I initially liked. Testing, failing and
+                      iterating showed me that an unsuccessful idea is often
+                      simply another step toward a better solution.
+                    </div>
+                  </div>
+                </div>
+
+                <!-- 2 -->
+                <div class="accordion-item">
+                  <button class="accordion-trigger cursor-grow" type="button">
+                    <span data-i18n="climate.afterlife.accordion2_trigger">
+                      Constraints can sharpen the design
+                    </span>
+                    <span class="accordion-icon">+</span>
+                  </button>
+
+                  <div class="accordion-body">
+                    <div
+                      class="accordion-content"
+                      data-i18n="climate.afterlife.accordion2_content"
+                    >
+                      Power BI could not support every idea I wanted to
+                      implement. Working within technical limitations pushed me
+                      to focus on the underlying user need and find alternative
+                      solutions rather than becoming attached to one specific
+                      visualization.
+                    </div>
+                  </div>
+                </div>
+
+                <!-- 3 -->
+                <div class="accordion-item">
+                  <button class="accordion-trigger cursor-grow" type="button">
+                    <span data-i18n="climate.afterlife.accordion3_trigger">
+                      The experience is bigger than the charts
+                    </span>
+                    <span class="accordion-icon">+</span>
+                  </button>
+
+                  <div class="accordion-body">
+                    <div
+                      class="accordion-content"
+                      data-i18n="climate.afterlife.accordion3_content"
+                    >
+                      I became increasingly aware that information architecture,
+                      storytelling and the sequence in which information is
+                      revealed matter just as much as the individual
+                      visualizations. The most sophisticated chart is not
+                      necessarily the most effective one.
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </section>
@@ -1620,6 +1743,33 @@
       </section>
 
       <div id="footer"></div>
+
+      <div
+        class="cs-testimonial-modal"
+        id="testimonial-modal"
+        aria-hidden="true"
+      >
+        <button
+          class="cs-lightbox-close"
+          id="testimonial-modal-close"
+          type="button"
+          aria-label="Close testimonial"
+        >
+          ✕
+        </button>
+
+        <div class="cs-testimonial-modal-card" role="dialog" aria-modal="true">
+          <p
+            class="cs-testimonial-modal-quote"
+            id="testimonial-modal-quote"
+          ></p>
+
+          <p
+            class="cs-testimonial-modal-author"
+            id="testimonial-modal-author"
+          ></p>
+        </div>
+      </div>
       <!-- =============================================
      PASSWORD GATE END OF CONTAINER
   ============================================= -->

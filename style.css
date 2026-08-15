@@ -3048,6 +3048,108 @@ img.cs-process-step-image {
 .cs-testimonial-highlight-text strong {
   font-weight: 700;
 }
+
+/* ── INTERACTIVE TESTIMONIAL CARDS ── */
+
+.cs-testimonials-grid--compact {
+  align-items: stretch;
+}
+
+.cs-testimonial-card--interactive {
+  height: 100%;
+  justify-content: space-between;
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.cs-testimonial-card--interactive:hover {
+  transform: translateY(-4px);
+}
+
+.cs-testimonial-card--interactive .cs-testimonial-highlight-text {
+  margin: 0;
+}
+
+.cs-testimonial-card-footer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  margin-top: auto;
+}
+
+.cs-testimonial-reveal {
+  align-self: flex-start;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--color-text);
+}
+
+.cs-testimonial-reveal .link-arrow {
+  font-size: 0.75em;
+  transition: transform 0.2s ease;
+}
+
+.cs-testimonial-card--interactive:hover .cs-testimonial-reveal .link-arrow {
+  transform: translate(3px, -3px);
+}
+
+/* ── TESTIMONIAL MODAL ── */
+
+.cs-testimonial-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: var(--space-6);
+
+  background: rgba(0, 0, 0, 0.85);
+
+  z-index: 10003;
+}
+
+.cs-testimonial-modal.open {
+  display: flex;
+}
+
+.cs-testimonial-modal-card {
+  width: min(760px, calc(100vw - 96px));
+  max-height: 80vh;
+  overflow-y: auto;
+
+  padding: clamp(32px, 5vw, 64px);
+
+  background: var(--color-bg);
+  border: 1.5px solid var(--project-accent);
+  border-radius: var(--radius-md);
+}
+
+.cs-testimonial-modal-quote {
+  font-size: clamp(16px, 1.6vw, 20px);
+  font-weight: 300;
+  line-height: 1.8;
+  font-style: italic;
+  color: var(--color-text);
+}
+
+.cs-testimonial-modal-author {
+  margin-top: var(--space-5);
+
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.5;
+
+  color: var(--color-text-muted);
+}
+
 /* HOTESPOT */
 
 .cs-hotspot {

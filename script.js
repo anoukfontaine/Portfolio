@@ -425,6 +425,86 @@ if (lightbox) {
 }
 
 /* =============================================
+   CASE STUDY TESTIMONIAL MODAL
+============================================= */
+
+const testimonialModal = document.getElementById("testimonial-modal");
+const testimonialModalQuote = document.getElementById(
+  "testimonial-modal-quote",
+);
+const testimonialModalAuthor = document.getElementById(
+  "testimonial-modal-author",
+);
+const testimonialModalClose = document.getElementById(
+  "testimonial-modal-close",
+);
+
+const testimonialCards = document.querySelectorAll(
+  ".cs-testimonial-card--interactive",
+);
+
+let lastFocusedTestimonial = null;
+
+function openTestimonial(card) {
+  if (!testimonialModal || !testimonialModalQuote || !testimonialModalAuthor)
+    return;
+
+  const fullQuote = card.querySelector(".cs-testimonial-full-quote");
+  const fullAuthor = card.querySelector(".cs-testimonial-full-author");
+
+  if (!fullQuote || !fullAuthor) return;
+
+  lastFocusedTestimonial = card;
+
+  testimonialModalQuote.innerHTML = fullQuote.innerHTML;
+  testimonialModalAuthor.innerHTML = fullAuthor.innerHTML;
+
+  testimonialModal.classList.add("open");
+  testimonialModal.setAttribute("aria-hidden", "false");
+
+  document.body.style.overflow = "hidden";
+
+  testimonialModalClose?.focus();
+}
+
+function closeTestimonial() {
+  if (!testimonialModal) return;
+
+  testimonialModal.classList.remove("open");
+  testimonialModal.setAttribute("aria-hidden", "true");
+
+  document.body.style.overflow = "";
+
+  lastFocusedTestimonial?.focus();
+}
+
+testimonialCards.forEach((card) => {
+  card.addEventListener("click", () => {
+    openTestimonial(card);
+  });
+
+  card.addEventListener("keydown", (e) => {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      openTestimonial(card);
+    }
+  });
+});
+
+testimonialModalClose?.addEventListener("click", closeTestimonial);
+
+testimonialModal?.addEventListener("click", (e) => {
+  if (e.target === e.currentTarget) {
+    closeTestimonial();
+  }
+});
+
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape" && testimonialModal?.classList.contains("open")) {
+    closeTestimonial();
+  }
+});
+/* =============================================
  CASE STUDY ITERATIONS TOGGLE
 ============================================= */
 

@@ -2,18 +2,17 @@
 
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>Case Study — Browsing the World's Economy</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300;0,400;0,700;1,300;1,400&amp;display=swap"
       rel="stylesheet"
     />
-    <link rel="icon" type="image/png" href="../Images/General/favicon.png" />
-    <link rel="stylesheet" href="../style.css" />
-
+    <link href="../Images/General/favicon.png" rel="icon" type="image/png" />
+    <link href="../style.css" rel="stylesheet" />
     <script>
       /* ============================================= AVOID FLICKER
     ============================================= */
@@ -82,7 +81,7 @@
        NAV HTML  —  DO NOT MODIFY
   ============================================= -->
     <nav>
-      <a class="logo" href="/" data-home-link>
+      <a class="logo" data-home-link="" href="/">
         <span class="logo-first"
           ><span class="l" data-i="0">A</span
           ><span class="l hide" data-i="1">n</span
@@ -90,9 +89,9 @@
           ><span class="l hide" data-i="3">u</span
           ><span class="l hide" data-i="4">k</span></span
         ><span class="logo-last"
-          ><span class="l space hide" data-i="5">&nbsp;</span
-          ><span class="l dot">&middot;</span
-          ><span class="l space hide" data-i="6">&nbsp;</span
+          ><span class="l space hide" data-i="5"> </span
+          ><span class="l dot">·</span
+          ><span class="l space hide" data-i="6"> </span
           ><span class="l" data-i="7">F</span
           ><span class="l hide" data-i="8">o</span
           ><span class="l hide" data-i="9">n</span
@@ -103,37 +102,35 @@
           ><span class="l hide" data-i="14">e</span></span
         >
       </a>
-
       <div class="nav-right">
         <div class="nav-controls">
-          <button class="nav-lang" aria-label="Switch language">
+          <button aria-label="Switch language" class="nav-lang">
             EN<span class="lang-orbit-dot"></span>
           </button>
-          <button class="nav-theme" id="theme-toggle" aria-label="Toggle theme">
-            <span class="moon-glyph">&#9680;</span
-            ><span class="orbit-dot"></span>
+          <button aria-label="Toggle theme" class="nav-theme" id="theme-toggle">
+            <span class="moon-glyph">◐</span><span class="orbit-dot"></span>
           </button>
           <button
+            aria-controls="mobile-menu"
+            aria-expanded="false"
+            aria-label="Open menu"
             class="nav-hamburger"
             id="nav-hamburger"
             type="button"
-            aria-label="Open menu"
-            aria-expanded="false"
-            aria-controls="mobile-menu"
           >
             <span></span><span></span><span></span>
           </button>
         </div>
       </div>
       <div class="mobile-menu" id="mobile-menu">
-        <a href="#services" class="mobile-menu-link" data-i18n="nav.services"
+        <a class="mobile-menu-link" data-i18n="nav.services" href="#services"
           >Services</a
         >
-        <a href="#work" class="mobile-menu-link" data-i18n="nav.work">Work</a>
-        <a href="#about" class="mobile-menu-link" data-i18n="nav.about"
+        <a class="mobile-menu-link" data-i18n="nav.work" href="#work">Work</a>
+        <a class="mobile-menu-link" data-i18n="nav.about" href="#about"
           >About</a
         >
-        <a href="#contact" class="mobile-menu-link" data-i18n="nav.contact"
+        <a class="mobile-menu-link" data-i18n="nav.contact" href="#contact"
           >Contact</a
         >
       </div>
@@ -141,125 +138,116 @@
     <section id="site-gate">
       <div class="site-gate-box">
         <p class="site-gate-title" data-i18n="gate.title">Private Portfolio</p>
-
         <p class="site-gate-text" data-i18n="gate.description">
           This portfolio is currently shared with selected reviewers.<br />
           Please enter the password to continue.
         </p>
-
         <input
-          type="password"
-          id="site-gate-input"
+          autofocus=""
           data-i18n-placeholder="gate.placeholder"
+          id="site-gate-input"
           placeholder="Password"
-          autofocus
+          type="password"
         />
-
-        <button id="site-gate-submit" data-i18n="gate.button">
+        <button data-i18n="gate.button" id="site-gate-submit">
           Enter portfolio
         </button>
-
-        <p id="site-gate-error" data-i18n="gate.error">Incorrect password.</p>
+        <p data-i18n="gate.error" id="site-gate-error">Incorrect password.</p>
       </div>
     </section>
     <div id="site-content">
       <main>
         <!-- OVERVIEW -->
-
         <section class="cs-overview card-container" id="section-overview">
-          <nav class="left-sidebar" aria-label="Case study sections">
+          <nav aria-label="Case study sections" class="left-sidebar">
             <div class="left-sidebar-home">
               <a
                 class="left-sidebar-ghost"
-                href="../index.html#services"
                 data-i18n="nav.services"
+                href="../index.html#services"
                 >Services</a
               >
-              <a href="../index.html#work" data-i18n="nav.work">Work</a>
+              <a data-i18n="nav.work" href="../index.html#work">Work</a>
               <a
                 class="left-sidebar-ghost"
-                href="../index.html#about"
                 data-i18n="nav.about"
+                href="../index.html#about"
                 >About</a
               >
               <a
                 class="left-sidebar-ghost"
-                href="../index.html#contact"
                 data-i18n="nav.contact"
+                href="../index.html#contact"
                 >Contact</a
               >
             </div>
-
             <a
-              href="#section-overview"
-              data-target="section-overview"
               data-i18n="cs_shared.sidebar_overview"
+              data-target="section-overview"
+              href="#section-overview"
               >Overview</a
             >
             <a
-              href="#section-problem"
-              data-target="section-problem"
               data-i18n="cs_shared.sidebar_problem"
+              data-target="section-problem"
+              href="#section-problem"
               >Problem</a
             >
             <a
-              href="#section-process"
-              data-target="section-process"
               data-i18n="cs_shared.sidebar_process"
+              data-target="section-process"
+              href="#section-process"
               >Process</a
             >
-
             <div class="left-sidebar-sub">
               <a
                 class="left-sidebar-sub-item"
-                href="#section-research"
-                data-target="section-research"
                 data-i18n="cs_shared.sidebar_research"
+                data-target="section-research"
+                href="#section-research"
                 >01 Research</a
               >
               <a
                 class="left-sidebar-sub-item"
-                href="#section-design"
-                data-target="section-design"
                 data-i18n="cs_shared.sidebar_design"
+                data-target="section-design"
+                href="#section-design"
                 >02 Design</a
               >
               <a
                 class="left-sidebar-sub-item"
-                href="#section-develop"
-                data-target="section-develop"
                 data-i18n="cs_shared.sidebar_iterate"
+                data-target="section-develop"
+                href="#section-develop"
                 >03 Iterate</a
               >
               <a
                 class="left-sidebar-sub-item"
-                href="#section-test"
-                data-target="section-test"
                 data-i18n="cs_shared.sidebar_launch"
+                data-target="section-test"
+                href="#section-test"
                 >04 Launch</a
               >
             </div>
-
             <a
-              href="#section-product"
-              data-target="section-product"
               data-i18n="cs_shared.sidebar_product"
+              data-target="section-product"
+              href="#section-product"
               >Product</a
             >
             <a
-              href="#section-reflection"
-              data-target="section-reflection"
               data-i18n="cs_shared.sidebar_impact"
+              data-target="section-reflection"
+              href="#section-reflection"
               >Impact</a
             >
             <a
-              href="#section-afterlife"
-              data-target="section-afterlife"
               data-i18n="cs_shared.sidebar_afterlife"
+              data-target="section-afterlife"
+              href="#section-afterlife"
               >Reflect</a
             >
           </nav>
-
           <div class="cs-overview-content">
             <p class="label label-muted" data-i18n="cs_shared.case_study_label">
               Case Study
@@ -267,7 +255,6 @@
             <h1 class="cs-headline" data-i18n="project_titles.bw">
               Browsing the World's Economy
             </h1>
-
             <div class="cs-overview-intro">
               <p
                 class="cs-overview-description"
@@ -277,7 +264,6 @@
                 dashboard that makes economic information accessible, searchable
                 and automatically updated.
               </p>
-
               <p class="cs-overview-note" data-i18n="bw.overview_note">
                 Note: Due to confidentiality and intellectual property
                 considerations, this case study uses simplified, illustrative
@@ -285,46 +271,40 @@
                 below.
               </p>
             </div>
-
             <a
               class="big-link"
               href="https://www.seco.admin.ch/en/country-cockpit"
-              target="_blank"
               rel="noopener noreferrer"
+              target="_blank"
             >
               <span data-i18n="bw.view_live">View live product</span>
-              <span class="link-arrow" aria-hidden="true">
-                <svg viewBox="0 0 16 16" fill="none">
+              <span aria-hidden="true" class="link-arrow">
+                <svg fill="none" viewbox="0 0 16 16">
                   <path
                     d="M0 16L13 3M7.6 3H13V8.4"
                     stroke="currentColor"
-                    stroke-width="1"
                     stroke-linecap="butt"
                     stroke-linejoin="miter"
-                  />
+                    stroke-width="1"
+                  ></path>
                 </svg>
               </span>
             </a>
           </div>
-
           <div class="cs-overview-image-wrap">
             <div class="cs-overview-image">
               <img
-                src="../Images/BW/0_hero.png"
                 alt="Browsing the World's Economy dashboard mockup"
+                src="../Images/BW/0_hero.png"
               />
             </div>
           </div>
-
           <div class="cs-overview-meta">
             <div class="cs-overview-meta-block">
-              <p class="label label-muted" data-i18n="cs_shared.meta_role">
+              <p class="label label-muted" data-i18n="cs_shared.meta_what">
                 What
               </p>
-              <p
-                class="cs-overview-meta-value"
-                data-i18n="kunstatelier.meta.role_value"
-              >
+              <p class="cs-overview-meta-value" data-i18n="bw.meta.what_value">
                 A multilingual public Power BI dashboard exploring
                 country-specific economic data for businesses, policymakers,
                 researchers, the general public and specialists within the Swiss
@@ -332,25 +312,19 @@
               </p>
             </div>
             <div class="cs-overview-meta-block">
-              <p class="label label-muted" data-i18n="cs_shared.meta_timeline">
+              <p class="label label-muted" data-i18n="cs_shared.meta_why">
                 Why
               </p>
-              <p
-                class="cs-overview-meta-value"
-                data-i18n="kunstatelier.meta.timeline_value"
-              >
+              <p class="cs-overview-meta-value" data-i18n="bw.meta.why_value">
                 Replace manually produced Word-based country reports to improve
                 the user experience and reduce preparation time
               </p>
             </div>
             <div class="cs-overview-meta-block">
-              <p class="label label-muted" data-i18n="cs_shared.meta_platform">
+              <p class="label label-muted" data-i18n="cs_shared.meta_how">
                 How
               </p>
-              <p
-                class="cs-overview-meta-value"
-                data-i18n="kunstatelier.meta.platform_value"
-              >
+              <p class="cs-overview-meta-value" data-i18n="bw.meta.how_value">
                 As the sole designer, I supported a cross-functional team of BI
                 engineers and subject matter experts with UX design best
                 practices and data visualization expertise
@@ -358,7 +332,6 @@
             </div>
           </div>
         </section>
-
         <!-- THE PROBLEM -->
         <section class="cs-section card-container" id="section-problem">
           <div class="cs-dark-card">
@@ -380,8 +353,8 @@
               <div class="cs-problem-top-right">
                 <div class="cs-problem-image">
                   <img
-                    src="../Images/BW/2_problem-1.png"
                     alt="Original country report screenshot"
+                    src="../Images/BW/2_problem-1.png"
                   />
                 </div>
               </div>
@@ -435,9 +408,7 @@
             </div>
           </div>
         </section>
-
         <!-- THE PROCESS -->
-
         <section class="cs-process-section card-container" id="section-process">
           <div class="cs-process-bar">
             <p
@@ -465,7 +436,7 @@
                   >
                   <span
                     class="cs-process-bar-deliverable"
-                    data-i18n="bw.process_bar.research_d1"
+                    data-i18n="bw.process_bar.research_d2"
                     >Challenging assumptions</span
                   >
                 </div>
@@ -540,7 +511,6 @@
               </div>
             </div>
           </div>
-
           <div class="cs-process-intro-cards">
             <div class="cs-process-intro-card">
               <p class="cs-process-card-title" data-i18n="cs_shared.meta_role">
@@ -571,7 +541,6 @@
               </p>
             </div>
           </div>
-
           <!-- 01 Research -->
           <div class="cs-process-step-section first" id="section-research">
             <div class="cs-process-step-card">
@@ -596,7 +565,6 @@
                     the data. An initial workshop had taken place at the start
                     of the project, and no further user research was planned.
                   </p>
-
                   <div class="cs-process-cards">
                     <div class="cs-process-card">
                       <p
@@ -633,15 +601,17 @@
                   </div>
                 </div>
               </div>
-
-              <img
-                src="../Images/BW/3_research.png"
-                alt="Information architecture exercise"
-                class="cs-process-step-image cs-lightbox-trigger cursor-grow"
-              />
+            </div>
+            <div class="cs-process-step-media">
+              <div class="cs-process-step-media-item">
+                <img
+                  alt="Information architecture exercise"
+                  class="cs-process-step-image cs-lightbox-trigger cursor-grow"
+                  src="../Images/BW/3_research.png"
+                />
+              </div>
             </div>
           </div>
-
           <!-- 02 Design -->
           <div
             class="cs-process-step-section cs-process-step-section--overlap"
@@ -711,198 +681,195 @@
                 </div>
               </div>
             </div>
-            <p
-              class="cs-image-caption cs-image-caption--center"
-              data-i18n="bw.design.decisions_caption"
-            >
-              Reorganizing the information architecture
-            </p>
-            <img
-              src="../Images/BW/4_information_architecture.png"
-              alt="Information architecture exercise"
-              class="cs-process-step-image"
-            />
-
-            <p
-              class="cs-image-caption cs-image-caption--center"
-              data-i18n="bw.design.decisions_caption"
-            >
-              Design decisions (hover to discover)
-            </p>
-
-            <div class="cs-spotlight-image">
-              <img
-                src="../Images/BW/4_decisions.png"
-                alt="Design system overview"
-                class="cs-process-step-image cs-lightbox-trigger cursor-grow"
-              />
-
-              <div
-                class="cs-spotlight-zone cs-spotlight-zone--detail initial-active cursor-grow"
-                style="top: 0%; left: 0%; width: 14.7%; height: 100%"
-              >
-                <div class="cs-spotlight-card">
-                  <p
-                    class="cs-design-card-title"
-                    data-i18n="bw.design.spotlight1_title"
-                  >
-                    Color with purpose
-                  </p>
-                  <p
-                    class="cs-process-card-text"
-                    data-i18n="bw.design.spotlight1_text"
-                  >
-                    The color palette builds on existing federal dashboards to
-                    create a familiar and trustworthy experience. Federal red is
-                    reserved exclusively for Switzerland, making comparisons
-                    immediate and intuitive. Only the country name is
-                    highlighted, while numerical values remain neutral to avoid
-                    unintended negative associations.
-                  </p>
-                </div>
+            <div class="cs-process-step-media">
+              <div class="cs-process-step-media-item">
+                <p
+                  class="cs-image-caption cs-image-caption--center"
+                  data-i18n="bw.design.ia_caption"
+                >
+                  Reorganizing the information architecture
+                </p>
+                <img
+                  alt="Information architecture exercise"
+                  class="cs-process-step-image"
+                  src="../Images/BW/4_information_architecture.png"
+                />
               </div>
-
-              <div
-                class="cs-spotlight-zone cursor-grow"
-                style="top: 0%; left: 15.8%; width: 15.5%; height: 24.9%"
-              >
-                <div class="cs-spotlight-card">
-                  <p
-                    class="cs-design-card-title"
-                    data-i18n="bw.design.spotlight2_title"
+              <div class="cs-process-step-media-item">
+                <p
+                  class="cs-image-caption cs-image-caption--center"
+                  data-i18n="bw.design.decisions_caption"
+                >
+                  Design decisions (hover to discover)
+                </p>
+                <div class="cs-spotlight-image">
+                  <img
+                    alt="Design system overview"
+                    class="cs-process-step-image cs-lightbox-trigger cursor-grow"
+                    src="../Images/BW/4_decisions.png"
+                  />
+                  <div
+                    class="cs-spotlight-zone cs-spotlight-zone--detail initial-active cursor-grow"
+                    style="top: 0%; left: 0%; width: 14.7%; height: 100%"
                   >
-                    Designing within constraints
-                  </p>
-                  <p
-                    class="cs-process-card-text"
-                    data-i18n="bw.design.spotlight2_text"
+                    <div class="cs-spotlight-card">
+                      <p
+                        class="cs-design-card-title"
+                        data-i18n="bw.design.spotlight1_title"
+                      >
+                        Color with purpose
+                      </p>
+                      <p
+                        class="cs-process-card-text"
+                        data-i18n="bw.design.spotlight1_text"
+                      >
+                        The color palette builds on existing federal dashboards
+                        to create a familiar and trustworthy experience. Federal
+                        red is reserved exclusively for Switzerland, making
+                        comparisons immediate and intuitive. Only the country
+                        name is highlighted, while numerical values remain
+                        neutral to avoid unintended negative associations.
+                      </p>
+                    </div>
+                  </div>
+                  <div
+                    class="cs-spotlight-zone cursor-grow"
+                    style="top: 0%; left: 15.8%; width: 15.5%; height: 24.9%"
                   >
-                    Typography followed the federal design guidelines, with
-                    Arial as the required typeface. Its familiarity and
-                    readability support efficient information scanning.
-                    Technical limitations prevented adjustments to letter and
-                    line spacing, requiring the design to work within a denser
-                    typographic layout.
-                  </p>
-                </div>
-              </div>
-
-              <div
-                class="cs-spotlight-zone cursor-grow"
-                style="top: 0%; left: 32.4%; width: 25.1%; height: 34.3%"
-              >
-                <div class="cs-spotlight-card">
-                  <p
-                    class="cs-design-card-title"
-                    data-i18n="bw.design.spotlight3_title"
+                    <div class="cs-spotlight-card">
+                      <p
+                        class="cs-design-card-title"
+                        data-i18n="bw.design.spotlight2_title"
+                      >
+                        Designing within constraints
+                      </p>
+                      <p
+                        class="cs-process-card-text"
+                        data-i18n="bw.design.spotlight2_text"
+                      >
+                        Typography followed the federal design guidelines, with
+                        Arial as the required typeface. Its familiarity and
+                        readability support efficient information scanning.
+                        Technical limitations prevented adjustments to letter
+                        and line spacing, requiring the design to work within a
+                        denser typographic layout.
+                      </p>
+                    </div>
+                  </div>
+                  <div
+                    class="cs-spotlight-zone cursor-grow"
+                    style="top: 0%; left: 32.4%; width: 25.1%; height: 34.3%"
                   >
-                    Guiding the eye
-                  </p>
-                  <p
-                    class="cs-process-card-text"
-                    data-i18n="bw.design.spotlight3_text"
+                    <div class="cs-spotlight-card">
+                      <p
+                        class="cs-design-card-title"
+                        data-i18n="bw.design.spotlight3_title"
+                      >
+                        Guiding the eye
+                      </p>
+                      <p
+                        class="cs-process-card-text"
+                        data-i18n="bw.design.spotlight3_text"
+                      >
+                        Icons were used sparingly to improve orientation and
+                        scanability without competing with the data.
+                      </p>
+                    </div>
+                  </div>
+                  <div
+                    class="cs-spotlight-zone cursor-grow"
+                    style="top: 26.9%; left: 15.8%; width: 15.5%; height: 73.1%"
                   >
-                    Icons were used sparingly to improve orientation and
-                    scanability without competing with the data.
-                  </p>
-                </div>
-              </div>
-              <div
-                class="cs-spotlight-zone cursor-grow"
-                style="top: 26.9%; left: 15.8%; width: 15.5%; height: 73.1%"
-              >
-                <div class="cs-spotlight-card">
-                  <p
-                    class="cs-design-card-title"
-                    data-i18n="bw.design.spotlight4_title"
+                    <div class="cs-spotlight-card">
+                      <p
+                        class="cs-design-card-title"
+                        data-i18n="bw.design.spotlight4_title"
+                      >
+                        Stay oriented
+                      </p>
+                      <p
+                        class="cs-process-card-text"
+                        data-i18n="bw.design.spotlight4_text"
+                      >
+                        A persistent sidebar provides clear orientation, while
+                        the country filter lets users seamlessly switch between
+                        country profiles from any page.
+                      </p>
+                    </div>
+                  </div>
+                  <div
+                    class="cs-spotlight-zone cursor-grow"
+                    style="top: 0%; left: 58.5%; width: 41.5%; height: 100%"
                   >
-                    Stay oriented
-                  </p>
-                  <p
-                    class="cs-process-card-text"
-                    data-i18n="bw.design.spotlight4_text"
+                    <div class="cs-spotlight-card cs-spotlight-card--left">
+                      <p
+                        class="cs-design-card-title"
+                        data-i18n="bw.design.spotlight5_title"
+                      >
+                        Choosing the right chart
+                      </p>
+                      <p
+                        class="cs-process-card-text"
+                        data-i18n="bw.design.spotlight5_text"
+                      >
+                        Rather than relying on a single chart type, each
+                        visualization was selected for the data it communicates
+                        best. Consistent colors, with blue for exports and mint
+                        for imports, reinforce recognition across charts, while
+                        neutral tones prevent visual clutter.
+                      </p>
+                    </div>
+                  </div>
+                  <div
+                    class="cs-spotlight-zone cursor-grow"
+                    style="top: 36.4%; left: 32.4%; width: 25.1%; height: 28.8%"
                   >
-                    A persistent sidebar provides clear orientation, while the
-                    country filter lets users seamlessly switch between country
-                    profiles from any page.
-                  </p>
-                </div>
-              </div>
-
-              <div
-                class="cs-spotlight-zone cursor-grow"
-                style="top: 0%; left: 58.5%; width: 41.5%; height: 100%"
-              >
-                <div class="cs-spotlight-card cs-spotlight-card--left">
-                  <p
-                    class="cs-design-card-title"
-                    data-i18n="bw.design.spotlight5_title"
+                    <div class="cs-spotlight-card">
+                      <p
+                        class="cs-design-card-title"
+                        data-i18n="bw.design.spotlight6_title"
+                      >
+                        Organizing complexity
+                      </p>
+                      <p
+                        class="cs-process-card-text"
+                        data-i18n="bw.design.spotlight6_text"
+                      >
+                        A consistent card-based layout organizes both
+                        information and key indicators into clear, easy-to-scan
+                        sections. Key figures are immediately visible, while
+                        consistent color coding distinguishes export and import
+                        metrics. Displaying data sources directly on each card
+                        reinforces transparency and trust.
+                      </p>
+                    </div>
+                  </div>
+                  <div
+                    class="cs-spotlight-zone cursor-grow"
+                    style="top: 67.1%; left: 32.4%; width: 25.1%; height: 32.9%"
                   >
-                    Choosing the right chart
-                  </p>
-                  <p
-                    class="cs-process-card-text"
-                    data-i18n="bw.design.spotlight5_text"
-                  >
-                    Rather than relying on a single chart type, each
-                    visualization was selected for the data it communicates
-                    best. Consistent colors, with blue for exports and mint for
-                    imports, reinforce recognition across charts, while neutral
-                    tones prevent visual clutter.
-                  </p>
-                </div>
-              </div>
-
-              <div
-                class="cs-spotlight-zone cursor-grow"
-                style="top: 36.4%; left: 32.4%; width: 25.1%; height: 28.8%"
-              >
-                <div class="cs-spotlight-card">
-                  <p
-                    class="cs-design-card-title"
-                    data-i18n="bw.design.spotlight6_title"
-                  >
-                    Organizing complexity
-                  </p>
-                  <p
-                    class="cs-process-card-text"
-                    data-i18n="bw.design.spotlight6_text"
-                  >
-                    A consistent card-based layout organizes both information
-                    and key indicators into clear, easy-to-scan sections. Key
-                    figures are immediately visible, while consistent color
-                    coding distinguishes export and import metrics. Displaying
-                    data sources directly on each card reinforces transparency
-                    and trust.
-                  </p>
-                </div>
-              </div>
-
-              <div
-                class="cs-spotlight-zone cursor-grow"
-                style="top: 67.1%; left: 32.4%; width: 25.1%; height: 32.9%"
-              >
-                <div class="cs-spotlight-card">
-                  <p
-                    class="cs-design-card-title"
-                    data-i18n="bw.design.spotlight7_title"
-                  >
-                    Exact figures, when needed
-                  </p>
-                  <p
-                    class="cs-process-card-text"
-                    data-i18n="bw.design.spotlight7_text"
-                  >
-                    Tables complement the visualizations by providing precise
-                    values for users who need exact figures. They can also be
-                    exported to Excel, supporting further analysis and
-                    reporting.
-                  </p>
+                    <div class="cs-spotlight-card">
+                      <p
+                        class="cs-design-card-title"
+                        data-i18n="bw.design.spotlight7_title"
+                      >
+                        Exact figures, when needed
+                      </p>
+                      <p
+                        class="cs-process-card-text"
+                        data-i18n="bw.design.spotlight7_text"
+                      >
+                        Tables complement the visualizations by providing
+                        precise values for users who need exact figures. They
+                        can also be exported to Excel, supporting further
+                        analysis and reporting.
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-
           <!-- 03 Iterate -->
           <div class="cs-process-step-section" id="section-develop">
             <div class="cs-process-step-card">
@@ -964,19 +931,22 @@
                 </div>
               </div>
             </div>
-            <p
-              class="cs-image-caption cs-image-caption--center"
-              data-i18n="bw.iterate.caption"
-            >
-              A feedback document helped track and prioritize design changes
-            </p>
-            <img
-              src="../Images/BW/5_iteration.png"
-              alt="Iteration and feedback process"
-              class="cs-process-step-image"
-            />
+            <div class="cs-process-step-media">
+              <div class="cs-process-step-media-item">
+                <p
+                  class="cs-image-caption cs-image-caption--center"
+                  data-i18n="bw.iterate.caption"
+                >
+                  A feedback document helped track and prioritize design changes
+                </p>
+                <img
+                  alt="Iteration and feedback process"
+                  class="cs-process-step-image"
+                  src="../Images/BW/5_iteration.png"
+                />
+              </div>
+            </div>
           </div>
-
           <!-- 04 Launch -->
           <div class="cs-process-step-section" id="section-test">
             <div class="cs-process-step-card">
@@ -1040,40 +1010,40 @@
                 </div>
               </div>
             </div>
-            <p
-              class="cs-image-caption cs-image-caption--center"
-              data-i18n="bw.launch.release_caption"
-            >
-              Simplified version of the Country Cockpit
-            </p>
-            <img
-              src="../Images/BW/6_release.png"
-              alt="Public release of the dashboard"
-              class="cs-process-step-image cs-lightbox-trigger cursor-grow"
-            />
+            <div class="cs-process-step-media">
+              <div class="cs-process-step-media-item">
+                <p
+                  class="cs-image-caption cs-image-caption--center"
+                  data-i18n="bw.launch.release_caption"
+                >
+                  Simplified version of the Country Cockpit
+                </p>
+                <img
+                  alt="Public release of the dashboard"
+                  class="cs-process-step-image cs-lightbox-trigger cursor-grow"
+                  src="../Images/BW/6_release.png"
+                />
+              </div>
+            </div>
           </div>
         </section>
-
         <!-- THE PRODUCT -->
         <section class="cs-product" id="section-product">
           <p class="label label-muted" data-i18n="bw.product.label">
             The Final Product (simplified)
           </p>
-
           <h2
             class="section-title"
-            style="text-align: left; margin-bottom: var(--element-gap)"
             data-i18n="bw.product.heading"
+            style="text-align: left; margin-bottom: var(--element-gap)"
           >
             Understanding the <strong>World's Economy</strong>
           </h2>
-
           <div class="cs-product-showcase">
             <div class="cs-product-card cs-product-card-large">
               <a
                 class="big-link"
                 href="https://www.seco.admin.ch/en/country-cockpit"
-                target="_blank"
                 rel="noopener noreferrer"
                 style="
                   display: flex;
@@ -1081,30 +1051,30 @@
                   align-items: center;
                   color: var(--color-bg);
                 "
+                target="_blank"
               >
                 <span data-i18n="bw.view_live">View live product</span>
-                <span class="link-arrow" aria-hidden="true">
-                  <svg viewBox="0 0 16 16" fill="none">
+                <span aria-hidden="true" class="link-arrow">
+                  <svg fill="none" viewbox="0 0 16 16">
                     <path
                       d="M0 16L13 3M7.6 3H13V8.4"
                       stroke="currentColor"
-                      stroke-width="1"
                       stroke-linecap="butt"
                       stroke-linejoin="miter"
-                    />
+                      stroke-width="1"
+                    ></path>
                   </svg>
                 </span>
               </a>
               <img
-                src="../Images/BW/7_product-1.png"
                 alt="Final public dashboard"
+                src="../Images/BW/7_product-1.png"
                 style="width: 80%; height: auto; display: block; margin: 0 auto"
               />
             </div>
           </div>
         </section>
         <!-- IMPACT -->
-
         <section class="cs-impact card-container" id="section-reflection">
           <div class="cs-dark-card">
             <div class="cs-impact-card-top">
@@ -1118,7 +1088,9 @@
             </div>
             <div class="cs-impact-numbers">
               <div class="cs-impact-number">
-                <p class="cs-impact-num">1 month</p>
+                <p class="cs-impact-num" data-i18n="bw.impact.num1_value">
+                  1 month
+                </p>
                 <p class="cs-impact-num-label" data-i18n="bw.impact.num1_label">
                   of manual work eliminated.
                 </p>
@@ -1146,15 +1118,14 @@
           <p class="label label-muted" data-i18n="bw.testimonial_label">
             Testimonials
           </p>
-
           <div class="cs-testimonials-grid cs-testimonials-grid--compact">
             <!-- Testimonial 1 -->
             <div
+              aria-haspopup="dialog"
               class="cs-testimonial-card cs-testimonial-card--interactive cursor-grow"
-              data-testimonial
+              data-testimonial=""
               role="button"
               tabindex="0"
-              aria-haspopup="dialog"
             >
               <p
                 class="cs-testimonial-highlight-text"
@@ -1163,7 +1134,6 @@
                 "Anouk [...] brought fresh momentum with her
                 <strong>proactive, solution-oriented approach.</strong> [...]"
               </p>
-
               <div class="cs-testimonial-card-footer">
                 <p
                   class="cs-testimonial-author"
@@ -1172,26 +1142,25 @@
                   Aaron Dettwiler, Project Lead, Bilateral Economic Relations,
                   Swiss federal administration
                 </p>
-
                 <span class="cs-testimonial-reveal">
-                  <span>Reveal full testimonial</span>
-
-                  <span class="link-arrow" aria-hidden="true">
-                    <svg viewBox="0 0 16 16" fill="none">
+                  <span data-i18n="cs_shared.reveal_testimonial"
+                    >Reveal full testimonial</span
+                  >
+                  <span aria-hidden="true" class="link-arrow">
+                    <svg fill="none" viewbox="0 0 16 16">
                       <path
                         d="M0 16L13 3M7.6 3H13V8.4"
                         stroke="currentColor"
-                        stroke-width="1"
                         stroke-linecap="butt"
                         stroke-linejoin="miter"
-                      />
+                        stroke-width="1"
+                      ></path>
                     </svg>
                   </span>
                 </span>
               </div>
-
               <!-- Hidden content used by modal -->
-              <div class="cs-testimonial-full" hidden>
+              <div class="cs-testimonial-full" hidden="">
                 <p
                   class="cs-testimonial-full-quote"
                   data-i18n="bw.testimonial.quote1"
@@ -1212,7 +1181,6 @@
                   and dedication, she played a key role in achieving
                   significantly more from the project than originally planned.»
                 </p>
-
                 <p
                   class="cs-testimonial-full-author"
                   data-i18n="bw.testimonial.author1"
@@ -1222,14 +1190,13 @@
                 </p>
               </div>
             </div>
-
             <!-- Testimonial 2 -->
             <div
+              aria-haspopup="dialog"
               class="cs-testimonial-card cs-testimonial-card--interactive cursor-grow"
-              data-testimonial
+              data-testimonial=""
               role="button"
               tabindex="0"
-              aria-haspopup="dialog"
             >
               <p
                 class="cs-testimonial-highlight-text"
@@ -1238,7 +1205,6 @@
                 "Anouk [...] transformed a rather dry subject into a
                 <strong>highly engaging experience.</strong> [...]"
               </p>
-
               <div class="cs-testimonial-card-footer">
                 <p
                   class="cs-testimonial-author"
@@ -1249,23 +1215,21 @@
                 </p>
                 <span class="cs-testimonial-reveal">
                   <span>Reveal full testimonial</span>
-
-                  <span class="link-arrow" aria-hidden="true">
-                    <svg viewBox="0 0 16 16" fill="none">
+                  <span aria-hidden="true" class="link-arrow">
+                    <svg fill="none" viewbox="0 0 16 16">
                       <path
                         d="M0 16L13 3M7.6 3H13V8.4"
                         stroke="currentColor"
-                        stroke-width="1"
                         stroke-linecap="butt"
                         stroke-linejoin="miter"
-                      />
+                        stroke-width="1"
+                      ></path>
                     </svg>
                   </span>
                 </span>
               </div>
-
               <!-- Hidden content used by modal -->
-              <div class="cs-testimonial-full" hidden>
+              <div class="cs-testimonial-full" hidden="">
                 <p
                   class="cs-testimonial-full-quote"
                   data-i18n="bw.testimonial.quote2"
@@ -1275,7 +1239,6 @@
                   rather dry subject into something that is both clear and
                   visually engaging. We are very proud of the result!"
                 </p>
-
                 <p
                   class="cs-testimonial-full-author"
                   data-i18n="bw.testimonial.author2"
@@ -1287,7 +1250,6 @@
             </div>
           </div>
         </section>
-
         <!-- ROAD AHEAD -->
         <section class="cs-afterlife" id="section-afterlife">
           <div class="cs-afterlife-content">
@@ -1297,11 +1259,9 @@
             >
               Reflection
             </p>
-
             <h2 class="section-title" data-i18n="bw.afterlife.heading">
               Learning to <strong>let go.</strong>
             </h2>
-
             <div class="cs-context-bottom">
               <p class="cs-context-description" data-i18n="bw.afterlife.text">
                 Before this project, I had mainly worked as both the designer
@@ -1311,7 +1271,6 @@
                 while remaining open to solutions that differed from what I had
                 initially imagined.
               </p>
-
               <div class="accordion cs-afterlife-accordion">
                 <div class="accordion-item open">
                   <button class="accordion-trigger cursor-grow" type="button">
@@ -1333,7 +1292,6 @@
                     </div>
                   </div>
                 </div>
-
                 <div class="accordion-item">
                   <button class="accordion-trigger cursor-grow" type="button">
                     <span data-i18n="bw.afterlife.accordion2_trigger"
@@ -1353,7 +1311,6 @@
                     </div>
                   </div>
                 </div>
-
                 <div class="accordion-item">
                   <button class="accordion-trigger cursor-grow" type="button">
                     <span data-i18n="bw.afterlife.accordion3_trigger"
@@ -1395,29 +1352,29 @@
               <span data-i18n="cs_shared.back_to_work"
                 >Back to work overview</span
               >
-              <span class="link-arrow" aria-hidden="true">
-                <svg viewBox="0 0 16 16" fill="none">
+              <span aria-hidden="true" class="link-arrow">
+                <svg fill="none" viewbox="0 0 16 16">
                   <path
                     d="M0 16L13 3M7.6 3H13V8.4"
                     stroke="currentColor"
-                    stroke-width="1"
                     stroke-linecap="butt"
                     stroke-linejoin="miter"
-                  />
+                    stroke-width="1"
+                  ></path>
                 </svg>
               </span>
             </a>
             <a class="big-link big-link--light" href="../index.html#contact">
               <p class="link-text" data-i18n="hero.cta_contact">Get in touch</p>
-              <span class="link-arrow" aria-hidden="true">
-                <svg viewBox="0 0 16 16" fill="none">
+              <span aria-hidden="true" class="link-arrow">
+                <svg fill="none" viewbox="0 0 16 16">
                   <path
                     d="M0 16L13 3M7.6 3H13V8.4"
                     stroke="currentColor"
-                    stroke-width="1"
                     stroke-linecap="butt"
                     stroke-linejoin="miter"
-                  />
+                    stroke-width="1"
+                  ></path>
                 </svg>
               </span>
             </a>
@@ -1425,137 +1382,131 @@
           <div class="cs-next-right">
             <a
               class="cs-next-row big-link big-link--project"
-              href="../Work/yellow.html"
               data-preview="../Images/Home/0_work_1.png"
               data-preview-color="var(--project-1)"
+              href="../Work/yellow.html"
             >
               <span data-i18n="project_titles.yellow"
                 >Yellow is the new green</span
               >
-              <span class="link-arrow" aria-hidden="true">
-                <svg viewBox="0 0 16 16" fill="none">
+              <span aria-hidden="true" class="link-arrow">
+                <svg fill="none" viewbox="0 0 16 16">
                   <path
                     d="M0 16L13 3M7.6 3H13V8.4"
                     stroke="currentColor"
-                    stroke-width="1"
                     stroke-linecap="butt"
                     stroke-linejoin="miter"
-                  />
+                    stroke-width="1"
+                  ></path>
                 </svg>
               </span>
             </a>
-
             <a
               class="cs-next-row big-link big-link--project"
-              href="../Work/kunstatelier.html"
               data-preview="../Images/Home/0_work_4.png"
               data-preview-color="var(--project-4)"
+              href="../Work/kunstatelier.html"
             >
               <span data-i18n="project_titles.kunstatelier"
                 >Heard of KunstAtelier? Me neither.</span
               >
-              <span class="link-arrow" aria-hidden="true">
-                <svg viewBox="0 0 16 16" fill="none">
+              <span aria-hidden="true" class="link-arrow">
+                <svg fill="none" viewbox="0 0 16 16">
                   <path
                     d="M0 16L13 3M7.6 3H13V8.4"
                     stroke="currentColor"
-                    stroke-width="1"
                     stroke-linecap="butt"
                     stroke-linejoin="miter"
-                  />
+                    stroke-width="1"
+                  ></path>
                 </svg>
               </span>
             </a>
             <a
               class="cs-next-row big-link big-link--project"
-              href="../Work/skills.html"
               data-preview="../Images/Home/0_work_2.png"
               data-preview-color="var(--project-2)"
+              href="../Work/skills.html"
             >
               <span data-i18n="project_titles.skills"
                 >Upskilling the Public Sector</span
               >
-              <span class="link-arrow" aria-hidden="true">
-                <svg viewBox="0 0 16 16" fill="none">
+              <span aria-hidden="true" class="link-arrow">
+                <svg fill="none" viewbox="0 0 16 16">
                   <path
                     d="M0 16L13 3M7.6 3H13V8.4"
                     stroke="currentColor"
-                    stroke-width="1"
                     stroke-linecap="butt"
                     stroke-linejoin="miter"
-                  />
+                    stroke-width="1"
+                  ></path>
                 </svg>
               </span>
             </a>
             <a
               class="cs-next-row big-link big-link--project"
-              href="../Work/climate.html"
               data-preview="../Images/Home/0_work_5.png"
               data-preview-color="var(--project-5)"
+              href="../Work/climate.html"
             >
               <span data-i18n="project_titles.climate"
                 >Millions for Climate
               </span>
-              <span class="link-arrow" aria-hidden="true">
-                <svg viewBox="0 0 16 16" fill="none">
+              <span aria-hidden="true" class="link-arrow">
+                <svg fill="none" viewbox="0 0 16 16">
                   <path
                     d="M0 16L13 3M7.6 3H13V8.4"
                     stroke="currentColor"
-                    stroke-width="1"
                     stroke-linecap="butt"
                     stroke-linejoin="miter"
-                  />
+                    stroke-width="1"
+                  ></path>
                 </svg>
               </span>
             </a>
           </div>
         </div>
         <!-- ============Preview============-->
-        <div class="cs-project-preview" aria-hidden="true">
+        <div aria-hidden="true" class="cs-project-preview">
           <div class="cs-project-preview-card">
-            <img src="" alt="" />
+            <img alt="" src="" />
           </div>
         </div>
         <!--=====End Preview====-->
       </section>
       <div id="footer"></div>
-
       <div class="cs-lightbox" id="lightbox">
         <button class="cs-lightbox-close" id="lightbox-close">✕</button>
-        <img class="cs-lightbox-img" id="lightbox-img" src="" alt="" />
+        <img alt="" class="cs-lightbox-img" id="lightbox-img" src="" />
       </div>
       <div
+        aria-hidden="true"
         class="cs-testimonial-modal"
         id="testimonial-modal"
-        aria-hidden="true"
       >
         <button
+          aria-label="Close testimonial"
           class="cs-lightbox-close"
           id="testimonial-modal-close"
           type="button"
-          aria-label="Close testimonial"
         >
           ✕
         </button>
-
-        <div class="cs-testimonial-modal-card" role="dialog" aria-modal="true">
+        <div aria-modal="true" class="cs-testimonial-modal-card" role="dialog">
           <p
             class="cs-testimonial-modal-quote"
             id="testimonial-modal-quote"
           ></p>
-
           <p
             class="cs-testimonial-modal-author"
             id="testimonial-modal-author"
           ></p>
         </div>
       </div>
-
       <!-- =============================================
      PASSWORD GATE END OF CONTAINER
   ============================================= -->
     </div>
-
     <script src="../loader.js"></script>
     <script src="../script.js"></script>
     <!-- =============================================

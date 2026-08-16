@@ -6,7 +6,6 @@
     "placeholder": "Passwort",
     "error": "Falsches Passwort."
   },
-
   "nav": {
     "services": "Leistungen",
     "work": "Projekte",
@@ -133,7 +132,6 @@
     "availability_text": "Verfügbar &middot; einen Tag pro Woche",
     "made_with": "mit &#9825; und Geduld gestaltet"
   },
-
   "cs_shared": {
     "back_to_work": "Zurück zur Projektübersicht",
     "case_study_label": "Fallstudie",
@@ -157,7 +155,7 @@
     "meta_status": "Status",
     "next_projects_label": "Weitere Projekte",
     "process_constraints": "Rahmenbedingungen",
-    "sidebar_afterlife": "Danach",
+    "sidebar_afterlife": "Reflexion",
     "sidebar_design": "02 Design",
     "sidebar_develop": "03 Entwicklung",
     "sidebar_impact": "Wirkung",
@@ -177,18 +175,23 @@
     "label_launch": "Launch",
     "_case_study": "===== Geteilte JSON =====",
     "sidebar_reflection": "Reflexion",
-    "sidebar_prototype": "Prototyp"
+    "sidebar_prototype": "Prototyp",
+    "meta_what": "Was",
+    "meta_why": "Warum",
+    "meta_how": "Wie",
+    "reveal_testimonial": "Vollständiges Testimonial anzeigen"
   },
-
   "yellow": {
     "_case_study": "===== YELLOW IS THE NEW GREEN=====",
-
     "overview_description": "Ein fragmentierter Finanzplanungsprozess auf Excel-Basis wird zu einem interaktiven Dashboard, das Entscheidungsträger:innen hilft, Daten zu verstehen, Zusammenhänge zu erkennen und fundierte Entscheidungen zu treffen.",
     "meta": {
       "role_value": "UX- und Datendesignerin",
       "scope_value": "End-to-End-Produktdesign und Produktverantwortung",
       "platform_value": "Power BI<br />Web-App",
-      "status_value": "Wird kontinuierlich weiterentwickelt<br />Live-Produkt"
+      "status_value": "Wird kontinuierlich weiterentwickelt<br />Live-Produkt",
+      "what_value": "Ein interaktives Finanzdashboard zur Planung und Überwachung eines Jahresbudgets von über CHF 400 Millionen, das von Entscheidungsträger:innen, Datenanalyst:innen und operativen Teams innerhalb der Schweizer Bundesverwaltung genutzt wird.",
+      "why_value": "Klarheit, Zugänglichkeit und Vertrauen in die Daten erhöhen und gleichzeitig Zeit und Ressourcen sparen.",
+      "how_value": "End-to-End-Verantwortung für Projekt und Produkt, vom Design in Figma bis zur Umsetzung in Power BI."
     },
     "context": {
       "heading": "Von verstreuten Daten zu <strong>einer zentralen Informationsquelle.</strong>",
@@ -206,16 +209,19 @@
       "point3_title": "Wenig Vertrauen",
       "point3_text": "Da Informationen auf mehrere Dateien verteilt waren, bestand häufig Unsicherheit darüber, ob mit den aktuellsten und verlässlichsten Daten gearbeitet wurde."
     },
-
     "process_bar": {
       "research_d1": "User Journeys",
-      "research_d2": "Pain Points",
+      "research_d2": "Interviews",
       "design_d1": "Moodboard",
-      "design_d2": "Wireframes",
+      "design_d2": "Informationsarchitektur",
       "develop_d1": "Lernen",
-      "develop_d2": "Umsetzen",
+      "develop_d2": "Power BI DAX",
       "test_d1": "Usability-Tests",
-      "test_d2": "Fragebogen"
+      "test_d2": "Fragebogen",
+      "research_d3": "Priorisierung",
+      "design_d3": "Wireframes",
+      "develop_d3": "Datenmodellierung",
+      "test_d3": "Iterationen"
     },
     "process": {
       "role_text": "Ich war für das gesamte Produkt verantwortlich – von der Nutzerforschung über UX/UI-Design und Power-BI-Entwicklung bis hin zur Einführung und kontinuierlichen Weiterentwicklung.",
@@ -223,7 +229,7 @@
     },
     "research": {
       "heading": "<strong>Von Annahmen</strong> zu echten Erkenntnissen.",
-      "text": "Auch wenn ich die Nutzer:innen und ihre Arbeitsabläufe bereits gut kannte, wollte ich meine Annahmen bewusst hinterfragen und besser verstehen, wie sie mit Finanzinformationen arbeiten. Die User Journeys machten wiederkehrende Frustrationen sichtbar, zeigten die unterschiedlichen Bedürfnisse der Nutzergruppen auf und halfen dabei, jene Pain Points zu identifizieren, die das Dashboard am stärksten geprägt haben.",
+      "text": "Um besser zu verstehen, wie Nutzer:innen mit Finanzinformationen arbeiteten, führte ich Interviews und erstellte User Journeys. So wurden wiederkehrende Frustrationen sichtbar, Bedürfnisse konnten genauer erfasst und die wichtigsten Pain Points definiert werden, die das Dashboard schliesslich prägten.",
       "challenge_text": "Die verschiedenen Nutzergruppen hatten unterschiedliche Bedürfnisse. Ein Dashboard für alle gleichermassen zu gestalten, hätte zwangsläufig zu einer zu generischen Lösung geführt.",
       "solution_text": "Die verschiedenen Nutzertypen kartieren, die primären Nutzer:innen identifizieren und konsequent für diejenigen gestalten, die Planung und Budgetentscheidungen massgeblich beeinflussen, statt für die grösste Nutzergruppe.",
       "who_caption": "Für wen ich gestalte",
@@ -243,17 +249,16 @@
       "spotlight1_title": "Vertrauen durch Konsistenz schaffen",
       "spotlight1_text": "Einheitliche Layouts, standardisierte Kennzahlen und eine zentrale Informationsquelle helfen Nutzer:innen, Daten schneller zu erfassen und Vertrauen in die Informationen aufzubauen.",
       "spotlight2_title": "Für die wichtigsten Nutzer:innen gestalten",
-      "spotlight2_text": "Obwohl mehrere Nutzergruppen mit dem Dashboard arbeiteten, wurde die Erfahrung konsequent auf diejenigen ausgerichtet, die Planung und Budgetentscheidungen treffen.",
+      "spotlight2_text": "Obwohl mehrere Nutzergruppen mit dem Dashboard arbeiteten, wurde die Erfahrung konsequent auf diejenigen ausgerichtet, die Planung und Budgetentscheidungen treffen. Sekundäre Nutzer:innen konnten über Filter und Drilldowns weiterhin auf die für sie relevanten Informationen zugreifen.",
       "spotlight3_title": "Niemanden ausschliessen",
       "spotlight3_text": "Zusätzliche Filter für sekundäre Nutzergruppen stellen sicher, dass alle schnell auf die Informationen zugreifen können, die sie benötigen.",
       "spotlight4_title": "Die passenden Diagramme wählen",
       "spotlight4_text": "Bewährte Visualisierungen wurden dort beibehalten, wo sie ihren Zweck erfüllten. Neue kamen nur dort hinzu, wo sie einen echten Mehrwert boten.",
       "spotlight5_title": "Weniger Farbe, mehr Klarheit",
-      "spotlight5_text": "Statt die komplette Farbpalette der Abteilung zu übernehmen, setzte ich auf neutrale Farbtöne, die den Fokus auf die Daten lenken. Bundesrot bleibt bewusst die einzige Akzentfarbe und hebt nur das hervor, was wirklich Aufmerksamkeit braucht.",
+      "spotlight5_text": "Statt die vollständige Farbpalette des Bundes zu übernehmen, setzte ich auf eine reduzierte Auswahl neutraler Töne, die eine ruhige, datenfokussierte Oberfläche schafft. Bundesrot bleibt bewusst die einzige Akzentfarbe und lenkt die Aufmerksamkeit dorthin, wo sie gebraucht wird, ohne unnötige visuelle Unruhe zu erzeugen.",
       "spotlight6_title": "Jeden Pixel sinnvoll nutzen",
       "spotlight6_text": "Da das Dashboard ausschliesslich intern genutzt wird, musste die offizielle Designrichtlinie nicht strikt eingehalten werden. Eine kompaktere Schriftart schuf den nötigen Platz für längere Projekttitel, ohne die Lesbarkeit zu beeinträchtigen."
     },
-
     "develop": {
       "heading": "Lernen <strong>durch Ausprobieren.</strong>",
       "text": "Power BI war für mich komplettes Neuland. Mit Online-Kursen und viel praktischem Ausprobieren konnte ich das Dashboard erfolgreich entwickeln, parallel zu meinen regulären Aufgaben. Gleichzeitig bedeutete die Einführung einer neuen Technologie weit mehr als nur Entwicklung: Stakeholder mussten eingebunden, Change Management begleitet sowie neue Zugriffs- und Governance-Prozesse geschaffen werden. Innerhalb eines Jahres wurde ich organisationsweit zur Ansprechperson für Dashboard-Design und Power BI.",
@@ -261,18 +266,17 @@
       "solution_text": "Komplexe Herausforderungen in kleinere Schritte aufteilen, bei technischen Fragen gezielt auf Expert:innen und KI zurückgreifen und die Stakeholder durch transparente Kommunikation, frühe Einbindung und kontinuierliche Begleitung mitnehmen.",
       "model_caption": "Datenmodell in Power BI"
     },
-
     "test": {
       "heading": "Funktioniert das <strong>wirklich?</strong>",
-      "text": "Vor dem Launch führte ich einen moderierten Usability-Test mit einer Ressortleiterin und einem Projektmanager durch. Dabei wurden vier wichtige Verbesserungsmöglichkeiten identifiziert. Vier Monate nach der Einführung folgte ein Fragebogen für alle Ressortleitenden, um Nutzbarkeit, Akzeptanz und Zufriedenheit zu evaluieren. Zehn von zwölf Ressortleitenden nahmen teil. Die Ergebnisse zeigten klar, dass das Dashboard und die neue Arbeitsweise auf breite Akzeptanz stiessen.",
+      "text": "Ein moderierter Usability-Test mit drei Nutzer:innen brachte vor dem Launch vier zentrale Verbesserungen ans Licht. Vier Monate später wurde ein freiwilliger Fragebogen an alle primären Nutzer:innen verschickt, um Akzeptanz, Nutzbarkeit und Zufriedenheit zu evaluieren. Die Rücklaufquote lag bei 83 %, und die Ergebnisse bestätigten eine hohe Akzeptanz des neuen Dashboards und der neuen Arbeitsweise.",
       "challenge_text": "Da die Usability-Tests bereits mit einem funktionsfähigen Produkt stattfanden, bedeutete jede Anpassung zusätzlichen Entwicklungsaufwand und musste sorgfältig priorisiert werden. Gleichzeitig wollte ich nicht nur wissen, ob das Dashboard funktioniert, sondern auch, ob die Nutzer:innen diese neue Arbeitsweise tatsächlich annehmen.",
-      "solution_text": "Die wichtigsten Verbesserungen wurden mithilfe gezielter Usability-Tests vor dem Launch identifiziert. Ein Fragebogen einige Monate nach der Einführung half zusätzlich dabei, Akzeptanz, Zufriedenheit und die langfristige Nutzung des Dashboards zu überprüfen.",
+      "solution_text": "Die Änderungen nach ihrem Einfluss auf die Nutzbarkeit und dem erforderlichen Umsetzungsaufwand priorisieren.",
       "iterations_label": "Iterationen",
       "before_btn": "Vorher",
       "after_btn": "Nachher",
-      "survey1_label": "Fanden das Dashboard einfach zu bedienen.",
-      "survey2_label": "Betrachteten das Dashboard als Verbesserung gegenüber der Excel-Datei.",
-      "survey3_label": "Ressortleiter:innen haben geantwortet.",
+      "survey1_label": "Rücklaufquote.",
+      "survey2_label": "finden die Arbeit mit dem Dashboard effizienter.",
+      "survey3_label": "betrachten es als Verbesserung der Nutzbarkeit.",
       "group_usability": "Nutzbarkeit",
       "group_visual_design": "Visuelles Design",
       "row1": "Die Arbeit ist heute effizienter",
@@ -287,7 +291,6 @@
       "quote3": "ich muss Projektmanager seltener fragen",
       "quote4": "ich sehe nur Vorteile"
     },
-
     "product": {
       "label": "Das finale Produkt",
       "heading": "Die Zukunft ist <strong>Gelb</strong>"
@@ -300,17 +303,17 @@
     },
     "afterlife": {
       "heading": "Weiterentwicklung <strong>statt Endpunkt.</strong>",
-      "text": "Was als Finanz-Cockpit begann, entwickelte sich Schritt für Schritt zu einem umfassenderen Reporting-Ökosystem. Im Laufe der Zeit kamen drei weitere Seiten hinzu, um neue Anforderungen abzudecken, darunter zwei klimabezogene Dashboards, die auf meinem CAS-Abschlussprojekt in Data Visualization basieren (siehe eigene Fallstudie).",
-      "accordion1_trigger": "Climate Cockpit",
-      "accordion1_content": "Interaktives Dashboard zur Analyse von Klimaausgaben, Biodiversität und der Privatmittelmobilisierung.",
-      "accordion2_trigger": "Projektübersicht",
-      "accordion2_content": "Alle laufenden und abgeschlossenen Projekte zentral an einem Ort aufrufbar.",
-      "accordion3_trigger": "Globalbudget",
-      "accordion3_content": "Übersicht über zentrale Ausgaben und weitere bereichsübergreifende Kosten.",
+      "text": "Dieses Projekt gab mir die Möglichkeit, ein Produkt von der ersten Idee bis zu einem live eingesetzten und kontinuierlich weiterentwickelten Dashboard zu begleiten: UX und visuelles Design zu prägen, eng durch die Entwicklung zu arbeiten, den Launch zu unterstützen und auch danach die Verantwortung weiterzutragen. Seither habe ich das Dashboard um neue Projektübersichten erweitert, die zentrale Informationen an einem Ort bündeln, damit Nutzer:innen weniger Zeit mit dem Durcharbeiten von Daten und mehr Zeit mit der Steuerung ihrer Projekte verbringen.",
+      "accordion1_trigger": "Lernen durch Ausprobieren",
+      "accordion1_content": "Ich startete das Projekt mit sehr wenig Power-BI-Erfahrung. Ein echtes Produkt mit einem klaren Zweck zu bauen, machte das Lernen deutlich schneller als isolierte Tutorials. Ich konnte das Gelernte sofort anwenden, testen und verbessern. KI beschleunigte diesen Prozess zusätzlich, indem sie mir half, unbekannte Konzepte zu verstehen, technische Probleme zu lösen und unterschiedliche Umsetzungswege zu erkunden.",
+      "accordion2_trigger": "Stakeholder an Bord holen",
+      "accordion2_content": "Erfolgreiche Produktentwicklung hängt von mehr ab als von den Menschen, die das Produkt direkt nutzen. Stakeholder, die Daten liefern, Systeme betreuen, Entscheidungen genehmigen oder die Umsetzung unterstützen, können das Projekttempo stark beeinflussen. Sie früh einzubeziehen, ihre Rahmenbedingungen zu verstehen und gemeinsame Verantwortung aufzubauen, kann Blockaden lösen und die Entwicklung deutlich beschleunigen.",
+      "accordion3_trigger": "Prototypen vor dem Bauen",
+      "accordion3_content": "Iterationen, die in Figma nur Minuten dauern, können nach der Umsetzung deutlich länger dauern. Das gilt besonders für visuelles und Interaktionsdesign, wo Power BI einschränkend sein kann und selbst kleine Designänderungen erheblichen Aufwand verursachen können. Struktur, Navigation und visuelle Konzepte zuerst in einem Prototyp zu testen, macht Experimente deshalb viel schneller und verhindert, Entwicklungszeit in Ideen zu investieren, die sich noch ändern könnten.",
       "caption": "Abschlussprojekt des CAS in Data Visualization an der HKB und Grundlage für das später veröffentlichte Climate Cockpit."
-    }
+    },
+    "overview_note": "Hinweis: Zum Schutz interner Informationen wurden die Inhalte dieser Fallstudie anonymisiert und vereinfacht. Das zentrale Dashboard-Mockup ist vollständig fiktiv und soll lediglich die allgemeine Art und Struktur der Lösung vermitteln."
   },
-
   "bw": {
     "_case_study": "===== BROWSING THE WORLD'S ECONOMY =====",
     "tag1": "Datenvisualisierung",
@@ -323,7 +326,10 @@
       "role_value": "UX Designerin<br />Spezialistin für Datenvisualisierung",
       "timeline_value": "6 Monate<br />2025–2026 (20%)",
       "platform_value": "Power BI<br />Web-Dashboard",
-      "status_value": "Live<br />Öffentliches Dashboard"
+      "status_value": "Live<br />Öffentliches Dashboard",
+      "what_value": "Ein mehrsprachiges öffentliches Power-BI-Dashboard mit länderspezifischen Wirtschaftsdaten für Unternehmen, politische Entscheidungsträger:innen, Forschende, die breite Öffentlichkeit und Fachpersonen in der Schweizer Bundesverwaltung.",
+      "why_value": "Manuell erstellte Länderberichte in Word ersetzen, um die Nutzererfahrung zu verbessern und den Vorbereitungsaufwand zu reduzieren.",
+      "how_value": "Als einzige Designerin unterstützte ich ein funktionsübergreifendes Team aus BI-Engineers und Fachexpert:innen mit UX-Design-Best-Practices und Expertise in Datenvisualisierung."
     },
     "context": {
       "heading": "Manuelles Reporting wird zu <strong>einem lebendigen Datenerlebnis.</strong>",
@@ -333,7 +339,7 @@
       "team_value": "Interdisziplinäres Team aus einer UX Designerin, zwei Entwicklern und drei Fachexpert:innen der Sektion Bilaterale Wirtschaftsbeziehungen des SECO."
     },
     "problem": {
-      "heading": "Der Tod durch <strong>Screenshots.</strong>",
+      "heading": "Hallo <strong>Word.</strong>",
       "description": "Für jedes Land mussten Wirtschaftsinformationen manuell in Word-Berichte übertragen werden. Daten wurden aus Excel exportiert, Diagramme als Screenshots eingefügt und Inhalte von Hand aktualisiert. Der Prozess war zeitaufwendig, fehleranfällig und bot kaum Möglichkeiten, Daten interaktiv zu erkunden. Das Potenzial, diesen Ablauf durch ein öffentliches Dashboard zu ersetzen, war enorm.",
       "point1_title": "Manuelles Reporting",
       "point1_text": "Jeder Länderbericht musste einzeln erstellt und gepflegt werden.",
@@ -342,10 +348,9 @@
       "point3_title": "Kaum erkundbar",
       "point3_text": "Daten konnten weder einfach durchsucht noch verglichen oder interaktiv analysiert werden."
     },
-
     "process_bar": {
-      "research_d1": "Annahmen",
-      "research_d2": "Kontext",
+      "research_d1": "Briefing",
+      "research_d2": "Annahmen hinterfragen",
       "design_d1": "Informationsarchitektur",
       "design_d2": "Visuelles System",
       "iterate_d1": "Feedback",
@@ -355,26 +360,24 @@
     },
     "process": {
       "role_text": "Ich bildete die Schnittstelle zwischen den Fachexpert:innen und der technischen Umsetzung. Als einzige UX- und Data Designerin im Projekt übersetzte ich komplexe wirtschaftliche Inhalte in ein verständliches, zugängliches und ansprechendes Dashboard.",
-      "constraints_text": "Ein begrenztes Budget, ein fixer Go-live-Termin, verspäteter Datenzugang, fehlende Nutzerforschung, vier Sprachen und anfangs unklare Projektverantwortlichkeiten gehörten zu den grössten Herausforderungen."
+      "constraints_text": "Ein begrenztes Budget, ein fixer Go-live-Termin für die Website, verspäteter Datenzugang, vier unterstützte Sprachen und technische Einschränkungen von Power BI mussten gleichzeitig berücksichtigt werden."
     },
-
     "research": {
       "heading": "Zu spät zur <strong>Party.</strong>",
-      "text1": "Ich stiess erst sechs Monate nach dem offiziellen Projektstart dazu. Trotzdem war bis dahin kaum Fortschritt erzielt worden, weil der Zugriff auf die Daten fehlte. Die externen Berater waren der Meinung, dass mit dem Design erst begonnen werden könne, sobald die Daten verfügbar seien. Ich sah das anders.",
+      "text1": "Ich stiess sechs Monate nach dem offiziellen Projektstart dazu. Aufgrund des verspäteten Datenzugangs waren bis dahin nur begrenzte Fortschritte erzielt worden. Zu Beginn des Projekts hatte ein erster Workshop stattgefunden, weitere Nutzerforschung war jedoch nicht vorgesehen.",
       "text2": "Diese Zeit hätte genutzt werden können, um die zukünftigen Nutzer:innen besser kennenzulernen, erste Konzepte zu entwickeln und zentrale Designentscheidungen früh zu validieren. Stattdessen stützten sich viele Entscheidungen fast ausschliesslich auf internes Fachwissen, obwohl die breite Öffentlichkeit später zu den wichtigsten Nutzergruppen gehören würde.",
-      "challenge_text": "Es gab keine systematische Nutzerforschung, und die Öffentlichkeit, eine der wichtigsten Zielgruppen, wurde nicht in den Gestaltungsprozess einbezogen.",
+      "challenge_text": "Ich stieg in das Projekt ein, nachdem die erste Recherche und die grundsätzliche Projektrichtung bereits festgelegt waren und der Fokus weitgehend darauf lag, die bestehende Lösung nachzubauen.",
       "solution_text": "Annahmen konsequent hinterfragen und die Perspektive der Nutzer:innen während des gesamten Projekts vertreten, auch wenn viele grundlegende Entscheidungen bereits vor meinem Einstieg getroffen worden waren.",
       "caption": "Fotos des Kick-off-Workshops"
     },
-
     "design": {
       "heading": "Das Word-Dokument <strong>auseinandernehmen.</strong>",
-      "text1": "Gemeinsam mit einem Berater habe ich die Struktur des bestehenden Länderberichts von Grund auf neu gedacht. Ein erster Entwurf existierte bereits, doch die Informationsarchitektur war unübersichtlich und erschwerte die Orientierung.",
+      "text1": "Wir haben die ursprüngliche Struktur des Berichts von Grund auf neu betrachtet. Dafür zerschnitten wir das Word-Dokument buchstäblich und erprobten, wie sich die Informationen zu einer intuitiveren Dashboard-Erfahrung neu ordnen liessen. Ich hinterfragte zudem den Einsatz von Tabellen und schlug dort Visualisierungen vor, wo sie aus meiner Sicht einen Mehrwert boten. Gemeinsam mit den Fachexpert:innen überprüften und verfeinerten wir die Änderungen, bis eine Struktur entstand, die sowohl für Nutzer:innen intuitiv als auch fachlich korrekt war.",
       "text2": "Wir schnitten den Word-Bericht buchstäblich auseinander und experimentierten mit verschiedenen Möglichkeiten, die Inhalte in ein intuitives Dashboard zu überführen. Gleichzeitig hinterfragten wir, welche Informationen als Visualisierung einen Mehrwert bieten und welche besser in Tabellen dargestellt werden.",
       "challenge_text": "Das entwickelte Produkt entsprach nicht immer den Prototypen. Farben, Ausrichtungen und andere Designelemente wurden teilweise unterschiedlich umgesetzt, wodurch eine kontinuierliche Qualitätskontrolle notwendig war.",
       "solution_text": "Die Umsetzung regelmässig überprüfen, Designentscheidungen nach ihrem Einfluss auf die Nutzererfahrung priorisieren und bei technischen Einschränkungen gemeinsam passende Alternativen finden.",
-      "ia_caption": "Informationsarchitektur neu denken und erste Ideen für die Datenvisualisierung entwickeln",
-      "decisions_caption": "Designentscheidungen",
+      "ia_caption": "Informationsarchitektur neu strukturieren",
+      "decisions_caption": "Designentscheidungen (hovern, um mehr zu erfahren)",
       "spotlight1_title": "Farbe mit System einsetzen",
       "spotlight1_text": "Die Farbpalette orientiert sich an bestehenden Dashboards der Bundesverwaltung und schafft so eine vertraute, vertrauenswürdige Nutzererfahrung. Bundesrot bleibt bewusst der Schweiz vorbehalten und macht Vergleiche auf einen Blick verständlich. Hervorgehoben wird ausschliesslich der Ländername, während Zahlen neutral bleiben, um unbeabsichtigte Assoziationen zu vermeiden.",
       "spotlight2_title": "Innerhalb klarer Vorgaben gestalten",
@@ -393,8 +396,8 @@
     "iterate": {
       "heading": "Aller guten Dinge sind <strong>drei.</strong>",
       "text": "Das Projekt entwickelte sich in drei Phasen: Zuerst entstand ein MVP, das anschliessend in mehreren Feedback- und Umsetzungsrunden bis zur ersten internen Version weiterentwickelt wurde. Vor dem öffentlichen Launch folgte schliesslich eine letzte Optimierungsphase.",
-      "challenge_text": "Es gab laufend Feedback, allerdings ohne klaren Prozess. Gleichzeitig veränderten technische Einschränkungen immer wieder den Spielraum für die Umsetzung.",
-      "solution_text": "Ein strukturierter Feedbackprozess mit klaren Fristen sowie regelmässige Abstimmungen mit den Entwicklern sorgten für mehr Transparenz, eine bessere Zusammenarbeit und einen kontinuierlichen Projektfortschritt.",
+      "challenge_text": "Technische Einschränkungen veränderten immer wieder, was umsetzbar war, und erforderten eine kontinuierliche Begleitung.",
+      "solution_text": "Die Umsetzung kontinuierlich prüfen, jene Designelemente priorisieren, die den grössten Einfluss auf die Nutzbarkeit hatten, und bei technischen Einschränkungen alternative Lösungen entwickeln.",
       "caption": "Beispielseite aus dem Feedback-Dokument"
     },
     "launch": {
@@ -402,26 +405,26 @@
       "text": "Das fertige Dashboard wurde als öffentliches Power-BI-Dashboard veröffentlicht und in die neue Website des SECO integriert. Anstelle statischer Länderberichte können heute Nutzer:innen mit unterschiedlichstem Hintergrund Wirtschaftsdaten interaktiv erkunden – automatisch aktualisiert, mehrsprachig und jederzeit verfügbar.",
       "challenge_text": "Das Dashboard musste rechtzeitig zum Launch der neuen Website bereitstehen und gleichzeitig den Qualitätsansprüchen eines öffentlichen Produkts in vier Sprachen gerecht werden.",
       "solution_text": "Durch die enge Zusammenarbeit mit den Entwicklern, eine implementierungsbereite Dokumentation und schnelle Entscheidungen konnten offene Fragen laufend geklärt und der Zeitplan eingehalten werden.",
-      "release_caption": "Das Country Cockpit auf der öffentlichen Website des SECO"
+      "release_caption": "Vereinfachte Version des Country Cockpits"
     },
     "product": {
       "label": "Das finale Produkt",
-      "heading": "<strong>Browsing the World's Economy</strong>"
+      "heading": "Die <strong>Weltwirtschaft verstehen</strong>"
     },
     "impact": {
       "heading": "Von wochenlangem manuellem Reporting zu <strong>nahezu Echtzeit-Insights.</strong>",
       "num1_label": "manuelle Arbeit eingespart.",
-      "num2_label": "Ein einziges Dashboard ersetzt über 100 Word-Berichte.",
-      "num3_label": "des Prozesses automatisiert."
+      "num2_label": "Berichte durch ein einziges Dashboard ersetzt.",
+      "num3_label": "des Prozesses automatisiert.",
+      "num1_value": "1 Monat"
     },
-
-    "testimonial_label": "Testimonial",
+    "testimonial_label": "Testimonials",
     "testimonial": {
       "quote1": "«Anouk ist genau im richtigen Moment ins Projekt gekommen und hat mit ihrer proaktiven und lösungsorientierten Art schnell frischen Schwung gebracht. Sie bleibt nicht bei Ideen stehen, sondern entwickelt konkrete Optionen und sorgt dafür, dass diese auch umgesetzt werden. So kann sie zwischen Fachseite und Entwicklern vermitteln, technische Grenzen realistisch einordnen und passende Lösungen vorschlagen.<br /><br />Besonders hilfreich war, dass sie sehr kundenorientiert arbeitete: Ihr Power-BI-Wissen und ihre Skills in UX-Design hatte sie immer so angewendet, dass am Ende ein visuell ansprechendes, aber benutzerfreundliches Tool entstand. Mit ihrem Qualitätsanspruch, ihrer Flexibilität und ihrem Engagement hat sie wesentlich dazu beigetragen, deutlich mehr aus dem Projekt herauszuholen, als ursprünglich vorgesehen war.»",
-      "author1": "Aaron Dettwiler, Wissenschaftlicher Mitarbeiter, Bilaterale Wirtschaftsbeziehungen (BW) Asien/Ozeanien und Projektleiter BW Länderfichen",
+      "author1": "Aaron Dettwiler, Projektleiter, Bilaterale Wirtschaftsbeziehungen, Schweizer Bundesverwaltung",
       "highlight1": "«Anouk [...] hat mit ihrer <strong>proaktiven und lösungsorientierten Art</strong> schnell frischen Schwung gebracht.»",
       "quote2": "«Anouk hat für unser digitales Ländercockpit die Graphiken erstellt und die visuellen Konzepte, Datenvisualisierungen und Prototypen erarbeitet. Sie hat es geschafft, eine eher trockene Materie sachlich, aber sehr ansprechend darzustellen. Wir sind sehr stolz auf das Ergebnis!»",
-      "author2": "Andrea Rauber Saxer, Botschafterin und Leiterin Bilaterale Wirtschaftsbeziehungen, SECO",
+      "author2": "Andrea Rauber Saxer, Botschafterin, Leiterin Bilaterale Wirtschaftsbeziehungen, Schweizer Bundesverwaltung",
       "highlight2": "«Anouk [...] hat ein eher trockenes Thema in ein <strong>ansprechendes Nutzererlebnis</strong> verwandelt [...]»"
     },
     "afterlife": {
@@ -433,16 +436,16 @@
       "accordion2_content": "Die Struktur ist so aufgebaut, dass sie künftig problemlos um zusätzliche Daten und Funktionen erweitert werden kann.",
       "accordion3_trigger": "Vorbild für weitere Projekte",
       "accordion3_content": "Das Projekt dient als Inspiration für zukünftige öffentliche Dashboards innerhalb der Bundesverwaltung."
-    }
+    },
+    "overview_note": "Hinweis: Aus Gründen der Vertraulichkeit und des geistigen Eigentums verwendet diese Fallstudie vereinfachte, illustrative Darstellungen. Das Live-Dashboard ist öffentlich verfügbar und unten verlinkt."
   },
   "project_titles": {
     "yellow": "Gelb ist das neue Grün",
     "bw": "Die Wirtschaft der Welt durchstöbern",
-    "skills": "Den öffentlichen Sektor aufwerten",
+    "skills": "Kompetenzen im öffentlichen Sektor stärken",
     "kunstatelier": "Schon mal von KunstAtelier gehört? Ich auch nicht.",
-    "climate": "100 Milliarden USD für das Klima"
+    "climate": "Millionen fürs Klima"
   },
-
   "skills": {
     "_case_study": "===== UPSKILLING THE PUBLIC SECTOR =====",
     "overview_description": "Ein Design-Thinking-Sprint, der untersucht, wie personalisiertes Lernen und Gamification die digitale Transformation in der Schweizer Bundesverwaltung unterstützen können.",
@@ -463,7 +466,10 @@
       "role_value": "Mitglied des Design-Thinking-Teams<br />Initiatorin der Challenge & UX Designerin",
       "timeline_value": "3,5 Tage",
       "platform_value": "Web-Prototyp<br />Claude AI",
-      "status_value": "Design Sprint<br />Konzeptprototyp"
+      "status_value": "Design Sprint<br />Konzeptprototyp",
+      "what_value": "Ein Konzept für eine Lernplattform, die Mitarbeitende dazu motiviert und dafür belohnt, genau die Kompetenzen aufzubauen, die die Organisation tatsächlich braucht.",
+      "why_value": "Die digitale Transformation ist seit Jahrzehnten eine strategische Priorität in der Schweizer Bundesverwaltung. Dennoch fällt es vielen Organisationen weiterhin schwer, sie in konkretes Handeln zu übersetzen.",
+      "how_value": "Ausgehend von einer Herausforderung aus meinem Arbeitsalltag untersuchte unser interdisziplinäres Team in einem dreitägigen Design-Thinking-Sprint, wie personalisiertes Lernen Mitarbeitenden helfen kann, die für diese Transformation notwendigen Kompetenzen aufzubauen."
     },
     "context": {
       "heading": "Ein kurzer Sprint für <strong>eine grosse Herausforderung.</strong>",
@@ -493,12 +499,10 @@
       "test_d1": "Peer-Feedback",
       "test_d2": "Realitätscheck"
     },
-
     "process": {
       "role_text": "Als Teil des Design-Thinking-Teams war ich an der Nutzerforschung, der KI-gestützten Auswertung der Erkenntnisse, der Ideenentwicklung und dem interaktiven Prototyping beteiligt. Gleichzeitig brachte ich die Herausforderung aus meinem Arbeitsalltag ein, die zum Ausgangspunkt unseres Projekts wurde.",
       "constraint_text": "Die Fragestellung war bewusst sehr offen formuliert, während der Zeitrahmen äusserst knapp war. Innerhalb von nur drei Tagen mussten wir das Problem eingrenzen, Nutzerforschung betreiben, Ideen entwickeln und einen klickbaren Prototypen erstellen."
     },
-
     "empathize": {
       "heading": "Wie erleben Menschen <strong>die digitale Transformation?</strong>",
       "text1": "Um die Herausforderungen rund um die digitale Transformation besser zu verstehen, führte jedes Teammitglied Interviews mit Mitarbeitenden aus unterschiedlichen Bereichen der Bundesverwaltung. Insgesamt sprachen wir mit vier Führungskräften, fünf Mitarbeitenden und einer Fachexpertin bzw. einem Fachexperten.",
@@ -508,7 +512,6 @@
       "caption1": "Interviewmaterial",
       "caption2": "ChatGPT zur Auswertung der Interviewtranskripte"
     },
-
     "define": {
       "heading": "Das <strong>richtige Problem</strong> finden.",
       "text1": "Die Erkenntnisse aus den Interviews wurden mithilfe von Affinity Mapping thematisch geordnet. Gemeinsam identifizierten wir wiederkehrende Herausforderungen, hinterfragten unsere Annahmen mit Unterstützung von KI und formulierten daraus zentrale „How Might We“-Fragen:",
@@ -517,7 +520,6 @@
       "solution_text": "Durch das Clustern der Interviewerkenntnisse, das Erkennen wiederkehrender Muster und die Formulierung von „How Might We“-Fragen konnten wir den Fokus auf die vielversprechendste Designchance legen.",
       "caption": "Digital trifft analog."
     },
-
     "ideate": {
       "heading": "<strong>Möglichst viele Ideen</strong> zulassen.",
       "text": "Die Ideen entstanden gemeinsam im Team und wurden mithilfe von KI durch Methoden wie die Morphologische Matrix und die Random-Word-Methode weiterentwickelt. Anschliessend diskutierten, bewerteten und priorisierten wir die Konzepte anhand festgelegter Kriterien, bevor wir die vielversprechendste Lösung ausarbeiteten.",
@@ -525,7 +527,6 @@
       "solution_text": "Die Morphologische Matrix und die Random-Word-Methode halfen uns, gewohnte Denkmuster aufzubrechen. KI erweiterte den Prozess zusätzlich, indem sie weitere kreative und ungewöhnliche Ideen einbrachte.",
       "caption": "Random-Word-Methode, Morphologische Matrix und Priorisierung"
     },
-
     "prototype": {
       "heading": "20 Minuten bis zum <strong>klickbaren Prototyp.</strong>",
       "text": "Während ein Teil des Teams das Konzept für personalisiertes Lernen weiter ausarbeitete, konzentrierte ich mich auf den interaktiven Prototypen der Plattform. Die Idee: Mitarbeitende werden motiviert und belohnt, genau die Kompetenzen aufzubauen, die die Organisation künftig braucht. Ohne KI wäre es kaum möglich gewesen, innerhalb von nur 20 Minuten einen funktionsfähigen Prototypen zu entwickeln.",
@@ -547,17 +548,17 @@
       "desktop_only": "Interaktiver Prototyp auf dem Desktop verfügbar."
     },
     "reflection": {
-      "heading": "<strong>Erkenntnisse</strong>, die geblieben sind.",
-      "text": "Rückblickend beeindruckt mich vor allem, wie viel wir in nur drei Tagen erreichen konnten. Gleichzeitig begleiten mich viele der KI-Workflows und Methoden, die ich während dieses Sprints kennengelernt habe, bis heute in meinem Arbeitsalltag.",
+      "heading": "Einen <strong>Samen pflanzen</strong>.",
+      "text": "Weil der Sprint auf einer Herausforderung basierte, die ich in meinem Arbeitsalltag beobachtet hatte, fühlte sich das Ergebnis besonders relevant an. Seither konnte ich die Idee Kolleg:innen und HR vorstellen und wertvolles Feedback dazu sammeln, wo sie funktionieren könnte und wo eher nicht. Wer weiss – vielleicht hat der Sprint einen Samen gepflanzt.",
       "accordion1_trigger": "Komplexität braucht Fokus",
       "accordion1_content": "Das Problem klar einzugrenzen war eine der wichtigsten Designentscheidungen. Ohne diesen Fokus wäre das Thema Digitalisierung zu breit geblieben, um konkrete Lösungen zu entwickeln.",
-      "accordion2_trigger": "KI beschleunigt, ersetzt aber kein Denken",
-      "accordion2_content": "KI half dabei, Erkenntnisse aus Interviews zu gewinnen, Annahmen zu hinterfragen und neue Ideen zu entwickeln. Entscheidend blieben jedoch immer kritisches Denken und menschliches Urteilsvermögen.",
-      "accordion3_trigger": "Transformation beginnt bei den Menschen",
-      "accordion3_content": "Digitale Transformation scheitert selten an der Technologie. Viel häufiger geht es um Vertrauen, Kommunikation, Beteiligung und darum, Menschen für Veränderungen zu gewinnen."
-    }
+      "accordion2_trigger": "Teamdynamik prägt den Prozess",
+      "accordion2_content": "Drei volle Tage intensiv mit Menschen zusammenzuarbeiten, die sich noch nicht gut kannten, machte auch die Teamdynamik zu einem Teil der Designherausforderung. Alle brachten sich auf unterschiedliche Weise und zu unterschiedlichen Zeitpunkten ein, weshalb es aktive Arbeit brauchte, um den gemeinsamen Schwung aufrechtzuerhalten.",
+      "accordion3_trigger": "KI kann beschleunigen, aber Denken nicht ersetzen",
+      "accordion3_content": "KI half uns, Notizen zu analysieren, Ideen weiterzuentwickeln und schnell einen testbaren Prototypen zu bauen. Fehler und zu enge Ergebnisse machten es jedoch umso wichtiger, die Resultate im Team zu prüfen, zu hinterfragen und gemeinsam zu diskutieren."
+    },
+    "overview_note": "Hinweis: Design-Thinking-Sprint im Rahmen eines Advanced-Design-Thinking-Kurses."
   },
-
   "kunstatelier": {
     "_case_study": "===== KUNSTATELIER =====",
     "tag1": "UX Design",
@@ -586,7 +587,10 @@
       "role_value": "UX Designerin",
       "timeline_value": "3 Monate<br />2025",
       "platform_value": "Mobile App<br/>Figma",
-      "status_value": "Projekt im Rahmen des Google UX Design Certificate"
+      "status_value": "Projekt im Rahmen des Google UX Design Certificate",
+      "what_value": "Ein Konzept für eine Museums-App, das Entdeckung, Zugänglichkeit und eine einfache Ticketbuchung für Menschen mit unterschiedlichen digitalen Vorkenntnissen und Sprachkenntnissen in den Mittelpunkt stellt.",
+      "why_value": "Ich bin kein Museumsfan. Wie gut würde ich mich also in Museumsbegeisterte hineinversetzen können? Genau das wurde zur zentralen UX-Design-Herausforderung.",
+      "how_value": "Den gesamten Prozess des Google UX Design Certificate durchlaufen – vom Verstehen der Nutzerbedürfnisse über Design und Testing bis zur Verfeinerung des finalen Prototyps in Figma."
     },
     "context": {
       "heading": "<strong>Die ultimative</strong> Design-Herausforderung.",
@@ -633,7 +637,6 @@
       "caption3": "User Journeys",
       "caption4": "Storyboard"
     },
-
     "exploring": {
       "heading": "Das <strong>Nutzungserlebnis</strong> gestalten.",
       "text": "Dank meiner Erfahrung in der Business-Analyse und Prozessmodellierung entstand der User Flow fast wie von selbst. Ich strukturierte die App entlang des natürlichen Besuchsablaufs: Entdecken → Buchen → Planen → Besuchen. So orientiert sich die Navigation an der Art und Weise, wie Menschen ihren Museumsbesuch tatsächlich vorbereiten. Erste Ideen für Layout und Funktionen entwickelte ich anschliessend mit Skizzen auf Papier.",
@@ -652,7 +655,6 @@
       "changes_text": "Die Öffnungszeiten wurden prominenter platziert.<br />Der Buchungsprozess wurde neu strukturiert.<br />Ein zusätzlicher Bestätigungsschritt schafft mehr Sicherheit beim Buchen.",
       "caption": "Weiterentwicklung des Lo-Fi-Prototyps"
     },
-
     "refining": {
       "heading": "Eine Nutzererfahrung gestalten, die <strong>elegant und zugänglich zugleich ist.</strong>",
       "text": "Nachdem die wichtigsten Nutzerabläufe feststanden, widmete ich mich der visuellen Gestaltung der App. Mein Ziel war eine Nutzererfahrung, die kulturell wirkt, hochwertig aussieht und gleichzeitig einladend bleibt. Den Hi-Fi-Prototypen und das Designsystem entwickelte ich parallel, um von Anfang bis Ende ein stimmiges Erlebnis zu schaffen.",
@@ -686,16 +688,16 @@
       "accordion2_content": "Gute UX hat nichts mit meinen persönlichen Vorlieben zu tun. Entscheidend ist, die Bedürfnisse anderer wirklich zu verstehen. Was für mich selbstverständlich wirkt, kann für Nutzer:innen eine echte Hürde sein.",
       "accordion3_trigger": "Und heute?",
       "accordion3_content": "KunstAtelier existiert zwar nur in Figma, hat mich aber tatsächlich dazu gebracht, wieder Museen zu besuchen. Damit hätte ich früher wohl selbst nicht gerechnet."
-    }
+    },
+    "overview_note": "Hinweis: End-to-End-UX-Designprojekt im Rahmen des Google UX Design Certificate."
   },
-
   "climate": {
     "_case_study": "===== 100 BILLION USD FOR CLIMATE =====",
     "tag1": "Datenvisualisierung",
     "tag2": "Dashboard Design",
     "tag3": "UX/UI Design",
     "tag4": "Storytelling",
-    "overview_description": "Ein Dashboard, das sichtbar macht, wie über 100 Milliarden US-Dollar in Klimaprojekte fliessen und dabei hilft, Muster, Schwerpunkte und Zusammenhänge schneller zu erkennen.",
+    "overview_description": "Vom experimentellen Konzept zur realen Umsetzung: Wie Datenvisualisierung Stakeholdern helfen kann zu verstehen, wohin Schweizer Klimainvestitionen fliessen, und fundiertere Entscheidungen zu treffen.",
     "label_exploring": "Verstehen",
     "label_designing": "Gestalten",
     "label_building": "Umsetzen",
@@ -714,7 +716,10 @@
       "role_value": "UX Designerin<br />Data Visualization Designerin",
       "timeline_value": "6 Monate<br />2025",
       "platform_value": "Power BI<br />Web-Dashboard",
-      "status_value": "CAS-Abschlussprojekt<br />Grundlage für ein Live-Produkt"
+      "status_value": "CAS-Abschlussprojekt<br />Grundlage für ein Live-Produkt",
+      "what_value": "Ein interaktives Power-BI-Dashboard, das die Schweizer Klimafinanzierung nach Ländern, Themen und Projekten visualisiert und später zum live eingesetzten Climate Cockpit weiterentwickelt wurde.",
+      "why_value": "Bestehende Klimafinanzierungsdaten auf Länderebene leichter erkundbar machen und für interne Entscheidungen nutzbarer machen.",
+      "how_value": "Auf Basis von Expertenfeedback und neuen Datenvisualisierungstechniken entwarf und entwickelte ich einen Power-BI-Prototyp, der zum Ausgangspunkt für das live eingesetzte Climate Cockpit wurde."
     },
     "context": {
       "heading": "Klimafinanzierung <strong>verständlich machen.</strong>",
@@ -724,13 +729,15 @@
       "team_value": "Einzelprojekt"
     },
     "problem": {
-      "heading": "Über 100 Milliarden US-Dollar. <strong>Aber wohin fliesst das Geld?</strong>",
-      "point1_title": "Verstreute Informationen",
-      "point1_text": "Klimafinanzierungsdaten waren auf verschiedene Quellen verteilt und nur mit grossem Aufwand auswertbar.",
-      "point2_title": "Fehlender Überblick",
-      "point2_text": "Zusammenhänge zwischen Regionen, Themen und Finanzierungsarten waren nur schwer zu erkennen.",
-      "point3_title": "Komplexe Daten",
-      "point3_text": "Die grosse Datenmenge erschwerte es, Muster zu entdecken und fundierte Entscheidungen zu treffen."
+      "heading": "Wohin fliessen die <strong>Millionen?</strong>",
+      "point1_title": "Reporting statt Erkenntnisse",
+      "point1_text": "Die Daten wurden für die Berichterstattung zur Klimafinanzierung erhoben, nicht um Muster zu erkunden oder strategische Entscheidungen zu unterstützen.",
+      "point2_title": "Keine Einblicke auf Länderebene",
+      "point2_text": "Stakeholder konnten nicht erkennen, wie sich Klimainvestitionen zwischen Ländern unterschieden.",
+      "point3_title": "Manuelles und statisches Reporting",
+      "point3_text": "Das Reporting beruhte auf verstreuten und manuell gepflegten Excel-Dateien mit nur begrenzter Interaktivität.",
+      "point4_title": "Verborgene Erkenntnisse",
+      "point4_text": "Muster, Trends und Handlungsmöglichkeiten blieben schwer erkennbar."
     },
     "process_bar": {
       "exploring_d1": "Experimentieren",
@@ -739,14 +746,14 @@
       "exploring_d4": "Iteration",
       "designing_d1": "Informationsdesign",
       "designing_d2": "Storytelling",
-      "designing_d3": "Designentscheidungen",
-      "building_d1": "Power BI",
-      "building_d2": "Rahmenbedingungen",
-      "building_d3": "Anpassung",
+      "designing_d3": "Coaching",
+      "building_d1": "Power BI DAX",
+      "building_d2": "Datenmodellierung",
+      "building_d3": "Technische Einschränkungen",
       "evolving_d1": "Nutzerfeedback",
-      "evolving_d2": "Umsetzung"
+      "evolving_d2": "Iterationen",
+      "evolving_d3": "Umsetzung"
     },
-
     "process": {
       "role_text": "Ich verantwortete das Projekt von der ersten Analyse über Informationsarchitektur, Datenvisualisierung, UI-Design und die Entwicklung in Power BI bis hin zur Weiterentwicklung des Konzepts zum späteren Climate Cockpit des SECO.",
       "constraints_text": "Die grösste Herausforderung bestand darin, kreative Ideen mit den Anforderungen eines späteren Live-Produkts in Einklang zu bringen. Während das Studienprojekt viel Raum zum Experimentieren bot, mussten im produktiven Dashboard technische Grenzen, organisatorische Vorgaben und reale Nutzerbedürfnisse berücksichtigt werden."
@@ -762,7 +769,7 @@
     },
     "designing": {
       "heading": "Das <strong>Nutzungserlebnis</strong> gestalten.",
-      "text": "Nachdem ich verschiedene visuelle Ansätze ausprobiert hatte, konzentrierte ich mich darauf, daraus ein stimmiges Gesamterlebnis zu entwickeln. Das finale Dashboard verbindet Storytelling, Informationsdesign und interaktive Exploration, damit Nutzer:innen Zusammenhänge in komplexen Klimafinanzierungsdaten selbst entdecken können.",
+      "text": "Nachdem ich verschiedene visuelle Ansätze erkundet hatte, konzentrierte ich mich darauf, die Erkenntnisse in ein stimmiges und ansprechendes Erlebnis zu übersetzen. Ich testete unterschiedliche Informationsarchitekturen und erprobte Schriften und Farben, die die Daten am besten unterstützten. Feedback aus drei individuellen Coachings mit einem Experten für Datenvisualisierung und einer weiteren UX-Designerin half mir, das Design weiter zu verfeinern.",
       "challenge_text": "Wie macht man Klimafinanzierungsdaten spannend und leicht verständlich, ohne Nutzer:innen zu überfordern?",
       "solution_text": "Eine klare Informationsarchitektur, reduziertes visuelles Design und interaktives Storytelling führen Nutzer:innen Schritt für Schritt vom Überblick bis ins Detail.",
       "decisions_caption": "Designentscheidungen",
@@ -792,7 +799,7 @@
     },
     "building": {
       "heading": "Gestalten innerhalb von <strong>Grenzen.</strong>",
-      "text1": "Power BI eröffnete viele Möglichkeiten, brachte aber auch klare Grenzen mit sich. Manche Visualisierungsideen scheiterten an technischen Einschränkungen, den Möglichkeiten benutzerdefinierter Visuals oder an Performance-Problemen.",
+      "text1": "Power BI erwies sich zugleich als befähigend und frustrierend. Viele visuelle Ideen, die theoretisch vielversprechend wirkten, liessen sich wegen technischer Einschränkungen, hoher Umsetzungskomplexität oder Grenzen von Custom Visuals nicht realisieren.",
       "text2": "Hinzu kam, dass einige Custom Visuals von meiner Organisation aus Sicherheitsgründen nicht freigegeben wurden und deshalb nie produktiv eingesetzt werden konnten. Die eigentliche Herausforderung bestand darin, kreative Alternativen zu entwickeln, ohne die ursprüngliche Idee des Dashboards aus den Augen zu verlieren.",
       "challenge_text": "Hohe Designansprüche mit technischen und organisatorischen Einschränkungen in Einklang bringen.",
       "solution_text": "Den Fokus konsequent auf das eigentliche Nutzerbedürfnis legen statt auf eine bestimmte Visualisierung und das Design laufend an die technischen und organisatorischen Rahmenbedingungen anpassen.",
@@ -809,14 +816,27 @@
       "heading": "Von Klimareporting zu <strong>besseren Entscheidungen.</strong>",
       "num1_label": "CHF jährliche Schweizer Klimafinanzierung können geografisch und thematisch über ein interaktives Dashboard analysiert werden.",
       "num2_label": "Weniger Zeitaufwand für Finanzcontroller:innen durch den Ersatz manueller Excel-Auswertungen mit automatisiertem Reporting.",
-      "num3_label": "Mehr Umweltinformationen als zuvor – das Reporting wurde über den Klimawandel hinaus auf Biodiversität und die Mobilisierung des Privatsektors erweitert."
+      "num3_label": "Mehr Umweltinformationen als zuvor – das Reporting wurde über den Klimawandel hinaus auf Biodiversität und die Mobilisierung des Privatsektors erweitert.",
+      "num1_value": "100 Mio.+"
     },
     "testimonial": {
-      "quote1": "«Anouk hat für das Klimanetzwerk der SECO Wirtschaftliche Entwicklung das «Climate Cockpit» entwickelt. Dabei hat sie proaktiv die Anforderungen der Nutzerinnen und Nutzer erhoben und mithilfe interaktiver Testversionen das Dashboard gezielt auf die Bedürfnisse des Netzwerks abgestimmt.",
+      "quote1": "Während des gesamten Projekts erhob Anouk proaktiv die Anforderungen der Nutzer:innen und passte das Dashboard mithilfe interaktiver Prototypen gezielt an die spezifischen Bedürfnisse des Netzwerks an.",
       "quote2": "Das Ergebnis ist ein übersichtliches und flexibles Analyseinstrument, das – im Gegensatz zum früheren Cockpit – schnelle und vielseitige Abfragen ermöglicht und die Resultate grafisch klar aufbereitet. Das neue Cockpit wird bereits rege genutzt und ist im Netzwerk durchwegs auf positive Resonanz gestossen. Dank ihrer freundlichen und positiven Art ist es Anouk zudem gelungen, die Netzwerkmitglieder für die Erarbeitung des neuen Cockpits zu begeistern.",
       "quote3": "Wir danken Anouk herzlich für ihre wertvolle Arbeit.»",
-      "author": "Daniel Bruderer, Leiter des Klimanetzwerks Wirtschaftliche Entwicklung des SECO",
+      "author": "Daniel Bruderer, Leiter Klimanetzwerk, Wirtschaftliche Entwicklung und Zusammenarbeit, Schweizer Bundesverwaltung",
       "highlight": "«[...] Ein <strong>übersichtliches und flexibles</strong> Analyseinstrument, das <strong>schnelle und vielseitige</strong> Datenabfragen ermöglicht und im gesamten Netzwerk durchwegs <strong>positives Feedback</strong> erhalten hat. [...]»"
-    }
+    },
+    "overview_note": "Hinweis: Dieses Dashboard wurde unabhängig im Rahmen eines CAS in Data Visualization entwickelt und hat seither verwandte Arbeiten beeinflusst. Es werden ausschliesslich öffentliche Daten gezeigt; interne Informationen wurden aus Vertraulichkeitsgründen vereinfacht.",
+    "afterlife": {
+      "heading": "Vom Experiment in den <strong>Arbeitsalltag.</strong>",
+      "text": "Was als experimentelles Lernprojekt begann, wurde schliesslich zur Grundlage für ein Werkzeug, das im Arbeitsalltag genutzt wird. Dabei habe ich gelernt, wie wertvoll es ist, frei zu explorieren, Ideen loszulassen, die nicht funktionieren, und ambitionierte Konzepte an reale Rahmenbedingungen anzupassen.",
+      "accordion1_trigger": "Gute Ideen entstehen selten beim ersten Versuch",
+      "accordion1_content": "Viele unterschiedliche Visualisierungen zu erkunden bedeutete auch, Ideen loszulassen, die mir anfangs gefielen. Testen, scheitern und iterieren zeigte mir, dass eine erfolglose Idee oft einfach ein weiterer Schritt zu einer besseren Lösung ist.",
+      "accordion2_trigger": "Einschränkungen können das Design schärfen",
+      "accordion2_content": "Power BI konnte nicht jede Idee unterstützen, die ich umsetzen wollte. Die technischen Grenzen zwangen mich dazu, mich auf das zugrunde liegende Nutzerbedürfnis zu konzentrieren und alternative Lösungen zu finden, statt mich an eine bestimmte Visualisierung zu klammern.",
+      "accordion3_trigger": "Das Erlebnis ist mehr als die Diagramme",
+      "accordion3_content": "Mir wurde zunehmend bewusst, dass Informationsarchitektur, Storytelling und die Reihenfolge, in der Informationen sichtbar werden, genauso wichtig sind wie die einzelnen Visualisierungen. Das anspruchsvollste Diagramm ist nicht automatisch das wirkungsvollste."
+    },
+    "testimonial_label": "Testimonial"
   }
 }

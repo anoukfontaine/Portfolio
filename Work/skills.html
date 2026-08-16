@@ -2,18 +2,17 @@
 
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>Case Study — Gamified Skills Management</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300;0,400;0,700;1,300;1,400&amp;display=swap"
       rel="stylesheet"
     />
-    <link rel="icon" type="image/png" href="../Images/General/favicon.png" />
-    <link rel="stylesheet" href="../style.css" />
-
+    <link href="../Images/General/favicon.png" rel="icon" type="image/png" />
+    <link href="../style.css" rel="stylesheet" />
     <script>
       /* ============================================= AVOID FLICKER
       ============================================= */
@@ -76,12 +75,10 @@
       })();
     </script>
   </head>
-
   <body class="case-page" style="--project-accent: var(--project-2)">
     <div id="cursor"></div>
-
     <nav>
-      <a class="logo" href="/" data-home-link>
+      <a class="logo" data-home-link="" href="/">
         <span class="logo-first"
           ><span class="l" data-i="0">A</span
           ><span class="l hide" data-i="1">n</span
@@ -89,9 +86,9 @@
           ><span class="l hide" data-i="3">u</span
           ><span class="l hide" data-i="4">k</span></span
         ><span class="logo-last"
-          ><span class="l space hide" data-i="5">&nbsp;</span
-          ><span class="l dot">&middot;</span
-          ><span class="l space hide" data-i="6">&nbsp;</span
+          ><span class="l space hide" data-i="5"> </span
+          ><span class="l dot">·</span
+          ><span class="l space hide" data-i="6"> </span
           ><span class="l" data-i="7">F</span
           ><span class="l hide" data-i="8">o</span
           ><span class="l hide" data-i="9">n</span
@@ -102,38 +99,35 @@
           ><span class="l hide" data-i="14">e</span></span
         >
       </a>
-
       <div class="nav-right">
         <div class="nav-controls">
-          <button class="nav-lang" aria-label="Switch language">
+          <button aria-label="Switch language" class="nav-lang">
             EN<span class="lang-orbit-dot"></span>
           </button>
-          <button class="nav-theme" id="theme-toggle" aria-label="Toggle theme">
-            <span class="moon-glyph">&#9680;</span
-            ><span class="orbit-dot"></span>
+          <button aria-label="Toggle theme" class="nav-theme" id="theme-toggle">
+            <span class="moon-glyph">◐</span><span class="orbit-dot"></span>
           </button>
           <button
+            aria-controls="mobile-menu"
+            aria-expanded="false"
+            aria-label="Open menu"
             class="nav-hamburger"
             id="nav-hamburger"
             type="button"
-            aria-label="Open menu"
-            aria-expanded="false"
-            aria-controls="mobile-menu"
           >
             <span></span><span></span><span></span>
           </button>
         </div>
       </div>
-
       <div class="mobile-menu" id="mobile-menu">
-        <a href="#services" class="mobile-menu-link" data-i18n="nav.services"
+        <a class="mobile-menu-link" data-i18n="nav.services" href="#services"
           >Services</a
         >
-        <a href="#work" class="mobile-menu-link" data-i18n="nav.work">Work</a>
-        <a href="#about" class="mobile-menu-link" data-i18n="nav.about"
+        <a class="mobile-menu-link" data-i18n="nav.work" href="#work">Work</a>
+        <a class="mobile-menu-link" data-i18n="nav.about" href="#about"
           >About</a
         >
-        <a href="#contact" class="mobile-menu-link" data-i18n="nav.contact"
+        <a class="mobile-menu-link" data-i18n="nav.contact" href="#contact"
           >Contact</a
         >
       </div>
@@ -141,125 +135,117 @@
     <section id="site-gate">
       <div class="site-gate-box">
         <p class="site-gate-title" data-i18n="gate.title">Private Portfolio</p>
-
         <p class="site-gate-text" data-i18n="gate.description">
           This portfolio is currently shared with selected reviewers.<br />
           Please enter the password to continue.
         </p>
-
         <input
-          type="password"
-          id="site-gate-input"
+          autofocus=""
           data-i18n-placeholder="gate.placeholder"
+          id="site-gate-input"
           placeholder="Password"
-          autofocus
+          type="password"
         />
-
-        <button id="site-gate-submit" data-i18n="gate.button">
+        <button data-i18n="gate.button" id="site-gate-submit">
           Enter portfolio
         </button>
-
-        <p id="site-gate-error" data-i18n="gate.error">Incorrect password.</p>
+        <p data-i18n="gate.error" id="site-gate-error">Incorrect password.</p>
       </div>
     </section>
     <div id="site-content">
       <main>
         <!-- OVERVIEW -->
         <section class="cs-overview card-container" id="section-overview">
-          <nav class="left-sidebar" aria-label="Case study sections">
+          <nav aria-label="Case study sections" class="left-sidebar">
             <div class="left-sidebar-home">
               <a
                 class="left-sidebar-ghost"
-                href="../index.html#services"
                 data-i18n="nav.services"
+                href="../index.html#services"
                 >Services</a
               >
-              <a href="../index.html#work" data-i18n="nav.work">Work</a>
+              <a data-i18n="nav.work" href="../index.html#work">Work</a>
               <a
                 class="left-sidebar-ghost"
-                href="../index.html#about"
                 data-i18n="nav.about"
+                href="../index.html#about"
                 >About</a
               >
               <a
                 class="left-sidebar-ghost"
-                href="../index.html#contact"
                 data-i18n="nav.contact"
+                href="../index.html#contact"
                 >Contact</a
               >
             </div>
-
             <a
-              href="#section-overview"
-              data-target="section-overview"
               data-i18n="cs_shared.sidebar_overview"
+              data-target="section-overview"
+              href="#section-overview"
               >Overview</a
             >
             <a
-              href="#section-problem"
-              data-target="section-problem"
               data-i18n="cs_shared.sidebar_problem"
+              data-target="section-problem"
+              href="#section-problem"
               >Problem</a
             >
             <a
-              href="#section-process"
-              data-target="section-process"
               data-i18n="cs_shared.sidebar_process"
+              data-target="section-process"
+              href="#section-process"
               >Process</a
             >
-
             <div class="left-sidebar-sub">
               <a
                 class="left-sidebar-sub-item"
-                href="#section-empathize"
-                data-target="section-empathize"
                 data-i18n="skills.sidebar.empathize"
+                data-target="section-empathize"
+                href="#section-empathize"
                 >01 Empathize</a
               >
               <a
                 class="left-sidebar-sub-item"
-                href="#section-define"
-                data-target="section-define"
                 data-i18n="skills.sidebar.define"
+                data-target="section-define"
+                href="#section-define"
                 >02 Define</a
               >
               <a
                 class="left-sidebar-sub-item"
-                href="#section-ideate"
-                data-target="section-ideate"
                 data-i18n="skills.sidebar.ideate"
+                data-target="section-ideate"
+                href="#section-ideate"
                 >03 Ideate</a
               >
               <a
                 class="left-sidebar-sub-item"
-                href="#section-prototype"
-                data-target="section-prototype"
                 data-i18n="skills.sidebar.prototype"
+                data-target="section-prototype"
+                href="#section-prototype"
                 >04 Prototype</a
               >
               <a
                 class="left-sidebar-sub-item"
-                href="#section-test"
-                data-target="section-test"
                 data-i18n="skills.sidebar.test"
+                data-target="section-test"
+                href="#section-test"
                 >05 Test</a
               >
             </div>
-
             <a
-              href="#section-product"
-              data-target="section-product"
               data-i18n="cs_shared.sidebar_product"
+              data-target="section-product"
+              href="#section-product"
               >Product</a
             >
             <a
-              href="#section-reflection"
-              data-target="section-reflection"
               data-i18n="cs_shared.sidebar_reflection"
+              data-target="section-reflection"
+              href="#section-reflection"
               >Reflection</a
             >
           </nav>
-
           <div class="cs-overview-content">
             <p class="label label-muted" data-i18n="cs_shared.case_study_label">
               Case Study
@@ -267,7 +253,6 @@
             <h1 class="cs-headline" data-i18n="project_titles.skills">
               <em>Upskilling</em> the Public Sector
             </h1>
-
             <div class="cs-overview-intro">
               <p
                 class="cs-overview-description"
@@ -277,32 +262,29 @@
                 gamification can support digital transformation within the Swiss
                 Federal Administration.
               </p>
-
               <p class="cs-overview-note" data-i18n="skills.overview_note">
                 Note: Design thinking sprint completed as part of an Advanced
                 Design Thinking course.
               </p>
             </div>
           </div>
-
           <div class="cs-overview-image-wrap">
             <div class="cs-overview-image">
               <img
-                src="../Images/Skills/0_hero.png"
                 alt="Gamified Skills Management prototype mockup"
+                src="../Images/Skills/0_hero.png"
                 style="height: 80%"
               />
             </div>
           </div>
-
           <div class="cs-overview-meta">
             <div class="cs-overview-meta-block">
-              <p class="label label-muted" data-i18n="cs_shared.meta_role">
+              <p class="label label-muted" data-i18n="cs_shared.meta_what">
                 What
               </p>
               <p
                 class="cs-overview-meta-value"
-                data-i18n="kunstatelier.meta.role_value"
+                data-i18n="skills.meta.what_value"
               >
                 A concept for a learning platform where employees are encouraged
                 and rewarded for developing the skills the organization actually
@@ -310,12 +292,12 @@
               </p>
             </div>
             <div class="cs-overview-meta-block">
-              <p class="label label-muted" data-i18n="cs_shared.meta_timeline">
+              <p class="label label-muted" data-i18n="cs_shared.meta_why">
                 Why
               </p>
               <p
                 class="cs-overview-meta-value"
-                data-i18n="kunstatelier.meta.timeline_value"
+                data-i18n="skills.meta.why_value"
               >
                 Digital transformation has been a strategic priority within the
                 Swiss Federal Administration for decades, yet many organizations
@@ -323,12 +305,12 @@
               </p>
             </div>
             <div class="cs-overview-meta-block">
-              <p class="label label-muted" data-i18n="cs_shared.meta_platform">
+              <p class="label label-muted" data-i18n="cs_shared.meta_how">
                 How
               </p>
               <p
                 class="cs-overview-meta-value"
-                data-i18n="kunstatelier.meta.platform_value"
+                data-i18n="skills.meta.how_value"
               >
                 Drawing on a challenge I observed in my daily work, our
                 interdisciplinary team explored how personalized learning could
@@ -338,7 +320,6 @@
             </div>
           </div>
         </section>
-
         <!-- PROBLEM -->
         <section class="cs-section card-container" id="section-problem">
           <div class="cs-dark-card">
@@ -358,18 +339,16 @@
                   <strong>Nobody knows exactly what it means.</strong>
                 </h2>
               </div>
-
               <div class="cs-problem-top-right">
                 <div class="cs-problem-image">
                   <img
-                    src="../Images/Skills/0_problem.jpeg"
                     alt="Research notes from the Design Thinking sprint"
                     class="cs-process-step-image"
+                    src="../Images/Skills/0_problem.jpeg"
                   />
                 </div>
               </div>
             </div>
-
             <div class="cs-problem-points">
               <div class="cs-problem-point">
                 <p
@@ -419,7 +398,6 @@
             </div>
           </div>
         </section>
-
         <!-- PROCESS -->
         <section class="cs-process-section card-container" id="section-process">
           <div class="cs-process-bar">
@@ -429,7 +407,6 @@
             >
               Process
             </p>
-
             <div class="cs-process-bar-steps" style="--steps: 5">
               <div class="cs-process-bar-step">
                 <span
@@ -454,7 +431,6 @@
                   >
                 </div>
               </div>
-
               <div class="cs-process-bar-step">
                 <span
                   class="cs-process-bar-step-name"
@@ -478,7 +454,6 @@
                   >
                 </div>
               </div>
-
               <div class="cs-process-bar-step">
                 <span
                   class="cs-process-bar-step-name"
@@ -502,7 +477,6 @@
                   >
                 </div>
               </div>
-
               <div class="cs-process-bar-step">
                 <span
                   class="cs-process-bar-step-name"
@@ -526,7 +500,6 @@
                   >
                 </div>
               </div>
-
               <div class="cs-process-bar-step">
                 <span
                   class="cs-process-bar-step-name"
@@ -551,7 +524,6 @@
               </div>
             </div>
           </div>
-
           <div class="cs-process-intro-cards">
             <div class="cs-process-intro-card">
               <p class="cs-process-card-title" data-i18n="cs_shared.meta_role">
@@ -585,7 +557,6 @@
               </p>
             </div>
           </div>
-
           <!-- 01 Empathize -->
           <div class="cs-process-step-section first" id="section-empathize">
             <div class="cs-process-step-card">
@@ -658,34 +629,35 @@
                 </div>
               </div>
             </div>
-            <div class="cs-process-images">
-              <p
-                class="cs-image-caption cs-image-caption--center"
-                data-i18n="skills.empathize.caption1"
-              >
-                Interview Material
-              </p>
-              <img
-                src="../Images/Skills/1_research2.png"
-                alt="Interview and research notes"
-                class="cs-process-step-image cs-lightbox-trigger cursor-grow"
-              />
-              <p
-                class="cs-image-caption cs-image-caption--center"
-                data-i18n="skills.empathize.caption2"
-              >
-                Prompting in ChatGPT to extract insights from interview
-                transcripts
-              </p>
-              <img
-                src="../Images/Skills/1_research3.png"
-                alt="Interview and research notes"
-                class="cs-process-step-image cs-lightbox-trigger cursor-grow"
-                style="width: 70%; display: block; margin: 24px auto"
-              />
+            <div class="cs-process-step-media">
+              <div class="cs-process-step-media-item cs-process-images">
+                <p
+                  class="cs-image-caption cs-image-caption--center"
+                  data-i18n="skills.empathize.caption1"
+                >
+                  Interview Material
+                </p>
+                <img
+                  alt="Interview and research notes"
+                  class="cs-process-step-image cs-lightbox-trigger cursor-grow"
+                  src="../Images/Skills/1_research2.png"
+                />
+                <p
+                  class="cs-image-caption cs-image-caption--center"
+                  data-i18n="skills.empathize.caption2"
+                >
+                  Prompting in ChatGPT to extract insights from interview
+                  transcripts
+                </p>
+                <img
+                  alt="Interview and research notes"
+                  class="cs-process-step-image cs-lightbox-trigger cursor-grow"
+                  src="../Images/Skills/1_research3.png"
+                  style="width: 70%; display: block; margin: 24px auto"
+                />
+              </div>
             </div>
           </div>
-
           <!-- 02 Define -->
           <div class="cs-process-step-section" id="section-define">
             <div class="cs-process-step-card">
@@ -710,7 +682,6 @@
                     challenged our assumptions with AI, and translated the
                     strongest opportunities into "How Might We" questions:
                   </p>
-
                   <p
                     class="cs-process-step-text"
                     data-i18n="skills.define.text2"
@@ -757,20 +728,22 @@
                 </div>
               </div>
             </div>
-
-            <p
-              class="cs-image-caption cs-image-caption--center"
-              data-i18n="skills.define.caption"
-            >
-              Digital meets analog.
-            </p>
-            <img
-              src="../Images/Skills/2_Define.jpeg"
-              alt="Define phase with clustered post-its"
-              class="cs-process-step-image cs-lightbox-trigger cursor-grow"
-            />
+            <div class="cs-process-step-media">
+              <div class="cs-process-step-media-item">
+                <p
+                  class="cs-image-caption cs-image-caption--center"
+                  data-i18n="skills.define.caption"
+                >
+                  Digital meets analog.
+                </p>
+                <img
+                  alt="Define phase with clustered post-its"
+                  class="cs-process-step-image cs-lightbox-trigger cursor-grow"
+                  src="../Images/Skills/2_Define.jpeg"
+                />
+              </div>
+            </div>
           </div>
-
           <!-- 03 Ideate -->
           <div class="cs-process-step-section" id="section-ideate">
             <div class="cs-process-step-card">
@@ -796,7 +769,6 @@
                     evaluated against predefined criteria before refining the
                     strongest solution.
                   </p>
-
                   <div class="cs-process-cards">
                     <div class="cs-process-card">
                       <p
@@ -834,32 +806,36 @@
                 </div>
               </div>
             </div>
-            <p
-              class="cs-image-caption cs-image-caption--center"
-              data-i18n="skills.ideate.caption"
-            >
-              Random Word Method, Morphological box and priorisation
-            </p>
-            <img
-              src="../Images/Skills/3_Ideate_2.jpeg"
-              alt="Ideation exercise"
-              class="cs-process-step-image cs-lightbox-trigger cursor-grow"
-            />
-
-            <div class="cs-image-container">
-              <img
-                src="../Images/Skills/3_Ideate_6.jpeg"
-                alt="Ideation exercise"
-                class="cs-process-step-image cs-lightbox-trigger cursor-grow"
-              />
-              <img
-                src="../Images/Skills/3_Ideate_7.jpeg"
-                alt="Selected concept"
-                class="cs-process-step-image cs-lightbox-trigger cursor-grow"
-              />
+            <div class="cs-process-step-media">
+              <div class="cs-process-step-media-item">
+                <p
+                  class="cs-image-caption cs-image-caption--center"
+                  data-i18n="skills.ideate.caption"
+                >
+                  Random Word Method, Morphological box and priorisation
+                </p>
+                <img
+                  alt="Ideation exercise"
+                  class="cs-process-step-image cs-lightbox-trigger cursor-grow"
+                  src="../Images/Skills/3_Ideate_2.jpeg"
+                />
+              </div>
+              <div class="cs-process-step-media-item">
+                <div class="cs-image-container">
+                  <img
+                    alt="Ideation exercise"
+                    class="cs-process-step-image cs-lightbox-trigger cursor-grow"
+                    src="../Images/Skills/3_Ideate_6.jpeg"
+                  />
+                  <img
+                    alt="Selected concept"
+                    class="cs-process-step-image cs-lightbox-trigger cursor-grow"
+                    src="../Images/Skills/3_Ideate_7.jpeg"
+                  />
+                </div>
+              </div>
             </div>
           </div>
-
           <!-- 04 Prototype -->
           <div class="cs-process-step-section" id="section-prototype">
             <div class="cs-process-step-card">
@@ -891,7 +867,6 @@
                     such a prototype in only 20 minutes would never have been
                     possible.
                   </p>
-
                   <div class="cs-process-cards">
                     <div class="cs-process-card">
                       <p
@@ -928,30 +903,35 @@
                 </div>
               </div>
             </div>
-            <p
-              class="cs-image-caption cs-image-caption--center"
-              data-i18n="skills.prototype.caption1"
-            >
-              Prompting in Claude
-            </p>
-            <img
-              src="../Images/Skills/4_prototype.png"
-              alt="Ideation exercise"
-              class="cs-process-step-image cs-lightbox-trigger cursor-grow"
-            />
-
-            <p
-              class="cs-image-caption cs-image-caption--center"
-              data-i18n="skills.prototype.caption2"
-            >
-              20 min prototype
-            </p>
-            <div class="cs-product-showcase">
-              <div class="cs-product-card cs-product-card-large">
+            <div class="cs-process-step-media">
+              <div class="cs-process-step-media-item">
+                <p
+                  class="cs-image-caption cs-image-caption--center"
+                  data-i18n="skills.prototype.caption1"
+                >
+                  Prompting in Claude
+                </p>
                 <img
-                  src="../Images/Skills/4_prototype1.png"
-                  alt="Gamified Skills Management prototype"
+                  alt="Ideation exercise"
+                  class="cs-process-step-image cs-lightbox-trigger cursor-grow"
+                  src="../Images/Skills/4_prototype.png"
                 />
+              </div>
+              <div class="cs-process-step-media-item">
+                <p
+                  class="cs-image-caption cs-image-caption--center"
+                  data-i18n="skills.prototype.caption2"
+                >
+                  20 min prototype
+                </p>
+                <div class="cs-product-showcase">
+                  <div class="cs-product-card cs-product-card-large">
+                    <img
+                      alt="Gamified Skills Management prototype"
+                      src="../Images/Skills/4_prototype1.png"
+                    />
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -979,7 +959,6 @@
                     from succeeding. It also became clear that a concept like
                     this could be costly to implement at scale.
                   </p>
-
                   <div class="cs-process-cards">
                     <div class="cs-process-card">
                       <p
@@ -1016,23 +995,21 @@
                 </div>
               </div>
             </div>
+            <div class="cs-process-step-media"></div>
           </div>
         </section>
-
         <!-- PRODUCT -->
         <section class="cs-product" id="section-product">
           <p class="label label-muted" data-i18n="skills.product.label">
             The Prototype
           </p>
-
           <h2
             class="section-title"
-            style="text-align: left; margin-bottom: var(--element-gap)"
             data-i18n="skills.product.heading"
+            style="text-align: left; margin-bottom: var(--element-gap)"
           >
             A clickable concept for <strong>personalized learning.</strong>
           </h2>
-
           <div class="cs-product-card cs-product-card-large">
             <p class="cs-prototype-note" data-i18n="skills.product.try_it">
               Try it out!
@@ -1044,14 +1021,13 @@
               Open on desktop to try the interactive prototype.
             </p>
             <iframe
+              loading="lazy"
               src="../Images/Skills/skills.html"
               title="Gamified Skills Management Prototype"
-              loading="lazy"
             >
             </iframe>
           </div>
         </section>
-
         <!-- REFLECTION -->
         <section class="cs-afterlife" id="section-reflection">
           <div class="cs-afterlife-content">
@@ -1061,11 +1037,9 @@
             >
               Reflection
             </p>
-
             <h2 class="section-title" data-i18n="skills.reflection.heading">
               Planting a <strong>seed</strong>.
             </h2>
-
             <div class="cs-context-bottom">
               <p
                 class="cs-context-description"
@@ -1077,7 +1051,6 @@
                 and gather valuable feedback on where it could work and where it
                 might not. Who knows, maybe the sprint planted a seed.
               </p>
-
               <div class="accordion cs-afterlife-accordion">
                 <div class="accordion-item open">
                   <button class="accordion-trigger cursor-grow" type="button">
@@ -1098,7 +1071,6 @@
                     </div>
                   </div>
                 </div>
-
                 <div class="accordion-item">
                   <button class="accordion-trigger cursor-grow" type="button">
                     <span data-i18n="skills.reflection.accordion2_trigger"
@@ -1119,7 +1091,6 @@
                     </div>
                   </div>
                 </div>
-
                 <div class="accordion-item">
                   <button class="accordion-trigger cursor-grow" type="button">
                     <span data-i18n="skills.reflection.accordion3_trigger"
@@ -1144,7 +1115,6 @@
           </div>
         </section>
       </main>
-
       <!-- NEXT PROJECTS -->
       <section class="cs-next">
         <div class="cs-next-inner">
@@ -1162,29 +1132,29 @@
               <span data-i18n="cs_shared.back_to_work"
                 >Back to work overview</span
               >
-              <span class="link-arrow" aria-hidden="true">
-                <svg viewBox="0 0 16 16" fill="none">
+              <span aria-hidden="true" class="link-arrow">
+                <svg fill="none" viewbox="0 0 16 16">
                   <path
                     d="M0 16L13 3M7.6 3H13V8.4"
                     stroke="currentColor"
-                    stroke-width="1"
                     stroke-linecap="butt"
                     stroke-linejoin="miter"
-                  />
+                    stroke-width="1"
+                  ></path>
                 </svg>
               </span>
             </a>
             <a class="big-link big-link--light" href="../index.html#contact">
               <p class="link-text" data-i18n="hero.cta_contact">Get in touch</p>
-              <span class="link-arrow" aria-hidden="true">
-                <svg viewBox="0 0 16 16" fill="none">
+              <span aria-hidden="true" class="link-arrow">
+                <svg fill="none" viewbox="0 0 16 16">
                   <path
                     d="M0 16L13 3M7.6 3H13V8.4"
                     stroke="currentColor"
-                    stroke-width="1"
                     stroke-linecap="butt"
                     stroke-linejoin="miter"
-                  />
+                    stroke-width="1"
+                  ></path>
                 </svg>
               </span>
             </a>
@@ -1192,95 +1162,94 @@
           <div class="cs-next-right">
             <a
               class="cs-next-row big-link big-link--project"
-              href="../Work/yellow.html"
               data-preview="../Images/Home/0_work_1.png"
               data-preview-color="var(--project-1)"
+              href="../Work/yellow.html"
             >
               <span data-i18n="project_titles.yellow"
                 >Yellow is the new green</span
               >
-              <span class="link-arrow" aria-hidden="true">
-                <svg viewBox="0 0 16 16" fill="none">
+              <span aria-hidden="true" class="link-arrow">
+                <svg fill="none" viewbox="0 0 16 16">
                   <path
                     d="M0 16L13 3M7.6 3H13V8.4"
                     stroke="currentColor"
-                    stroke-width="1"
                     stroke-linecap="butt"
                     stroke-linejoin="miter"
-                  />
+                    stroke-width="1"
+                  ></path>
                 </svg>
               </span>
             </a>
             <a
               class="cs-next-row big-link big-link--project"
-              href="../Work/bw.html"
               data-preview="../Images/Home/0_work_3.png"
               data-preview-color="var(--project-3)"
+              href="../Work/bw.html"
             >
               <span data-i18n="project_titles.bw"
                 >Browsing the world's economy</span
               >
-              <span class="link-arrow" aria-hidden="true">
-                <svg viewBox="0 0 16 16" fill="none">
+              <span aria-hidden="true" class="link-arrow">
+                <svg fill="none" viewbox="0 0 16 16">
                   <path
                     d="M0 16L13 3M7.6 3H13V8.4"
                     stroke="currentColor"
-                    stroke-width="1"
                     stroke-linecap="butt"
                     stroke-linejoin="miter"
-                  />
+                    stroke-width="1"
+                  ></path>
                 </svg>
               </span>
             </a>
             <a
               class="cs-next-row big-link big-link--project"
-              href="../Work/kunstatelier.html"
               data-preview="../Images/Home/0_work_4.png"
               data-preview-color="var(--project-4)"
+              href="../Work/kunstatelier.html"
             >
               <span data-i18n="project_titles.kunstatelier"
                 >Heard of KunstAtelier? Me neither.</span
               >
-              <span class="link-arrow" aria-hidden="true">
-                <svg viewBox="0 0 16 16" fill="none">
+              <span aria-hidden="true" class="link-arrow">
+                <svg fill="none" viewbox="0 0 16 16">
                   <path
                     d="M0 16L13 3M7.6 3H13V8.4"
                     stroke="currentColor"
-                    stroke-width="1"
                     stroke-linecap="butt"
                     stroke-linejoin="miter"
-                  />
+                    stroke-width="1"
+                  ></path>
                 </svg>
               </span>
             </a>
-
             <a
               class="cs-next-row big-link big-link--project"
-              href="../Work/climate.html"
               data-preview="../Images/Home/0_work_5.png"
               data-preview-color="var(--project-5)"
+              href="../Work/climate.html"
             >
               <span data-i18n="project_titles.climate"
                 >Millions for Climate
               </span>
-              <span class="link-arrow" aria-hidden="true">
-                <svg viewBox="0 0 16 16" fill="none">
+              <span aria-hidden="true" class="link-arrow">
+                <svg fill="none" viewbox="0 0 16 16">
                   <path
                     d="M0 16L13 3M7.6 3H13V8.4"
                     stroke="currentColor"
-                    stroke-width="1"
                     stroke-linecap="butt"
                     stroke-linejoin="miter"
-                  />
+                    stroke-width="1"
+                  ></path>
                 </svg>
               </span>
             </a>
           </div>
         </div>
         <!-- ============Preview============-->
-        <div class="cs-project-preview" aria-hidden="true">
+        <div aria-hidden="true" class="cs-project-preview">
           <div class="cs-project-preview-card">
-            <img src="" alt="" />
+            <img alt="" src="" />
           </div>
         </div>
         <!--=====End Preview====-->

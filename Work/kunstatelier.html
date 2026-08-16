@@ -1,4 +1,5 @@
 <!doctype html>
+
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -10,7 +11,7 @@
       href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300;0,400;0,700;1,300;1,400&amp;display=swap"
       rel="stylesheet"
     />
-    <link rel="icon" type="image/png" href="../Images/General/favicon.png" />
+    <link href="../Images/General/favicon.png" rel="icon" type="image/png" />
     <link href="../style.css" rel="stylesheet" />
     <script>
       /* ============================================= AVOID FLICKER
@@ -73,7 +74,6 @@
       })();
     </script>
   </head>
-
   <body class="case-page" style="--project-accent: var(--project-4)">
     <div id="cursor"></div>
     <nav>
@@ -85,9 +85,9 @@
           ><span class="l hide" data-i="3">u</span
           ><span class="l hide" data-i="4">k</span></span
         ><span class="logo-last"
-          ><span class="l space hide" data-i="5"> </span
+          ><span class="l space hide" data-i="5"> </span
           ><span class="l dot">·</span
-          ><span class="l space hide" data-i="6"> </span
+          ><span class="l space hide" data-i="6"> </span
           ><span class="l" data-i="7">F</span
           ><span class="l hide" data-i="8">o</span
           ><span class="l hide" data-i="9">n</span
@@ -107,26 +107,26 @@
             <span class="moon-glyph">◐</span><span class="orbit-dot"></span>
           </button>
           <button
+            aria-controls="mobile-menu"
+            aria-expanded="false"
+            aria-label="Open menu"
             class="nav-hamburger"
             id="nav-hamburger"
             type="button"
-            aria-label="Open menu"
-            aria-expanded="false"
-            aria-controls="mobile-menu"
           >
             <span></span><span></span><span></span>
           </button>
         </div>
       </div>
       <div class="mobile-menu" id="mobile-menu">
-        <a class="mobile-menu-link" href="#services" data-i18n="nav.services"
+        <a class="mobile-menu-link" data-i18n="nav.services" href="#services"
           >Services</a
         >
-        <a class="mobile-menu-link" href="#work" data-i18n="nav.work">Work</a>
-        <a class="mobile-menu-link" href="#about" data-i18n="nav.about"
+        <a class="mobile-menu-link" data-i18n="nav.work" href="#work">Work</a>
+        <a class="mobile-menu-link" data-i18n="nav.about" href="#about"
           >About</a
         >
-        <a class="mobile-menu-link" href="#contact" data-i18n="nav.contact"
+        <a class="mobile-menu-link" data-i18n="nav.contact" href="#contact"
           >Contact</a
         >
       </div>
@@ -134,115 +134,110 @@
     <section id="site-gate">
       <div class="site-gate-box">
         <p class="site-gate-title" data-i18n="gate.title">Private Portfolio</p>
-
         <p class="site-gate-text" data-i18n="gate.description">
           This portfolio is currently shared with selected reviewers.<br />
           Please enter the password to continue.
         </p>
-
         <input
-          type="password"
-          id="site-gate-input"
+          autofocus=""
           data-i18n-placeholder="gate.placeholder"
+          id="site-gate-input"
           placeholder="Password"
-          autofocus
+          type="password"
         />
-
-        <button id="site-gate-submit" data-i18n="gate.button">
+        <button data-i18n="gate.button" id="site-gate-submit">
           Enter portfolio
         </button>
-
-        <p id="site-gate-error" data-i18n="gate.error">Incorrect password.</p>
+        <p data-i18n="gate.error" id="site-gate-error">Incorrect password.</p>
       </div>
     </section>
     <div id="site-content">
       <main>
         <!-- OVERVIEW -->
         <section class="cs-overview card-container" id="section-overview">
-          <nav class="left-sidebar" aria-label="Case study sections">
+          <nav aria-label="Case study sections" class="left-sidebar">
             <div class="left-sidebar-home">
               <a
                 class="left-sidebar-ghost"
-                href="../index.html#services"
                 data-i18n="nav.services"
+                href="../index.html#services"
                 >Services</a
               >
-              <a href="../index.html#work" data-i18n="nav.work">Work</a>
+              <a data-i18n="nav.work" href="../index.html#work">Work</a>
               <a
                 class="left-sidebar-ghost"
-                href="../index.html#about"
                 data-i18n="nav.about"
+                href="../index.html#about"
                 >About</a
               >
               <a
                 class="left-sidebar-ghost"
-                href="../index.html#contact"
                 data-i18n="nav.contact"
+                href="../index.html#contact"
                 >Contact</a
               >
             </div>
             <a
-              href="#section-overview"
-              data-target="section-overview"
               data-i18n="cs_shared.sidebar_overview"
+              data-target="section-overview"
+              href="#section-overview"
               >Overview</a
             >
             <a
-              href="#section-problem"
-              data-target="section-problem"
               data-i18n="cs_shared.sidebar_problem"
+              data-target="section-problem"
+              href="#section-problem"
               >Problem</a
             >
             <a
-              href="#section-process"
-              data-target="section-process"
               data-i18n="cs_shared.sidebar_process"
+              data-target="section-process"
+              href="#section-process"
               >Process</a
             >
             <div class="left-sidebar-sub">
               <a
                 class="left-sidebar-sub-item"
-                href="#section-understanding"
-                data-target="section-understanding"
                 data-i18n="kunstatelier.sidebar.understanding"
+                data-target="section-understanding"
+                href="#section-understanding"
                 >01 Understanding</a
               >
               <a
                 class="left-sidebar-sub-item"
-                href="#section-exploring"
-                data-target="section-exploring"
                 data-i18n="kunstatelier.sidebar.exploring"
+                data-target="section-exploring"
+                href="#section-exploring"
                 >02 Exploring</a
               >
               <a
                 class="left-sidebar-sub-item"
-                href="#section-testing"
-                data-target="section-testing"
                 data-i18n="kunstatelier.sidebar.testing"
+                data-target="section-testing"
+                href="#section-testing"
                 >03 Testing</a
               >
               <a
                 class="left-sidebar-sub-item"
-                href="#section-refining"
-                data-target="section-refining"
                 data-i18n="kunstatelier.sidebar.refining"
+                data-target="section-refining"
+                href="#section-refining"
                 >04 Refining</a
               >
             </div>
             <a
-              href="#section-product"
-              data-target="section-product"
               data-i18n="cs_shared.sidebar_prototype"
+              data-target="section-product"
+              href="#section-product"
               >Prototype</a
             >
             <a
-              href="#section-afterlife"
-              data-target="section-afterlife"
               data-i18n="cs_shared.sidebar_reflection"
+              data-target="section-afterlife"
+              href="#section-afterlife"
               >Reflection</a
             >
           </nav>
-
           <div class="cs-overview-content">
             <p class="label label-muted" data-i18n="cs_shared.case_study_label">
               Case study
@@ -250,7 +245,6 @@
             <h1 class="cs-headline" data-i18n="project_titles.kunstatelier">
               Heard of KunstAtelier? <em>Me neither</em>.
             </h1>
-
             <div class="cs-overview-intro">
               <p
                 class="cs-overview-description"
@@ -261,7 +255,6 @@
                 different levels of technical confidence and language
                 proficiency.
               </p>
-
               <p
                 class="cs-overview-note"
                 data-i18n="kunstatelier.overview_note"
@@ -271,25 +264,23 @@
               </p>
             </div>
           </div>
-
           <div class="cs-overview-image-wrap">
             <div class="cs-overview-image" style="background: var(--project-4)">
               <img
-                src="../Images/KunstAtelier/0_hero.png"
                 alt="KunstAtelier app hero image"
+                src="../Images/KunstAtelier/0_hero.png"
                 style="height: 90%"
               />
             </div>
           </div>
-
           <div class="cs-overview-meta">
             <div class="cs-overview-meta-block">
-              <p class="label label-muted" data-i18n="cs_shared.meta_role">
+              <p class="label label-muted" data-i18n="cs_shared.meta_what">
                 What
               </p>
               <p
                 class="cs-overview-meta-value"
-                data-i18n="kunstatelier.meta.role_value"
+                data-i18n="kunstatelier.meta.what_value"
               >
                 A museum app concept focused on discovery, accessibility and
                 simple booking experiences for people with different levels of
@@ -297,12 +288,12 @@
               </p>
             </div>
             <div class="cs-overview-meta-block">
-              <p class="label label-muted" data-i18n="cs_shared.meta_timeline">
+              <p class="label label-muted" data-i18n="cs_shared.meta_why">
                 Why
               </p>
               <p
                 class="cs-overview-meta-value"
-                data-i18n="kunstatelier.meta.timeline_value"
+                data-i18n="kunstatelier.meta.why_value"
               >
                 I'm not a museum fan. So how well would I do stepping into the
                 shoes of museum lovers? That became the ultimate UX design
@@ -310,12 +301,12 @@
               </p>
             </div>
             <div class="cs-overview-meta-block">
-              <p class="label label-muted" data-i18n="cs_shared.meta_platform">
+              <p class="label label-muted" data-i18n="cs_shared.meta_how">
                 How
               </p>
               <p
                 class="cs-overview-meta-value"
-                data-i18n="kunstatelier.meta.platform_value"
+                data-i18n="kunstatelier.meta.how_value"
               >
                 Going through all the steps of the Google UX Design Certificate,
                 from understanding user needs to designing, testing and refining
@@ -324,7 +315,6 @@
             </div>
           </div>
         </section>
-
         <!-- THE PROBLEM -->
         <!-- THE PROBLEM -->
         <section class="cs-section card-container" id="section-problem">
@@ -402,7 +392,6 @@
             </div>
           </div>
         </section>
-
         <!-- THE PROCESS -->
         <section class="cs-process-section card-container" id="section-process">
           <div class="cs-process-bar">
@@ -563,7 +552,6 @@
               </p>
             </div>
           </div>
-
           <!-- 01 Understanding -->
           <div class="cs-process-step-section first" id="section-understanding">
             <div class="cs-process-step-card">
@@ -629,66 +617,69 @@
                 </div>
               </div>
             </div>
-            <div class="cs-design-cards" style="display: block">
-              <p
-                class="cs-image-caption cs-image-caption--center"
-                data-i18n="kunstatelier.understanding.caption1"
+            <div class="cs-process-step-media">
+              <div
+                class="cs-process-step-media-item cs-design-cards"
+                style="display: block"
               >
-                Competitive audit
-              </p>
-              <img
-                src="../Images/KunstAtelier/1_competitive_audit.png"
-                alt="Competitive audit"
-                class="cs-process-step-image cs-lightbox-trigger cursor-grow"
-              />
-              <p
-                class="cs-image-caption cs-image-caption--center"
-                data-i18n="kunstatelier.understanding.caption2"
-              >
-                Personas
-              </p>
-              <img
-                src="../Images/KunstAtelier/1_persona_1.png"
-                alt="Persona 1"
-                class="cs-process-step-image cs-lightbox-trigger cursor-grow"
-              />
-              <img
-                src="../Images/KunstAtelier/1_persona_2.png"
-                alt="Persona 2"
-                class="cs-process-step-image cs-lightbox-trigger cursor-grow"
-              />
-              <p
-                class="cs-image-caption cs-image-caption--center"
-                data-i18n="kunstatelier.understanding.caption3"
-              >
-                User journey maps
-              </p>
-              <div class="cs-image-container">
+                <p
+                  class="cs-image-caption cs-image-caption--center"
+                  data-i18n="kunstatelier.understanding.caption1"
+                >
+                  Competitive audit
+                </p>
                 <img
-                  src="../Images/KunstAtelier/1_user_journey_1.png"
-                  alt="User journey map 1"
+                  alt="Competitive audit"
                   class="cs-process-step-image cs-lightbox-trigger cursor-grow"
+                  src="../Images/KunstAtelier/1_competitive_audit.png"
                 />
+                <p
+                  class="cs-image-caption cs-image-caption--center"
+                  data-i18n="kunstatelier.understanding.caption2"
+                >
+                  Personas
+                </p>
                 <img
-                  src="../Images/KunstAtelier/1_user_journey_2.png"
-                  alt="User journey map 2"
+                  alt="Persona 1"
                   class="cs-process-step-image cs-lightbox-trigger cursor-grow"
+                  src="../Images/KunstAtelier/1_persona_1.png"
+                /><img
+                  alt="Persona 2"
+                  class="cs-process-step-image cs-lightbox-trigger cursor-grow"
+                  src="../Images/KunstAtelier/1_persona_2.png"
+                />
+                <p
+                  class="cs-image-caption cs-image-caption--center"
+                  data-i18n="kunstatelier.understanding.caption3"
+                >
+                  User journey maps
+                </p>
+                <div class="cs-image-container">
+                  <img
+                    alt="User journey map 1"
+                    class="cs-process-step-image cs-lightbox-trigger cursor-grow"
+                    src="../Images/KunstAtelier/1_user_journey_1.png"
+                  />
+                  <img
+                    alt="User journey map 2"
+                    class="cs-process-step-image cs-lightbox-trigger cursor-grow"
+                    src="../Images/KunstAtelier/1_user_journey_2.png"
+                  />
+                </div>
+                <p
+                  class="cs-image-caption cs-image-caption--center"
+                  data-i18n="kunstatelier.understanding.caption4"
+                >
+                  Storyboard
+                </p>
+                <img
+                  alt="Storyboard"
+                  class="cs-process-step-image cs-lightbox-trigger cursor-grow"
+                  src="../Images/KunstAtelier/1_storyboard.png"
                 />
               </div>
-              <p
-                class="cs-image-caption cs-image-caption--center"
-                data-i18n="kunstatelier.understanding.caption4"
-              >
-                Storyboard
-              </p>
-              <img
-                src="../Images/KunstAtelier/1_storyboard.png"
-                alt="Storyboard"
-                class="cs-process-step-image cs-lightbox-trigger cursor-grow"
-              />
             </div>
           </div>
-
           <!-- 02 Exploring -->
           <div class="cs-process-step-section" id="section-exploring">
             <div class="cs-process-step-card">
@@ -754,43 +745,47 @@
                 </div>
               </div>
             </div>
-            <div class="cs-design-cards" style="display: block">
-              <p
-                class="cs-image-caption cs-image-caption--center"
-                data-i18n="kunstatelier.exploring.caption1"
+            <div class="cs-process-step-media">
+              <div
+                class="cs-process-step-media-item cs-design-cards"
+                style="display: block"
               >
-                User flow
-              </p>
-              <img
-                src="../Images/KunstAtelier/2_1_flow_chart.png"
-                alt="Flow chart"
-                class="cs-process-step-image cs-lightbox-trigger cursor-grow"
-              />
-              <p
-                class="cs-image-caption cs-image-caption--center"
-                data-i18n="kunstatelier.exploring.caption2"
-              >
-                Wireframes
-              </p>
-              <img
-                src="../Images/KunstAtelier/2_2_wireframe.png"
-                alt="Wireframe"
-                class="cs-process-step-image cs-lightbox-trigger cursor-grow"
-              />
-              <p
-                class="cs-image-caption cs-image-caption--center"
-                data-i18n="kunstatelier.exploring.caption3"
-              >
-                Low-fidelity prototype
-              </p>
-              <img
-                src="../Images/KunstAtelier/2_3_lo-fi.png"
-                alt="Low fidelity prototype"
-                class="cs-process-step-image cs-lightbox-trigger cursor-grow"
-              />
+                <p
+                  class="cs-image-caption cs-image-caption--center"
+                  data-i18n="kunstatelier.exploring.caption1"
+                >
+                  User flow
+                </p>
+                <img
+                  alt="Flow chart"
+                  class="cs-process-step-image cs-lightbox-trigger cursor-grow"
+                  src="../Images/KunstAtelier/2_1_flow_chart.png"
+                />
+                <p
+                  class="cs-image-caption cs-image-caption--center"
+                  data-i18n="kunstatelier.exploring.caption2"
+                >
+                  Wireframes
+                </p>
+                <img
+                  alt="Wireframe"
+                  class="cs-process-step-image cs-lightbox-trigger cursor-grow"
+                  src="../Images/KunstAtelier/2_2_wireframe.png"
+                />
+                <p
+                  class="cs-image-caption cs-image-caption--center"
+                  data-i18n="kunstatelier.exploring.caption3"
+                >
+                  Low-fidelity prototype
+                </p>
+                <img
+                  alt="Low fidelity prototype"
+                  class="cs-process-step-image cs-lightbox-trigger cursor-grow"
+                  src="../Images/KunstAtelier/2_3_lo-fi.png"
+                />
+              </div>
             </div>
           </div>
-
           <!-- 03 Testing -->
           <div class="cs-process-step-section" id="section-testing">
             <div class="cs-process-step-card">
@@ -892,19 +887,22 @@
                 </div>
               </div>
             </div>
-            <p
-              class="cs-image-caption cs-image-caption--center"
-              data-i18n="kunstatelier.testing.caption"
-            >
-              Iterating the Lo-Fi
-            </p>
-            <img
-              src="../Images/KunstAtelier/3_refine.png"
-              alt="Testing refinements"
-              class="cs-process-step-image cs-lightbox-trigger cursor-grow"
-            />
+            <div class="cs-process-step-media">
+              <div class="cs-process-step-media-item">
+                <p
+                  class="cs-image-caption cs-image-caption--center"
+                  data-i18n="kunstatelier.testing.caption"
+                >
+                  Iterating the Lo-Fi
+                </p>
+                <img
+                  alt="Testing refinements"
+                  class="cs-process-step-image cs-lightbox-trigger cursor-grow"
+                  src="../Images/KunstAtelier/3_refine.png"
+                />
+              </div>
+            </div>
           </div>
-
           <!-- 04 Refining -->
           <div class="cs-process-step-section" id="section-refining">
             <div class="cs-process-step-card">
@@ -935,7 +933,6 @@
                     high-fidelity prototype and design library simultaneously to
                     ensure consistency across the entire experience.
                   </p>
-
                   <div class="cs-process-cards">
                     <div class="cs-process-card">
                       <p
@@ -973,223 +970,224 @@
                 </div>
               </div>
             </div>
-            <div
-              class="cs-image-caption cs-image-caption--center"
-              data-i18n="kunstatelier.refining.decisions_caption"
-            >
-              Design decisions (hover to discover)
-            </div>
-            <div class="cs-spotlight-image">
-              <img
-                src="../Images/KunstAtelier/4_1_library_2.png"
-                alt="KunstAtelier design system overview"
-                class="cs-process-step-image cs-lightbox-trigger cursor-grow"
-              />
-
-              <!-- Colors -->
-              <div
-                class="cs-spotlight-zone cursor-grow"
-                style="top: 0%; left: 0%; width: 20.7%; height: 51%"
-              >
-                <div class="cs-spotlight-card">
-                  <p
-                    class="cs-design-card-title"
-                    data-i18n="kunstatelier.refining.spotlight1_title"
+            <div class="cs-process-step-media">
+              <div class="cs-process-step-media-item">
+                <div
+                  class="cs-image-caption cs-image-caption--center"
+                  data-i18n="kunstatelier.refining.decisions_caption"
+                >
+                  Design decisions (hover to discover)
+                </div>
+                <div class="cs-spotlight-image">
+                  <img
+                    alt="KunstAtelier design system overview"
+                    class="cs-process-step-image cs-lightbox-trigger cursor-grow"
+                    src="../Images/KunstAtelier/4_1_library_2.png"
+                  />
+                  <!-- Colors -->
+                  <div
+                    class="cs-spotlight-zone cursor-grow"
+                    style="top: 0%; left: 0%; width: 20.7%; height: 51%"
                   >
-                    Creativity and sophistication
-                  </p>
-                  <p
-                    class="cs-process-card-text"
-                    data-i18n="kunstatelier.refining.spotlight1_text"
+                    <div class="cs-spotlight-card">
+                      <p
+                        class="cs-design-card-title"
+                        data-i18n="kunstatelier.refining.spotlight1_title"
+                      >
+                        Creativity and sophistication
+                      </p>
+                      <p
+                        class="cs-process-card-text"
+                        data-i18n="kunstatelier.refining.spotlight1_text"
+                      >
+                        A restrained and neutral color palette keeps the focus
+                        on exhibitions and artworks instead of the interface
+                        itself. Violet is used intentionally as an accent color
+                        to guide attention and add a sense of creativity and
+                        sophistication.
+                      </p>
+                    </div>
+                  </div>
+                  <!-- Typography -->
+                  <div
+                    class="cs-spotlight-zone cursor-grow"
+                    style="top: 0%; left: 23%; width: 46.3%; height: 51%"
                   >
-                    A restrained and neutral color palette keeps the focus on
-                    exhibitions and artworks instead of the interface itself.
-                    Violet is used intentionally as an accent color to guide
-                    attention and add a sense of creativity and sophistication.
-                  </p>
+                    <div class="cs-spotlight-card">
+                      <p
+                        class="cs-design-card-title"
+                        data-i18n="kunstatelier.refining.spotlight2_title"
+                      >
+                        A refined cultural aesthetic
+                      </p>
+                      <p
+                        class="cs-process-card-text"
+                        data-i18n="kunstatelier.refining.spotlight2_text"
+                      >
+                        The combination of Inria Serif and Inter balances a
+                        refined cultural aesthetic with strong readability
+                        across different age groups and levels of technical
+                        confidence. A consistent spacing system based on the
+                        golden ratio creates visual rhythm and harmony
+                        throughout the interface.
+                      </p>
+                    </div>
+                  </div>
+                  <!-- Buttons -->
+                  <div
+                    class="cs-spotlight-zone cursor-grow"
+                    style="top: 0%; left: 71.7%; width: 28.4%; height: 40.7%"
+                  >
+                    <div class="cs-spotlight-card cs-spotlight-card--left">
+                      <p
+                        class="cs-design-card-title"
+                        data-i18n="kunstatelier.refining.spotlight3_title"
+                      >
+                        Design for confidence
+                      </p>
+                      <p
+                        class="cs-process-card-text"
+                        data-i18n="kunstatelier.refining.spotlight3_text"
+                      >
+                        Clear visual hierarchy distinguishes primary, secondary
+                        and disabled actions, helping users immediately
+                        understand what they can do. Important contextual
+                        information, such as ticket prices, is integrated
+                        directly into buttons to support confident
+                        decision-making.
+                      </p>
+                    </div>
+                  </div>
+                  <!-- Icons -->
+                  <div
+                    class="cs-spotlight-zone cursor-grow"
+                    style="top: 42.5%; left: 71.7%; width: 28.4%; height: 25.3%"
+                  >
+                    <div class="cs-spotlight-card cs-spotlight-card--left">
+                      <p
+                        class="cs-design-card-title"
+                        data-i18n="kunstatelier.refining.spotlight4_title"
+                      >
+                        Communicate at a glance
+                      </p>
+                      <p
+                        class="cs-process-card-text"
+                        data-i18n="kunstatelier.refining.spotlight4_text"
+                      >
+                        Icons support orientation without dominating the
+                        interface. They also communicate key exhibition
+                        characteristics at a glance, such as accessibility,
+                        family-friendliness and available translations. This
+                        helps visitors quickly understand whether an exhibition
+                        is right for them before reading more detailed
+                        information.
+                      </p>
+                    </div>
+                  </div>
+                  <!-- Other elements -->
+                  <div
+                    class="cs-spotlight-zone cursor-grow"
+                    style="top: 69.7%; left: 71.7%; width: 28.4%; height: 30.3%"
+                  >
+                    <div class="cs-spotlight-card cs-spotlight-card--left">
+                      <p
+                        class="cs-design-card-title"
+                        data-i18n="kunstatelier.refining.spotlight5_title"
+                      >
+                        Inspired by gallery spaces
+                      </p>
+                      <p
+                        class="cs-process-card-text"
+                        data-i18n="kunstatelier.refining.spotlight5_text"
+                      >
+                        Square cards and framed components echo the proportions
+                        of picture frames, subtly extending the visual language
+                        of the museum into the interface. This creates a
+                        cohesive experience between the digital and physical
+                        worlds.
+                      </p>
+                    </div>
+                  </div>
+                  <!-- Calendar -->
+                  <div
+                    class="cs-spotlight-zone cursor-grow"
+                    style="top: 52.7%; left: 0%; width: 33.8%; height: 47.4%"
+                  >
+                    <div class="cs-spotlight-card">
+                      <p
+                        class="cs-design-card-title"
+                        data-i18n="kunstatelier.refining.spotlight6_title"
+                      >
+                        A familiar way to book
+                      </p>
+                      <p
+                        class="cs-process-card-text"
+                        data-i18n="kunstatelier.refining.spotlight6_text"
+                      >
+                        A full-month calendar view provides a familiar overview,
+                        allowing visitors to quickly choose a suitable date for
+                        both spontaneous and future visits.
+                      </p>
+                    </div>
+                  </div>
+                  <!-- Top and bottom bars -->
+                  <div
+                    class="cs-spotlight-zone cursor-grow"
+                    style="top: 52.7%; left: 36.3%; width: 33%; height: 47.4%"
+                  >
+                    <div class="cs-spotlight-card">
+                      <p
+                        class="cs-design-card-title"
+                        data-i18n="kunstatelier.refining.spotlight7_title"
+                      >
+                        Following the visitor's journey
+                      </p>
+                      <p
+                        class="cs-process-card-text"
+                        data-i18n="kunstatelier.refining.spotlight7_text"
+                      >
+                        The bottom navigation is organized around the natural
+                        museum journey: discover exhibitions, book tickets, plan
+                        the visit and access your bookings. This creates an
+                        intuitive flow that matches users' mental model.
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </div>
-
-              <!-- Typography -->
-              <div
-                class="cs-spotlight-zone cursor-grow"
-                style="top: 0%; left: 23%; width: 46.3%; height: 51%"
-              >
-                <div class="cs-spotlight-card">
-                  <p
-                    class="cs-design-card-title"
-                    data-i18n="kunstatelier.refining.spotlight2_title"
-                  >
-                    A refined cultural aesthetic
-                  </p>
-                  <p
-                    class="cs-process-card-text"
-                    data-i18n="kunstatelier.refining.spotlight2_text"
-                  >
-                    The combination of Inria Serif and Inter balances a refined
-                    cultural aesthetic with strong readability across different
-                    age groups and levels of technical confidence. A consistent
-                    spacing system based on the golden ratio creates visual
-                    rhythm and harmony throughout the interface.
-                  </p>
+              <div class="cs-process-step-media-item">
+                <div
+                  class="cs-image-caption cs-image-caption--center"
+                  data-i18n="kunstatelier.refining.ai_caption"
+                >
+                  Bringing my dream museum to life with chatGPT
                 </div>
-              </div>
-
-              <!-- Buttons -->
-              <div
-                class="cs-spotlight-zone cursor-grow"
-                style="top: 0%; left: 71.7%; width: 28.4%; height: 40.7%"
-              >
-                <div class="cs-spotlight-card cs-spotlight-card--left">
-                  <p
-                    class="cs-design-card-title"
-                    data-i18n="kunstatelier.refining.spotlight3_title"
+                <div class="cs-design-cards" style="display: block">
+                  <img
+                    alt="AI generated visual exploration"
+                    class="cs-process-step-image cs-lightbox-trigger cursor-grow"
+                    src="../Images/KunstAtelier/4_3_ai.png"
+                  />
+                  <div
+                    class="cs-image-caption cs-image-caption--center"
+                    data-i18n="kunstatelier.refining.hifi_caption"
                   >
-                    Design for confidence
-                  </p>
-                  <p
-                    class="cs-process-card-text"
-                    data-i18n="kunstatelier.refining.spotlight3_text"
-                  >
-                    Clear visual hierarchy distinguishes primary, secondary and
-                    disabled actions, helping users immediately understand what
-                    they can do. Important contextual information, such as
-                    ticket prices, is integrated directly into buttons to
-                    support confident decision-making.
-                  </p>
-                </div>
-              </div>
-
-              <!-- Icons -->
-              <div
-                class="cs-spotlight-zone cursor-grow"
-                style="top: 42.5%; left: 71.7%; width: 28.4%; height: 25.3%"
-              >
-                <div class="cs-spotlight-card cs-spotlight-card--left">
-                  <p
-                    class="cs-design-card-title"
-                    data-i18n="kunstatelier.refining.spotlight4_title"
-                  >
-                    Communicate at a glance
-                  </p>
-                  <p
-                    class="cs-process-card-text"
-                    data-i18n="kunstatelier.refining.spotlight4_text"
-                  >
-                    Icons support orientation without dominating the interface.
-                    They also communicate key exhibition characteristics at a
-                    glance, such as accessibility, family-friendliness and
-                    available translations. This helps visitors quickly
-                    understand whether an exhibition is right for them before
-                    reading more detailed information.
-                  </p>
-                </div>
-              </div>
-
-              <!-- Other elements -->
-              <div
-                class="cs-spotlight-zone cursor-grow"
-                style="top: 69.7%; left: 71.7%; width: 28.4%; height: 30.3%"
-              >
-                <div class="cs-spotlight-card cs-spotlight-card--left">
-                  <p
-                    class="cs-design-card-title"
-                    data-i18n="kunstatelier.refining.spotlight5_title"
-                  >
-                    Inspired by gallery spaces
-                  </p>
-                  <p
-                    class="cs-process-card-text"
-                    data-i18n="kunstatelier.refining.spotlight5_text"
-                  >
-                    Square cards and framed components echo the proportions of
-                    picture frames, subtly extending the visual language of the
-                    museum into the interface. This creates a cohesive
-                    experience between the digital and physical worlds.
-                  </p>
-                </div>
-              </div>
-
-              <!-- Calendar -->
-              <div
-                class="cs-spotlight-zone cursor-grow"
-                style="top: 52.7%; left: 0%; width: 33.8%; height: 47.4%"
-              >
-                <div class="cs-spotlight-card">
-                  <p
-                    class="cs-design-card-title"
-                    data-i18n="kunstatelier.refining.spotlight6_title"
-                  >
-                    A familiar way to book
-                  </p>
-                  <p
-                    class="cs-process-card-text"
-                    data-i18n="kunstatelier.refining.spotlight6_text"
-                  >
-                    A full-month calendar view provides a familiar overview,
-                    allowing visitors to quickly choose a suitable date for both
-                    spontaneous and future visits.
-                  </p>
-                </div>
-              </div>
-
-              <!-- Top and bottom bars -->
-              <div
-                class="cs-spotlight-zone cursor-grow"
-                style="top: 52.7%; left: 36.3%; width: 33%; height: 47.4%"
-              >
-                <div class="cs-spotlight-card">
-                  <p
-                    class="cs-design-card-title"
-                    data-i18n="kunstatelier.refining.spotlight7_title"
-                  >
-                    Following the visitor's journey
-                  </p>
-                  <p
-                    class="cs-process-card-text"
-                    data-i18n="kunstatelier.refining.spotlight7_text"
-                  >
-                    The bottom navigation is organized around the natural museum
-                    journey: discover exhibitions, book tickets, plan the visit
-                    and access your bookings. This creates an intuitive flow
-                    that matches users' mental model.
-                  </p>
+                    High-Fidelity Prototype
+                  </div>
+                  <img
+                    alt="High fidelity prototype"
+                    class="cs-process-step-image cs-lightbox-trigger cursor-grow"
+                    src="../Images/KunstAtelier/4_2_hi-fi.png"
+                  />
                 </div>
               </div>
             </div>
           </div>
         </section>
 
-        <div class="cs-process-step-section" id="section-refining">
-          <div
-            class="cs-image-caption cs-image-caption--center"
-            data-i18n="kunstatelier.refining.ai_caption"
-          >
-            Bringing my dream museum to life with chatGPT
-          </div>
-          <div class="cs-design-cards" style="display: block">
-            <img
-              src="../Images/KunstAtelier/4_3_ai.png"
-              alt="AI generated visual exploration"
-              class="cs-process-step-image cs-lightbox-trigger cursor-grow"
-            />
-            <div
-              class="cs-image-caption cs-image-caption--center"
-              data-i18n="kunstatelier.refining.hifi_caption"
-            >
-              High-Fidelity Prototype
-            </div>
-            <img
-              src="../Images/KunstAtelier/4_2_hi-fi.png"
-              alt="High fidelity prototype"
-              class="cs-process-step-image cs-lightbox-trigger cursor-grow"
-            />
-          </div>
-        </div>
-
         <div class="cs-lightbox" id="lightbox">
           <button class="cs-lightbox-close" id="lightbox-close">✕</button>
-          <img class="cs-lightbox-img" id="lightbox-img" src="" alt="" />
+          <img alt="" class="cs-lightbox-img" id="lightbox-img" src="" />
         </div>
         <div
           class="cs-image-caption cs-image-caption--center"
@@ -1197,18 +1195,16 @@
         >
           Final prototype video
         </div>
-
         <div class="cs-product-video-wrap">
           <video
-            src="../Images/KunstAtelier/5_final_product_video.mp4"
-            autoplay
-            muted
-            loop
-            playsinline
+            autoplay=""
             class="cs-product-video"
+            loop=""
+            muted=""
+            playsinline=""
+            src="../Images/KunstAtelier/5_final_product_video.mp4"
           ></video>
         </div>
-
         <!-- THE PRODUCT -->
         <section class="cs-product" id="section-product">
           <p class="label label-muted" data-i18n="kunstatelier.product.label">
@@ -1216,20 +1212,19 @@
           </p>
           <h2
             class="section-title"
-            style="text-align: left; margin-bottom: var(--element-gap)"
             data-i18n="kunstatelier.product.heading"
+            style="text-align: left; margin-bottom: var(--element-gap)"
           >
             A museum experience <strong>without friction.</strong>
           </h2>
-
           <div class="cs-product-showcase">
             <div
               class="cs-product-card cs-product-card-large"
               style="background: var(--project-4)"
             >
               <img
-                src="../Images/KunstAtelier/6_product_1.png"
                 alt="Final product screen 1"
+                src="../Images/KunstAtelier/6_product_1.png"
                 style="
                   width: 80%;
                   height: auto;
@@ -1241,8 +1236,8 @@
             <div class="cs-product-details">
               <div class="cs-product-card">
                 <img
-                  src="../Images/KunstAtelier/6_product_2.png"
                   alt="Final product screen 2"
+                  src="../Images/KunstAtelier/6_product_2.png"
                   style="
                     width: 80%;
                     height: auto;
@@ -1253,8 +1248,8 @@
               </div>
               <div class="cs-product-card">
                 <img
-                  src="../Images/KunstAtelier/6_product_3.png"
                   alt="Final product screen 3"
+                  src="../Images/KunstAtelier/6_product_3.png"
                   style="
                     width: 80%;
                     height: auto;
@@ -1266,9 +1261,7 @@
             </div>
           </div>
         </section>
-
         <!-- REFLECTION -->
-
         <section class="cs-afterlife" id="section-afterlife">
           <div class="cs-afterlife-content">
             <p
@@ -1362,7 +1355,6 @@
           </div>
         </section>
       </main>
-
       <!-- NEXT PROJECTS -->
       <section class="cs-next">
         <div class="cs-next-inner">
@@ -1380,29 +1372,29 @@
               <span data-i18n="cs_shared.back_to_work"
                 >Back to work overview</span
               >
-              <span class="link-arrow" aria-hidden="true">
-                <svg viewBox="0 0 16 16" fill="none">
+              <span aria-hidden="true" class="link-arrow">
+                <svg fill="none" viewbox="0 0 16 16">
                   <path
                     d="M0 16L13 3M7.6 3H13V8.4"
                     stroke="currentColor"
-                    stroke-width="1"
                     stroke-linecap="butt"
                     stroke-linejoin="miter"
-                  />
+                    stroke-width="1"
+                  ></path>
                 </svg>
               </span>
             </a>
             <a class="big-link big-link--light" href="../index.html#contact">
               <p class="link-text" data-i18n="hero.cta_contact">Get in touch</p>
-              <span class="link-arrow" aria-hidden="true">
-                <svg viewBox="0 0 16 16" fill="none">
+              <span aria-hidden="true" class="link-arrow">
+                <svg fill="none" viewbox="0 0 16 16">
                   <path
                     d="M0 16L13 3M7.6 3H13V8.4"
                     stroke="currentColor"
-                    stroke-width="1"
                     stroke-linecap="butt"
                     stroke-linejoin="miter"
-                  />
+                    stroke-width="1"
+                  ></path>
                 </svg>
               </span>
             </a>
@@ -1410,95 +1402,94 @@
           <div class="cs-next-right">
             <a
               class="cs-next-row big-link big-link--project"
-              href="../Work/yellow.html"
               data-preview="../Images/Home/0_work_1.png"
               data-preview-color="var(--project-1)"
+              href="../Work/yellow.html"
             >
               <span data-i18n="project_titles.yellow"
                 >Yellow is the new green</span
               >
-              <span class="link-arrow" aria-hidden="true">
-                <svg viewBox="0 0 16 16" fill="none">
+              <span aria-hidden="true" class="link-arrow">
+                <svg fill="none" viewbox="0 0 16 16">
                   <path
                     d="M0 16L13 3M7.6 3H13V8.4"
                     stroke="currentColor"
-                    stroke-width="1"
                     stroke-linecap="butt"
                     stroke-linejoin="miter"
-                  />
+                    stroke-width="1"
+                  ></path>
                 </svg>
               </span>
             </a>
             <a
               class="cs-next-row big-link big-link--project"
-              href="../Work/bw.html"
               data-preview="../Images/Home/0_work_3.png"
               data-preview-color="var(--project-3)"
+              href="../Work/bw.html"
             >
               <span data-i18n="project_titles.bw"
                 >Browsing the world's economy</span
               >
-              <span class="link-arrow" aria-hidden="true">
-                <svg viewBox="0 0 16 16" fill="none">
+              <span aria-hidden="true" class="link-arrow">
+                <svg fill="none" viewbox="0 0 16 16">
                   <path
                     d="M0 16L13 3M7.6 3H13V8.4"
                     stroke="currentColor"
-                    stroke-width="1"
                     stroke-linecap="butt"
                     stroke-linejoin="miter"
-                  />
+                    stroke-width="1"
+                  ></path>
                 </svg>
               </span>
             </a>
-
             <a
               class="cs-next-row big-link big-link--project"
-              href="../Work/skills.html"
               data-preview="../Images/Home/0_work_2.png"
               data-preview-color="var(--project-2)"
+              href="../Work/skills.html"
             >
               <span data-i18n="project_titles.skills"
                 >Upskilling the Public Sector</span
               >
-              <span class="link-arrow" aria-hidden="true">
-                <svg viewBox="0 0 16 16" fill="none">
+              <span aria-hidden="true" class="link-arrow">
+                <svg fill="none" viewbox="0 0 16 16">
                   <path
                     d="M0 16L13 3M7.6 3H13V8.4"
                     stroke="currentColor"
-                    stroke-width="1"
                     stroke-linecap="butt"
                     stroke-linejoin="miter"
-                  />
+                    stroke-width="1"
+                  ></path>
                 </svg>
               </span>
             </a>
             <a
               class="cs-next-row big-link big-link--project"
-              href="../Work/climate.html"
               data-preview="../Images/Home/0_work_5.png"
               data-preview-color="var(--project-5)"
+              href="../Work/climate.html"
             >
               <span data-i18n="project_titles.climate"
                 >Millions for Climate
               </span>
-              <span class="link-arrow" aria-hidden="true">
-                <svg viewBox="0 0 16 16" fill="none">
+              <span aria-hidden="true" class="link-arrow">
+                <svg fill="none" viewbox="0 0 16 16">
                   <path
                     d="M0 16L13 3M7.6 3H13V8.4"
                     stroke="currentColor"
-                    stroke-width="1"
                     stroke-linecap="butt"
                     stroke-linejoin="miter"
-                  />
+                    stroke-width="1"
+                  ></path>
                 </svg>
               </span>
             </a>
           </div>
         </div>
         <!-- ============Preview============-->
-        <div class="cs-project-preview" aria-hidden="true">
+        <div aria-hidden="true" class="cs-project-preview">
           <div class="cs-project-preview-card">
-            <img src="" alt="" />
+            <img alt="" src="" />
           </div>
         </div>
         <!--=====End Preview====-->

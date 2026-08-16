@@ -1631,7 +1631,6 @@ html[lang="de"] .contact-verb-spacer::after {
 ============================================= */
 
 .cs-image-caption {
-  margin-top: 2rem;
   font-size: 0.8rem;
   line-height: 1.5;
   color: var(--color-text-muted);
@@ -2121,27 +2120,32 @@ html[lang="de"] .contact-verb-spacer::after {
 
 /* Process step sections */
 .cs-process-step-section {
-  padding: var(--section-padding-x) 0 calc(var(--section-gap) * 1.5) 0;
+  padding: var(--section-padding-x) 0 calc(var(--section-gap) * 1) 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-9);
 }
+
 .cs-process-step-section.first {
   padding-top: var(--section-padding-x);
 }
 
+/* Kept for backwards compatibility with BW, but no longer changes the layout. */
 .cs-process-step-section--overlap {
-  margin-top: -330px;
+  margin-top: 0;
   background-color: var(--color-bg);
 }
 
 .cs-process-step-card {
-  /* border: var(--border-text-big);*/
+  /* Transparent layout container: spacing to media is handled by the section. */
   border: none;
   border-radius: var(--radius-md);
-  padding: var(--section-gap);
+  padding: var(--section-gap) var(--section-gap) 0;
   display: flex;
   flex-direction: column;
   gap: var(--space-6);
   width: 100%;
-  margin: 0 auto 6rem auto;
+  margin: 0 auto;
 }
 
 .cs-process-step-card-top {
@@ -2230,18 +2234,92 @@ html[lang="de"] .contact-verb-spacer::after {
   border-radius: var(--radius-sm);
   width: 100%;
 }
-.cs-process-step-image {
-  height: 60vh;
-  margin-top: var(--space-4);
-}
 
-.cs-process-step-image img,
-img.cs-process-step-image {
+.cs-process-step-image {
   width: 100%;
   height: auto;
   border-radius: var(--radius-sm);
   display: block;
+  margin: 0;
   filter: var(--image-filter);
+}
+
+/* =============================================
+   SHARED PROCESS STEP MEDIA
+   Every process step now has:
+   .cs-process-step-card + .cs-process-step-media
+============================================= */
+
+.cs-process-step-media {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-9);
+}
+
+.cs-process-step-media:empty {
+  display: none;
+}
+
+.cs-process-step-media-item {
+  width: 100%;
+  margin: 0;
+}
+
+/* Normal caption + visual stacks */
+.cs-process-step-media-item:not(.cs-process-images):not(.cs-design-cards):not(
+    .cs-who-research-wrap
+  ):not(.cs-iterations):not(.cs-survey-results):not(.cs-survey-container) {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+/* Captions and images no longer create their own outer process spacing. */
+.cs-process-step-media .cs-image-caption,
+.cs-process-step-media .cs-process-step-image {
+  margin-top: 0;
+}
+
+/* Shared multi-image stack used by Climate and Skills. */
+.cs-process-images,
+.cs-process-step-media-item.cs-process-images {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  margin-top: 0;
+}
+
+/* Existing specialist components keep their internal layout,
+   but no longer add extra outer spacing inside a process step. */
+.cs-process-step-media .cs-who-research-wrap,
+.cs-process-step-media-item.cs-who-research-wrap {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.cs-process-step-media .cs-design-cards,
+.cs-process-step-media-item.cs-design-cards,
+.cs-process-step-media .cs-image-container,
+.cs-process-step-media-item.cs-image-container,
+.cs-process-step-media .cs-iterations,
+.cs-process-step-media-item.cs-iterations,
+.cs-process-step-media .cs-survey-results,
+.cs-process-step-media-item.cs-survey-results,
+.cs-process-step-media .cs-survey-container,
+.cs-process-step-media-item.cs-survey-container,
+.cs-process-step-media .cs-decision-tabs,
+.cs-process-step-media .cs-product-showcase {
+  margin-top: 0;
+}
+
+.cs-process-step-media .cs-image-container,
+.cs-process-step-media-item.cs-image-container {
+  margin-bottom: 0;
+}
+
+.cs-process-step-media .cs-decision-tabs {
+  margin-bottom: 0;
 }
 .cs-process-step-card--highlight {
   background: var(--project-accent); /* or var(--project-color) */
@@ -3482,20 +3560,6 @@ img.cs-process-step-image {
   border: 2px solid var(--project-accent);
 }
 
-/* Don't activate on CSS hover anymore */
-.cs-spotlight-image--visible .cs-spotlight-zone:hover,
-.cs-spotlight-image--visible .cs-spotlight-zone:focus-within {
-  border-color: var(--color-text-muted);
-}
-
-.cs-spotlight-image--visible .cs-spotlight-zone:hover .cs-spotlight-card,
-.cs-spotlight-image--visible
-  .cs-spotlight-zone:focus-within
-  .cs-spotlight-card {
-  opacity: 0;
-  transform: translateY(8px);
-}
-
 /* Activated only by JS */
 .cs-spotlight-image--visible .cs-spotlight-zone.group-active {
   border-color: var(--project-accent);
@@ -4057,7 +4121,15 @@ body.gate-locked .nav-right {
   }
 
   .cs-process-step-card {
+    padding: var(--space-6) var(--space-6) 0;
+  }
+
+  .cs-process-step-card--highlight {
     padding: var(--space-6);
+  }
+
+  .cs-process-step-media {
+    gap: var(--space-6);
   }
 
   .cs-next {
@@ -4425,9 +4497,20 @@ body.gate-locked .nav-right {
   }
 
   .cs-dark-card,
-  .cs-process-step-card,
   .cs-testimonial-card {
     padding: var(--space-5);
+  }
+
+  .cs-process-step-card {
+    padding: var(--space-5) var(--space-5) 0;
+  }
+
+  .cs-process-step-card--highlight {
+    padding: var(--space-5);
+  }
+
+  .cs-process-step-media {
+    gap: var(--space-5);
   }
 
   .cs-process-bar {

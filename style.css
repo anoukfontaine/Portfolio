@@ -146,7 +146,7 @@ h2 {
 /* Small capital label - section */
 
 .label {
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -704,29 +704,40 @@ body.case-page .left-sidebar > *:not(.left-sidebar-home):nth-child(8) {
 }
 
 .hero-headline-wrap {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
   padding-top: 15vh;
-}
-.hero-headline {
-  font-size: clamp(48px, 7vw, 96px);
-  font-weight: 400;
-  line-height: 1;
-  letter-spacing: -0.06em;
-  color: var(--color-text);
-  margin-bottom: 24px;
-  max-width: 800px;
+  width: 100%;
+  height: 100%;
 }
 
-html[lang="fr"] .hero-headline,
-html[lang="de"] .hero-headline {
-  max-width: 900px;
-  font-size: clamp(44px, 6.5vw, 88px);
+.hero-main-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 64px;
+  width: 100%;
+  height: 100%;
 }
-.headline-strong {
-  font-weight: 600;
+
+.hero-copy {
+  flex: 1;
+  min-width: 0;
 }
+.hero-headline {
+  font-size: clamp(44px, 4.6vw, 96px);
+  font-weight: 400;
+  line-height: 1.02;
+  letter-spacing: -0.06em;
+  color: var(--color-text);
+  margin-bottom: 36px;
+
+  max-width: 850px; /* was 760px */
+  white-space: nowrap;
+}
+
+.hero-headline strong {
+  white-space: nowrap;
+}
+
 .headline-light {
   font-weight: 300;
 }
@@ -784,14 +795,40 @@ html[lang="de"] .hero-headline {
   justify-content: flex-end;
 }
 .hero-description {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 400;
-  line-height: 1.7;
+  line-height: 1.55;
   letter-spacing: 0;
   color: var(--color-text);
-  text-align: justify;
-  margin-bottom: 0;
-  max-width: 240px;
+  text-align: left;
+  margin-bottom: 44px;
+  max-width: 720px;
+}
+
+.hero-illustration-btn {
+  flex: 0 0 auto;
+  width: auto;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  align-self: flex-end;
+
+  /* move illustration slightly toward the headline */
+  transform: translateX(clamp(32px, 10vw, 160px));
+}
+
+.hero-illustration {
+  display: block;
+  width: auto;
+  height: auto;
+
+  /* was 58vh — about 9% larger */
+  max-height: 63vh;
+
+  max-width: 100%;
+  object-fit: contain;
+  filter: var(--image-filter);
 }
 
 /* helpers for tidy-data animation */
@@ -831,6 +868,11 @@ html[lang="de"] .hero-headline {
   align-items: center;
   justify-content: center;
 }
+.services-stage {
+  position: relative;
+  width: 100%;
+  max-width: 950px;
+}
 .venn-svg {
   display: block;
   width: 100%;
@@ -845,6 +887,10 @@ html[lang="de"] .hero-headline {
   transition:
     transform 1.2s ease,
     opacity 0.3s ease;
+}
+
+.venn-svg.hidden {
+  visibility: hidden;
 }
 .venn-svg:hover,
 .venn-svg.is-hovered {
@@ -910,39 +956,67 @@ html[lang="de"] .hero-headline {
 
 .service-cards-overlay {
   position: absolute;
-  top: 0;
+  top: 5.263%;
   left: 0;
   right: 0;
   bottom: 0;
   background: var(--color-bg);
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
-  padding: 96px;
+  padding: 0 48px;
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.4s ease;
   z-index: 1;
 }
+
 .service-cards-overlay.visible {
   opacity: 1;
   pointer-events: all;
 }
+
 .service-cards-overlay.animating {
   opacity: 1;
   pointer-events: none;
 }
+
 .service-cards-overlay.animating .service-cards {
   opacity: 0;
 }
+
 .service-cards {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 280px));
-  justify-content: center;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
   gap: 24px;
   width: 100%;
+  max-width: 640px;
+  margin: 40px 0 auto;
   box-sizing: border-box;
 }
+
+/* Main services */
+.service-card[data-key="design"] {
+  grid-column: 1 / span 6;
+  min-height: 308px;
+}
+
+.service-card[data-key="data"] {
+  grid-column: 7 / span 6;
+  min-height: 308px;
+}
+
+/* Complementary capabilities */
+.service-card[data-key="business"] {
+  grid-column: 1 / span 6;
+  min-height: 248px;
+}
+
+.service-card[data-key="development"] {
+  grid-column: 7 / span 6;
+  min-height: 248px;
+}
+
 .service-card {
   border: var(--border-text-big);
   border-radius: 2px;
@@ -950,24 +1024,29 @@ html[lang="de"] .hero-headline {
   display: flex;
   flex-direction: column;
   gap: 16px;
-  max-width: min(100%, 280px);
 }
 .service-card-title {
   font-size: 15px;
   font-weight: 700;
   color: var(--color-text);
+  margin-bottom: 8px;
 }
 .service-card-items p {
   font-size: 14px;
   font-weight: 300;
   color: var(--color-text);
-  line-height: 1.7;
+  line-height: 1.5;
+
+  min-height: 42px;
+  display: flex;
+  align-items: center;
 }
+
 .service-card-divider {
   border: 0;
   height: 0;
   border-top: var(--border-muted);
-  margin: 8px 0;
+  margin: 4px 0;
 }
 /* =============================================
    WORK CSS
@@ -1013,14 +1092,19 @@ html[lang="de"] .hero-headline {
   left: 24px;
   right: 24px;
   display: grid;
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: 1fr auto;
   align-items: center;
   z-index: 2;
 }
+
+.work-card-footer .big-link--muted {
+  color: inherit;
+  font-size: clamp(14px, 1.2vw, 20px);
+}
 .work-card-title {
-  font-size: 24px;
+  font-size: 28px;
   font-weight: 500;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.02em;
   white-space: nowrap;
 }
 
@@ -1037,6 +1121,7 @@ html[lang="de"] .hero-headline {
   gap: 8px;
   justify-content: right;
 }
+
 .work-tag {
   font-size: 12px;
   font-weight: 400;
@@ -1056,6 +1141,7 @@ html[lang="de"] .hero-headline {
   border: var(--border-bg);
 }
 .work-card-inner {
+  position: relative;
   width: 100%;
   aspect-ratio: 16 / 9;
   border-radius: var(--radius-md);
@@ -1066,15 +1152,58 @@ html[lang="de"] .hero-headline {
   transition: background 0.5s ease;
   overflow: hidden;
 }
+
+.work-card-details {
+  position: absolute;
+  top: 32%;
+  left: 18%;
+  right: 18%;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(20px, 2vw, 32px);
+  opacity: 1;
+  transform: none;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.work-card-details--dark {
+  color: var(--color-text);
+}
+
+.work-card-details--light {
+  color: var(--color-bg);
+}
+
+.work-card-detail-label {
+  margin-bottom: 24px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.work-card-detail-text {
+  max-width: 430px;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.7;
+  letter-spacing: 0;
+}
+
 .work-card-img {
+  position: relative;
+  z-index: 2;
   width: 80%;
   display: block;
-  transition: transform 1.2s ease;
+  transition: transform 1.2s cubic-bezier(0.22, 1, 0.36, 1);
   filter: var(--image-filter);
 }
+
 .work-card:hover .work-card-img {
-  transform: scale(1.1);
+  transform: translateY(35%);
 }
+
 /* =============================================
                                        ABOUT
                                     ============================================= */
@@ -1518,9 +1647,9 @@ html[lang="de"] .contact-verb-spacer::after {
 
 .hero-links {
   display: flex;
-  flex-direction: column;
-  gap: 20px;
-  padding-top: 20px;
+  flex-direction: row;
+  gap: 48px;
+  padding-top: 0;
   align-self: start;
 }
 
@@ -1536,7 +1665,7 @@ html[lang="de"] .contact-verb-spacer::after {
   display: flex;
   align-items: center;
   gap: 12px;
-  font-size: clamp(16px, 2vw, 48px);
+  font-size: clamp(16px, 1.5vw, 48px);
   font-weight: 300;
   color: var(--color-text);
   text-decoration: none;
@@ -1632,7 +1761,7 @@ html[lang="de"] .contact-verb-spacer::after {
 
 .cs-image-caption {
   font-size: 0.8rem;
-  line-height: 1.5;
+  line-height: 2;
   color: var(--color-text-muted);
   margin-top: var(--space-6);
 }
@@ -2015,12 +2144,63 @@ html[lang="de"] .contact-verb-spacer::after {
   color: var(--color-bg);
 }
 
+/* ── SOLUTION ── */
+.cs-solution {
+  display: flex;
+  flex-direction: column;
+  gap: var(--section-gap);
+}
+
+.cs-solution-heading {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.cs-solution-description {
+  max-width: 560px;
+  margin-top: var(--space-4);
+  text-align: center;
+  color: var(--color-text);
+}
+
+.cs-solution-image-wrap {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.cs-solution-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  filter: var(--image-filter);
+}
+
+.cs-solution-points {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-4);
+}
+
+.cs-solution-points .cs-problem-point {
+  border-left: var(--border-text);
+}
+
+.cs-solution-points .cs-problem-point-title,
+.cs-solution-points .cs-problem-point-text {
+  color: var(--color-text);
+}
+
 /* â”€â”€ PROCESS â”€â”€ */
 .cs-process-section {
   padding: var(--section-gap) var(--section-padding-x) 0
     var(--section-padding-x);
 }
-
+.cs-process-section > .section-heading {
+  margin-bottom: 128px;
+}
 .cs-process-bar {
   background: var(--color-bg);
   border-radius: var(--radius-md);
@@ -2195,10 +2375,25 @@ html[lang="de"] .contact-verb-spacer::after {
   font-size: 16px;
   font-weight: 300;
   line-height: 1.8;
-  color: var(--color-text-muted);
+  color: var(--color-text);
   text-align: left;
   max-width: 640px;
   margin: 0;
+}
+
+.cs-key-decision {
+  display: block;
+  border-top: var(--border-muted);
+  margin-top: var(--space-5);
+  padding-top: var(--space-4);
+}
+
+/* Fallback for translated strings that still use the old <br><br> markup. */
+.cs-process-step-text > br + br {
+  display: block;
+  height: 0;
+  border-top: var(--border-muted);
+  margin: var(--space-5) 0 var(--space-4);
 }
 
 .cs-process-cards {
@@ -2540,15 +2735,37 @@ html[lang="de"] .contact-verb-spacer::after {
   border: var(--border-muted);
 }
 
+.cs-iterations-stage {
+  width: 100%;
+  display: grid;
+}
+
 .cs-iterations-image {
+  grid-area: 1 / 1;
   width: 100%;
   height: auto;
   border-radius: var(--radius-md);
   display: block;
+  opacity: 0;
+  z-index: 1;
+  transition: opacity 0.22s ease-in-out;
+  pointer-events: none;
+}
+
+.cs-iterations-image.is-visible {
+  opacity: 1;
+}
+
+.cs-iterations-image.is-visible.is-fading-out {
+  opacity: 0;
+}
+
+.cs-iterations-image.is-top {
+  z-index: 2;
 }
 
 .cs-iterations-image.hidden {
-  display: none;
+  display: block;
 }
 
 /* â”€â”€ SURVEY RESULTS â”€â”€ */
@@ -2820,6 +3037,23 @@ html[lang="de"] .contact-verb-spacer::after {
   display: flex;
   align-items: center;
 }
+
+/* Survey qualitative feedback — keep the original card styling,
+   only place the three cards in one row inside the dark results card. */
+.cs-survey-feedback-overlay--cards-only {
+  margin-top: var(--space-6);
+}
+
+.cs-survey-feedback-overlay--cards-only .cs-survey-quotes {
+  position: static;
+  inset: auto;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  justify-content: stretch;
+  align-content: stretch;
+  gap: 1.5rem 2rem;
+  padding: 0;
+}
+
 /* â”€â”€ PRODUCT â”€â”€ */
 
 .cs-product-video-wrap {
@@ -3506,7 +3740,7 @@ html[lang="de"] .contact-verb-spacer::after {
 .cs-spotlight-zone {
   position: absolute;
   border: 2px solid transparent;
-  border-radius: var(--radius-sm);
+  border-radius: var(--radius-md);
   z-index: 10;
   transition:
     border-color 0.2s ease,
@@ -3882,28 +4116,52 @@ body.gate-locked .nav-right {
     font-size: clamp(44px, 9vw, 72px);
   }
 
+  .hero-headline strong {
+    white-space: normal;
+  }
   .hero-links-row {
     gap: 24px;
   }
 
   .big-link {
-    font-size: clamp(24px, 4vw, 40px);
+    font-size: clamp(20px, 3vw, 28px);
+  }
+
+  .big-link--muted {
+    font-size: clamp(18px, 2.5vw, 24px);
   }
 
   .big-link--muted {
     font-size: clamp(18px, 3vw, 28px);
   }
 
-  .clean-data-btn {
-    width: 80px;
-    height: 80px;
-    margin-top: 20px;
+  .hero-main-row {
+    flex-direction: column;
+    gap: 48px;
   }
 
-  .hero-bio {
-    position: static;
-    justify-content: flex-start;
-    margin-top: 64px;
+  .hero-copy {
+    width: 100%;
+  }
+
+  .hero-description {
+    max-width: 620px;
+    text-align: left;
+  }
+
+  .hero-links {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 32px;
+  }
+
+  .hero-illustration-btn {
+    align-self: flex-end;
+    transform: none;
+  }
+
+  .hero-illustration {
+    max-height: 42vh;
   }
 
   .hero-description {
@@ -3918,17 +4176,17 @@ body.gate-locked .nav-right {
   }
 
   .service-cards-overlay {
-    padding: 48px 0;
+    position: relative;
+    inset: auto;
+    padding: 0;
+  }
+  .services-stage {
+    display: grid;
   }
 
-  .service-cards {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    max-width: 760px;
-    margin: 0 auto;
-  }
-
-  .service-card {
-    max-width: none;
+  .venn-svg,
+  .service-cards-overlay {
+    grid-area: 1 / 1;
   }
 
   /* WORK */
@@ -3965,6 +4223,14 @@ body.gate-locked .nav-right {
 
   .work-card-img {
     width: 92%;
+  }
+
+  .work-card-details {
+    display: none;
+  }
+
+  .work-card:hover .work-card-img {
+    transform: none;
   }
 
   /* ABOUT */
@@ -4073,6 +4339,7 @@ body.gate-locked .nav-right {
   }
 
   .cs-problem-points,
+  .cs-solution-points,
   .cs-impact-numbers {
     grid-template-columns: 1fr;
   }
@@ -4291,21 +4558,35 @@ body.gate-locked .nav-right {
   }
 
   .big-link {
-    font-size: 24px;
+    font-size: 18px;
   }
 
   .big-link--muted {
     font-size: 18px;
   }
 
-  .clean-data-btn {
-    width: 72px;
-    height: 72px;
-    margin-top: 8px;
+  .hero-main-row {
+    gap: 40px;
   }
 
-  .hero-bio {
-    margin-top: 56px;
+  .hero-description {
+    max-width: 100%;
+    font-size: 15px;
+    line-height: 1.65;
+  }
+
+  .hero-links {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+
+  .hero-illustration-btn {
+    align-self: flex-end;
+  }
+
+  .hero-illustration {
+    max-height: 36vh;
   }
 
   .hero-description {
@@ -4337,11 +4618,14 @@ body.gate-locked .nav-right {
   }
 
   .service-cards-overlay {
-    padding: 32px 0 0;
     position: relative;
     inset: auto;
     display: block;
     width: 100%;
+    padding: 32px 0 0;
+
+    margin-top: 0;
+
     background: transparent;
     opacity: 1;
     pointer-events: auto;
@@ -4354,7 +4638,10 @@ body.gate-locked .nav-right {
     display: flex;
     justify-content: flex-start;
     gap: 16px;
+
     width: 100%;
+    max-width: none;
+
     padding: 0 24px 12px;
     overflow-x: auto;
     overflow-y: hidden;
@@ -4367,10 +4654,24 @@ body.gate-locked .nav-right {
   }
 
   .service-card {
-    flex: 0 0 calc(100vw - 96px);
-    width: calc(100vw - 96px);
+    flex: 0 0 auto;
+    height: 308px;
     padding: 24px;
     scroll-snap-align: center;
+  }
+
+  /* Main services */
+  .service-card[data-key="design"],
+  .service-card[data-key="data"] {
+    width: 308px;
+    flex-basis: 308px;
+  }
+
+  /* Complementary capabilities */
+  .service-card[data-key="business"],
+  .service-card[data-key="development"] {
+    width: 260px;
+    flex-basis: 260px;
   }
 
   .services .section-heading {
@@ -4752,9 +5053,16 @@ body.gate-locked .nav-right {
     align-items: flex-start;
   }
 
-  .clean-data-btn {
-    width: 64px;
-    height: 64px;
+  .hero-main-row {
+    gap: 32px;
+  }
+
+  .hero-links {
+    gap: 20px;
+  }
+
+  .hero-illustration {
+    max-height: 32vh;
   }
 
   /* SERVICES */
@@ -4852,5 +5160,467 @@ body.gate-locked .nav-right {
   .cs-product-card-large,
   .cs-afterlife-image-card {
     padding: var(--space-4);
+  }
+}
+
+/* Questionnaire results — tighter vertical rhythm only.
+   Keeps the shared Impact and quote-card styling unchanged. */
+.cs-survey-card {
+  padding: var(--space-7);
+  gap: var(--space-6);
+}
+
+.cs-survey-card .cs-impact-numbers {
+  padding-top: var(--space-5);
+}
+
+.cs-survey-card .cs-survey-feedback-overlay--cards-only {
+  margin-top: 0;
+}
+
+/* =============================================
+   SOLUTION — BEFORE / AFTER USER FLOW
+============================================= */
+.cs-solution-flow {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-5);
+}
+
+.cs-solution-flow-toggle {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-2);
+}
+
+.pill-btn--flow {
+  color: var(--color-text-muted);
+  border: var(--border-muted);
+}
+
+.pill-btn--flow.active {
+  color: var(--color-bg);
+  background: var(--color-text);
+  border: var(--border-text);
+}
+
+.cs-solution-flow-scroll {
+  width: 100%;
+  overflow: hidden;
+}
+
+.cs-solution-flow-stage {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 7.4;
+  min-height: 430px;
+  color: var(--color-text);
+  opacity: 1;
+  transition: opacity 0.32s ease;
+}
+
+.cs-flow-lines {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.cs-flow-lines--before {
+  opacity: 1;
+}
+
+/* The simplified state reuses three arrows from the original flow.
+   Everything else fades away instead of swapping to a second SVG. */
+.cs-flow-line--fade,
+.cs-flow-edge-label--fade {
+  opacity: 1;
+  transition: opacity 0.48s ease;
+}
+
+.cs-flow-line--survivor {
+  transition: d 1.25s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* BEFORE coordinates are also declared here so Chrome can interpolate the
+   SVG path geometry smoothly when .is-after is added. */
+.cs-flow-arrow--start {
+  d: path("M68.8 252 H111.7");
+}
+
+.cs-flow-arrow--middle {
+  d: path("M492.8 252 H518.1");
+}
+
+.cs-flow-arrow--end {
+  d: path("M950.4 252 H978.9");
+}
+
+.cs-flow-line {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  vector-effect: non-scaling-stroke;
+  marker-end: url(#solution-flow-arrow-before);
+}
+
+.cs-flow-lines--after .cs-flow-line {
+  marker-end: url(#solution-flow-arrow-after);
+}
+
+.cs-flow-line--plain {
+  marker-end: none;
+}
+
+.cs-flow-edge-label {
+  font-family: var(--font);
+  font-size: 18px;
+  font-weight: 400;
+  fill: currentColor;
+}
+
+.cs-flow-node {
+  position: absolute;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2px 2px;
+  border-radius: var(--radius-md);
+  background: color-mix(in srgb, var(--color-text) 8%, var(--color-bg));
+  border: 1.5px solid transparent;
+  color: var(--color-text);
+  font-family: var(--font);
+  font-size: clamp(9px, 0.7vw, 12px);
+  font-weight: 400;
+  line-height: 1.2;
+  transform: translateY(-50%);
+  transform-origin: center;
+  box-sizing: border-box;
+  overflow-wrap: normal;
+  word-break: normal;
+  hyphens: none;
+  -webkit-hyphens: none;
+  transition:
+    left 1.25s cubic-bezier(0.22, 1, 0.36, 1),
+    top 1.25s cubic-bezier(0.22, 1, 0.36, 1),
+    width 1.25s cubic-bezier(0.22, 1, 0.36, 1),
+    height 1.25s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.55s ease,
+    transform 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+    background-color 0.5s ease,
+    color 0.5s ease,
+    border-color 0.5s ease;
+}
+
+.cs-flow-node--diamond {
+  border-radius: 0;
+  clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+  background: var(--project-accent);
+  background: color-mix(in srgb, var(--project-accent) 62%, var(--color-bg));
+}
+
+.cs-flow-dot {
+  position: absolute;
+  z-index: 3;
+  width: 3.5%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--color-text);
+  transform: translateY(-50%);
+  transition:
+    left 1.25s cubic-bezier(0.22, 1, 0.36, 1),
+    top 1.25s cubic-bezier(0.22, 1, 0.36, 1),
+    width 1.25s cubic-bezier(0.22, 1, 0.36, 1),
+    background-color 0.5s ease;
+}
+
+.cs-flow-dot--start {
+  left: 0.8%;
+  top: 36%;
+}
+
+.cs-flow-dot--end {
+  left: 94.5%;
+  top: 36%;
+}
+
+.cs-flow-node--acta {
+  left: 7.2%;
+  top: 36%;
+  width: 11.2%;
+  height: 12.8%;
+}
+
+.cs-flow-node--excel {
+  left: 20.2%;
+  top: 36%;
+  width: 10.6%;
+  height: 12.8%;
+  background: var(--color-bg);
+  border-color: color-mix(in srgb, var(--color-text) 8%, var(--color-bg));
+}
+
+.cs-flow-node--data {
+  left: 32.6%;
+  top: 36%;
+  width: 12.2%;
+  height: 24.8%;
+}
+
+.cs-flow-node--budget {
+  left: 46.2%;
+  top: 36%;
+  width: 13.2%;
+  height: 13.2%;
+}
+
+.cs-flow-node--info {
+  left: 61.4%;
+  top: 36%;
+  width: 12.4%;
+  height: 24.8%;
+}
+
+.cs-flow-node--analyst {
+  left: 21%;
+  top: 67.8%;
+  width: 13.6%;
+  height: 16.4%;
+  background: var(--color-bg);
+  border-color: color-mix(in srgb, var(--color-text) 8%, var(--color-bg));
+}
+
+.cs-flow-branch {
+  left: 77.2%;
+  width: 14.2%;
+  height: 12.2%;
+}
+
+.cs-flow-branch--1 {
+  top: 13.6%;
+}
+.cs-flow-branch--2 {
+  top: 27.9%;
+}
+.cs-flow-branch--3 {
+  top: 42.1%;
+}
+.cs-flow-branch--4 {
+  top: 56.4%;
+}
+.cs-flow-branch--5 {
+  top: 70.7%;
+}
+.cs-flow-branch--6 {
+  top: 85%;
+  background: var(--color-bg);
+  border-color: color-mix(in srgb, var(--color-text) 8%, var(--color-bg));
+}
+
+.cs-flow-copy {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8%;
+  transition: opacity 0.35s ease;
+}
+
+.cs-flow-copy--before {
+  opacity: 1;
+}
+.cs-flow-copy--after {
+  opacity: 0;
+}
+
+/* AFTER: keep everything on the original horizontal axis.
+   Only Open Excel + Budget overview survive; their copy changes while the
+   remaining nodes/labels/branches fade away. The three surviving arrows grow
+   into the simplified direct path. */
+.cs-solution-flow-stage.is-after .cs-flow-line--fade,
+.cs-solution-flow-stage.is-after .cs-flow-edge-label--fade {
+  opacity: 0;
+}
+
+.cs-solution-flow-stage.is-after .cs-flow-remove {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.cs-solution-flow-stage.is-after .cs-flow-remove--left {
+  transform: translate(22%, -50%) scale(0.72);
+}
+
+.cs-solution-flow-stage.is-after .cs-flow-remove--right {
+  transform: translate(-22%, -50%) scale(0.72);
+}
+
+/* Dots move inward only horizontally — never vertically. */
+.cs-solution-flow-stage.is-after .cs-flow-dot--start {
+  left: 23.35%;
+  top: 36%;
+  width: 3.5%;
+}
+
+.cs-solution-flow-stage.is-after .cs-flow-dot--end {
+  left: 73.15%;
+  top: 36%;
+  width: 3.5%;
+}
+
+/* Open Excel becomes Open link. */
+.cs-solution-flow-stage.is-after .cs-flow-survivor--link {
+  left: 34.35%;
+  top: 36%;
+  width: 10.6%;
+  height: 12.8%;
+}
+
+/* Budget overview becomes Navigate in the cockpit. */
+.cs-solution-flow-stage.is-after .cs-flow-survivor--cockpit {
+  left: 52.45%;
+  top: 36%;
+  width: 13.2%;
+  height: 13.2%;
+}
+
+/* The same three original arrows stretch into the new direct flow. */
+.cs-solution-flow-stage.is-after .cs-flow-arrow--start {
+  d: path("M429.6 252 H546.1");
+}
+
+.cs-solution-flow-stage.is-after .cs-flow-arrow--middle {
+  d: path("M719.2 252 H835.7");
+}
+
+.cs-solution-flow-stage.is-after .cs-flow-arrow--end {
+  d: path("M1050.4 252 H1166.9");
+}
+
+.cs-solution-flow-stage.is-after .cs-flow-copy--before {
+  opacity: 0;
+}
+
+.cs-solution-flow-stage.is-after .cs-flow-copy--after {
+  opacity: 1;
+  transition-delay: 0.45s;
+}
+
+/* After -> Before: fade the current result out, reset invisibly, then fade the
+   original Before flow back in. The individual nodes never visibly travel back. */
+.cs-solution-flow-stage.is-return-fading {
+  opacity: 0;
+}
+
+/* The structural reset happens only while the whole flow is invisible. */
+.cs-solution-flow.is-resetting .pill-btn--flow,
+.cs-solution-flow-stage.is-resetting,
+.cs-solution-flow-stage.is-resetting *,
+.cs-solution-flow-stage.is-resetting *::before,
+.cs-solution-flow-stage.is-resetting *::after {
+  transition: none !important;
+  animation: none !important;
+}
+
+@media (max-width: 900px) {
+  .cs-solution-flow-scroll {
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    scrollbar-width: thin;
+  }
+
+  .cs-solution-flow-stage {
+    width: 1080px;
+    min-height: 470px;
+  }
+
+  .cs-flow-node {
+    font-size: 10px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cs-solution-flow-stage *,
+  .cs-solution-flow-stage *::before,
+  .cs-solution-flow-stage *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+/* NEXT PROJECTS — primary projects left, secondary actions bottom right */
+.cs-next-right--with-heading {
+  border-top: none;
+}
+
+.cs-next-right--with-heading .cs-next-links {
+  display: flex;
+  flex-direction: column;
+  border-top: var(--border-bg);
+}
+
+.cs-next-heading {
+  margin-bottom: var(--space-5);
+}
+
+@media (min-width: 901px) {
+  .cs-next-inner {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "heading ."
+      "projects actions";
+    column-gap: var(--section-gap);
+    row-gap: 0;
+  }
+
+  .cs-next-right--with-heading {
+    display: contents;
+  }
+
+  .cs-next-heading {
+    grid-area: heading;
+  }
+
+  .cs-next-right--with-heading .cs-next-links {
+    grid-area: projects;
+  }
+
+  .cs-next-left {
+    grid-area: actions;
+    align-self: end;
+    justify-self: end;
+    align-items: flex-end;
+    text-align: right;
+    padding: 0 0 var(--space-4);
+  }
+}
+
+/* Hide the fixed case-study navigation once the closing project section is reached. */
+body.cs-next-visible .left-sidebar {
+  opacity: 0;
+  pointer-events: none;
+}
+
+body.case-page .left-sidebar {
+  transition: opacity 0.25s ease;
+}
+
+@media (max-width: 900px) {
+  .cs-next-heading {
+    margin-bottom: 0;
+  }
+
+  .cs-next-left {
+    padding-top: 0;
+    margin-top: var(--space-6);
   }
 }

@@ -4,7 +4,9 @@
   <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Case Study — Browsing the World's Economy</title>
+    <title data-i18n="page_titles.bw">
+      Case Study — Browsing the World's Economy
+    </title>
     <link href="https://fonts.googleapis.com" rel="preconnect" />
     <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
     <link
@@ -194,6 +196,18 @@
               >Problem</a
             >
             <a
+              data-i18n="cs_shared.solution"
+              data-target="section-solution"
+              href="#section-solution"
+              >Solution</a
+            >
+            <a
+              data-i18n="cs_shared.sidebar_impact"
+              data-target="section-reflection"
+              href="#section-reflection"
+              >Impact</a
+            >
+            <a
               data-i18n="cs_shared.sidebar_process"
               data-target="section-process"
               href="#section-process"
@@ -202,10 +216,10 @@
             <div class="left-sidebar-sub">
               <a
                 class="left-sidebar-sub-item"
-                data-i18n="cs_shared.sidebar_research"
+                data-i18n="bw.process_bar.research"
                 data-target="section-research"
                 href="#section-research"
-                >01 Research</a
+                >01 Understand</a
               >
               <a
                 class="left-sidebar-sub-item"
@@ -235,25 +249,13 @@
               href="#section-product"
               >Product</a
             >
-            <a
-              data-i18n="cs_shared.sidebar_impact"
-              data-target="section-reflection"
-              href="#section-reflection"
-              >Impact</a
-            >
-            <a
-              data-i18n="cs_shared.sidebar_afterlife"
-              data-target="section-afterlife"
-              href="#section-afterlife"
-              >Reflect</a
-            >
           </nav>
           <div class="cs-overview-content">
             <p class="label label-muted" data-i18n="cs_shared.case_study_label">
               Case Study
             </p>
             <h1 class="cs-headline" data-i18n="project_titles.bw">
-              Browsing the World's Economy
+              <strong>Browsing</strong> the World's Economy
             </h1>
             <div class="cs-overview-intro">
               <p
@@ -305,10 +307,11 @@
                 What
               </p>
               <p class="cs-overview-meta-value" data-i18n="bw.meta.what_value">
-                A multilingual public Power BI dashboard exploring
-                country-specific economic data for businesses, policymakers,
+                A multilingual public Power BI dashboard automating 95% of the
+                reporting process and giving businesses, policymakers,
                 researchers, the general public and specialists within the Swiss
-                federal administration
+                federal administration an interactive way to explore
+                country-specific economic data.
               </p>
             </div>
             <div class="cs-overview-meta-block">
@@ -316,8 +319,9 @@
                 Why
               </p>
               <p class="cs-overview-meta-value" data-i18n="bw.meta.why_value">
-                Replace manually produced Word-based country reports to improve
-                the user experience and reduce preparation time
+                Producing country reports manually in Word required a lot of
+                preparation time and resulted in error-prone, text-heavy reports
+                that left users with static, hard-to-explore information.
               </p>
             </div>
             <div class="cs-overview-meta-block">
@@ -327,7 +331,8 @@
               <p class="cs-overview-meta-value" data-i18n="bw.meta.how_value">
                 As the sole designer, I supported a cross-functional team of BI
                 engineers and subject matter experts with UX design best
-                practices and data visualization expertise
+                practices and data visualization expertise, helping deliver an
+                entirely new product within a limited budget and timeframe.
               </p>
             </div>
           </div>
@@ -408,21 +413,285 @@
             </div>
           </div>
         </section>
+        <!-- THE SOLUTION -->
+        <section
+          class="cs-section cs-solution card-container"
+          id="section-solution"
+        >
+          <div
+            class="section-heading section-heading--center cs-solution-heading"
+          >
+            <p class="label label-muted" data-i18n="cs_shared.solution">
+              Solution
+            </p>
+            <h2
+              class="section-title section-title--dark"
+              data-i18n="bw.solution.heading"
+            >
+              <strong>Interactive Dashboard</strong> replaces PDF.
+            </h2>
+            <p
+              class="cs-process-step-text cs-solution-description"
+              data-i18n="bw.solution.description"
+            >
+              An interactive Power BI dashboard brings country-specific economic
+              information together in one place, making it easier to explore and
+              keeping the data automatically updated.
+            </p>
+          </div>
+          <div class="cs-solution-points">
+            <div class="cs-problem-point">
+              <p
+                class="cs-problem-point-title"
+                data-i18n="bw.solution.point1_title"
+              >
+                One source
+              </p>
+              <p
+                class="cs-problem-point-text"
+                data-i18n="bw.solution.point1_text"
+              >
+                Country-specific economic information is brought together in one
+                dashboard instead of being manually assembled in Word reports.
+              </p>
+            </div>
+            <div class="cs-problem-point">
+              <p
+                class="cs-problem-point-title"
+                data-i18n="bw.solution.point2_title"
+              >
+                Easy to explore
+              </p>
+              <p
+                class="cs-problem-point-text"
+                data-i18n="bw.solution.point2_text"
+              >
+                Users can search, filter and compare the data directly instead
+                of navigating static reports and screenshots.
+              </p>
+            </div>
+            <div class="cs-problem-point">
+              <p
+                class="cs-problem-point-title"
+                data-i18n="bw.solution.point3_title"
+              >
+                Up to date
+              </p>
+              <p
+                class="cs-problem-point-text"
+                data-i18n="bw.solution.point3_text"
+              >
+                Connected data sources reduce manual maintenance and help keep
+                the information current and consistent.
+              </p>
+            </div>
+          </div>
+          <div class="cs-solution-image-wrap">
+            <img
+              alt="Illustration of the integrated country dashboard solution"
+              class="cs-solution-image"
+              src="../Images/BW/2_solution.png"
+            />
+          </div>
+        </section>
+        <!-- IMPACT -->
+        <section class="cs-impact card-container" id="section-reflection">
+          <div class="cs-dark-card">
+            <div class="cs-impact-card-top">
+              <p class="label label-light" data-i18n="cs_shared.sidebar_impact">
+                Impact
+              </p>
+              <h2 class="cs-impact-title" data-i18n="bw.impact.heading">
+                From weeks of manual reporting to
+                <strong>near real-time insights.</strong>
+              </h2>
+            </div>
+            <div class="cs-impact-numbers">
+              <div class="cs-impact-number">
+                <p class="cs-impact-num" data-i18n="bw.impact.num1_value">
+                  1 month
+                </p>
+                <p class="cs-impact-num-label" data-i18n="bw.impact.num1_label">
+                  of manual work eliminated.
+                </p>
+              </div>
+              <div class="cs-impact-number">
+                <p class="cs-impact-num">100 → 1</p>
+                <p class="cs-impact-num-label" data-i18n="bw.impact.num2_label">
+                  reports replaced by a single dashboard.
+                </p>
+              </div>
+              <div class="cs-impact-number">
+                <p class="cs-impact-num">95%</p>
+                <p class="cs-impact-num-label" data-i18n="bw.impact.num3_label">
+                  process automation.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- TESTIMONIALS -->
+        <section
+          class="cs-testimonials card-container"
+          id="section-testimonials"
+        >
+          <p class="label label-muted" data-i18n="bw.testimonial_label">
+            Testimonials
+          </p>
+          <div class="cs-testimonials-grid cs-testimonials-grid--compact">
+            <!-- Testimonial 1 -->
+            <div
+              aria-haspopup="dialog"
+              class="cs-testimonial-card cs-testimonial-card--interactive cursor-grow"
+              data-testimonial=""
+              role="button"
+              tabindex="0"
+            >
+              <p
+                class="cs-testimonial-highlight-text"
+                data-i18n="bw.testimonial.highlight1"
+              >
+                "Anouk [...] brought fresh momentum with her
+                <strong>proactive, solution-oriented approach.</strong> [...]"
+              </p>
+              <div class="cs-testimonial-card-footer">
+                <p
+                  class="cs-testimonial-author"
+                  data-i18n="bw.testimonial.author1"
+                >
+                  Aaron Dettwiler, Project Lead, Bilateral Economic Relations,
+                  Swiss Federal Administration
+                </p>
+                <span class="cs-testimonial-reveal">
+                  <span data-i18n="cs_shared.reveal_testimonial"
+                    >Reveal full testimonial</span
+                  >
+                  <span aria-hidden="true" class="link-arrow">
+                    <svg fill="none" viewbox="0 0 16 16">
+                      <path
+                        d="M0 16L13 3M7.6 3H13V8.4"
+                        stroke="currentColor"
+                        stroke-linecap="butt"
+                        stroke-linejoin="miter"
+                        stroke-width="1"
+                      ></path>
+                    </svg>
+                  </span>
+                </span>
+              </div>
+              <!-- Hidden content used by modal -->
+              <div class="cs-testimonial-full" hidden="">
+                <p
+                  class="cs-testimonial-full-quote"
+                  data-i18n="bw.testimonial.quote1"
+                >
+                  «Anouk joined the project at exactly the right time and
+                  quickly brought fresh momentum with her proactive,
+                  solution-oriented approach. She does not stop at generating
+                  ideas; she develops concrete options and ensures they are
+                  implemented. This enables her to act as an effective bridge
+                  between business stakeholders and developers, realistically
+                  assess technical limitations, and propose suitable solutions.
+                  <br /><br />
+
+                  What was particularly valuable was her strong customer focus.
+                  She consistently applied her Power BI expertise and UX design
+                  skills to create a tool that was both visually appealing and
+                  user-friendly. With her commitment to quality, flexibility,
+                  and dedication, she played a key role in helping the project
+                  achieve significantly more than originally planned.»
+                </p>
+                <p
+                  class="cs-testimonial-full-author"
+                  data-i18n="bw.testimonial.author1"
+                >
+                  Aaron Dettwiler, Project Lead, Bilateral Economic Relations,
+                  Swiss Federal Administration
+                </p>
+              </div>
+            </div>
+            <!-- Testimonial 2 -->
+            <div
+              aria-haspopup="dialog"
+              class="cs-testimonial-card cs-testimonial-card--interactive cursor-grow"
+              data-testimonial=""
+              role="button"
+              tabindex="0"
+            >
+              <p
+                class="cs-testimonial-highlight-text"
+                data-i18n="bw.testimonial.highlight2"
+              >
+                "Anouk [...] transformed a rather dry subject into a
+                <strong>highly engaging experience.</strong> [...]"
+              </p>
+              <div class="cs-testimonial-card-footer">
+                <p
+                  class="cs-testimonial-author"
+                  data-i18n="bw.testimonial.author2"
+                >
+                  Andrea Rauber Saxer, Ambassador, Head of Bilateral Economic
+                  Relations, Swiss Federal Administration
+                </p>
+                <span class="cs-testimonial-reveal">
+                  <span data-i18n="cs_shared.reveal_testimonial"
+                    >Reveal full testimonial</span
+                  >
+                  <span aria-hidden="true" class="link-arrow">
+                    <svg fill="none" viewbox="0 0 16 16">
+                      <path
+                        d="M0 16L13 3M7.6 3H13V8.4"
+                        stroke="currentColor"
+                        stroke-linecap="butt"
+                        stroke-linejoin="miter"
+                        stroke-width="1"
+                      ></path>
+                    </svg>
+                  </span>
+                </span>
+              </div>
+              <!-- Hidden content used by modal -->
+              <div class="cs-testimonial-full" hidden="">
+                <p
+                  class="cs-testimonial-full-quote"
+                  data-i18n="bw.testimonial.quote2"
+                >
+                  "Anouk developed the visual concepts, data visualizations, and
+                  prototypes for our digital Country Cockpit. She transformed a
+                  rather dry subject into something that is both clear and
+                  visually engaging. We are very proud of the result!"
+                </p>
+                <p
+                  class="cs-testimonial-full-author"
+                  data-i18n="bw.testimonial.author2"
+                >
+                  Andrea Rauber Saxer, Ambassador, Head of Bilateral Economic
+                  Relations, Swiss Federal Administration
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
         <!-- THE PROCESS -->
         <section class="cs-process-section card-container" id="section-process">
-          <div class="cs-process-bar">
-            <p
-              class="cs-process-bar-label"
-              data-i18n="cs_shared.sidebar_process"
-            >
+          <div class="section-heading section-heading--center">
+            <p class="label label-muted" data-i18n="cs_shared.sidebar_process">
               Process
             </p>
+            <h2
+              class="section-title section-title--dark"
+              data-i18n="cs_shared.process_heading"
+            >
+              <strong>How</strong> we got there.
+            </h2>
+          </div>
+          <div class="cs-process-bar">
             <div class="cs-process-bar-steps" style="--steps: 4">
               <div class="cs-process-bar-step">
                 <span
                   class="cs-process-bar-step-name"
-                  data-i18n="cs_shared.sidebar_research"
-                  >01 Research</span
+                  data-i18n="bw.process_bar.research"
+                  >01 Understand</span
                 >
                 <div class="cs-process-bar-line">
                   <span class="cs-process-bar-dot"></span
@@ -511,47 +780,14 @@
               </div>
             </div>
           </div>
-          <div class="cs-process-intro-cards">
-            <div class="cs-process-intro-card">
-              <p class="cs-process-card-title" data-i18n="cs_shared.meta_role">
-                Role
-              </p>
-              <p class="cs-process-card-text" data-i18n="bw.process.role_text">
-                I acted as the bridge between subject matter experts and
-                technical implementation. As the project's sole UX and data
-                visualization designer, I translated complex economic
-                information into clear and accessible data visualizations and
-                helped produce an engaging user experience.
-              </p>
-            </div>
-            <div class="cs-process-intro-card">
-              <p
-                class="cs-process-card-title"
-                data-i18n="cs_shared.process_constraints"
-              >
-                Constraints
-              </p>
-              <p
-                class="cs-process-card-text"
-                data-i18n="bw.process.constraints_text"
-              >
-                A limited budget, a fixed website go-live deadline, delayed
-                access to data, four languages to support and Power BI technical
-                limitations all had to be navigated.
-              </p>
-            </div>
-          </div>
-          <!-- 01 Research -->
+          <!-- 01 Understand -->
           <div class="cs-process-step-section first" id="section-research">
             <div class="cs-process-step-card">
               <div class="cs-process-step-card-top">
                 <p class="cs-process-step-card-num">01</p>
                 <div class="cs-process-step-card-right">
-                  <p
-                    class="label label-muted"
-                    data-i18n="cs_shared.label_research"
-                  >
-                    Research
+                  <p class="label label-muted" data-i18n="bw.research.label">
+                    Understand
                   </p>
                   <h2
                     class="section-title section-title--process"
@@ -561,44 +797,19 @@
                   </h2>
                   <p class="cs-process-step-text" data-i18n="bw.research.text1">
                     I joined the project six months after it had officially
-                    started. Progress had been limited due to delayed access to
-                    the data. An initial workshop had taken place at the start
-                    of the project, and no further user research was planned.
+                    begun and brought myself up to speed by reviewing the
+                    existing documentation and attending briefings. A user
+                    workshop had been held early on, but no further user
+                    research was planned. Progress had also been limited by
+                    delayed access to the data.
+                    <span class="cs-key-decision">
+                      <strong><strong>Key Decision: </strong></strong> Rather
+                      than simply following the initial plan to reproduce the
+                      existing solution, I presented more user-friendly options
+                      that showed the team what Power BI could offer while
+                      respecting the agreed direction.
+                    </span>
                   </p>
-                  <div class="cs-process-cards">
-                    <div class="cs-process-card">
-                      <p
-                        class="cs-process-card-title"
-                        data-i18n="cs_shared.challenge"
-                      >
-                        Challenge
-                      </p>
-                      <p
-                        class="cs-process-card-text"
-                        data-i18n="bw.research.challenge_text"
-                      >
-                        Joining after the initial research and project direction
-                        had already been defined, with the goal largely focused
-                        on reproducing the existing solution.
-                      </p>
-                    </div>
-                    <div class="cs-process-card">
-                      <p
-                        class="cs-process-card-title"
-                        data-i18n="cs_shared.solution"
-                      >
-                        Solution
-                      </p>
-                      <p
-                        class="cs-process-card-text"
-                        data-i18n="bw.research.solution_text"
-                      >
-                        Build on the existing direction while identifying
-                        opportunities to improve the user experience and
-                        advocate for a more user-centered approach.
-                      </p>
-                    </div>
-                  </div>
                 </div>
               </div>
             </div>
@@ -634,50 +845,22 @@
                     <strong>Cutting Word</strong> into pieces.
                   </h2>
                   <p class="cs-process-step-text" data-i18n="bw.design.text1">
-                    We revisited the report’s initial structure from scratch. We
+                    We reconsidered the report’s structure from the ground up. I
                     literally cut the Word document apart and explored how the
                     information could be reorganized into a more intuitive
-                    dashboard experience. I also questioned the use of tables
-                    and suggested visualizations where I felt they made sense.
-                    Reviewing and refining these changes with experts helped us
-                    find a structure that was both intuitive for users and
-                    accurate from an expert perspective.
+                    dashboard experience. Reviewing and refining these changes
+                    with subject-matter experts helped us find a structure that
+                    was both intuitive for users and accurate from an expert
+                    perspective.
+                    <span class="cs-key-decision">
+                      <strong><strong>Key Decision: </strong></strong> I
+                      replaced text and tables with data visualizations where
+                      they made the information easier to understand. Because
+                      not every user group could be involved throughout the
+                      process, I relied on accessibility, usability and data
+                      visualization best practices to guide my design decisions.
+                    </span>
                   </p>
-                  <div class="cs-process-cards">
-                    <div class="cs-process-card">
-                      <p
-                        class="cs-process-card-title"
-                        data-i18n="cs_shared.challenge"
-                      >
-                        Challenge
-                      </p>
-                      <p
-                        class="cs-process-card-text"
-                        data-i18n="bw.design.challenge_text"
-                      >
-                        Ensure the needs of users with limited economic
-                        expertise were represented, despite project decisions
-                        being driven by domain experts.
-                      </p>
-                    </div>
-                    <div class="cs-process-card">
-                      <p
-                        class="cs-process-card-title"
-                        data-i18n="cs_shared.solution"
-                      >
-                        Solution
-                      </p>
-                      <p
-                        class="cs-process-card-text"
-                        data-i18n="bw.design.solution_text"
-                      >
-                        I relied on visualization best practices to make complex
-                        economic data more approachable, choosing clearer chart
-                        types, simplifying layouts, and using color and visual
-                        hierarchy to guide the eye toward key information.
-                      </p>
-                    </div>
-                  </div>
                 </div>
               </div>
             </div>
@@ -723,12 +906,9 @@
                         class="cs-process-card-text"
                         data-i18n="bw.design.spotlight1_text"
                       >
-                        The color palette builds on existing federal dashboards
-                        to create a familiar and trustworthy experience. Federal
-                        red is reserved exclusively for Switzerland, making
-                        comparisons immediate and intuitive. Only the country
-                        name is highlighted, while numerical values remain
-                        neutral to avoid unintended negative associations.
+                        The color palette builds on the existing federal design
+                        system. Numerical values remain neutral to avoid
+                        unintended negative associations.
                       </p>
                     </div>
                   </div>
@@ -813,10 +993,11 @@
                         data-i18n="bw.design.spotlight5_text"
                       >
                         Rather than relying on a single chart type, each
-                        visualization was selected for the data it communicates
-                        best. Consistent colors, with blue for exports and mint
-                        for imports, reinforce recognition across charts, while
-                        neutral tones prevent visual clutter.
+                        visualization was chosen to present the data as clearly
+                        as possible. Consistent colors, such as blue for exports
+                        and mint for imports, make categories easy to recognize
+                        across charts, while neutral tones prevent visual
+                        clutter.
                       </p>
                     </div>
                   </div>
@@ -893,41 +1074,13 @@
                     an MVP, refining it through multiple rounds of feedback and
                     iteration, and preparing the public release through further
                     testing and improvements.
+                    <span class="cs-key-decision">
+                      <strong><strong>Key Decision: </strong></strong>
+                      I prioritized the design elements with the greatest impact
+                      on usability and developed alternative solutions when
+                      technical limitations arose.
+                    </span>
                   </p>
-                  <div class="cs-process-cards">
-                    <div class="cs-process-card">
-                      <p
-                        class="cs-process-card-title"
-                        data-i18n="cs_shared.challenge"
-                      >
-                        Challenge
-                      </p>
-                      <p
-                        class="cs-process-card-text"
-                        data-i18n="bw.iterate.challenge_text"
-                      >
-                        Technical limitations frequently reshaped what was
-                        possible and required continuous follow-up.
-                      </p>
-                    </div>
-                    <div class="cs-process-card">
-                      <p
-                        class="cs-process-card-title"
-                        data-i18n="cs_shared.solution"
-                      >
-                        Solution
-                      </p>
-                      <p
-                        class="cs-process-card-text"
-                        data-i18n="bw.iterate.solution_text"
-                      >
-                        Continuously review the implementation, prioritize the
-                        design elements that had the greatest impact on
-                        usability, and come up with alternative solutions when
-                        technical limitations occurred.
-                      </p>
-                    </div>
-                  </div>
                 </div>
               </div>
             </div>
@@ -966,47 +1119,14 @@
                     Going <strong>public.</strong>
                   </h2>
                   <p class="cs-process-step-text" data-i18n="bw.launch.text">
-                    The final version was released as a public Power BI
-                    dashboard. Instead of manually assembled country reports,
-                    users with very different levels of expertise can now
-                    explore economic information through an automated,
-                    multilingual and interactive experience.
+                    The dashboard had to be ready for the launch of the new
+                    website while meeting public-facing quality standards in
+                    four languages. Close collaboration with the Power BI
+                    engineers was essential throughout the project, but
+                    especially during this final phase. Responding quickly,
+                    preparing implementation-ready documentation and resolving
+                    questions as they arose helped keep the project on schedule.
                   </p>
-                  <div class="cs-process-cards">
-                    <div class="cs-process-card">
-                      <p
-                        class="cs-process-card-title"
-                        data-i18n="cs_shared.challenge"
-                      >
-                        Challenge
-                      </p>
-                      <p
-                        class="cs-process-card-text"
-                        data-i18n="bw.launch.challenge_text"
-                      >
-                        The dashboard had to be ready for the website go-live
-                        while still meeting public-facing quality standards
-                        across four languages.
-                      </p>
-                    </div>
-                    <div class="cs-process-card">
-                      <p
-                        class="cs-process-card-title"
-                        data-i18n="cs_shared.solution"
-                      >
-                        Solution
-                      </p>
-                      <p
-                        class="cs-process-card-text"
-                        data-i18n="bw.launch.solution_text"
-                      >
-                        Maintain close collaboration with the Power BI
-                        englineers by responding quickly, preparing
-                        implementation-ready documentation and resolving
-                        questions as they arose.
-                      </p>
-                    </div>
-                  </div>
                 </div>
               </div>
             </div>
@@ -1074,280 +1194,94 @@
             </div>
           </div>
         </section>
-        <!-- IMPACT -->
-        <section class="cs-impact card-container" id="section-reflection">
-          <div class="cs-dark-card">
-            <div class="cs-impact-card-top">
-              <p class="label label-light" data-i18n="cs_shared.sidebar_impact">
-                Impact
-              </p>
-              <h2 class="cs-impact-title" data-i18n="bw.impact.heading">
-                From weeks of manual reporting to
-                <strong>near real-time insights.</strong>
-              </h2>
-            </div>
-            <div class="cs-impact-numbers">
-              <div class="cs-impact-number">
-                <p class="cs-impact-num" data-i18n="bw.impact.num1_value">
-                  1 month
-                </p>
-                <p class="cs-impact-num-label" data-i18n="bw.impact.num1_label">
-                  of manual work eliminated.
-                </p>
-              </div>
-              <div class="cs-impact-number">
-                <p class="cs-impact-num">100 → 1</p>
-                <p class="cs-impact-num-label" data-i18n="bw.impact.num2_label">
-                  reports replaced by a single dashboard.
-                </p>
-              </div>
-              <div class="cs-impact-number">
-                <p class="cs-impact-num">95%</p>
-                <p class="cs-impact-num-label" data-i18n="bw.impact.num3_label">
-                  of process automation.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-        <!-- TESTIMONIALS -->
-        <section
-          class="cs-testimonials card-container"
-          id="section-testimonials"
-        >
-          <p class="label label-muted" data-i18n="bw.testimonial_label">
-            Testimonials
-          </p>
-          <div class="cs-testimonials-grid cs-testimonials-grid--compact">
-            <!-- Testimonial 1 -->
-            <div
-              aria-haspopup="dialog"
-              class="cs-testimonial-card cs-testimonial-card--interactive cursor-grow"
-              data-testimonial=""
-              role="button"
-              tabindex="0"
-            >
-              <p
-                class="cs-testimonial-highlight-text"
-                data-i18n="bw.testimonial.highlight1"
-              >
-                "Anouk [...] brought fresh momentum with her
-                <strong>proactive, solution-oriented approach.</strong> [...]"
-              </p>
-              <div class="cs-testimonial-card-footer">
-                <p
-                  class="cs-testimonial-author"
-                  data-i18n="bw.testimonial.author1"
-                >
-                  Aaron Dettwiler, Project Lead, Bilateral Economic Relations,
-                  Swiss federal administration
-                </p>
-                <span class="cs-testimonial-reveal">
-                  <span data-i18n="cs_shared.reveal_testimonial"
-                    >Reveal full testimonial</span
-                  >
-                  <span aria-hidden="true" class="link-arrow">
-                    <svg fill="none" viewbox="0 0 16 16">
-                      <path
-                        d="M0 16L13 3M7.6 3H13V8.4"
-                        stroke="currentColor"
-                        stroke-linecap="butt"
-                        stroke-linejoin="miter"
-                        stroke-width="1"
-                      ></path>
-                    </svg>
-                  </span>
-                </span>
-              </div>
-              <!-- Hidden content used by modal -->
-              <div class="cs-testimonial-full" hidden="">
-                <p
-                  class="cs-testimonial-full-quote"
-                  data-i18n="bw.testimonial.quote1"
-                >
-                  «Anouk joined the project at exactly the right time and
-                  quickly brought fresh momentum with her proactive,
-                  solution-oriented approach. She does not stop at generating
-                  ideas; she develops concrete options and ensures they are
-                  implemented. This enables her to act as an effective bridge
-                  between business stakeholders and developers, realistically
-                  assess technical limitations, and propose suitable solutions.
-                  <br /><br />
-
-                  What was particularly valuable was her strong customer focus.
-                  She consistently applied her Power BI expertise and UX design
-                  skills to create a tool that was both visually appealing and
-                  user-friendly. With her commitment to quality, flexibility,
-                  and dedication, she played a key role in achieving
-                  significantly more from the project than originally planned.»
-                </p>
-                <p
-                  class="cs-testimonial-full-author"
-                  data-i18n="bw.testimonial.author1"
-                >
-                  Aaron Dettwiler, Project Lead, Bilateral Economic Relations,
-                  Swiss federal administration
-                </p>
-              </div>
-            </div>
-            <!-- Testimonial 2 -->
-            <div
-              aria-haspopup="dialog"
-              class="cs-testimonial-card cs-testimonial-card--interactive cursor-grow"
-              data-testimonial=""
-              role="button"
-              tabindex="0"
-            >
-              <p
-                class="cs-testimonial-highlight-text"
-                data-i18n="bw.testimonial.highlight2"
-              >
-                "Anouk [...] transformed a rather dry subject into a
-                <strong>highly engaging experience.</strong> [...]"
-              </p>
-              <div class="cs-testimonial-card-footer">
-                <p
-                  class="cs-testimonial-author"
-                  data-i18n="bw.testimonial.author2"
-                >
-                  Andrea Rauber Saxer, Ambassador, Head of Bilateral Economic
-                  Relations, Swiss federal administration
-                </p>
-                <span class="cs-testimonial-reveal">
-                  <span>Reveal full testimonial</span>
-                  <span aria-hidden="true" class="link-arrow">
-                    <svg fill="none" viewbox="0 0 16 16">
-                      <path
-                        d="M0 16L13 3M7.6 3H13V8.4"
-                        stroke="currentColor"
-                        stroke-linecap="butt"
-                        stroke-linejoin="miter"
-                        stroke-width="1"
-                      ></path>
-                    </svg>
-                  </span>
-                </span>
-              </div>
-              <!-- Hidden content used by modal -->
-              <div class="cs-testimonial-full" hidden="">
-                <p
-                  class="cs-testimonial-full-quote"
-                  data-i18n="bw.testimonial.quote2"
-                >
-                  "Anouk developed the visual concepts, data visualizations, and
-                  prototypes for our digital Country Cockpit. She transformed a
-                  rather dry subject into something that is both clear and
-                  visually engaging. We are very proud of the result!"
-                </p>
-                <p
-                  class="cs-testimonial-full-author"
-                  data-i18n="bw.testimonial.author2"
-                >
-                  Andrea Rauber Saxer, Ambassador, Head of Bilateral Economic
-                  Relations, Swiss federal administration
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-        <!-- ROAD AHEAD -->
-        <section class="cs-afterlife" id="section-afterlife">
-          <div class="cs-afterlife-content">
-            <p
-              class="label label-muted"
-              data-i18n="cs_shared.sidebar_afterlife"
-            >
-              Reflection
-            </p>
-            <h2 class="section-title" data-i18n="bw.afterlife.heading">
-              Learning to <strong>let go.</strong>
-            </h2>
-            <div class="cs-context-bottom">
-              <p class="cs-context-description" data-i18n="bw.afterlife.text">
-                Before this project, I had mainly worked as both the designer
-                and Power BI engineer, taking ideas from design through to
-                implementation myself. On this project, I had to hand over the
-                implementation and learn to communicate my design intent clearly
-                while remaining open to solutions that differed from what I had
-                initially imagined.
-              </p>
-              <div class="accordion cs-afterlife-accordion">
-                <div class="accordion-item open">
-                  <button class="accordion-trigger cursor-grow" type="button">
-                    <span data-i18n="bw.afterlife.accordion1_trigger"
-                      >Sharing ownership</span
-                    >
-                    <span class="accordion-icon">+</span>
-                  </button>
-                  <div class="accordion-body">
-                    <div
-                      class="accordion-content"
-                      data-i18n="bw.afterlife.accordion1_content"
-                    >
-                      Letting go of implementation control was a learning
-                      experience. At the same time, I found that the Power BI
-                      engineers appreciated concrete input on how certain ideas
-                      could be built, and I could occasionally help uncover
-                      possibilities within the tool.
-                    </div>
-                  </div>
-                </div>
-                <div class="accordion-item">
-                  <button class="accordion-trigger cursor-grow" type="button">
-                    <span data-i18n="bw.afterlife.accordion2_trigger"
-                      >Representing a broader audience</span
-                    >
-                    <span class="accordion-icon">+</span>
-                  </button>
-                  <div class="accordion-body">
-                    <div
-                      class="accordion-content"
-                      data-i18n="bw.afterlife.accordion2_content"
-                    >
-                      Not every user perspective could be directly represented
-                      throughout the process, which made it even more important
-                      to rely on accessibility, usability and data visualization
-                      best practices when making design decisions.
-                    </div>
-                  </div>
-                </div>
-                <div class="accordion-item">
-                  <button class="accordion-trigger cursor-grow" type="button">
-                    <span data-i18n="bw.afterlife.accordion3_trigger"
-                      >Learning across perspectives</span
-                    >
-                    <span class="accordion-icon">+</span>
-                  </button>
-                  <div class="accordion-body">
-                    <div
-                      class="accordion-content"
-                      data-i18n="bw.afterlife.accordion3_content"
-                    >
-                      Working with people from different disciplines,
-                      generations and areas of expertise required alignment and
-                      compromise, but those different perspectives also
-                      challenged assumptions and led to stronger solutions.
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
       </main>
       <!-- NEXT PROJECTS -->
       <section class="cs-next">
         <div class="cs-next-inner">
+          <div class="cs-next-right cs-next-right--with-heading">
+            <div class="cs-next-heading">
+              <p
+                class="label label-light"
+                data-i18n="cs_shared.next_projects_label"
+              >
+                Next Projects
+              </p>
+              <h2
+                class="cs-next-title"
+                data-i18n="cs_shared.continue_exploring"
+              >
+                Continue exploring.
+              </h2>
+            </div>
+            <div class="cs-next-links">
+              <a
+                class="cs-next-row big-link big-link--project"
+                data-preview="../Images/Home/0_work_1.png"
+                data-preview-color="var(--project-1)"
+                href="../Work/yellow.html"
+              >
+                <span data-i18n="project_descriptive_titles.yellow"
+                  >Financial Planning Dashboard</span
+                >
+                <span aria-hidden="true" class="link-arrow">
+                  <svg fill="none" viewBox="0 0 16 16">
+                    <path
+                      d="M0 16L13 3M7.6 3H13V8.4"
+                      stroke="currentColor"
+                      stroke-linecap="butt"
+                      stroke-linejoin="miter"
+                      stroke-width="1"
+                    ></path>
+                  </svg>
+                </span>
+              </a>
+
+              <a
+                class="cs-next-row big-link big-link--project"
+                data-preview="../Images/Home/0_work_4.png"
+                data-preview-color="var(--project-4)"
+                href="../Work/auw.html"
+              >
+                <span data-i18n="project_descriptive_titles.auw"
+                  >End-to-End Workflow App</span
+                >
+                <span aria-hidden="true" class="link-arrow">
+                  <svg fill="none" viewBox="0 0 16 16">
+                    <path
+                      d="M0 16L13 3M7.6 3H13V8.4"
+                      stroke="currentColor"
+                      stroke-linecap="butt"
+                      stroke-linejoin="miter"
+                      stroke-width="1"
+                    ></path>
+                  </svg>
+                </span>
+              </a>
+
+              <a
+                class="cs-next-row big-link big-link--project"
+                data-preview="../Images/Home/0_work_2.png"
+                data-preview-color="var(--project-2)"
+                href="../Work/skills.html"
+              >
+                <span data-i18n="project_descriptive_titles.skills"
+                  >Gamified Skills Development Platform</span
+                >
+                <span aria-hidden="true" class="link-arrow">
+                  <svg fill="none" viewBox="0 0 16 16">
+                    <path
+                      d="M0 16L13 3M7.6 3H13V8.4"
+                      stroke="currentColor"
+                      stroke-linecap="butt"
+                      stroke-linejoin="miter"
+                      stroke-width="1"
+                    ></path>
+                  </svg>
+                </span>
+              </a>
+            </div>
+          </div>
           <div class="cs-next-left">
-            <p
-              class="label label-light"
-              data-i18n="cs_shared.next_projects_label"
-            >
-              Next Projects
-            </p>
-            <h2 class="cs-next-title" data-i18n="cs_shared.continue_exploring">
-              Continue exploring.
-            </h2>
             <a class="big-link big-link--light" href="../index.html#work">
               <span data-i18n="cs_shared.back_to_work"
                 >Back to work overview</span
@@ -1362,96 +1296,9 @@
                     stroke-width="1"
                   ></path>
                 </svg>
-              </span>
-            </a>
-            <a class="big-link big-link--light" href="../index.html#contact">
+              </span> </a
+            ><a class="big-link big-link--light" href="../index.html#contact">
               <p class="link-text" data-i18n="hero.cta_contact">Get in touch</p>
-              <span aria-hidden="true" class="link-arrow">
-                <svg fill="none" viewbox="0 0 16 16">
-                  <path
-                    d="M0 16L13 3M7.6 3H13V8.4"
-                    stroke="currentColor"
-                    stroke-linecap="butt"
-                    stroke-linejoin="miter"
-                    stroke-width="1"
-                  ></path>
-                </svg>
-              </span>
-            </a>
-          </div>
-          <div class="cs-next-right">
-            <a
-              class="cs-next-row big-link big-link--project"
-              data-preview="../Images/Home/0_work_1.png"
-              data-preview-color="var(--project-1)"
-              href="../Work/yellow.html"
-            >
-              <span data-i18n="project_titles.yellow"
-                >Yellow is the new green</span
-              >
-              <span aria-hidden="true" class="link-arrow">
-                <svg fill="none" viewbox="0 0 16 16">
-                  <path
-                    d="M0 16L13 3M7.6 3H13V8.4"
-                    stroke="currentColor"
-                    stroke-linecap="butt"
-                    stroke-linejoin="miter"
-                    stroke-width="1"
-                  ></path>
-                </svg>
-              </span>
-            </a>
-            <a
-              class="cs-next-row big-link big-link--project"
-              data-preview="../Images/Home/0_work_4.png"
-              data-preview-color="var(--project-4)"
-              href="../Work/kunstatelier.html"
-            >
-              <span data-i18n="project_titles.kunstatelier"
-                >Heard of KunstAtelier? Me neither.</span
-              >
-              <span aria-hidden="true" class="link-arrow">
-                <svg fill="none" viewbox="0 0 16 16">
-                  <path
-                    d="M0 16L13 3M7.6 3H13V8.4"
-                    stroke="currentColor"
-                    stroke-linecap="butt"
-                    stroke-linejoin="miter"
-                    stroke-width="1"
-                  ></path>
-                </svg>
-              </span>
-            </a>
-            <a
-              class="cs-next-row big-link big-link--project"
-              data-preview="../Images/Home/0_work_2.png"
-              data-preview-color="var(--project-2)"
-              href="../Work/skills.html"
-            >
-              <span data-i18n="project_titles.skills"
-                >Upskilling the Public Sector</span
-              >
-              <span aria-hidden="true" class="link-arrow">
-                <svg fill="none" viewbox="0 0 16 16">
-                  <path
-                    d="M0 16L13 3M7.6 3H13V8.4"
-                    stroke="currentColor"
-                    stroke-linecap="butt"
-                    stroke-linejoin="miter"
-                    stroke-width="1"
-                  ></path>
-                </svg>
-              </span>
-            </a>
-            <a
-              class="cs-next-row big-link big-link--project"
-              data-preview="../Images/Home/0_work_5.png"
-              data-preview-color="var(--project-5)"
-              href="../Work/climate.html"
-            >
-              <span data-i18n="project_titles.climate"
-                >Millions for Climate
-              </span>
               <span aria-hidden="true" class="link-arrow">
                 <svg fill="none" viewbox="0 0 16 16">
                   <path

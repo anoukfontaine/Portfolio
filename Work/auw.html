@@ -1,22 +1,24 @@
 <!doctype html>
-
 <html lang="en">
   <head>
+    <!--<script src="../password-gate.js"></script> -->
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title data-i18n="page_titles.skills">
-      Case Study — Upskilling the Public Sector
+    <title data-i18n="page_titles.auw">
+      Case Study — Giving HR its time back.
     </title>
     <link href="https://fonts.googleapis.com" rel="preconnect" />
     <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300;0,400;0,700;1,300;1,400&amp;display=swap"
+      href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap"
       rel="stylesheet"
     />
     <link href="../Images/General/favicon.png" rel="icon" type="image/png" />
     <link href="../style.css" rel="stylesheet" />
+
     <script>
-      /* ============================================= AVOID FLICKER
+      /* =============================================
+         AVOID FLICKER
       ============================================= */
       (function () {
         const themes = [
@@ -61,6 +63,7 @@
             p5: "#3A4E48",
           },
         ];
+
         const i = parseInt(localStorage.getItem("theme-index"), 10) || 0;
         const t = themes[i];
         const root = document.documentElement.style;
@@ -77,8 +80,13 @@
       })();
     </script>
   </head>
-  <body class="case-page" style="--project-accent: var(--project-2)">
+
+  <body class="case-page" style="--project-accent: var(--project-4)">
     <div id="cursor"></div>
+
+    <!-- =============================================
+         NAV HTML — DO NOT MODIFY
+    ============================================= -->
     <nav>
       <a class="logo" data-home-link="" href="/">
         <span class="logo-first"
@@ -88,9 +96,9 @@
           ><span class="l hide" data-i="3">u</span
           ><span class="l hide" data-i="4">k</span></span
         ><span class="logo-last"
-          ><span class="l space hide" data-i="5"> </span
+          ><span class="l space hide" data-i="5"> </span
           ><span class="l dot">·</span
-          ><span class="l space hide" data-i="6"> </span
+          ><span class="l space hide" data-i="6"> </span
           ><span class="l" data-i="7">F</span
           ><span class="l hide" data-i="8">o</span
           ><span class="l hide" data-i="9">n</span
@@ -101,6 +109,7 @@
           ><span class="l hide" data-i="14">e</span></span
         >
       </a>
+
       <div class="nav-right">
         <div class="nav-controls">
           <button aria-label="Switch language" class="nav-lang">
@@ -121,19 +130,35 @@
           </button>
         </div>
       </div>
+
       <div class="mobile-menu" id="mobile-menu">
-        <a class="mobile-menu-link" data-i18n="nav.services" href="#services"
+        <a
+          class="mobile-menu-link"
+          data-i18n="nav.services"
+          href="../index.html#services"
           >Services</a
         >
-        <a class="mobile-menu-link" data-i18n="nav.work" href="#work">Work</a>
-        <a class="mobile-menu-link" data-i18n="nav.about" href="#about"
+        <a
+          class="mobile-menu-link"
+          data-i18n="nav.work"
+          href="../index.html#work"
+          >Work</a
+        >
+        <a
+          class="mobile-menu-link"
+          data-i18n="nav.about"
+          href="../index.html#about"
           >About</a
         >
-        <a class="mobile-menu-link" data-i18n="nav.contact" href="#contact"
+        <a
+          class="mobile-menu-link"
+          data-i18n="nav.contact"
+          href="../index.html#contact"
           >Contact</a
         >
       </div>
     </nav>
+
     <section id="site-gate">
       <div class="site-gate-box">
         <p class="site-gate-title" data-i18n="gate.title">Private Portfolio</p>
@@ -154,6 +179,7 @@
         <p data-i18n="gate.error" id="site-gate-error">Incorrect password.</p>
       </div>
     </section>
+
     <div id="site-content">
       <main>
         <!-- OVERVIEW -->
@@ -180,6 +206,7 @@
                 >Contact</a
               >
             </div>
+
             <a
               data-i18n="cs_shared.sidebar_overview"
               data-target="section-overview"
@@ -210,43 +237,38 @@
               href="#section-process"
               >Process</a
             >
+
             <div class="left-sidebar-sub">
               <a
                 class="left-sidebar-sub-item"
-                data-i18n="skills.sidebar.empathize"
-                data-target="section-empathize"
-                href="#section-empathize"
-                >01 Empathize</a
+                data-i18n="auw.process_bar.research"
+                data-target="section-research"
+                href="#section-research"
+                >01 Understand</a
               >
               <a
                 class="left-sidebar-sub-item"
-                data-i18n="skills.sidebar.define"
-                data-target="section-define"
-                href="#section-define"
-                >02 Define</a
+                data-i18n="auw.process_bar.design"
+                data-target="section-design"
+                href="#section-design"
+                >02 Design</a
               >
               <a
                 class="left-sidebar-sub-item"
-                data-i18n="skills.sidebar.ideate"
-                data-target="section-ideate"
-                href="#section-ideate"
-                >03 Ideate</a
-              >
-              <a
-                class="left-sidebar-sub-item"
-                data-i18n="skills.sidebar.prototype"
-                data-target="section-prototype"
-                href="#section-prototype"
-                >04 Prototype</a
-              >
-              <a
-                class="left-sidebar-sub-item"
-                data-i18n="skills.sidebar.test"
+                data-i18n="auw.process_bar.test"
                 data-target="section-test"
                 href="#section-test"
-                >05 Test</a
+                >03 Test</a
+              >
+              <a
+                class="left-sidebar-sub-item"
+                data-i18n="auw.process_bar.build"
+                data-target="section-build"
+                href="#section-build"
+                >04 Build</a
               >
             </div>
+
             <a
               data-i18n="cs_shared.sidebar_product"
               data-target="section-product"
@@ -254,78 +276,83 @@
               >Product</a
             >
           </nav>
+
           <div class="cs-overview-content">
             <p class="label label-muted" data-i18n="cs_shared.case_study_label">
               Case Study
             </p>
-            <h1 class="cs-headline" data-i18n="project_titles.skills">
-              <strong>Upskilling</strong> the Public Sector
+
+            <h1 class="cs-headline" data-i18n="project_titles.auw">
+              Giving HR its <strong>time back.</strong>
             </h1>
+
             <div class="cs-overview-intro">
               <p
                 class="cs-overview-description"
-                data-i18n="skills.overview_description"
+                data-i18n="auw.overview_description"
               >
-                A Design Thinking sprint exploring how personalized learning and
-                gamification can support digital transformation within the Swiss
-                Federal Administration.
+                Redesigning a manual education and training request process into
+                a guided Power App that automates calculations, reduces HR
+                administration, and makes the next step clear at every stage.
               </p>
-              <p class="cs-overview-note" data-i18n="skills.overview_note">
-                Note: This experimental project explored deliberately disruptive
-                solutions to a real business problem.
+
+              <p class="cs-overview-note" data-i18n="auw.overview_note">
+                Note: To protect internal information, identifying elements have
+                been removed. The example uses my own profile, while sensitive
+                information (e.g., salary) has been replaced with fictional
+                values.
               </p>
             </div>
           </div>
+
           <div class="cs-overview-image-wrap">
             <div class="cs-overview-image">
               <img
-                alt="Gamified Skills Management prototype mockup"
-                src="../Images/Skills/0_hero.png"
-                style="height: 80%"
+                alt="Education and training Power App"
+                src="../Images/AUW/0_hero.png"
               />
             </div>
           </div>
+
           <div class="cs-overview-meta">
             <div class="cs-overview-meta-block">
               <p class="label label-muted" data-i18n="cs_shared.meta_what">
                 What
               </p>
-              <p
-                class="cs-overview-meta-value"
-                data-i18n="skills.meta.what_value"
-              >
-                A concept for a learning platform where employees are encouraged
-                and rewarded for developing the skills the organization actually
-                needs.
+              <p class="cs-overview-meta-value" data-i18n="auw.meta.what_value">
+                A Power App guiding employees and managers through the full
+                education and training request process, automating calculations
+                and process steps from the initial request and approvals to cost
+                participation and invoice submission.
               </p>
             </div>
+
             <div class="cs-overview-meta-block">
               <p class="label label-muted" data-i18n="cs_shared.meta_why">
                 Why
               </p>
-              <p
-                class="cs-overview-meta-value"
-                data-i18n="skills.meta.why_value"
-              >
-                Digital transformation has been a strategic priority within the
-                Swiss Federal Administration for decades, yet many organizations
-                still struggle to translate it into concrete action.
+              <p class="cs-overview-meta-value" data-i18n="auw.meta.why_value">
+                The education and training request workflow relied on manual
+                checks, data transfers and error-prone calculations, creating
+                unnecessary work for employees and HR.
               </p>
             </div>
+
             <div class="cs-overview-meta-block">
               <p class="label label-muted" data-i18n="cs_shared.meta_how">
                 How
               </p>
-              <p
-                class="cs-overview-meta-value"
-                data-i18n="skills.meta.how_value"
-              >
-                During a four-day Design Thinking sprint, our interdisciplinary
-                team of four explored ideas beyond the obvious.
+              <p class="cs-overview-meta-value" data-i18n="auw.meta.how_value">
+                Leading the UX/UI design from early concepts to prototype and
+                high-fidelity design, building on the digital transformation
+                team’s process analysis, validating the solution with users, and
+                working closely with Power Apps engineers within tight time and
+                budget constraints.
               </p>
             </div>
           </div>
         </section>
+
         <!-- PROBLEM -->
         <section class="cs-section card-container" id="section-problem">
           <div class="cs-dark-card">
@@ -337,73 +364,80 @@
                 >
                   Problem
                 </p>
+
                 <h2
                   class="section-title section-title--light"
-                  data-i18n="skills.problem.heading"
+                  data-i18n="auw.problem.heading"
                 >
-                  Everyone wants digitalization.
-                  <strong>Nobody knows exactly what it means.</strong>
+                  One request can trigger an
+                  <strong>avalanche of background work.</strong>
                 </h2>
               </div>
+
               <div class="cs-problem-top-right">
                 <div class="cs-problem-image">
                   <img
-                    alt="Research notes from the Design Thinking sprint"
-                    class="cs-process-step-image"
-                    src="../Images/Skills/0_problem.jpeg"
+                    alt="Illustration of the manual education and training process"
+                    src="../Images/AUW/1_problem.png"
                   />
                 </div>
               </div>
             </div>
+
             <div class="cs-problem-points">
               <div class="cs-problem-point">
                 <p
                   class="cs-problem-point-title"
-                  data-i18n="skills.problem.point1_title"
+                  data-i18n="auw.problem.point1_title"
                 >
-                  Unclear direction
+                  Too much HR administration
                 </p>
                 <p
                   class="cs-problem-point-text"
-                  data-i18n="skills.problem.point1_text"
+                  data-i18n="auw.problem.point1_text"
                 >
-                  Digital transformation is a strategic priority, but a clear
-                  vision is often missing.
+                  HR had to repeatedly check information, transfer data manually
+                  and intervene throughout the process.
                 </p>
               </div>
+
               <div class="cs-problem-point">
                 <p
                   class="cs-problem-point-title"
-                  data-i18n="skills.problem.point2_title"
+                  data-i18n="auw.problem.point2_title"
                 >
-                  Limited resources
+                  Error-prone inputs
                 </p>
                 <p
                   class="cs-problem-point-text"
-                  data-i18n="skills.problem.point2_text"
+                  data-i18n="auw.problem.point2_text"
                 >
-                  Employees are expected to drive change with limited resources,
-                  unclear expectations and little practical guidance.
+                  Employees had to look up information such as their salary in
+                  other documents, or would enter an estimate, which HR then had
+                  to verify and correct manually.
                 </p>
               </div>
+
               <div class="cs-problem-point">
                 <p
                   class="cs-problem-point-title"
-                  data-i18n="skills.problem.point3_title"
+                  data-i18n="auw.problem.point3_title"
                 >
-                  Huge scope
+                  Stalled requests
                 </p>
                 <p
                   class="cs-problem-point-text"
-                  data-i18n="skills.problem.point3_text"
+                  data-i18n="auw.problem.point3_text"
                 >
-                  The scale of the organization makes digital transformation
-                  difficult to coordinate and prioritize.
+                  Without automatic reminders, requests could sit unanswered
+                  until HR followed up manually, adding more coordination work
+                  and slowing the process.
                 </p>
               </div>
             </div>
           </div>
         </section>
+
         <!-- SOLUTION -->
         <section
           class="cs-section cs-solution card-container"
@@ -412,77 +446,88 @@
           <div
             class="section-heading section-heading--center cs-solution-heading"
           >
-            <p class="label label-muted" data-i18n="cs_shared.solution">
+            <p class="label label-muted" data-i18n="auw.solution.label">
               Solution
             </p>
+
             <h2
               class="section-title section-title--dark"
-              data-i18n="skills.solution.heading"
+              data-i18n="auw.solution.heading"
             >
-              Reward people who drive digitalization.
+              <strong>One entry point</strong> and a process that adapts.
             </h2>
+
             <p
               class="cs-process-step-text cs-solution-description"
-              data-i18n="skills.solution.description"
+              data-i18n="auw.solution.description"
             >
-              Instead of outsourcing digital expertise or creating new
-              positions, the concept invests in employees who already understand
-              the organization. A personalized learning platform helps them
-              develop the skills it needs and rewards their progress.
+              All education and training requests now start in the same Power
+              App. Based on the request type, the app adapts the required steps,
+              approvals and calculations, guides users through the process, and
+              keeps HR out of day-to-day handling while preserving full
+              visibility.
             </p>
           </div>
+
           <div class="cs-solution-points">
             <div class="cs-problem-point">
               <p
                 class="cs-problem-point-title"
-                data-i18n="skills.solution.point1_title"
+                data-i18n="auw.solution.point1_title"
               >
-                Clear priorities
+                One app and an adaptive flow
               </p>
               <p
                 class="cs-problem-point-text"
-                data-i18n="skills.solution.point1_text"
+                data-i18n="auw.solution.point1_text"
               >
-                Employees can see which skills matter most and where to focus
-                their development.
+                Users only need to know one interface. The process adapts to the
+                type of education or training, including different approval
+                steps, agreements and other requirements.
               </p>
             </div>
+
             <div class="cs-problem-point">
               <p
                 class="cs-problem-point-title"
-                data-i18n="skills.solution.point2_title"
+                data-i18n="auw.solution.point2_title"
               >
-                Personalized learning
+                Automated in the background
               </p>
               <p
                 class="cs-problem-point-text"
-                data-i18n="skills.solution.point2_text"
+                data-i18n="auw.solution.point2_text"
               >
-                Learning paths adapt to individual skill gaps instead of
-                offering the same development journey to everyone.
+                Existing data, calculations and business rules are handled
+                automatically, removing the repeated checks and manual
+                corrections previously required from HR.
               </p>
             </div>
+
             <div class="cs-problem-point">
               <p
                 class="cs-problem-point-title"
-                data-i18n="skills.solution.point3_title"
+                data-i18n="auw.solution.point3_title"
               >
-                Motivation to grow
+                Shared visibility
               </p>
               <p
                 class="cs-problem-point-text"
-                data-i18n="skills.solution.point3_text"
+                data-i18n="auw.solution.point3_text"
               >
-                Gamification makes progress visible and rewards employees for
-                developing skills that support the organization.
+                Employees, managers and HR can see where a request stands and
+                what happens next. Managers gain an overview of their team’s
+                education and training activity, including past requests, while
+                HR can monitor the process without having to manage it.
               </p>
             </div>
           </div>
+
           <div class="cs-solution-image-wrap">
             <img
-              alt="Illustration of the gamified skills management solution"
+              alt="Illustration of the streamlined Power App process"
               class="cs-solution-image"
-              src="../Images/Skills/2_solution.png"
+              src="../Images/AUW/2_solution.png"
             />
           </div>
         </section>
@@ -494,51 +539,118 @@
               <p class="label label-light" data-i18n="cs_shared.sidebar_impact">
                 Impact
               </p>
-              <h2 class="cs-impact-title" data-i18n="skills.impact.heading">
-                A disruptive concept led to
-                <strong>a more practical solution.</strong>
+
+              <h2 class="cs-impact-title" data-i18n="auw.impact.heading">
+                Giving HR its <strong>time back.</strong>
               </h2>
             </div>
 
             <div class="cs-impact-numbers">
               <div class="cs-impact-number">
-                <p class="cs-impact-num" data-i18n="skills.impact.num1_value">
-                  Sparked
-                </p>
+                <p class="cs-impact-num">1'000+</p>
                 <p
                   class="cs-impact-num-label"
-                  data-i18n="skills.impact.num1_label"
+                  data-i18n="auw.impact.num1_label"
                 >
-                  The concept sparked new thinking about how employee skills
-                  could be made visible and put to use across the organization.
+                  education and training requests automated per year.
                 </p>
               </div>
 
               <div class="cs-impact-number">
-                <p class="cs-impact-num" data-i18n="skills.impact.num2_value">
-                  Reframed
-                </p>
+                <p class="cs-impact-num" data-i18n="auw.impact.num2_value">0</p>
                 <p
                   class="cs-impact-num-label"
-                  data-i18n="skills.impact.num2_label"
+                  data-i18n="auw.impact.num2_label"
                 >
-                  The original gamification idea evolved into a simpler internal
-                  skills marketplace: find people with the expertise a project
-                  needs and connect with them directly.
+                  routine HR quality checks required during the process.
                 </p>
               </div>
 
               <div class="cs-impact-number">
-                <p class="cs-impact-num" data-i18n="skills.impact.num3_value">
-                  Evaluated
+                <p class="cs-impact-num" data-i18n="auw.impact.num3_value">
+                  100%
                 </p>
                 <p
                   class="cs-impact-num-label"
-                  data-i18n="skills.impact.num3_label"
+                  data-i18n="auw.impact.num3_label"
                 >
-                  This marketplace concept is now being evaluated as a possible
-                  way to mobilize hidden skills across teams without relying on
-                  outsourcing.
+                  of surveyed stakeholders satisfied with the new process.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- TESTIMONIAL -->
+        <section
+          class="cs-testimonials card-container"
+          id="section-testimonials"
+        >
+          <p class="label label-muted" data-i18n="auw.testimonial.label">
+            Testimonial
+          </p>
+
+          <div class="cs-testimonials-grid cs-testimonials-grid--compact">
+            <div
+              aria-haspopup="dialog"
+              class="cs-testimonial-card cs-testimonial-card--interactive cursor-grow"
+              data-testimonial=""
+              role="button"
+              tabindex="0"
+            >
+              <p
+                class="cs-testimonial-highlight-text"
+                data-i18n="auw.testimonial.highlight"
+              >
+                “Lorem ipsum dolor sit amet, consectetur adipiscing elit.”
+              </p>
+
+              <div class="cs-testimonial-card-footer">
+                <p
+                  class="cs-testimonial-author"
+                  data-i18n="auw.testimonial.author"
+                >
+                  John Muster, DigiTeam, Swiss Federal Administration
+                </p>
+
+                <span class="cs-testimonial-reveal">
+                  <span data-i18n="cs_shared.reveal_testimonial"
+                    >Reveal full testimonial</span
+                  >
+                  <span aria-hidden="true" class="link-arrow">
+                    <svg fill="none" viewBox="0 0 16 16">
+                      <path
+                        d="M0 16L13 3M7.6 3H13V8.4"
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="miter"
+                        stroke-width="1"
+                      ></path>
+                    </svg>
+                  </span>
+                </span>
+              </div>
+
+              <div class="cs-testimonial-full" hidden="">
+                <p
+                  class="cs-testimonial-full-quote"
+                  data-i18n="auw.testimonial.quote"
+                >
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                  laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+                  irure dolor in reprehenderit in voluptate velit esse cillum
+                  dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+                  cupidatat non proident, sunt in culpa qui officia deserunt
+                  mollit anim id est laborum.
+                </p>
+
+                <p
+                  class="cs-testimonial-full-author"
+                  data-i18n="auw.testimonial.author"
+                >
+                  John Muster, DigiTeam, Swiss Federal Administration
                 </p>
               </div>
             </div>
@@ -553,18 +665,19 @@
             </p>
             <h2
               class="section-title section-title--dark"
-              data-i18n="cs_shared.process_heading"
+              data-i18n="auw.process.heading"
             >
-              How we got there.
+              <strong>How</strong> we got there
             </h2>
           </div>
+
           <div class="cs-process-bar">
-            <div class="cs-process-bar-steps" style="--steps: 5">
+            <div class="cs-process-bar-steps" style="--steps: 4">
               <div class="cs-process-bar-step">
                 <span
                   class="cs-process-bar-step-name"
-                  data-i18n="skills.sidebar.empathize"
-                  >01 Empathize</span
+                  data-i18n="auw.process_bar.research"
+                  >01 Understand</span
                 >
                 <div class="cs-process-bar-line">
                   <span class="cs-process-bar-dot"></span
@@ -573,21 +686,27 @@
                 <div class="cs-process-bar-deliverables">
                   <span
                     class="cs-process-bar-deliverable"
-                    data-i18n="skills.process_bar.empathize_d1"
-                    >Interviews</span
+                    data-i18n="auw.process_bar.research_d1"
+                    >Process Review</span
                   >
                   <span
                     class="cs-process-bar-deliverable"
-                    data-i18n="skills.process_bar.empathize_d2"
-                    >Key Insights</span
+                    data-i18n="auw.process_bar.research_d2"
+                    >User Flows</span
+                  >
+                  <span
+                    class="cs-process-bar-deliverable"
+                    data-i18n="auw.process_bar.research_d3"
+                    >Requirements Review</span
                   >
                 </div>
               </div>
+
               <div class="cs-process-bar-step">
                 <span
                   class="cs-process-bar-step-name"
-                  data-i18n="skills.sidebar.define"
-                  >02 Define</span
+                  data-i18n="auw.process_bar.design"
+                  >02 Design</span
                 >
                 <div class="cs-process-bar-line">
                   <span class="cs-process-bar-dot"></span
@@ -596,21 +715,27 @@
                 <div class="cs-process-bar-deliverables">
                   <span
                     class="cs-process-bar-deliverable"
-                    data-i18n="skills.process_bar.define_d1"
-                    >Affinity Mapping</span
+                    data-i18n="auw.process_bar.design_d1"
+                    >AI Prototype</span
                   >
                   <span
                     class="cs-process-bar-deliverable"
-                    data-i18n="skills.process_bar.define_d2"
-                    >HMW Questions</span
+                    data-i18n="auw.process_bar.design_d2"
+                    >Design System</span
+                  >
+                  <span
+                    class="cs-process-bar-deliverable"
+                    data-i18n="auw.process_bar.design_d3"
+                    >Hi-Fi Prototype</span
                   >
                 </div>
               </div>
+
               <div class="cs-process-bar-step">
                 <span
                   class="cs-process-bar-step-name"
-                  data-i18n="skills.sidebar.ideate"
-                  >03 Ideate</span
+                  data-i18n="auw.process_bar.test"
+                  >03 Test</span
                 >
                 <div class="cs-process-bar-line">
                   <span class="cs-process-bar-dot"></span
@@ -619,44 +744,27 @@
                 <div class="cs-process-bar-deliverables">
                   <span
                     class="cs-process-bar-deliverable"
-                    data-i18n="skills.process_bar.ideate_d1"
-                    >Random Word</span
+                    data-i18n="auw.process_bar.test_d1"
+                    >Usability Study</span
                   >
                   <span
                     class="cs-process-bar-deliverable"
-                    data-i18n="skills.process_bar.ideate_d2"
-                    >Morphological Box</span
+                    data-i18n="auw.process_bar.test_d2"
+                    >Iterations</span
+                  >
+                  <span
+                    class="cs-process-bar-deliverable"
+                    data-i18n="auw.process_bar.test_d3"
+                    >Scope Adaptation</span
                   >
                 </div>
               </div>
+
               <div class="cs-process-bar-step">
                 <span
                   class="cs-process-bar-step-name"
-                  data-i18n="skills.sidebar.prototype"
-                  >04 Prototype</span
-                >
-                <div class="cs-process-bar-line">
-                  <span class="cs-process-bar-dot"></span
-                  ><span class="cs-process-bar-track"></span>
-                </div>
-                <div class="cs-process-bar-deliverables">
-                  <span
-                    class="cs-process-bar-deliverable"
-                    data-i18n="skills.process_bar.prototype_d1"
-                    >AI Prompting</span
-                  >
-                  <span
-                    class="cs-process-bar-deliverable"
-                    data-i18n="skills.process_bar.prototype_d2"
-                    >Clickable Prototype</span
-                  >
-                </div>
-              </div>
-              <div class="cs-process-bar-step">
-                <span
-                  class="cs-process-bar-step-name"
-                  data-i18n="skills.sidebar.test"
-                  >05 Test</span
+                  data-i18n="auw.process_bar.build"
+                  >04 Build</span
                 >
                 <div class="cs-process-bar-line">
                   <span class="cs-process-bar-dot"></span>
@@ -664,351 +772,323 @@
                 <div class="cs-process-bar-deliverables">
                   <span
                     class="cs-process-bar-deliverable"
-                    data-i18n="skills.process_bar.test_d1"
-                    >Peer Feedback</span
+                    data-i18n="auw.process_bar.build_d1"
+                    >Power App</span
                   >
                   <span
                     class="cs-process-bar-deliverable"
-                    data-i18n="skills.process_bar.test_d2"
-                    >Reality Check</span
+                    data-i18n="auw.process_bar.build_d2"
+                    >Jira</span
+                  >
+                  <span
+                    class="cs-process-bar-deliverable"
+                    data-i18n="auw.process_bar.build_d3"
+                    >Weekly Reviews</span
                   >
                 </div>
               </div>
             </div>
           </div>
-          <!-- 01 Empathize -->
-          <div class="cs-process-step-section first" id="section-empathize">
+
+          <!-- 01 RESEARCH -->
+          <div class="cs-process-step-section first" id="section-research">
             <div class="cs-process-step-card">
               <div class="cs-process-step-card-top">
                 <p class="cs-process-step-card-num">01</p>
+
                 <div class="cs-process-step-card-right">
-                  <p
-                    class="label label-muted"
-                    data-i18n="skills.label_empathize"
-                  >
-                    Empathize
+                  <p class="label label-muted" data-i18n="auw.research.label">
+                    Understand
                   </p>
+
                   <h2
                     class="section-title section-title--process"
-                    data-i18n="skills.empathize.heading"
+                    data-i18n="auw.research.heading"
                   >
-                    How do people <strong>experience</strong> digital
-                    transformation?
+                    Translating workflows into
+                    <strong>user flows.</strong>
                   </h2>
-                  <p
-                    class="cs-process-step-text"
-                    data-i18n="skills.empathize.text1"
-                  >
-                    To better understand the challenges behind digital
-                    transformation, each team member conducted interviews with
-                    employees across different roles within the Swiss Federal
-                    Administration. Together, we collected perspectives from 4
-                    managers, 5 employees and 1 subject matter expert.
 
-                    <span class="cs-key-decision">
-                      <strong><strong>Key Decision: </strong></strong>
-                      Interviews were conducted online, so they could be
-                      automatically transcribed by Microsoft Teams. AI could
-                      then help extract key insights before the team reviewed
-                      and synthesized the findings together.
-                    </span>
+                  <p class="cs-process-step-text" data-i18n="auw.research.text">
+                    The digital transformation team had already done substantial
+                    groundwork, including requirements engineering, interviews,
+                    workshops, user stories and a target process definition. The
+                    destination was clear: a Power App. The concrete user
+                    experience was still open.
+                    <br /><br />
+                    I started by reviewing the existing documentation to build a
+                    solid understanding of the process, then translated the
+                    target process into a user flow to define the screens,
+                    decisions and states the product needed.
+                    <br /><br />
+                    <strong>Key Decision:</strong> Involve engineers early to
+                    understand the possibilities and constraints of Power Apps.
                   </p>
                 </div>
               </div>
             </div>
+
             <div class="cs-process-step-media">
-              <div class="cs-process-step-media-item cs-process-images">
+              <div class="cs-process-step-media-item">
                 <p
                   class="cs-image-caption cs-image-caption--center"
-                  data-i18n="skills.empathize.caption1"
+                  data-i18n="auw.research.caption"
                 >
-                  Interview Material
+                  User Flows helped understand what screens were needed.
                 </p>
                 <img
-                  alt="Interview and research notes"
+                  alt="User flow derived from the target process"
                   class="cs-process-step-image cs-lightbox-trigger cursor-grow"
-                  src="../Images/Skills/1_research2.png"
-                />
-                <p
-                  class="cs-image-caption cs-image-caption--center"
-                  data-i18n="skills.empathize.caption2"
-                >
-                  Prompting in ChatGPT to extract insights from interview
-                  transcripts
-                </p>
-                <img
-                  alt="Interview and research notes"
-                  class="cs-process-step-image cs-lightbox-trigger cursor-grow"
-                  src="../Images/Skills/1_research3.png"
-                  style="width: 70%; display: block; margin: 24px auto"
+                  src="../Images/AUW/3_research.png"
                 />
               </div>
             </div>
           </div>
-          <!-- 02 Define -->
-          <div class="cs-process-step-section" id="section-define">
+
+          <!-- 02 DESIGN -->
+          <div class="cs-process-step-section" id="section-design">
             <div class="cs-process-step-card">
               <div class="cs-process-step-card-top">
                 <p class="cs-process-step-card-num">02</p>
-                <div class="cs-process-step-card-right">
-                  <p class="label label-muted" data-i18n="skills.label_define">
-                    Define
-                  </p>
-                  <h2
-                    class="section-title section-title--process"
-                    data-i18n="skills.define.heading"
-                  >
-                    Finding the <strong>right problem</strong> to solve.
-                  </h2>
-                  <p
-                    class="cs-process-step-text"
-                    data-i18n="skills.define.text1"
-                  >
-                    Interview findings were grouped into themes using affinity
-                    mapping. Together, we identified recurring pain points,
-                    challenged our assumptions with AI, and translated the
-                    strongest opportunities into "How Might We" questions:
-                  </p>
-                  <p
-                    class="cs-process-step-text"
-                    data-i18n="skills.define.text2"
-                  >
-                    How might we map employees' skills? <br />
-                    How might personalized learning experiences look? <br />
-                    How might employees be guided through this transformation
-                    journey?
-                    <span class="cs-key-decision">
-                      <strong><strong>Key Decision: </strong></strong>
-                      The challenge was broad and the timeline exceptionally
-                      short, so we narrowed our focus to employee skills. We set
-                      aside larger organizational challenges, such as replacing
-                      widely used digital tools and strengthening management
-                      support and strategic leadership.
-                    </span>
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="cs-process-step-media">
-              <div class="cs-process-step-media-item">
-                <p
-                  class="cs-image-caption cs-image-caption--center"
-                  data-i18n="skills.define.caption"
-                >
-                  Digital meets analog.
-                </p>
-                <img
-                  alt="Define phase with clustered post-its"
-                  class="cs-process-step-image cs-lightbox-trigger cursor-grow"
-                  src="../Images/Skills/2_Define.jpeg"
-                />
-              </div>
-            </div>
-          </div>
-          <!-- 03 Ideate -->
-          <div class="cs-process-step-section" id="section-ideate">
-            <div class="cs-process-step-card">
-              <div class="cs-process-step-card-top">
-                <p class="cs-process-step-card-num">03</p>
-                <div class="cs-process-step-card-right">
-                  <p class="label label-muted" data-i18n="skills.label_ideate">
-                    Ideate
-                  </p>
-                  <h2
-                    class="section-title section-title--process"
-                    data-i18n="skills.ideate.heading"
-                  >
-                    <strong>Exploring</strong> as many ideas as possible.
-                  </h2>
-                  <p
-                    class="cs-process-step-text"
-                    data-i18n="skills.ideate.text"
-                  >
-                    Ideas were generated collaboratively and enriched with AI
-                    using techniques such as the Morphological Box and Random
-                    Word. The concepts were then discussed, voted on and
-                    evaluated against predefined criteria before we refined the
-                    strongest solution.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="cs-process-step-media">
-              <div class="cs-process-step-media-item">
-                <p
-                  class="cs-image-caption cs-image-caption--center"
-                  data-i18n="skills.ideate.caption"
-                >
-                  Random Word Method, Morphological box and prioritization
-                </p>
-                <img
-                  alt="Ideation exercise"
-                  class="cs-process-step-image cs-lightbox-trigger cursor-grow"
-                  src="../Images/Skills/3_Ideate_2.jpeg"
-                />
-              </div>
-              <div class="cs-process-step-media-item">
-                <div class="cs-image-container">
-                  <img
-                    alt="Ideation exercise"
-                    class="cs-process-step-image cs-lightbox-trigger cursor-grow"
-                    src="../Images/Skills/3_Ideate_6.jpeg"
-                  />
-                  <img
-                    alt="Selected concept"
-                    class="cs-process-step-image cs-lightbox-trigger cursor-grow"
-                    src="../Images/Skills/3_Ideate_7.jpeg"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- 04 Prototype -->
-          <div class="cs-process-step-section" id="section-prototype">
-            <div class="cs-process-step-card">
-              <div class="cs-process-step-card-top">
-                <p class="cs-process-step-card-num">04</p>
-                <div class="cs-process-step-card-right">
-                  <p
-                    class="label label-muted"
-                    data-i18n="skills.label_prototype"
-                  >
-                    Prototype
-                  </p>
-                  <h2
-                    class="section-title section-title--process"
-                    data-i18n="skills.prototype.heading"
-                  >
-                    20 minutes to bring the concept
-                    <strong> to life.</strong>
-                  </h2>
-                  <p
-                    class="cs-process-step-text"
-                    data-i18n="skills.prototype.text"
-                  >
-                    With the deadline approaching, we split up to make the
-                    concept tangible. While part of the team refined the
-                    personalized learning concept, I focused on creating an
-                    interactive prototype of the proposed skills management
-                    platform.
 
-                    <span class="cs-key-decision">
-                      <strong><strong>Key Decision: </strong></strong>
-                      As the team member responsible for the prototype of the
-                      skills management platform, I made all design decisions,
-                      from writing the initial prompt to refining the result
-                      into a functional prototype.
-                    </span>
+                <div class="cs-process-step-card-right">
+                  <p class="label label-muted" data-i18n="auw.design.label">
+                    Design
+                  </p>
+
+                  <h2
+                    class="section-title section-title--process"
+                    data-i18n="auw.design.heading"
+                  >
+                    <strong>A design system</strong> with gaps.
+                  </h2>
+
+                  <p class="cs-process-step-text" data-i18n="auw.design.text">
+                    After reviewing a lo-fi concept with engineers, I used
+                    Claude to rapidly create a functional prototype that
+                    demonstrated interactions and calculations and could be
+                    tested early on.
+                    <br /><br />
+                    For the high-fidelity design, I worked with the Swiss
+                    federal design system. As it was mainly designed for
+                    public-facing websites, some components for
+                    information-dense internal applications were missing or
+                    needed adjustment.
+                    <br /><br />
+                    <strong>Key Decision:</strong> Keep the experience familiar
+                    by combining existing design system elements with patterns
+                    from established internal tools employees already knew.
                   </p>
                 </div>
               </div>
             </div>
+
             <div class="cs-process-step-media">
               <div class="cs-process-step-media-item">
                 <p
                   class="cs-image-caption cs-image-caption--center"
-                  data-i18n="skills.prototype.caption1"
+                  data-i18n="auw.design.caption1"
                 >
-                  Prompting in Claude
+                  Translating the AI-generated prototype into a high-fidelity
+                  prototype using the Swiss Federal Design System.
                 </p>
                 <img
-                  alt="Ideation exercise"
+                  alt="Early prototype exploration"
                   class="cs-process-step-image cs-lightbox-trigger cursor-grow"
-                  src="../Images/Skills/4_prototype.png"
+                  src="../Images/AUW/4_design_3.png"
                 />
-              </div>
-              <div class="cs-process-step-media-item">
-                <p
-                  class="cs-image-caption cs-image-caption--center"
-                  data-i18n="skills.prototype.caption2"
-                >
-                  20-minute prototype
-                </p>
-                <div class="cs-product-showcase">
-                  <div class="cs-product-card cs-product-card-large">
-                    <img
-                      alt="Gamified Skills Management prototype"
-                      src="../Images/Skills/4_prototype1.png"
-                    />
-                  </div>
-                </div>
               </div>
             </div>
           </div>
-          <!-- 05 Test -->
+
+          <!-- 03 TEST -->
           <div class="cs-process-step-section" id="section-test">
             <div class="cs-process-step-card">
               <div class="cs-process-step-card-top">
-                <p class="cs-process-step-card-num">05</p>
+                <p class="cs-process-step-card-num">03</p>
+
                 <div class="cs-process-step-card-right">
-                  <p class="label label-muted" data-i18n="cs_shared.label_test">
+                  <p class="label label-muted" data-i18n="auw.test.label">
                     Test
                   </p>
+
                   <h2
                     class="section-title section-title--process"
-                    data-i18n="skills.test.heading"
+                    data-i18n="auw.test.heading"
                   >
-                    A
-                    <strong>reality check</strong> made us hesitate.
+                    <strong>Observing users</strong> to find hiccups.
                   </h2>
-                  <p class="cs-process-step-text" data-i18n="skills.test.text">
-                    The prototype was presented to another team to gather
-                    feedback. Rather than discussing the interface itself, the
-                    conversation quickly shifted to organizational adoption and
-                    the barriers that could prevent such a platform from
-                    succeeding. Transparency and security concerns would require
-                    organizational change management and clear communication
-                    about how employee data is used.
-                    <span class="cs-key-decision">
-                      <strong><strong>Key Outcome: </strong></strong>
-                      Introducing fixed financial rewards for developing skills
-                      would have been difficult to implement, as they would have
-                      required a dedicated budget. However, when I presented the
-                      idea to my division, there was strong interest in an
-                      internal skills marketplace where employees’ hidden
-                      expertise could be made visible and put to use on projects
-                      across the organization, reducing the need for
-                      outsourcing.
-                    </span>
+
+                  <p class="cs-process-step-text" data-i18n="auw.test.text">
+                    Five moderated usability studies with employees, a manager
+                    and HR specialists led to several refinements. Across all
+                    user groups, the new solution was met with strong
+                    enthusiasm.
+
+                    <br /><br />
+                    <strong>Key Decision:</strong> Test and iterate as much as
+                    possible on the AI prototype to reduce rework, effort and
+                    cost during high-fidelity design and final Power Apps
+                    development.
                   </p>
                 </div>
               </div>
             </div>
-            <div class="cs-process-step-media"></div>
+
+            <div class="cs-process-step-media">
+              <div class="cs-process-step-media-item">
+                <p
+                  class="cs-image-caption cs-image-caption--center"
+                  data-i18n="auw.test.caption1"
+                >
+                  Moderated usability studies uncovered frictions.
+                </p>
+                <img
+                  alt="Usability testing and prioritized findings"
+                  class="cs-process-step-image cs-lightbox-trigger cursor-grow"
+                  src="../Images/AUW/5_test.png"
+                />
+              </div>
+              <div class="cs-process-step-media-item">
+                <p
+                  class="cs-image-caption cs-image-caption--center"
+                  data-i18n="auw.test.caption2"
+                >
+                  Iteration: Reduce cognitive load with information buttons
+                </p>
+                <img
+                  alt="Usability testing and prioritized findings"
+                  class="cs-process-step-image cs-lightbox-trigger cursor-grow"
+                  src="../Images/AUW/5_test_1.png"
+                />
+              </div>
+              <div class="cs-process-step-media-item">
+                <p
+                  class="cs-image-caption cs-image-caption--center"
+                  data-i18n="auw.test.caption3"
+                >
+                  Iteration: remove the simulator, which turned out to be more
+                  confusing than helpful.
+                </p>
+                <img
+                  alt="Usability testing and prioritized findings"
+                  class="cs-process-step-image cs-lightbox-trigger cursor-grow"
+                  src="../Images/AUW/5_test_2.png"
+                />
+              </div>
+              <div class="cs-process-step-media-item">
+                <p
+                  class="cs-image-caption cs-image-caption--center"
+                  data-i18n="auw.test.caption4"
+                >
+                  Iteration: add tailored approval interfaces where a single
+                  standardized interface proved unsuitable.
+                </p>
+                <img
+                  alt="Usability testing and prioritized findings"
+                  class="cs-process-step-image cs-lightbox-trigger cursor-grow"
+                  src="../Images/AUW/5_test_3.png"
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- 04 BUILD -->
+          <div class="cs-process-step-section" id="section-build">
+            <div class="cs-process-step-card">
+              <div class="cs-process-step-card-top">
+                <p class="cs-process-step-card-num">04</p>
+
+                <div class="cs-process-step-card-right">
+                  <p class="label label-muted" data-i18n="auw.build.label">
+                    Build
+                  </p>
+
+                  <h2
+                    class="section-title section-title--process"
+                    data-i18n="auw.build.heading"
+                  >
+                    Finding the <strong>pragmatic path.</strong>
+                  </h2>
+
+                  <p class="cs-process-step-text" data-i18n="auw.build.text">
+                    Collaboration with engineers and the digital transformation
+                    team was lightweight but continuous, with short weekly
+                    meetings for open questions and Jira for structured feedback
+                    and testing issues.
+
+                    <br /><br />
+                    <strong>Key Decision:</strong> Due to time and budget
+                    constraints, not every planned feature could make it into
+                    scope. Rather than defaulting to the status quo, I looked
+                    for simpler alternatives that preserved as much of the
+                    intended user experience as possible.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="cs-process-step-media">
+              <div class="cs-process-step-media-item">
+                <p
+                  class="cs-image-caption cs-image-caption--center"
+                  data-i18n="auw.build.caption"
+                >
+                  Jira as the main collaboration tool.
+                </p>
+                <img
+                  alt="Power Apps implementation and Jira collaboration"
+                  class="cs-process-step-image cs-lightbox-trigger cursor-grow"
+                  src="../Images/AUW/6_build.png"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="cs-lightbox" id="lightbox">
+            <button class="cs-lightbox-close" id="lightbox-close">✕</button>
+            <img alt="" class="cs-lightbox-img" id="lightbox-img" src="" />
           </div>
         </section>
+
         <!-- PRODUCT -->
         <section class="cs-product" id="section-product">
-          <p class="label label-muted" data-i18n="skills.product.label">
-            The Prototype
+          <p class="label label-muted" data-i18n="auw.product.label">
+            The Final Product
           </p>
+
           <h2
             class="section-title"
-            data-i18n="skills.product.heading"
+            data-i18n="auw.product.heading"
             style="text-align: left; margin-bottom: var(--element-gap)"
           >
-            A clickable concept for <strong>personalized learning.</strong>
+            <strong>A clear path</strong> for each request.
           </h2>
-          <div class="cs-product-card cs-product-card-large">
-            <p class="cs-prototype-note" data-i18n="skills.product.try_it">
-              Try it out!
-            </p>
-            <p
-              class="cs-prototype-mobile-note"
-              data-i18n="skills.product.desktop_only"
-            >
-              Open on desktop to try the interactive prototype.
-            </p>
-            <iframe
-              loading="lazy"
-              src="../Images/Skills/skills.html"
-              title="Gamified Skills Management Prototype"
-            >
-            </iframe>
+
+          <div class="cs-product-showcase">
+            <div class="cs-product-card cs-product-card-large">
+              <img alt="Final Power App" src="../Images/AUW/7_product_1.png" />
+            </div>
+
+            <div class="cs-product-details">
+              <div class="cs-product-card">
+                <img
+                  alt="Power App detail"
+                  src="../Images/AUW/7_product_2.png"
+                />
+              </div>
+
+              <div class="cs-product-card">
+                <img
+                  alt="Power App detail"
+                  src="../Images/AUW/7_product_3.png"
+                />
+              </div>
+            </div>
           </div>
         </section>
-        <!-- REFLECTION -->
       </main>
+
       <!-- NEXT PROJECTS -->
       <section class="cs-next">
         <div class="cs-next-inner">
@@ -1027,6 +1107,7 @@
                 Continue exploring.
               </h2>
             </div>
+
             <div class="cs-next-links">
               <a
                 class="cs-next-row big-link big-link--project"
@@ -1052,12 +1133,12 @@
 
               <a
                 class="cs-next-row big-link big-link--project"
-                data-preview="../Images/Home/0_work_4.png"
-                data-preview-color="var(--project-4)"
-                href="../Work/auw.html"
+                data-preview="../Images/Home/0_work_2.png"
+                data-preview-color="var(--project-2)"
+                href="../Work/skills.html"
               >
-                <span data-i18n="project_descriptive_titles.auw"
-                  >End-to-End Workflow App</span
+                <span data-i18n="project_descriptive_titles.skills"
+                  >Gamified Skills Development Platform</span
                 >
                 <span aria-hidden="true" class="link-arrow">
                   <svg fill="none" viewBox="0 0 16 16">
@@ -1079,7 +1160,7 @@
                 >Back to work overview</span
               >
               <span aria-hidden="true" class="link-arrow">
-                <svg fill="none" viewbox="0 0 16 16">
+                <svg fill="none" viewBox="0 0 16 16">
                   <path
                     d="M0 16L13 3M7.6 3H13V8.4"
                     stroke="currentColor"
@@ -1090,10 +1171,11 @@
                 </svg>
               </span>
             </a>
+
             <a class="big-link big-link--light" href="../index.html#contact">
               <p class="link-text" data-i18n="hero.cta_contact">Get in touch</p>
               <span aria-hidden="true" class="link-arrow">
-                <svg fill="none" viewbox="0 0 16 16">
+                <svg fill="none" viewBox="0 0 16 16">
                   <path
                     d="M0 16L13 3M7.6 3H13V8.4"
                     stroke="currentColor"
@@ -1106,24 +1188,45 @@
             </a>
           </div>
         </div>
-        <!-- ============Preview============-->
+
         <div aria-hidden="true" class="cs-project-preview">
           <div class="cs-project-preview-card">
             <img alt="" src="" />
           </div>
         </div>
-        <!--=====End Preview====-->
       </section>
+
       <div id="footer"></div>
-      <!-- =============================================
-     PASSWORD GATE END OF CONTAINER
-  ============================================= -->
+
+      <div
+        aria-hidden="true"
+        class="cs-testimonial-modal"
+        id="testimonial-modal"
+      >
+        <button
+          aria-label="Close testimonial"
+          class="cs-lightbox-close"
+          id="testimonial-modal-close"
+          type="button"
+        >
+          ✕
+        </button>
+
+        <div aria-modal="true" class="cs-testimonial-modal-card" role="dialog">
+          <p
+            class="cs-testimonial-modal-quote"
+            id="testimonial-modal-quote"
+          ></p>
+          <p
+            class="cs-testimonial-modal-author"
+            id="testimonial-modal-author"
+          ></p>
+        </div>
+      </div>
     </div>
+
     <script src="../loader.js"></script>
     <script src="../script.js"></script>
-    <!-- =============================================
-  Password for the full site
-  ============================================= -->
     <script src="../site-gate.js"></script>
   </body>
 </html>

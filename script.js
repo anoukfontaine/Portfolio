@@ -60,15 +60,24 @@ function applyTheme(index) {
   document.documentElement.style.setProperty("--project-4", t.p4);
   document.documentElement.style.setProperty("--project-5", t.p5);
   document.documentElement.style.setProperty("--image-filter", t.imageFilter);
+  updateHeroIllustration(index);
 }
 
 let themeIndex = parseInt(localStorage.getItem("theme-index"), 10) || 0;
+updateHeroIllustration(themeIndex);
 
 document.getElementById("theme-toggle").addEventListener("click", () => {
   themeIndex = (themeIndex + 1) % themes.length;
   applyTheme(themeIndex);
   localStorage.setItem("theme-index", themeIndex);
 });
+
+function updateHeroIllustration(index) {
+  const illustration = document.getElementById("hero-illustration");
+  if (!illustration) return;
+
+  illustration.src = `Images/Home/0_Illustration_theme_${index + 1}.png`;
+}
 
 /* =============================================
                    CUSTOM CURSOR
@@ -505,26 +514,98 @@ document.addEventListener("keydown", (e) => {
   }
 });
 /* =============================================
- CASE STUDY ITERATIONS TOGGLE
+ CASE STUDY ITERATIONS TOGGLE + AUTOPLAY
 ============================================= */
 
-document.addEventListener("click", (e) => {
-  const btn = e.target.closest(".pill-btn--toggle");
-  if (!btn) return;
+(() => {
+  const iterations = document.querySelector(".cs-iterations");
+  if (!iterations) return;
 
-  document
-    .querySelectorAll(".pill-btn--toggle")
-    .forEach((b) => b.classList.remove("active"));
-
-  btn.classList.add("active");
-
-  const target = btn.dataset.target;
+  const buttons = Array.from(iterations.querySelectorAll(".pill-btn--toggle"));
   const before = document.getElementById("iterations-before");
   const after = document.getElementById("iterations-after");
 
-  if (before) before.classList.toggle("hidden", target !== "before");
-  if (after) after.classList.toggle("hidden", target !== "after");
-});
+  if (!buttons.length || !before || !after) return;
+
+  const AUTOPLAY_DELAY = 3500;
+  const FADE_DURATION = 220;
+  let autoPlay = null;
+  let transitionTimer = null;
+  let currentState = "before";
+  let userHasInteracted = false;
+
+  function updateButtons(state) {
+    buttons.forEach((button) => {
+      const isActive = button.dataset.target === state;
+      button.classList.toggle("active", isActive);
+      button.setAttribute("aria-pressed", String(isActive));
+    });
+  }
+
+  function showIteration(state, { animate = true } = {}) {
+    if (state !== "before" && state !== "after") return;
+
+    clearTimeout(transitionTimer);
+
+    const incoming = state === "before" ? before : after;
+    const outgoing = state === "before" ? after : before;
+
+    currentState = state;
+    updateButtons(state);
+
+    if (!animate) {
+      before.classList.toggle("is-visible", state === "before");
+      before.classList.toggle("is-top", state === "before");
+      before.setAttribute("aria-hidden", String(state !== "before"));
+
+      after.classList.toggle("is-visible", state === "after");
+      after.classList.toggle("is-top", state === "after");
+      after.setAttribute("aria-hidden", String(state !== "after"));
+      return;
+    }
+
+    outgoing.classList.add("is-visible");
+    outgoing.classList.remove("is-top", "is-fading-out");
+    outgoing.setAttribute("aria-hidden", "false");
+
+    incoming.classList.remove("is-visible", "is-fading-out");
+    incoming.classList.add("is-top");
+    incoming.setAttribute("aria-hidden", "false");
+
+    requestAnimationFrame(() => {
+      incoming.classList.add("is-visible");
+      outgoing.classList.add("is-fading-out");
+    });
+
+    transitionTimer = setTimeout(() => {
+      outgoing.classList.remove("is-visible", "is-fading-out");
+      outgoing.setAttribute("aria-hidden", "true");
+      incoming.setAttribute("aria-hidden", "false");
+    }, FADE_DURATION);
+  }
+
+  function stopAutoPlay() {
+    userHasInteracted = true;
+    if (autoPlay) {
+      clearInterval(autoPlay);
+      autoPlay = null;
+    }
+  }
+
+  buttons.forEach((button) => {
+    button.addEventListener("click", () => {
+      stopAutoPlay();
+      showIteration(button.dataset.target);
+    });
+  });
+
+  showIteration("before", { animate: false });
+
+  autoPlay = setInterval(() => {
+    if (userHasInteracted) return;
+    showIteration(currentState === "before" ? "after" : "before");
+  }, AUTOPLAY_DELAY);
+})();
 
 /* =============================================
  CASE STUDY SURVEY RESULTS TOGGLE
@@ -713,9 +794,13 @@ setInterval(updateClock, 1000);
 
 /* =============================================
    HERO — "Tidy up data" animation
-   Button toggles between sort() and unsort()
+   Illustration toggles between sort() and unsort()
 ============================================= */
-const cleanBtn = document.getElementById("clean-data-btn");
+
+const heroIllustrationToggle = document.getElementById(
+  "hero-illustration-toggle",
+);
+
 let isCleaned = false,
   sortedEls = [],
   originalHidden = [];
@@ -729,15 +814,18 @@ const textTargets = [
   ".hero-location",
 ];
 
-// Toggle between sort and unsort on button click
-if (cleanBtn) {
-  cleanBtn.addEventListener("click", () => {
+// Toggle between sort and unsort when clicking the illustration
+if (heroIllustrationToggle) {
+  heroIllustrationToggle.addEventListener("click", () => {
     isCleaned ? unsort() : sort();
     isCleaned = !isCleaned;
-    cleanBtn.classList.toggle("active");
+
+    heroIllustrationToggle.setAttribute(
+      "aria-label",
+      isCleaned ? "Restore text" : "Sort data",
+    );
   });
 }
-
 function sort() {
   // --- STEP 1: Get hero dimensions for layout calculations ---
   const heroRect = document.querySelector(".hero").getBoundingClientRect();
@@ -1332,3 +1420,185 @@ function initProjectHoverPreview() {
 }
 
 initProjectHoverPreview();
+
+/* =============================================
+   SOLUTION — AUTOMATED BEFORE / AFTER USER FLOW
+============================================= */
+(() => {
+  const flow = document.querySelector("[data-solution-flow]");
+  if (!flow) return;
+
+  const stage = flow.querySelector(".cs-solution-flow-stage");
+  const buttons = Array.from(flow.querySelectorAll("[data-flow-state]"));
+  if (!stage || buttons.length === 0) return;
+
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+  const BEFORE_HOLD = 3000;
+  const AFTER_HOLD = 3200;
+  const RETURN_FADE = 320;
+
+  let state = "before";
+  let timer = null;
+  let returnTimer = null;
+  let userControlled = false;
+  let isVisible = false;
+  let isReturning = false;
+
+  const updateButtons = (nextState) => {
+    buttons.forEach((button) => {
+      const isActive = button.dataset.flowState === nextState;
+      button.classList.toggle("active", isActive);
+      button.setAttribute("aria-pressed", String(isActive));
+    });
+  };
+
+  const clearFlowTimer = () => {
+    if (timer) {
+      clearTimeout(timer);
+      timer = null;
+    }
+  };
+
+  const clearReturnTimer = () => {
+    if (returnTimer) {
+      clearTimeout(returnTimer);
+      returnTimer = null;
+    }
+  };
+
+  const cancelReturn = () => {
+    if (!isReturning) return;
+    clearReturnTimer();
+    isReturning = false;
+    stage.classList.remove("is-return-fading");
+    stage.classList.remove("is-resetting");
+    flow.classList.remove("is-resetting");
+  };
+
+  const setAfter = () => {
+    cancelReturn();
+    if (state === "after") return;
+
+    stage.classList.add("is-after");
+    state = "after";
+    updateButtons(state);
+  };
+
+  const setBeforeSmooth = (onComplete) => {
+    if (state === "before" || isReturning) {
+      onComplete?.();
+      return;
+    }
+
+    isReturning = true;
+    clearReturnTimer();
+
+    // 1. Fade the complete After state away as one unit.
+    stage.classList.add("is-return-fading");
+
+    returnTimer = setTimeout(() => {
+      returnTimer = null;
+
+      // 2. While invisible, snap every node/line back to the Before geometry.
+      flow.classList.add("is-resetting");
+      stage.classList.add("is-resetting");
+      stage.classList.remove("is-after");
+      state = "before";
+      updateButtons(state);
+
+      // Commit the invisible reset before restoring transitions.
+      stage.getBoundingClientRect();
+      stage.classList.remove("is-resetting");
+      flow.classList.remove("is-resetting");
+
+      // 3. On the next frame, fade the complete Before state back in.
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          stage.classList.remove("is-return-fading");
+          isReturning = false;
+          onComplete?.();
+        });
+      });
+    }, RETURN_FADE);
+  };
+
+  const scheduleNext = () => {
+    clearFlowTimer();
+    if (userControlled || !isVisible || isReturning) return;
+
+    timer = setTimeout(
+      () => {
+        timer = null;
+
+        if (state === "before") {
+          // Keep the existing Before -> After transformation exactly as it is.
+          setAfter();
+          scheduleNext();
+        } else {
+          // After -> Before is intentionally different: fade out, invisible reset,
+          // fade in. Only restart the hold once the Before state is visible again.
+          setBeforeSmooth(() => {
+            if (!userControlled && isVisible) scheduleNext();
+          });
+        }
+      },
+      state === "before" ? BEFORE_HOLD : AFTER_HOLD,
+    );
+  };
+
+  buttons.forEach((button) => {
+    button.addEventListener("click", () => {
+      userControlled = true;
+      clearFlowTimer();
+
+      if (button.dataset.flowState === "after") {
+        setAfter();
+      } else {
+        setBeforeSmooth();
+      }
+    });
+  });
+
+  // Start the loop only when the flow is actually visible, so visitors see
+  // the complex state first instead of arriving halfway through the cycle.
+  const observer = new IntersectionObserver(
+    (entries) => {
+      const entry = entries[0];
+      isVisible = Boolean(entry?.isIntersecting);
+
+      if (isVisible) {
+        scheduleNext();
+      } else {
+        clearFlowTimer();
+      }
+    },
+    { threshold: 0.35 },
+  );
+
+  observer.observe(flow);
+
+  // Keep reduced-motion users on the same interaction model, but transitions
+  // themselves are reduced to near-instant by CSS.
+  reducedMotion.addEventListener?.("change", () => {
+    if (!userControlled && isVisible) scheduleNext();
+  });
+})();
+
+/* =============================================
+   CASE STUDY — HIDE SIDEBAR IN NEXT PROJECTS
+============================================= */
+(() => {
+  const nextProjects = document.querySelector(".cs-next");
+  const sidebar = document.querySelector(".left-sidebar");
+
+  if (!nextProjects || !sidebar) return;
+
+  const observer = new IntersectionObserver(
+    ([entry]) => {
+      document.body.classList.toggle("cs-next-visible", entry.isIntersecting);
+    },
+    { threshold: 0.05 },
+  );
+
+  observer.observe(nextProjects);
+})();

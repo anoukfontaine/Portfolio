@@ -61,10 +61,12 @@ function applyTheme(index) {
   document.documentElement.style.setProperty("--project-5", t.p5);
   document.documentElement.style.setProperty("--image-filter", t.imageFilter);
   updateHeroIllustration(index);
+  updateThemeImages(index);
 }
 
 let themeIndex = parseInt(localStorage.getItem("theme-index"), 10) || 0;
 updateHeroIllustration(themeIndex);
+updateThemeImages(themeIndex);
 
 document.getElementById("theme-toggle").addEventListener("click", () => {
   themeIndex = (themeIndex + 1) % themes.length;
@@ -77,6 +79,15 @@ function updateHeroIllustration(index) {
   if (!illustration) return;
 
   illustration.src = `Images/Home/0_Illustration_theme_${index + 1}.png`;
+}
+
+function updateThemeImages(index) {
+  document.querySelectorAll("[data-theme-src]").forEach((image) => {
+    const pattern = image.dataset.themeSrc;
+    if (!pattern) return;
+
+    image.src = pattern.replace("{theme}", index + 1);
+  });
 }
 
 /* =============================================
@@ -529,8 +540,15 @@ document.addEventListener("keydown", (e) => {
 
   const AUTOPLAY_DELAY = 3500;
   const FADE_DURATION = 220;
+  const AUW_ANIMATION_DURATION = 650;
+
+  const isAuwSolution = iterations.classList.contains(
+    "cs-iterations--auw-solution",
+  );
+
   let autoPlay = null;
   let transitionTimer = null;
+  let directionalTimer = null;
   let currentState = "before";
   let userHasInteracted = false;
 
@@ -542,13 +560,25 @@ document.addEventListener("keydown", (e) => {
     });
   }
 
+  function clearDirectionalAnimation() {
+    clearTimeout(directionalTimer);
+
+    before.classList.remove("is-shrinking-out");
+    after.classList.remove("is-growing-in");
+  }
+
   function showIteration(state, { animate = true } = {}) {
     if (state !== "before" && state !== "after") return;
 
     clearTimeout(transitionTimer);
+    clearDirectionalAnimation();
 
+    const previousState = currentState;
     const incoming = state === "before" ? before : after;
     const outgoing = state === "before" ? after : before;
+
+    const useAuwForwardAnimation =
+      isAuwSolution && previousState === "before" && state === "after";
 
     currentState = state;
     updateButtons(state);
@@ -561,6 +591,7 @@ document.addEventListener("keydown", (e) => {
       after.classList.toggle("is-visible", state === "after");
       after.classList.toggle("is-top", state === "after");
       after.setAttribute("aria-hidden", String(state !== "after"));
+
       return;
     }
 
@@ -575,17 +606,31 @@ document.addEventListener("keydown", (e) => {
     requestAnimationFrame(() => {
       incoming.classList.add("is-visible");
       outgoing.classList.add("is-fading-out");
+
+      if (useAuwForwardAnimation) {
+        before.classList.add("is-shrinking-out");
+        after.classList.add("is-growing-in");
+
+        directionalTimer = setTimeout(
+          clearDirectionalAnimation,
+          AUW_ANIMATION_DURATION,
+        );
+      }
     });
 
-    transitionTimer = setTimeout(() => {
-      outgoing.classList.remove("is-visible", "is-fading-out");
-      outgoing.setAttribute("aria-hidden", "true");
-      incoming.setAttribute("aria-hidden", "false");
-    }, FADE_DURATION);
+    transitionTimer = setTimeout(
+      () => {
+        outgoing.classList.remove("is-visible", "is-fading-out");
+        outgoing.setAttribute("aria-hidden", "true");
+        incoming.setAttribute("aria-hidden", "false");
+      },
+      useAuwForwardAnimation ? AUW_ANIMATION_DURATION : FADE_DURATION,
+    );
   }
 
   function stopAutoPlay() {
     userHasInteracted = true;
+
     if (autoPlay) {
       clearInterval(autoPlay);
       autoPlay = null;
@@ -603,10 +648,10 @@ document.addEventListener("keydown", (e) => {
 
   autoPlay = setInterval(() => {
     if (userHasInteracted) return;
+
     showIteration(currentState === "before" ? "after" : "before");
   }, AUTOPLAY_DELAY);
 })();
-
 /* =============================================
  CASE STUDY SURVEY RESULTS TOGGLE
 ============================================= */

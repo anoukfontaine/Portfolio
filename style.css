@@ -2707,6 +2707,49 @@ html[lang="de"] .contact-verb-spacer::after {
   cursor: none !important;
   transition: all 0.2s ease;
 }
+.cs-iterations--auw-solution {
+  width: 80%;
+  margin-inline: auto;
+}
+/* AUW solution: animated only from Before to After */
+.cs-iterations--auw-solution .cs-iterations-image.is-shrinking-out {
+  animation: auw-solution-shrink-out 600ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.cs-iterations--auw-solution .cs-iterations-image.is-growing-in {
+  animation: auw-solution-grow-in 650ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes auw-solution-shrink-out {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  to {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+}
+
+@keyframes auw-solution-grow-in {
+  from {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cs-iterations--auw-solution .cs-iterations-image.is-shrinking-out,
+  .cs-iterations--auw-solution .cs-iterations-image.is-growing-in {
+    animation-duration: 0.01ms;
+  }
+}
 .cs-decision-tabs {
   display: flex;
   justify-content: center;

@@ -369,7 +369,7 @@
                   class="section-title section-title--light"
                   data-i18n="auw.problem.heading"
                 >
-                  One request can trigger an
+                  One request triggers an
                   <strong>avalanche of background work.</strong>
                 </h2>
               </div>
@@ -377,8 +377,10 @@
               <div class="cs-problem-top-right">
                 <div class="cs-problem-image">
                   <img
+                    id="auw-problem-image"
                     alt="Illustration of the manual education and training process"
-                    src="../Images/AUW/1_problem.png"
+                    src="../Images/AUW/1_problem_t1.png"
+                    data-theme-src="../Images/AUW/1_problem_t{theme}.png"
                   />
                 </div>
               </div>
@@ -412,9 +414,8 @@
                   class="cs-problem-point-text"
                   data-i18n="auw.problem.point2_text"
                 >
-                  Employees had to look up information such as their salary in
-                  other documents, or would enter an estimate, which HR then had
-                  to verify and correct manually.
+                  Employees had to enter personal information manually, which HR
+                  then had to verify and often correct.
                 </p>
               </div>
 
@@ -429,9 +430,9 @@
                   class="cs-problem-point-text"
                   data-i18n="auw.problem.point3_text"
                 >
-                  Without automatic reminders, requests could sit unanswered
-                  until HR followed up manually, adding more coordination work
-                  and slowing the process.
+                  Requests could remain pending for weeks until HR had to follow
+                  up, while outdated requests were often left in the system and
+                  simply forgotten.
                 </p>
               </div>
             </div>
@@ -454,18 +455,19 @@
               class="section-title section-title--dark"
               data-i18n="auw.solution.heading"
             >
-              <strong>One entry point</strong> and a process that adapts.
+              A Power App <br />that can <strong>do it all.</strong>
             </h2>
 
             <p
               class="cs-process-step-text cs-solution-description"
               data-i18n="auw.solution.description"
             >
-              All education and training requests now start in the same Power
-              App. Based on the request type, the app adapts the required steps,
-              approvals and calculations, guides users through the process, and
-              keeps HR out of day-to-day handling while preserving full
-              visibility.
+              A single Power App brings the entire education and training
+              request process into one place, so employees only need to know one
+              interface while being guided through the process step by step.
+              Automated calculations, prefilled information, business rules and
+              reminders allow HR to be fully removed from the operational
+              workflow.
             </p>
           </div>
 
@@ -481,9 +483,10 @@
                 class="cs-problem-point-text"
                 data-i18n="auw.solution.point1_text"
               >
-                Users only need to know one interface. The process adapts to the
-                type of education or training, including different approval
-                steps, agreements and other requirements.
+                All education and training requests can now be submitted through
+                the same form, so users only need to know one interface. The
+                required steps, approvals and calculations adapt based on the
+                users’ selections.
               </p>
             </div>
 
@@ -492,15 +495,15 @@
                 class="cs-problem-point-title"
                 data-i18n="auw.solution.point2_title"
               >
-                Automated in the background
+                Manual work automated
               </p>
               <p
                 class="cs-problem-point-text"
                 data-i18n="auw.solution.point2_text"
               >
                 Existing data, calculations and business rules are handled
-                automatically, removing the repeated checks and manual
-                corrections previously required from HR.
+                automatically, eliminating repeated checks, manual corrections
+                and other administrative tasks previously required from HR.
               </p>
             </div>
 
@@ -509,26 +512,64 @@
                 class="cs-problem-point-title"
                 data-i18n="auw.solution.point3_title"
               >
-                Shared visibility
+                Clear status for everyone
               </p>
               <p
                 class="cs-problem-point-text"
                 data-i18n="auw.solution.point3_text"
               >
-                Employees, managers and HR can see where a request stands and
-                what happens next. Managers gain an overview of their team’s
-                education and training activity, including past requests, while
-                HR can monitor the process without having to manage it.
+                Employees and managers can see at all times where a request
+                stands and what happens next. HR can monitor the underlying data
+                without being involved in each individual request.
               </p>
             </div>
           </div>
 
           <div class="cs-solution-image-wrap">
-            <img
-              alt="Illustration of the streamlined Power App process"
-              class="cs-solution-image"
-              src="../Images/AUW/2_solution.png"
-            />
+            <div
+              aria-label="Before and after comparison of the education and training request process"
+              class="cs-iterations cs-iterations--auw-solution"
+            >
+              <div class="cs-iterations-toggle">
+                <button
+                  aria-pressed="true"
+                  class="pill-btn pill-btn--toggle active"
+                  data-i18n="yellow.test.before_btn"
+                  data-target="before"
+                  type="button"
+                >
+                  Before
+                </button>
+                <button
+                  aria-pressed="false"
+                  class="pill-btn pill-btn--toggle"
+                  data-i18n="yellow.test.after_btn"
+                  data-target="after"
+                  type="button"
+                >
+                  After
+                </button>
+              </div>
+
+              <div class="cs-iterations-stage" data-iterations-stage="">
+                <img
+                  alt="Education and training request process before the redesign"
+                  aria-hidden="false"
+                  class="cs-iterations-image is-visible is-top"
+                  data-theme-src="../Images/AUW/2_solution_before_t{theme}.png"
+                  id="iterations-before"
+                  src="../Images/AUW/2_solution_before_t1.png"
+                />
+                <img
+                  alt="Education and training request process after the redesign"
+                  aria-hidden="true"
+                  class="cs-iterations-image"
+                  data-theme-src="../Images/AUW/2_solution_after_t{theme}.png"
+                  id="iterations-after"
+                  src="../Images/AUW/2_solution_after_t1.png"
+                />
+              </div>
+            </div>
           </div>
         </section>
 
@@ -820,9 +861,11 @@
                     solid understanding of the process, then translated the
                     target process into a user flow to define the screens,
                     decisions and states the product needed.
-                    <br /><br />
-                    <strong>Key Decision:</strong> Involve engineers early to
-                    understand the possibilities and constraints of Power Apps.
+                    <span class="cs-key-decision">
+                      <strong>Key Decision:</strong> Involve engineers early to
+                      understand the possibilities and constraints of Power
+                      Apps.
+                    </span>
                   </p>
                 </div>
               </div>
@@ -874,10 +917,12 @@
                     public-facing websites, some components for
                     information-dense internal applications were missing or
                     needed adjustment.
-                    <br /><br />
-                    <strong>Key Decision:</strong> Keep the experience familiar
-                    by combining existing design system elements with patterns
-                    from established internal tools employees already knew.
+                    <span class="cs-key-decision">
+                      <strong>Key Decision:</strong> Keep the experience
+                      familiar by combining existing design system elements with
+                      patterns from established internal tools employees already
+                      knew.
+                    </span>
                   </p>
                 </div>
               </div>
@@ -925,30 +970,18 @@
                     user groups, the new solution was met with strong
                     enthusiasm.
 
-                    <br /><br />
-                    <strong>Key Decision:</strong> Test and iterate as much as
-                    possible on the AI prototype to reduce rework, effort and
-                    cost during high-fidelity design and final Power Apps
-                    development.
+                    <span class="cs-key-decision">
+                      <strong>Key Decision:</strong> Test and iterate as much as
+                      possible on the AI prototype to reduce rework, effort and
+                      cost during high-fidelity design and final Power Apps
+                      development.
+                    </span>
                   </p>
                 </div>
               </div>
             </div>
 
             <div class="cs-process-step-media">
-              <div class="cs-process-step-media-item">
-                <p
-                  class="cs-image-caption cs-image-caption--center"
-                  data-i18n="auw.test.caption1"
-                >
-                  Moderated usability studies uncovered frictions.
-                </p>
-                <img
-                  alt="Usability testing and prioritized findings"
-                  class="cs-process-step-image cs-lightbox-trigger cursor-grow"
-                  src="../Images/AUW/5_test.png"
-                />
-              </div>
               <div class="cs-process-step-media-item">
                 <p
                   class="cs-image-caption cs-image-caption--center"
@@ -1017,12 +1050,13 @@
                     meetings for open questions and Jira for structured feedback
                     and testing issues.
 
-                    <br /><br />
-                    <strong>Key Decision:</strong> Due to time and budget
-                    constraints, not every planned feature could make it into
-                    scope. Rather than defaulting to the status quo, I looked
-                    for simpler alternatives that preserved as much of the
-                    intended user experience as possible.
+                    <span class="cs-key-decision">
+                      <strong>Key Decision:</strong> Due to time and budget
+                      constraints, not every planned feature could make it into
+                      scope. Rather than defaulting to the status quo, I looked
+                      for simpler alternatives that preserved as much of the
+                      intended user experience as possible.
+                    </span>
                   </p>
                 </div>
               </div>
@@ -1154,6 +1188,7 @@
               </a>
             </div>
           </div>
+
           <div class="cs-next-left">
             <a class="big-link big-link--light" href="../index.html#work">
               <span data-i18n="cs_shared.back_to_work"

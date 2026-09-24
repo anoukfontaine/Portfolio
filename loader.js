@@ -20,13 +20,11 @@ function loadScript(path) {
   script.src = path;
   document.body.appendChild(script);
 }
-function getPath(path) {
-  const isInWorkFolder =
-    window.location.pathname.includes("/work/") ||
-    window.location.pathname.includes("/Work/");
 
-  return isInWorkFolder ? "../" + path : path;
+function getPath(path) {
+  return "/" + path.replace(/^\/+/, "");
 }
+
 Promise.all([loadComponent("#footer", getPath("components/footer.html"))]).then(
   () => {
     loadScript(getPath("translations/i18n.js"));

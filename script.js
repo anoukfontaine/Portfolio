@@ -78,7 +78,7 @@ function updateHeroIllustration(index) {
   const illustration = document.getElementById("hero-illustration");
   if (!illustration) return;
 
-  illustration.src = `Images/Home/0_Illustration_theme_${index + 1}.png`;
+  illustration.src = `/Images/Home/0_Illustration_theme_${index + 1}.png`;
 }
 
 function updateThemeImages(index) {
@@ -255,7 +255,12 @@ function smoothScrollTo(href, offset) {
 document.querySelectorAll(".mobile-menu-link").forEach((link) => {
   link.addEventListener("click", (e) => {
     const href = link.getAttribute("href");
-    const target = document.querySelector(href);
+
+    // Extract the section hash whether the link is "#work", "/#work"
+    // or an older path such as "../index.html#work".
+    const hash = href && href.includes("#") ? `#${href.split("#")[1]}` : href;
+    const target =
+      hash && hash.startsWith("#") ? document.querySelector(hash) : null;
 
     hamburger.classList.remove("open");
     mobileMenu.classList.remove("open");
@@ -270,7 +275,7 @@ document.querySelectorAll(".mobile-menu-link").forEach((link) => {
       e.preventDefault();
 
       requestAnimationFrame(() => {
-        smoothScrollTo(href, href === "#contact" ? 100 : 72);
+        smoothScrollTo(hash, hash === "#contact" ? 100 : 72);
       });
 
       return;
@@ -282,16 +287,12 @@ document.querySelectorAll(".mobile-menu-link").forEach((link) => {
      * the homepage and open the requested section.
      */
     e.preventDefault();
-    window.location.href = getHomeSectionUrl(href);
+    window.location.href = getHomeSectionUrl(hash);
   });
 });
 
 function getHomeSectionUrl(hash) {
-  const isInWorkFolder =
-    window.location.pathname.includes("/work/") ||
-    window.location.pathname.includes("/Work/");
-
-  return isInWorkFolder ? `../${hash}` : hash;
+  return `/${hash}`;
 }
 /* =============================================
    GLOBAL LEFT SIDEBAR NAVIGATION

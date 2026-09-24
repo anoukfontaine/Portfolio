@@ -96,17 +96,51 @@ function updateThemeImages(index) {
 const cursor = document.getElementById("cursor");
 
 if (cursor) {
-  document.documentElement.classList.add("custom-cursor");
+  const finePointer = window.matchMedia("(hover: hover) and (pointer: fine)");
 
-  document.addEventListener("mousemove", (e) => {
-    cursor.style.opacity = "1";
+  const blendModeSupported =
+    typeof CSS !== "undefined" &&
+    typeof CSS.supports === "function" &&
+    CSS.supports("mix-blend-mode", "difference");
+
+  let customCursorActive = false;
+
+  const canUseCustomCursor = () => finePointer.matches && blendModeSupported;
+
+  const deactivateCustomCursor = () => {
+    customCursorActive = false;
+
+    document.documentElement.classList.remove("custom-cursor");
+
+    cursor.classList.remove("hovering");
+    cursor.style.opacity = "0";
+  };
+
+  const moveCustomCursor = (e) => {
+    if (!canUseCustomCursor()) {
+      deactivateCustomCursor();
+      return;
+    }
+
+    /* First position + show the custom cursor */
     cursor.style.left = e.clientX + "px";
     cursor.style.top = e.clientY + "px";
-  });
+    cursor.style.opacity = "1";
+
+    /* Only now hide the native cursor */
+    if (!customCursorActive) {
+      document.documentElement.classList.add("custom-cursor");
+      customCursorActive = true;
+    }
+  };
+
+  document.addEventListener("mousemove", moveCustomCursor);
 
   const hoverables = 'a, button, [role="button"], .cursor-grow';
 
   document.addEventListener("mouseover", (e) => {
+    if (!customCursorActive) return;
+
     if (e.target.matches(hoverables) || e.target.closest(hoverables)) {
       cursor.classList.add("hovering");
     }
@@ -117,6 +151,24 @@ if (cursor) {
       cursor.classList.remove("hovering");
     }
   });
+
+  /* Restore normal cursor if we leave the page */
+  document.documentElement.addEventListener(
+    "mouseleave",
+    deactivateCustomCursor,
+  );
+
+  /* Restore normal cursor if browser/window loses focus */
+  window.addEventListener("blur", deactivateCustomCursor);
+
+  /* Restore it if device switches to touch/pen etc. */
+  if (typeof finePointer.addEventListener === "function") {
+    finePointer.addEventListener("change", (e) => {
+      if (!e.matches) {
+        deactivateCustomCursor();
+      }
+    });
+  }
 }
 
 /* =============================================
@@ -145,6 +197,7 @@ langBtn.addEventListener("click", () => {
   if (window.applyLanguage) {
     window.applyLanguage(languages[langIndex].toLowerCase());
   }
+  updateTestimonialLanguageState(languages[langIndex].toLowerCase());
 });
 
 let moonRotation = themeIndex * 90;
@@ -1647,3 +1700,566 @@ initProjectHoverPreview();
 
   observer.observe(nextProjects);
 })();
+
+/* =============================================
+   TESTIMONIALS — cloud / cards morph
+============================================= */
+const testimonialStage = document.querySelector("[data-testimonial-stage]");
+const testimonialCloud = document.querySelector("[data-testimonial-cloud]");
+const testimonialGrid = document.querySelector("[data-testimonial-grid]");
+const testimonialMobileQuery = window.matchMedia("(max-width: 768px)");
+const testimonialReducedMotion = window.matchMedia(
+  "(prefers-reduced-motion: reduce)",
+);
+
+let testimonialMorphing = false;
+let testimonialTargetObserver = null;
+let testimonialTargetRebuildQueued = false;
+
+function setTestimonialsVisible(showTestimonials) {
+  if (!testimonialStage) return;
+
+  testimonialStage.classList.toggle(
+    "is-testimonials-visible",
+    showTestimonials,
+  );
+  testimonialStage.setAttribute("aria-pressed", String(showTestimonials));
+  testimonialStage.setAttribute(
+    "aria-label",
+    showTestimonials ? "Show testimonial highlights" : "Show testimonials",
+  );
+
+  testimonialCloud?.setAttribute("aria-hidden", String(showTestimonials));
+  testimonialGrid?.setAttribute("aria-hidden", String(!showTestimonials));
+}
+
+function normalizeTestimonialText(text) {
+  return (text || "").replace(/\s+/g, " ").trim();
+}
+
+function renderTestimonialCloudPhrases() {
+  if (!testimonialCloud) return;
+
+  testimonialCloud
+    .querySelectorAll(".testimonial-cloud-phrase[data-phrase-key][data-card]")
+    .forEach((phrase) => {
+      const phraseKey = phrase.dataset.phraseKey;
+      const card = phrase.dataset.card;
+      if (!phraseKey || !card) return;
+
+      /* If the phrase is already tokenized, keep the original phrase stored in
+         data-phrase-text. Reading textContent from separate token spans would
+         concatenate the words (e.g. "freshmomentum"), because the visible
+         spacing comes from CSS rather than text nodes.
+
+         When i18n changes language, it replaces the token spans with plain text.
+         In that case we read the new translated text and tokenize it again. */
+      const isAlreadyTokenized = Boolean(
+        phrase.querySelector(".testimonial-cloud-token"),
+      );
+
+      if (isAlreadyTokenized && phrase.dataset.phraseText) return;
+
+      const phraseText = normalizeTestimonialText(phrase.textContent);
+      if (!phraseText) return;
+
+      phrase.dataset.phraseText = phraseText;
+      const tokens = phraseText.split(/\s+/).filter(Boolean);
+      phrase.replaceChildren();
+
+      tokens.forEach((token, index) => {
+        const wrapper = document.createElement("span");
+        wrapper.className = "testimonial-cloud-token-wrap";
+
+        if (index === 0) {
+          const openingQuote = document.createElement("span");
+          openingQuote.className =
+            "testimonial-cloud-quote testimonial-cloud-quote--start";
+          openingQuote.dataset.card = card;
+          openingQuote.dataset.quoteSide = "start";
+          openingQuote.textContent = "“";
+          wrapper.append(openingQuote);
+        }
+
+        const span = document.createElement("span");
+        span.className = "testimonial-cloud-token";
+        span.dataset.motionKey = `${phraseKey}-${index}`;
+        span.dataset.card = card;
+        span.dataset.phraseKey = phraseKey;
+        span.textContent = token;
+
+        wrapper.append(span);
+
+        if (index === tokens.length - 1) {
+          const closingQuote = document.createElement("span");
+          closingQuote.className =
+            "testimonial-cloud-quote testimonial-cloud-quote--end";
+          closingQuote.dataset.card = card;
+          closingQuote.dataset.quoteSide = "end";
+          closingQuote.textContent = "”";
+          wrapper.append(closingQuote);
+        }
+
+        phrase.append(wrapper);
+      });
+    });
+}
+
+function getTestimonialCloudPhrases() {
+  if (!testimonialCloud) return [];
+
+  return Array.from(
+    testimonialCloud.querySelectorAll(
+      ".testimonial-cloud-phrase[data-phrase-key][data-card]",
+    ),
+  )
+    .map((phrase) => ({
+      phraseKey: phrase.dataset.phraseKey,
+      card: phrase.dataset.card,
+      text: normalizeTestimonialText(
+        phrase.dataset.phraseText || phrase.textContent,
+      ),
+      tokens: Array.from(
+        phrase.querySelectorAll(".testimonial-cloud-token"),
+      ).map((token, index) => ({
+        key: token.dataset.motionKey || `${phrase.dataset.phraseKey}-${index}`,
+        text: token.textContent,
+        node: token,
+      })),
+    }))
+    .filter(
+      ({ phraseKey, card, text, tokens }) =>
+        phraseKey && card && text && tokens.length,
+    );
+}
+
+function clearTestimonialMotionTargets() {
+  if (!testimonialGrid) return;
+
+  testimonialGrid
+    .querySelectorAll(
+      ".testimonial-motion-target, .testimonial-quote-motion-target",
+    )
+    .forEach((span) =>
+      span.replaceWith(document.createTextNode(span.textContent)),
+    );
+
+  testimonialGrid
+    .querySelectorAll(".testimonial-quote")
+    .forEach((quote) => quote.normalize());
+}
+
+function escapeTestimonialRegex(text) {
+  return text.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
+function getTestimonialPhraseMatch(originalText, phrase) {
+  /* HTML formatting can insert newlines/spaces inside a quote. Match the same
+     words while allowing any whitespace between them, so a source phrase still
+     maps to the right place even when the HTML source wraps across lines. */
+  const tokenPattern = phrase.tokens
+    .map((token) => escapeTestimonialRegex(token.text))
+    .join("\\s+");
+
+  if (!tokenPattern) return null;
+  return originalText.match(new RegExp(tokenPattern));
+}
+function wrapTestimonialQuoteMark(quote, cardKey, side) {
+  const mark = side === "start" ? "“" : "”";
+
+  const walker = document.createTreeWalker(quote, NodeFilter.SHOW_TEXT);
+
+  const textNodes = [];
+  let node;
+
+  while ((node = walker.nextNode())) {
+    textNodes.push(node);
+  }
+
+  if (side === "end") {
+    textNodes.reverse();
+  }
+
+  for (const textNode of textNodes) {
+    const index =
+      side === "start"
+        ? textNode.textContent.indexOf(mark)
+        : textNode.textContent.lastIndexOf(mark);
+
+    if (index === -1) continue;
+
+    const before = textNode.textContent.slice(0, index);
+    const after = textNode.textContent.slice(index + 1);
+
+    const span = document.createElement("span");
+    span.className = "testimonial-quote-motion-target";
+    span.dataset.card = cardKey;
+    span.dataset.quoteSide = side;
+    span.textContent = mark;
+
+    const fragment = document.createDocumentFragment();
+
+    if (before) {
+      fragment.append(document.createTextNode(before));
+    }
+
+    fragment.append(span);
+
+    if (after) {
+      fragment.append(document.createTextNode(after));
+    }
+
+    textNode.replaceWith(fragment);
+    break;
+  }
+}
+function wrapTestimonialMotionTargets() {
+  if (!testimonialGrid || !testimonialCloud) return;
+
+  testimonialTargetObserver?.disconnect();
+  clearTestimonialMotionTargets();
+
+  const phrasesByCard = new Map();
+  getTestimonialCloudPhrases().forEach((phrase) => {
+    if (!phrasesByCard.has(phrase.card)) phrasesByCard.set(phrase.card, []);
+    phrasesByCard.get(phrase.card).push(phrase);
+  });
+
+  phrasesByCard.forEach((phrases, cardKey) => {
+    const quote = testimonialGrid.querySelector(
+      `.testimonial-card--${cardKey} .testimonial-quote`,
+    );
+    if (!quote) return;
+
+    const originalText = quote.textContent;
+    const occurrences = [];
+
+    phrases
+      .slice()
+      .sort((a, b) => b.text.length - a.text.length)
+      .forEach((phrase) => {
+        const match = getTestimonialPhraseMatch(originalText, phrase);
+        if (!match || match.index == null) return;
+        occurrences.push({
+          ...phrase,
+          index: match.index,
+          end: match.index + match[0].length,
+        });
+      });
+
+    occurrences.sort((a, b) => a.index - b.index);
+    if (!occurrences.length) return;
+
+    const fragment = document.createDocumentFragment();
+    let cursor = 0;
+
+    occurrences.forEach((occurrence) => {
+      if (occurrence.index < cursor) return;
+
+      fragment.append(
+        document.createTextNode(originalText.slice(cursor, occurrence.index)),
+      );
+
+      occurrence.tokens.forEach((token, tokenIndex) => {
+        const span = document.createElement("span");
+        span.className = "testimonial-motion-target";
+        span.dataset.motionKey = token.key;
+        span.dataset.phraseKey = occurrence.phraseKey;
+        span.textContent = token.text;
+        fragment.append(span);
+
+        if (tokenIndex < occurrence.tokens.length - 1) {
+          fragment.append(document.createTextNode(" "));
+        }
+      });
+
+      cursor = occurrence.end;
+    });
+
+    fragment.append(document.createTextNode(originalText.slice(cursor)));
+    quote.replaceChildren(fragment);
+    wrapTestimonialQuoteMark(quote, cardKey, "start");
+    wrapTestimonialQuoteMark(quote, cardKey, "end");
+  });
+
+  observeTestimonialMorphText();
+}
+
+function observeTestimonialMorphText() {
+  if (!testimonialTargetObserver || !testimonialCloud || !testimonialGrid)
+    return;
+
+  testimonialTargetObserver.observe(testimonialCloud, {
+    childList: true,
+    characterData: true,
+    subtree: true,
+  });
+  testimonialTargetObserver.observe(testimonialGrid, {
+    childList: true,
+    characterData: true,
+    subtree: true,
+  });
+}
+
+function scheduleTestimonialTargetRebuild() {
+  if (testimonialMorphing || testimonialTargetRebuildQueued) return;
+  testimonialTargetRebuildQueued = true;
+
+  requestAnimationFrame(() => {
+    testimonialTargetRebuildQueued = false;
+    renderTestimonialCloudPhrases();
+    wrapTestimonialMotionTargets();
+  });
+}
+
+function makeTestimonialMorphClone(source) {
+  const rect = source.getBoundingClientRect();
+  const style = getComputedStyle(source);
+  const clone = document.createElement("span");
+
+  clone.className = "testimonial-morph-clone";
+  clone.textContent = source.textContent;
+  clone.style.left = `${rect.left}px`;
+  clone.style.top = `${rect.top}px`;
+  clone.style.fontFamily = style.fontFamily;
+  clone.style.fontSize = style.fontSize;
+  clone.style.fontWeight = style.fontWeight;
+  clone.style.fontStyle = style.fontStyle;
+  clone.style.lineHeight = style.lineHeight;
+  clone.style.letterSpacing = style.letterSpacing;
+  clone.style.color = style.color;
+
+  document.body.appendChild(clone);
+  return { clone, rect, style };
+}
+
+function getTestimonialMorphPairs(direction) {
+  if (!testimonialCloud || !testimonialGrid) return [];
+
+  const pairs = [];
+  testimonialCloud
+    .querySelectorAll(".testimonial-cloud-token[data-motion-key]")
+    .forEach((cloudWord) => {
+      const key = cloudWord.dataset.motionKey;
+      const quoteTarget = testimonialGrid.querySelector(
+        `.testimonial-motion-target[data-motion-key="${key}"]`,
+      );
+      if (!quoteTarget) return;
+
+      pairs.push(
+        direction === "to-cards"
+          ? { source: cloudWord, target: quoteTarget }
+          : { source: quoteTarget, target: cloudWord },
+      );
+    });
+  testimonialCloud
+    .querySelectorAll(".testimonial-cloud-quote[data-card][data-quote-side]")
+    .forEach((cloudQuote) => {
+      const card = cloudQuote.dataset.card;
+      const side = cloudQuote.dataset.quoteSide;
+
+      const quoteTarget = testimonialGrid.querySelector(
+        `.testimonial-quote-motion-target[data-card="${card}"][data-quote-side="${side}"]`,
+      );
+
+      if (!quoteTarget) return;
+
+      pairs.push(
+        direction === "to-cards"
+          ? { source: cloudQuote, target: quoteTarget }
+          : { source: quoteTarget, target: cloudQuote },
+      );
+    });
+  return pairs;
+}
+
+async function morphTestimonials(showTestimonials) {
+  if (!testimonialStage || testimonialMorphing) return;
+
+  if (
+    testimonialMobileQuery.matches ||
+    testimonialReducedMotion.matches ||
+    !testimonialCloud ||
+    !testimonialGrid
+  ) {
+    setTestimonialsVisible(showTestimonials);
+    return;
+  }
+
+  testimonialMorphing = true;
+  testimonialTargetObserver?.disconnect();
+  renderTestimonialCloudPhrases();
+  wrapTestimonialMotionTargets();
+
+  const direction = showTestimonials ? "to-cards" : "to-cloud";
+
+  testimonialStage.classList.add(
+    showTestimonials ? "is-measuring-cards" : "is-measuring-cloud",
+  );
+  testimonialStage.getBoundingClientRect();
+
+  const pairs = getTestimonialMorphPairs(direction);
+  const measurements = pairs.map(({ source, target }) => {
+    const sourceClone = makeTestimonialMorphClone(source);
+    const targetRect = target.getBoundingClientRect();
+    const targetStyle = getComputedStyle(target);
+    return { ...sourceClone, targetRect, targetStyle };
+  });
+
+  testimonialStage.classList.remove(
+    showTestimonials ? "is-measuring-cards" : "is-measuring-cloud",
+  );
+  testimonialStage.classList.add(
+    showTestimonials ? "is-morphing-to-cards" : "is-morphing-to-cloud",
+  );
+
+  setTestimonialsVisible(showTestimonials);
+
+  await new Promise((resolve) =>
+    requestAnimationFrame(() => requestAnimationFrame(resolve)),
+  );
+
+  const animations = measurements.map(
+    ({ clone, rect, style, targetRect, targetStyle }) =>
+      clone.animate(
+        [
+          {
+            left: `${rect.left}px`,
+            top: `${rect.top}px`,
+            fontSize: style.fontSize,
+            fontWeight: style.fontWeight,
+            lineHeight: style.lineHeight,
+            letterSpacing: style.letterSpacing,
+            color: style.color,
+            opacity: 1,
+          },
+          {
+            left: `${targetRect.left}px`,
+            top: `${targetRect.top}px`,
+            fontSize: targetStyle.fontSize,
+            fontWeight: targetStyle.fontWeight,
+            lineHeight: targetStyle.lineHeight,
+            letterSpacing: targetStyle.letterSpacing,
+            color: targetStyle.color,
+            opacity: 1,
+          },
+        ],
+        {
+          duration: 950,
+          easing: "cubic-bezier(0.76, 0, 0.24, 1)",
+          fill: "forwards",
+        },
+      ),
+  );
+
+  await Promise.allSettled(animations.map((animation) => animation.finished));
+
+  measurements.forEach(({ clone }) => clone.remove());
+  testimonialStage.classList.remove(
+    "is-morphing-to-cards",
+    "is-morphing-to-cloud",
+  );
+
+  testimonialMorphing = false;
+  observeTestimonialMorphText();
+}
+
+function syncTestimonialLayout() {
+  if (!testimonialStage) return;
+
+  if (testimonialMobileQuery.matches) {
+    setTestimonialsVisible(true);
+    testimonialStage.removeAttribute("role");
+    testimonialStage.removeAttribute("tabindex");
+    testimonialStage.removeAttribute("aria-label");
+    testimonialStage.removeAttribute("aria-pressed");
+    return;
+  }
+
+  testimonialStage.setAttribute("role", "button");
+  testimonialStage.setAttribute("tabindex", "0");
+  setTestimonialsVisible(false);
+}
+
+if (testimonialStage) {
+  testimonialTargetObserver = new MutationObserver(
+    scheduleTestimonialTargetRebuild,
+  );
+  renderTestimonialCloudPhrases();
+  wrapTestimonialMotionTargets();
+
+  testimonialStage.addEventListener("click", () => {
+    if (testimonialMobileQuery.matches || testimonialMorphing) return;
+    morphTestimonials(
+      !testimonialStage.classList.contains("is-testimonials-visible"),
+    );
+  });
+
+  testimonialStage.addEventListener("keydown", (event) => {
+    if (testimonialMobileQuery.matches || testimonialMorphing) return;
+    if (event.key !== "Enter" && event.key !== " ") return;
+    event.preventDefault();
+    morphTestimonials(
+      !testimonialStage.classList.contains("is-testimonials-visible"),
+    );
+  });
+
+  syncTestimonialLayout();
+  testimonialMobileQuery.addEventListener?.("change", syncTestimonialLayout);
+}
+
+/* =============================================
+   TESTIMONIALS — translation notes
+============================================= */
+function updateTestimonialLanguageState(language) {
+  if (!testimonialGrid) return;
+
+  const currentLanguage = (language || "en").toLowerCase();
+
+  const translationLabels = {
+    en: {
+      de: "Translated from German",
+      fr: "Translated from French",
+    },
+    de: {
+      en: "Aus dem Englischen übersetzt",
+      fr: "Aus dem Französischen übersetzt",
+    },
+    fr: {
+      de: "Traduit de l’allemand",
+      en: "Traduit de l’anglais",
+    },
+  };
+
+  testimonialGrid.querySelectorAll(".testimonial-card").forEach((card) => {
+    const originalLanguage = (
+      card.dataset.originalLang || currentLanguage
+    ).toLowerCase();
+    const note = card.querySelector(".testimonial-translation-note");
+    if (!note) return;
+
+    if (originalLanguage === currentLanguage) {
+      note.hidden = true;
+      note.textContent = "";
+      return;
+    }
+
+    const translatedLabel =
+      translationLabels[currentLanguage]?.[originalLanguage];
+    note.textContent =
+      translatedLabel ||
+      (currentLanguage === "fr"
+        ? "Traduit"
+        : currentLanguage === "de"
+          ? "Übersetzt"
+          : "Translated");
+    note.hidden = false;
+  });
+
+  renderTestimonialCloudPhrases();
+  wrapTestimonialMotionTargets();
+}
+
+updateTestimonialLanguageState(
+  (localStorage.getItem("lang") || "en").toLowerCase(),
+);

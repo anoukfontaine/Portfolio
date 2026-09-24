@@ -194,6 +194,7 @@ h2 {
                                            CUSTOM CURSOR
                                         ============================================= */
 #cursor {
+  display: none;
   position: fixed;
   width: 10px;
   height: 10px;
@@ -209,11 +210,15 @@ h2 {
     height 0.3s ease;
   opacity: 0;
 }
+
+html.custom-cursor #cursor {
+  display: block;
+}
+
 #cursor.hovering {
   width: 56px;
   height: 56px;
 }
-
 /* =============================================
                      NAV CSS â€”  DO NOT MODIFY
      ============================================= */
@@ -317,7 +322,6 @@ nav {
   color: var(--color-text);
   background: none;
   border: none;
-  cursor: none !important;
   padding: 0;
   position: relative;
   width: 28px;
@@ -360,7 +364,7 @@ nav {
   line-height: 1;
   background: none;
   border: none;
-  cursor: none !important;
+
   padding: 0;
   position: relative;
   width: 28px;
@@ -415,7 +419,6 @@ nav {
   border: none;
   color: var(--color-text);
 
-  cursor: none !important;
   z-index: 10001;
 }
 
@@ -898,7 +901,6 @@ body.case-page .left-sidebar > *:not(.left-sidebar-home):nth-child(8) {
   opacity: 1;
 }
 .venn-group {
-  cursor: none !important;
 }
 .venn-circle {
   fill: transparent;
@@ -1425,7 +1427,7 @@ html[lang="de"] .contact-verb-spacer::after {
   font-size: 22px;
   font-family: var(--font);
   color: var(--color-text);
-  cursor: none !important;
+
   user-select: none;
   transition:
     background 0.2s ease,
@@ -1542,7 +1544,7 @@ html[lang="de"] .contact-verb-spacer::after {
   font-size: 22px;
   font-family: var(--font);
   color: var(--color-text);
-  cursor: none !important;
+
   user-select: none;
   transition:
     background 0.2s ease,
@@ -1623,7 +1625,7 @@ html[lang="de"] .contact-verb-spacer::after {
   border: var(--border-text-big);
   border-radius: var(--radius-pill);
   padding: 16px 48px;
-  cursor: none !important;
+
   transition:
     background 0.2s ease,
     color 0.2s ease,
@@ -1778,7 +1780,6 @@ html[lang="de"] .contact-verb-spacer::after {
 }
 /* â”€â”€ LIGHTBOX â”€â”€ */
 .cs-lightbox-trigger {
-  cursor: none !important;
 }
 
 .cs-lightbox {
@@ -1813,7 +1814,7 @@ html[lang="de"] .contact-verb-spacer::after {
   color: #ffffff;
   font-size: 24px;
   font-weight: 300;
-  cursor: none !important;
+
   line-height: 1;
 }
 /* â”€â”€ OVERVIEW â”€â”€ */
@@ -2157,9 +2158,11 @@ html[lang="de"] .contact-verb-spacer::after {
 }
 
 .cs-solution-description {
+  width: 100%;
   max-width: 560px;
   margin-top: var(--space-4);
   text-align: center;
+  text-wrap: balance;
   color: var(--color-text);
 }
 
@@ -2379,6 +2382,10 @@ html[lang="de"] .contact-verb-spacer::after {
   text-align: left;
   max-width: 640px;
   margin: 0;
+}
+.cs-process-step-text.cs-solution-description {
+  text-align: center;
+  text-wrap: balance;
 }
 
 .cs-key-decision {
@@ -2704,7 +2711,7 @@ html[lang="de"] .contact-verb-spacer::after {
   border: var(--border-muted);
   border-radius: var(--radius-pill);
   padding: 6px 16px;
-  cursor: none !important;
+
   transition: all 0.2s ease;
 }
 .cs-iterations--auw-solution {
@@ -2892,7 +2899,7 @@ html[lang="de"] .contact-verb-spacer::after {
   border: var(--border-muted);
   border-radius: var(--radius-pill);
   padding: 6px 16px;
-  cursor: none !important;
+  
   transition: all 0.2s ease;
 }
 
@@ -3221,7 +3228,6 @@ html[lang="de"] .contact-verb-spacer::after {
   justify-content: center;
 
   border-radius: 50%;
-  cursor: none;
 
   opacity: 0;
   transition: opacity 0.2s ease;
@@ -3523,7 +3529,6 @@ html[lang="de"] .contact-verb-spacer::after {
   width: 66px;
   height: 66px;
   border-radius: 50%;
-  cursor: none;
 }
 .cs-hotspot:hover,
 .cs-hotspot:focus-within {
@@ -3872,11 +3877,6 @@ html[lang="de"] .contact-verb-spacer::after {
    RESPONSIVE
 ============================================= */
 
-#navbar,
-#navbar * {
-  cursor: none !important;
-}
-
 /* =============================================
    TABLET
 ============================================= */
@@ -4012,12 +4012,6 @@ body.gate-locked .nav-right {
    RESPONSIVE INPUT
    Fine pointers use the custom cursor; coarse pointers keep touch behaviour.
 ============================================= */
-
-@media (pointer: fine) {
-  * {
-    cursor: none !important;
-  }
-}
 
 @media (pointer: coarse) {
   #cursor {
@@ -5665,5 +5659,487 @@ body.case-page .left-sidebar {
   .cs-next-left {
     padding-top: 0;
     margin-top: var(--space-6);
+  }
+}
+
+/* =============================================
+   TESTIMONIALS — within Work
+============================================= */
+.work-testimonials {
+  width: 100%;
+  padding-top: var(--space-8);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-7);
+}
+
+/*
+ * The cloud and the testimonial grid share the same stage, just like the
+ * Services diagram and cards. The grid remains in the layout while hidden,
+ * which prevents a large page jump when the view changes.
+ */
+.testimonial-stage {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  display: grid;
+  position: relative;
+  outline: none;
+}
+
+.testimonial-cloud,
+.testimonial-grid {
+  grid-area: 1 / 1;
+}
+
+/* ---------- Word constellation ---------- */
+.testimonial-cloud {
+  min-height: 720px;
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  grid-template-rows: repeat(6, minmax(72px, auto));
+  align-content: start;
+  column-gap: var(--space-3);
+  row-gap: var(--space-4);
+  padding: 0 var(--space-4) var(--space-5);
+  transform: scale(0.92);
+  transform-origin: top center;
+  opacity: 0.8;
+  visibility: visible;
+  pointer-events: auto;
+  transition:
+    transform 1.2s ease,
+    opacity 0.3s ease,
+    visibility 0s linear 0s;
+}
+
+.testimonial-stage:not(.is-testimonials-visible):hover .testimonial-cloud,
+.testimonial-stage:not(.is-testimonials-visible):focus-visible
+  .testimonial-cloud {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.testimonial-cloud-phrase {
+  display: inline-flex;
+  flex-wrap: wrap;
+  row-gap: 0.08em;
+  column-gap: 0.28em;
+  width: fit-content;
+  max-width: 100%;
+  align-self: center;
+  color: var(--color-text-muted);
+  font-family: var(--font);
+  font-weight: 300;
+  line-height: 1.08;
+  letter-spacing: -0.025em;
+  position: relative;
+  transition:
+    transform 0.35s ease,
+    opacity 0.35s ease,
+    color 0.3s ease;
+}
+
+.testimonial-cloud-token {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.testimonial-cloud-token-wrap {
+  display: inline-flex;
+  align-items: baseline;
+  white-space: nowrap;
+}
+
+.testimonial-cloud-quote {
+  display: inline-block;
+  color: inherit;
+}
+
+.testimonial-cloud-quote--start {
+  margin-right: 0.05em;
+}
+
+.testimonial-cloud-quote--end {
+  margin-left: 0.05em;
+}
+/* Match the Services Venn treatment exactly: muted at rest, full text colour
+   on hover/focus. */
+.testimonial-stage:not(.is-testimonials-visible):hover
+  .testimonial-cloud-phrase,
+.testimonial-stage:not(.is-testimonials-visible):focus-visible
+  .testimonial-cloud-phrase {
+  color: var(--color-text);
+}
+
+/* A loose editorial constellation rather than a frequency-based word cloud. */
+.testimonial-cloud-word--1 {
+  grid-column: 2 / span 4;
+  grid-row: 1;
+  justify-self: end;
+  font-size: clamp(30px, 3.7vw, 54px);
+}
+
+.testimonial-cloud-word--2 {
+  grid-column: 8 / span 4;
+  grid-row: 1;
+  justify-self: start;
+  font-size: clamp(16px, 1.65vw, 24px);
+}
+
+.testimonial-cloud-word--3 {
+  grid-column: 2 / span 10;
+  grid-row: 2;
+  justify-self: center;
+  font-size: clamp(22px, 2.45vw, 36px);
+}
+
+.testimonial-cloud-word--4 {
+  grid-column: 1 / span 5;
+  grid-row: 3;
+  justify-self: center;
+  font-size: clamp(15px, 1.45vw, 21px);
+}
+
+.testimonial-cloud-word--5 {
+  grid-column: 8 / span 4;
+  grid-row: 3;
+  justify-self: center;
+  font-size: clamp(20px, 2.15vw, 32px);
+}
+
+.testimonial-cloud-word--6 {
+  grid-column: 1 / span 3;
+  grid-row: 4;
+  justify-self: end;
+  font-size: clamp(27px, 3.2vw, 48px);
+}
+
+.testimonial-cloud-word--7 {
+  grid-column: 5 / span 8;
+  grid-row: 4;
+  justify-self: center;
+  font-size: clamp(17px, 1.8vw, 27px);
+}
+
+.testimonial-cloud-word--8 {
+  grid-column: 8 / span 5;
+  grid-row: 5;
+  justify-self: start;
+  font-size: clamp(20px, 2.35vw, 35px);
+}
+
+.testimonial-cloud-word--9 {
+  grid-column: 1 / span 5;
+  grid-row: 5;
+  justify-self: end;
+  font-size: clamp(24px, 2.8vw, 40px);
+}
+
+.testimonial-cloud-word--10 {
+  grid-column: 2 / span 10;
+  grid-row: 6;
+  justify-self: center;
+  font-size: clamp(20px, 2.3vw, 34px);
+}
+
+/* Every cloud phrase is an exact fragment from one testimonial. During the
+   transition both the cloud source and inline destination are hidden while one
+   travelling clone occupies that exact phrase. */
+.testimonial-motion-target {
+  display: inline-block;
+  white-space: nowrap;
+  color: inherit;
+}
+
+.testimonial-stage.is-morphing-to-cards
+  .testimonial-cloud-token[data-motion-key],
+.testimonial-stage.is-morphing-to-cards .testimonial-cloud-quote,
+.testimonial-stage.is-morphing-to-cards .testimonial-motion-target,
+.testimonial-stage.is-morphing-to-cards .testimonial-quote-motion-target,
+.testimonial-stage.is-morphing-to-cloud
+  .testimonial-cloud-token[data-motion-key],
+.testimonial-stage.is-morphing-to-cloud .testimonial-cloud-quote,
+.testimonial-stage.is-morphing-to-cloud .testimonial-motion-target,
+.testimonial-stage.is-morphing-to-cloud .testimonial-quote-motion-target {
+  opacity: 0 !important;
+}
+
+.testimonial-stage.is-measuring-cards .testimonial-grid {
+  visibility: hidden !important;
+  opacity: 0 !important;
+  transform: scale(1) !important;
+  transition: none !important;
+}
+
+.testimonial-stage.is-measuring-cloud .testimonial-cloud {
+  visibility: hidden !important;
+  opacity: 0 !important;
+  transform: scale(1) !important;
+  transition: none !important;
+}
+
+.testimonial-morph-clone {
+  position: fixed;
+  z-index: 100000;
+  width: max-content;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  pointer-events: none;
+  white-space: nowrap;
+  will-change:
+    left, top, font-size, font-weight, line-height, letter-spacing, color;
+}
+
+/* ---------- Testimonial cards ---------- */
+.testimonial-grid {
+  width: 100%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-4);
+  align-items: start;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: scale(0.96);
+  transform-origin: center;
+  transition:
+    opacity 0.45s ease,
+    transform 0.7s cubic-bezier(0.76, 0, 0.24, 1),
+    visibility 0s linear 0.45s;
+}
+
+.testimonial-column {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+/* Same border, radius and spacing language as the service cards. */
+.testimonial-card {
+  width: 100%;
+  border: var(--border-text-big);
+  border-radius: 2px;
+  padding: 32px 32px 30px;
+  display: flex;
+  flex-direction: column;
+  background: transparent;
+}
+
+.testimonial-context {
+  margin-bottom: var(--space-3);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.4;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.testimonial-quote {
+  margin: 0;
+  font-size: clamp(15px, 1.1vw, 17px);
+  font-weight: 400;
+  line-height: 1.55;
+  letter-spacing: 0;
+  color: var(--color-text);
+}
+
+.testimonial-attribution {
+  margin-top: var(--space-4);
+}
+
+.testimonial-name {
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.4;
+  color: var(--color-text);
+}
+
+.testimonial-role,
+.testimonial-translation-note {
+  margin-top: var(--space-1);
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 1.45;
+  color: var(--color-text-muted);
+}
+
+.testimonial-translation-note {
+  font-style: italic;
+}
+
+/* Toggle state: the whole stage is clickable in both directions. */
+.testimonial-stage.is-testimonials-visible .testimonial-cloud {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: scale(1.06);
+  transition:
+    transform 0.7s cubic-bezier(0.76, 0, 0.24, 1),
+    opacity 0.3s ease,
+    visibility 0s linear 0.35s;
+}
+
+.testimonial-stage.is-testimonials-visible .testimonial-grid {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: scale(1);
+  transition:
+    opacity 0.55s ease 0.12s,
+    transform 0.7s cubic-bezier(0.76, 0, 0.24, 1),
+    visibility 0s linear 0s;
+}
+
+@media (max-width: 1100px) {
+  .testimonial-cloud {
+    min-height: 680px;
+  }
+
+  .testimonial-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    max-width: 820px;
+  }
+
+  .testimonial-column--right {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .work-testimonials {
+    padding-top: var(--space-7);
+    gap: var(--space-6);
+  }
+
+  .work-testimonials .section-heading {
+    padding: 0 24px;
+  }
+
+  /* Match the Services mobile pattern: show the cards directly, no cloud. */
+  .testimonial-stage {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    display: block;
+    overflow: hidden;
+  }
+
+  .testimonial-cloud {
+    display: none !important;
+  }
+
+  .testimonial-grid,
+  .testimonial-stage.is-testimonials-visible .testimonial-grid {
+    margin: 0;
+    display: flex;
+    justify-content: flex-start;
+    gap: 16px;
+    width: 100%;
+    max-width: none;
+    padding: 0 24px 12px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    scroll-padding-left: 24px;
+    overscroll-behavior-x: contain;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: none;
+    transition: none;
+  }
+
+  .testimonial-grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .testimonial-column {
+    display: contents;
+  }
+
+  .testimonial-card {
+    flex: 0 0 min(84vw, 340px);
+    width: min(84vw, 340px);
+    min-height: 400px;
+    padding: 24px;
+    scroll-snap-align: center;
+  }
+
+  .testimonial-card--aaron {
+    order: 1;
+  }
+  .testimonial-card--daniel {
+    order: 2;
+  }
+  .testimonial-card--andrea {
+    order: 3;
+  }
+  .testimonial-card--phbern {
+    order: 4;
+  }
+  .testimonial-card--biel {
+    order: 5;
+  }
+
+  .testimonial-quote {
+    font-size: 15px;
+    line-height: 1.55;
+  }
+}
+
+@media (max-width: 480px) {
+  .work-testimonials {
+    padding-top: var(--space-6);
+    gap: var(--space-6);
+  }
+
+  .testimonial-card {
+    flex-basis: min(86vw, 320px);
+    width: min(86vw, 320px);
+    min-height: 390px;
+    padding: 24px;
+  }
+
+  .testimonial-context {
+    margin-bottom: 14px;
+    font-size: 11px;
+  }
+
+  .testimonial-quote {
+    font-size: 15px;
+    line-height: 1.55;
+  }
+
+  .testimonial-attribution {
+    margin-top: 20px;
+  }
+
+  .testimonial-name {
+    font-size: 12px;
+  }
+
+  .testimonial-role,
+  .testimonial-translation-note {
+    font-size: 11px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .testimonial-cloud,
+  .testimonial-grid,
+  .testimonial-cloud-phrase,
+  .testimonial-cloud-token,
+  .testimonial-motion-target,
+  .testimonial-morph-clone {
+    transition-duration: 0.01ms !important;
   }
 }

@@ -98,6 +98,54 @@
       "tag4": "Développement"
     }
   },
+  "testimonials": {
+    "label": "Témoignages",
+    "heading": "Ce qu’on dit de mon travail",
+    "items": {
+      "daniel": {
+        "context": "Climate Cockpit · Design de dashboard",
+        "quote": "« Anouk a adopté une approche proactive pour recueillir les besoins des utilisatrices et utilisateurs et s’est appuyée sur des versions de test interactives pour adapter précisément le dashboard aux besoins du réseau. Le nouveau cockpit est déjà largement utilisé et a reçu des retours très positifs dans l’ensemble du réseau. »",
+        "name": "Daniel Bruderer",
+        "role": "Responsable du réseau climat, Coopération et développement économiques du SECO"
+      },
+      "andrea": {
+        "context": "Country Cockpit · Design de dashboard",
+        "quote": "« Anouk a créé les éléments graphiques et développé les concepts visuels, les visualisations de données et les prototypes de notre Country Cockpit numérique. Elle a réussi à présenter un sujet plutôt aride de manière à la fois rigoureuse et très attrayante. Nous sommes très fiers du résultat ! »",
+        "name": "Andrea Rauber Saxer",
+        "role": "Ambassadrice, cheffe des Relations économiques bilatérales"
+      },
+      "aaron": {
+        "context": "Country Cockpit · Design de dashboard",
+        "quote": "« Grâce à son approche proactive et orientée solutions, Anouk a rapidement apporté un nouvel élan au projet. Elle ne s’arrête pas aux idées : elle développe des options concrètes. Elle fait le lien entre les métiers et les développeurs, évalue de manière réaliste les contraintes techniques et propose des solutions adaptées. Par son exigence de qualité, sa flexibilité et son engagement, elle a largement contribué à faire du projet bien plus que ce qui était initialement prévu. »",
+        "name": "Aaron Dettwiler",
+        "role": "Chef de projet, Relations économiques bilatérales"
+      },
+      "biel": {
+        "context": "Feedback antérieur · Certificat de travail",
+        "quote": "« Mme Fontaine a apporté d’importantes contributions à la simplification des processus de travail et à une meilleure compréhension de leur fonctionnement. »",
+        "name": "Ville de Bienne",
+        "role": "Département des affaires sociales · 2020"
+      },
+      "phbern": {
+        "context": "Feedback antérieur · Certificat de travail",
+        "quote": "« Mme Fontaine est capable d’appréhender des processus complexes et dynamiques dans leur ensemble et d’en déduire des pistes d’action adaptées. »",
+        "name": "PHBern",
+        "role": "Services RH · 2020"
+      }
+    },
+    "highlights": {
+      "momentum": "nouvel élan",
+      "solution": "orientée solutions",
+      "bridge": "le lien entre les métiers et les développeurs",
+      "quality": "exigence de qualité",
+      "flexibility": "sa flexibilité et son engagement",
+      "proactive": "proactive",
+      "positive": "retours très positifs dans l’ensemble du réseau",
+      "visual": "rigoureuse et très attrayante",
+      "contributions": "importantes contributions",
+      "complex": "processus complexes et dynamiques"
+    }
+  },
   "about": {
     "label": "À propos",
     "heading": "Ravie de faire ta connaissance.",

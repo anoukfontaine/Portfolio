@@ -192,12 +192,26 @@ langBtn.addEventListener("mouseleave", () => {
 });
 
 langBtn.addEventListener("click", () => {
-  langIndex = (langIndex + 1) % languages.length;
-  langBtn.childNodes[0].textContent = languages[langIndex];
-  if (window.applyLanguage) {
-    window.applyLanguage(languages[langIndex].toLowerCase());
-  }
-  updateTestimonialLanguageState(languages[langIndex].toLowerCase());
+  const nextIndex = (langIndex + 1) % languages.length;
+
+  document.documentElement.classList.add("lang-switching");
+
+  setTimeout(async () => {
+    langIndex = nextIndex;
+    langBtn.childNodes[0].textContent = languages[langIndex];
+
+    const newLanguage = languages[langIndex].toLowerCase();
+
+    if (window.applyLanguage) {
+      await window.applyLanguage(newLanguage);
+    }
+
+    updateTestimonialLanguageState(newLanguage);
+
+    requestAnimationFrame(() => {
+      document.documentElement.classList.remove("lang-switching");
+    });
+  }, 120);
 });
 
 let moonRotation = themeIndex * 90;
@@ -277,7 +291,7 @@ function getHomeSectionUrl(hash) {
     window.location.pathname.includes("/work/") ||
     window.location.pathname.includes("/Work/");
 
-  return isInWorkFolder ? `../index.html${hash}` : `index.html${hash}`;
+  return isInWorkFolder ? `../${hash}` : hash;
 }
 /* =============================================
    GLOBAL LEFT SIDEBAR NAVIGATION
@@ -2263,3 +2277,396 @@ function updateTestimonialLanguageState(language) {
 updateTestimonialLanguageState(
   (localStorage.getItem("lang") || "en").toLowerCase(),
 );
+
+/* =============================================
+   CASE STUDIES — SCROLL REVEALS
+============================================= */
+(() => {
+  const casePage = document.querySelector(".case-page");
+
+  if (!casePage || !("IntersectionObserver" in window)) return;
+
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+  if (reducedMotion.matches) return;
+
+  /*
+   * Only now do we activate the hidden starting states.
+   * If JS ever fails, all content remains visible normally.
+   */
+  document.documentElement.classList.add("case-motion-ready");
+
+  const revealElements = new Set();
+
+  /* ---------------------------------------------
+     Helper
+  --------------------------------------------- */
+
+  const prepareReveal = (element, type = "text", delay = 0) => {
+    if (!element || element.dataset.revealReady === "true") return;
+
+    element.dataset.revealReady = "true";
+    element.classList.add(`reveal-${type}`);
+
+    element.style.setProperty("--reveal-delay", `${delay}ms`);
+
+    revealElements.add(element);
+  };
+
+  const prepareAll = (selector, type = "text", stagger = 0) => {
+    casePage.querySelectorAll(selector).forEach((element, index) => {
+      prepareReveal(element, type, index * stagger);
+    });
+  };
+
+  /* =============================================
+     OVERVIEW
+  ============================================= */
+
+  prepareReveal(casePage.querySelector(".cs-overview-intro"), "text");
+
+  prepareReveal(
+    casePage.querySelector(".cs-overview-image-wrap"),
+    "visual",
+    80,
+  );
+
+  prepareAll(".cs-overview-meta-block", "text", 90);
+
+  /* =============================================
+     PROBLEM
+  ============================================= */
+
+  prepareReveal(
+    casePage.querySelector("#section-problem .cs-problem-top-left"),
+    "text",
+  );
+
+  prepareReveal(
+    casePage.querySelector("#section-problem .cs-problem-image"),
+    "visual",
+    100,
+  );
+
+  casePage
+    .querySelectorAll("#section-problem .cs-problem-point")
+    .forEach((element, index) => {
+      prepareReveal(element, "text", index * 100);
+    });
+
+  /* =============================================
+     SOLUTION
+  ============================================= */
+
+  prepareReveal(
+    casePage.querySelector("#section-solution .cs-solution-heading"),
+    "text",
+  );
+
+  casePage
+    .querySelectorAll("#section-solution .cs-problem-point")
+    .forEach((element, index) => {
+      prepareReveal(element, "text", index * 100);
+    });
+
+  prepareReveal(
+    casePage.querySelector("#section-solution .cs-solution-image-wrap"),
+    "visual",
+    80,
+  );
+
+  /* =============================================
+     IMPACT
+  ============================================= */
+
+  prepareReveal(casePage.querySelector(".cs-impact-card-top"), "text");
+
+  casePage.querySelectorAll(".cs-impact-number").forEach((element, index) => {
+    prepareReveal(element, "text", 120 + index * 110);
+  });
+
+  /* =============================================
+     PROCESS INTRO
+  ============================================= */
+
+  prepareReveal(
+    casePage.querySelector("#section-process > .section-heading"),
+    "text",
+  );
+
+  prepareReveal(
+    casePage.querySelector("#section-process .cs-process-bar"),
+    "visual",
+    80,
+  );
+
+  /* =============================================
+     PROCESS STEPS
+     Number → label → heading → text
+  ============================================= */
+
+  casePage.querySelectorAll(".cs-process-step-card").forEach((card) => {
+    prepareReveal(card.querySelector(".cs-process-step-card-num"), "text");
+
+    const right = card.querySelector(".cs-process-step-card-right");
+
+    if (!right) return;
+
+    /* Label */
+    prepareReveal(right.querySelector(".label"), "text", 70);
+
+    /* Heading */
+    prepareReveal(
+      right.querySelector(".section-title, .cs-process-step-title"),
+      "text",
+      140,
+    );
+
+    /* Body copy */
+    prepareReveal(right.querySelector(".cs-process-step-text"), "text", 220);
+  });
+
+  /* =============================================
+     KEY DECISION / KEY OUTCOME
+
+     We wrap the text so the line and copy
+     can animate independently.
+  ============================================= */
+
+  casePage.querySelectorAll(".cs-key-decision").forEach((decision) => {
+    if (!decision.querySelector(":scope > .cs-key-decision-content")) {
+      const content = document.createElement("span");
+
+      content.className = "cs-key-decision-content";
+
+      while (decision.firstChild) {
+        content.appendChild(decision.firstChild);
+      }
+
+      decision.appendChild(content);
+    }
+
+    prepareReveal(decision, "decision");
+  });
+
+  /* =============================================
+     PROCESS VISUALS
+  ============================================= */
+
+  prepareAll(".cs-process-step-media-item", "visual");
+
+  /* =============================================
+     FINAL PRODUCT / DELIVERABLE
+  ============================================= */
+
+  prepareReveal(
+    casePage.querySelector(".cs-product > .section-heading"),
+    "text",
+  );
+
+  casePage.querySelectorAll(".cs-product-card").forEach((element, index) => {
+    prepareReveal(element, "visual", index * 100);
+  });
+
+  /* =============================================
+     OBSERVER
+  ============================================= */
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+
+        entry.target.classList.add("is-visible");
+
+        /*
+         * Only animate once.
+         */
+        observer.unobserve(entry.target);
+      });
+    },
+    {
+      threshold: 0.01,
+
+      /*
+       * Start slightly before the element reaches
+       * the lower visible part of the viewport.
+       */
+      rootMargin: "0px 0px -10% 0px",
+    },
+  );
+
+  revealElements.forEach((element) => {
+    observer.observe(element);
+  });
+})();
+
+/* =============================================
+   HOMEPAGE — SCROLL REVEALS
+============================================= */
+(() => {
+  const services = document.querySelector("#services");
+  const work = document.querySelector("#work");
+  const about = document.querySelector("#about");
+  const contact = document.querySelector("#contact");
+
+  /*
+   * Homepage only.
+   */
+  if (
+    document.body.classList.contains("case-page") ||
+    !services ||
+    !work ||
+    !about ||
+    !contact ||
+    !("IntersectionObserver" in window)
+  ) {
+    return;
+  }
+
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+  if (reducedMotion.matches) return;
+
+  const revealElements = new Set();
+
+  /* ---------------------------------------------
+     Helper
+  --------------------------------------------- */
+
+  const prepareReveal = (element, type = "text", delay = 0) => {
+    if (!element || element.dataset.homeRevealReady === "true") {
+      return;
+    }
+
+    element.dataset.homeRevealReady = "true";
+
+    element.classList.add(`home-reveal-${type}`);
+
+    element.style.setProperty("--home-reveal-delay", `${delay}ms`);
+
+    revealElements.add(element);
+  };
+
+  /*
+   * Only now activate the hidden states.
+   * If JS fails, the homepage remains completely visible.
+   */
+  document.documentElement.classList.add("home-motion-ready");
+
+  /* =============================================
+     HERO
+     Gentle load sequence
+  ============================================= */
+
+  prepareReveal(document.querySelector(".hero-location-wrap"), "text", 0);
+
+  prepareReveal(document.querySelector(".hero-headline"), "text", 60);
+
+  prepareReveal(document.querySelector(".hero-description"), "text", 140);
+
+  prepareReveal(document.querySelector(".hero-links-row"), "text", 220);
+
+  /*
+   * Fade only:
+   * .hero-illustration-btn already uses transform
+   * for its horizontal positioning.
+   */
+  prepareReveal(document.querySelector(".hero-illustration-btn"), "fade", 180);
+
+  /* =============================================
+     SERVICES
+  ============================================= */
+
+  prepareReveal(services.querySelector(".section-heading"), "text", 0);
+
+  /*
+   * Animate the stage, NOT .venn-svg itself.
+   * Your Venn already scales on hover.
+   */
+  prepareReveal(services.querySelector(".services-stage"), "visual", 90);
+
+  /* =============================================
+     SELECTED WORK
+  ============================================= */
+
+  prepareReveal(work.querySelector(":scope > .section-heading"), "text", 0);
+
+  work.querySelectorAll(".work-list .work-card").forEach((card, index) => {
+    prepareReveal(card, "visual", index * 70);
+  });
+
+  /* =============================================
+     TESTIMONIALS
+  ============================================= */
+
+  const testimonials = work.querySelector(".work-testimonials");
+
+  if (testimonials) {
+    prepareReveal(testimonials.querySelector(".section-heading"), "text", 0);
+
+    /*
+     * Again: animate the entire stage rather than
+     * testimonial-cloud itself, because the cloud
+     * already has its interactive scaling/morphing.
+     */
+    prepareReveal(
+      testimonials.querySelector(".testimonial-stage"),
+      "visual",
+      90,
+    );
+  }
+
+  /* =============================================
+     ABOUT
+  ============================================= */
+
+  prepareReveal(about.querySelector(".about-photo-top"), "visual", 0);
+
+  prepareReveal(about.querySelector(".about-content > .label"), "text", 40);
+
+  prepareReveal(about.querySelector(".about-content > h2"), "text", 90);
+
+  prepareReveal(about.querySelector(".about-intro"), "text", 150);
+
+  prepareReveal(about.querySelector(".accordion"), "text", 210);
+
+  prepareReveal(about.querySelector(".about-links"), "text", 260);
+
+  /* =============================================
+     CONTACT
+  ============================================= */
+
+  prepareReveal(contact.querySelector(".section-heading"), "text", 0);
+
+  prepareReveal(contact.querySelector(".contact-headline"), "text", 80);
+
+  prepareReveal(contact.querySelector(".contact-links"), "text", 160);
+
+  /* =============================================
+     OBSERVER
+  ============================================= */
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+
+        entry.target.classList.add("is-visible");
+
+        /*
+         * Reveal only once.
+         */
+        observer.unobserve(entry.target);
+      });
+    },
+    {
+      threshold: 0.05,
+      rootMargin: "0px 0px -10% 0px",
+    },
+  );
+
+  revealElements.forEach((element) => {
+    observer.observe(element);
+  });
+})();

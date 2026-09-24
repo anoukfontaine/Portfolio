@@ -358,6 +358,34 @@ nav {
     transform: rotate(450deg) translateX(16px);
   }
 }
+/* Smooth language switch */
+[data-i18n],
+#contact-verb,
+.testimonial-translation-note {
+  transition:
+    opacity 0.18s ease,
+    translate 0.18s ease;
+}
+
+html.lang-switching [data-i18n],
+html.lang-switching #contact-verb,
+html.lang-switching .testimonial-translation-note {
+  opacity: 0;
+  translate: 0 -4px;
+}
+
+/* Large hero text: fade only to avoid visible reflow */
+.hero-headline[data-i18n],
+.hero-description[data-i18n] {
+  transition: opacity 0.22s ease;
+  translate: none;
+}
+
+html.lang-switching .hero-headline[data-i18n],
+html.lang-switching .hero-description[data-i18n] {
+  opacity: 0;
+  translate: none;
+}
 .nav-theme {
   font-size: 24px;
   color: var(--color-text);
@@ -734,11 +762,13 @@ body.case-page .left-sidebar > *:not(.left-sidebar-home):nth-child(8) {
   margin-bottom: 36px;
 
   max-width: 850px; /* was 760px */
-  white-space: nowrap;
+  white-space: normal;
+
+  text-wrap: balance;
 }
 
 .hero-headline strong {
-  white-space: nowrap;
+  white-space: normal;
 }
 
 .headline-light {
@@ -5705,6 +5735,7 @@ body.case-page .left-sidebar {
   transform: scale(0.92);
   transform-origin: top center;
   opacity: 0.8;
+
   visibility: visible;
   pointer-events: auto;
   transition:
@@ -5777,72 +5808,71 @@ body.case-page .left-sidebar {
   grid-column: 2 / span 4;
   grid-row: 1;
   justify-self: end;
-  font-size: clamp(30px, 3.7vw, 54px);
+  font-size: clamp(24px, 3vw, 43px);
 }
 
 .testimonial-cloud-word--2 {
   grid-column: 8 / span 4;
   grid-row: 1;
   justify-self: start;
-  font-size: clamp(16px, 1.65vw, 24px);
+  font-size: clamp(13px, 1.32vw, 19px);
 }
 
 .testimonial-cloud-word--3 {
   grid-column: 2 / span 10;
   grid-row: 2;
   justify-self: center;
-  font-size: clamp(22px, 2.45vw, 36px);
+  font-size: clamp(18px, 1.96vw, 29px);
 }
 
 .testimonial-cloud-word--4 {
   grid-column: 1 / span 5;
   grid-row: 3;
   justify-self: center;
-  font-size: clamp(15px, 1.45vw, 21px);
+  font-size: clamp(12px, 1.16vw, 17px);
 }
 
 .testimonial-cloud-word--5 {
   grid-column: 8 / span 4;
   grid-row: 3;
   justify-self: center;
-  font-size: clamp(20px, 2.15vw, 32px);
+  font-size: clamp(16px, 1.72vw, 26px);
 }
 
 .testimonial-cloud-word--6 {
   grid-column: 1 / span 3;
   grid-row: 4;
   justify-self: end;
-  font-size: clamp(27px, 3.2vw, 48px);
+  font-size: clamp(22px, 2.56vw, 38px);
 }
 
 .testimonial-cloud-word--7 {
   grid-column: 5 / span 8;
   grid-row: 4;
   justify-self: center;
-  font-size: clamp(17px, 1.8vw, 27px);
+  font-size: clamp(14px, 1.44vw, 22px);
 }
 
 .testimonial-cloud-word--8 {
   grid-column: 8 / span 5;
   grid-row: 5;
   justify-self: start;
-  font-size: clamp(20px, 2.35vw, 35px);
+  font-size: clamp(16px, 1.88vw, 28px);
 }
 
 .testimonial-cloud-word--9 {
   grid-column: 1 / span 5;
   grid-row: 5;
   justify-self: end;
-  font-size: clamp(24px, 2.8vw, 40px);
+  font-size: clamp(19px, 2.24vw, 32px);
 }
 
 .testimonial-cloud-word--10 {
   grid-column: 2 / span 10;
   grid-row: 6;
   justify-self: center;
-  font-size: clamp(20px, 2.3vw, 34px);
+  font-size: clamp(16px, 1.84vw, 27px);
 }
-
 /* Every cloud phrase is an exact fragment from one testimonial. During the
    transition both the cloud source and inline destination are hidden while one
    travelling clone occupies that exact phrase. */
@@ -6141,5 +6171,187 @@ body.case-page .left-sidebar {
   .testimonial-motion-target,
   .testimonial-morph-clone {
     transition-duration: 0.01ms !important;
+  }
+}
+
+/* =============================================
+   CASE STUDIES — SCROLL REVEALS
+============================================= */
+
+/* Progressive enhancement:
+   content is only hidden once JS confirms animations can run. */
+.case-motion-ready .case-page .reveal-text {
+  opacity: 0;
+  transform: translateY(26px);
+  transition:
+    opacity 0.7s ease,
+    transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+.case-motion-ready .case-page .reveal-text.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* VISUALS — softer movement + tiny scale */
+.case-motion-ready .case-page .reveal-visual {
+  opacity: 0;
+  transform: translateY(20px) scale(0.975);
+  transition:
+    opacity 0.8s ease,
+    transform 1s cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+.case-motion-ready .case-page .reveal-visual.is-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* =============================================
+   KEY DECISION / KEY OUTCOME
+   divider draws first, copy follows
+============================================= */
+
+.case-motion-ready .case-page .reveal-decision {
+  position: relative;
+  border-top: 0;
+}
+
+.case-motion-ready .case-page .reveal-decision::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  border-top: var(--border-muted);
+
+  transform: scaleX(0);
+  transform-origin: left center;
+
+  transition: transform 0.85s cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+.case-motion-ready .case-page .cs-key-decision-content {
+  display: block;
+
+  opacity: 0;
+  transform: translateY(14px);
+
+  transition:
+    opacity 0.6s ease,
+    transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+
+  transition-delay: calc(var(--reveal-delay, 0ms) + 160ms);
+}
+
+.case-motion-ready .case-page .reveal-decision.is-visible::before {
+  transform: scaleX(1);
+}
+
+.case-motion-ready
+  .case-page
+  .reveal-decision.is-visible
+  .cs-key-decision-content {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =============================================
+   ACCESSIBILITY
+============================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .case-motion-ready .case-page .reveal-text,
+  .case-motion-ready .case-page .reveal-visual,
+  .case-motion-ready .case-page .cs-key-decision-content {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .case-motion-ready .case-page .reveal-decision::before {
+    transform: none;
+    transition: none;
+  }
+}
+/* =============================================
+   HOMEPAGE — SCROLL REVEALS
+============================================= */
+
+/*
+ * TEXT
+ * Slightly lighter movement than on case studies.
+ */
+.home-motion-ready body:not(.case-page) .home-reveal-text {
+  opacity: 0;
+  transform: translateY(22px);
+
+  transition:
+    opacity 0.65s ease,
+    transform 0.85s cubic-bezier(0.22, 1, 0.36, 1);
+
+  transition-delay: var(--home-reveal-delay, 0ms);
+}
+
+.home-motion-ready body:not(.case-page) .home-reveal-text.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/*
+ * VISUALS
+ * Tiny scale + movement.
+ *
+ * This goes on WRAPPERS, not directly on the Venn SVG
+ * or testimonial cloud, so their existing interactions
+ * remain untouched.
+ */
+.home-motion-ready body:not(.case-page) .home-reveal-visual {
+  opacity: 0;
+  transform: translateY(18px) scale(0.985);
+
+  transition:
+    opacity 0.75s ease,
+    transform 0.95s cubic-bezier(0.22, 1, 0.36, 1);
+
+  transition-delay: var(--home-reveal-delay, 0ms);
+}
+
+.home-motion-ready body:not(.case-page) .home-reveal-visual.is-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/*
+ * FADE ONLY
+ * Used for the hero illustration because that element
+ * already has its own positioning transform.
+ */
+.home-motion-ready body:not(.case-page) .home-reveal-fade {
+  opacity: 0;
+
+  transition: opacity 0.85s ease;
+
+  transition-delay: var(--home-reveal-delay, 0ms);
+}
+
+.home-motion-ready body:not(.case-page) .home-reveal-fade.is-visible {
+  opacity: 1;
+}
+
+/* =============================================
+   ACCESSIBILITY
+============================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .home-motion-ready body:not(.case-page) .home-reveal-text,
+  .home-motion-ready body:not(.case-page) .home-reveal-visual,
+  .home-motion-ready body:not(.case-page) .home-reveal-fade {
+    opacity: 1;
+    transform: none;
+    transition: none;
   }
 }

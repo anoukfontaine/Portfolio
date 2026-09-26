@@ -220,7 +220,7 @@ html.custom-cursor #cursor {
   height: 56px;
 }
 /* =============================================
-                     NAV CSS â€”  DO NOT MODIFY
+                     NAV CSS -  DO NOT MODIFY
      ============================================= */
 #navbar {
   display: contents;
@@ -290,7 +290,7 @@ nav {
   padding-bottom: 6px;
 }
 .nav-links a::after {
-  content: "“";
+  content: '"';
   position: absolute;
   bottom: -32px;
   left: 50%;
@@ -562,7 +562,7 @@ body.menu-open {
 }
 
 /* =============================================
-   LEFT SIDEBAR â€” HOME GROUP (case study pages)
+   LEFT SIDEBAR - HOME GROUP (case study pages)
 ============================================= */
 
 .left-sidebar-home {
@@ -640,7 +640,7 @@ body.menu-open {
 }
 
 /* =============================================
-   LEFT SIDEBAR â€” CASE STUDY ITEMS FADE IN
+   LEFT SIDEBAR - CASE STUDY ITEMS FADE IN
 ============================================= */
 
 body.case-page .left-sidebar > *:not(.left-sidebar-home) {
@@ -856,7 +856,7 @@ body.case-page .left-sidebar > *:not(.left-sidebar-home):nth-child(8) {
   width: auto;
   height: auto;
 
-  /* was 58vh — about 9% larger */
+  /* was 58vh - about 9% larger */
   max-height: 63vh;
 
   max-width: 100%;
@@ -1808,7 +1808,7 @@ html[lang="de"] .contact-verb-spacer::after {
 .cs-image-caption--right {
   text-align: right;
 }
-/* â”€â”€ LIGHTBOX â”€â”€ */
+/* -- LIGHTBOX -- */
 .cs-lightbox-trigger {
 }
 
@@ -1847,7 +1847,7 @@ html[lang="de"] .contact-verb-spacer::after {
 
   line-height: 1;
 }
-/* â”€â”€ OVERVIEW â”€â”€ */
+/* -- OVERVIEW -- */
 
 .card-container {
   max-width: 1100px;
@@ -1994,7 +1994,7 @@ html[lang="de"] .contact-verb-spacer::after {
   color: var(--color-text);
 }
 
-/* â”€â”€ CONTEXT â”€â”€ */
+/* -- CONTEXT -- */
 .cs-context {
   display: flex;
   flex-direction: column;
@@ -2063,7 +2063,7 @@ html[lang="de"] .contact-verb-spacer::after {
   line-height: 1.5;
 }
 
-/* â”€â”€ SHARED â”€â”€ */
+/* -- SHARED -- */
 .cs-section-label {
   font-size: 11px;
   font-weight: 700;
@@ -2073,7 +2073,7 @@ html[lang="de"] .contact-verb-spacer::after {
   margin-bottom: var(--space-2);
 }
 
-/* â”€â”€ PROBLEM â”€â”€ */
+/* -- PROBLEM -- */
 .cs-section {
   padding: var(--section-gap) var(--section-padding-x);
 }
@@ -2148,12 +2148,12 @@ html[lang="de"] .contact-verb-spacer::after {
   padding-top: var(--space-5);
 }
 
-/* If there are 4 pain points â†’ 4 columns */
+/* If there are 4 pain points -> 4 columns */
 .cs-problem-points:has(.cs-problem-point:nth-child(4)) {
   grid-template-columns: repeat(4, 1fr);
 }
 
-/* On smaller screens, switch to 2Ã—2 */
+/* On smaller screens, switch to 2x2 */
 
 .cs-problem-point {
   display: flex;
@@ -2175,7 +2175,7 @@ html[lang="de"] .contact-verb-spacer::after {
   color: var(--color-bg);
 }
 
-/* ── SOLUTION ── */
+/* -- SOLUTION -- */
 .cs-solution {
   display: flex;
   flex-direction: column;
@@ -2226,7 +2226,7 @@ html[lang="de"] .contact-verb-spacer::after {
   color: var(--color-text);
 }
 
-/* â”€â”€ PROCESS â”€â”€ */
+/* -- PROCESS -- */
 .cs-process-section {
   padding: var(--section-gap) var(--section-padding-x) 0
     var(--section-padding-x);
@@ -2659,7 +2659,7 @@ html[lang="de"] .contact-verb-spacer::after {
   border-radius: var(--radius-md);
 }
 
-/* â”€â”€ DESIGN CARDS â”€â”€ */
+/* -- DESIGN CARDS -- */
 .cs-design-cards {
   display: grid;
   gap: var(--space-4);
@@ -2717,7 +2717,7 @@ html[lang="de"] .contact-verb-spacer::after {
   color: var(--color-bg);
 }
 
-/* â”€â”€ ITERATIONS â”€â”€ */
+/* -- ITERATIONS -- */
 .cs-iterations {
   margin-top: var(--space-6);
   display: flex;
@@ -2848,7 +2848,7 @@ html[lang="de"] .contact-verb-spacer::after {
   display: block;
 }
 
-/* â”€â”€ SURVEY RESULTS â”€â”€ */
+/* -- SURVEY RESULTS -- */
 .cs-survey-quotes {
   position: absolute;
   inset: 0;
@@ -2892,7 +2892,7 @@ html[lang="de"] .contact-verb-spacer::after {
   min-height: 170px;
 }
 .cs-survey-quote::before {
-  content: "“";
+  content: '"';
   position: absolute;
   top: 18px;
   left: 20px;
@@ -2909,7 +2909,7 @@ html[lang="de"] .contact-verb-spacer::after {
 }
 
 .cs-survey-quote::before {
-  content: "“";
+  content: '"';
 }
 
 .cs-survey-results-header {
@@ -2976,7 +2976,7 @@ html[lang="de"] .contact-verb-spacer::after {
   line-height: 1.6;
   color: var(--color-text-muted);
 }
-/*  “ SURVEY CHART "â”€â”"€ */
+/*  " SURVEY CHART "-"" */
 .cs-survey-container {
   display: flex;
   flex-direction: column;
@@ -3118,7 +3118,7 @@ html[lang="de"] .contact-verb-spacer::after {
   align-items: center;
 }
 
-/* Survey qualitative feedback — keep the original card styling,
+/* Survey qualitative feedback - keep the original card styling,
    only place the three cards in one row inside the dark results card. */
 .cs-survey-feedback-overlay--cards-only {
   margin-top: var(--space-6);
@@ -3134,7 +3134,7 @@ html[lang="de"] .contact-verb-spacer::after {
   padding: 0;
 }
 
-/* â”€â”€ PRODUCT â”€â”€ */
+/* -- PRODUCT -- */
 
 .cs-product-video-wrap {
   width: min(420px, 100%);
@@ -3285,7 +3285,7 @@ html[lang="de"] .contact-verb-spacer::after {
   border-radius: inherit;
 }
 
-/* â”€â”€ IMPACT â”€â”€ */
+/* -- IMPACT -- */
 .cs-impact {
   padding: var(--section-gap) var(--section-padding-x);
 }
@@ -3336,7 +3336,7 @@ html[lang="de"] .contact-verb-spacer::after {
   text-align: left;
   color: var(--color-bg);
 }
-/* â”€â”€ AFTERLIFE â”€â”€ */
+/* -- AFTERLIFE -- */
 .cs-afterlife {
   padding: var(--section-gap) var(--section-padding-x);
 }
@@ -3374,7 +3374,7 @@ html[lang="de"] .contact-verb-spacer::after {
 
   text-align: center;
 }
-/* â”€â”€ TESTIMONIALS â”€â”€ */
+/* -- TESTIMONIALS -- */
 .cs-testimonials {
   padding: var(--section-gap) var(--section-padding-x);
   display: flex;
@@ -3440,7 +3440,7 @@ html[lang="de"] .contact-verb-spacer::after {
   font-weight: 700;
 }
 
-/* ── INTERACTIVE TESTIMONIAL CARDS ── */
+/* -- INTERACTIVE TESTIMONIAL CARDS -- */
 
 .cs-testimonials-grid--compact {
   align-items: stretch;
@@ -3490,7 +3490,7 @@ html[lang="de"] .contact-verb-spacer::after {
   transform: translate(3px, -3px);
 }
 
-/* ── TESTIMONIAL MODAL ── */
+/* -- TESTIMONIAL MODAL -- */
 
 .cs-testimonial-modal {
   display: none;
@@ -3634,7 +3634,7 @@ html[lang="de"] .contact-verb-spacer::after {
     color-mix(in srgb, var(--project-accent) 30%, transparent);
 }
 
-/* â”€â”€ NEXT PROJECTS â”€â”€ */
+/* -- NEXT PROJECTS -- */
 .cs-next {
   background: var(--color-text);
   padding: var(--section-gap) var(--section-padding-x) var(--section-gap)
@@ -3925,7 +3925,7 @@ html[lang="de"] .contact-verb-spacer::after {
    RESPONSIVE CASE STUDY
 ============================================= */
 
-/* â”€â”€ RESPONSIVE â”€â”€ */
+/* -- RESPONSIVE -- */
 
 /* =============================================
    PASSWORD
@@ -4050,10 +4050,19 @@ body.gate-locked .nav-right {
 }
 
 /* =============================================
-   RESPONSIVE — LARGE TABLET / SMALL DESKTOP (≤ 1200px)
-   - reduces layouts that need more room before the main tablet breakpoint
-   - keeps four-point case-study grids readable
+   RESPONSIVE SYSTEM
+   Breakpoints:
+   <= 1200px  large tablet / small desktop
+   <= 1024px  tablet / compact layout
+   <= 768px   mobile
+   <= 640px   case-study narrow-mobile refinement
+   <= 480px   small mobile
+
+   Component-specific responsive rules that depend on unique interactions
+   remain beside their components later in this file.
 ============================================= */
+
+/* LARGE TABLET / SMALL DESKTOP - <= 1200px */
 
 @media (max-width: 1200px) {
   /* CASE STUDIES */
@@ -4062,13 +4071,7 @@ body.gate-locked .nav-right {
   }
 }
 
-/* =============================================
-   RESPONSIVE — TABLET (≤ 1024px)
-   - removes the desktop sidebar and horizontal main offset
-   - switches navigation and major page sections to tablet layouts
-   - stacks contact and complex case-study grids
-   - absorbs the former 900px rules so there is one tablet breakpoint
-============================================= */
+/* TABLET / COMPACT LAYOUT - <= 1024px */
 
 @media (max-width: 1024px) {
   /* GLOBAL */
@@ -4195,10 +4198,6 @@ body.gate-locked .nav-right {
   }
 
   .big-link--muted {
-    font-size: clamp(18px, 2.5vw, 24px);
-  }
-
-  .big-link--muted {
     font-size: clamp(18px, 3vw, 28px);
   }
 
@@ -4209,11 +4208,6 @@ body.gate-locked .nav-right {
 
   .hero-copy {
     width: 100%;
-  }
-
-  .hero-description {
-    max-width: 620px;
-    text-align: left;
   }
 
   .hero-links {
@@ -4283,17 +4277,40 @@ body.gate-locked .nav-right {
     justify-content: flex-start;
   }
 
+  /* Compact layouts show the card content permanently.
+     The card height is content-driven: header -> problem -> solution -> image. */
   .work-card-inner {
-    aspect-ratio: 4 / 3;
+    aspect-ratio: auto;
+    min-height: 0;
     padding: 168px 32px 0;
-  }
-
-  .work-card-img {
-    width: 92%;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
   }
 
   .work-card-details {
-    display: none;
+    position: static;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 28px;
+    width: 100%;
+    opacity: 1;
+    transform: none;
+  }
+
+  .work-card-detail-label {
+    margin-bottom: 10px;
+  }
+
+  .work-card-detail-text {
+    max-width: none;
+  }
+
+  .work-card-img {
+    width: 100%;
+    height: auto;
+    margin: 36px auto 0;
+    transform: none;
   }
 
   .work-card:hover .work-card-img {
@@ -4508,7 +4525,6 @@ body.gate-locked .nav-right {
   }
 
   .cs-process-cards {
-    grid-template-columns: 1fr;
     max-width: 560px;
     margin-left: auto;
     margin-right: auto;
@@ -4523,7 +4539,6 @@ body.gate-locked .nav-right {
   }
 
   .cs-process-intro-cards {
-    grid-template-columns: 1fr;
     max-width: 560px;
     margin: 40px auto 48px auto;
   }
@@ -4574,12 +4589,7 @@ body.gate-locked .nav-right {
     color: var(--color-text);
   }
 }
-/* =============================================
-   RESPONSIVE — MOBILE (≤ 768px)
-   - uses mobile spacing and typography
-   - replaces the Services Venn diagram with native swipeable cards
-   - stacks dense case-study content and removes hotspot positioning
-============================================= */
+/* MOBILE - <= 768px */
 
 @media (max-width: 768px) {
   /* GLOBAL */
@@ -4607,58 +4617,91 @@ body.gate-locked .nav-right {
 
   /* HERO & LINKS */
   .hero-location-wrap {
-    padding: 20px 24px 0;
+    width: 100%;
+    padding: 18px 24px 0;
+  }
+
+  /* Desktop keeps this on one line; phones need to be allowed to wrap. */
+  .hero-location-wrap p {
+    white-space: normal;
   }
 
   .hero {
-    padding: 40px 24px 64px;
+    padding: 32px 24px 56px;
+  }
+
+  .hero-headline-wrap {
+    padding-top: 24px;
   }
 
   .hero-headline {
-    font-size: clamp(40px, 12vw, 60px);
-    line-height: 0.98;
+    max-width: 12ch;
+    margin-bottom: 24px;
+    font-size: clamp(38px, 11vw, 52px);
+    line-height: 1;
+    letter-spacing: -0.05em;
+    text-wrap: balance;
   }
 
   .hero-links-row {
-    gap: 20px;
+    gap: 18px;
     flex-wrap: wrap;
   }
 
-  .big-link {
-    font-size: 18px;
-  }
-
+  .big-link,
   .big-link--muted {
     font-size: 18px;
   }
 
+  /* Mobile editorial order: headline -> illustration -> intro -> links.
+     display: contents lets us reorder the existing markup without changing HTML. */
   .hero-main-row {
-    gap: 40px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+  }
+
+  .hero-copy {
+    display: contents;
+  }
+
+  .hero-headline {
+    grid-row: 1;
+  }
+
+  .hero-illustration-btn {
+    grid-row: 2;
+    width: 100%;
+    margin-bottom: 28px;
+    align-self: stretch;
+    justify-self: stretch;
+    transform: none;
+  }
+
+  .hero-illustration {
+    display: block;
+    width: 100%;
+    max-width: none;
+    max-height: none;
+    height: auto;
   }
 
   .hero-description {
-    max-width: 100%;
-    font-size: 15px;
-    line-height: 1.65;
+    grid-row: 3;
+    max-width: 38ch;
+    margin-bottom: 28px;
+    font-size: 16px;
+    line-height: 1.55;
+  }
+
+  .hero-links-row {
+    grid-row: 4;
   }
 
   .hero-links {
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 24px;
-  }
-
-  .hero-illustration-btn {
-    align-self: flex-end;
-  }
-
-  .hero-illustration {
-    max-height: 36vh;
-  }
-
-  .hero-description {
-    font-size: 15px;
-    line-height: 1.65;
+    gap: 20px 24px;
   }
 
   .hero-location,
@@ -4781,13 +4824,30 @@ body.gate-locked .nav-right {
     font-size: 20px;
   }
 
+  /* Phone cards stay visual and compact: title/tags + image only.
+     Problem/Solution remain available on tablet (769-1024px), where there is room. */
   .work-card-inner {
     aspect-ratio: 1 / 1;
+    min-height: 0;
     padding: 184px 18px 0;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: center;
+  }
+
+  .work-card-details {
+    display: none;
   }
 
   .work-card-img {
     width: 105%;
+    height: auto;
+    margin: 0;
+    transform: none;
+  }
+
+  .work-card:hover .work-card-img {
+    transform: none;
   }
 
   .work-tag {
@@ -5003,7 +5063,7 @@ body.gate-locked .nav-right {
   }
 
   /* =============================================
-   SURVEY FEEDBACK — MOBILE
+   SURVEY FEEDBACK - MOBILE
    Show the affinity-map image first, then stack
    the qualitative feedback cards underneath.
 ============================================= */
@@ -5040,10 +5100,8 @@ body.gate-locked .nav-right {
   }
 }
 
-/* =============================================
-   RESPONSIVE — NARROW MOBILE (≤ 640px)
-   - refines case-study layouts that need an intermediate phone breakpoint
-============================================= */
+/* NARROW MOBILE - <= 640px
+   Kept because these are case-study-specific layout refinements. */
 
 @media (max-width: 640px) {
   /* CASE STUDIES */
@@ -5060,10 +5118,7 @@ body.gate-locked .nav-right {
   }
 }
 
-/* =============================================
-   RESPONSIVE — SMALL MOBILE (≤ 480px)
-   - reduces navigation, section spacing and type for narrow phones
-============================================= */
+/* SMALL MOBILE - <= 480px */
 
 @media (max-width: 480px) {
   /* GLOBAL */
@@ -5105,31 +5160,37 @@ body.gate-locked .nav-right {
 
   /* HERO & LINKS */
   .hero-location-wrap {
-    padding: 18px 20px 0;
+    padding: 16px 20px 0;
   }
 
   .hero {
-    padding: 36px 20px 56px;
+    padding: 28px 20px 48px;
+  }
+
+  .hero-headline-wrap {
+    padding-top: 20px;
   }
 
   .hero-headline {
-    font-size: clamp(38px, 13vw, 52px);
+    max-width: 11.5ch;
+    font-size: clamp(38px, 11.8vw, 48px);
   }
 
   .hero-links-row {
     align-items: flex-start;
   }
 
-  .hero-main-row {
-    gap: 32px;
+  .hero-illustration-btn {
+    margin-bottom: 24px;
   }
 
   .hero-links {
-    gap: 20px;
+    gap: 18px 20px;
   }
 
   .hero-illustration {
-    max-height: 32vh;
+    width: 100%;
+    max-height: none;
   }
 
   /* SERVICES */
@@ -5159,6 +5220,11 @@ body.gate-locked .nav-right {
 
   .work-card-inner {
     padding: 176px 12px 0;
+  }
+
+  .work-card-img {
+    width: 105%;
+    margin: 0;
   }
 
   /* ABOUT */
@@ -5230,7 +5296,7 @@ body.gate-locked .nav-right {
   }
 }
 
-/* Questionnaire results — tighter vertical rhythm only.
+/* Questionnaire results - tighter vertical rhythm only.
    Keeps the shared Impact and quote-card styling unchanged. */
 .cs-survey-card {
   padding: var(--space-7);
@@ -5246,7 +5312,7 @@ body.gate-locked .nav-right {
 }
 
 /* =============================================
-   SOLUTION — BEFORE / AFTER USER FLOW
+   SOLUTION - BEFORE / AFTER USER FLOW
 ============================================= */
 .cs-solution-flow {
   width: 100%;
@@ -5531,7 +5597,7 @@ body.gate-locked .nav-right {
   transform: translate(-22%, -50%) scale(0.72);
 }
 
-/* Dots move inward only horizontally — never vertically. */
+/* Dots move inward only horizontally - never vertically. */
 .cs-solution-flow-stage.is-after .cs-flow-dot--start {
   left: 23.35%;
   top: 36%;
@@ -5624,7 +5690,7 @@ body.gate-locked .nav-right {
   }
 }
 
-/* NEXT PROJECTS — primary projects left, secondary actions bottom right */
+/* NEXT PROJECTS - primary projects left, secondary actions bottom right */
 .cs-next-right--with-heading {
   border-top: none;
 }
@@ -5693,7 +5759,7 @@ body.case-page .left-sidebar {
 }
 
 /* =============================================
-   TESTIMONIALS — within Work
+   TESTIMONIALS - within Work
 ============================================= */
 .work-testimonials {
   width: 100%;
@@ -6044,6 +6110,10 @@ body.case-page .left-sidebar {
 
 @media (max-width: 768px) {
   .work-testimonials {
+    width: calc(100% + 48px);
+    margin-left: -24px;
+    margin-right: -24px;
+
     padding-top: var(--space-7);
     gap: var(--space-6);
   }
@@ -6128,8 +6198,23 @@ body.case-page .left-sidebar {
 
 @media (max-width: 480px) {
   .work-testimonials {
+    width: calc(100% + 40px);
+    margin-left: -20px;
+    margin-right: -20px;
+
     padding-top: var(--space-6);
     gap: var(--space-6);
+  }
+
+  .work-testimonials .section-heading {
+    padding: 0 20px;
+  }
+
+  .testimonial-grid,
+  .testimonial-stage.is-testimonials-visible .testimonial-grid {
+    padding-left: 20px;
+    padding-right: 20px;
+    scroll-padding-left: 20px;
   }
 
   .testimonial-card {
@@ -6175,7 +6260,7 @@ body.case-page .left-sidebar {
 }
 
 /* =============================================
-   CASE STUDIES — SCROLL REVEALS
+   CASE STUDIES - SCROLL REVEALS
 ============================================= */
 
 /* Progressive enhancement:
@@ -6194,7 +6279,7 @@ body.case-page .left-sidebar {
   transform: translateY(0);
 }
 
-/* VISUALS — softer movement + tiny scale */
+/* VISUALS - softer movement + tiny scale */
 .case-motion-ready .case-page .reveal-visual {
   opacity: 0;
   transform: translateY(20px) scale(0.975);
@@ -6278,7 +6363,7 @@ body.case-page .left-sidebar {
   }
 }
 /* =============================================
-   HOMEPAGE — SCROLL REVEALS
+   HOMEPAGE - SCROLL REVEALS
 ============================================= */
 
 /*
@@ -6353,5 +6438,226 @@ body.case-page .left-sidebar {
     opacity: 1;
     transform: none;
     transition: none;
+  }
+}
+
+/* =============================================
+   CASE STUDIES - RESPONSIVE REFINEMENT
+   Desktop (> 1024px) is intentionally untouched.
+============================================= */
+
+@media (max-width: 1024px) {
+  body.case-page .cs-overview-content,
+  body.case-page .cs-overview-meta,
+  body.case-page .cs-section,
+  body.case-page .cs-process-section,
+  body.case-page .cs-process-step-card,
+  body.case-page .cs-process-step-media,
+  body.case-page .cs-product,
+  body.case-page .cs-impact,
+  body.case-page .cs-testimonials,
+  body.case-page .cs-afterlife,
+  body.case-page .cs-next-inner {
+    min-width: 0;
+  }
+
+  /* Keep the same horizontal rhythm across the whole case study on tablets. */
+  body.case-page .cs-section {
+    padding-left: var(--section-padding-x);
+    padding-right: var(--section-padding-x);
+  }
+
+  body.case-page .cs-process-section {
+    padding-left: var(--section-padding-x);
+    padding-right: var(--section-padding-x);
+  }
+
+  body.case-page .cs-product {
+    padding: 64px var(--section-padding-x);
+  }
+
+  body.case-page .cs-impact {
+    padding-left: var(--section-padding-x);
+    padding-right: var(--section-padding-x);
+  }
+
+  /* Metadata was previously edge-to-edge after the overview collapsed. */
+  body.case-page .cs-overview-meta {
+    min-height: 0;
+    padding: var(--section-gap-sm) var(--section-padding-x);
+    gap: var(--space-5);
+  }
+
+  body.case-page .cs-overview-image {
+    height: clamp(360px, 58dvh, 620px);
+  }
+
+  /* Remove desktop-sized vertical gaps once the process becomes one column. */
+  body.case-page .cs-process-section > .section-heading {
+    margin-bottom: var(--space-7);
+  }
+
+  body.case-page .cs-process-step-section {
+    gap: var(--space-7);
+  }
+
+  /* Prevent translated or long content from forcing a grid column wider. */
+  body.case-page .cs-overview-intro > *,
+  body.case-page .cs-problem-top > *,
+  body.case-page .cs-product-details > *,
+  body.case-page .cs-process-step-card-top > *,
+  body.case-page .cs-context-bottom > * {
+    min-width: 0;
+  }
+}
+
+@media (max-width: 900px) {
+  /* Yellow case study: retain the diagram's structure, but make the
+     horizontal canvas substantially shorter and easier to explore. */
+  body.case-page .cs-solution-flow-scroll {
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding-bottom: 8px;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-x: contain;
+  }
+
+  body.case-page .cs-solution-flow-stage {
+    width: max(720px, 100%);
+    min-height: 360px;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Overview copy needs to become a real single-column phone layout. */
+  body.case-page .cs-overview-intro {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--space-4);
+    margin-top: var(--space-5);
+    margin-bottom: var(--space-5);
+  }
+
+  body.case-page .cs-overview-description,
+  body.case-page .cs-overview-note {
+    max-width: none;
+  }
+
+  body.case-page .cs-overview-meta {
+    padding: var(--space-6) var(--section-padding-x);
+  }
+
+  body.case-page .cs-overview-image {
+    height: clamp(300px, 50dvh, 500px);
+  }
+
+  body.case-page .cs-overview-image img {
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+  body.case-page .cs-process-section > .section-heading {
+    margin-bottom: var(--space-6);
+  }
+
+  body.case-page .cs-process-step-section {
+    gap: var(--space-6);
+  }
+
+  body.case-page .cs-process-step-title,
+  body.case-page .cs-process-step-text {
+    max-width: none;
+  }
+
+  body.case-page .cs-process-step-title,
+  body.case-page .cs-headline,
+  body.case-page .section-title,
+  body.case-page .cs-impact-title {
+    overflow-wrap: break-word;
+  }
+
+  /* AUW before/after visual should use the available phone width. */
+  body.case-page .cs-iterations--auw-solution {
+    width: 100%;
+  }
+
+  /* Phone product video: preserve the original crop/proportions instead of
+     keeping the desktop 850px fixed height. */
+  body.case-page .cs-product-video-wrap {
+    width: min(420px, 100%);
+    height: auto;
+    aspect-ratio: 420 / 850;
+    border-radius: clamp(36px, 10vw, 64px);
+  }
+
+  /* Dialogs and lightboxes now respect small-screen safe space. */
+  body.case-page .cs-lightbox,
+  body.case-page .cs-testimonial-modal {
+    padding: var(--section-padding-x);
+  }
+
+  body.case-page .cs-lightbox-img {
+    max-width: 100%;
+    max-height: calc(100dvh - (var(--section-padding-x) * 2));
+  }
+
+  body.case-page .cs-testimonial-modal-card {
+    width: 100%;
+    max-height: calc(100dvh - (var(--section-padding-x) * 2));
+    padding: var(--space-5);
+  }
+
+  /* Touch devices cannot rely on hover to reveal gallery controls. */
+  body.case-page .cs-gallery-arrow {
+    opacity: 1;
+  }
+
+  body.case-page .cs-solution-flow-stage {
+    width: max(680px, 100%);
+    min-height: 340px;
+  }
+}
+
+@media (max-width: 480px) {
+  body.case-page .cs-overview-content {
+    padding-top: var(--space-6);
+    padding-bottom: var(--space-5);
+  }
+
+  body.case-page .cs-overview-meta {
+    padding: var(--space-5) var(--section-padding-x) var(--space-6);
+    gap: var(--space-4);
+  }
+
+  body.case-page .cs-overview-image {
+    height: clamp(260px, 42dvh, 420px);
+  }
+
+  body.case-page .cs-process-section > .section-heading {
+    margin-bottom: var(--space-5);
+  }
+
+  body.case-page .cs-process-step-section {
+    gap: var(--space-5);
+  }
+
+  body.case-page .cs-process-step-card-num {
+    font-size: clamp(52px, 17vw, 72px);
+  }
+
+  body.case-page .cs-process-step-title {
+    font-size: clamp(26px, 8vw, 38px);
+  }
+
+  body.case-page .cs-product-video-wrap {
+    border-radius: clamp(28px, 9vw, 48px);
+  }
+
+  body.case-page .cs-testimonial-modal-card {
+    padding: var(--space-4);
+  }
+
+  body.case-page .cs-solution-flow-stage {
+    width: max(620px, 100%);
+    min-height: 310px;
   }
 }

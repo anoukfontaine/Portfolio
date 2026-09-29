@@ -1,6 +1,13 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <script>
+      document.documentElement.classList.add("page-entering");
+
+      if (localStorage.getItem("site-gate-unlocked") === "true") {
+        document.documentElement.classList.add("gate-already-unlocked");
+      }
+    </script>
     <!--<script src="/password-gate.js"></script> -->
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
@@ -267,7 +274,7 @@
             </p>
 
             <h1 class="cs-headline" data-i18n="project_titles.auw">
-              Giving HR its <strong>time back.</strong>
+              Giving HR its <strong>time back</strong>
             </h1>
 
             <div class="cs-overview-intro">
@@ -439,7 +446,7 @@
               class="section-title section-title--dark"
               data-i18n="auw.solution.heading"
             >
-              A Power App <br />that can <strong>do it all.</strong>
+              A Power App <br />that can <strong>do it all</strong>
             </h2>
 
             <p
@@ -518,7 +525,7 @@
                 <button
                   aria-pressed="true"
                   class="pill-btn pill-btn--toggle active"
-                  data-i18n="yellow.test.before_btn"
+                  data-i18n="shared.button.before_btn"
                   data-target="before"
                   type="button"
                 >
@@ -527,7 +534,7 @@
                 <button
                   aria-pressed="false"
                   class="pill-btn pill-btn--toggle"
-                  data-i18n="yellow.test.after_btn"
+                  data-i18n="shared.button.after_btn"
                   data-target="after"
                   type="button"
                 >
@@ -566,7 +573,7 @@
               </p>
 
               <h2 class="cs-impact-title" data-i18n="auw.impact.heading">
-                Giving HR its <strong>time back.</strong>
+                Giving HR its <strong>time back</strong>
               </h2>
             </div>
 
@@ -833,7 +840,7 @@
                     data-i18n="auw.research.heading"
                   >
                     Translating workflows into
-                    <strong>user flows.</strong>
+                    <strong>user flows</strong>
                   </h2>
 
                   <p class="cs-process-step-text" data-i18n="auw.research.text">
@@ -888,7 +895,7 @@
                     class="section-title section-title--process"
                     data-i18n="auw.design.heading"
                   >
-                    <strong>A design system</strong> with gaps.
+                    <strong>A design system</strong> with gaps
                   </h2>
 
                   <p class="cs-process-step-text" data-i18n="auw.design.text">
@@ -943,7 +950,7 @@
                     class="section-title section-title--process"
                     data-i18n="auw.test.heading"
                   >
-                    <strong>Observing users</strong> to find hiccups.
+                    <strong>Observing users</strong> to find hiccups
                   </h2>
 
                   <p class="cs-process-step-text" data-i18n="auw.test.text">
@@ -1023,7 +1030,7 @@
                     class="section-title section-title--process"
                     data-i18n="auw.build.heading"
                   >
-                    Finding the <strong>pragmatic path.</strong>
+                    Finding the <strong>pragmatic path</strong>
                   </h2>
 
                   <p class="cs-process-step-text" data-i18n="auw.build.text">
@@ -1079,7 +1086,7 @@
             data-i18n="auw.product.heading"
             style="text-align: left; margin-bottom: var(--element-gap)"
           >
-            <strong>A clear path</strong> for each request.
+            <strong>A clear path</strong> for each request
           </h2>
 
           <div class="cs-product-showcase">

@@ -118,9 +118,15 @@
 
     return supportedLangs.includes(shortLang) ? shortLang : "en";
   }
+  // Language SWITCH OFF
 
   const saved = localStorage.getItem("lang");
-  const initialLang = saved || getBrowserLang();
+
+  // Language SWITCH OFF
+  const initialLang = "en"; // Temporary: English only
+  localStorage.setItem("lang", "en");
+  // Language SWITCH ON
+  // const initialLang = saved || getBrowserLang();
 
   if (initialLang !== "en") {
     window.applyLanguage(initialLang);

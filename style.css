@@ -864,6 +864,76 @@ body.case-page .left-sidebar > *:not(.left-sidebar-home):nth-child(8) {
   filter: var(--image-filter);
 }
 
+/* =============================================
+   HOMEPAGE - OPENING HERO
+============================================= */
+
+.home-motion-ready body:not(.case-page) .hero-location-wrap.home-reveal-text,
+.home-motion-ready body:not(.case-page) .hero-headline.home-reveal-text,
+.home-motion-ready body:not(.case-page) .hero-description.home-reveal-text,
+.home-motion-ready body:not(.case-page) .hero-links-row.home-reveal-text {
+  opacity: 0;
+  transform: translateY(14px);
+
+  transition:
+    opacity 0.9s ease,
+    transform 1.05s cubic-bezier(0.22, 1, 0.36, 1);
+
+  transition-delay: var(--home-reveal-delay, 0ms);
+}
+
+.home-motion-ready
+  body:not(.case-page)
+  .hero-location-wrap.home-reveal-text.is-visible,
+.home-motion-ready
+  body:not(.case-page)
+  .hero-headline.home-reveal-text.is-visible,
+.home-motion-ready
+  body:not(.case-page)
+  .hero-description.home-reveal-text.is-visible,
+.home-motion-ready
+  body:not(.case-page)
+  .hero-links-row.home-reveal-text.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Illustration: fade only */
+.home-motion-ready
+  body:not(.case-page)
+  .hero-illustration-btn.home-reveal-fade {
+  opacity: 0;
+  transition: opacity 1.15s ease;
+  transition-delay: var(--home-reveal-delay, 0ms);
+}
+
+.home-motion-ready
+  body:not(.case-page)
+  .hero-illustration-btn.home-reveal-fade.is-visible {
+  opacity: 1;
+}
+
+/* =============================================
+   PAGE ENTRANCE - BEFORE FIRST PAINT
+============================================= */
+
+/* Homepage */
+html.page-entering body:not(.case-page) .hero-location-wrap,
+html.page-entering body:not(.case-page) .hero-headline,
+html.page-entering body:not(.case-page) .hero-description,
+html.page-entering body:not(.case-page) .hero-links-row,
+html.page-entering body:not(.case-page) .hero-illustration-btn {
+  opacity: 0;
+}
+
+/* Case study opening */
+html.page-entering body.case-page .cs-overview-label,
+html.page-entering body.case-page .cs-headline,
+html.page-entering body.case-page .cs-overview-intro,
+html.page-entering body.case-page .cs-overview-image-wrap {
+  opacity: 0;
+}
+
 /* helpers for tidy-data animation */
 .sorted-letter {
   position: absolute;
@@ -3933,7 +4003,9 @@ html[lang="de"] .contact-verb-spacer::after {
 /* =============================================
    SITE GATE
 ============================================= */
-
+html.gate-already-unlocked #site-gate {
+  display: none !important;
+}
 #site-gate {
   min-height: calc(100vh - 72px);
   display: flex;
@@ -6295,6 +6367,49 @@ body.case-page .left-sidebar {
 }
 
 /* =============================================
+   CASE STUDY - OPENING REVEAL
+============================================= */
+
+/*
+ * Slower and subtler than normal scroll reveals.
+ * The movement is deliberately small so it feels
+ * polished rather than like content flying in.
+ */
+.case-motion-ready .case-page .cs-overview-content > .reveal-text,
+.case-motion-ready .case-page .cs-overview-intro.reveal-text {
+  opacity: 0;
+  transform: translateY(14px);
+
+  transition:
+    opacity 0.9s ease,
+    transform 1.05s cubic-bezier(0.22, 1, 0.36, 1);
+
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+.case-motion-ready .case-page .cs-overview-image-wrap.reveal-visual {
+  opacity: 0;
+  transform: translateY(10px) scale(0.99);
+
+  transition:
+    opacity 1s ease,
+    transform 1.15s cubic-bezier(0.22, 1, 0.36, 1);
+
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+/* Final positions */
+.case-motion-ready .case-page .cs-overview-content > .reveal-text.is-visible,
+.case-motion-ready .case-page .cs-overview-intro.reveal-text.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.case-motion-ready .case-page .cs-overview-image-wrap.reveal-visual.is-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+/* =============================================
    KEY DECISION / KEY OUTCOME
    divider draws first, copy follows
 ============================================= */
@@ -6660,4 +6775,11 @@ body.case-page .left-sidebar {
     width: max(620px, 100%);
     min-height: 310px;
   }
+}
+/* =============================================
+   CASE STUDY - LANGUAGE SWITCH OFF
+============================================= */
+/* Temporary: hide language switch while translations are being reviewed */
+.nav-lang {
+  display: none !important;
 }

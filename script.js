@@ -720,23 +720,7 @@ document.addEventListener("keydown", (e) => {
     showIteration(currentState === "before" ? "after" : "before");
   }, AUTOPLAY_DELAY);
 })();
-/* =============================================
- CASE STUDY SURVEY RESULTS TOGGLE
-============================================= */
 
-document.addEventListener("click", (e) => {
-  const btn = e.target.closest(".pill-btn--single");
-  if (!btn) return;
-
-  const surveyDetails = document.getElementById("survey-details");
-  if (!surveyDetails) return;
-
-  const isOpen = !surveyDetails.classList.contains("hidden");
-
-  surveyDetails.classList.toggle("hidden", isOpen);
-
-  btn.textContent = isOpen ? "See all results" : "Hide results";
-});
 /* =============================================
    DESIGN DECISIONS
 ============================================= */
@@ -2321,15 +2305,22 @@ updateTestimonialLanguageState(
   };
 
   /* =============================================
-     OVERVIEW
-  ============================================= */
+   OVERVIEW
+============================================= */
 
-  prepareReveal(casePage.querySelector(".cs-overview-intro"), "text");
+  /* Gentle opening sequence:
+   label → title → intro → hero image */
+
+  prepareReveal(casePage.querySelector(".cs-overview-label"), "text", 80);
+
+  prepareReveal(casePage.querySelector(".cs-headline"), "text", 160);
+
+  prepareReveal(casePage.querySelector(".cs-overview-intro"), "text", 280);
 
   prepareReveal(
     casePage.querySelector(".cs-overview-image-wrap"),
     "visual",
-    80,
+    400,
   );
 
   prepareAll(".cs-overview-meta-block", "text", 90);
@@ -2470,7 +2461,22 @@ updateTestimonialLanguageState(
   });
 
   /* =============================================
+     OPENING ANIMATION
+     Always plays when entering the case study
+  ============================================= */
+
+  const openingElements = [
+    casePage.querySelector(".cs-overview-label"),
+    casePage.querySelector(".cs-headline"),
+    casePage.querySelector(".cs-overview-intro"),
+    casePage.querySelector(".cs-overview-image-wrap"),
+  ].filter(Boolean);
+
+  const openingElementsSet = new Set(openingElements);
+
+  /* =============================================
      OBSERVER
+     Everything below the opening screen
   ============================================= */
 
   const observer = new IntersectionObserver(
@@ -2479,26 +2485,66 @@ updateTestimonialLanguageState(
         if (!entry.isIntersecting) return;
 
         entry.target.classList.add("is-visible");
-
-        /*
-         * Only animate once.
-         */
         observer.unobserve(entry.target);
       });
     },
     {
       threshold: 0.01,
-
-      /*
-       * Start slightly before the element reaches
-       * the lower visible part of the viewport.
-       */
       rootMargin: "0px 0px -10% 0px",
     },
   );
 
-  revealElements.forEach((element) => {
-    observer.observe(element);
+  function resetAndStartCaseStudy() {
+    /*
+     * Forget all reveals from the previous visit.
+     */
+    revealElements.forEach((element) => {
+      element.classList.remove("is-visible");
+    });
+
+    /*
+     * Stop old observer state.
+     */
+    observer.disconnect();
+
+    /*
+     * Force the hidden state to register.
+     */
+    void document.documentElement.offsetHeight;
+
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        /*
+         * Opening content appears immediately and smoothly.
+         */
+        openingElements.forEach((element) => {
+          element.classList.add("is-visible");
+        });
+
+        document.documentElement.classList.remove("page-entering");
+        /*
+         * Everything else waits until scrolling down.
+         */
+        revealElements.forEach((element) => {
+          if (!openingElementsSet.has(element)) {
+            observer.observe(element);
+          }
+        });
+      });
+    });
+  }
+
+  /*
+   * First visit.
+   */
+  resetAndStartCaseStudy();
+
+  /*
+   * Every time this page is shown again,
+   * treat it like a fresh visit.
+   */
+  window.addEventListener("pageshow", () => {
+    resetAndStartCaseStudy();
   });
 })();
 
@@ -2645,7 +2691,23 @@ updateTestimonialLanguageState(
   prepareReveal(contact.querySelector(".contact-links"), "text", 160);
 
   /* =============================================
+     HERO OPENING ANIMATION
+     Always plays when entering the homepage
+  ============================================= */
+
+  const heroOpeningElements = [
+    document.querySelector(".hero-location-wrap"),
+    document.querySelector(".hero-headline"),
+    document.querySelector(".hero-description"),
+    document.querySelector(".hero-links-row"),
+    document.querySelector(".hero-illustration-btn"),
+  ].filter(Boolean);
+
+  const heroOpeningElementsSet = new Set(heroOpeningElements);
+
+  /* =============================================
      OBSERVER
+     Everything after the hero
   ============================================= */
 
   const observer = new IntersectionObserver(
@@ -2654,10 +2716,6 @@ updateTestimonialLanguageState(
         if (!entry.isIntersecting) return;
 
         entry.target.classList.add("is-visible");
-
-        /*
-         * Reveal only once.
-         */
         observer.unobserve(entry.target);
       });
     },
@@ -2667,7 +2725,56 @@ updateTestimonialLanguageState(
     },
   );
 
-  revealElements.forEach((element) => {
-    observer.observe(element);
+  function resetAndStartHomepage() {
+    /*
+     * Forget all reveals from the previous visit.
+     */
+    revealElements.forEach((element) => {
+      element.classList.remove("is-visible");
+    });
+
+    /*
+     * Stop old observer state.
+     */
+    observer.disconnect();
+
+    /*
+     * Force the hidden state to register.
+     */
+    void document.documentElement.offsetHeight;
+
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        /*
+         * Hero appears immediately and smoothly.
+         */
+        heroOpeningElements.forEach((element) => {
+          element.classList.add("is-visible");
+        });
+
+        document.documentElement.classList.remove("page-entering");
+        /*
+         * Everything below the hero waits for scroll.
+         */
+        revealElements.forEach((element) => {
+          if (!heroOpeningElementsSet.has(element)) {
+            observer.observe(element);
+          }
+        });
+      });
+    });
+  }
+
+  /*
+   * First visit.
+   */
+  resetAndStartHomepage();
+
+  /*
+   * Every time the homepage is shown again,
+   * treat it like a completely fresh visit.
+   */
+  window.addEventListener("pageshow", () => {
+    resetAndStartHomepage();
   });
 })();

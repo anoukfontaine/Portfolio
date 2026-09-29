@@ -2,6 +2,13 @@
 
 <html lang="en">
   <head>
+    <script>
+      document.documentElement.classList.add("page-entering");
+
+      if (localStorage.getItem("site-gate-unlocked") === "true") {
+        document.documentElement.classList.add("gate-already-unlocked");
+      }
+    </script>
     <!--<script src="/password-gate.js"></script> -->
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
@@ -355,7 +362,7 @@
                   data-i18n="yellow.problem.heading"
                 >
                   Important decisions were slowed down by
-                  <strong>fragmented information.</strong>
+                  <strong>fragmented information</strong>
                 </h2>
               </div>
               <div class="cs-problem-top-right">
@@ -432,7 +439,7 @@
               class="section-title section-title--dark"
               data-i18n="yellow.solution.heading"
             >
-              All in <strong>one</strong>.
+              All in <strong>one</strong>
             </h2>
             <p
               class="cs-process-step-text cs-solution-description"
@@ -512,7 +519,7 @@
               <button
                 aria-pressed="true"
                 class="pill-btn pill-btn--flow active"
-                data-i18n="yellow.test.before_btn"
+                data-i18n="shared.button.before_btn"
                 data-flow-state="before"
                 type="button"
               >
@@ -521,7 +528,7 @@
               <button
                 aria-pressed="false"
                 class="pill-btn pill-btn--flow"
-                data-i18n="yellow.test.after_btn"
+                data-i18n="shared.button.after_btn"
                 data-flow-state="after"
                 type="button"
               >
@@ -841,7 +848,7 @@
                 Impact
               </p>
               <h2 class="cs-impact-title" data-i18n="yellow.impact.heading">
-                From side project <br />to <strong>strategic tool.</strong>
+                From side project <br />to <strong>strategic tool</strong>
               </h2>
             </div>
             <div class="cs-impact-numbers">
@@ -852,7 +859,7 @@
                   data-i18n="yellow.impact.num1_label"
                 >
                   reduction in manual <br />
-                  preparation work.
+                  preparation work
                 </p>
               </div>
               <div class="cs-impact-number">
@@ -861,8 +868,7 @@
                   class="cs-impact-num-label"
                   data-i18n="yellow.impact.num2_label"
                 >
-                  of primary users rated it as <br />an improvement in
-                  usability.
+                  of primary users rated it as <br />an improvement in usability
                 </p>
               </div>
               <div class="cs-impact-number">
@@ -871,7 +877,7 @@
                   class="cs-impact-num-label"
                   data-i18n="yellow.impact.num3_label"
                 >
-                  fewer recurring <br />clarification requests.
+                  fewer recurring <br />clarification requests
                 </p>
               </div>
             </div>
@@ -883,7 +889,7 @@
           class="cs-testimonials card-container"
           id="section-testimonials"
         >
-          <p class="label label-muted" data-i18n="bw.testimonial_label">
+          <p class="label label-muted" data-i18n="yellow.testimonial_label">
             Testimonials
           </p>
           <div class="cs-testimonials-grid cs-testimonials-grid--compact">
@@ -897,14 +903,14 @@
             >
               <p
                 class="cs-testimonial-highlight-text"
-                data-i18n="bw.testimonial.highlight1"
+                data-i18n="yellow.testimonial.highlight1"
               >
                 <strong> «Testimonial 1»</strong>
               </p>
               <div class="cs-testimonial-card-footer">
                 <p
                   class="cs-testimonial-author"
-                  data-i18n="bw.testimonial.author1"
+                  data-i18n="yellow.testimonial.author1"
                 >
                   xy, Section Head, Economic Development and Cooperation, Swiss
                   federal administration
@@ -930,13 +936,13 @@
               <div class="cs-testimonial-full" hidden="">
                 <p
                   class="cs-testimonial-full-quote"
-                  data-i18n="bw.testimonial.quote1"
+                  data-i18n="yellow.testimonial.quote1"
                 >
                   «Testimonial 1»
                 </p>
                 <p
                   class="cs-testimonial-full-author"
-                  data-i18n="bw.testimonial.author1"
+                  data-i18n="yellow.testimonial.author1"
                 >
                   xy, Section Head, Economic Development and Cooperation, Swiss
                   federal administration
@@ -953,14 +959,14 @@
             >
               <p
                 class="cs-testimonial-highlight-text"
-                data-i18n="bw.testimonial.highlight2"
+                data-i18n="yellow.testimonial.highlight2"
               >
                 <strong> «Testimonial 2»</strong>
               </p>
               <div class="cs-testimonial-card-footer">
                 <p
                   class="cs-testimonial-author"
-                  data-i18n="bw.testimonial.author2"
+                  data-i18n="yellow.testimonial.author2"
                 >
                   xy, Head of Operations, Economic Development and Cooperation,
                   Swiss federal administration
@@ -986,13 +992,13 @@
               <div class="cs-testimonial-full" hidden="">
                 <p
                   class="cs-testimonial-full-quote"
-                  data-i18n="bw.testimonial.quote2"
+                  data-i18n="yellow.testimonial.quote2"
                 >
                   «Testimonial 2»
                 </p>
                 <p
                   class="cs-testimonial-full-author"
-                  data-i18n="bw.testimonial.author2"
+                  data-i18n="yellow.testimonial.author2"
                 >
                   xy, Head of Operations, Economic Development and Cooperation,
                   Swiss federal administration
@@ -1011,7 +1017,7 @@
               class="section-title section-title--dark"
               data-i18n="yellow.process.heading"
             >
-              <strong>How</strong> I got there.
+              <strong>How</strong> I got there
             </h2>
           </div>
           <div class="cs-process-bar">
@@ -1164,7 +1170,7 @@
                 <div class="cs-process-step-card-right">
                   <p
                     class="label label-muted"
-                    data-i18n="cs_shared.sidebar_research"
+                    data-i18n="cs_shared.label_research"
                   >
                     Understand
                   </p>
@@ -1172,7 +1178,7 @@
                     class="section-title section-title--process"
                     data-i18n="yellow.research.heading"
                   >
-                    Stepping into the <strong>users' shoes</strong>.
+                    Stepping into the <strong>users' shoes</strong>
                   </h2>
                   <p
                     class="cs-process-step-text"
@@ -1226,7 +1232,7 @@
                 <div class="cs-process-step-card-right">
                   <p
                     class="label label-muted"
-                    data-i18n="cs_shared.sidebar_design"
+                    data-i18n="cs_shared.label_design"
                   >
                     Design
                   </p>
@@ -1234,7 +1240,7 @@
                     class="section-title section-title--process"
                     data-i18n="yellow.design.heading"
                   >
-                    <strong>Designing</strong> for clarity.
+                    <strong>Designing</strong> for clarity
                   </h2>
                   <p
                     class="cs-process-step-text"
@@ -1274,7 +1280,7 @@
               <div class="cs-process-step-media-item">
                 <p
                   class="cs-image-caption cs-image-caption--center"
-                  data-i18n="bw.design.decisions_caption"
+                  data-i18n="yellow.design.decisions_caption"
                 >
                   Design decisions (hover to discover)
                 </p>
@@ -1291,13 +1297,13 @@
                     <div class="cs-spotlight-card">
                       <p
                         class="cs-design-card-title"
-                        data-i18n="bw.design.spotlight1_title"
+                        data-i18n="yellow.design.spotlight1_title"
                       >
                         Federal color palette
                       </p>
                       <p
                         class="cs-process-card-text"
-                        data-i18n="bw.design.spotlight1_text"
+                        data-i18n="yellow.design.spotlight1_text"
                       >
                         The color palette draws on the existing federal design
                         system, prioritizing more neutral colors to reduce
@@ -1312,13 +1318,13 @@
                     <div class="cs-spotlight-card">
                       <p
                         class="cs-design-card-title"
-                        data-i18n="bw.design.spotlight2_title"
+                        data-i18n="yellow.design.spotlight2_title"
                       >
                         Federal typography
                       </p>
                       <p
                         class="cs-process-card-text"
-                        data-i18n="bw.design.spotlight2_text"
+                        data-i18n="yellow.design.spotlight2_text"
                       >
                         Typography follows the federal design guidelines, using
                         Arial as the required typeface. Its familiarity and
@@ -1333,13 +1339,13 @@
                     <div class="cs-spotlight-card">
                       <p
                         class="cs-design-card-title"
-                        data-i18n="bw.design.spotlight3_title"
+                        data-i18n="yellow.design.spotlight3_title"
                       >
                         Filters that leave no one behind
                       </p>
                       <p
                         class="cs-process-card-text"
-                        data-i18n="bw.design.spotlight3_text"
+                        data-i18n="yellow.design.spotlight3_text"
                       >
                         Filters were prioritized for primary users, with the
                         most relevant options placed prominently at the top for
@@ -1357,13 +1363,13 @@
                     <div class="cs-spotlight-card">
                       <p
                         class="cs-design-card-title"
-                        data-i18n="bw.design.spotlight4_title"
+                        data-i18n="yellow.design.spotlight4_title"
                       >
                         Exact figures, when needed
                       </p>
                       <p
                         class="cs-process-card-text"
-                        data-i18n="bw.design.spotlight7_text"
+                        data-i18n="yellow.design.spotlight7_text"
                       >
                         Tables complement the visualizations by providing
                         precise values for users who need exact figures. They
@@ -1379,13 +1385,13 @@
                     <div class="cs-spotlight-card cs-spotlight-card--left">
                       <p
                         class="cs-design-card-title"
-                        data-i18n="bw.design.spotlight5_title"
+                        data-i18n="yellow.design.spotlight5_title"
                       >
                         Choosing the right chart
                       </p>
                       <p
                         class="cs-process-card-text"
-                        data-i18n="bw.design.spotlight5_text"
+                        data-i18n="yellow.design.spotlight5_text"
                       >
                         Rather than relying on a single chart type, each
                         visualization was chosen to present the data as clearly
@@ -1558,7 +1564,7 @@
                 <div class="cs-process-step-card-right">
                   <p
                     class="label label-muted"
-                    data-i18n="cs_shared.sidebar_develop"
+                    data-i18n="cs_shared.label_develop"
                   >
                     Build
                   </p>
@@ -1566,7 +1572,7 @@
                     class="section-title section-title--process"
                     data-i18n="yellow.develop.heading"
                   >
-                    Learning <strong>by doing.</strong>
+                    Learning <strong>by doing</strong>
                   </h2>
                   <p
                     class="cs-process-step-text"
@@ -1610,10 +1616,7 @@
               <div class="cs-process-step-card-top">
                 <p class="cs-process-step-card-num">04</p>
                 <div class="cs-process-step-card-right">
-                  <p
-                    class="label label-muted"
-                    data-i18n="cs_shared.sidebar_test"
-                  >
+                  <p class="label label-muted" data-i18n="cs_shared.label_test">
                     Test
                   </p>
                   <h2
@@ -1651,14 +1654,14 @@
                 <div class="cs-iterations-toggle">
                   <button
                     class="pill-btn pill-btn--toggle active"
-                    data-i18n="yellow.test.before_btn"
+                    data-i18n="shared.button.before_btn"
                     data-target="before"
                   >
                     Before
                   </button>
                   <button
                     class="pill-btn pill-btn--toggle"
-                    data-i18n="yellow.test.after_btn"
+                    data-i18n="shared.button.after_btn"
                     data-target="after"
                   >
                     After
@@ -1694,7 +1697,7 @@
                       class="cs-impact-title"
                       data-i18n="yellow.test.survey_heading"
                     >
-                      Unanimously <strong>positive feedback.</strong>
+                      Unanimously <strong>positive feedback</strong>
                     </h2>
                   </div>
                   <div class="cs-impact-numbers">
@@ -1760,7 +1763,7 @@
                     class="section-title section-title--process"
                     data-i18n="yellow.evolve.heading"
                   >
-                    <strong>Built to</strong> evolve.
+                    <strong>Built to</strong> evolve
                   </h2>
                   <p
                     class="cs-process-step-text"
@@ -1781,7 +1784,7 @@
               <div class="cs-process-step-media-item">
                 <p
                   class="cs-image-caption cs-image-caption--center"
-                  data-i18n="yellow.develop.model_caption"
+                  data-i18n="yellow.evolve.climate_caption"
                 >
                   Additional pages for monitoring climate disbursements
                 </p>
@@ -1842,7 +1845,7 @@
                 class="cs-next-title"
                 data-i18n="cs_shared.continue_exploring"
               >
-                Continue exploring.
+                Continue exploring
               </h2>
             </div>
             <div class="cs-next-links">

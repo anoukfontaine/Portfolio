@@ -2,6 +2,13 @@
 
 <html lang="en">
   <head>
+    <script>
+      document.documentElement.classList.add("page-entering");
+
+      if (localStorage.getItem("site-gate-unlocked") === "true") {
+        document.documentElement.classList.add("gate-already-unlocked");
+      }
+    </script>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title data-i18n="page_titles.skills">
@@ -264,13 +271,14 @@
                 class="cs-overview-description"
                 data-i18n="skills.overview_description"
               >
-                A Design Thinking sprint exploring how personalized learning and
-                gamification can support digital transformation within the Swiss
-                Federal Administration.
+                Exploring how the Swiss Federal Administration could advance
+                ambitious digital transformation goals through employee
+                upskilling.
               </p>
               <p class="cs-overview-note" data-i18n="skills.overview_note">
-                Note: This experimental project explored deliberately disruptive
-                solutions to a real business problem.
+                Note: Digital transformation is a broad challenge. We used a
+                Design Thinking sprint to approach it from a fresh perspective
+                and explore disruptive solutions.
               </p>
             </div>
           </div>
@@ -292,9 +300,9 @@
                 class="cs-overview-meta-value"
                 data-i18n="skills.meta.what_value"
               >
-                A concept for a learning platform where employees are encouraged
-                and rewarded for developing the skills the organization actually
-                needs.
+                A concept for a skills management platform where employees are
+                encouraged and rewarded for developing the skills the
+                organization actually needs.
               </p>
             </div>
             <div class="cs-overview-meta-block">
@@ -417,17 +425,16 @@
               class="section-title section-title--dark"
               data-i18n="skills.solution.heading"
             >
-              Reward people who <br /><strong>drive digitalization</strong>.
+              Reward people who <br /><strong>drive digitalization</strong>
             </h2>
             <p
               class="cs-process-step-text cs-solution-description"
               data-i18n="skills.solution.description"
             >
               Instead of outsourcing digital expertise or creating new
-              positions, the concept invests in employees who already understand
-              the organization. A personalized learning platform helps them
-              develop the skills the organization actually needs and rewards
-              their progress.
+              positions, a platform makes business needs visible to employees,
+              turns them into gamified skill-development opportunities, and
+              makes newly developed skills available to the organization.
             </p>
           </div>
           <div class="cs-solution-points">
@@ -472,8 +479,8 @@
                 class="cs-problem-point-text"
                 data-i18n="skills.solution.point3_text"
               >
-                Gamification makes progress visible and rewards employees for
-                developing skills that support the organization.
+                A gamified reward system incentivizes employees to develop
+                skills that address real business needs.
               </p>
             </div>
           </div>
@@ -495,49 +502,51 @@
               </p>
               <h2 class="cs-impact-title" data-i18n="skills.impact.heading">
                 A disruptive concept led to
-                <strong>a more practical solution.</strong>
+                <strong>a more practical solution</strong>
               </h2>
             </div>
 
             <div class="cs-impact-numbers">
               <div class="cs-impact-number">
                 <p class="cs-impact-num" data-i18n="skills.impact.num1_value">
-                  Sparked
+                  Pitch
                 </p>
                 <p
                   class="cs-impact-num-label"
                   data-i18n="skills.impact.num1_label"
                 >
-                  The concept sparked new thinking about how employee skills
-                  could be made visible and put to use across the organization.
+                  Pitching the concept to management sparked further discussion
+                  about how employee skills could be developed and used more
+                  strategically across the organization.
                 </p>
               </div>
 
               <div class="cs-impact-number">
                 <p class="cs-impact-num" data-i18n="skills.impact.num2_value">
-                  Reframed
+                  Rethink
                 </p>
                 <p
                   class="cs-impact-num-label"
                   data-i18n="skills.impact.num2_label"
                 >
-                  The original gamification idea evolved into a simpler internal
-                  skills marketplace: find people with the expertise a project
-                  needs and connect with them directly.
+                  The main barrier was feasibility: building and maintaining the
+                  platform, together with financial rewards for employees, would
+                  require significant resources.
                 </p>
               </div>
 
               <div class="cs-impact-number">
                 <p class="cs-impact-num" data-i18n="skills.impact.num3_value">
-                  Evaluated
+                  Evaluate
                 </p>
                 <p
                   class="cs-impact-num-label"
                   data-i18n="skills.impact.num3_label"
                 >
-                  This marketplace concept is now being evaluated as a possible
-                  way to mobilize hidden skills across teams without relying on
-                  outsourcing.
+                  A more realistic alternative was then explored: an internal
+                  skills marketplace where employees could make hidden skills
+                  and interests visible and be matched with projects that needed
+                  them.
                 </p>
               </div>
             </div>
@@ -554,7 +563,7 @@
               class="section-title section-title--dark"
               data-i18n="cs_shared.process_heading"
             >
-              How we got there.
+              <strong>How</strong> we got there
             </h2>
           </div>
           <div class="cs-process-bar">
@@ -706,7 +715,7 @@
 
                     <span class="cs-key-decision">
                       <strong><strong>Key Decision: </strong></strong>
-                      Interviews were conducted online, so they could be
+                      Conducting interviews online, so they could be
                       automatically transcribed by Microsoft Teams. AI could
                       then help extract key insights before the team reviewed
                       and synthesized the findings together.
@@ -715,8 +724,9 @@
                 </div>
               </div>
             </div>
+
             <div class="cs-process-step-media">
-              <div class="cs-process-step-media-item cs-process-images">
+              <div class="cs-process-step-media-item">
                 <p
                   class="cs-image-caption cs-image-caption--center"
                   data-i18n="skills.empathize.caption1"
@@ -725,9 +735,11 @@
                 </p>
                 <img
                   alt="Interview and research notes"
-                  class="cs-process-step-image cs-lightbox-trigger cursor-grow"
+                  class="cs-process-step-image"
                   src="/Images/Skills/1_research2.png"
                 />
+              </div>
+              <div class="cs-process-step-media-item">
                 <p
                   class="cs-image-caption cs-image-caption--center"
                   data-i18n="skills.empathize.caption2"
@@ -737,9 +749,9 @@
                 </p>
                 <img
                   alt="Interview and research notes"
-                  class="cs-process-step-image cs-lightbox-trigger cursor-grow"
+                  class="cs-process-step-image"
                   src="/Images/Skills/1_research3.png"
-                  style="width: 70%; display: block; margin: 24px auto"
+                  style="width: 70%; display: block; margin: auto"
                 />
               </div>
             </div>
@@ -757,7 +769,7 @@
                     class="section-title section-title--process"
                     data-i18n="skills.define.heading"
                   >
-                    Finding the <strong>right problem</strong> to solve.
+                    Finding the <strong>right problem</strong> to solve
                   </h2>
                   <p
                     class="cs-process-step-text"
@@ -772,10 +784,11 @@
                     class="cs-process-step-text"
                     data-i18n="skills.define.text2"
                   >
-                    How might we map employees' skills? <br />
-                    How might personalized learning experiences look? <br />
-                    How might employees be guided through this transformation
-                    journey?
+                    &#8226; How might we map employees' skills? <br />
+                    &#8226; How might personalized learning experiences look?
+                    <br />
+                    &#8226; How might employees be guided through this
+                    transformation journey?
                     <span class="cs-key-decision">
                       <strong><strong>Key Decision: </strong></strong>
                       The challenge was broad and the timeline exceptionally
@@ -798,7 +811,7 @@
                 </p>
                 <img
                   alt="Define phase with clustered post-its"
-                  class="cs-process-step-image cs-lightbox-trigger cursor-grow"
+                  class="cs-process-step-image"
                   src="/Images/Skills/2_Define.jpeg"
                 />
               </div>
@@ -817,7 +830,7 @@
                     class="section-title section-title--process"
                     data-i18n="skills.ideate.heading"
                   >
-                    <strong>Exploring</strong> as many ideas as possible.
+                    <strong>Exploring</strong> as many ideas as possible
                   </h2>
                   <p
                     class="cs-process-step-text"
@@ -828,6 +841,12 @@
                     Word. The concepts were then discussed, voted on and
                     evaluated against predefined criteria before we refined the
                     strongest solution.
+                    <span class="cs-key-decision">
+                      <strong><strong>Key Decision: </strong></strong>
+                      Creating a concept for a gamified skills management
+                      platform that would encourage employees to develop skills
+                      that the organization actually needs.
+                    </span>
                   </p>
                 </div>
               </div>
@@ -842,20 +861,19 @@
                 </p>
                 <img
                   alt="Ideation exercise"
-                  class="cs-process-step-image cs-lightbox-trigger cursor-grow"
+                  class="cs-process-step-image"
                   src="/Images/Skills/3_Ideate_2.jpeg"
                 />
-              </div>
-              <div class="cs-process-step-media-item">
+
                 <div class="cs-image-container">
                   <img
                     alt="Ideation exercise"
-                    class="cs-process-step-image cs-lightbox-trigger cursor-grow"
+                    class="cs-process-step-image"
                     src="/Images/Skills/3_Ideate_6.jpeg"
                   />
                   <img
                     alt="Selected concept"
-                    class="cs-process-step-image cs-lightbox-trigger cursor-grow"
+                    class="cs-process-step-image"
                     src="/Images/Skills/3_Ideate_7.jpeg"
                   />
                 </div>
@@ -879,7 +897,7 @@
                     data-i18n="skills.prototype.heading"
                   >
                     20 minutes to bring the concept
-                    <strong> to life.</strong>
+                    <strong> to life</strong>
                   </h2>
                   <p
                     class="cs-process-step-text"
@@ -893,10 +911,9 @@
 
                     <span class="cs-key-decision">
                       <strong><strong>Key Decision: </strong></strong>
-                      As the team member responsible for the prototype of the
-                      skills management platform, I made all design decisions,
-                      from writing the initial prompt to refining the result
-                      into a functional prototype.
+                      I independently made the design decisions for the
+                      prototype, from the initial prompt to refining the output
+                      into a functional interactive prototype.
                     </span>
                   </p>
                 </div>
@@ -948,7 +965,7 @@
                     data-i18n="skills.test.heading"
                   >
                     A
-                    <strong>reality check</strong> made us hesitate.
+                    <strong>reality check</strong>
                   </h2>
                   <p class="cs-process-step-text" data-i18n="skills.test.text">
                     The prototype was presented to another team to gather
@@ -959,15 +976,9 @@
                     organizational change management and clear communication
                     about how employee data is used.
                     <span class="cs-key-decision">
-                      <strong><strong>Key Outcome: </strong></strong>
-                      Introducing fixed financial rewards for developing skills
-                      would have been difficult to implement, as they would have
-                      required a dedicated budget. However, when I presented the
-                      idea to my division, there was strong interest in an
-                      internal skills marketplace where employees’ hidden
-                      expertise could be made visible and put to use on projects
-                      across the organization, reducing the need for
-                      outsourcing.
+                      <strong><strong>Key Decision: </strong></strong>
+                      Present the concept to management and use their feedback
+                      to refine it into a more realistic solution.
                     </span>
                   </p>
                 </div>
@@ -986,7 +997,7 @@
             data-i18n="skills.product.heading"
             style="text-align: left; margin-bottom: var(--element-gap)"
           >
-            A clickable concept for <strong>personalized learning.</strong>
+            A clickable concept for <strong>personalized learning</strong>
           </h2>
           <div class="cs-product-card cs-product-card-large">
             <p class="cs-prototype-note" data-i18n="skills.product.try_it">
@@ -1023,7 +1034,7 @@
                 class="cs-next-title"
                 data-i18n="cs_shared.continue_exploring"
               >
-                Continue exploring.
+                Continue exploring
               </h2>
             </div>
             <div class="cs-next-links">

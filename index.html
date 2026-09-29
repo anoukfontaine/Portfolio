@@ -2,6 +2,13 @@
 
 <html lang="en">
   <head>
+    <script>
+      document.documentElement.classList.add("page-entering");
+
+      if (localStorage.getItem("site-gate-unlocked") === "true") {
+        document.documentElement.classList.add("gate-already-unlocked");
+      }
+    </script>
     <!-- <script src="../password-gate.js"></script> -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -201,7 +208,7 @@
               <div class="hero-copy">
                 <h1 class="hero-headline" data-i18n="hero.headline">
                   Designing <strong>complex and data-rich products</strong> that
-                  don’t overwhelm.
+                  don’t overwhelm
                 </h1>
 
                 <p class="hero-description" data-i18n="hero.description">
@@ -401,7 +408,7 @@
                       text-anchor="middle"
                       data-i18n="services_detail.data.item1"
                     >
-                      Dashboard &amp; BI design
+                      BI &amp; dashboard design
                     </text>
                     <text
                       class="venn-expanded-item venn-dot"
@@ -418,7 +425,7 @@
                       text-anchor="middle"
                       data-i18n="services_detail.data.item2"
                     >
-                      Reporting redesign &amp; optimization
+                      Data exploration &amp; analysis
                     </text>
                     <text
                       class="venn-expanded-item venn-dot"
@@ -502,7 +509,7 @@
                       text-anchor="middle"
                       data-i18n="services_detail.business.item2"
                     >
-                      Stakeholder alignment
+                      Stakeholder workshops
                     </text>
                     <text
                       class="venn-expanded-item venn-dot"
@@ -569,7 +576,7 @@
                       text-anchor="middle"
                       data-i18n="services_detail.development.item1"
                     >
-                      Landing pages & small websites
+                      Interactive landing pages & microsites
                     </text>
                     <text
                       class="venn-expanded-item venn-dot"
@@ -667,7 +674,7 @@
                       </p>
                       <hr class="service-card-divider" />
                       <p data-i18n="services_detail.data.item2">
-                        Data exploration & analysis
+                        Data exploration &amp; analysis
                       </p>
                       <hr class="service-card-divider" />
                       <p data-i18n="services_detail.data.item3">
@@ -736,7 +743,7 @@
             <p class="label label-muted" data-i18n="work.label">
               Selected Projects
             </p>
-            <h2 data-i18n="work.heading">Show, don't tell.</h2>
+            <h2 data-i18n="work.heading">Show, don't tell</h2>
           </div>
 
           <div class="work-list">
@@ -934,8 +941,8 @@
                       class="work-card-detail-text"
                       data-i18n="work.skills.solution"
                     >
-                      A concept for a learning platform where employees are
-                      encouraged and rewarded for developing the skills the
+                      A concept for a skills management platform where employees
+                      are encouraged and rewarded for developing the skills the
                       organization actually needs.
                     </p>
                   </div>
@@ -1260,7 +1267,7 @@
           <div class="about-photo-top"></div>
           <div class="about-content">
             <p class="label label-muted" data-i18n="about.label">About</p>
-            <h2 data-i18n="about.heading">It's nice to meet you.</h2>
+            <h2 data-i18n="about.heading">It's nice to meet you</h2>
             <p class="about-intro" data-i18n="about.intro">
               Hello, visitor! I'm Anouk Fontaine, a UX Designer and BI Analyst
               at the State Secretariat for Economic Affairs (SECO) in Bern,
@@ -1407,11 +1414,11 @@
 
                 <div class="contact-line2">
                   <div id="contact-verb">work</div>
-                  <span class="contact-verb-spacer">create</span>
+                  <span class="contact-verb-spacer">imagine</span>
                 </div>
 
                 <div class="contact-line3" data-i18n="contact.line3">
-                  together.
+                  together
                 </div>
               </div>
             </div>

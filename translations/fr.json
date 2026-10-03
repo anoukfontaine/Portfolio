@@ -71,13 +71,6 @@
       "problem": "Le processus de demande de formation et de perfectionnement reposait sur des contrôles manuels, des transferts de données et des calculs sujets aux erreurs, générant un travail inutile pour les collaborateurs comme pour les RH.",
       "solution": "Une Power App qui guide les collaborateurs et les responsables tout au long du processus, en automatisant les calculs et les différentes étapes, de la demande initiale et des validations jusqu’à la participation aux frais et au dépôt de la facture."
     },
-    "bw": {
-      "tag1": "Conseil",
-      "tag2": "Design UX/UI",
-      "tag3": "Visualisation de données",
-      "problem": "La création manuelle de rapports par pays dans Word prenait beaucoup de temps et produisait des documents chargés en texte, sujets aux erreurs, avec des informations statiques difficiles à explorer.",
-      "solution": "Un tableau de bord Power BI public et multilingue qui automatise 95 % du processus de reporting et permet aux utilisateurs d’explorer de manière interactive des données économiques par pays."
-    },
     "skills": {
       "tag1": "Design Thinking",
       "tag2": "Design UX",
@@ -90,12 +83,6 @@
       "tag1": "Design UX/UI",
       "tag2": "Expérimental",
       "tag3": "Processus de design complet"
-    },
-    "climate": {
-      "tag1": "Design de tableau de bord",
-      "tag2": "Visualisation de données",
-      "tag3": "De bout en bout",
-      "tag4": "Développement"
     }
   },
   "testimonials": {
@@ -105,20 +92,20 @@
       "daniel": {
         "context": "Climate Cockpit · Design de dashboard",
         "quote": "« Anouk a adopté une approche proactive pour recueillir les besoins des utilisatrices et utilisateurs et s’est appuyée sur des versions de test interactives pour adapter précisément le dashboard aux besoins du réseau. Le nouveau cockpit est déjà largement utilisé et a reçu des retours très positifs dans l’ensemble du réseau. »",
-        "name": "Daniel Bruderer",
-        "role": "Responsable du réseau climat, Coopération et développement économiques du SECO"
+        "name": "D. B.",
+        "role": "Responsable du réseau climat, administration fédérale"
       },
       "andrea": {
         "context": "Country Cockpit · Design de dashboard",
         "quote": "« Anouk a créé les éléments graphiques et développé les concepts visuels, les visualisations de données et les prototypes de notre Country Cockpit numérique. Elle a réussi à présenter un sujet plutôt aride de manière à la fois rigoureuse et très attrayante. Nous sommes très fiers du résultat ! »",
-        "name": "Andrea Rauber Saxer",
-        "role": "Ambassadrice, cheffe des Relations économiques bilatérales"
+        "name": "A. R. S.",
+        "role": "Ambassadrice, cheffe administration fédérale"
       },
       "aaron": {
         "context": "Country Cockpit · Design de dashboard",
         "quote": "« Grâce à son approche proactive et orientée solutions, Anouk a rapidement apporté un nouvel élan au projet. Elle ne s’arrête pas aux idées : elle développe des options concrètes. Elle fait le lien entre les métiers et les développeurs, évalue de manière réaliste les contraintes techniques et propose des solutions adaptées. Par son exigence de qualité, sa flexibilité et son engagement, elle a largement contribué à faire du projet bien plus que ce qui était initialement prévu. »",
-        "name": "Aaron Dettwiler",
-        "role": "Chef de projet, Relations économiques bilatérales"
+        "name": "A. D.",
+        "role": "Chef de projet, administration fédérale"
       },
       "biel": {
         "context": "Feedback antérieur · Certificat de travail",
@@ -408,155 +395,15 @@
       "text": "Depuis son lancement, le tableau de bord est le seul outil utilisé par la division pour planifier et suivre son budget annuel de plus de CHF 400 millions. Aucun utilisateur n’a demandé à récupérer les anciens fichiers Excel. Le tableau de bord a aussi continué à évoluer : de nouvelles vues répondent à d’autres besoins, facilitent le travail au quotidien et permettent des analyses qui n’étaient auparavant pas possibles."
     }
   },
-  "bw": {
-    "_case_study": "===== BROWSING THE WORLD'S ECONOMY =====",
-    "tag1": "Visualisation de données",
-    "tag2": "Design de tableau de bord",
-    "tag3": "Design UX/UI",
-    "tag4": "Revue UX",
-    "overview_description": "Transformer des rapports de pays statiques en un tableau de bord public interactif qui rend les informations économiques accessibles et faciles à rechercher, avec des données mises à jour automatiquement.",
-    "view_live": "Voir le tableau de bord en ligne",
-    "meta": {
-      "role_value": "UX designer<br />Spécialiste en visualisation de données",
-      "timeline_value": "6 mois<br />2025–2026 (20 %)",
-      "platform_value": "Power BI<br />Tableau de bord web",
-      "status_value": "En ligne<br />Utilisé par le public",
-      "what_value": "Un tableau de bord Power BI public et multilingue présentant des données économiques par pays pour les entreprises, les décideurs politiques, les chercheurs, le grand public et les spécialistes de l’administration fédérale suisse.",
-      "why_value": "Les rapports de pays créés manuellement dans Word demandaient beaucoup de temps de préparation, étaient sujets aux erreurs et très chargés en texte.",
-      "how_value": "En tant que seule designeuse, j’ai accompagné une équipe pluridisciplinaire de spécialistes BI et d’experts métier, en m’appuyant sur les bonnes pratiques du design UX et mon expertise en visualisation de données. J’ai ainsi contribué à la réalisation d’un produit entièrement nouveau malgré un budget et des délais limités."
-    },
-    "context": {
-      "heading": "Remplacer le reporting manuel par <strong>une expérience de données vivante.</strong>",
-      "description": "Le projet remplace des rapports de pays créés manuellement dans Word par un tableau de bord Power BI interactif présentant les principaux indicateurs économiques et des informations propres à chaque pays. Au lieu de parcourir des documents statiques, les utilisateurs peuvent désormais rechercher, comparer et explorer les données dans un tableau de bord multilingue mis à jour automatiquement.",
-      "product_value": "Un tableau de bord Power BI public et multilingue présentant des données économiques par pays.",
-      "users_value": "Entreprises, responsables politiques, chercheurs, grand public et collaborateurs du SECO.",
-      "team_value": "Une équipe pluridisciplinaire composée d'une UX designer, de deux développeurs et de trois expert(e)s métier de la division Relations économiques bilatérales du SECO."
-    },
-    "problem": {
-      "heading": "Bonjour <strong>Word.</strong>",
-      "description": "Pour chaque pays, les informations économiques étaient assemblées manuellement dans un document Word. Les données étaient exportées depuis Excel, les graphiques intégrés sous forme de captures d'écran et l'ensemble devait être mis à jour à la main. Un processus répétitif, chronophage et propice aux erreurs, qui laissait très peu de place à l'exploration des données. Le potentiel d'un tableau de bord public interactif était immense.",
-      "point1_title": "Reporting manuel",
-      "point1_text": "Chaque rapport de pays devait être créé et mis à jour manuellement dans Microsoft Word.",
-      "point2_title": "Informations rapidement obsolètes",
-      "point2_text": "Les captures d'écran et les copier-coller augmentaient le risque de diffuser des informations dépassées ou incohérentes.",
-      "point3_title": "Exploration limitée",
-      "point3_text": "Il était difficile de rechercher, comparer ou analyser les données de manière interactive."
-    },
-    "solution": {
-      "heading": "<strong>Un tableau de bord interactif</strong> remplace le PDF.",
-      "description": "Un tableau de bord Power BI interactif réunit au même endroit les informations économiques propres à chaque pays, ce qui facilite leur exploration et permet une mise à jour automatique des données.",
-      "point1_title": "Une source unique",
-      "point1_text": "Les informations économiques propres à chaque pays sont réunies dans un même tableau de bord au lieu d’être assemblées manuellement dans des rapports Word.",
-      "point2_title": "Facile à explorer",
-      "point2_text": "Les utilisateurs peuvent rechercher, filtrer et comparer les données directement, au lieu de parcourir des rapports statiques et des captures d’écran.",
-      "point3_title": "Toujours à jour",
-      "point3_text": "La connexion aux sources de données réduit la maintenance manuelle et aide à conserver des informations à jour et cohérentes."
-    },
-    "process_bar": {
-      "research": "01 Comprendre",
-      "research_d1": "Briefing",
-      "research_d2": "Remettre les hypothèses en question",
-      "design_d1": "Architecture de l'information",
-      "design_d2": "Système visuel",
-      "iterate_d1": "Retours",
-      "iterate_d2": "Alternatives",
-      "launch_d1": "Publication interne",
-      "launch_d2": "Mise en ligne du site public"
-    },
-    "process": {
-      "role_text": "J'ai fait le lien entre les expert(e)s métier et l'équipe de développement. En tant que seule UX et data designer du projet, j'ai transformé des informations économiques complexes en une expérience claire, accessible et agréable à utiliser.",
-      "constraints_text": "Il a fallu composer avec un budget limité, une date de mise en ligne fixe pour le site, un accès tardif aux données, quatre langues à prendre en charge et les contraintes techniques de Power BI."
-    },
-    "research": {
-      "label": "Comprendre",
-      "heading": "Arriver <strong>après le début de l'histoire.</strong>",
-      "text1": "J’ai rejoint le projet six mois après son lancement officiel et me suis rapidement mise à niveau en consultant la documentation existante et en participant à des briefings. Un atelier avec les utilisateurs avait été organisé au début, mais aucune autre recherche utilisateur n’était prévue. L’accès tardif aux données avait également freiné l’avancement. <span class=\"cs-key-decision\"><strong>Décision clé :</strong> Plutôt que de suivre simplement le plan initial qui consistait à reproduire la solution existante, j’ai présenté des options plus conviviales, qui montraient à l’équipe les possibilités offertes par Power BI tout en respectant l’orientation convenue.</span>",
-      "text2": "Ce temps aurait pu être mis à profit pour mieux comprendre les futurs utilisateurs, explorer des premières pistes et valider les décisions de design les plus importantes. À la place, la plupart des choix reposaient presque exclusivement sur l'expertise interne, alors que le grand public ferait finalement partie des principaux utilisateurs du tableau de bord.",
-      "challenge_text": "J’ai rejoint le projet alors que la recherche initiale et l’orientation générale avaient déjà été définies, avec un objectif encore largement centré sur la reproduction de la solution existante.",
-      "solution_text": "Remettre systématiquement les hypothèses en question et défendre le point de vue des utilisateurs tout au long du projet, même si de nombreuses décisions avaient déjà été prises avant mon arrivée.",
-      "caption": "Photos de l'atelier de lancement"
-    },
-    "design": {
-      "heading": "Découper le document Word <strong>pour tout repenser.</strong>",
-      "text1": "Nous avons entièrement repensé la structure du rapport. J’ai littéralement découpé le document Word pour explorer différentes façons de réorganiser les informations dans un tableau de bord plus intuitif. En examinant et en affinant ces changements avec les experts métier, nous avons trouvé une structure à la fois intuitive pour les utilisateurs et correcte du point de vue métier. <span class=\"cs-key-decision\"><strong>Décision clé :</strong> J’ai remplacé le texte et les tableaux par des visualisations lorsque celles-ci rendaient l’information plus facile à comprendre. Comme tous les groupes d’utilisateurs ne pouvaient pas être impliqués tout au long du processus, je me suis appuyée sur les bonnes pratiques en matière d’accessibilité, d’utilisabilité et de visualisation de données pour guider mes décisions de design.</span>",
-      "text2": "Nous avons littéralement découpé le document Word pour réfléchir à une nouvelle manière d'organiser son contenu dans un tableau de bord plus intuitif. Nous nous sommes aussi demandé quelles informations méritaient une visualisation et lesquelles étaient plus pertinentes sous forme de tableau.",
-      "challenge_text": "Le produit développé ne correspondait pas toujours aux prototypes. Les couleurs, les alignements et d'autres éléments visuels variaient selon les implémentations, ce qui nécessitait un suivi constant.",
-      "solution_text": "Vérifier régulièrement les développements, prioriser les décisions de design qui avaient le plus d'impact sur l'expérience utilisateur et trouver, avec les développeurs, des alternatives lorsque des contraintes techniques apparaissaient.",
-      "ia_caption": "Réorganiser l’architecture de l’information",
-      "decisions_caption": "Décisions de design (survoler pour découvrir)",
-      "spotlight1_title": "Une couleur qui a du sens",
-      "spotlight1_text": "La palette de couleurs s’appuie sur le système graphique existant de la Confédération. Les valeurs numériques restent neutres afin d’éviter toute association négative involontaire.",
-      "spotlight2_title": "Concevoir dans un cadre défini",
-      "spotlight2_text": "La typographie suit les directives graphiques de la Confédération, avec Arial comme police imposée. Sa lisibilité facilite une lecture rapide des informations. En revanche, certaines contraintes techniques empêchaient d'ajuster l'espacement des lettres ou des lignes, ce qui imposait une mise en page plus compacte.",
-      "spotlight3_title": "Guider le regard",
-      "spotlight3_text": "Les icônes ont été utilisées avec parcimonie afin de faciliter l'orientation sans détourner l'attention des données.",
-      "spotlight4_title": "Toujours garder ses repères",
-      "spotlight4_text": "Une barre latérale toujours visible permet de se repérer facilement, tandis que le filtre pays offre la possibilité de passer d'un profil à l'autre à tout moment.",
-      "spotlight5_title": "Choisir le graphique le plus adapté",
-      "spotlight5_text": "Plutôt que d’utiliser un seul type de graphique, chaque visualisation a été choisie pour présenter les données aussi clairement que possible. Des couleurs cohérentes, par exemple le bleu pour les exportations et le vert menthe pour les importations, permettent de reconnaître facilement les catégories d’un graphique à l’autre, tandis que les tons neutres évitent toute surcharge visuelle.",
-      "spotlight6_title": "Structurer la complexité",
-      "spotlight6_text": "Une mise en page cohérente sous forme de cartes organise clairement les indicateurs et les informations. Les données importantes ressortent immédiatement, les couleurs distinguent les exportations des importations et les sources affichées directement sur chaque carte renforcent la transparence et la confiance.",
-      "spotlight7_title": "Les chiffres quand ils comptent",
-      "spotlight7_text": "Les tableaux complètent les visualisations lorsqu'une valeur précise est nécessaire. Ils peuvent également être exportés vers Excel pour permettre des analyses plus approfondies."
-    },
-    "iterate": {
-      "heading": "Jamais deux <strong>sans trois.</strong>",
-      "text": "Le projet a évolué en trois grandes phases : le développement d’un MVP, son amélioration au fil de plusieurs cycles de retours et d’itérations, puis la préparation de la mise en ligne publique grâce à des tests et à des améliorations supplémentaires. <span class=\"cs-key-decision\"><strong>Décision clé :</strong> J’ai donné la priorité aux éléments de design ayant le plus d’impact sur l’utilisabilité et développé des solutions alternatives lorsque des contraintes techniques se présentaient.</span>",
-      "challenge_text": "Les contraintes techniques redéfinissaient régulièrement ce qu’il était possible de réaliser et nécessitaient un suivi constant.",
-      "solution_text": "Examiner continuellement l’implémentation, prioriser les éléments de design ayant le plus d’impact sur l’utilisabilité et imaginer des solutions alternatives lorsque des contraintes techniques apparaissaient.",
-      "caption": "Un document centralisant les retours a permis de suivre et de prioriser les changements de design."
-    },
-    "launch": {
-      "heading": "Prêt pour le <strong>grand public.</strong>",
-      "text": "Le tableau de bord devait être prêt pour le lancement du nouveau site internet tout en répondant aux exigences de qualité d’un produit public disponible en quatre langues. La collaboration étroite avec les développeurs Power BI a été essentielle tout au long du projet, mais plus encore pendant cette dernière phase. Réagir rapidement, préparer une documentation directement exploitable et clarifier les points ouverts au fur et à mesure ont permis de respecter les délais.",
-      "challenge_text": "Le tableau de bord devait être prêt pour le lancement du nouveau site internet tout en répondant aux exigences de qualité d'un produit public disponible en quatre langues.",
-      "solution_text": "Une collaboration étroite avec les développeurs, une documentation directement exploitable et des décisions rapides ont permis de résoudre les questions au fur et à mesure et de respecter les délais.",
-      "release_caption": "Version simplifiée du Country Cockpit"
-    },
-    "product": {
-      "label": "Le produit final (version simplifiée)",
-      "heading": "Comprendre <strong>l’économie mondiale</strong>"
-    },
-    "impact": {
-      "heading": "Passer de plusieurs semaines de reporting manuel à des <strong>insights presque en temps réel.</strong>",
-      "num1_label": "de travail manuel éliminé.",
-      "num2_label": "rapports remplacés par un seul tableau de bord.",
-      "num3_label": "du processus automatisé.",
-      "num1_value": "1 mois"
-    },
-    "testimonial_label": "Témoignages",
-    "testimonial": {
-      "quote1": "« Anouk a rejoint le projet exactement au bon moment et lui a rapidement insufflé une nouvelle dynamique grâce à son approche proactive et orientée vers les solutions. Elle ne se contente pas de proposer des idées : elle élabore des options concrètes et veille à leur mise en œuvre. Elle sait ainsi faire le lien entre les spécialistes et les développeurs, évaluer avec réalisme les contraintes techniques et proposer des solutions adaptées.<br /><br />Son orientation client a été particulièrement précieuse. Elle a toujours mis à profit son expertise de Power BI et ses compétences en UX design afin de créer un outil à la fois visuellement attrayant et facile à utiliser. Grâce à son exigence de qualité, sa flexibilité et son engagement, elle a largement contribué à tirer du projet des résultats bien supérieurs à ce qui avait été initialement prévu. »",
-      "author1": "Aaron Dettwiler, chef de projet, Relations économiques bilatérales, administration fédérale suisse",
-      "highlight1": "« Anouk [...] a rapidement insufflé une nouvelle dynamique grâce à son <strong>approche proactive et orientée vers les solutions.</strong> »",
-      "quote2": "« Anouk a conçu les concepts visuels, les visualisations de données et les prototypes de notre Country Cockpit numérique. Elle a réussi à transformer un sujet plutôt aride en une expérience claire, engageante et agréable à explorer. Nous sommes très fiers du résultat ! »",
-      "author2": "Andrea Rauber Saxer, ambassadrice, cheffe des Relations économiques bilatérales, administration fédérale suisse",
-      "highlight2": "« Anouk [...] a transformé un sujet plutôt aride en une <strong>expérience engageante</strong> [...] »"
-    },
-    "afterlife": {
-      "heading": "Un tableau de bord public conçu pour <strong>évoluer.</strong>",
-      "text": "Le tableau de bord est désormais accessible au public et constitue une base solide pour de futures évolutions. Le SECO prévoit d'y intégrer de nouvelles données, et d'autres offices fédéraux souhaitent déjà s'en inspirer pour leurs propres tableaux de bord publics.",
-      "accordion1_trigger": "Accessible au public",
-      "accordion1_content": "Le tableau de bord remplace les rapports de pays statiques par une expérience de données interactive, multilingue et accessible à toutes et tous.",
-      "accordion2_trigger": "Pensé pour évoluer",
-      "accordion2_content": "Sa structure a été conçue pour intégrer facilement de nouvelles données et fonctionnalités à l'avenir.",
-      "accordion3_trigger": "Une source d'inspiration",
-      "accordion3_content": "Le projet sert de référence pour le développement de futurs tableaux de bord publics au sein de l'administration fédérale."
-    },
-    "overview_note": "Remarque : pour des raisons de confidentialité et de propriété intellectuelle, cette étude de cas utilise des visuels simplifiés et illustratifs. Le tableau de bord en ligne est public et accessible via le lien ci-dessous."
-  },
   "project_titles": {
     "yellow": "<strong>Le jaune</strong> est le nouveau vert",
-    "bw": "<strong>Explorer</strong> l’économie mondiale",
     "skills": "Renforcer les <strong>compétences</strong> dans le secteur public",
     "kunstatelier": "Déjà entendu parler de KunstAtelier ? Moi non plus.",
-    "climate": "Des millions pour le climat",
     "auw": "Redonner du <strong>temps aux RH.</strong>"
   },
   "project_descriptive_titles": {
     "yellow": "Tableau de bord de planification financière",
     "auw": "Application de workflow de A à Z",
-    "bw": "Tableau de bord public de données économiques",
     "skills": "Plateforme gamifiée de développement des compétences"
   },
   "skills": {
@@ -823,154 +670,8 @@
     },
     "overview_note": "Remarque : projet UX de bout en bout réalisé dans le cadre du Google UX Design Certificate."
   },
-  "climate": {
-    "_case_study": "===== 100 BILLION USD FOR CLIMATE =====",
-    "info_design_tag": "Design de l'information",
-    "overview_description": "D'un projet de CAS à un produit utilisé au quotidien : explorer comment la visualisation de données peut aider les décideurs à comprendre où sont investis les financements climatiques suisses et à prendre de meilleures décisions.",
-    "testimonial_label": "Témoignage",
-    "label_exploring": "Comprendre",
-    "label_designing": "Concevoir",
-    "label_building": "Développer",
-    "label_evolving": "Faire évoluer",
-    "product": {
-      "label": "Produit final",
-      "heading": "Là où vont les <strong>millions.</strong>"
-    },
-    "sidebar": {
-      "exploring": "01 Comprendre",
-      "designing": "02 Concevoir",
-      "building": "03 Développer",
-      "evolving": "04 Faire évoluer"
-    },
-    "meta": {
-      "role_value": "UX designer<br />Data designer<br />Développeuse Power BI",
-      "timeline_value": "6 mois<br />2025",
-      "platform_value": "Tableau de bord Power BI",
-      "status_value": "Projet de fin de CAS<br />À l'origine du Climate Cockpit en production au SECO",
-      "what_value": "Un tableau de bord Power BI interactif visualisant les financements climatiques suisses par pays, thème et projet, ensuite développé pour devenir le Climate Cockpit utilisé en production.",
-      "why_value": "Rendre les données existantes sur le financement climatique plus faciles à explorer au niveau des pays et plus utiles pour la prise de décision interne.",
-      "how_value": "À partir des retours d’experts et de nouvelles techniques de visualisation de données, j’ai conçu et développé un prototype Power BI qui est devenu le point de départ du Climate Cockpit utilisé en production."
-    },
-    "context": {
-      "heading": "Les fonds climatiques sont-ils investis <strong>là où ils sont le plus nécessaires ?</strong>",
-      "description": "En 2009, les pays industrialisés se sont engagés à mobiliser 100 milliards USD par an afin d'aider les pays en développement à faire face au changement climatique. Au SECO, cet engagement se traduit par de nombreux projets de coopération internationale.<br /><br />Si les investissements étaient suivis au niveau des projets, il n'existait aucune vue d'ensemble permettant d'analyser les financements par pays ou de soutenir la prise de décision stratégique.<br /><br />Ce projet explore comment la visualisation de données peut transformer ces informations en un tableau de bord interactif favorisant l'exploration et la prise de décision. Il a ensuite servi de base au développement du Climate Cockpit aujourd'hui utilisé au SECO.",
-      "product_value": "Tableau de bord Power BI interactif visualisant le financement climatique suisse par pays, thème et projet, devenu par la suite le Climate Cockpit du SECO.",
-      "users_value": "Membres du réseau climat, contrôleurs financiers et points focaux pays de la division Coopération et développement économiques du SECO.",
-      "team_value": "Projet individuel"
-    },
-    "problem": {
-      "heading": "Où vont les <strong>millions ?</strong>",
-      "point1_title": "Du reporting, peu d'insights",
-      "point1_text": "Les données étaient collectées pour le reporting, mais pas pour explorer des tendances ou soutenir des décisions stratégiques.",
-      "point2_title": "Aucune vue par pays",
-      "point2_text": "Les parties prenantes ne pouvaient pas comparer facilement les investissements climatiques d'un pays à l'autre.",
-      "point3_title": "Un reporting manuel",
-      "point3_text": "Le suivi reposait sur des fichiers Excel dispersés et mis à jour manuellement, avec très peu d'interactivité.",
-      "point4_title": "Des informations difficiles à découvrir",
-      "point4_text": "Les tendances, les schémas et les opportunités d'action restaient largement invisibles."
-    },
-    "process_bar": {
-      "exploring_d1": "Expérimentation",
-      "exploring_d2": "Échecs",
-      "exploring_d3": "Apprentissages",
-      "exploring_d4": "Itérations",
-      "designing_d1": "Architecture",
-      "designing_d2": "Storytelling",
-      "designing_d3": "Coaching",
-      "building_d1": "Power BI DAX",
-      "building_d2": "Modélisation des données",
-      "building_d3": "Contraintes techniques",
-      "evolving_d1": "Retours utilisateurs",
-      "evolving_d2": "Itérations",
-      "evolving_d3": "Mise en œuvre"
-    },
-    "process": {
-      "role_text": "J'ai piloté le projet de bout en bout, de l'exploration initiale à l'architecture de l'information, la visualisation de données, le design UI, le développement dans Power BI, puis son évolution vers le Climate Cockpit aujourd'hui utilisé au SECO.",
-      "constraints_text": "Le principal défi consistait à concilier une phase d'exploration très créative avec les exigences d'un futur produit en production. Si le projet de CAS laissait une grande liberté d'expérimentation, la version finale devait respecter les contraintes techniques de Power BI, les exigences de l'organisation et les besoins réels des utilisateurs."
-    },
-    "exploring": {
-      "heading": "<strong>Abandonner</strong> mes graphiques préférés.",
-      "text1": "J'ai exploré de nombreuses approches visuelles, des diagrammes de Sankey aux graphiques radar, en passant par les bubble charts et les sunbursts. Certains étaient spectaculaires, mais difficiles à comprendre. D'autres étaient impossibles à réaliser dans Power BI. Et plusieurs ne racontaient tout simplement pas l'histoire que je voulais transmettre.",
-      "text2": "Chaque idée abandonnée est devenue une occasion d'apprendre et m'a permis de mieux comprendre ce qui fait réellement une bonne visualisation de données.",
-      "challenge_text": "Trouver des visualisations à la fois compréhensibles, esthétiques, techniquement réalisables et accessibles à des personnes non expertes.",
-      "solution_text": "Faire de l'expérimentation une partie intégrante du processus de design et considérer les idées abandonnées comme des apprentissages plutôt que comme des échecs.",
-      "caption1": "Premières idées sur papier",
-      "caption2": "Premiers essais dans Power BI"
-    },
-    "designing": {
-      "heading": "Concevoir <strong>l'expérience.</strong>",
-      "text": "Après avoir exploré différentes approches visuelles, je me suis concentrée sur la transformation de ces enseignements en une expérience cohérente et engageante. J’ai testé plusieurs architectures de l’information ainsi que différentes polices et couleurs afin d’identifier celles qui soutenaient le mieux les données. Les retours de trois séances de coaching individuelles avec un expert en visualisation de données et une autre designeuse UX m’ont aidée à affiner encore le design.",
-      "challenge_text": "Comment rendre les données de financement climatique engageantes et faciles à explorer sans surcharger les utilisateurs ?",
-      "solution_text": "Associer une architecture de l'information claire, un design visuel épuré et un storytelling interactif pour guider progressivement les utilisateurs de la vue d'ensemble jusqu'au détail.",
-      "decisions_caption": "Décisions de design",
-      "tab_ia": "Architecture de l'information",
-      "tab_visual": "Design visuel",
-      "tab_story": "Data storytelling",
-      "spotlight1_title": "Comprendre avant d'explorer",
-      "spotlight1_text": "Une introduction et des filtres intuitifs apportent le contexte nécessaire avant l'exploration des données afin que les utilisateurs comprennent immédiatement ce qu'ils regardent.",
-      "spotlight2_title": "Explorer progressivement",
-      "spotlight2_text": "Le tableau de bord guide les utilisateurs d'une vue d'ensemble vers des informations de projet de plus en plus détaillées. Chacun peut choisir le niveau de détail qui lui convient.",
-      "spotlight3_title": "Regrouper par thème",
-      "spotlight3_text": "Les visualisations sont organisées par grands thèmes afin de faciliter la découverte d'informations liées et de créer des liens entre plusieurs graphiques.",
-      "spotlight4_title": "Révéler des schémas utiles",
-      "spotlight4_text": "Le tableau de bord met en évidence les différences et similitudes entre les pays afin de faciliter l'identification de tendances, la comparaison des contextes et la découverte de schémas significatifs.",
-      "spotlight5_title": "Comprendre l'évolution dans le temps",
-      "spotlight5_text": "Les séries temporelles montrent comment les investissements climatiques évoluent au fil des années et rendent les tendances de fond comme les évolutions récentes plus faciles à identifier.",
-      "spotlight6_title": "Naviguer sans rupture",
-      "spotlight6_text": "La navigation interactive permet de passer facilement des tendances globales aux informations détaillées sur les projets, sans perdre le contexte.",
-      "spotlight7_title": "Moins, c'est mieux",
-      "spotlight7_text": "Une palette de couleurs sobre met les données au premier plan, réduit le bruit visuel et fait ressortir les informations importantes.",
-      "spotlight8_title": "La clarté avant la décoration",
-      "spotlight8_text": "Dans certaines zones, les icônes et les codes couleur supplémentaires ont été volontairement supprimés afin d'éviter toute charge cognitive inutile.",
-      "spotlight9_title": "Pensé pour être lisible",
-      "spotlight9_text": "La typographie et les espacements ont été soigneusement travaillés afin que même des informations denses puissent être parcourues rapidement et comprises en un coup d'œil.",
-      "spotlight10_title": "Des illustrations pour créer une ambiance",
-      "spotlight10_text": "Les illustrations réalisées dans Adobe Illustrator apportent de la personnalité au tableau de bord et renforcent l'univers climatique sans détourner l'attention des données."
-    },
-    "building": {
-      "heading": "Concevoir malgré les <strong>contraintes.</strong>",
-      "text1": "Power BI s’est révélé à la fois puissant et frustrant. De nombreuses idées visuelles prometteuses en théorie n’ont pas pu être mises en œuvre en raison de contraintes techniques, de la complexité de l’implémentation ou des limites des visuels personnalisés.",
-      "text2": "À cela s'ajoutait le fait que certains visuels personnalisés n'étaient pas autorisés par mon organisation et ne pouvaient donc jamais être utilisés en production. Le véritable défi consistait à trouver des alternatives créatives sans perdre l'intention initiale du tableau de bord.",
-      "challenge_text": "Concilier des ambitions de design élevées avec les contraintes techniques et organisationnelles.",
-      "solution_text": "Toujours revenir au besoin utilisateur plutôt qu'à une visualisation précise, puis adapter continuellement le design aux possibilités techniques et aux contraintes de l'organisation.",
-      "caption": "Moi, en train d'essayer de transformer des idées ambitieuses en réalité."
-    },
-    "evolving": {
-      "heading": "Du concept à la <strong>réalité.</strong>",
-      "text1": "Même si le tableau de bord initial est resté un projet de CAS, il a ensuite servi de base au développement du Climate Cockpit aujourd'hui utilisé au SECO. Le concept a été adapté aux besoins métiers et intégré à l'écosystème du Financial Cockpit (voir l'étude de cas « Yellow is the New Green »).",
-      "text2": "En collaboration avec le réseau climat, j'ai testé le tableau de bord, l'ai amélioré de manière itérative grâce aux retours utilisateurs et l'ai déployé avec succès pour un usage quotidien.",
-      "challenge_text": "Comment transformer un projet expérimental en un outil réellement utilisé au quotidien ?",
-      "solution_text": "Conserver les idées fondatrices tout en faisant évoluer le tableau de bord grâce aux retours utilisateurs, aux nouvelles exigences métier et aux contraintes techniques."
-    },
-    "impact": {
-      "heading": "Du reporting climatique à de <strong>meilleures décisions.</strong>",
-      "num1_label": "CHF de financement climatique suisse peuvent être analysés par pays et par thème dans un seul tableau de bord interactif.",
-      "num2_label": "Moins de temps consacré au reporting grâce au remplacement des analyses Excel manuelles par un reporting automatisé.",
-      "num3_label": "Davantage d'informations environnementales disponibles, avec un périmètre élargi au-delà du climat pour inclure la biodiversité et la mobilisation du secteur privé.",
-      "num1_value": "100 M+"
-    },
-    "testimonial": {
-      "quote1": "Tout au long du projet, Anouk a recueilli de manière proactive les besoins des utilisateurs et, à l’aide de prototypes interactifs, a adapté le tableau de bord aux besoins spécifiques du réseau.",
-      "quote2": "Le résultat est un outil d'analyse clair et flexible qui, contrairement à l'ancien cockpit, permet des analyses rapides et variées tout en présentant les résultats de manière claire et accessible. Le nouveau cockpit est déjà largement utilisé et a reçu des retours très positifs dans l'ensemble du réseau. Grâce à son approche ouverte et enthousiaste, Anouk a également su impliquer les membres du réseau tout au long du développement du nouveau cockpit.",
-      "quote3": "Nous remercions chaleureusement Anouk pour sa précieuse contribution. »",
-      "author": "Daniel Bruderer, responsable du réseau climat, Développement économique et coopération, administration fédérale suisse",
-      "highlight": "« [...] Un outil d'analyse <strong>clair et flexible</strong>, permettant des analyses <strong>rapides et variées</strong> et ayant reçu des retours <strong>très positifs</strong> dans l'ensemble du réseau. [...] »"
-    },
-    "overview_note": "Remarque : ce tableau de bord a été développé de manière indépendante dans le cadre d’un CAS en Data Visualization et a depuis inspiré des travaux connexes. Seules des données publiques sont présentées ; les informations internes ont été simplifiées pour des raisons de confidentialité.",
-    "afterlife": {
-      "heading": "De l’expérimentation à <strong>l’usage quotidien.</strong>",
-      "text": "Ce qui avait commencé comme un projet d’apprentissage expérimental est finalement devenu la base d’un outil utilisé au quotidien. J’ai appris à quel point il est précieux d’explorer librement, d’abandonner les idées qui ne fonctionnent pas et d’adapter des concepts ambitieux aux contraintes du monde réel.",
-      "accordion1_trigger": "Les bonnes idées apparaissent rarement du premier coup",
-      "accordion1_content": "Explorer de nombreuses visualisations signifiait aussi abandonner des idées que j’aimais au départ. Tester, échouer et itérer m’a montré qu’une idée qui ne fonctionne pas est souvent simplement une étape vers une meilleure solution.",
-      "accordion2_trigger": "Les contraintes peuvent affiner le design",
-      "accordion2_content": "Power BI ne permettait pas de mettre en œuvre toutes les idées que j’avais en tête. Travailler avec ces limites techniques m’a poussée à me concentrer sur le besoin utilisateur sous-jacent et à chercher des alternatives plutôt qu’à m’attacher à une visualisation précise.",
-      "accordion3_trigger": "L’expérience va au-delà des graphiques",
-      "accordion3_content": "J’ai pris de plus en plus conscience que l’architecture de l’information, le storytelling et l’ordre dans lequel les informations sont révélées comptent autant que les visualisations elles-mêmes. Le graphique le plus sophistiqué n’est pas forcément le plus efficace."
-    }
-  },
   "page_titles": {
     "yellow": "Étude de cas — Le jaune est le nouveau vert",
-    "bw": "Étude de cas — Explorer l’économie mondiale",
     "skills": "Étude de cas — Renforcer les compétences dans le secteur public",
     "auw": "Étude de cas — Redonner du temps aux RH."
   },

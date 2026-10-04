@@ -2778,3 +2778,137 @@ updateTestimonialLanguageState(
     resetAndStartHomepage();
   });
 })();
+
+// Move the image far enough down to reveal all Problem/Solution text.
+(() => {
+  const cards = [...document.querySelectorAll(".work-card")];
+
+  const update = () => {
+    cards.forEach((card) => {
+      const details = card.querySelector(".work-card-details");
+      const image = card.querySelector(".work-card-img");
+
+      if (!details || !image) return;
+
+      if (getComputedStyle(details).position !== "absolute") {
+        card.style.removeProperty("--work-reveal-distance");
+        return;
+      }
+
+      const distance = Math.max(
+        image.offsetHeight * 0.35,
+        details.offsetTop + details.offsetHeight + 24 - image.offsetTop,
+        0,
+      );
+
+      card.style.setProperty("--work-reveal-distance", `${distance}px`);
+    });
+  };
+
+  if ("ResizeObserver" in window) {
+    const observer = new ResizeObserver(update);
+
+    cards.forEach((card) => {
+      [".work-card-inner", ".work-card-details", ".work-card-img"].forEach(
+        (selector) => {
+          const element = card.querySelector(selector);
+          if (element) observer.observe(element);
+        },
+      );
+    });
+  }
+
+  window.addEventListener("resize", update);
+
+  cards.forEach((card) => {
+    card.addEventListener("pointerenter", update);
+
+    const image = card.querySelector(".work-card-img");
+    if (image) image.addEventListener("load", update);
+  });
+
+  if (document.fonts) document.fonts.ready.then(update);
+
+  update();
+})();
+
+// Give phone cards a shared height based on their actual content.
+(() => {
+  const list = document.querySelector("body.home-page .work-list");
+  if (!list) return;
+
+  const cards = [...list.querySelectorAll(".work-card")];
+  let frame;
+
+  const update = () => {
+    const phoneLayout =
+      cards.length > 0 &&
+      cards.every((card) => {
+        const details = card.querySelector(".work-card-details");
+        return details && getComputedStyle(details).display === "none";
+      });
+
+    if (!phoneLayout) {
+      list.style.removeProperty("--phone-card-height");
+      list.style.removeProperty("--phone-card-header-space");
+      return;
+    }
+
+    let tallestHeader = 0;
+    let tallestImage = 0;
+
+    cards.forEach((card) => {
+      const header = card.querySelector(".work-card-footer");
+      const image = card.querySelector(".work-card-img");
+
+      if (header) {
+        tallestHeader = Math.max(tallestHeader, header.offsetHeight);
+      }
+
+      if (image) {
+        tallestImage = Math.max(tallestImage, image.offsetHeight);
+      }
+    });
+
+    if (!tallestImage) return;
+
+    const topPadding = 20;
+    const gap = 24;
+    const headerSpace = topPadding + tallestHeader + gap;
+
+    list.style.setProperty("--phone-card-header-space", `${headerSpace}px`);
+
+    list.style.setProperty(
+      "--phone-card-height",
+      `${Math.ceil(headerSpace + tallestImage)}px`,
+    );
+  };
+
+  const schedule = () => {
+    cancelAnimationFrame(frame);
+    frame = requestAnimationFrame(update);
+  };
+
+  if ("ResizeObserver" in window) {
+    const observer = new ResizeObserver(schedule);
+
+    cards.forEach((card) => {
+      const header = card.querySelector(".work-card-footer");
+      const image = card.querySelector(".work-card-img");
+
+      if (header) observer.observe(header);
+      if (image) observer.observe(image);
+    });
+  }
+
+  cards.forEach((card) => {
+    const image = card.querySelector(".work-card-img");
+    if (image) image.addEventListener("load", schedule);
+  });
+
+  window.addEventListener("resize", schedule);
+
+  if (document.fonts) document.fonts.ready.then(schedule);
+
+  schedule();
+})();

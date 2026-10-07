@@ -684,7 +684,7 @@ body.case-page .left-sidebar > *:not(.left-sidebar-home):nth-child(8) {
                                            HERO
                                         ============================================= */
 .hero {
-  height: min(calc(100vh - var(--nav-height)), 930px);
+  height: calc(100vh - var(--nav-height));
   min-height: 720px;
   padding: 48px;
   position: relative;
@@ -735,18 +735,20 @@ body.case-page .left-sidebar > *:not(.left-sidebar-home):nth-child(8) {
 }
 
 .hero-headline-wrap {
-  padding-top: 15vh;
   width: 100%;
   height: 100%;
+  display: flex;
+  align-items: center;
 }
 
 .hero-main-row {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
   gap: 64px;
   width: 100%;
   height: 100%;
+  position: relative;
 }
 
 .hero-copy {
@@ -845,9 +847,10 @@ body.case-page .left-sidebar > *:not(.left-sidebar-home):nth-child(8) {
   border: 0;
   background: transparent;
   color: inherit;
-  align-self: flex-end;
 
-  /* move illustration slightly toward the headline */
+  align-self: flex-end;
+  margin-top: auto;
+
   transform: translateX(clamp(32px, 10vw, 160px));
 }
 

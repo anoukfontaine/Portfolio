@@ -62,6 +62,7 @@ html.custom-cursor *::after {
   --border-text-big: 1px solid var(--color-text);
 
   --home-content-y: clamp(170px, 22vh, 230px);
+  --sidebar-content-y: clamp(170px, 22vh, 230px);
 }
 /* =============================================
    TEXT SELECTION
@@ -510,7 +511,7 @@ body.menu-open {
   flex-direction: column;
   align-items: flex-start;
   gap: 16px;
-  padding: calc(var(--nav-height) + var(--home-content-y)) 0 0 48px;
+  padding: calc(var(--nav-height) + var(--sidebar-content-y)) 0 0 48px;
   z-index: 90;
   pointer-events: all;
   background: transparent;
@@ -7242,7 +7243,8 @@ body.home-page a.work-card:focus {
   :where(body.case-page) .left-sidebar {
     width: calc(200 * var(--case-scale-unit));
     gap: calc(16 * var(--case-scale-unit));
-    padding: calc(var(--nav-height) + 22vh) 0 0
+
+    padding: calc(var(--nav-height) + var(--sidebar-content-y)) 0 0
       calc(48 * var(--case-scale-unit));
   }
 

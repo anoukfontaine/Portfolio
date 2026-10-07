@@ -60,6 +60,8 @@ html.custom-cursor *::after {
   --border-text: 0.5px solid var(--color-text);
   --border-bg: 0.5px solid var(--color-bg);
   --border-text-big: 1px solid var(--color-text);
+
+  --home-content-y: clamp(170px, 22vh, 230px);
 }
 /* =============================================
    TEXT SELECTION
@@ -508,7 +510,7 @@ body.menu-open {
   flex-direction: column;
   align-items: flex-start;
   gap: 16px;
-  padding: calc(var(--nav-height) + 22vh) 0 0 48px;
+  padding: calc(var(--nav-height) + var(--home-content-y)) 0 0 48px;
   z-index: 90;
   pointer-events: all;
   background: transparent;
@@ -735,7 +737,7 @@ body.case-page .left-sidebar > *:not(.left-sidebar-home):nth-child(8) {
 }
 
 .hero-headline-wrap {
-  padding-top: 15vh;
+  padding-top: calc(var(--home-content-y) - 48px);
   width: 100%;
   height: 100%;
 }

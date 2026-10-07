@@ -742,12 +742,11 @@ body.case-page .left-sidebar > *:not(.left-sidebar-home):nth-child(8) {
 
 .hero-main-row {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   gap: 64px;
   width: 100%;
   height: 100%;
-  position: relative;
 }
 
 .hero-copy {
@@ -846,10 +845,9 @@ body.case-page .left-sidebar > *:not(.left-sidebar-home):nth-child(8) {
   border: 0;
   background: transparent;
   color: inherit;
-
   align-self: flex-end;
-  margin-top: auto;
 
+  /* move illustration slightly toward the headline */
   transform: translateX(clamp(32px, 10vw, 160px));
 }
 
@@ -857,10 +855,8 @@ body.case-page .left-sidebar > *:not(.left-sidebar-home):nth-child(8) {
   display: block;
   width: auto;
   height: auto;
-
   max-height: min(63vh, 620px);
   max-width: 100%;
-
   object-fit: contain;
   filter: var(--image-filter);
 }
@@ -975,16 +971,16 @@ html.page-entering body.case-page .cs-overview-image-wrap {
 .services-stage {
   position: relative;
   width: 100%;
-  max-width: 950px;
+  max-width: 1200px;
 }
 .venn-svg {
   display: block;
   width: 100%;
   height: auto;
-  max-width: 950px;
+  max-width: 1200px;
   margin: 0 auto;
 
-  transform: scale(0.85);
+  transform: scale(0.92);
   transform-origin: center;
   opacity: 0.8;
 
@@ -7028,7 +7024,7 @@ body.case-page .left-sidebar {
 
   body.home-page .services-stage,
   body.home-page .venn-svg {
-    max-width: calc(950 * var(--home-unit));
+    max-width: calc(1200 * var(--home-unit));
   }
 }
 

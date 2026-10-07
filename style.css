@@ -684,11 +684,11 @@ body.case-page .left-sidebar > *:not(.left-sidebar-home):nth-child(8) {
                                            HERO
                                         ============================================= */
 .hero {
-  height: calc(100vh - var(--nav-height));
+  height: min(calc(100vh - var(--nav-height)), 930px);
+  min-height: 720px;
   padding: 48px;
   position: relative;
 }
-
 #cet-clock {
   font-variant-numeric: tabular-nums;
 }
@@ -856,10 +856,9 @@ body.case-page .left-sidebar > *:not(.left-sidebar-home):nth-child(8) {
   width: auto;
   height: auto;
 
-  /* was 58vh - about 9% larger */
-  max-height: 63vh;
-
+  max-height: min(63vh, 620px);
   max-width: 100%;
+
   object-fit: contain;
   filter: var(--image-filter);
 }
@@ -1315,7 +1314,9 @@ html.page-entering body.case-page .cs-overview-image-wrap {
   display: flex;
   flex-direction: row;
   align-items: stretch;
-  min-height: 100vh;
+
+  min-height: 720px;
+  height: min(100vh, 930px);
 }
 .about-photo-top {
   width: 45%;

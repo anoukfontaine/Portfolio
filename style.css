@@ -4393,9 +4393,11 @@ body.gate-locked .nav-right {
   }
 
   /* ABOUT */
+
   .about {
     flex-direction: column;
     min-height: auto;
+    height: auto;
   }
 
   .about-photo-top {

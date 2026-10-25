@@ -174,7 +174,7 @@ if (cursor) {
 /* =============================================
    NAV — language switch & theme toggle
 ============================================= */
-const languages = ["EN", "DE", "FR"];
+const languages = ["EN", "DE" /*, "FR"*/];
 let langIndex = Math.max(
   0,
   languages.indexOf((localStorage.getItem("lang") || "en").toUpperCase()),

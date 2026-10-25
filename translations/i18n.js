@@ -114,19 +114,14 @@
     const browserLang = navigator.language || navigator.userLanguage || "en";
     const shortLang = browserLang.slice(0, 2).toLowerCase();
 
-    const supportedLangs = ["en", "de", "fr"];
+    const supportedLangs = ["en", "de"];
 
     return supportedLangs.includes(shortLang) ? shortLang : "en";
   }
-  // Language SWITCH OFF
 
   const saved = localStorage.getItem("lang");
-
-  // Language SWITCH OFF
-  const initialLang = "en"; // Temporary: English only
-  localStorage.setItem("lang", "en");
-  // Language SWITCH ON
-  // const initialLang = saved || getBrowserLang();
+  const initialLang = ["en", "de"].includes(saved) ? saved : "en";
+  localStorage.setItem("lang", initialLang);
 
   if (initialLang !== "en") {
     window.applyLanguage(initialLang);

@@ -1,13 +1,13 @@
 {
   "gate": {
     "title": "Privates Portfolio",
-    "description": "Dieses Portfolio wird derzeit mit ausgewählten Personen geteilt.<br>Bitte geben Sie das Passwort ein, um fortzufahren.",
+    "description": "Dieses Portfolio wird aktuell nur mit ausgewählten Personen geteilt. <br>Bitte geben Sie das Passwort ein.",
     "button": "Portfolio öffnen",
     "placeholder": "Passwort",
     "error": "Falsches Passwort."
   },
   "nav": {
-    "services": "Leistungen",
+    "services": "Expertise",
     "work": "Projekte",
     "about": "Über mich",
     "contact": "Kontakt"
@@ -16,27 +16,27 @@
     "location": "Bern, Schweiz &middot; MEZ",
     "availability": "&middot; Verfügbar 1 Tag/Woche",
     "headline": "<strong>Komplexe und datenreiche Produkte</strong> gestalten, die nicht überfordern.",
-    "cta_work": "Zu den Projekten",
+    "cta_work": "Projekte ansehen",
     "cta_contact": "Kontakt aufnehmen",
-    "description": "Als UX Designerin, spezialisiert auf komplexe Produkte und Datenvisualisierung, unterstütze ich Organisationen dabei, Apps, Dashboards und Workflows so zu gestalten und weiterzuentwickeln, dass Menschen souverän darin navigieren können und mehr Zeit für das haben, was wirklich zählt.."
+    "description": "\nAls UX-Designerin mit einem Hintergrund in Business Intelligence und Datenvisualisierung helfe ich Organisationen dabei, Apps, Dashboards und Prozesse so zu gestalten, dass sich Menschen darin sicher zurechtfinden und mehr Zeit für das haben, was wirklich zählt."
   },
   "services": {
-    "label": "Leistungen",
+    "label": "Expertise",
     "heading": "Ein interdisziplinärer Ansatz"
   },
   "services_detail": {
     "design": {
       "short": "Design",
       "title": "UX/UI Design",
-      "item1": "UX-Audits",
+      "item1": "UX Audits",
       "item2": "UX Research & Testing",
       "item3": "Wireframes & Prototyping",
-      "item4": "UI Design & visuelle Konzeption"
+      "item4": "UI Design & visuelles Konzept"
     },
     "data": {
       "short": "Daten",
       "title": "Datenvisualisierung",
-      "item1": "Dashboard & BI Design",
+      "item1": "BI & Dashboard Design",
       "item2": "Datenanalyse & Exploration",
       "item3": "Infografiken & Data Storytelling",
       "item4": "Datenbasierte Poster & Präsentationen"
@@ -45,76 +45,79 @@
       "short": "Business",
       "title": "Business Analyse",
       "item1": "Anforderungsanalyse",
-      "item2": "Prozessanalyse & -optimierung",
-      "item3": "Stakeholder-Workshops"
+      "item2": "Stakeholder-Workshops",
+      "item3": "Prozessmodellierung und -optimierung",
+      "item4": "Stakeholder-Workshops"
     },
     "development": {
       "short": "Entwicklung",
       "title": "Technische Umsetzung",
       "item1": "Interaktive Landingpages & Microsites",
       "item2": "Responsive Frontend-Entwicklung",
-      "item3": "Entwicklung von Dashboards & Datenvisualisierungen"
+      "item3": "Entwicklung von Dashboards & Datenvisualisierungen",
+      "item4": "KI-gestützte Entwicklung"
     }
   },
   "work": {
-    "label": "Projekte",
-    "heading": "Zeigen statt reden.",
+    "label": "Ausgewählte Projekte",
+    "heading": "Einblicke in meine Arbeit",
     "yellow": {
       "tag1": "Dashboard-Design",
       "tag2": "UX/UI Design",
       "tag3": "End-to-End",
       "tag4": "Entwicklung",
-      "problem": "Ein fragmentierter Budgetplanungsprozess führte zu viel manueller Arbeit und machte es Nutzer:innen schwer, sich in den Finanzinformationen zurechtzufinden. Das schwächte das Vertrauen in die Daten.",
-      "solution": "Ein Finanzdashboard zur Planung und Überwachung eines Jahresbudgets von über CHF 400 Millionen, das 95 % des Monitorings automatisiert und den manuellen Vorbereitungsaufwand um 80 % reduziert."
+      "problem": "Ein fragmentierter Budgetplanungsprozess verursachte einen hohen manuellen Aufwand. Gleichzeitig waren Informationen schwer auffindbar, was das Vertrauen in die Daten beeinträchtigte.",
+      "solution": "Ein Finanzdashboard für die Planung und das Monitoring eines jährlichen Budgets von über CHF 400 Millionen reduzierte die manuelle Vorbereitungszeit um 90 % und erreichte bei den primären Nutzer:innen eine Zufriedenheitsquote von 100 %."
     },
     "auw": {
-      "problem": "Der Antragsprozess für Aus- und Weiterbildungen basierte auf manuellen Kontrollen, Datenübertragungen und fehleranfälligen Berechnungen. Das verursachte unnötigen Aufwand für Mitarbeitende und HR.",
-      "solution": "Eine Power App, die Mitarbeitende und Führungskräfte durch den gesamten Prozess führt und Berechnungen sowie Prozessschritte automatisiert, von der ersten Antragstellung und den Genehmigungen über die Kostenbeteiligung bis zur Einreichung der Rechnung."
+      "problem": "Der Aus- und Weiterbildungsprozess erforderte zahlreiche manuelle Qualitätskontrollen und Datenübertragungen sowie fehleranfällige Berechnungen, was zu zusätzlichem Aufwand für HR führte.",
+      "solution": "Eine Power App führt Nutzende durch den gesamten Prozess, vom Antrag bis zur Rechnungsübermittlung, und automatisiert dabei Berechnungen und fallspezifische Prozessschritte."
     },
     "skills": {
       "tag1": "Design Thinking",
       "tag2": "UX-Design",
       "tag3": "Rapid Prototyping",
       "tag4": "KI-gestützter Workflow",
-      "problem": "Die digitale Transformation ist seit Jahrzehnten eine strategische Priorität in der Schweizer Bundesverwaltung. Dennoch fällt es vielen Organisationen weiterhin schwer, daraus konkrete Massnahmen abzuleiten.",
-      "solution": "Ein Konzept für eine Lernplattform, die Mitarbeitende dazu motiviert und dafür belohnt, genau die Kompetenzen aufzubauen, die die Organisation tatsächlich braucht."
+      "problem": "Die digitale Transformation hat in der Bundesverwaltung seit Jahren hohe Priorität. Trotzdem haben viele Organisationen Mühe, sie in der Praxis umzusetzen.",
+      "solution": "Konzept einer Kompetenzentwicklungsplattform, die Mitarbeitende dabei unterstützt und belohnt, gezielt die Kompetenzen zu entwickeln, die die Organisation wirklich braucht."
     },
     "kunstatelier": {
       "tag1": "UX/UI-Design",
       "tag2": "Experimentell",
       "tag3": "Vollständiger Designprozess"
-    }
+    },
+    "read_case_study": "Mehr zum Projekt"
   },
   "testimonials": {
     "label": "Referenzen",
-    "heading": "Was andere sagen",
+    "heading": "Stimmen zu mir und meiner Arbeit",
     "items": {
       "daniel": {
-        "context": "Climate Cockpit · Dashboard-Design",
+        "context": "Delete",
         "quote": "«Anouk hat proaktiv die Anforderungen der Nutzerinnen und Nutzer erhoben und mithilfe interaktiver Testversionen das Dashboard gezielt auf die Bedürfnisse des Netzwerks abgestimmt. Das neue Cockpit wird bereits rege genutzt und ist im Netzwerk durchwegs auf positive Resonanz gestossen.»",
-        "name": "D. B.",
-        "role": "Leiter Klimanetzwerk, Bundesverwaltung"
+        "name": "D. Bruderer",
+        "role": "Delete"
       },
       "andrea": {
-        "context": "Ländercockpit · Dashboard-Design",
+        "context": "Delete",
         "quote": "«Anouk hat für unser digitales Ländercockpit die Graphiken erstellt und die visuellen Konzepte, Datenvisualisierungen und Prototypen erarbeitet. Sie hat es geschafft, eine eher trockene Materie sachlich, aber sehr ansprechend darzustellen. Wir sind sehr stolz auf das Ergebnis!»",
-        "name": "A. R. S.",
-        "role": "Botschafterin, Leiterin in der Bundesverwaltung"
+        "name": "A. Rauber Saxer",
+        "role": "Botschafterin, Leiterin Bilaterale Wirtschaftsbeziehungen, Bundesverwaltung"
       },
       "aaron": {
-        "context": "Ländercockpit · Dashboard-Design",
+        "context": "Delete",
         "quote": "«Anouk hat mit ihrer proaktiven und lösungsorientierten Art schnell frischen Schwung ins Projekt gebracht. Sie bleibt nicht bei Ideen stehen, sondern entwickelt konkrete Optionen. Sie vermittelt zwischen Fachseite und Entwicklern, ordnet technische Grenzen realistisch ein und schlägt passende Lösungen vor. Mit ihrem Qualitätsanspruch, ihrer Flexibilität und ihrem Engagement hat sie wesentlich dazu beigetragen, deutlich mehr aus dem Projekt herauszuholen, als ursprünglich vorgesehen war.»",
-        "name": "A. D.",
-        "role": "Projektleiter, Bundesverwaltung"
+        "name": "A. Dettwiler",
+        "role": "Projektleiter Ländercockpit, Bilaterale Wirtschaftsbeziehungen, Bundesverwaltung"
       },
       "biel": {
         "context": "Früheres Feedback · Arbeitszeugnis",
         "quote": "«Frau Fontaine leistete in allen Bereichen wichtige Beiträge zur Vereinfachung und zum besseren Verständnis der Arbeiten und Abläufe.»",
-        "name": "Stadt Biel",
+        "name": "Stadt Biel/Bienne",
         "role": "Abteilung Soziales · 2020"
       },
       "phbern": {
-        "context": "Früheres Feedback · Zwischenzeugnis",
+        "context": "Früheres Feedback · Arbeitszeugnis",
         "quote": "«Frau Fontaine kann komplexe, dynamische Prozesse vernetzt wahrnehmen und daraus entsprechende Handlungsmöglichkeiten ableiten.»",
         "name": "PHBern",
         "role": "Services Personal · 2020"
@@ -122,10 +125,10 @@
     },
     "highlights": {
       "momentum": "frischen Schwung",
-      "solution": "lösungsorientierten Art",
-      "bridge": "zwischen Fachseite und Entwicklern",
-      "quality": "Qualitätsanspruch",
-      "flexibility": "ihrer Flexibilität und ihrem Engagement",
+      "solution": "lösungsorientiert",
+      "bridge": "vermittelt zwischen Fachseite und Entwicklern",
+      "quality": "Qualitäts anspruch",
+      "flexibility": "Flexibilität und Engagement",
       "proactive": "proaktiv",
       "positive": "positive Resonanz",
       "visual": "sachlich, aber sehr ansprechend",
@@ -135,30 +138,31 @@
   },
   "about": {
     "label": "Über mich",
-    "heading": "Schön, dich kennenzulernen.",
-    "intro": "Hallo! Ich bin Anouk Fontaine, UX-Designerin und BI-Analystin beim Staatssekretariat für Wirtschaft (SECO) in Bern. Dort entwickle ich Tools und Interfaces, die meinen Kolleg:innen helfen, bessere Entscheidungen zu treffen. Du kannst mit mir auf Französisch, (Schweizer-)Deutsch, Englisch oder einfach in einer Mischung aus allem sprechen.",
+    "heading": "Schön, dich kennenzulernen",
+    "intro": "Hallo, mein Name ist Anouk Fontaine und ich bin UX-Designerin und BI-Analystin beim Staatssekretariat für Wirtschaft (SECO) in Bern. Ich unterstütze Kolleg:innen dabei, mit intuitiven Tools und Interfaces bessere Entscheidungen zu treffen. Du kannst mit mir auf Französisch, (Schweizer-)Deutsch, Englisch oder in einem Mix aus allen drei Sprachen sprechen.",
     "accordion1": {
-      "trigger": "Ich gestalte seit über 10 Jahren, auch wenn es nicht im Jobtitel stand.",
-      "content": "Ich habe in der öffentlichen Verwaltung, im Finanz- und Personalwesen sowie in der Hotellerie gearbeitet. Dadurch kenne ich ganz unterschiedliche organisatorische Herausforderungen aus erster Hand. Ich hatte schon immer den Drang, Dinge für meine Kolleg:innen und für mich selbst einfacher zu machen. Deshalb habe ich in jeder Rolle UX-Prinzipien angewendet, auch lange bevor UX Teil meines Jobtitels war. Wenn du neugierig auf meinen Werdegang bist, wirf gern einen Blick auf mein ausführliches <a href=\"https://www.linkedin.com/in/anoukfontaine/\" target=\"_blank\">LinkedIn-Profil</a>."
+      "trigger": "Design ist seit 10 Jahren Teil meiner Arbeit.",
+      "content": "Meine Arbeitserfahrung konnte ich in verschiedensten Bereichen sammeln, unter anderem in den Finanzen, im Personalwesen und in der Hotellerie. Dabei konnte ich aus unterschiedlichen organisatorischen Herausforderungen lernen. Mein Drang, immer nach Möglichkeiten zu suchen, die Arbeit meiner Arbeitskolleg:innen und meine eigene zu vereinfachen und zu optimieren, hat dazu geführt, dass ich bereits in all meinen Jobs UX-Design-Prinzipien angewendet habe, auch wenn dies nicht in meinem Jobtitel stand. Mehr zu meinem Werdegang findest du in meinem <a href=\"https://www.linkedin.com/in/anoukfontaine/\" target=\"_blank\">LinkedIn-Profil</a>."
     },
     "accordion2": {
       "trigger": "Ich habe einen betriebswirtschaftlichen Hintergrund.",
-      "content": "Mein Master in Betriebswirtschaft und meine Weiterbildungen in UX-Design sowie Datenvisualisierung verbinden Unternehmensstrategie, analytisches Denken und User Experience. Das hilft mir, sowohl die Bedürfnisse von Nutzer:innen als auch die Ziele einer Organisation im Blick zu behalten."
+      "content": "Ein Master in Betriebswirtschaft, kombiniert mit Weiterbildungen in UX Design und Datenvisualisierung, ermöglicht mir, Unternehmensstrategie mit analytischem Denken und User Experience zu verbinden."
     },
     "accordion3": {
       "trigger": "Mein Persönlichkeitstyp ist INFP.",
-      "content": "Harmonie ist mir wichtig, sowohl in meinen Designs als auch in den Teams, mit denen ich zusammenarbeite. Ich tauche gerne in neue Themen ein und lerne am liebsten durch Ausprobieren. So ist auch dieses Portfolio entstanden: Selbstentwickelt von A bis Z, während ich mir die Webentwicklung Schritt für Schritt angeeignet habe. Ausserdem bin ich überzeugt: Eine Prise Humor macht die Zusammenarbeit und Problemlösung deutlich einfacher."
+      "content": "Harmonie ist mir sehr wichtig, sei es in meinen Designs oder in der Zusammenarbeit im Team. Ausserdem begeistern mich neue Technologien, und die lerne ich am liebsten auch gleich durch Ausprobieren. Diese können von KI- und Webentwicklungstools über BI-Plattformen bis hin zu Musikproduktionssoftware reichen. Ich bin ausserdem überzeugt, dass Humor die Zusammenarbeit verbessert und hilft, bessere Lösungen zu finden."
     },
     "accordion4": {
       "trigger": "Ich bin auch ah nuk.",
-      "content": "In meiner Freizeit bin ich auch <a href=\"https://bio.site/ah.nuk\" target=\"_blank\">ah nuk</a>, schreibe und produziere Songs in meinem Schlafzimmer oder ziehe mit der Kamera los und mache <a href=\"https://www.instagram.com/anoukfontaine?igsh=MWZzYjhjYzB1Y2p5aQ%3D%3D&utm_source=qr\" target=\"_blank\">Schnappschüsse</a>.<br />Ausserdem liebe ich Nudelsuppen. Meine Lieblingssuppe gibt's im Mondo in Bern – kennst du einen würdigen Gegenkandidaten?"
-    }
+      "content": "In meiner Freizeit bin ich auch <a href=\"https://bio.site/ah.nuk\" target=\"_blank\">ah nuk</a>, schreibe und produziere Songs in meinem Schlafzimmer oder ich bin draussen am Landschaften verewigen."
+    },
+    "email_link": "E-Mail"
   },
   "contact": {
     "label": "Kontakt",
     "line1": "lass uns",
     "line3": "zusammen",
-    "intro": "Offen für Festanstellungen, Freelancing und spannende Gespräche.",
+    "intro": "Offen für Remote-Festanstellungen, Freelancing und spannende Gespräche.",
     "verbs": [
       "arbeiten",
       "träumen",
@@ -177,16 +181,16 @@
   },
   "cs_shared": {
     "back_to_work": "Zurück zur Projektübersicht",
-    "case_study_label": "Fallstudie",
+    "case_study_label": "Projekt",
     "challenge": "Herausforderung",
     "context_product": "Produkt",
     "context_team": "Team",
     "context_users": "Nutzer:innen",
-    "continue_exploring": "Weiter stöbern.",
-    "label_design": "Design",
-    "label_develop": "Entwicklung",
-    "label_research": "Recherche",
-    "label_test": "Test",
+    "continue_exploring": "Weiter stöbern",
+    "label_design": "Designen",
+    "label_develop": "Bauen",
+    "label_research": "Verstehen",
+    "label_test": "Testen",
     "legend_agree": "stimme zu",
     "legend_disagree": "stimme nicht zu",
     "legend_neutral": "neutral",
@@ -197,20 +201,20 @@
     "meta_scope": "Umfang",
     "meta_status": "Status",
     "next_projects_label": "Weitere Projekte",
-    "process_heading": "<strong>So</strong> sind wir vorgegangen.",
+    "process_heading": "<strong>Wie</strong> wir vorgegangen sind",
     "process_constraints": "Rahmenbedingungen",
     "sidebar_afterlife": "Reflexion",
-    "sidebar_design": "02 Design",
-    "sidebar_develop": "03 Entwicklung",
-    "sidebar_impact": "Wirkung",
-    "sidebar_overview": "Überblick",
+    "sidebar_design": "02 Designen",
+    "sidebar_develop": "03 Bauen",
+    "sidebar_impact": "Ergebnisse",
+    "sidebar_overview": "Übersicht",
     "sidebar_problem": "Problem",
-    "sidebar_process": "Prozess",
+    "sidebar_process": "Vorgehen",
     "sidebar_product": "Produkt",
-    "sidebar_research": "01 Recherche",
-    "sidebar_test": "04 Test",
+    "sidebar_research": "01 Verstehen",
+    "sidebar_test": "04 Testen",
     "solution": "Lösung",
-    "survey_results": "Umfrageergebnisse",
+    "survey_results": "Ergebnisse der Umfrage",
     "testimonials_label": "Referenzen",
     "meta_timeline": "Zeitrahmen",
     "sidebar_iterate": "03 Iterieren",
@@ -227,15 +231,15 @@
   },
   "yellow": {
     "_case_study": "===== YELLOW IS THE NEW GREEN=====",
-    "overview_description": "Ein fragmentierter Finanzplanungsprozess auf Excel-Basis wird zu einem interaktiven Dashboard, das Entscheidungsträger:innen hilft, Daten zu verstehen, Zusammenhänge zu erkennen und fundierte Entscheidungen zu treffen.",
+    "overview_description": "Ein fragmentierter, Excel-basierter Budgetplanungsprozess wird in ein interaktives Dashboard umgewandelt, das Entscheidungsträger dabei unterstützt, Daten zu verstehen, Zusammenhänge zu erkennen und bessere Entscheidungen zu treffen.",
     "meta": {
       "role_value": "UX- und Datendesignerin",
       "scope_value": "End-to-End-Produktdesign und Produktverantwortung",
       "platform_value": "Power BI<br />Web-App",
       "status_value": "Wird kontinuierlich weiterentwickelt<br />Live-Produkt",
-      "what_value": "Ein interaktives Finanzdashboard zur Planung und Überwachung eines Jahresbudgets von über CHF 400 Millionen, das von Entscheidungsträger:innen, Datenanalyst:innen und operativen Teams innerhalb der Schweizer Bundesverwaltung genutzt wird.",
-      "why_value": "Klarheit, Zugänglichkeit und Vertrauen in die Daten erhöhen und gleichzeitig Zeit und Ressourcen sparen.",
-      "how_value": "End-to-End-Verantwortung für Projekt und Produkt, vom UX/UI-Design über die Power-BI-Entwicklung und Einführung bis zur langfristigen Betreuung. Da ich zuvor noch nie mit Power BI gearbeitet hatte, gehörte es zum Prozess, mir das Tool parallel zu meinen regulären Aufgaben schnell anzueignen."
+      "what_value": "Ein Finanzdashboard für die Planung und das Monitoring eines jährlichen Budgets von über CHF 400 Millionen reduzierte die manuelle Vorbereitungszeit um 90 % und erreichte bei den primären Nutzer eine Zufriedenheitsquote von 100 %.",
+      "why_value": "Ein fragmentierter, Budgetplanungsprozess verursachte hohen manuellen Aufwand. Gleichzeitig waren Informationen schwer auffindbar, was das Vertrauen in die Daten beeinträchtigte.",
+      "how_value": "Gesamtverantwortung für das Projekt und das Produkt, vom UX/UI-Design über die Power-BI-Entwicklung und Einführung bis hin zur langfristigen Betreuung. Die dafür notwendigen Power-BI-Kenntnisse musste ich mir im Laufe des Projekts aneignen, was mit einer steilen Lernkurve verbunden war."
     },
     "context": {
       "heading": "Von verstreuten Daten zu <strong>einer zentralen Informationsquelle.</strong>",
@@ -246,12 +250,12 @@
     },
     "problem": {
       "heading": "Wichtige Entscheidungen wurden durch <strong>verstreute Informationen</strong> ausgebremst.",
-      "point1_title": "Hoher Zeitaufwand",
-      "point1_text": "Datenanalyst:innen verbrachten mehrere Tage mit der Aufbereitung der Informationen, bevor sie diese überhaupt analysieren und mit den Entscheidungsträger:innen besprechen konnten.",
-      "point2_title": "Eingeschränkte Analyse",
-      "point2_text": "Daten liessen sich nur mit zusätzlichem Aufwand filtern, vergleichen oder vertieft analysieren, oft erst nach dem Erstellen weiterer Ansichten und Berechnungen.",
-      "point3_title": "Wenig Vertrauen",
-      "point3_text": "Da Informationen auf mehrere Dateien verteilt waren, bestand häufig Unsicherheit darüber, ob mit den aktuellsten und verlässlichsten Daten gearbeitet wurde."
+      "point1_title": "Zeitaufwändig",
+      "point1_text": "Datenanalysten verbrachten Tage damit, die Informationen aufzubereiten, bevor diese überhaupt gemeinsam mit Entscheidungsträgern analysiert und diskutiert werden konnten.",
+      "point2_title": "Eingeschränkte Datenexploration",
+      "point2_text": "Daten zu filtern, zu vergleichen oder zu untersuchen erforderte zusätzliche Übersichten und Berechnungen.",
+      "point3_title": "Niedriges Vertrauen in die Daten",
+      "point3_text": "Informationen waren über verschiedene Dokumente verteilt, und den Nutzer:innen war oft unklar, ob sie mit den aktuellsten und verlässlichsten Daten arbeiteten."
     },
     "process_bar": {
       "research_d1": "Interviews",
@@ -266,7 +270,7 @@
       "design_d3": "Prototypen",
       "develop_d3": "Datenmodellierung",
       "test_d3": "Iterationen",
-      "evolve": "05 Weiterentwickeln",
+      "evolve": "05 Ausbauen",
       "evolve_d1": "Prozessoptimierung",
       "evolve_d2": "Iterationen nach dem Launch",
       "evolve_d3": "Zusätzliche Übersichten"
@@ -274,11 +278,11 @@
     "process": {
       "role_text": "Ich war für das gesamte Produkt verantwortlich – von der Nutzerforschung über UX/UI-Design und Power-BI-Entwicklung bis hin zur Einführung und kontinuierlichen Weiterentwicklung.",
       "constraints_text": "Da ich zuvor noch nie mit Power BI gearbeitet hatte, entwickelte ich die Lösung parallel zu meinen regulären Aufgaben. Das bedeutete, mich laufend in neue Themen einzuarbeiten und das Gelernte direkt im Projekt anzuwenden.",
-      "heading": "<strong>So</strong> bin ich vorgegangen."
+      "heading": "<strong>Wie</strong> ich vorgegangen bin"
     },
     "research": {
-      "heading": "Die <strong>Perspektive der Nutzer:innen</strong> einnehmen.",
-      "text": "Um besser zu verstehen, wie Nutzer:innen mit Finanzinformationen arbeiteten, führte ich Interviews und erstellte User Journeys. So wurden wiederkehrende Frustrationen, Bedürfnisse und die wichtigsten Pain Points sichtbar, die das Dashboard schliesslich prägten. <span class=\"cs-key-decision\"><strong>Zentrale Entscheidung:</strong> Ich priorisierte die Ressortleitungen als primäre Nutzer:innen, da sie Planung und Entscheidungen massgeblich steuern. Gleichzeitig sollte die Lösung auch für andere Rollen nützlich bleiben.</span>",
+      "heading": "Sich in die Nutzer:innen hineinversetzen",
+      "text": "Um besser zu verstehen, wie Nutzer:innen mit Finanzinformationen arbeiten, führte ich Interviews durch und analysierte ihre User Journeys. So konnte ich wiederkehrende Probleme erkennen, Bedürfnisse aufdecken und die wichtigsten Pain Points identifizieren, die letztlich die Gestaltung des Dashboards prägten.\n<span class=\"cs-key-decision\"><strong>Zentrale Entscheidung:</strong> Ich konzentrierte mich auf das Management als primäre Nutzergruppe, da es eine zentrale Rolle in der Planung und Entscheidungsfindung spielt. Gleichzeitig achtete ich darauf, dass das Dashboard auch für andere Nutzergruppen nutzbar bleibt.</span>",
       "challenge_text": "Die verschiedenen Nutzergruppen hatten unterschiedliche Bedürfnisse. Ein Dashboard für alle gleichermassen zu gestalten, hätte zwangsläufig zu einer zu generischen Lösung geführt.",
       "solution_text": "Die verschiedenen Nutzertypen kartieren, die primären Nutzer:innen identifizieren und konsequent für diejenigen gestalten, die Planung und Budgetentscheidungen massgeblich beeinflussen, statt für die grösste Nutzergruppe.",
       "who_caption": "Für wen ich gestalte",
@@ -289,43 +293,44 @@
       "journey_caption": "User Journey Map"
     },
     "design": {
-      "heading": "<strong>Design</strong>, das Klarheit schafft.",
-      "text": "Finanzdaten wirken schnell komplex und überfordernd. Das visuelle Design spielte deshalb eine zentrale Rolle, um komplexe Informationen zugänglicher zu machen. Im Kontext der Bundesverwaltung orientierte ich mich am klaren, reduzierten Designsystem des Bundes und liess mich dort, wo Vorgaben fehlten, von bestehenden Dashboards der Schweizer Verwaltung inspirieren. <span class=\"cs-key-decision\"><strong>Zentrale Entscheidung:</strong> Ich verteilte die Inhalte auf mehrere klar fokussierte Seiten, statt eine einzelne Seite mit Informationen zu überladen.</span>",
+      "heading": "Mit Fokus auf <strong>Klarheit</srtong> gestalten",
+      "text": "Finanzdaten können schnell komplex und unübersichtlich wirken. Deshalb spielte die visuelle Gestaltung eine wichtige Rolle, um die Informationen verständlicher und zugänglicher zu machen. Ich orientierte mich am schlichten Designsystem der Bundesverwaltung und liess mich dort, wo Elemente fehlten, von bestehenden Dashboards der Schweizer Bundesverwaltung inspirieren.  <span class=\"cs-key-decision\"><strong>Zentrale Entscheidung:</strong> Statt alle Informationen auf einer einzigen Seite unterzubringen, teilte ich das Dashboard in mehrere thematisch fokussierte Seiten mit einem einheitlichen Layout auf.</span>",
       "challenge_text": "Einen Finanzplanungsprozess von über CHF 400 Millionen auf einen Blick verständlich zu machen, ohne auf die Details zu verzichten, die für operative Entscheidungen notwendig sind, und das innerhalb der technischen Möglichkeiten von Power BI.",
       "solution_text": "Durch eine klare visuelle Hierarchie, gezielte Filter, progressive Offenlegung, eine zurückhaltende Farbgebung und interaktive Drilldowns können Nutzer:innen mühelos zwischen strategischer Übersicht und Projektdetails wechseln. Jede Designentscheidung wurde laufend mit den technischen Möglichkeiten von Power BI abgeglichen.",
-      "paper_caption": "Ideen mit Papier und Figma entwickeln",
-      "decisions_caption": "Designentscheidungen",
-      "spotlight1_title": "Vertrauen durch Konsistenz schaffen",
-      "spotlight1_text": "Einheitliche Layouts, standardisierte Kennzahlen und eine zentrale Informationsquelle helfen Nutzer:innen, Daten schneller zu erfassen und Vertrauen in die Informationen aufzubauen.",
-      "spotlight2_title": "Für die wichtigsten Nutzer:innen gestalten",
-      "spotlight2_text": "Obwohl mehrere Nutzergruppen mit dem Dashboard arbeiteten, wurde die Erfahrung konsequent auf diejenigen ausgerichtet, die Planung und Budgetentscheidungen treffen. Sekundäre Nutzer:innen konnten über Filter und Drilldowns weiterhin auf die für sie relevanten Informationen zugreifen.",
-      "spotlight3_title": "Niemanden ausschliessen",
-      "spotlight3_text": "Zusätzliche Filter für sekundäre Nutzergruppen stellen sicher, dass alle schnell auf die Informationen zugreifen können, die sie benötigen.",
-      "spotlight4_title": "Die passenden Diagramme wählen",
+      "paper_caption": "Mit Papierausschnitten konnte ich auf analoge Weise verschiedene Dashboard-Layouts ausprobieren.",
+      "decisions_caption": "Designentscheidungen (mit dem Cursor entdecken)",
+      "spotlight1_title": "Farbpalette der Bundesverwaltung",
+      "spotlight1_text": "Die Farbpalette orientiert sich am bestehenden Designsystem der Bundesverwaltung und setzt vor allem auf neutrale Farben, um die kognitive Belastung zu reduzieren.",
+      "spotlight2_title": "Typografie nach Bundesvorgaben",
+      "spotlight2_text": "Die Typografie orientiert sich an den Designvorgaben der Bundesverwaltung und verwendet die vorgeschriebene Schriftart Arial. Dank ihrer guten Lesbarkeit eignet sie sich besonders für ein informationsintensives Dashboard.",
+      "spotlight3_title": "Filter für unterschiedliche Bedürfnisse",
+      "spotlight3_text": "Bei der Anordnung der Filter stehen die Bedürfnisse der primären Nutzer:innen im Vordergrund. Die wichtigsten Filter befinden sich im oberen Bereich und sind dadurch schnell zugänglich. Gleichzeitig können auch andere Nutzergruppen über weitere Filter und Drill-downs auf die für sie relevanten Informationen zugreifen.",
+      "spotlight4_title": "Details bei Bedarf",
       "spotlight4_text": "Bewährte Visualisierungen wurden dort beibehalten, wo sie ihren Zweck erfüllten. Neue kamen nur dort hinzu, wo sie einen echten Mehrwert boten.",
-      "spotlight5_title": "Weniger Farbe, mehr Klarheit",
-      "spotlight5_text": "Statt die vollständige Farbpalette des Bundes zu übernehmen, setzte ich auf eine reduzierte Auswahl neutraler Töne, die eine ruhige, datenfokussierte Oberfläche schafft. Bundesrot bleibt bewusst die einzige Akzentfarbe und lenkt die Aufmerksamkeit dorthin, wo sie gebraucht wird, ohne unnötige visuelle Unruhe zu erzeugen.",
+      "spotlight5_title": "Die passende Grafik wählen",
+      "spotlight5_text": "Die ursprünglichen Diagrammtypen wurden hinterfragt und, wo nötig, durch sinnvollere Alternativen ersetzt. Einheitliche Farben, beispielsweise Schieferblau für Auszahlungen und Bundesrot für Zielwerte, sorgen dafür, dass die Kategorien über verschiedene Diagramme und Seiten hinweg leicht erkennbar sind. Neutrale Farbtöne reduzieren gleichzeitig die kognitive Belastung.",
       "spotlight6_title": "Jeden Pixel sinnvoll nutzen",
-      "spotlight6_text": "Wo immer möglich, orientierte ich mich am Designsystem des Bundes. Wo es keine Vorgaben gab, liess ich mich von bestehenden Dashboards der Schweizer Verwaltung inspirieren."
+      "spotlight6_text": "Wo immer möglich, orientierte ich mich am Designsystem des Bundes. Wo es keine Vorgaben gab, liess ich mich von bestehenden Dashboards der Schweizer Verwaltung inspirieren.",
+      "spotlight7_text": "Tabellen ergänzen die Visualisierungen und liefern genaue Zahlen für Nutzer:innen, die detaillierte Werte benötigen. Sie können auch nach Excel exportiert und dort für weitere Analysen und Auswertungen genutzt werden."
     },
     "develop": {
       "heading": "Lernen <strong>durch Ausprobieren.</strong>",
-      "text": "Power BI war für mich komplettes Neuland. Mit Online-Kursen und viel praktischem Ausprobieren lernte ich das Tool, während ich die Lösung parallel zu meinen regulären Aufgaben entwickelte. Die Einführung einer neuen Technologie erforderte ausserdem eine enge Kommunikation mit den Stakeholdern, Change Management sowie neue Zugriffs- und Governance-Prozesse für das Dashboard. <span class=\"cs-key-decision\"><strong>Zentrale Entscheidung:</strong> Wenn technische Einschränkungen eine Idee unmöglich machten, ging ich zurück zum eigentlichen Nutzerbedürfnis und entwickelte dafür eine Alternative.</span>",
+      "text": "Power BI war für mich komplettes Neuland. Mit Online-Kursen und viel Ausprobieren brachte ich mir das nötige Wissen selbst bei und entwickelte das Dashboard neben meinen regulären Aufgaben. Die Einführung einer neuen Technologie erforderte ausserdem eine enge Zusammenarbeit mit den beteiligten Personen, Change Management sowie die Einführung neuer Prozesse für den Zugang und die Verwaltung des Dashboards.",
       "challenge_text": "Ein ambitioniertes Dashboard auf einer unbekannten Plattform entwickeln, gleichzeitig eine neue Technologie einführen, Governance-Prozesse aufbauen und sicherstellen, dass das Produkt einen geschäftskritischen Prozess vollständig ersetzen kann.",
       "solution_text": "Komplexe Herausforderungen in kleinere Schritte aufteilen, bei technischen Fragen gezielt auf Expert:innen und KI zurückgreifen und die Stakeholder durch transparente Kommunikation, frühe Einbindung und kontinuierliche Begleitung mitnehmen.",
       "model_caption": "Datenmodell in Power BI"
     },
     "test": {
-      "heading": "Funktioniert das <strong>wirklich?</strong>",
-      "text": "Ein moderierter Usability-Test mit drei Nutzer:innen zeigte vor dem Launch Verbesserungspotenzial auf. Vier Monate später wurde ein freiwilliger Fragebogen an alle primären Nutzer:innen verschickt, um Akzeptanz, Nutzbarkeit und Zufriedenheit zu evaluieren. Die Rücklaufquote lag bei 83 %, und die Ergebnisse bestätigten eine hohe Akzeptanz des neuen Dashboards und der neuen Arbeitsweise. <span class=\"cs-key-decision\"><strong>Zentrale Entscheidung:</strong> Aufgrund der hohen Akzeptanz entschieden wir, die alten Tools auslaufen zu lassen und nicht weiter zu pflegen.</span>",
+      "heading": "<strong>Funktioniert es>/srtong> überhaupt?",
+      "text": "Ein moderierter Usability-Test mit drei Nutzer:innen zeigte vor der Einführung des Dashboards, wo noch Verbesserungsbedarf bestand. Vier Monate später wurde eine freiwillige Umfrage unter allen primären Nutzer:innen durchgeführt, um die Nutzung, Benutzerfreundlichkeit und Zufriedenheit zu bewerten. Die Rücklaufquote lag bei 83 %, und die Ergebnisse zeigten, dass das neue Dashboard und die damit verbundene Arbeitsweise sehr gut ankamen. <span class=\"cs-key-decision\"><strong>Aufgrund der hohen Akzeptanz entschieden wir uns, die bisherigen Tools schrittweise abzulösen und nicht mehr weiterzuführen.</span>",
       "challenge_text": "Da die Usability-Tests bereits mit einem funktionsfähigen Produkt stattfanden, bedeutete jede Anpassung zusätzlichen Entwicklungsaufwand und musste sorgfältig priorisiert werden. Gleichzeitig wollte ich nicht nur wissen, ob das Dashboard funktioniert, sondern auch, ob die Nutzer:innen diese neue Arbeitsweise tatsächlich annehmen.",
       "solution_text": "Die Änderungen nach ihrem Einfluss auf die Nutzbarkeit und dem erforderlichen Umsetzungsaufwand priorisieren.",
       "iterations_label": "Iterationen",
       "before_btn": "Vorher",
       "after_btn": "Nachher",
       "survey1_label": "Rücklaufquote.",
-      "survey2_label": "finden die Arbeit mit dem Dashboard effizienter.",
-      "survey3_label": "betrachten es als Verbesserung der Nutzbarkeit.",
+      "survey2_label": "bewerten die Nutzung des Dashboards als effizienter.",
+      "survey3_label": "bewerten das Dashboard als Verbesserung der Benutzerfreundlichkeit.",
       "group_usability": "Nutzbarkeit",
       "group_visual_design": "Visuelles Design",
       "row1": "Die Arbeit ist heute effizienter",
@@ -339,17 +344,17 @@
       "quote2": "deutlich vereinfachter Überblick, erleichtert die Priorisierung",
       "quote3": "ich muss Projektmanager seltener fragen",
       "quote4": "ich sehe nur Vorteile",
-      "survey_heading": "Einstimmig <strong>positives Feedback.</strong>"
+      "survey_heading": "Durchweg positives Feedback"
     },
     "product": {
       "label": "Das finale Produkt",
       "heading": "Die Zukunft ist <strong>Gelb</strong>"
     },
     "impact": {
-      "heading": "Vom Nebenprojekt zum <strong>strategischen Werkzeug.</strong>",
-      "num1_label": "weniger manueller Vorbereitungsaufwand.",
-      "num2_label": "der primären Nutzer:innen bewerteten das Dashboard als Verbesserung der Nutzbarkeit.",
-      "num3_label": "weniger wiederkehrende Rückfragen."
+      "heading": "Vom Nebenprojekt zum <strong>strategischen Tool.</strong>",
+      "num1_label": "Reduktion des manuellen Aufwands",
+      "num2_label": "der primären Nutzer:innen bewerteten das Dashboard als Verbesserung der Benutzerfreundlichkeit",
+      "num3_label": "Reduktion von Rückfragen"
     },
     "afterlife": {
       "heading": "Weiterentwicklung <strong>statt Endpunkt.</strong>",
@@ -362,44 +367,45 @@
       "accordion3_content": "Iterationen, die in Figma nur Minuten dauern, können nach der Umsetzung deutlich länger dauern. Das gilt besonders für visuelles und Interaktionsdesign, wo Power BI einschränkend sein kann und selbst kleine Designänderungen erheblichen Aufwand verursachen können. Struktur, Navigation und visuelle Konzepte zuerst in einem Prototyp zu testen, macht Experimente deshalb viel schneller und verhindert, Entwicklungszeit in Ideen zu investieren, die sich noch ändern könnten.",
       "caption": "Abschlussprojekt des CAS in Data Visualization an der HKB und Grundlage für das später veröffentlichte Climate Cockpit."
     },
-    "overview_note": "Hinweis: Zum Schutz interner Informationen wurden die Illustrationen und Mockups vereinfacht. Das zentrale Dashboard-Mockup ist vollständig fiktiv und soll lediglich einen Eindruck von der Art und Struktur der Lösung vermitteln.",
+    "overview_note": "Hinweis: Dieses Projekt entstand im Rahmen einer Festanstellung. Zum Schutz interner Informationen wurden Daten wurden anonymisiert.",
     "solution": {
-      "heading": "Alles an <strong>einem Ort</strong>.",
-      "description": "Ein Power-BI-Dashboard bündelt alle relevanten Informationen an einem Ort und macht sie für verschiedene Nutzergruppen zugänglich und nutzbar.",
-      "point1_title": "Eine zentrale Quelle",
-      "point1_text": "Alle relevanten Finanzinformationen sind in einem Dashboard gebündelt, statt auf mehrere Dateien verteilt zu sein.",
+      "heading": "Alles in <strong>einem</strong>.",
+      "description": "\nEin Power-BI-Dashboard bringt alle relevanten Informationen an einem Ort zusammen und macht sie dadurch einfacher zugänglich und nutzbar.",
+      "point1_title": "Eine Quelle",
+      "point1_text": "Alle relevanten Finanzinformationen sind in einem einzigen Tool verfügbar, statt auf mehrere Dateien verteilt zu sein.",
       "point2_title": "Einfach zu erkunden",
-      "point2_text": "Nutzer:innen können die Daten direkt filtern, vergleichen und vertieft analysieren, ohne zusätzliche Ansichten oder manuelle Berechnungen erstellen zu müssen.",
-      "point3_title": "Mehr Vertrauen",
-      "point3_text": "Eine zentrale, aktuelle Sicht schafft Vertrauen und macht die Informationen leichter verständlich und erklärbar.",
+      "point2_text": "Nutzer:innen können die Daten direkt filtern, vergleichen und analysieren, ohne zusätzliche Ansichten erstellen oder manuelle Berechnungen durchführen zu müssen.",
+      "point3_title": "Einfacherer Zugang",
+      "point3_text": "Eine stets aktuelle und zentral verfügbare Übersicht erleichtert den Zugang zu den wichtigsten Informationen. Dank einer Exportfunktion können Nutzer:innen bei Bedarf weiterhin eigene Analysen durchführen.",
       "flow_yes": "J",
       "flow_no": "N",
-      "flow_navigate_acta": "Zu<br/>Acta Nova wechseln",
+      "flow_navigate_acta": "Acta Nova öffnen",
       "flow_open_excel": "Excel-Datei öffnen",
       "flow_open_link": "Power-BI-Link öffnen",
-      "flow_data_current_question": "Sind die Daten<br/>aktuell?",
-      "flow_navigate_budget": "Übersicht zur<br/>Budgetplanung öffnen",
-      "flow_navigate_cockpit": "Cockpit<br/>erkunden",
-      "flow_information_available_question": "Sind die Informationen<br/>verfügbar?",
-      "flow_ask_analyst_update": "Datenanalyst:in bitten,<br/>die Daten zu aktualisieren",
-      "flow_open_pending_disbursements": "E-Mail mit ausstehenden<br/>Auszahlungen öffnen",
-      "flow_open_climate_evaluation": "Excel-Datei zur<br/>Klimaevaluation öffnen",
-      "flow_open_year_end_monitoring": "Excel-Datei zum Monitoring der<br/>Auszahlungen zum Jahresende öffnen",
-      "flow_open_private_sector": "Excel-Datei zur Mobilisierung des<br/>Privatsektors öffnen",
-      "flow_check_sap": "Direkt<br/>in SAP prüfen",
-      "flow_ask_project_or_analyst": "Projektmanager:in oder<br/>Datenanalyst:in fragen"
+      "flow_data_current_question": "Sind die Daten aktuell?",
+      "flow_navigate_budget": "Budgetplanungsübersicht erkunden",
+      "flow_navigate_cockpit": "Dashboard erkunden",
+      "flow_information_available_question": "Sind die Informationen verfügbar?",
+      "flow_ask_analyst_update": "Datenanalyst:in bitten, die Daten zu aktualisieren",
+      "flow_open_pending_disbursements": "E-Mail mit ausstehenden Auszahlungen öffnen",
+      "flow_open_climate_evaluation": "Excel-basiertes Klimacockpit öffnen",
+      "flow_open_year_end_monitoring": "Excel-basierte Endjahresmonitoring-Übersicht öffnen",
+      "flow_open_private_sector": "Excel-basierte Privatsektormobilisierungstabelle öffnen",
+      "flow_check_sap": "Direkt in SAP prüfen",
+      "flow_ask_project_or_analyst": "Projektmanager:in oder Datenanalyst:in fragen"
     },
     "evolve": {
-      "label": "Weiterentwickeln",
-      "heading": "<strong>Auf Weiterentwicklung</strong> ausgelegt.",
-      "text": "Seit dem Launch ist das Dashboard das einzige Tool der Abteilung für die Planung und Überwachung ihres Jahresbudgets von über CHF 400 Millionen. Niemand hat nach den alten Excel-Dateien gefragt. Gleichzeitig wurde das Dashboard laufend weiterentwickelt: Neue Übersichten greifen zusätzliche Nutzerbedürfnisse auf, erleichtern den Arbeitsalltag und ermöglichen Analysen, die zuvor nicht möglich waren."
+      "label": "Ausbauen",
+      "heading": "Für die <strong>Zukunft</strong> ausgelegt",
+      "text": "Heute ist das Dashboard das einzige Tool der Division für die Planung und das Monitoring ihres jährlichen Budgets von über CHF 400 Millionen. Niemand hat seither nach den alten Excel-Dateien gefragt. Das Dashboard wurde zudem laufend weiterentwickelt: Neue Übersichten decken zusätzliche Bedürfnisse ab und erleichtern die tägliche Arbeit weiter. Gleichzeitig ermöglichen sie Analysen, die zuvor nicht möglich waren.",
+      "climate_caption": "Zusätzliche Seiten für das Monitoring der Klimaauszahlungen und die Analyse von Projektlisten"
     }
   },
   "project_titles": {
-    "yellow": "<strong>Gelb</strong> ist das neue Grün",
+    "yellow": "Projekt",
     "skills": "<strong>Kompetenzen</strong> im öffentlichen Sektor stärken",
     "kunstatelier": "Schon mal von KunstAtelier gehört? Ich auch nicht.",
-    "auw": "So gewinnt HR <strong>Zeit zurück.</strong>"
+    "auw": "<strong>Zeit zurück</strong> fürs HR"
   },
   "project_descriptive_titles": {
     "yellow": "Finanzplanungs-Dashboard",
@@ -408,18 +414,18 @@
   },
   "skills": {
     "_case_study": "===== UPSKILLING THE PUBLIC SECTOR =====",
-    "overview_description": "Ein Design-Thinking-Sprint, der untersucht, wie personalisiertes Lernen und Gamification die digitale Transformation in der Schweizer Bundesverwaltung unterstützen können.",
+    "overview_description": "Wie kann die Schweizer Bundesverwaltung ihre Mitarbeitenden gezielt weiterbilden, um die digitale Transformation voranzutreiben? Genau dieser Frage ging ich in diesem Projekt nach.",
     "constraint_label": "Herausforderung",
     "learning_label": "Erkenntnis",
-    "label_empathize": "Verstehen",
-    "label_define": "Definieren",
-    "label_ideate": "Ideen entwickeln",
-    "label_prototype": "Prototyp",
+    "label_empathize": "Empathize",
+    "label_define": "Define",
+    "label_ideate": "Ideate",
+    "label_prototype": "Prototype",
     "sidebar": {
-      "empathize": "01 Verstehen",
-      "define": "02 Definieren",
-      "ideate": "03 Ideen entwickeln",
-      "prototype": "04 Prototyp",
+      "empathize": "01 Empathize",
+      "define": "02 Define",
+      "ideate": "03 Ideate",
+      "prototype": "04 Prototype",
       "test": "05 Test"
     },
     "meta": {
@@ -427,9 +433,9 @@
       "timeline_value": "3,5 Tage",
       "platform_value": "Web-Prototyp<br />Claude AI",
       "status_value": "Design Sprint<br />Konzeptprototyp",
-      "what_value": "Ein Konzept für eine Lernplattform, die Mitarbeitende dazu motiviert und dafür belohnt, genau die Kompetenzen aufzubauen, die die Organisation tatsächlich braucht.",
-      "why_value": "Die digitale Transformation ist seit Jahrzehnten eine strategische Priorität in der Schweizer Bundesverwaltung. Dennoch fällt es vielen Organisationen weiterhin schwer, sie in konkretes Handeln zu übersetzen.",
-      "how_value": "In einem viertägigen Design-Thinking-Sprint entwickelte unser vierköpfiges interdisziplinäres Team bewusst auch Ideen jenseits naheliegender Lösungen."
+      "what_value": "Ein Konzept für eine Kompetenzmanagement-Plattform, die Mitarbeitende motiviert und belohnt, gezielt jene Fähigkeiten weiterzuentwickeln, die in der Organisation tatsächlich gebraucht werden.",
+      "why_value": "Die digitale Transformation ist in der Schweizer Bundesverwaltung seit Jahrzehnten ein strategisches Ziel. Trotzdem fällt es vielen Organisationen schwer, dieses Ziel in konkrete Massnahmen umzusetzen.",
+      "how_value": "In einem viertägigen Design-Thinking-Sprint entwickelten wir in einem interdisziplinären Viererteam neue Ideen und suchten bewusst nach unkonventionellen Lösungsansätzen."
     },
     "context": {
       "heading": "Ein kurzer Sprint für <strong>eine grosse Herausforderung.</strong>",
@@ -440,91 +446,91 @@
     },
     "problem": {
       "heading": "Alle wollen Digitalisierung. <strong>Niemand weiss genau, was das bedeutet.</strong>",
-      "point1_title": "Unklare Richtung",
-      "point1_text": "Digitale Transformation ist eine strategische Priorität, doch oft fehlt eine klare Vision.",
+      "point1_title": "Fehlende Orientierung",
+      "point1_text": "Die digitale Transformation ist ein strategisches Ziel, doch oft fehlt eine klare Vorstellung davon, wie dieses erreicht werden soll.",
       "point2_title": "Begrenzte Ressourcen",
-      "point2_text": "Von Mitarbeitenden wird erwartet, den Wandel mit begrenzten Ressourcen, unklaren Erwartungen und wenig praktischer Orientierung voranzutreiben.",
+      "point2_text": "Mitarbeitende sollen die Veränderungen vorantreiben, haben dafür aber nur begrenzte Ressourcen, unklare Vorgaben und wenig praktische Unterstützung.",
       "point3_title": "Hohe Komplexität",
-      "point3_text": "Die Grösse der Organisation macht es schwierig, Veränderungen sinnvoll zu koordinieren und zu priorisieren."
+      "point3_text": "Die Grösse der Organisation macht es schwierig, die digitale Transformation zu koordinieren und klare Prioritäten zu setzen."
     },
     "solution": {
-      "heading": "Wer die Digitalisierung vorantreibt, wird belohnt.",
-      "description": "Statt digitale Expertise auszulagern oder neue Stellen zu schaffen, setzt das Konzept auf Mitarbeitende, die die Organisation bereits kennen. Eine personalisierte Lernplattform hilft ihnen, die benötigten Kompetenzen aufzubauen, und belohnt ihre Fortschritte.",
+      "heading": "Wer die Digitalisierung vorantreibt, wird belohnt",
+      "description": "Statt digitales Fachwissen extern einzukaufen oder neue Stellen zu schaffen, zeigt eine Plattform den Mitarbeitenden, welche Kompetenzen in der Organisation gebraucht werden. Gezielte Anreize motivieren sie, diese aufzubauen. Die neu erworbenen Kompetenzen kommen anschliessend der gesamten Organisation zugute.",
       "point1_title": "Klare Prioritäten",
-      "point1_text": "Mitarbeitende sehen, welche Kompetenzen am wichtigsten sind und worauf sie sich bei ihrer Weiterentwicklung konzentrieren sollten.",
+      "point1_text": "Mitarbeitende sehen, welche Kompetenzen besonders gefragt sind und in welchen Bereichen sich eine Weiterbildung lohnt.",
       "point2_title": "Personalisiertes Lernen",
-      "point2_text": "Lernpfade richten sich nach individuellen Kompetenzlücken, statt allen denselben Entwicklungsweg vorzugeben.",
-      "point3_title": "Motivation zur Weiterentwicklung",
-      "point3_text": "Gamification macht Fortschritte sichtbar und belohnt Mitarbeitende dafür, Kompetenzen aufzubauen, die der Organisation zugutekommen."
+      "point2_text": "Die Lernangebote richten sich nach den bereits vorhandenen Kompetenzen und dem persönlichen Entwicklungsbedarf, statt für alle denselben Weg vorzugeben.",
+      "point3_title": "Motivation durch Belohnung",
+      "point3_text": "Ein Belohnungssystem mit attraktiven Anreizen motiviert Mitarbeitende, gezielt Kompetenzen aufzubauen, die in der Organisation tatsächlich gebraucht werden."
     },
     "impact": {
-      "heading": "Aus einem disruptiven Konzept entstand <strong>eine praxisnähere Lösung.</strong>",
-      "num1_value": "Angestossen",
-      "num1_label": "Das Konzept stiess neue Überlegungen dazu an, wie die Kompetenzen von Mitarbeitenden sichtbar gemacht und organisationsweit genutzt werden könnten.",
-      "num2_value": "Neu gedacht",
-      "num2_label": "Die ursprüngliche Gamification-Idee entwickelte sich zu einem einfacheren internen Skills-Marktplatz: Personen mit der für ein Projekt benötigten Expertise finden und direkt mit ihnen Kontakt aufnehmen.",
-      "num3_value": "In Prüfung",
-      "num3_label": "Das Marktplatz-Konzept wird derzeit als möglicher Weg geprüft, um verborgene Kompetenzen teamübergreifend zu mobilisieren und weniger auf Outsourcing angewiesen zu sein."
+      "heading": "Aus einer mutigen Idee wurde ein praxistauglicher Ansatz",
+      "num1_value": "Pitchen",
+      "num1_label": "Im Austausch mit dem Management regte ich weitere Diskussionen darüber an, wie die Kompetenzen der Mitarbeitenden innerhalb der Organisation gezielter gefördert und eingesetzt werden könnten.",
+      "num2_value": "Neudenken",
+      "num2_label": "Die grösste Hürde war die Umsetzbarkeit. Der Aufbau und Betrieb der Plattform sowie die finanziellen Belohnungen für Mitarbeitende hätten erhebliche Ressourcen erfordert.",
+      "num3_value": "Evaluieren",
+      "num3_label": "Als realistischere Alternative prüften wir deshalb eine interne Kompetenzplattform. Dort könnten Mitarbeitende bisher ungenutzte Fähigkeiten und Interessen sichtbar machen und für passende Projekte innerhalb der Organisation gefunden werden."
     },
     "process_bar": {
       "empathize_d1": "Interviews",
-      "empathize_d2": "Kernerkenntnisse",
+      "empathize_d2": "Zentrale Erkenntnisse",
       "define_d1": "Affinity Mapping",
       "define_d2": "HMW-Fragen",
-      "ideate_d1": "Random Word",
+      "ideate_d1": "Zufallswort-Methode",
       "ideate_d2": "Morphologischer Kasten",
       "prototype_d1": "KI-Prompting",
       "prototype_d2": "Klickbarer Prototyp",
-      "test_d1": "Peer-Feedback",
-      "test_d2": "Realitätscheck"
+      "test_d1": "Feedback von Kolleg:innen",
+      "test_d2": "Praxistest"
     },
     "process": {
       "role_text": "Als Teil des Design-Thinking-Teams war ich an der Nutzerforschung, der KI-gestützten Auswertung der Erkenntnisse, der Ideenentwicklung und dem interaktiven Prototyping beteiligt. Gleichzeitig brachte ich die Herausforderung aus meinem Arbeitsalltag ein, die zum Ausgangspunkt unseres Projekts wurde.",
       "constraint_text": "Die Fragestellung war bewusst sehr offen formuliert, während der Zeitrahmen äusserst knapp war. Innerhalb von nur drei Tagen mussten wir das Problem eingrenzen, Nutzerforschung betreiben, Ideen entwickeln und einen klickbaren Prototypen erstellen."
     },
     "empathize": {
-      "heading": "Wie erleben Menschen <strong>die digitale Transformation?</strong>",
-      "text1": "Um die Herausforderungen rund um die digitale Transformation besser zu verstehen, führte jedes Teammitglied Interviews mit Mitarbeitenden aus unterschiedlichen Bereichen der Bundesverwaltung. Insgesamt sprachen wir mit vier Führungskräften, fünf Mitarbeitenden und einer Fachexpertin bzw. einem Fachexperten. <span class=\"cs-key-decision\"><strong>Zentrale Entscheidung:</strong> Die Interviews fanden online statt, damit Microsoft Teams sie automatisch transkribieren konnte. Anschliessend half KI dabei, die wichtigsten Erkenntnisse herauszufiltern, bevor wir sie im Team gemeinsam prüften und zusammenführten.</span>",
+      "heading": "Wie erleben Mitarbeitende <strong>die digitale Transformation?</strong>",
+      "text1": "Um die Herausforderungen der digitalen Transformation besser zu verstehen, führten wir alle Interviews mit Personen aus unterschiedlichen Funktionen innerhalb der Schweizer Bundesverwaltung. Insgesamt befragten wir vier Führungskräfte, fünf Mitarbeitende und eine Fachperson. <span class=\"cs-key-decision\"><strong>Zentrale Entscheidung:</strong> Wir führten die Interviews online durch, damit wir sie direkt über Microsoft Teams transkribieren konnten. Mithilfe von KI werteten wir die Transkripte zunächst aus und identifizierten erste Erkenntnisse, die wir anschliessend gemeinsam im Team überprüften und zusammenfassten.",
       "text2": "Die Interviews wurden mit Microsoft Teams aufgezeichnet und automatisch transkribiert. Anschliessend nutzten wir KI, um erste Erkenntnisse zu extrahieren, bevor wir diese gemeinsam im Team diskutierten und einordneten.",
       "challenge_text": "Interviewfragen entwickeln, ohne bereits zu wissen, wohin uns die Forschung führen würde.",
       "solution_text": "Ein strukturierter Interviewleitfaden gab Orientierung und liess gleichzeitig genügend Raum, um unerwarteten Erkenntnissen nachzugehen.",
       "caption1": "Interviewmaterial",
-      "caption2": "ChatGPT zur Auswertung der Interviewtranskripte"
+      "caption2": "Mit ChatGPT die wichtigsten Erkenntnisse aus den Interviewtranskripten herausarbeiten"
     },
     "define": {
       "heading": "Das <strong>richtige Problem</strong> finden.",
-      "text1": "Die Erkenntnisse aus den Interviews wurden mithilfe von Affinity Mapping thematisch geordnet. Gemeinsam identifizierten wir wiederkehrende Herausforderungen, hinterfragten unsere Annahmen mit Unterstützung von KI und formulierten daraus zentrale „How Might We“-Fragen:",
-      "text2": "Wie können wir die Kompetenzen von Mitarbeitenden sichtbar machen? <br />\n                  Wie könnten personalisierte Lernerlebnisse aussehen? <br />\n                  Wie können wir Mitarbeitende auf ihrem Weg durch die digitale Transformation begleiten? <span class=\"cs-key-decision\"><strong>Zentrale Entscheidung:</strong> Die Herausforderung war sehr weit gefasst und der Zeitrahmen aussergewöhnlich knapp. Deshalb fokussierten wir uns auf die Kompetenzen der Mitarbeitenden. Grössere organisatorische Herausforderungen, etwa der Ersatz weit verbreiteter digitaler Tools, mehr Unterstützung durch das Management oder eine stärkere strategische Führung, klammerten wir aus.</span>",
+      "text1": "Mithilfe von Affinity Mapping gruppierten wir die Erkenntnisse aus den Interviews nach Themen und identifizierten gemeinsam wiederkehrende Probleme. Mit KI hinterfragten wir unsere Annahmen und formulierten daraus erste «How Might We»-Fragen:",
+      "text2": "Wie können wir die Kompetenzen von Mitarbeitenden sichtbar machen? <br />\n                  Wie könnten personalisierte Lernerlebnisse aussehen? <br />\n                  Wie können wir Mitarbeitende auf ihrem Weg durch die digitale Transformation begleiten? <span class=\"cs-key-decision\"><strong>Zentrale Entscheidung:</strong> Die Herausforderung war gross und die Zeit sehr knapp. Deshalb konzentrierten wir uns auf die Kompetenzen der Mitarbeitenden. Grössere organisatorische Themen, wie die Ablösung etablierter digitaler Tools oder die Stärkung der Unterstützung durch Führungskräfte und der strategischen Führung, klammerten wir bewusst aus.",
       "challenge_text": "Aus einer Vielzahl unterschiedlicher Pain Points die Designchance mit dem grössten Potenzial herauszufiltern.",
       "solution_text": "Durch das Clustern der Interviewerkenntnisse, das Erkennen wiederkehrender Muster und die Formulierung von „How Might We“-Fragen konnten wir den Fokus auf die vielversprechendste Designchance legen.",
       "caption": "Digital trifft analog."
     },
     "ideate": {
-      "heading": "<strong>Möglichst viele Ideen</strong> zulassen.",
-      "text": "Die Ideen entstanden gemeinsam im Team und wurden mithilfe von KI durch Methoden wie die Morphologische Matrix und die Random-Word-Methode weiterentwickelt. Anschliessend diskutierten, bewerteten und priorisierten wir die Konzepte anhand festgelegter Kriterien, bevor wir die vielversprechendste Lösung ausarbeiteten.",
+      "heading": "Möglichst viele Ideen entwickeln",
+      "text": "Mit Methoden wie dem morphologischen Kasten und der Zufallswort-Methode entwickelten wir gemeinsam zahlreiche Ideen und nutzten KI, um weitere Ansätze zu finden. Anschliessend diskutierten und bewerteten wir die Ideen anhand zuvor festgelegter Kriterien und stimmten darüber ab, welche wir weiterverfolgen wollten. Den vielversprechendsten Ansatz arbeiteten wir gemeinsam weiter aus. <span class=\"cs-key-decision\"><strong>Die Auswahl der Idee erfolgte anhand zuvor festgelegter Kriterien und einer demokratischen Abstimmung im Team.",
       "challenge_text": "Eigene Denkmuster und Annahmen bewusst verlassen, um wirklich neue Lösungsansätze zu entwickeln.",
       "solution_text": "Die Morphologische Matrix und die Random-Word-Methode halfen uns, gewohnte Denkmuster aufzubrechen. KI erweiterte den Prozess zusätzlich, indem sie weitere kreative und ungewöhnliche Ideen einbrachte.",
-      "caption": "Random-Word-Methode, Morphologische Matrix und Priorisierung"
+      "caption": "Zufallswort-Methode, morphologischer Kasten und Priorisierung der Ideen."
     },
     "prototype": {
-      "heading": "In 20 Minuten wird das Konzept <strong>greifbar.</strong>",
-      "text": "Als die Deadline näher rückte, teilten wir die Aufgaben auf, um das Konzept greifbar zu machen. Während ein Teil des Teams das Konzept für personalisiertes Lernen weiter ausarbeitete, konzentrierte ich mich darauf, einen interaktiven Prototyp der geplanten Skills-Management-Plattform zu erstellen. <span class=\"cs-key-decision\"><strong>Zentrale Entscheidung:</strong> Als Verantwortliche für den Prototyp der Skills-Management-Plattform traf ich alle Designentscheidungen selbst, vom ersten Prompt bis zur Weiterentwicklung des Ergebnisses zu einem funktionsfähigen Prototyp.</span>",
+      "heading": "20 Minuten, um die Idee zum Leben zu erwecken",
+      "text": "Da die Zeit knapp wurde, teilten wir die Aufgaben im Team auf, um unser Konzept greifbar zu machen. Während ein Teil des Teams das Konzept für personalisiertes Lernen weiterentwickelte, konzentrierte ich mich auf einen interaktiven Prototyp der geplanten Kompetenzmanagement-Plattform. <span class=\"cs-key-decision\"><strong>Zentrale Entscheidung:</strong> Ich übernahm die Gestaltung des Prototyps selbstständig, vom ersten Prompt über die Designentscheidungen bis zur Überarbeitung des Ergebnisses zu einem funktionsfähigen, interaktiven Prototyp.",
       "challenge_text": "Ein Konzept innerhalb von nur 20 Minuten in einen interaktiven Prototypen zu verwandeln.",
       "solution_text": "Mit Claude als Entwicklungspartner konnte ich in kürzester Zeit einen funktionierenden Prototypen erstellen und iterativ weiterentwickeln, den Nutzer:innen direkt ausprobieren konnten.",
       "caption1": "Prompting in Claude",
-      "caption2": "Prototyp in 20 Minuten"
+      "caption2": "20 Minuten-Prototyp"
     },
     "test": {
-      "heading": "Ein <strong>Reality Check</strong> liess uns zweifeln.",
-      "text": "Wir präsentierten den Prototyp einem anderen Team und sammelten Feedback. Statt über das Interface selbst zu sprechen, verlagerte sich die Diskussion schnell auf die Einführung in der Organisation und die Hürden, die den Erfolg einer solchen Plattform gefährden könnten. Bedenken hinsichtlich Transparenz und Sicherheit würden ein gezieltes Change Management und eine klare Kommunikation darüber erfordern, wie die Daten der Mitarbeitenden verwendet werden. <span class=\"cs-key-decision\"><strong>Zentrales Ergebnis:</strong> Feste finanzielle Anreize für den Kompetenzaufbau wären schwer umzusetzen gewesen, da sie ein eigenes Budget erfordert hätten. Als ich die Idee jedoch in meiner Abteilung vorstellte, stiess ein interner Skills-Marktplatz auf grosses Interesse. Dort könnten bislang verborgene Kompetenzen von Mitarbeitenden sichtbar gemacht und für Projekte in der gesamten Organisation eingesetzt werden, wodurch der Bedarf an Outsourcing sinken würde.</span>",
+      "heading": "Der <strong>Realitätscheck</strong>",
+      "text": "Wir stellten unseren Prototyp einem anderen Team vor, um Feedback einzuholen. Dabei ging es schnell weniger um die Benutzeroberfläche als um die Frage, ob und wie sich eine solche Plattform in der Bundesverwaltung etablieren liesse. Insbesondere beim Datenschutz und bei der Transparenz gab es Bedenken. Eine erfolgreiche Einführung würde deshalb auch Change Management und eine klare Kommunikation darüber erfordern, wie die Daten der Mitarbeitenden verwendet werden. <span class=\"cs-key-decision\"><strong>Zentrales Ergebnis:</strong>  Das Konzept mit dem Management besprechen und anhand des Feedbacks zu einer realistischeren Lösung weiterentwickeln.",
       "challenge_text": "Mitarbeitende zur Weiterentwicklung ihrer Kompetenzen motivieren, ohne Widerstand durch Transparenz oder den Umgang mit Personendaten auszulösen.",
       "learning_text": "Eine erfolgreiche Einführung würde ein durchdachtes Change Management und eine offene Kommunikation darüber voraussetzen, wie mit den Daten der Mitarbeitenden umgegangen wird."
     },
     "product": {
       "label": "Der Prototyp",
-      "heading": "Ein klickbares Konzept für <strong>personalisiertes Lernen.</strong>",
-      "try_it": "Jetzt ausprobieren!",
-      "desktop_only": "Interaktiver Prototyp auf dem Desktop verfügbar."
+      "heading": "Ein interaktives Konzept für personalisiertes Lernen",
+      "try_it": "Selbst ausprobieren!",
+      "desktop_only": "Öffne die Seite auf einem Desktop, um den interaktiven Prototyp auszuprobieren."
     },
     "reflection": {
       "heading": "Einen <strong>Samen pflanzen</strong>.",
@@ -536,7 +542,7 @@
       "accordion3_trigger": "KI kann beschleunigen, aber Denken nicht ersetzen",
       "accordion3_content": "KI half uns, Notizen zu analysieren, Ideen weiterzuentwickeln und schnell einen testbaren Prototypen zu bauen. Fehler und zu enge Ergebnisse machten es jedoch umso wichtiger, die Resultate im Team zu prüfen, zu hinterfragen und gemeinsam zu diskutieren."
     },
-    "overview_note": "Hinweis: In diesem experimentellen Projekt wurden bewusst disruptive Lösungsansätze für ein reales Problem aus dem Arbeitsalltag untersucht."
+    "overview_note": "Note: Digital transformation is a broad challenge. We used a Design Thinking sprint to approach it from a fresh perspective and explore disruptive solutions."
   },
   "kunstatelier": {
     "_case_study": "===== KUNSTATELIER =====",
@@ -671,45 +677,46 @@
     "overview_note": "Hinweis: End-to-End-UX-Designprojekt im Rahmen des Google UX Design Certificate."
   },
   "page_titles": {
-    "yellow": "Fallstudie — Gelb ist das neue Grün",
-    "skills": "Fallstudie — Kompetenzen im öffentlichen Sektor stärken",
-    "auw": "Fallstudie — So gewinnt HR Zeit zurück."
+    "yellow": "Projekt - Gelb ist das neue Grün",
+    "skills": "Projekt - Kompetenzen im öffentlichen Sektor stärken",
+    "auw": "Projekt - Zeit zurück fürs HR",
+    "home": "Anouk Fontaine | UX Designerin"
   },
   "auw": {
-    "overview_description": "Einen manuellen Antragprozess für Aus- und Weiterbildungen in eine geführte Power App überführen, die Berechnungen automatisiert, den administrativen Aufwand für HR reduziert und in jeder Phase klar macht, was als Nächstes zu tun ist.",
-    "overview_note": "Hinweis: Zum Schutz interner Informationen wurden identifizierende Elemente entfernt. Im Beispiel verwende ich mein eigenes Profil; sensible Angaben (z. B. Lohn) wurden durch fiktive Werte ersetzt.",
+    "overview_description": "Ein manueller Antragsprozess für Aus- und Weiterbildungen wird durch eine Power App vereinfacht, die Berechnungen automatisiert, HR administrativ entlastet und die Nutzer:innen Schritt für Schritt durch den Prozess führt.",
+    "overview_note": "Hinweis: Zum Schutz interner Informationen wurden identifizierende Angaben entfernt. Das Beispiel basiert auf meinem eigenen Profil. Sensible Angaben wie der Lohn wurden durch fiktive Werte ersetzt.",
     "meta": {
-      "what_value": "Eine Power App, die Mitarbeitende und Führungskräfte durch den gesamten Aus- und Weiterbildungsprozess führt – von Antrag und Genehmigung über Kostenbeteiligung bis zur Einreichung der Rechnung – und HR im Hintergrund jederzeit Einblick in die Fälle gibt.",
-      "why_value": "Ein fragmentierter, manueller Prozess erforderte wiederholte Qualitätsprüfungen durch HR, liess Anträge ohne Nachfassen leicht ins Stocken geraten und verteilte unterschiedliche Arten von Aus- und Weiterbildung auf verschiedene Orte und Prozesse.",
-      "how_value": "Ich verantwortete das UX/UI-Design von den ersten Konzepten über den Prototyp bis zum High-Fidelity-Design, baute auf der Prozessanalyse des Digital-Transformation-Teams auf, validierte die Lösung mit Nutzer:innen und arbeitete unter engen Zeit- und Budgetvorgaben eng mit Power-Apps-Engineers zusammen."
+      "what_value": "Eine Power App, die Mitarbeitende und Führungskräfte durch den gesamten Antragsprozess für Aus- und Weiterbildungen begleitet, vom Antrag über die Genehmigung und Berechnung der Kostenbeteiligung bis zur Einreichung der Rechnungen. Berechnungen und Prozessschritte werden dabei automatisiert.",
+      "why_value": "Der Antragsprozess für Aus- und Weiterbildungen erforderte viele manuelle Kontrollen und Datenübertragungen. Dazu kamen fehleranfällige Berechnungen, die sowohl für Mitarbeitende als auch für HR unnötigen Aufwand verursachten.",
+      "how_value": "Verantwortung für das UX/UI-Design, von den ersten Konzepten über Prototypen bis zum finalen Design. Auf Basis der Prozessanalyse des Digitalisierungsteams entwickelte ich die Lösung weiter, testete sie mit Nutzer:innen und arbeitete unter engen Zeit- und Budgetvorgaben eng mit den Power-Apps-Entwickler:innen zusammen."
     },
     "problem": {
-      "heading": "Ein Antrag kann im Hintergrund eine <strong>Lawine an Arbeit auslösen.</strong>",
-      "point1_title": "Zu viel HR-Administration",
-      "point1_text": "HR musste Informationen wiederholt prüfen, Daten manuell übertragen und während des gesamten Prozesses immer wieder eingreifen.",
+      "heading": "Ein Antrag, eine <strong>Flut an Arbeit.</strong>",
+      "point1_title": "Hoher administrativer Aufwand für HR",
+      "point1_text": "HR musste Informationen wiederholt überprüfen, Daten manuell übertragen und immer wieder in den Prozess eingreifen.",
       "point2_title": "Fehleranfällige Eingaben",
-      "point2_text": "Mitarbeitende mussten Angaben wie ihren Lohn in anderen Dokumenten nachschlagen oder einen Schätzwert eingeben, den HR anschliessend manuell prüfen und korrigieren musste.",
+      "point2_text": "Mitarbeitende mussten ihre persönlichen Angaben manuell erfassen, die HR anschliessend überprüfen und häufig korrigieren musste.",
       "point3_title": "Anträge bleiben liegen",
-      "point3_text": "Ohne automatische Erinnerungen konnten Anträge unbeantwortet liegen bleiben, bis HR manuell nachfasste. Das verursachte zusätzlichen Koordinationsaufwand und verlangsamte den Prozess."
+      "point3_text": "Anträge blieben teilweise wochenlang unbearbeitet, sodass HR nachhaken musste. Veraltete Anträge wurden oft nicht abgeschlossen und blieben für unbegrenzte Zeit im System stehen."
     },
     "solution": {
       "label": "Lösung",
-      "heading": "<strong>Ein Einstiegspunkt</strong> und ein Prozess, der sich anpasst.",
-      "description": "Alle Anträge für Aus- und Weiterbildungen starten heute in derselben Power App. Je nach Antragstyp passt die App die notwendigen Schritte, Genehmigungen und Berechnungen an, führt Nutzer:innen durch den Prozess und hält HR aus der täglichen Bearbeitung heraus – bei voller Transparenz.",
-      "point1_title": "Eine App, ein adaptiver Flow",
-      "point1_text": "Nutzer:innen müssen nur ein Interface kennen. Der Prozess passt sich an die Art der Aus- oder Weiterbildung an – inklusive unterschiedlicher Genehmigungsschritte, Vereinbarungen und weiterer Anforderungen.",
-      "point2_title": "Im Hintergrund automatisiert",
-      "point2_text": "Vorhandene Daten, Berechnungen und Business Rules werden automatisch verarbeitet. Dadurch entfallen die wiederholten Prüfungen und manuellen Korrekturen, die zuvor bei HR lagen.",
-      "point3_title": "Transparenz für alle",
-      "point3_text": "Mitarbeitende, Führungskräfte und HR sehen, wo ein Antrag steht und was als Nächstes passiert. Führungskräfte erhalten einen Überblick über die Aus- und Weiterbildungen ihres Teams, einschliesslich vergangener Anträge. HR kann den Prozess überwachen, ohne ihn selbst verwalten zu müssen."
+      "heading": "Eine Power App <strong>für alles</strong>",
+      "description": "Eine einzige Power App vereint den gesamten Antragsprozess für Aus- und Weiterbildungen. Mitarbeitende müssen sich nur noch mit einer Oberfläche vertraut machen und werden Schritt für Schritt durch den Prozess begleitet. Automatisierte Berechnungen, vorausgefüllte Angaben, Geschäftsregeln und Erinnerungen sorgen dafür, dass HR nicht mehr in die operative Abwicklung eingreifen muss.",
+      "point1_title": "Eine App, ein flexibler Prozess",
+      "point1_text": "Alle Anträge für Aus- und Weiterbildungen werden über dasselbe Formular eingereicht. Die erforderlichen Schritte, Genehmigungen und Berechnungen passen sich automatisch an die jeweiligen Angaben an.",
+      "point2_title": "Manuelle Arbeit automatisiert",
+      "point2_text": "Bestehende Daten werden automatisch übernommen, Berechnungen und Geschäftsregeln direkt angewendet. Dadurch entfallen wiederholte Kontrollen, manuelle Korrekturen und weitere administrative Aufgaben für HR.",
+      "point3_title": "Jederzeit den Überblick behalten",
+      "point3_text": "Mitarbeitende und Führungskräfte sehen jederzeit, wo ihr Antrag steht und was als Nächstes passiert. HR behält den Überblick über alle Anträge, ohne sich um jeden einzelnen kümmern zu müssen."
     },
     "impact": {
-      "heading": "HR gewinnt <strong>Zeit zurück.</strong>",
-      "num1_label": "Anträge für Aus- und Weiterbildungen pro Jahr automatisiert.",
+      "heading": "Mehr Zeit für HR",
+      "num1_label": "Anträge für Aus- und Weiterbildungen werden jährlich automatisiert abgewickelt.",
       "num2_value": "0",
-      "num2_label": "routinemässige Qualitätsprüfungen durch HR während des Prozesses erforderlich.",
+      "num2_label": "manuelle Routinekontrollen durch HR während des Antragsprozesses.",
       "num3_value": "100%",
-      "num3_label": "der befragten Stakeholder sind mit dem neuen Prozess zufrieden."
+      "num3_label": "der befragten Beteiligten sind mit dem neuen Prozess zufrieden."
     },
     "testimonial": {
       "label": "Testimonial",
@@ -718,56 +725,62 @@
       "quote": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
     },
     "process": {
-      "heading": "So sind wir vorgegangen"
+      "heading": "<strong>Wie</strong> wir vorgegangen sind"
     },
     "process_bar": {
       "research": "01 Verstehen",
-      "design": "02 Design",
-      "test": "03 Test",
-      "build": "04 Umsetzen",
+      "design": "02 Designen",
+      "test": "04 Testen",
+      "build": "05 Bauen",
       "research_d1": "Prozessanalyse",
-      "research_d2": "User Flows",
-      "research_d3": "Requirements Review",
+      "research_d2": "Anforderungsanalyse",
+      "research_d3": "User Flows",
       "design_d1": "KI-Prototyp",
       "design_d2": "Designsystem",
-      "design_d3": "Hi-Fi-Prototyp",
-      "test_d1": "Usability-Test",
+      "design_d3": "High-Fidelity-Prototyp",
+      "test_d1": "Usability-Tests",
       "test_d2": "Iterationen",
-      "test_d3": "Scope-Anpassung",
+      "test_d3": "Anpassung des Projektumfangs",
       "build_d1": "Power App",
-      "build_d2": "Jira",
+      "build_d2": "Feedback via Jira",
       "build_d3": "Wöchentliche Reviews"
     },
     "research": {
       "label": "Verstehen",
-      "heading": "Workflows in <strong>User Flows</strong> übersetzen.",
-      "text": "Das Digital-Transformation-Team hatte bereits umfangreiche Vorarbeit geleistet, darunter Requirements Engineering, Interviews, Workshops, User Stories und die Definition eines Zielprozesses. Das Ziel stand fest: eine Power App. Die konkrete User Experience war noch offen. Ich sichtete zunächst die bestehende Dokumentation, um den Prozess fundiert zu verstehen, und übersetzte den Zielprozess anschliessend in einen User Flow. So definierte ich, welche Screens, Entscheidungen und Zustände das Produkt braucht.<br /><br /><strong>Zentrale Entscheidung:</strong> Engineers früh einbinden, um die Möglichkeiten und Grenzen von Power Apps zu verstehen.",
-      "caption": "User Flows machten sichtbar, welche Screens benötigt wurden."
+      "heading": "Von Arbeitsprozessen zu User Flows",
+      "text": "Als ich ins Projekt einstieg, schaute ich mir zuerst die bestehende Dokumentation des Digitalisierungsteams an. Das Team hatte bereits viel Vorarbeit geleistet, darunter Anforderungsanalysen, Interviews, Workshops, User Stories und die Definition des Soll-Prozesses. Auch die Technologie stand bereits fest: eine Power App. Was noch fehlte, war die Gestaltung der User Experience. Hier kam ich ins Spiel.<br /><br /><strong>Zentrale Entscheidung:</strong> Die Entwickler frühzeitig einbeziehen, um die Möglichkeiten und Grenzen von Power Apps von Anfang an bei der Gestaltung berücksichtigen zu können.",
+      "caption": "Die User Flows zeigten auf, welche Interfaces, Schritte und Entscheidungspunkte in der App nötig waren."
     },
     "design": {
-      "label": "Design",
-      "heading": "<strong>Ein Designsystem</strong> mit Lücken.",
-      "text": "Nachdem ich ein Lo-Fi-Konzept mit den Engineers geprüft hatte, nutzte ich Claude, um schnell einen funktionalen Prototyp zu erstellen. Er machte Interaktionen und Berechnungen erlebbar und konnte früh getestet werden.<br /><br />Für das High-Fidelity-Design arbeitete ich mit dem Designsystem des Bundes. Da es hauptsächlich für öffentliche Websites entwickelt wurde, fehlten einige Komponenten für informationsdichte interne Anwendungen oder mussten angepasst werden.<br /><br /><strong>Zentrale Entscheidung:</strong> Die Experience vertraut halten, indem ich bestehende Elemente des Designsystems mit Patterns aus etablierten internen Tools kombinierte, die den Mitarbeitenden bereits bekannt waren.",
-      "caption1": "Den KI-generierten Prototyp mit dem Designsystem des Bundes in einen High-Fidelity-Prototyp überführen."
+      "label": "Designen",
+      "heading": "Ein <strong>Designsystem</strong> mit Lücken",
+      "text": "Nachdem ich ein erstes Low-Fidelity-Konzept mit den Entwickler besprochen hatte, nutzte ich Claude, um schnell einen funktionalen Prototyp zu erstellen, den wir frühzeitig testen konnten. Für das anschliessende High-Fidelity-Design orientierte ich mich am bestehenden Designsystem der Schweizer Bundesverwaltung.<br /><br /><strong>Zentrale Entscheidung:</strong> Da das Designsystem hauptsächlich für öffentliche Websites entwickelt wurde, fehlten einige Komponenten für interne Anwendungen. Statt neue Lösungen zu entwickeln, griff ich auf bewährte Muster aus internen Tools zurück, mit denen die Mitarbeitenden bereits vertraut waren.",
+      "caption1": "Den KI-generierten Prototyp in ein High-Fidelity-Design in Figma umwandeln."
     },
     "test": {
-      "label": "Test",
-      "heading": "<strong>Nutzer:innen beobachten</strong>, um Hürden aufzudecken.",
-      "text": "Fünf moderierte Usability-Tests mit Mitarbeitenden, einer Führungskraft und HR-Spezialist:innen führten zu mehreren Verbesserungen. Über alle Nutzergruppen hinweg stiess die neue Lösung auf grosse Begeisterung.<br /><br /><strong>Zentrale Entscheidung:</strong> Den KI-Prototyp so intensiv wie möglich testen und iterieren, um Nacharbeit, Aufwand und Kosten beim High-Fidelity-Design und in der finalen Power-Apps-Entwicklung zu reduzieren.",
+      "label": "Testen",
+      "heading": "Nutzer:innen beobachten und Stolpersteine erkennen",
+      "text": "Fünf moderierte Usability-Tests mit Mitarbeitenden, Führungskräften und HR-Fachpersonen zeigten, wo noch Verbesserungsbedarf bestand. Die Erkenntnisse führten zu mehreren Anpassungen. Insgesamt kam die neue Lösung bei allen Nutzergruppen sehr gut an.<br /><br /><strong>Zentrale Entscheidung:</strong> Den KI-Prototyp möglichst intensiv testen und schrittweise verbessern, um spätere Anpassungen und damit Zeit und Kosten beim High-Fidelity-Design und bei der Power-Apps-Entwicklung zu reduzieren.",
       "caption1": "Moderierte Usability-Tests deckten Reibungspunkte auf.",
-      "caption2": "Iteration: Kognitive Belastung mit Info-Buttons reduzieren.",
-      "caption3": "Iteration: Den Simulator entfernen – er erwies sich als eher verwirrend als hilfreich.",
-      "caption4": "Iteration: Massgeschneiderte Genehmigungs-Interfaces ergänzen, wo ein standardisiertes Interface nicht funktionierte."
+      "caption2": "Iteration: Die kognitive Belastung durch zusätzliche Infobuttons reduzieren.",
+      "caption3": "Iteration: Den Simulator entfernen, da er mehr Verwirrung verursachte, als dass er half.",
+      "caption4": "Iteration: Unterschiedliche Genehmigungsansichten für verschiedene Nutzergruppen einführen, da sich eine einheitliche Ansicht nicht für alle eignete."
     },
     "build": {
-      "label": "Umsetzen",
-      "heading": "Den <strong>pragmatischen Weg</strong> finden.",
-      "text": "Die Zusammenarbeit mit Engineers und dem Digital-Transformation-Team blieb schlank, aber kontinuierlich: kurze wöchentliche Meetings für offene Fragen sowie Jira für strukturiertes Feedback und Testing-Issues.<br /><br /><strong>Zentrale Entscheidung:</strong> Aufgrund von Zeit- und Budgetvorgaben konnten nicht alle geplanten Features in den Scope aufgenommen werden. Statt automatisch zum Status quo zurückzukehren, suchte ich nach einfacheren Alternativen, die möglichst viel der vorgesehenen User Experience bewahrten.",
+      "label": "Bauen",
+      "heading": "<strong>Pragmatische Lösungen</strong> finden",
+      "text": "Die Zusammenarbeit mit den Entwicklern und dem Digitalisierungsteam war unkompliziert, aber kontinuierlich. In kurzen wöchentlichen Meetings klärten wir offene Fragen, während wir Jira für strukturiertes Feedback und das Erfassen von Problemen beim Testen nutzten.<br /><br /><strong>Zentrale Entscheidung:</strong> Als wir aufgrund von Zeit- und Budgetvorgaben auf gewisse Funktionen verzichten mussten, überlegte ich mir, welche Auswirkungen dies auf die Nutzer:innen hatte. Statt mich mit dem Status quo zufriedenzugeben, suchte ich nach einfacheren Lösungen, die mit weniger Aufwand umsetzbar waren und die wichtigsten Vorteile der geplanten User Experience beibehielten.",
       "caption": "Jira als zentrales Tool für die Zusammenarbeit."
     },
     "product": {
       "label": "Das finale Produkt",
-      "heading": "<strong>Ein klarer Weg</strong> für jeden Antrag."
+      "heading": "Ein klarer Weg für jeden Antrag"
+    }
+  },
+  "shared": {
+    "button": {
+      "before_btn": "Vorher",
+      "after_btn": "Nachher"
     }
   }
 }

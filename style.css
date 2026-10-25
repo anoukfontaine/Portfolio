@@ -6795,13 +6795,6 @@ body.case-page .left-sidebar {
     min-height: 310px;
   }
 }
-/* =============================================
-   CASE STUDY - LANGUAGE SWITCH OFF
-============================================= */
-/* Temporary: hide language switch while translations are being reviewed */
-.nav-lang {
-  display: none !important;
-}
 
 /* Homepage: proportional desktop scaling from the 1671px reference */
 @media (min-width: 1025px) {

@@ -141,7 +141,8 @@
   }
 
   const saved = localStorage.getItem("lang");
-  const initialLang = ["en", "de"].includes(saved) ? saved : "en";
+  const initialLang = ["en", "de"].includes(saved) ? saved : getBrowserLang();
+
   localStorage.setItem("lang", initialLang);
 
   if (initialLang !== "en") {

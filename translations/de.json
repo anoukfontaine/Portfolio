@@ -759,7 +759,7 @@
     },
     "test": {
       "label": "Testen",
-      "heading": "Nutzer:innen beobachten und Stolpersteine erkennen",
+      "heading": "<strong>Nutzer:innen beobachten</strong> und Stolpersteine erkennen",
       "text": "Fünf moderierte Usability-Tests mit Mitarbeitenden, Führungskräften und HR-Fachpersonen zeigten, wo noch Verbesserungsbedarf bestand. Die Erkenntnisse führten zu mehreren Anpassungen. Insgesamt kam die neue Lösung bei allen Nutzergruppen sehr gut an.<span class=\"cs-key-decision\"><strong>Zentrale Entscheidung:</strong> Den KI-Prototyp möglichst intensiv testen und schrittweise verbessern, um spätere Anpassungen und damit Zeit und Kosten beim High-Fidelity-Design und bei der Power-Apps-Entwicklung zu reduzieren.</span>",
       "caption1": "Moderierte Usability-Tests deckten Reibungspunkte auf.",
       "caption2": "Iteration: Die kognitive Belastung durch zusätzliche Infobuttons reduzieren.",
@@ -774,7 +774,7 @@
     },
     "product": {
       "label": "Das finale Produkt",
-      "heading": "Ein klarer Weg für jeden Antrag"
+      "heading": "<strong>Ein klarer Weg</strong> für jeden Antrag"
     }
   },
   "shared": {

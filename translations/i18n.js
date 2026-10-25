@@ -46,6 +46,23 @@
     }
   }
 
+  function restoreKeyDecisions() {
+    document.querySelectorAll(".cs-key-decision").forEach((decision) => {
+      if (!decision.querySelector(":scope > .cs-key-decision-content")) {
+        const content = document.createElement("span");
+        content.className = "cs-key-decision-content";
+
+        while (decision.firstChild) {
+          content.appendChild(decision.firstChild);
+        }
+
+        decision.appendChild(content);
+      }
+
+      decision.classList.add("reveal-decision", "is-visible");
+    });
+  }
+
   window.applyLanguage = async function applyLanguage(lang) {
     const elements = document.querySelectorAll("[data-i18n]");
 
@@ -63,6 +80,8 @@
       //
 
       applyContactVerbs(DEFAULT_CONTACT_VERBS);
+      restoreKeyDecisions();
+
       localStorage.setItem("lang", "en");
       document.documentElement.lang = "en";
       return;
@@ -99,6 +118,8 @@
     applyContactVerbs(
       (dict.contact && dict.contact.verbs) || DEFAULT_CONTACT_VERBS,
     );
+
+    restoreKeyDecisions();
 
     localStorage.setItem("lang", lang);
     document.documentElement.lang = lang;

@@ -278,10 +278,10 @@
     "process": {
       "role_text": "Ich war für das gesamte Produkt verantwortlich – von der Nutzerforschung über UX/UI-Design und Power-BI-Entwicklung bis hin zur Einführung und kontinuierlichen Weiterentwicklung.",
       "constraints_text": "Da ich zuvor noch nie mit Power BI gearbeitet hatte, entwickelte ich die Lösung parallel zu meinen regulären Aufgaben. Das bedeutete, mich laufend in neue Themen einzuarbeiten und das Gelernte direkt im Projekt anzuwenden.",
-      "heading": "<strong>Wie</strong> ich vorgegangen bin"
+      "heading": "Wie ich vorgegangen bin"
     },
     "research": {
-      "heading": "Sich in die Nutzer:innen hineinversetzen",
+      "heading": "Sich in die Nutzer:innen <strong>hineinversetzen</strong>",
       "text": "Um besser zu verstehen, wie Nutzer:innen mit Finanzinformationen arbeiten, führte ich Interviews durch und analysierte ihre User Journeys. So konnte ich wiederkehrende Probleme erkennen, Bedürfnisse aufdecken und die wichtigsten Pain Points identifizieren, die letztlich die Gestaltung des Dashboards prägten.\n<span class=\"cs-key-decision\"><strong>Zentrale Entscheidung:</strong> Ich konzentrierte mich auf das Management als primäre Nutzergruppe, da es eine zentrale Rolle in der Planung und Entscheidungsfindung spielt. Gleichzeitig achtete ich darauf, dass das Dashboard auch für andere Nutzergruppen nutzbar bleibt.</span>",
       "challenge_text": "Die verschiedenen Nutzergruppen hatten unterschiedliche Bedürfnisse. Ein Dashboard für alle gleichermassen zu gestalten, hätte zwangsläufig zu einer zu generischen Lösung geführt.",
       "solution_text": "Die verschiedenen Nutzertypen kartieren, die primären Nutzer:innen identifizieren und konsequent für diejenigen gestalten, die Planung und Budgetentscheidungen massgeblich beeinflussen, statt für die grösste Nutzergruppe.",
@@ -293,7 +293,7 @@
       "journey_caption": "User Journey Map"
     },
     "design": {
-      "heading": "Mit Fokus auf <strong>Klarheit</srtong> gestalten",
+      "heading": "Mit Fokus auf <strong>Klarheit</strong> gestalten",
       "text": "Finanzdaten können schnell komplex und unübersichtlich wirken. Deshalb spielte die visuelle Gestaltung eine wichtige Rolle, um die Informationen verständlicher und zugänglicher zu machen. Ich orientierte mich am schlichten Designsystem der Bundesverwaltung und liess mich dort, wo Elemente fehlten, von bestehenden Dashboards der Schweizer Bundesverwaltung inspirieren.  <span class=\"cs-key-decision\"><strong>Zentrale Entscheidung:</strong> Statt alle Informationen auf einer einzigen Seite unterzubringen, teilte ich das Dashboard in mehrere thematisch fokussierte Seiten mit einem einheitlichen Layout auf.</span>",
       "challenge_text": "Einen Finanzplanungsprozess von über CHF 400 Millionen auf einen Blick verständlich zu machen, ohne auf die Details zu verzichten, die für operative Entscheidungen notwendig sind, und das innerhalb der technischen Möglichkeiten von Power BI.",
       "solution_text": "Durch eine klare visuelle Hierarchie, gezielte Filter, progressive Offenlegung, eine zurückhaltende Farbgebung und interaktive Drilldowns können Nutzer:innen mühelos zwischen strategischer Übersicht und Projektdetails wechseln. Jede Designentscheidung wurde laufend mit den technischen Möglichkeiten von Power BI abgeglichen.",
@@ -315,14 +315,14 @@
     },
     "develop": {
       "heading": "Lernen <strong>durch Ausprobieren.</strong>",
-      "text": "Power BI war für mich komplettes Neuland. Mit Online-Kursen und viel Ausprobieren brachte ich mir das nötige Wissen selbst bei und entwickelte das Dashboard neben meinen regulären Aufgaben. Die Einführung einer neuen Technologie erforderte ausserdem eine enge Zusammenarbeit mit den beteiligten Personen, Change Management sowie die Einführung neuer Prozesse für den Zugang und die Verwaltung des Dashboards.",
+      "text": "Power BI war für mich komplettes Neuland. Mit Online-Kursen und viel Ausprobieren brachte ich mir das nötige Wissen selbst bei und entwickelte das Dashboard neben meinen regulären Aufgaben. Die Einführung einer neuen Technologie erforderte ausserdem eine enge Zusammenarbeit mit den beteiligten Personen, Change Management sowie die Einführung neuer Prozesse für den Zugang und die Verwaltung des Dashboards.\n<span class=\"cs-key-decision\"><strong>Zentrale Entscheidung:</strong> Wenn sich eine Idee technisch nicht umsetzen liess, konzentrierte ich mich wieder auf das eigentliche Bedürfnis der Nutzenden und suchte nach einer machbareren Alternative.</span>",
       "challenge_text": "Ein ambitioniertes Dashboard auf einer unbekannten Plattform entwickeln, gleichzeitig eine neue Technologie einführen, Governance-Prozesse aufbauen und sicherstellen, dass das Produkt einen geschäftskritischen Prozess vollständig ersetzen kann.",
       "solution_text": "Komplexe Herausforderungen in kleinere Schritte aufteilen, bei technischen Fragen gezielt auf Expert:innen und KI zurückgreifen und die Stakeholder durch transparente Kommunikation, frühe Einbindung und kontinuierliche Begleitung mitnehmen.",
       "model_caption": "Datenmodell in Power BI"
     },
     "test": {
-      "heading": "<strong>Funktioniert es>/srtong> überhaupt?",
-      "text": "Ein moderierter Usability-Test mit drei Nutzer:innen zeigte vor der Einführung des Dashboards, wo noch Verbesserungsbedarf bestand. Vier Monate später wurde eine freiwillige Umfrage unter allen primären Nutzer:innen durchgeführt, um die Nutzung, Benutzerfreundlichkeit und Zufriedenheit zu bewerten. Die Rücklaufquote lag bei 83 %, und die Ergebnisse zeigten, dass das neue Dashboard und die damit verbundene Arbeitsweise sehr gut ankamen. <span class=\"cs-key-decision\"><strong>Aufgrund der hohen Akzeptanz entschieden wir uns, die bisherigen Tools schrittweise abzulösen und nicht mehr weiterzuführen.</span>",
+      "heading": "<strong>Funktioniert es</strong> überhaupt?",
+      "text": "Ein moderierter Usability-Test mit drei Nutzer:innen zeigte vor der Einführung des Dashboards, wo noch Verbesserungsbedarf bestand. Vier Monate später wurde eine freiwillige Umfrage unter allen primären Nutzer:innen durchgeführt, um die Nutzung, Benutzerfreundlichkeit und Zufriedenheit zu bewerten. Die Rücklaufquote lag bei 83 %, und die Ergebnisse zeigten, dass das neue Dashboard und die damit verbundene Arbeitsweise sehr gut ankamen. <span class=\"cs-key-decision\"><strong>Zentrale Entscheidung:</strong> Aufgrund der hohen Akzeptanz entschieden wir uns, die bisherigen Tools schrittweise abzulösen und nicht mehr weiterzuführen.</span>",
       "challenge_text": "Da die Usability-Tests bereits mit einem funktionsfähigen Produkt stattfanden, bedeutete jede Anpassung zusätzlichen Entwicklungsaufwand und musste sorgfältig priorisiert werden. Gleichzeitig wollte ich nicht nur wissen, ob das Dashboard funktioniert, sondern auch, ob die Nutzer:innen diese neue Arbeitsweise tatsächlich annehmen.",
       "solution_text": "Die Änderungen nach ihrem Einfluss auf die Nutzbarkeit und dem erforderlichen Umsetzungsaufwand priorisieren.",
       "iterations_label": "Iterationen",
@@ -383,14 +383,14 @@
       "flow_open_excel": "Excel-Datei öffnen",
       "flow_open_link": "Power-BI-Link öffnen",
       "flow_data_current_question": "Sind die Daten aktuell?",
-      "flow_navigate_budget": "Budgetplanungsübersicht erkunden",
+      "flow_navigate_budget": "Budgetplanungs-übersicht erkunden",
       "flow_navigate_cockpit": "Dashboard erkunden",
       "flow_information_available_question": "Sind die Informationen verfügbar?",
       "flow_ask_analyst_update": "Datenanalyst:in bitten, die Daten zu aktualisieren",
       "flow_open_pending_disbursements": "E-Mail mit ausstehenden Auszahlungen öffnen",
       "flow_open_climate_evaluation": "Excel-basiertes Klimacockpit öffnen",
       "flow_open_year_end_monitoring": "Excel-basierte Endjahresmonitoring-Übersicht öffnen",
-      "flow_open_private_sector": "Excel-basierte Privatsektormobilisierungstabelle öffnen",
+      "flow_open_private_sector": "Excel-basierte Privatsektormobili-sierungstabelle öffnen",
       "flow_check_sap": "Direkt in SAP prüfen",
       "flow_ask_project_or_analyst": "Projektmanager:in oder Datenanalyst:in fragen"
     },
@@ -402,7 +402,7 @@
     }
   },
   "project_titles": {
-    "yellow": "Projekt",
+    "yellow": "<strong>Gelb</strong> ist das neue Grün",
     "skills": "<strong>Kompetenzen</strong> im öffentlichen Sektor stärken",
     "kunstatelier": "Schon mal von KunstAtelier gehört? Ich auch nicht.",
     "auw": "<strong>Zeit zurück</strong> fürs HR"
@@ -454,7 +454,7 @@
       "point3_text": "Die Grösse der Organisation macht es schwierig, die digitale Transformation zu koordinieren und klare Prioritäten zu setzen."
     },
     "solution": {
-      "heading": "Wer die Digitalisierung vorantreibt, wird belohnt",
+      "heading": "Wer die Digitalisierung vorantreibt, <strong>wird belohnt</strong>",
       "description": "Statt digitales Fachwissen extern einzukaufen oder neue Stellen zu schaffen, zeigt eine Plattform den Mitarbeitenden, welche Kompetenzen in der Organisation gebraucht werden. Gezielte Anreize motivieren sie, diese aufzubauen. Die neu erworbenen Kompetenzen kommen anschliessend der gesamten Organisation zugute.",
       "point1_title": "Klare Prioritäten",
       "point1_text": "Mitarbeitende sehen, welche Kompetenzen besonders gefragt sind und in welchen Bereichen sich eine Weiterbildung lohnt.",
@@ -467,7 +467,7 @@
       "heading": "Aus einer mutigen Idee wurde ein praxistauglicher Ansatz",
       "num1_value": "Pitchen",
       "num1_label": "Im Austausch mit dem Management regte ich weitere Diskussionen darüber an, wie die Kompetenzen der Mitarbeitenden innerhalb der Organisation gezielter gefördert und eingesetzt werden könnten.",
-      "num2_value": "Neudenken",
+      "num2_value": "Hinterfragen",
       "num2_label": "Die grösste Hürde war die Umsetzbarkeit. Der Aufbau und Betrieb der Plattform sowie die finanziellen Belohnungen für Mitarbeitende hätten erhebliche Ressourcen erfordert.",
       "num3_value": "Evaluieren",
       "num3_label": "Als realistischere Alternative prüften wir deshalb eine interne Kompetenzplattform. Dort könnten Mitarbeitende bisher ungenutzte Fähigkeiten und Interessen sichtbar machen und für passende Projekte innerhalb der Organisation gefunden werden."
@@ -490,7 +490,7 @@
     },
     "empathize": {
       "heading": "Wie erleben Mitarbeitende <strong>die digitale Transformation?</strong>",
-      "text1": "Um die Herausforderungen der digitalen Transformation besser zu verstehen, führten wir alle Interviews mit Personen aus unterschiedlichen Funktionen innerhalb der Schweizer Bundesverwaltung. Insgesamt befragten wir vier Führungskräfte, fünf Mitarbeitende und eine Fachperson. <span class=\"cs-key-decision\"><strong>Zentrale Entscheidung:</strong> Wir führten die Interviews online durch, damit wir sie direkt über Microsoft Teams transkribieren konnten. Mithilfe von KI werteten wir die Transkripte zunächst aus und identifizierten erste Erkenntnisse, die wir anschliessend gemeinsam im Team überprüften und zusammenfassten.",
+      "text1": "Um die Herausforderungen der digitalen Transformation besser zu verstehen, führten wir alle Interviews mit Personen aus unterschiedlichen Funktionen innerhalb der Schweizer Bundesverwaltung. Insgesamt befragten wir vier Führungskräfte, fünf Mitarbeitende und eine Fachperson. <span class=\"cs-key-decision\"><strong>Zentrale Entscheidung:</strong> Wir führten die Interviews online durch, damit wir sie direkt über Microsoft Teams transkribieren konnten. Mithilfe von KI werteten wir die Transkripte zunächst aus und identifizierten erste Erkenntnisse, die wir anschliessend gemeinsam im Team überprüften und zusammenfassten.</span>",
       "text2": "Die Interviews wurden mit Microsoft Teams aufgezeichnet und automatisch transkribiert. Anschliessend nutzten wir KI, um erste Erkenntnisse zu extrahieren, bevor wir diese gemeinsam im Team diskutierten und einordneten.",
       "challenge_text": "Interviewfragen entwickeln, ohne bereits zu wissen, wohin uns die Forschung führen würde.",
       "solution_text": "Ein strukturierter Interviewleitfaden gab Orientierung und liess gleichzeitig genügend Raum, um unerwarteten Erkenntnissen nachzugehen.",
@@ -500,21 +500,21 @@
     "define": {
       "heading": "Das <strong>richtige Problem</strong> finden.",
       "text1": "Mithilfe von Affinity Mapping gruppierten wir die Erkenntnisse aus den Interviews nach Themen und identifizierten gemeinsam wiederkehrende Probleme. Mit KI hinterfragten wir unsere Annahmen und formulierten daraus erste «How Might We»-Fragen:",
-      "text2": "Wie können wir die Kompetenzen von Mitarbeitenden sichtbar machen? <br />\n                  Wie könnten personalisierte Lernerlebnisse aussehen? <br />\n                  Wie können wir Mitarbeitende auf ihrem Weg durch die digitale Transformation begleiten? <span class=\"cs-key-decision\"><strong>Zentrale Entscheidung:</strong> Die Herausforderung war gross und die Zeit sehr knapp. Deshalb konzentrierten wir uns auf die Kompetenzen der Mitarbeitenden. Grössere organisatorische Themen, wie die Ablösung etablierter digitaler Tools oder die Stärkung der Unterstützung durch Führungskräfte und der strategischen Führung, klammerten wir bewusst aus.",
+      "text2": "- Wie können wir die Kompetenzen von Mitarbeitenden sichtbar machen? <br />\n                  - Wie könnten personalisierte Lernerlebnisse aussehen? <br />\n                  - Wie können wir Mitarbeitende auf ihrem Weg durch die digitale Transformation begleiten? <span class=\"cs-key-decision\"><strong>Zentrale Entscheidung:</strong> Die Herausforderung war gross und die Zeit sehr knapp. Deshalb konzentrierten wir uns auf die Kompetenzen der Mitarbeitenden. Grössere organisatorische Themen, wie die Ablösung etablierter digitaler Tools oder die Stärkung der Unterstützung durch Führungskräfte und der strategischen Führung, klammerten wir bewusst aus.</span>",
       "challenge_text": "Aus einer Vielzahl unterschiedlicher Pain Points die Designchance mit dem grössten Potenzial herauszufiltern.",
       "solution_text": "Durch das Clustern der Interviewerkenntnisse, das Erkennen wiederkehrender Muster und die Formulierung von „How Might We“-Fragen konnten wir den Fokus auf die vielversprechendste Designchance legen.",
       "caption": "Digital trifft analog."
     },
     "ideate": {
       "heading": "Möglichst viele Ideen entwickeln",
-      "text": "Mit Methoden wie dem morphologischen Kasten und der Zufallswort-Methode entwickelten wir gemeinsam zahlreiche Ideen und nutzten KI, um weitere Ansätze zu finden. Anschliessend diskutierten und bewerteten wir die Ideen anhand zuvor festgelegter Kriterien und stimmten darüber ab, welche wir weiterverfolgen wollten. Den vielversprechendsten Ansatz arbeiteten wir gemeinsam weiter aus. <span class=\"cs-key-decision\"><strong>Die Auswahl der Idee erfolgte anhand zuvor festgelegter Kriterien und einer demokratischen Abstimmung im Team.",
+      "text": "Mit Methoden wie dem morphologischen Kasten und der Zufallswort-Methode entwickelten wir gemeinsam zahlreiche Ideen und nutzten KI, um weitere Ansätze zu finden. Anschliessend diskutierten und bewerteten wir die Ideen anhand zuvor festgelegter Kriterien und stimmten darüber ab, welche wir weiterverfolgen wollten. Den vielversprechendsten Ansatz arbeiteten wir gemeinsam weiter aus. <span class=\"cs-key-decision\"><strong>Zentrale Entscheidungen:</strong> Die Auswahl der Idee erfolgte anhand zuvor festgelegter Kriterien und einer demokratischen Abstimmung im Team.</span>",
       "challenge_text": "Eigene Denkmuster und Annahmen bewusst verlassen, um wirklich neue Lösungsansätze zu entwickeln.",
       "solution_text": "Die Morphologische Matrix und die Random-Word-Methode halfen uns, gewohnte Denkmuster aufzubrechen. KI erweiterte den Prozess zusätzlich, indem sie weitere kreative und ungewöhnliche Ideen einbrachte.",
       "caption": "Zufallswort-Methode, morphologischer Kasten und Priorisierung der Ideen."
     },
     "prototype": {
       "heading": "20 Minuten, um die Idee zum Leben zu erwecken",
-      "text": "Da die Zeit knapp wurde, teilten wir die Aufgaben im Team auf, um unser Konzept greifbar zu machen. Während ein Teil des Teams das Konzept für personalisiertes Lernen weiterentwickelte, konzentrierte ich mich auf einen interaktiven Prototyp der geplanten Kompetenzmanagement-Plattform. <span class=\"cs-key-decision\"><strong>Zentrale Entscheidung:</strong> Ich übernahm die Gestaltung des Prototyps selbstständig, vom ersten Prompt über die Designentscheidungen bis zur Überarbeitung des Ergebnisses zu einem funktionsfähigen, interaktiven Prototyp.",
+      "text": "Da die Zeit knapp wurde, teilten wir die Aufgaben im Team auf, um unser Konzept greifbar zu machen. Während ein Teil des Teams das Konzept für personalisiertes Lernen weiterentwickelte, konzentrierte ich mich auf einen interaktiven Prototyp der geplanten Kompetenzmanagement-Plattform. <span class=\"cs-key-decision\"><strong>Zentrale Entscheidung:</strong> Ich übernahm die Gestaltung des Prototyps selbstständig, vom ersten Prompt über die Designentscheidungen bis zur Überarbeitung des Ergebnisses zu einem funktionsfähigen, interaktiven Prototyp.</span>",
       "challenge_text": "Ein Konzept innerhalb von nur 20 Minuten in einen interaktiven Prototypen zu verwandeln.",
       "solution_text": "Mit Claude als Entwicklungspartner konnte ich in kürzester Zeit einen funktionierenden Prototypen erstellen und iterativ weiterentwickeln, den Nutzer:innen direkt ausprobieren konnten.",
       "caption1": "Prompting in Claude",
@@ -522,7 +522,7 @@
     },
     "test": {
       "heading": "Der <strong>Realitätscheck</strong>",
-      "text": "Wir stellten unseren Prototyp einem anderen Team vor, um Feedback einzuholen. Dabei ging es schnell weniger um die Benutzeroberfläche als um die Frage, ob und wie sich eine solche Plattform in der Bundesverwaltung etablieren liesse. Insbesondere beim Datenschutz und bei der Transparenz gab es Bedenken. Eine erfolgreiche Einführung würde deshalb auch Change Management und eine klare Kommunikation darüber erfordern, wie die Daten der Mitarbeitenden verwendet werden. <span class=\"cs-key-decision\"><strong>Zentrales Ergebnis:</strong>  Das Konzept mit dem Management besprechen und anhand des Feedbacks zu einer realistischeren Lösung weiterentwickeln.",
+      "text": "Wir stellten unseren Prototyp einem anderen Team vor, um Feedback einzuholen. Dabei ging es schnell weniger um die Benutzeroberfläche als um die Frage, ob und wie sich eine solche Plattform in der Bundesverwaltung etablieren liesse. Insbesondere beim Datenschutz und bei der Transparenz gab es Bedenken. Eine erfolgreiche Einführung würde deshalb auch Change Management und eine klare Kommunikation darüber erfordern, wie die Daten der Mitarbeitenden verwendet werden. <span class=\"cs-key-decision\"><strong>Zentrales Ergebnis:</strong>  Das Konzept mit dem Management besprechen und anhand des Feedbacks zu einer realistischeren Lösung weiterentwickeln.</span>",
       "challenge_text": "Mitarbeitende zur Weiterentwicklung ihrer Kompetenzen motivieren, ohne Widerstand durch Transparenz oder den Umgang mit Personendaten auszulösen.",
       "learning_text": "Eine erfolgreiche Einführung würde ein durchdachtes Change Management und eine offene Kommunikation darüber voraussetzen, wie mit den Daten der Mitarbeitenden umgegangen wird."
     },
@@ -747,20 +747,20 @@
     },
     "research": {
       "label": "Verstehen",
-      "heading": "Von Arbeitsprozessen zu User Flows",
-      "text": "Als ich ins Projekt einstieg, schaute ich mir zuerst die bestehende Dokumentation des Digitalisierungsteams an. Das Team hatte bereits viel Vorarbeit geleistet, darunter Anforderungsanalysen, Interviews, Workshops, User Stories und die Definition des Soll-Prozesses. Auch die Technologie stand bereits fest: eine Power App. Was noch fehlte, war die Gestaltung der User Experience. Hier kam ich ins Spiel.<br /><br /><strong>Zentrale Entscheidung:</strong> Die Entwickler frühzeitig einbeziehen, um die Möglichkeiten und Grenzen von Power Apps von Anfang an bei der Gestaltung berücksichtigen zu können.",
+      "heading": "Von Arbeitsprozessen zu <strong>User Flows</strong>",
+      "text": "Als ich ins Projekt einstieg, schaute ich mir zuerst die bestehende Dokumentation des Digitalisierungsteams an. Das Team hatte bereits viel Vorarbeit geleistet, darunter Anforderungsanalysen, Interviews, Workshops, User Stories und die Definition des Soll-Prozesses. Auch die Technologie stand bereits fest: eine Power App. Was noch fehlte, war die Gestaltung der User Experience. Hier kam ich ins Spiel.<span class=\"cs-key-decision\"><strong>Zentrale Entscheidung:</strong> Die Entwickler frühzeitig einbeziehen, um die Möglichkeiten und Grenzen von Power Apps von Anfang an bei der Gestaltung berücksichtigen zu können.</span>",
       "caption": "Die User Flows zeigten auf, welche Interfaces, Schritte und Entscheidungspunkte in der App nötig waren."
     },
     "design": {
       "label": "Designen",
       "heading": "Ein <strong>Designsystem</strong> mit Lücken",
-      "text": "Nachdem ich ein erstes Low-Fidelity-Konzept mit den Entwickler besprochen hatte, nutzte ich Claude, um schnell einen funktionalen Prototyp zu erstellen, den wir frühzeitig testen konnten. Für das anschliessende High-Fidelity-Design orientierte ich mich am bestehenden Designsystem der Schweizer Bundesverwaltung.<br /><br /><strong>Zentrale Entscheidung:</strong> Da das Designsystem hauptsächlich für öffentliche Websites entwickelt wurde, fehlten einige Komponenten für interne Anwendungen. Statt neue Lösungen zu entwickeln, griff ich auf bewährte Muster aus internen Tools zurück, mit denen die Mitarbeitenden bereits vertraut waren.",
+      "text": "Nachdem ich ein erstes Low-Fidelity-Konzept mit den Entwickler besprochen hatte, nutzte ich Claude, um schnell einen funktionalen Prototyp zu erstellen, den wir frühzeitig testen konnten. Für das anschliessende High-Fidelity-Design orientierte ich mich am bestehenden Designsystem der Schweizer Bundesverwaltung.<span class=\"cs-key-decision\"><strong>Zentrale Entscheidung:</strong> Da das Designsystem hauptsächlich für öffentliche Websites entwickelt wurde, fehlten einige Komponenten für interne Anwendungen. Statt neue Lösungen zu entwickeln, griff ich auf bewährte Muster aus internen Tools zurück, mit denen die Mitarbeitenden bereits vertraut waren.</span>",
       "caption1": "Den KI-generierten Prototyp in ein High-Fidelity-Design in Figma umwandeln."
     },
     "test": {
       "label": "Testen",
       "heading": "Nutzer:innen beobachten und Stolpersteine erkennen",
-      "text": "Fünf moderierte Usability-Tests mit Mitarbeitenden, Führungskräften und HR-Fachpersonen zeigten, wo noch Verbesserungsbedarf bestand. Die Erkenntnisse führten zu mehreren Anpassungen. Insgesamt kam die neue Lösung bei allen Nutzergruppen sehr gut an.<br /><br /><strong>Zentrale Entscheidung:</strong> Den KI-Prototyp möglichst intensiv testen und schrittweise verbessern, um spätere Anpassungen und damit Zeit und Kosten beim High-Fidelity-Design und bei der Power-Apps-Entwicklung zu reduzieren.",
+      "text": "Fünf moderierte Usability-Tests mit Mitarbeitenden, Führungskräften und HR-Fachpersonen zeigten, wo noch Verbesserungsbedarf bestand. Die Erkenntnisse führten zu mehreren Anpassungen. Insgesamt kam die neue Lösung bei allen Nutzergruppen sehr gut an.<span class=\"cs-key-decision\"><strong>Zentrale Entscheidung:</strong> Den KI-Prototyp möglichst intensiv testen und schrittweise verbessern, um spätere Anpassungen und damit Zeit und Kosten beim High-Fidelity-Design und bei der Power-Apps-Entwicklung zu reduzieren.</span>",
       "caption1": "Moderierte Usability-Tests deckten Reibungspunkte auf.",
       "caption2": "Iteration: Die kognitive Belastung durch zusätzliche Infobuttons reduzieren.",
       "caption3": "Iteration: Den Simulator entfernen, da er mehr Verwirrung verursachte, als dass er half.",
@@ -769,7 +769,7 @@
     "build": {
       "label": "Bauen",
       "heading": "<strong>Pragmatische Lösungen</strong> finden",
-      "text": "Die Zusammenarbeit mit den Entwicklern und dem Digitalisierungsteam war unkompliziert, aber kontinuierlich. In kurzen wöchentlichen Meetings klärten wir offene Fragen, während wir Jira für strukturiertes Feedback und das Erfassen von Problemen beim Testen nutzten.<br /><br /><strong>Zentrale Entscheidung:</strong> Als wir aufgrund von Zeit- und Budgetvorgaben auf gewisse Funktionen verzichten mussten, überlegte ich mir, welche Auswirkungen dies auf die Nutzer:innen hatte. Statt mich mit dem Status quo zufriedenzugeben, suchte ich nach einfacheren Lösungen, die mit weniger Aufwand umsetzbar waren und die wichtigsten Vorteile der geplanten User Experience beibehielten.",
+      "text": "Die Zusammenarbeit mit den Entwicklern und dem Digitalisierungsteam war unkompliziert, aber kontinuierlich. In kurzen wöchentlichen Meetings klärten wir offene Fragen, während wir Jira für strukturiertes Feedback und das Erfassen von Problemen beim Testen nutzten.<span class=\"cs-key-decision\"><strong>Zentrale Entscheidung:</strong> Als wir aufgrund von Zeit- und Budgetvorgaben auf gewisse Funktionen verzichten mussten, überlegte ich mir, welche Auswirkungen dies auf die Nutzer:innen hatte. Statt mich mit dem Status quo zufriedenzugeben, suchte ich nach einfacheren Lösungen, die mit weniger Aufwand umsetzbar waren und die wichtigsten Vorteile der geplanten User Experience beibehielten.</span>",
       "caption": "Jira als zentrales Tool für die Zusammenarbeit."
     },
     "product": {

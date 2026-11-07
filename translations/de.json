@@ -1,4 +1,42 @@
 {
+  "home_v2": {
+    "hero": "Business, Daten und Design verbinden. <br>Komplexe und datenreiche <br>Produkte so gestalten, <br>dass man sie versteht.",
+    "expertise": "Expertise",
+    "services": {
+      "ux": "UX/UI Design",
+      "visualization": "Datenvisualisierung",
+      "dashboards": "BI & Dashboard-Design",
+      "presentations": "Poster & Präsentationen",
+      "requirements": "Anforderungsanalyse",
+      "infographics": "Infografiken",
+      "storytelling": "Data Storytelling"
+    },
+    "selected_projects": "Ausgewählte Projekte",
+    "testimonials": "Referenzen",
+    "translation_note": "",
+    "about": {
+      "label": "Über mich",
+      "intro": "Hallo, ich bin Anouk Fontaine, eine UX- und Datendesignerin aus der",
+      "location1": "Schweiz",
+      "between_locations": ", aktuell zu Hause in",
+      "location2": "Hanoi, Vietnam",
+      "before_journey": ". Mein Wunsch, komplexe Dinge einfacher und Abläufe effizienter zu machen, hat mich ins UX-Design geführt.",
+      "journey": "Mein Weg",
+      "after_journey": "führte mich von der Hotellerie über ein BWL-Studium und die Entwicklungsfinanzierung ins Design. Dabei habe ich gemerkt: Überall lassen sich Dinge einfacher machen.",
+      "personal": "Ich spreche Französisch, (Schweizer-)Deutsch und Englisch, manchmal alles im gleichen Satz. Wenn ich nicht arbeite, schreibe ich",
+      "songs": "Songs",
+      "before_photos": ", mache",
+      "photos": "Fotos",
+      "after_photos": "oder suche nach der perfekten Nudelsuppe.",
+      "email": "E-Mail"
+    },
+    "contact": {
+      "start": "Lass uns zusammen",
+      "end": ".",
+      "availability": "Verfügbar ab Q3 2027",
+      "made_with": "Mit ♡ und Geduld gemacht"
+    }
+  },
   "gate": {
     "title": "Privates Portfolio",
     "description": "Dieses Portfolio wird aktuell nur mit ausgewählten Personen geteilt. <br>Bitte geben Sie das Passwort ein.",
@@ -7,6 +45,7 @@
     "error": "Falsches Passwort."
   },
   "nav": {
+    "hello": "Hallo",
     "services": "Expertise",
     "work": "Projekte",
     "about": "Über mich",
@@ -86,7 +125,7 @@
       "tag2": "Experimentell",
       "tag3": "Vollständiger Designprozess"
     },
-    "read_case_study": "Mehr zum Projekt"
+    "view_project": "Mehr zum Projekt"
   },
   "testimonials": {
     "label": "Referenzen",
@@ -96,31 +135,31 @@
         "context": "Delete",
         "quote": "«Anouk hat proaktiv die Anforderungen der Nutzerinnen und Nutzer erhoben und mithilfe interaktiver Testversionen das Dashboard gezielt auf die Bedürfnisse des Netzwerks abgestimmt. Das neue Cockpit wird bereits rege genutzt und ist im Netzwerk durchwegs auf positive Resonanz gestossen.»",
         "name": "Daniel B.",
-        "role": "Delete"
+        "role": "Leiter Netzwerk"
       },
       "andrea": {
         "context": "Delete",
         "quote": "«Anouk hat für unser digitales Ländercockpit die Graphiken erstellt und die visuellen Konzepte, Datenvisualisierungen und Prototypen erarbeitet. Sie hat es geschafft, eine eher trockene Materie sachlich, aber sehr ansprechend darzustellen. Wir sind sehr stolz auf das Ergebnis!»",
         "name": "Andrea R. S.",
-        "role": "Botschafterin, Leiterin Bilaterale Wirtschaftsbeziehungen, Bundesverwaltung"
+        "role": "Botschafterin und Divisionsleiterin"
       },
       "aaron": {
         "context": "Delete",
         "quote": "«Anouk hat mit ihrer proaktiven und lösungsorientierten Art schnell frischen Schwung ins Projekt gebracht. Sie bleibt nicht bei Ideen stehen, sondern entwickelt konkrete Optionen. Sie vermittelt zwischen Fachseite und Entwicklern, ordnet technische Grenzen realistisch ein und schlägt passende Lösungen vor. Mit ihrem Qualitätsanspruch, ihrer Flexibilität und ihrem Engagement hat sie wesentlich dazu beigetragen, deutlich mehr aus dem Projekt herauszuholen, als ursprünglich vorgesehen war.»",
         "name": "Aaron D.",
-        "role": "Projektleiter Ländercockpit, Bilaterale Wirtschaftsbeziehungen, Bundesverwaltung"
+        "role": "Projektleiter"
       },
       "biel": {
         "context": "Früheres Feedback · Arbeitszeugnis",
         "quote": "«Frau Fontaine leistete in allen Bereichen wichtige Beiträge zur Vereinfachung und zum besseren Verständnis der Arbeiten und Abläufe.»",
         "name": "Stadt Biel/Bienne",
-        "role": "Abteilung Soziales · 2020"
+        "role": "Arbeitszeugnis"
       },
       "phbern": {
         "context": "Früheres Feedback · Arbeitszeugnis",
         "quote": "«Frau Fontaine kann komplexe, dynamische Prozesse vernetzt wahrnehmen und daraus entsprechende Handlungsmöglichkeiten ableiten.»",
         "name": "PHBern",
-        "role": "Services Personal · 2020"
+        "role": "Arbeitszeugnis"
       }
     },
     "highlights": {

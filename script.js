@@ -175,10 +175,17 @@ if (cursor) {
    NAV — language switch & theme toggle
 ============================================= */
 const languages = ["EN", "DE" /*, "FR"*/];
-let langIndex = Math.max(
-  0,
-  languages.indexOf((localStorage.getItem("lang") || "en").toUpperCase()),
-);
+
+const savedLang = localStorage.getItem("lang");
+const browserLang = (navigator.language || "en").slice(0, 2).toLowerCase();
+
+const initialLang = ["en", "de"].includes(savedLang)
+  ? savedLang
+  : browserLang === "de"
+    ? "de"
+    : "en";
+
+let langIndex = languages.indexOf(initialLang.toUpperCase());
 const langBtn = document.querySelector(".nav-lang");
 langBtn.childNodes[0].textContent = languages[langIndex];
 
@@ -2163,6 +2170,7 @@ async function morphTestimonials(showTestimonials) {
   observeTestimonialMorphText();
 }
 
+/* Testimonial Cloud 
 function syncTestimonialLayout() {
   if (!testimonialStage) return;
 
@@ -2178,7 +2186,7 @@ function syncTestimonialLayout() {
   testimonialStage.setAttribute("role", "button");
   testimonialStage.setAttribute("tabindex", "0");
   setTestimonialsVisible(false);
-}
+} 
 
 if (testimonialStage) {
   testimonialTargetObserver = new MutationObserver(
@@ -2204,6 +2212,31 @@ if (testimonialStage) {
   });
 
   syncTestimonialLayout();
+  testimonialMobileQuery.addEventListener?.("change", syncTestimonialLayout);
+}*/
+/* Testimonial Cloud deactivated for now:*/
+function syncTestimonialLayout() {
+  if (!testimonialStage) return;
+
+  // Static word cloud on desktop, testimonial cards on mobile
+  setTestimonialsVisible(testimonialMobileQuery.matches);
+
+  testimonialStage.removeAttribute("role");
+  testimonialStage.removeAttribute("tabindex");
+  testimonialStage.removeAttribute("aria-label");
+  testimonialStage.removeAttribute("aria-pressed");
+}
+
+if (testimonialStage) {
+  testimonialTargetObserver = new MutationObserver(
+    scheduleTestimonialTargetRebuild,
+  );
+
+  renderTestimonialCloudPhrases();
+  wrapTestimonialMotionTargets();
+
+  syncTestimonialLayout();
+
   testimonialMobileQuery.addEventListener?.("change", syncTestimonialLayout);
 }
 

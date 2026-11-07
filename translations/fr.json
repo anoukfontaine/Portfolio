@@ -1,4 +1,42 @@
 {
+  "home_v2": {
+    "hero": "En liant business, </br>données et design,<br>j'améliore l'usabilité <br>de vos produits <br>complexes et riches <br>en données.",
+    "expertise": "Expertise",
+    "services": {
+      "ux": "Design UX/UI",
+      "visualization": "Visualisation de données",
+      "dashboards": "Design BI & tableaux de bord",
+      "presentations": "Affiches & présentations",
+      "requirements": "Analyse des besoins",
+      "infographics": "Infographies",
+      "storytelling": "Data storytelling"
+    },
+    "selected_projects": "Projets sélectionnés",
+    "testimonials": "Témoignages",
+    "translation_note": "Traduit de l’allemand",
+    "about": {
+      "label": "À propos",
+      "intro": "Bonjour, je m’appelle Anouk Fontaine. Je suis une designeuse UX et data originaire de ",
+      "location1": "Suisse",
+      "between_locations": ", basée à",
+      "location2": "Hanoï, au Vietnam",
+      "before_journey": ". Mon envie de simplifier les choses et de rendre les processus plus efficaces dans un monde toujours plus complexe m’a menée au design UX.",
+      "journey": "Mon parcours",
+      "after_journey": "m’a fait passer par l’hôtellerie, des études de gestion et la finance du développement avant de me mener au design. J’ai découvert qu’on pouvait simplifier les choses partout, et que c’était ce que j’aimais faire le plus.",
+      "personal": "Je parle français, (suisse) allemand et anglais, parfois dans la même phrase. En dehors du travail, j’écris des",
+      "songs": "chansons",
+      "before_photos": ", je prends des",
+      "photos": "photos",
+      "after_photos": "ou je pars à la recherche du bol de soupe de nouilles parfait.",
+      "email": "E-mail"
+    },
+    "contact": {
+      "start": "",
+      "end": "ensemble.",
+      "availability": "Disponible dès Q3 2027",
+      "made_with": "Fait avec ♡ et patience"
+    }
+  },
   "gate": {
     "title": "Portfolio privé",
     "description": "Ce portfolio est actuellement partagé avec un nombre limité de personnes.<br>Veuillez saisir le mot de passe pour continuer.",
@@ -7,6 +45,7 @@
     "error": "Mot de passe incorrect."
   },
   "nav": {
+    "hello": "Bonjour",
     "services": "Services",
     "work": "Projets",
     "about": "À propos",
@@ -92,32 +131,32 @@
       "daniel": {
         "context": "Climate Cockpit · Design de dashboard",
         "quote": "« Anouk a adopté une approche proactive pour recueillir les besoins des utilisatrices et utilisateurs et s’est appuyée sur des versions de test interactives pour adapter précisément le dashboard aux besoins du réseau. Le nouveau cockpit est déjà largement utilisé et a reçu des retours très positifs dans l’ensemble du réseau. »",
-        "name": "D. B.",
-        "role": "Responsable du réseau climat, administration fédérale"
+        "name": "Daniel B.",
+        "role": "Responsable du réseau climat"
       },
       "andrea": {
         "context": "Country Cockpit · Design de dashboard",
         "quote": "« Anouk a créé les éléments graphiques et développé les concepts visuels, les visualisations de données et les prototypes de notre Country Cockpit numérique. Elle a réussi à présenter un sujet plutôt aride de manière à la fois rigoureuse et très attrayante. Nous sommes très fiers du résultat ! »",
-        "name": "A. R. S.",
-        "role": "Ambassadrice, cheffe administration fédérale"
+        "name": "Andrea R. S.",
+        "role": "Ambassadrice, cheffe de division"
       },
       "aaron": {
         "context": "Country Cockpit · Design de dashboard",
         "quote": "« Grâce à son approche proactive et orientée solutions, Anouk a rapidement apporté un nouvel élan au projet. Elle ne s’arrête pas aux idées : elle développe des options concrètes. Elle fait le lien entre les métiers et les développeurs, évalue de manière réaliste les contraintes techniques et propose des solutions adaptées. Par son exigence de qualité, sa flexibilité et son engagement, elle a largement contribué à faire du projet bien plus que ce qui était initialement prévu. »",
-        "name": "A. D.",
-        "role": "Chef de projet, administration fédérale"
+        "name": "Aaron D.",
+        "role": "Chef de projet"
       },
       "biel": {
         "context": "Feedback antérieur · Certificat de travail",
         "quote": "« Mme Fontaine a apporté d’importantes contributions à la simplification des processus de travail et à une meilleure compréhension de leur fonctionnement. »",
         "name": "Ville de Bienne",
-        "role": "Département des affaires sociales · 2020"
+        "role": "Certificat de travail"
       },
       "phbern": {
         "context": "Feedback antérieur · Certificat de travail",
         "quote": "« Mme Fontaine est capable d’appréhender des processus complexes et dynamiques dans leur ensemble et d’en déduire des pistes d’action adaptées. »",
         "name": "PHBern",
-        "role": "Services RH · 2020"
+        "role": "Certificat de travail"
       }
     },
     "highlights": {

@@ -1,0 +1,1587 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <script>
+      document.documentElement.classList.add("page-entering");
+
+      if (localStorage.getItem("site-gate-unlocked") === "true") {
+        document.documentElement.classList.add("gate-already-unlocked");
+      }
+    </script>
+    <!-- <script src="../password-gate.js"></script> -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title data-i18n="page_titles.home">Anouk Fontaine | UX Designer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/png" href="Images/General/favicon.png" />
+    <script>
+      (function () {
+        const themes = [
+          {
+            bg: "#F9F9F9",
+            text: "#1A1A1A",
+            muted: "rgba(0,0,0,0.6)",
+            p1: "#FCDEA4",
+            p2: "#b8ebda",
+            p3: "#528AAF",
+            p4: "#8862AA",
+            p5: "#287E70",
+          },
+          {
+            bg: "#1A1A1A",
+            text: "#F9F9F9",
+            muted: "rgba(255,255,255,0.4)",
+            p1: "#FFB72C",
+            p2: "#4bad8c",
+            p3: "#572F7A",
+            p4: "#19537A",
+            p5: "#16584D",
+          },
+          {
+            bg: "#FFD2B4",
+            text: "#9D4434",
+            muted: "rgba(233,79,16,0.7)",
+            p1: "#F4A367",
+            p2: "#657749",
+            p3: "#B05A6B",
+            p4: "#90726E",
+            p5: "#776B49",
+          },
+          {
+            bg: "#E5E8FF",
+            text: "#D45D5D",
+            muted: "rgba(212, 93, 93, 0.8)",
+            p1: "#F4CC99",
+            p2: "#81c0ab",
+            p3: "#BCD2EE",
+            p4: "#9B7EDE",
+            p5: "#3A4E48",
+          },
+        ];
+        const i = parseInt(localStorage.getItem("theme-index"), 10) || 0;
+        const t = themes[i];
+        const root = document.documentElement.style;
+        root.setProperty("--color-bg", t.bg);
+        root.setProperty("--color-text", t.text);
+        root.setProperty("--color-text-muted", t.muted);
+        root.setProperty("--project-1", t.p1);
+        root.setProperty("--project-2", t.p2);
+        root.setProperty("--project-3", t.p3);
+        root.setProperty("--project-4", t.p4);
+        root.setProperty("--project-5", t.p5);
+        root.setProperty("--moon-rotation", `${i * 90}deg`);
+      })();
+    </script>
+  </head>
+  <body class="home-page">
+    <div id="cursor"></div>
+
+    <!-- =============================================
+       NAV HTML  —  DO NOT MODIFY
+  ============================================= -->
+    <nav>
+      <a class="logo" href="/" data-home-link>
+        <span class="logo-first"
+          ><span class="l" data-i="0">A</span><span class="l" data-i="1">n</span
+          ><span class="l" data-i="2">o</span><span class="l" data-i="3">u</span
+          ><span class="l" data-i="4">k</span></span
+        ><span class="logo-last"
+          ><span class="l space" data-i="5">&nbsp;</span
+          ><span class="l dot">&middot;</span
+          ><span class="l space" data-i="6">&nbsp;</span
+          ><span class="l" data-i="7">F</span><span class="l" data-i="8">o</span
+          ><span class="l" data-i="9">n</span
+          ><span class="l" data-i="10">t</span
+          ><span class="l" data-i="11">a</span
+          ><span class="l" data-i="12">i</span
+          ><span class="l" data-i="13">n</span
+          ><span class="l" data-i="14">e</span></span
+        >
+      </a>
+      <div class="nav-right">
+        <div class="nav-controls">
+          <button class="nav-lang" aria-label="Switch language">
+            EN<span class="lang-orbit-dot"></span>
+          </button>
+          <button class="nav-theme" id="theme-toggle" aria-label="Toggle theme">
+            <span class="moon-glyph">&#9680;</span
+            ><span class="orbit-dot"></span>
+          </button>
+          <button
+            class="nav-hamburger"
+            id="nav-hamburger"
+            type="button"
+            aria-label="Open menu"
+            aria-expanded="false"
+            aria-controls="mobile-menu"
+          >
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+      <div class="mobile-menu" id="mobile-menu">
+        <a href="#services" class="mobile-menu-link" data-i18n="nav.services"
+          >Services</a
+        >
+        <a href="#work" class="mobile-menu-link" data-i18n="nav.work">Work</a>
+        <a href="#about" class="mobile-menu-link" data-i18n="nav.about"
+          >About</a
+        >
+        <a href="#contact" class="mobile-menu-link" data-i18n="nav.contact"
+          >Contact</a
+        >
+      </div>
+    </nav>
+    <!-- =============================================
+       PASSWORD GATE
+  ============================================= -->
+    <section id="site-gate">
+      <div class="site-gate-box">
+        <p class="site-gate-title" data-i18n="gate.title">Private Portfolio</p>
+
+        <p class="site-gate-text" data-i18n="gate.description">
+          This portfolio is currently shared with selected reviewers.<br />
+          Please enter the password to continue.
+        </p>
+
+        <input
+          type="password"
+          id="site-gate-input"
+          data-i18n-placeholder="gate.placeholder"
+          placeholder="Password"
+          autofocus
+        />
+
+        <button id="site-gate-submit" data-i18n="gate.button">
+          Enter portfolio
+        </button>
+
+        <p id="site-gate-error" data-i18n="gate.error">Incorrect password.</p>
+      </div>
+    </section>
+    <div id="site-content">
+      <!-- =============================================
+       LEFT SIDEBAR
+  ============================================= -->
+      <aside class="left-sidebar">
+        <a href="#services" data-target="services" data-i18n="nav.services"
+          >Services</a
+        >
+        <a href="#work" data-target="work" data-i18n="nav.work">Work</a>
+        <a href="#about" data-target="about" data-i18n="nav.about">About</a>
+        <a href="#contact" data-target="contact" data-i18n="nav.contact"
+          >Contact</a
+        >
+      </aside>
+
+      <main>
+        <!-- =============================================
+         HERO
+    ============================================= -->
+        <div class="hero-location-wrap">
+          <p class="hero-location">
+            <span data-i18n="hero.location"
+              >Bern, Switzerland &middot; CET</span
+            >
+            <span id="cet-clock"></span>
+            <span class="availability-text" data-i18n="hero.availability"
+              >&middot; Available 1 day/week</span
+            >
+          </p>
+          <!--  <p class="hero-availability">
+          <span class="availability-dot" aria-hidden="true">&#9677;</span>
+          <span class="availability-text">Available 1 day / week</span>
+        </p>
+      -->
+        </div>
+        <section class="hero">
+          <div class="hero-headline-wrap">
+            <div class="hero-main-row">
+              <div class="hero-copy">
+                <h1 class="hero-headline" data-i18n="hero.headline">
+                  Designing <strong>complex and data-rich products</strong> that
+                  don’t overwhelm
+                </h1>
+
+                <p class="hero-description" data-i18n="hero.description">
+                  As a UX Designer with a background in Business Intelligence
+                  and Data Visualization, I help organizations design and
+                  improve apps, dashboards and workflows so people can navigate
+                  complexity with confidence and spend more time on meaningful
+                  work.
+                </p>
+
+                <div class="hero-links-row">
+                  <div class="hero-links">
+                    <a href="#work" class="big-link">
+                      <span class="link-text" data-i18n="hero.cta_work">
+                        View projects
+                      </span>
+
+                      <span class="link-arrow" aria-hidden="true">
+                        <svg viewBox="0 0 16 16" fill="none">
+                          <path
+                            d="M0 16L13 3M7.6 3H13V8.4"
+                            stroke="currentColor"
+                            stroke-width="1"
+                            stroke-linecap="butt"
+                            stroke-linejoin="miter"
+                          />
+                        </svg>
+                      </span>
+                    </a>
+
+                    <a href="#contact" class="big-link big-link--muted">
+                      <span class="link-text" data-i18n="hero.cta_contact">
+                        Get in touch
+                      </span>
+
+                      <span class="link-arrow" aria-hidden="true">
+                        <svg viewBox="0 0 16 16" fill="none">
+                          <path
+                            d="M0 16L13 3M7.6 3H13V8.4"
+                            stroke="currentColor"
+                            stroke-width="1"
+                            stroke-linecap="butt"
+                            stroke-linejoin="miter"
+                          />
+                        </svg>
+                      </span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <button
+                class="hero-illustration-btn"
+                id="hero-illustration-toggle"
+                type="button"
+                aria-label="Sort data"
+              >
+                <img
+                  class="hero-illustration"
+                  id="hero-illustration"
+                  src="Images/Home/0_Illustration_theme_1.png"
+                  alt=""
+                />
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <!-- =============================================
+         SERVICES HTML
+    ============================================= -->
+        <section class="services" id="services">
+          <div class="services-inner">
+            <div class="section-heading section-heading--center">
+              <p class="label label-muted" data-i18n="services.label">
+                Services
+              </p>
+              <h2 data-i18n="services.heading">A multidisciplinary approach</h2>
+            </div>
+            <div class="services-stage">
+              <svg
+                class="venn-svg cursor-grow"
+                viewBox="0 0 1440 950"
+                preserveAspectRatio="xMidYMid meet"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g class="venn-group" data-key="design">
+                  <circle class="venn-circle" cx="720" cy="330" r="280" />
+                  <text
+                    class="venn-label-short"
+                    x="720"
+                    y="145"
+                    text-anchor="middle"
+                    data-i18n="services_detail.design.short"
+                  >
+                    Design
+                  </text>
+                  <g class="venn-label-expanded">
+                    <text
+                      class="venn-expanded-title"
+                      style="text-transform: uppercase"
+                      x="720"
+                      y="254"
+                      text-anchor="middle"
+                      data-i18n="services_detail.design.title"
+                    >
+                      UX/UI Design
+                    </text>
+                    <text
+                      class="venn-expanded-item"
+                      x="720"
+                      y="308"
+                      text-anchor="middle"
+                      data-i18n="services_detail.design.item1"
+                    >
+                      UX audits
+                    </text>
+                    <text
+                      class="venn-expanded-item venn-dot"
+                      x="720"
+                      y="335"
+                      text-anchor="middle"
+                    >
+                      &middot;
+                    </text>
+                    <text
+                      class="venn-expanded-item"
+                      x="720"
+                      y="352"
+                      text-anchor="middle"
+                      data-i18n="services_detail.design.item2"
+                    >
+                      UX research &amp; testing
+                    </text>
+                    <text
+                      class="venn-expanded-item venn-dot"
+                      x="720"
+                      y="379"
+                      text-anchor="middle"
+                    >
+                      &middot;
+                    </text>
+                    <text
+                      class="venn-expanded-item"
+                      x="720"
+                      y="396"
+                      text-anchor="middle"
+                      data-i18n="services_detail.design.item3"
+                    >
+                      Wireframes &amp; prototyping
+                    </text>
+                    <text
+                      class="venn-expanded-item venn-dot"
+                      x="720"
+                      y="423"
+                      text-anchor="middle"
+                    >
+                      &middot;
+                    </text>
+                    <text
+                      class="venn-expanded-item"
+                      x="720"
+                      y="440"
+                      text-anchor="middle"
+                      data-i18n="services_detail.design.item4"
+                    >
+                      UI design & visual direction
+                    </text>
+                  </g>
+                </g>
+                <g class="venn-group" data-key="data">
+                  <circle class="venn-circle" cx="510" cy="580" r="230" />
+                  <text
+                    class="venn-label-short"
+                    x="304"
+                    y="565"
+                    text-anchor="start"
+                    data-i18n="services_detail.data.short"
+                  >
+                    Data
+                  </text>
+                  <g class="venn-label-expanded">
+                    <text
+                      class="venn-expanded-title"
+                      style="text-transform: uppercase"
+                      x="510"
+                      y="484"
+                      text-anchor="middle"
+                      data-i18n="services_detail.data.title"
+                    >
+                      Data Visualization
+                    </text>
+                    <text
+                      class="venn-expanded-item"
+                      x="510"
+                      y="538"
+                      text-anchor="middle"
+                      data-i18n="services_detail.data.item1"
+                    >
+                      BI &amp; dashboard design
+                    </text>
+                    <text
+                      class="venn-expanded-item venn-dot"
+                      x="510"
+                      y="563"
+                      text-anchor="middle"
+                    >
+                      &middot;
+                    </text>
+                    <text
+                      class="venn-expanded-item"
+                      x="510"
+                      y="578"
+                      text-anchor="middle"
+                      data-i18n="services_detail.data.item2"
+                    >
+                      Data exploration &amp; analysis
+                    </text>
+                    <text
+                      class="venn-expanded-item venn-dot"
+                      x="510"
+                      y="603"
+                      text-anchor="middle"
+                    >
+                      &middot;
+                    </text>
+                    <text
+                      class="venn-expanded-item"
+                      x="510"
+                      y="618"
+                      text-anchor="middle"
+                      data-i18n="services_detail.data.item3"
+                    >
+                      Infographics &amp; data storytelling
+                    </text>
+                    <text
+                      class="venn-expanded-item venn-dot"
+                      x="510"
+                      y="643"
+                      text-anchor="middle"
+                    >
+                      &middot;
+                    </text>
+                    <text
+                      class="venn-expanded-item"
+                      x="510"
+                      y="658"
+                      text-anchor="middle"
+                      data-i18n="services_detail.data.item4"
+                    >
+                      Data-driven posters &amp; presentations
+                    </text>
+                  </g>
+                </g>
+                <g class="venn-group" data-key="business">
+                  <circle class="venn-circle" cx="930" cy="580" r="230" />
+                  <text
+                    class="venn-label-short"
+                    x="1136"
+                    y="565"
+                    text-anchor="end"
+                    data-i18n="services_detail.business.short"
+                  >
+                    Business
+                  </text>
+                  <g class="venn-label-expanded">
+                    <text
+                      class="venn-expanded-title"
+                      style="text-transform: uppercase"
+                      x="930"
+                      y="484"
+                      text-anchor="middle"
+                      data-i18n="services_detail.business.title"
+                    >
+                      Business Analysis
+                    </text>
+                    <text
+                      class="venn-expanded-item"
+                      x="930"
+                      y="538"
+                      text-anchor="middle"
+                      data-i18n="services_detail.business.item1"
+                    >
+                      Requirement analysis
+                    </text>
+                    <text
+                      class="venn-expanded-item venn-dot"
+                      x="930"
+                      y="563"
+                      text-anchor="middle"
+                    >
+                      &middot;
+                    </text>
+                    <text
+                      class="venn-expanded-item"
+                      x="930"
+                      y="578"
+                      text-anchor="middle"
+                      data-i18n="services_detail.business.item2"
+                    >
+                      Stakeholder workshops
+                    </text>
+                    <text
+                      class="venn-expanded-item venn-dot"
+                      x="930"
+                      y="603"
+                      text-anchor="middle"
+                    >
+                      &middot;
+                    </text>
+                    <text
+                      class="venn-expanded-item"
+                      x="930"
+                      y="618"
+                      text-anchor="middle"
+                      data-i18n="services_detail.business.item3"
+                    >
+                      Process mapping &amp; optimization
+                    </text>
+                    <text
+                      class="venn-expanded-item venn-dot"
+                      x="930"
+                      y="643"
+                      text-anchor="middle"
+                    >
+                      &middot;
+                    </text>
+                    <text
+                      class="venn-expanded-item"
+                      x="930"
+                      y="658"
+                      text-anchor="middle"
+                      data-i18n="services_detail.business.item4"
+                    >
+                      Stakeholder workshops
+                    </text>
+                  </g>
+                </g>
+                <g class="venn-group" data-key="development">
+                  <circle class="venn-circle" cx="720" cy="750" r="180" />
+                  <text
+                    class="venn-label-short"
+                    x="720"
+                    y="850"
+                    text-anchor="middle"
+                    data-i18n="services_detail.development.short"
+                  >
+                    Development
+                  </text>
+                  <g class="venn-label-expanded">
+                    <text
+                      class="venn-expanded-title"
+                      style="text-transform: uppercase"
+                      x="720"
+                      y="644"
+                      text-anchor="middle"
+                      data-i18n="services_detail.development.title"
+                    >
+                      Technical Implementation
+                    </text>
+                    <text
+                      class="venn-expanded-item"
+                      x="720"
+                      y="698"
+                      text-anchor="middle"
+                      data-i18n="services_detail.development.item1"
+                    >
+                      Interactive landing pages & microsites
+                    </text>
+                    <text
+                      class="venn-expanded-item venn-dot"
+                      x="720"
+                      y="723"
+                      text-anchor="middle"
+                    >
+                      &middot;
+                    </text>
+                    <text
+                      class="venn-expanded-item"
+                      x="720"
+                      y="738"
+                      text-anchor="middle"
+                      data-i18n="services_detail.development.item2"
+                    >
+                      Responsive front-end development
+                    </text>
+                    <text
+                      class="venn-expanded-item venn-dot"
+                      x="720"
+                      y="763"
+                      text-anchor="middle"
+                    >
+                      &middot;
+                    </text>
+                    <text
+                      class="venn-expanded-item"
+                      x="720"
+                      y="778"
+                      text-anchor="middle"
+                      data-i18n="services_detail.development.item3"
+                    >
+                      Dashboard &amp; data visualization development
+                    </text>
+                    <text
+                      class="venn-expanded-item venn-dot"
+                      x="720"
+                      y="803"
+                      text-anchor="middle"
+                    >
+                      &middot;
+                    </text>
+                    <text
+                      class="venn-expanded-item"
+                      x="720"
+                      y="818"
+                      text-anchor="middle"
+                      data-i18n="services_detail.development.item4"
+                    >
+                      AI-assisted development
+                    </text>
+                  </g>
+                </g>
+              </svg>
+
+              <div
+                class="service-cards-overlay cursor-grow"
+                id="service-cards-overlay"
+              >
+                <div class="service-cards">
+                  <div class="service-card" data-key="design">
+                    <p
+                      class="service-card-title"
+                      data-i18n="services_detail.design.title"
+                    >
+                      UX/UI Design
+                    </p>
+                    <div class="service-card-items">
+                      <p data-i18n="services_detail.design.item1">UX audits</p>
+                      <hr class="service-card-divider" />
+                      <p data-i18n="services_detail.design.item2">
+                        UX research &amp; testing
+                      </p>
+                      <hr class="service-card-divider" />
+                      <p data-i18n="services_detail.design.item3">
+                        Wireframes &amp; prototyping
+                      </p>
+                      <hr class="service-card-divider" />
+                      <p data-i18n="services_detail.design.item4">
+                        UI design &amp; visual direction
+                      </p>
+                    </div>
+                  </div>
+                  <div class="service-card" data-key="data">
+                    <p
+                      class="service-card-title"
+                      data-i18n="services_detail.data.title"
+                    >
+                      Data Visualization
+                    </p>
+                    <div class="service-card-items">
+                      <p data-i18n="services_detail.data.item1">
+                        BI &amp; dashboard design
+                      </p>
+                      <hr class="service-card-divider" />
+                      <p data-i18n="services_detail.data.item2">
+                        Data exploration &amp; analysis
+                      </p>
+                      <hr class="service-card-divider" />
+                      <p data-i18n="services_detail.data.item3">
+                        Infographics &amp; data storytelling
+                      </p>
+                      <hr class="service-card-divider" />
+                      <p data-i18n="services_detail.data.item4">
+                        Data-driven posters &amp; presentations
+                      </p>
+                    </div>
+                  </div>
+                  <div class="service-card" data-key="business">
+                    <p
+                      class="service-card-title"
+                      data-i18n="services_detail.business.title"
+                    >
+                      Business Analysis
+                    </p>
+                    <div class="service-card-items">
+                      <p data-i18n="services_detail.business.item1">
+                        Requirement analysis
+                      </p>
+                      <hr class="service-card-divider" />
+                      <p data-i18n="services_detail.business.item2">
+                        Process mapping &amp; optimization
+                      </p>
+                      <hr class="service-card-divider" />
+                      <p data-i18n="services_detail.business.item3">
+                        Stakeholder workshops
+                      </p>
+                    </div>
+                  </div>
+                  <div class="service-card" data-key="development">
+                    <p
+                      class="service-card-title"
+                      data-i18n="services_detail.development.title"
+                    >
+                      Technical Implementation
+                    </p>
+                    <div class="service-card-items">
+                      <p data-i18n="services_detail.development.item1">
+                        Interactive landing pages &amp; microsites
+                      </p>
+
+                      <hr class="service-card-divider" />
+                      <p data-i18n="services_detail.development.item2">
+                        Responsive front-end development
+                      </p>
+                      <hr class="service-card-divider" />
+                      <p data-i18n="services_detail.development.item3">
+                        Dashboard & data visualization development
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- =============================================
+     WORK HTML
+============================================= -->
+        <section class="work" id="work">
+          <div class="section-heading section-heading--center">
+            <p class="label label-muted" data-i18n="work.label">
+              Selected Projects
+            </p>
+            <h2 data-i18n="work.heading">Show, don't tell</h2>
+          </div>
+
+          <div class="work-list">
+            <a href="/Work/yellow/" class="work-card cursor-grow">
+              <div class="work-card-footer work-card-details--dark">
+                <p
+                  class="work-card-title work-card-title--dark"
+                  data-i18n="project_descriptive_titles.yellow"
+                >
+                  Financial Planning Dashboard
+                </p>
+                <span class="big-link big-link--muted">
+                  <span class="link-text" data-i18n="work.read_case_study"
+                    >Read case study</span
+                  >
+                  <span class="link-arrow" aria-hidden="true">
+                    <svg viewBox="0 0 16 16" fill="none">
+                      <path
+                        d="M0 16L13 3M7.6 3H13V8.4"
+                        stroke="currentColor"
+                        stroke-width="1"
+                        stroke-linecap="butt"
+                        stroke-linejoin="miter"
+                      />
+                    </svg>
+                  </span>
+                </span>
+              </div>
+              <div class="work-card-inner" style="background: var(--project-1)">
+                <div class="work-card-details work-card-details--dark">
+                  <div class="work-card-detail">
+                    <p
+                      class="work-card-detail-label"
+                      data-i18n="cs_shared.sidebar_problem"
+                    >
+                      Problem
+                    </p>
+                    <p
+                      class="work-card-detail-text"
+                      data-i18n="work.yellow.problem"
+                    >
+                      A fragmented budget planning process required extensive
+                      manual work, while financial information was difficult for
+                      users to navigate, leading to low confidence in the data.
+                    </p>
+                  </div>
+                  <div class="work-card-detail">
+                    <p
+                      class="work-card-detail-label"
+                      data-i18n="cs_shared.solution"
+                    >
+                      Solution
+                    </p>
+                    <p
+                      class="work-card-detail-text"
+                      data-i18n="work.yellow.solution"
+                    >
+                      A financial dashboard for planning and monitoring a CHF
+                      400+ million annual budget, cutting manual preparation
+                      work by 90% and achieving 100% satisfaction among primary
+                      users.
+                    </p>
+                  </div>
+                </div>
+                <img
+                  class="work-card-img"
+                  src="Images/Home/0_work_1.png"
+                  alt="Financial planning dashboard project"
+                />
+              </div>
+            </a>
+
+            <a href="/Work/auw/" class="work-card cursor-grow">
+              <div class="work-card-footer work-card-details--light">
+                <p
+                  class="work-card-title work-card-title--light"
+                  data-i18n="project_descriptive_titles.auw"
+                >
+                  End-to-End Workflow App
+                </p>
+                <span class="big-link big-link--muted">
+                  <span class="link-text" data-i18n="work.read_case_study"
+                    >Read case study</span
+                  >
+                  <span class="link-arrow" aria-hidden="true">
+                    <svg viewBox="0 0 16 16" fill="none">
+                      <path
+                        d="M0 16L13 3M7.6 3H13V8.4"
+                        stroke="currentColor"
+                        stroke-width="1"
+                        stroke-linecap="butt"
+                        stroke-linejoin="miter"
+                      />
+                    </svg>
+                  </span>
+                </span>
+              </div>
+              <div class="work-card-inner" style="background: var(--project-4)">
+                <div class="work-card-details work-card-details--light">
+                  <div class="work-card-detail">
+                    <p
+                      class="work-card-detail-label"
+                      data-i18n="cs_shared.sidebar_problem"
+                    >
+                      Problem
+                    </p>
+                    <p
+                      class="work-card-detail-text"
+                      data-i18n="work.auw.problem"
+                    >
+                      The education and training request workflow relied on
+                      manual checks, data transfers and error-prone
+                      calculations, creating unnecessary work for employees and
+                      HR.
+                    </p>
+                  </div>
+                  <div class="work-card-detail">
+                    <p
+                      class="work-card-detail-label"
+                      data-i18n="cs_shared.solution"
+                    >
+                      Solution
+                    </p>
+                    <p
+                      class="work-card-detail-text"
+                      data-i18n="work.auw.solution"
+                    >
+                      A Power App guiding users through the full process,
+                      automating calculations and process steps from the initial
+                      request and approvals to cost participation and invoice
+                      submission.
+                    </p>
+                  </div>
+                </div>
+                <img
+                  class="work-card-img"
+                  src="Images/Home/0_work_4.png"
+                  alt="Less Admin. More Learning."
+                />
+              </div>
+            </a>
+
+            <a href="/Work/skills/" class="work-card cursor-grow">
+              <div class="work-card-footer work-card-details--dark">
+                <p
+                  class="work-card-title work-card-title--dark"
+                  data-i18n="project_descriptive_titles.skills"
+                >
+                  Gamified Skills Development Platform
+                </p>
+                <span class="big-link big-link--muted">
+                  <span class="link-text" data-i18n="work.read_case_study"
+                    >Read case study</span
+                  >
+                  <span class="link-arrow" aria-hidden="true">
+                    <svg viewBox="0 0 16 16" fill="none">
+                      <path
+                        d="M0 16L13 3M7.6 3H13V8.4"
+                        stroke="currentColor"
+                        stroke-width="1"
+                        stroke-linecap="butt"
+                        stroke-linejoin="miter"
+                      />
+                    </svg>
+                  </span>
+                </span>
+              </div>
+              <div class="work-card-inner" style="background: var(--project-2)">
+                <div class="work-card-details work-card-details--dark">
+                  <div class="work-card-detail">
+                    <p
+                      class="work-card-detail-label"
+                      data-i18n="cs_shared.sidebar_problem"
+                    >
+                      Problem
+                    </p>
+                    <p
+                      class="work-card-detail-text"
+                      data-i18n="work.skills.problem"
+                    >
+                      Digital transformation has been a strategic priority
+                      within the Swiss Federal Administration for decades, yet
+                      many organizations still struggle to translate it into
+                      concrete action.
+                    </p>
+                  </div>
+                  <div class="work-card-detail">
+                    <p
+                      class="work-card-detail-label"
+                      data-i18n="cs_shared.solution"
+                    >
+                      Solution
+                    </p>
+                    <p
+                      class="work-card-detail-text"
+                      data-i18n="work.skills.solution"
+                    >
+                      A concept for a skills management platform where employees
+                      are encouraged and rewarded for developing the skills the
+                      organization actually needs.
+                    </p>
+                  </div>
+                </div>
+                <img
+                  class="work-card-img"
+                  src="Images/Home/0_work_2.png"
+                  alt="Gamified Skills Management"
+                />
+              </div>
+            </a>
+          </div>
+
+          <!-- =============================================
+               TESTIMONIALS — part of Work
+          ============================================= -->
+          <div class="work-testimonials" aria-labelledby="testimonials-heading">
+            <div class="section-heading section-heading--center">
+              <p class="label label-muted" data-i18n="testimonials.label">
+                Testimonials
+              </p>
+              <h2 id="testimonials-heading" data-i18n="testimonials.heading">
+                What people say
+              </h2>
+            </div>
+            <div class="testimonial-stage" data-testimonial-stage>
+              <!-- Testimonial Cloud (statt der vorherige)   <div
+              class="testimonial-stage cursor-grow"
+              data-testimonial-stage
+              role="button"
+              tabindex="0"
+              aria-pressed="false"
+              aria-label="Show testimonials"
+            >
+            -->
+              <div
+                class="testimonial-cloud"
+                data-testimonial-cloud
+                aria-hidden="false"
+              >
+                <span
+                  class="testimonial-cloud-phrase testimonial-cloud-word--1"
+                  data-phrase-key="momentum"
+                  data-card="aaron"
+                  data-i18n="testimonials.highlights.momentum"
+                  >fresh momentum</span
+                >
+                <span
+                  class="testimonial-cloud-phrase testimonial-cloud-word--2"
+                  data-phrase-key="solution"
+                  data-card="aaron"
+                  data-i18n="testimonials.highlights.solution"
+                  >solution-oriented</span
+                >
+                <span
+                  class="testimonial-cloud-phrase testimonial-cloud-word--3"
+                  data-phrase-key="bridge"
+                  data-card="aaron"
+                  data-i18n="testimonials.highlights.bridge"
+                  >bridges the gap between business stakeholders and
+                  developers</span
+                >
+                <span
+                  class="testimonial-cloud-phrase testimonial-cloud-word--4"
+                  data-phrase-key="quality"
+                  data-card="aaron"
+                  data-i18n="testimonials.highlights.quality"
+                  >commitment to quality</span
+                >
+                <span
+                  class="testimonial-cloud-phrase testimonial-cloud-word--5"
+                  data-phrase-key="flexibility"
+                  data-card="aaron"
+                  data-i18n="testimonials.highlights.flexibility"
+                  >flexibility and dedication</span
+                >
+                <span
+                  class="testimonial-cloud-phrase testimonial-cloud-word--6"
+                  data-phrase-key="proactive"
+                  data-card="daniel"
+                  data-i18n="testimonials.highlights.proactive"
+                  >proactive</span
+                >
+                <span
+                  class="testimonial-cloud-phrase testimonial-cloud-word--7"
+                  data-phrase-key="positive"
+                  data-card="daniel"
+                  data-i18n="testimonials.highlights.positive"
+                  >positive feedback across the network</span
+                >
+                <span
+                  class="testimonial-cloud-phrase testimonial-cloud-word--8"
+                  data-phrase-key="visual"
+                  data-card="andrea"
+                  data-i18n="testimonials.highlights.visual"
+                  >factual yet highly engaging</span
+                >
+                <span
+                  class="testimonial-cloud-phrase testimonial-cloud-word--9"
+                  data-phrase-key="contributions"
+                  data-card="biel"
+                  data-i18n="testimonials.highlights.contributions"
+                  >important contributions</span
+                >
+                <span
+                  class="testimonial-cloud-phrase testimonial-cloud-word--10"
+                  data-phrase-key="complex"
+                  data-card="phbern"
+                  data-i18n="testimonials.highlights.complex"
+                  >understand complex, dynamic processes</span
+                >
+              </div>
+
+              <div
+                class="testimonial-grid"
+                data-testimonial-grid
+                role="list"
+                aria-hidden="true"
+              >
+                <div class="testimonial-column testimonial-column--left">
+                  <article
+                    class="testimonial-card testimonial-card--aaron"
+                    data-original-lang="de"
+                    role="listitem"
+                  >
+                    <!-- 
+            <p
+                      class="testimonial-context"
+                      data-i18n="testimonials.items.aaron.context"
+                    >
+                      Testimonial · 2026
+                    </p>
+                    -->
+                    <blockquote
+                      class="testimonial-quote"
+                      data-i18n="testimonials.items.aaron.quote"
+                    >
+                      “Anouk quickly brought fresh momentum to the project with
+                      her proactive and solution-oriented approach. She doesn’t
+                      stop at ideas, but develops concrete options. She bridges
+                      the gap between business stakeholders and developers,
+                      realistically assesses technical constraints and proposes
+                      suitable solutions. With her commitment to quality,
+                      flexibility and dedication, she played a key role in
+                      helping the project achieve significantly more than
+                      originally planned.”
+                    </blockquote>
+                    <div class="testimonial-attribution">
+                      <p
+                        class="testimonial-name"
+                        data-i18n="testimonials.items.aaron.name"
+                      >
+                        Aaron D.
+                      </p>
+                      <p
+                        class="testimonial-role"
+                        data-i18n="testimonials.items.aaron.role"
+                      >
+                        Project Lead
+                      </p>
+                      <p class="testimonial-translation-note" hidden></p>
+                    </div>
+                  </article>
+                </div>
+
+                <div class="testimonial-column testimonial-column--middle">
+                  <article
+                    class="testimonial-card testimonial-card--daniel"
+                    data-original-lang="de"
+                    role="listitem"
+                  >
+                    <!--   <p
+                      class="testimonial-context"
+                      data-i18n="testimonials.items.daniel.context"
+                    >
+                      Testimonial · 2025
+                    </p> -->
+                    <blockquote
+                      class="testimonial-quote"
+                      data-i18n="testimonials.items.daniel.quote"
+                    >
+                      “Anouk took a proactive approach to gathering user
+                      requirements and used interactive test versions to tailor
+                      the dashboard to the needs of the network. The new cockpit
+                      is already being widely used and has received consistently
+                      positive feedback across the network.”
+                    </blockquote>
+                    <div class="testimonial-attribution">
+                      <p
+                        class="testimonial-name"
+                        data-i18n="testimonials.items.daniel.name"
+                      >
+                        Daniel B.
+                      </p>
+                      <p
+                        class="testimonial-role"
+                        data-i18n="testimonials.items.daniel.role"
+                      >
+                        Head of Network
+                      </p>
+                      <p class="testimonial-translation-note" hidden></p>
+                    </div>
+                  </article>
+
+                  <article
+                    class="testimonial-card testimonial-card--phbern testimonial-card--reference"
+                    data-original-lang="de"
+                    role="listitem"
+                  >
+                    <!--    <p
+                      class="testimonial-context"
+                      data-i18n="testimonials.items.phbern.context"
+                    >
+                      Employment reference · 2021
+                    </p>-->
+                    <blockquote
+                      class="testimonial-quote"
+                      data-i18n="testimonials.items.phbern.quote"
+                    >
+                      “Ms Fontaine is able to understand complex, dynamic
+                      processes in their broader context and derive appropriate
+                      courses of action from them.”
+                    </blockquote>
+                    <div class="testimonial-attribution">
+                      <p
+                        class="testimonial-name"
+                        data-i18n="testimonials.items.phbern.name"
+                      >
+                        PHBern
+                      </p>
+                      <p
+                        class="testimonial-role"
+                        data-i18n="testimonials.items.phbern.role"
+                      >
+                        Employment reference
+                      </p>
+                      <p class="testimonial-translation-note" hidden></p>
+                    </div>
+                  </article>
+                </div>
+
+                <div class="testimonial-column testimonial-column--right">
+                  <article
+                    class="testimonial-card testimonial-card--andrea"
+                    data-original-lang="de"
+                    role="listitem"
+                  >
+                    <!--   <p
+                      class="testimonial-context"
+                      data-i18n="testimonials.items.andrea.context"
+                    >
+                      Testimonial · 2026
+                    </p>-->
+                    <blockquote
+                      class="testimonial-quote"
+                      data-i18n="testimonials.items.andrea.quote"
+                    >
+                      “Anouk created the graphics and developed the visual
+                      concepts, data visualizations and prototypes for our
+                      digital Country Cockpit. She managed to present a rather
+                      dry subject in a factual yet highly engaging way. We are
+                      very proud of the result!”
+                    </blockquote>
+                    <div class="testimonial-attribution">
+                      <p
+                        class="testimonial-name"
+                        data-i18n="testimonials.items.andrea.name"
+                      >
+                        Andrea R. S.
+                      </p>
+                      <p
+                        class="testimonial-role"
+                        data-i18n="testimonials.items.andrea.role"
+                      >
+                        Ambassador and Head of Division
+                      </p>
+                      <p class="testimonial-translation-note" hidden></p>
+                    </div>
+                  </article>
+
+                  <article
+                    class="testimonial-card testimonial-card--biel testimonial-card--reference"
+                    data-original-lang="de"
+                    role="listitem"
+                  >
+                    <!--    <p
+                      class="testimonial-context"
+                      data-i18n="testimonials.items.biel.context"
+                    >
+                      Employment reference · 2020
+                    </p> -->
+                    <blockquote
+                      class="testimonial-quote"
+                      data-i18n="testimonials.items.biel.quote"
+                    >
+                      “Ms Fontaine made important contributions to simplifying
+                      work processes and making them easier to understand.”
+                    </blockquote>
+                    <div class="testimonial-attribution">
+                      <p
+                        class="testimonial-name"
+                        data-i18n="testimonials.items.biel.name"
+                      >
+                        City of Biel
+                      </p>
+                      <p
+                        class="testimonial-role"
+                        data-i18n="testimonials.items.biel.role"
+                      >
+                        Employment reference
+                      </p>
+                      <p class="testimonial-translation-note" hidden></p>
+                    </div>
+                  </article>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- =============================================
+         ABOUT
+    ============================================= -->
+        <section class="about" id="about">
+          <div class="about-photo-top"></div>
+          <div class="about-content">
+            <p class="label label-muted" data-i18n="about.label">About</p>
+            <h2 data-i18n="about.heading">It's nice to meet you</h2>
+            <p class="about-intro" data-i18n="about.intro">
+              Hello, visitor! I'm Anouk Fontaine, a UX Designer and BI Analyst
+              at the State Secretariat for Economic Affairs (SECO) in Bern,
+              Switzerland, where I help colleagues make better decisions through
+              intuitive tools and interfaces. You can talk to me in French,
+              (Swiss) German, English, or a mix of all three.
+            </p>
+            <!--design dashboards and tools that take the
+            friction out of my colleagues' everyday work. -->
+            <div class="accordion">
+              <div class="accordion-item">
+                <button class="accordion-trigger">
+                  <span data-i18n="about.accordion1.trigger"
+                    >I've been designing for over 10 years.</span
+                  ><span class="accordion-icon">+</span>
+                </button>
+                <div class="accordion-body">
+                  <p
+                    class="accordion-content"
+                    data-i18n="about.accordion1.content"
+                  >
+                    I've worked across public administration, finance, human
+                    resources, and the hotel industry, giving me firsthand
+                    insight into a wide range of organizational challenges. My
+                    constant drive to make things easier for both my colleagues
+                    and myself has led me to apply UX design principles in every
+                    role I've held, whether UX was part of my job title or not.
+                    If you're curious about my journey, feel free to explore my
+                    detailed
+                    <a
+                      href="https://www.linkedin.com/in/anoukfontaine/"
+                      target="_blank"
+                    >
+                      LinkedIn profile </a
+                    >.
+                  </p>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <button class="accordion-trigger">
+                  <span data-i18n="about.accordion2.trigger"
+                    >I have a background in business.</span
+                  ><span class="accordion-icon">+</span>
+                </button>
+                <div class="accordion-body">
+                  <p
+                    class="accordion-content"
+                    data-i18n="about.accordion2.content"
+                  >
+                    My Master's degree in Business Administration, combined with
+                    further education in UX design and data visualization,
+                    allows me to bridge business strategy, analytical thinking,
+                    and user experience.
+                  </p>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <button class="accordion-trigger">
+                  <span data-i18n="about.accordion3.trigger"
+                    >My personality type is INFP.</span
+                  ><span class="accordion-icon">+</span>
+                </button>
+                <div class="accordion-body">
+                  <p
+                    class="accordion-content"
+                    data-i18n="about.accordion3.content"
+                  >
+                    I care about harmony, both in my designs and in the teams I
+                    work with. I’m curious about new technologies and eager to
+                    learn new tools, preferably by doing, from AI and web
+                    development tools to BI platforms and even music production
+                    software. I also believe that humour makes collaboration and
+                    problem-solving better.
+                  </p>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <button class="accordion-trigger">
+                  <span data-i18n="about.accordion4.trigger"
+                    >I'm also ah nuk.</span
+                  ><span class="accordion-icon">+</span>
+                </button>
+                <div class="accordion-body">
+                  <p
+                    class="accordion-content"
+                    data-i18n="about.accordion4.content"
+                  >
+                    In my free time, I'm also
+                    <a href="https://bio.site/ah.nuk" target="_blank"> ah nuk</a
+                    >, writing and recording songs in my bedroom, or outside
+                    taking
+                    <a
+                      href="https://www.instagram.com/anoukfontaine?igsh=MWZzYjhjYzB1Y2p5aQ%3D%3D&utm_source=qr"
+                      target="_blank"
+                    >
+                      snapshots</a
+                    >.<br />I'm also really into noodle soups. My favourite one
+                    is at Mondo in Bern, got any worthy contender?
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="about-links">
+              <a
+                href="https://www.linkedin.com/in/anoukfontaine/"
+                target="_blank"
+                rel="noopener noreferrer"
+                >LinkedIn</a
+              >
+              <a
+                data-i18n="about.email_link"
+                href="mailto:bonjour@anoukfontaine.com"
+                >Email</a
+              >
+              <a
+                href="https://dribbble.com/anoukfontaine"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Dribbble</a
+              >
+            </div>
+          </div>
+        </section>
+
+        <!-- =============================================
+     CONTACT HTML
+============================================= -->
+        <section class="contact" id="contact">
+          <div class="contact-inner">
+            <div class="contact-left">
+              <div class="section-heading">
+                <p class="label label-muted" data-i18n="contact.label">
+                  Contact
+                </p>
+              </div>
+
+              <div class="contact-headline">
+                <div class="contact-line1">
+                  <span data-i18n="contact.line1">let's</span>
+                  <button class="contact-plus" id="contact-plus">
+                    &#8635;
+                  </button>
+                </div>
+
+                <div class="contact-line2">
+                  <div id="contact-verb">work</div>
+                  <span class="contact-verb-spacer">imagine</span>
+                </div>
+
+                <div class="contact-line3" data-i18n="contact.line3">
+                  together
+                </div>
+              </div>
+            </div>
+
+            <div class="big-links contact-links">
+              <a
+                href="mailto:bonjour@anoukfontaine.com"
+                class="big-link big-link--muted"
+              >
+                <span class="link-text">bonjour@anoukfontaine.com</span>
+                <span class="link-arrow" aria-hidden="true">
+                  <svg viewBox="0 0 16 16" fill="none">
+                    <path
+                      d="M0 16L13 3M7.6 3H13V8.4"
+                      stroke="currentColor"
+                      stroke-width="1"
+                      stroke-linecap="butt"
+                      stroke-linejoin="miter"
+                    />
+                  </svg>
+                </span>
+              </a>
+
+              <a
+                href="https://www.linkedin.com/in/anoukfontaine/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="big-link big-link--muted"
+              >
+                <span class="link-text">LinkedIn</span>
+                <span class="link-arrow" aria-hidden="true">
+                  <svg viewBox="0 0 16 16" fill="none">
+                    <path
+                      d="M0 16L13 3M7.6 3H13V8.4"
+                      stroke="currentColor"
+                      stroke-width="1"
+                      stroke-linecap="butt"
+                      stroke-linejoin="miter"
+                    />
+                  </svg>
+                </span>
+              </a>
+              <p class="contact-intro" data-i18n="contact.intro">
+                Open to remote opportunities, freelance collaborations and
+                interesting conversations.
+              </p>
+            </div>
+          </div>
+        </section>
+        <!-- =============================================
+         CONTACT HTML
+    ============================================= -->
+        <!--    <section class="contact" id="contact">
+          <div class="contact-inner">
+            <div class="contact-left">
+              <div class="contact-headline">
+                <div class="contact-line1">
+                  let's
+                  <button class="contact-plus" id="contact-plus">
+                    &#8635;
+                  </button>
+                </div>
+                <div class="contact-line2">
+                  <div id="contact-verb">work</div>
+                  <span class="contact-verb-spacer">create</span>
+                </div>
+                <div class="contact-line3">together.</div>
+              </div>
+              <div class="big-links">
+                <a
+                  href="https://linkedin.com/in/yourprofile"
+                  target="_blank"
+                  class="big-link big-link--muted"
+                >
+                  <span class="link-text">LinkedIn</span>
+                  <span class="link-arrow" aria-hidden="true">
+  <svg viewBox="0 0 16 16" fill="none">
+    <path
+      d="M0 16L13 3M7.6 3H13V8.4"
+      stroke="currentColor"
+      stroke-width="1"
+      stroke-linecap="butt"
+      stroke-linejoin="miter"
+    />
+  </svg>
+</span>
+                </a>
+
+                <a
+                  href="mailto:hello@anoukfontaine.com"
+                  class="big-link big-link--muted"
+                >
+                  <span class="link-text">Email</span>
+                  <span class="link-arrow" aria-hidden="true">
+  <svg viewBox="0 0 16 16" fill="none">
+    <path
+      d="M0 16L13 3M7.6 3H13V8.4"
+      stroke="currentColor"
+      stroke-width="1"
+      stroke-linecap="butt"
+      stroke-linejoin="miter"
+    />
+  </svg>
+</span>
+                </a>
+              </div>
+            </div>
+
+            <form class="contact-form" onsubmit="return false;">
+              <div class="section-heading section-heading--center">
+                <p class="label label-muted">Contact</p>
+              </div>
+              <div class="contact-field">
+                <input type="text" placeholder="Name" required />
+              </div>
+
+              <div class="contact-field">
+                <input type="email" placeholder="Email" required />
+              </div>
+              <div class="contact-field">
+                <input type="text" placeholder="Subject" required />
+              </div>
+
+              <div class="contact-field">
+                <textarea
+                  rows="6"
+                  placeholder="I'm interested in..."
+                  oninput="
+                    this.style.height = 'auto';
+                    this.style.height = this.scrollHeight + 'px';
+                  "
+                  required
+                ></textarea>
+              </div>
+              <div class="contact-send">
+                <button type="submit" id="contact-send-btn">send note</button>
+              </div>
+            </form>
+          </div>
+        </section>
+        -->
+      </main>
+
+      <!-- =============================================
+       FOOTER
+  ============================================= -->
+      <div id="footer"></div>
+      <!-- =============================================
+     PASSWORD GATE END OF CONTAINER
+  ============================================= -->
+    </div>
+
+    <!-- =============================================
+   LOAD SCRIPT
+  ============================================= -->
+    <script src="loader.js"></script>
+    <script src="script.js"></script>
+
+    <!-- =============================================
+  Password for the full site
+  ============================================= -->
+    <script src="site-gate.js"></script>
+  </body>
+</html>

@@ -1,0 +1,685 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <script>
+      document.documentElement.classList.add("page-entering");
+
+      if (localStorage.getItem("site-gate-unlocked") === "true") {
+        document.documentElement.classList.add("gate-already-unlocked");
+      }
+    </script>
+    <!-- <script src="../password-gate.js"></script> -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title data-i18n="page_titles.home">Anouk Fontaine | UX Designer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style_2.css" />
+    <link rel="icon" type="image/png" href="Images/General/favicon_2.png" />
+    <script>
+      (function () {
+        const themes = [
+          {
+            bg: "#FAF6ED",
+            text: "#344ECD",
+            muted: "#8D9ADB",
+            p1: "#001268",
+            p4: "#CD4834",
+            p2: "#94A4F3",
+          },
+          {
+            bg: "#112228",
+            text: "#E6E8FF",
+            muted: "#868F9E",
+            p1: "#B892FF",
+            p4: "#95F8D8",
+            p2: "#6120DB",
+          },
+        ];
+        const i = parseInt(localStorage.getItem("theme-index"), 10) || 0;
+        const t = themes[i];
+        const root = document.documentElement.style;
+        root.setProperty("--color-bg", t.bg);
+        root.setProperty("--color-text", t.text);
+        root.setProperty("--color-text-muted", t.muted);
+        root.setProperty("--project-1", t.p1);
+        root.setProperty("--project-2", t.p2);
+        root.setProperty("--project-3", t.p3);
+        root.setProperty("--project-4", t.p4);
+        root.setProperty("--project-5", t.p5);
+        root.setProperty("--moon-rotation", `${i * 90}deg`);
+      })();
+    </script>
+  </head>
+  <body class="home-page home-v2">
+    <div id="cursor"></div>
+
+    <!-- =============================================
+       NAV HTML  —  DO NOT MODIFY
+  ============================================= -->
+    <nav>
+      <a class="logo" href="/" data-home-link aria-label="Anouk Fontaine, home">
+        <img id="site-logo" src="Images/Home/0_logo_AF_theme_1.png" alt="" />
+
+        <span class="logo-name" aria-hidden="true">Anouk Fontaine</span>
+      </a>
+      <div class="nav-right">
+        <div class="nav-controls">
+          <button class="nav-lang" aria-label="Switch language">
+            EN<span class="lang-orbit-dot"></span>
+          </button>
+          <button
+            type="button"
+            class="nav-theme"
+            id="theme-toggle"
+            aria-label="Toggle theme"
+          >
+            <svg class="theme-eye" viewBox="0 0 80 56" aria-hidden="true">
+              <defs>
+                <clipPath id="theme-eye-clip">
+                  <path d="M3 28 Q40 -6 77 28 Q40 62 3 28Z" />
+                </clipPath>
+              </defs>
+
+              <g clip-path="url(#theme-eye-clip)">
+                <circle class="eye-pupil" cx="40" cy="28" r="12" />
+
+                <path class="eye-lid" d="M3 28 Q40 -6 77 28 Q40 -6 3 28Z" />
+              </g>
+
+              <path class="eye-outline" d="M3 28 Q40 62 77 28" />
+
+              <!-- Upper curve stays visible -->
+              <path class="eye-outline" d="M3 28 Q40 -6 77 28" />
+
+              <!-- Moving eyelid -->
+              <path class="eye-outline eye-upper-line" d="M3 28 Q40 -6 77 28" />
+
+              <g class="eye-lashes">
+                <path d="M22 15 L18 7 M40 11 L40 1 M58 15 L62 7" />
+              </g>
+            </svg>
+          </button>
+          <button
+            class="nav-hamburger"
+            id="nav-hamburger"
+            type="button"
+            aria-label="Open menu"
+            aria-expanded="false"
+            aria-controls="mobile-menu"
+          >
+            Menu
+          </button>
+        </div>
+      </div>
+      <div class="mobile-menu" id="mobile-menu">
+        <a href="#services" class="mobile-menu-link" data-i18n="nav.services"
+          >Services</a
+        >
+        <a href="#work" class="mobile-menu-link" data-i18n="nav.work">Work</a>
+        <a href="#about" class="mobile-menu-link" data-i18n="nav.about"
+          >About</a
+        >
+        <a href="#contact" class="mobile-menu-link" data-i18n="nav.contact"
+          >Contact</a
+        >
+      </div>
+    </nav>
+    <!-- =============================================
+       PASSWORD GATE
+  ============================================= -->
+    <section id="site-gate">
+      <div class="site-gate-box">
+        <p class="site-gate-title" data-i18n="gate.title">Private Portfolio</p>
+
+        <p class="site-gate-text" data-i18n="gate.description">
+          This portfolio is currently shared with selected reviewers.<br />
+          Please enter the password to continue.
+        </p>
+
+        <input
+          type="password"
+          id="site-gate-input"
+          data-i18n-placeholder="gate.placeholder"
+          placeholder="Password"
+          autofocus
+        />
+
+        <button id="site-gate-submit" data-i18n="gate.button">
+          Enter portfolio
+        </button>
+
+        <p id="site-gate-error" data-i18n="gate.error">Incorrect password.</p>
+      </div>
+    </section>
+    <div id="site-content">
+      <!-- =============================================
+       LEFT SIDEBAR
+  ============================================= -->
+      <aside class="left-sidebar">
+        <a href="#hello" data-target="hello" data-i18n="nav.hello"> Hello </a>
+        <a href="#services" data-target="services" data-i18n="nav.services"
+          >Services</a
+        >
+        <a href="#work" data-target="work" data-i18n="nav.work">Work</a>
+        <a href="#about" data-target="about" data-i18n="nav.about">About</a>
+        <a href="#contact" data-target="contact" data-i18n="nav.contact"
+          >Contact</a
+        >
+      </aside>
+
+      <main>
+        <!-- =============================================
+         HERO
+    ============================================= -->
+        <div class="hero-location-wrap">
+          <p class="hero-location">
+            <span data-i18n="hero.location"
+              >Bern, Switzerland &middot; CET</span
+            >
+            <span id="cet-clock"></span>
+            <span class="availability-text" data-i18n="hero.availability"
+              >&middot; Available 1 day/week</span
+            >
+          </p>
+          <!--  <p class="hero-availability">
+          <span class="availability-dot" aria-hidden="true">&#9677;</span>
+          <span class="availability-text">Available 1 day / week</span>
+        </p>
+      -->
+        </div>
+        <section class="hero" id="hello">
+          <div class="hero-headline-wrap">
+            <div class="hero-main-row layout-grid">
+              <div class="hero-copy">
+                <div class="hero-languages" role="group" aria-label="Languages">
+                  <button
+                    type="button"
+                    data-lang="en"
+                    class="active"
+                    aria-pressed="true"
+                  >
+                    Hello visitor!
+                  </button>
+
+                  <button type="button" data-lang="fr" aria-pressed="false">
+                    Bienvenue.
+                  </button>
+
+                  <button type="button" data-lang="de" aria-pressed="false">
+                    Schön, dass du da bist.
+                  </button>
+                </div>
+                <h1 class="hero-headline" data-i18n="home_v2.hero">
+                  I'm a UX designer <br />who bridges business, <br />data and
+                  design. <br />I make your complex <br />and data-rich products
+                  <br />easier to use.
+                </h1>
+              </div>
+              <button
+                class="hero-illustration-btn"
+                id="hero-illustration-toggle"
+                type="button"
+                aria-label="Sort data"
+              >
+                <img
+                  class="hero-illustration"
+                  id="hero-illustration"
+                  src="Images/Home/0_2_Illustration_theme_1.png"
+                  alt=""
+                />
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <!-- =============================================
+         SERVICES HTML
+    ============================================= -->
+        <section
+          class="expertise-section"
+          id="services"
+          aria-labelledby="expertise-heading"
+        >
+          <div class="expertise-grid">
+            <div class="expertise-content">
+              <h2 id="expertise-heading" data-i18n="home_v2.expertise">
+                Expertise
+              </h2>
+
+              <ul class="expertise-list expertise-list--design">
+                <li data-i18n="home_v2.services.ux">UX/UI Design</li>
+                <li data-i18n="home_v2.services.requirements">
+                  Requirement Engineering
+                </li>
+                <li data-i18n="home_v2.services.presentations">
+                  Posters &amp; Presentations
+                </li>
+                <li>Illustrations</li>
+              </ul>
+
+              <ul class="expertise-list expertise-list--data">
+                <li data-i18n="home_v2.services.visualization">
+                  Data Visualization
+                </li>
+                <li data-i18n="home_v2.services.dashboards">
+                  BI &amp; Dashboard Design
+                </li>
+                <li data-i18n="home_v2.services.infographics">Infographics</li>
+                <li data-i18n="home_v2.services.storytelling">
+                  Data Storytelling
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- =============================================
+     WORK HTML
+============================================= -->
+
+        <section class="work" id="work">
+          <div class="work-list">
+            <!-- PROJECT 1: FINANCIAL DASHBOARD -->
+            <a href="/Work/yellow/" class="work-card cursor-grow">
+              <div class="work-card-footer work-card-details--light">
+                <div class="work-card-heading">
+                  <p
+                    class="work-card-title work-card-title--light"
+                    data-i18n="project_descriptive_titles.yellow"
+                  >
+                    Financial Planning Dashboard
+                  </p>
+                  <p class="work-card-summary">
+                    Automating an error-prone and cumbersome Excel-based
+                    controlling process
+                  </p>
+                </div>
+              </div>
+
+              <div class="work-card-inner" style="background: var(--project-1)">
+                <img
+                  class="work-card-img"
+                  src="Images/Home/0_work_1.png"
+                  alt="Financial planning dashboard project"
+                />
+              </div>
+            </a>
+
+            <!-- PROJECT 2: WORKFLOW APP -->
+            <a href="/Work/auw/" class="work-card cursor-grow">
+              <div class="work-card-footer work-card-details--light">
+                <div class="work-card-heading">
+                  <p
+                    class="work-card-title work-card-title--light"
+                    data-i18n="project_descriptive_titles.auw"
+                  >
+                    End-to-End Workflow App
+                  </p>
+                  <p class="work-card-summary">
+                    Removing HR administration from the company's education
+                    request process
+                  </p>
+                </div>
+              </div>
+
+              <div class="work-card-inner" style="background: var(--project-4)">
+                <img
+                  class="work-card-img"
+                  src="Images/Home/0_work_4.png"
+                  alt="Less Admin. More Learning."
+                />
+              </div>
+            </a>
+
+            <!-- PROJECT 3: SKILLS PLATFORM -->
+            <a href="/Work/skills/" class="work-card cursor-grow">
+              <div class="work-card-footer work-card-details--dark">
+                <div class="work-card-heading">
+                  <p
+                    class="work-card-title work-card-title--dark"
+                    data-i18n="project_descriptive_titles.skills"
+                  >
+                    Gamified Skills Development Platform
+                  </p>
+                  <p class="work-card-summary">
+                    Motivating employees to develop skills needed by the
+                    organisation instead of outsourcing
+                  </p>
+                </div>
+              </div>
+
+              <div class="work-card-inner" style="background: var(--project-2)">
+                <img
+                  class="work-card-img"
+                  src="Images/Home/0_work_2.png"
+                  alt="Gamified Skills Management"
+                />
+              </div>
+            </a>
+          </div>
+        </section>
+
+        <!-- =============================================
+               TESTIMONIALS — part of Work
+          ============================================= -->
+        <section
+          class="testimonials-editorial"
+          aria-labelledby="testimonials-heading"
+        >
+          <h2
+            id="testimonials-heading"
+            class="testimonials-editorial-label"
+            data-i18n="home_v2.testimonials"
+          >
+            Testimonials
+          </h2>
+
+          <div
+            class="testimonials-editorial-column testimonials-editorial-left"
+          >
+            <article class="testimonial-entry">
+              <blockquote data-i18n="testimonials.items.aaron.quote">
+                “Anouk quickly brought fresh momentum to the project with her
+                proactive and solution-oriented approach. She doesn’t stop at
+                ideas, but develops concrete options. She bridges the gap
+                between business stakeholders and developers, realistically
+                assesses technical constraints and proposes suitable solutions.
+                With her commitment to quality, flexibility and dedication, she
+                played a key role in helping the project achieve significantly
+                more than originally planned.”
+              </blockquote>
+
+              <p class="testimonial-entry-credit">
+                <span
+                  class="testimonial-entry-name"
+                  data-i18n="testimonials.items.aaron.name"
+                  >Aaron D.</span
+                >
+                <span class="testimonial-entry-details">
+                  <span data-i18n="testimonials.items.aaron.role"
+                    >Project Lead</span
+                  >
+                </span>
+              </p>
+            </article>
+
+            <article class="testimonial-entry">
+              <blockquote data-i18n="testimonials.items.phbern.quote">
+                “Ms Fontaine is able to understand complex, dynamic processes in
+                their broader context and derive appropriate courses of action
+                from them.”
+              </blockquote>
+
+              <p class="testimonial-entry-credit">
+                <span
+                  class="testimonial-entry-name"
+                  data-i18n="testimonials.items.phbern.name"
+                  >PHBern</span
+                >
+                <span class="testimonial-entry-details">
+                  <span data-i18n="testimonials.items.phbern.role"
+                    >Employment reference</span
+                  >
+                </span>
+              </p>
+            </article>
+          </div>
+
+          <div
+            class="testimonials-editorial-column testimonials-editorial-right"
+          >
+            <article class="testimonial-entry">
+              <blockquote data-i18n="testimonials.items.daniel.quote">
+                “Anouk took a proactive approach to gathering user requirements
+                and used interactive test versions to tailor the dashboard to
+                the needs of the network. The new cockpit is already being
+                widely used and has received consistently positive feedback
+                across the network.”
+              </blockquote>
+
+              <p class="testimonial-entry-credit">
+                <span
+                  class="testimonial-entry-name"
+                  data-i18n="testimonials.items.daniel.name"
+                  >Daniel B.</span
+                >
+                <span class="testimonial-entry-details">
+                  <span data-i18n="testimonials.items.daniel.role"
+                    >Head of Network</span
+                  >
+                </span>
+              </p>
+            </article>
+
+            <article class="testimonial-entry">
+              <blockquote data-i18n="testimonials.items.andrea.quote">
+                “Anouk created the graphics and developed the visual concepts,
+                data visualizations and prototypes for our digital Country
+                Cockpit. She managed to present a rather dry subject in a
+                factual yet highly engaging way. We are very proud of the
+                result!”
+              </blockquote>
+
+              <p class="testimonial-entry-credit">
+                <span
+                  class="testimonial-entry-name"
+                  data-i18n="testimonials.items.andrea.name"
+                  >Andrea R. S.</span
+                >
+                <span class="testimonial-entry-details">
+                  <span data-i18n="testimonials.items.andrea.role">
+                    Ambassador and Head of Division
+                  </span>
+                </span>
+              </p>
+            </article>
+
+            <article class="testimonial-entry">
+              <blockquote data-i18n="testimonials.items.biel.quote">
+                “Ms Fontaine made important contributions to simplifying work
+                processes and making them easier to understand.”
+              </blockquote>
+
+              <p class="testimonial-entry-credit">
+                <span
+                  class="testimonial-entry-name"
+                  data-i18n="testimonials.items.biel.name"
+                  >City of Biel</span
+                >
+                <span class="testimonial-entry-details">
+                  <span data-i18n="testimonials.items.biel.role"
+                    >Employment reference</span
+                  >
+                </span>
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <!-- =============================================
+         ABOUT
+    ============================================= -->
+        <section
+          class="about-editorial"
+          id="about"
+          aria-labelledby="about-heading"
+        >
+          <div class="about-editorial-grid">
+            <img
+              class="about-editorial-photo"
+              src="Images/Home/0_about_2.jpeg"
+              alt="Anouk Fontaine"
+              loading="lazy"
+            />
+
+            <h2
+              id="about-heading"
+              class="about-editorial-label"
+              data-i18n="home_v2.about.label"
+            >
+              About me
+            </h2>
+
+            <div class="about-editorial-copy">
+              <p>
+                <span data-i18n="home_v2.about.intro">
+                  Hi, I’m Anouk Fontaine, a UX &amp; data designer from
+                </span>
+                <a
+                  href="https://www.google.com/maps/search/?api=1&query=Bern%2C%20Switzerland"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  data-i18n="home_v2.about.location1"
+                  >Switzerland</a
+                >,
+                <span data-i18n="home_v2.about.between_locations">
+                  based in
+                </span>
+                <a
+                  href="https://www.google.com/maps/search/?api=1&query=Hanoi%2C%20Vietnam"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  data-i18n="home_v2.about.location2"
+                  >Hanoi, Vietnam</a
+                ><span data-i18n="home_v2.about.before_journey"
+                  >. Driven by a desire to make things simpler and more
+                  efficient in an increasingly complex world,
+                </span>
+                <a
+                  href="https://www.linkedin.com/in/anoukfontaine/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  data-i18n="home_v2.about.journey"
+                  >my journey</a
+                >
+                <span data-i18n="home_v2.about.after_journey">
+                  has taken me from business studies through hospitality, HR and
+                  development finance to UX design. Turns out, making
+                  complicated things simpler is what I love doing most.
+                </span>
+              </p>
+
+              <p>
+                <span data-i18n="home_v2.about.personal">
+                  I speak French, (Swiss) German and English, sometimes all in
+                  the same sentence. Outside of work, you’ll find me writing
+                </span>
+                <a
+                  href="https://bio.site/ah.nuk"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  data-i18n="home_v2.about.songs"
+                  >songs</a
+                ><span data-i18n="home_v2.about.before_photos">, taking</span>
+                <a
+                  href="https://www.instagram.com/anoukfontaine/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  data-i18n="home_v2.about.photos"
+                  >photos</a
+                >
+                <span data-i18n="home_v2.about.after_photos">
+                  or hunting for the perfect bowl of noodle soup.
+                </span>
+              </p>
+            </div>
+          </div>
+
+          <!-- ABOUT: ILLUSTRATION & FACTS -->
+          <div class="about-extra-grid">
+            <div class="about-extra-illustration">
+              <img
+                class="about-extra-image"
+                src="Images/Home/0_about_illustration_theme_1.png"
+                data-theme-src="Images/Home/0_about_illustration_theme_{theme}.png"
+                alt=""
+                loading="lazy"
+              />
+            </div>
+
+            <div class="about-extra-facts">
+              <div class="about-fact">
+                <div class="about-fact-icon" aria-hidden="true">
+                  <svg viewBox="0 0 64 64" fill="none">
+                    <circle cx="32" cy="32" r="31" />
+                    <rect x="15" y="26" width="34" height="23" rx="2" />
+                    <path d="M26 26V21H38V26" />
+                    <path d="M15 34L29 38.5Q32 39.5 35 38.5L49 34" />
+                  </svg>
+                </div>
+                <p>Over 9 years of professional experience in various fields</p>
+              </div>
+
+              <div class="about-fact">
+                <div class="about-fact-icon" aria-hidden="true">
+                  <svg viewBox="0 0 64 64" fill="none">
+                    <circle cx="32" cy="32" r="31" />
+                    <path d="M32 21C26 17 20 17 15 19V44C21 42 27 43 32 47" />
+                    <path d="M32 21C38 17 44 17 49 19V44C43 42 37 43 32 47" />
+                    <path d="M32 21V47" />
+                  </svg>
+                </div>
+                <p>Further education in UX Design and Data Visualisation</p>
+              </div>
+
+              <div class="about-fact">
+                <div class="about-fact-icon" aria-hidden="true">
+                  <svg viewBox="0 0 64 64" fill="none">
+                    <circle cx="32" cy="32" r="31" />
+                    <path d="M10 27L32 17L54 27L32 37Z" />
+                    <path d="M19 32V42C27 48 37 48 45 42V32" />
+                  </svg>
+                </div>
+                <p>
+                  Swiss University Master's degree in Business Administration
+                </p>
+              </div>
+
+              <div class="about-fact">
+                <div class="about-fact-icon" aria-hidden="true">
+                  <svg viewBox="0 0 64 64" fill="none">
+                    <circle cx="32" cy="32" r="31" />
+                    <path
+                      d="M24 34C21 31 20 28 20 25C20 18 25 14 32 14C39 14 44 18 44 25C44 28 43 31 40 34C38 36 37 39 37 42H27C27 39 26 36 24 34Z"
+                    />
+                    <path d="M27 46H37M29 50H35" />
+                  </svg>
+                </div>
+                <p>Fast learner (by doing) and big enthusiast</p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+      <!-- =============================================
+       FOOTER
+  ============================================= -->
+      <div id="footer"></div>
+      <!-- =============================================
+     PASSWORD GATE END OF CONTAINER
+  ============================================= -->
+    </div>
+
+    <!-- =============================================
+   LOAD SCRIPT
+  ============================================= -->
+    <script src="loader.js"></script>
+    <script src="script_2.js"></script>
+
+    <!-- =============================================
+  Password for the full site
+  ============================================= -->
+    <script src="site-gate.js"></script>
+  </body>
+</html>

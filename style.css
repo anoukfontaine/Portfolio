@@ -5866,9 +5866,10 @@ body.case-page .left-sidebar {
 }
 
 /* ---------- Word constellation ---------- */
+/*Testimonial Cloud : display grid to show cloud*/
 .testimonial-cloud {
   min-height: 720px;
-  display: grid;
+  display: none;
   grid-template-columns: repeat(12, minmax(0, 1fr));
   grid-template-rows: repeat(6, minmax(72px, auto));
   align-content: start;
@@ -6066,6 +6067,7 @@ body.case-page .left-sidebar {
 }
 
 /* ---------- Testimonial cards ---------- */
+/*Testimonial Cloud: opacity: 0*/
 .testimonial-grid {
   width: 100%;
   margin: 0 auto;
@@ -6073,15 +6075,12 @@ body.case-page .left-sidebar {
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: var(--space-4);
   align-items: start;
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-  transform: scale(0.96);
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: none;
   transform-origin: center;
-  transition:
-    opacity 0.45s ease,
-    transform 0.7s cubic-bezier(0.76, 0, 0.24, 1),
-    visibility 0s linear 0.45s;
+  transition: none;
 }
 
 .testimonial-column {

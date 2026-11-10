@@ -63,10 +63,15 @@
     <!-- 01 — GLOBAL NAVIGATION
      Logo, animated theme eye, mobile menu controls, and mobile links. -->
     <nav>
-      <a class="logo" href="/" data-home-link aria-label="Anouk Fontaine, home">
+      <a
+        class="logo"
+        href="/index_2.html"
+        data-home-link
+        aria-label="Anouk Fontaine, home"
+      >
         <img id="site-logo" src="Images/Home/0_logo_AF_theme_1.png" alt="" />
         <span class="logo-name type-heading" aria-hidden="true"
-          >Anouk Fontaine</span
+          >Anouk<br />Fontaine</span
         >
       </a>
       <div class="nav-right">
@@ -105,7 +110,24 @@
             aria-expanded="false"
             aria-controls="site-sidebar"
           >
-            Menu
+            <span class="menu-word" aria-hidden="true">
+              <span class="menu-letter">
+                <span class="menu-letter__closed">M</span
+                ><span class="menu-letter__open">Cl</span>
+              </span>
+              <span class="menu-letter">
+                <span class="menu-letter__closed">e</span
+                ><span class="menu-letter__open">o</span>
+              </span>
+              <span class="menu-letter">
+                <span class="menu-letter__closed">n</span
+                ><span class="menu-letter__open">s</span>
+              </span>
+              <span class="menu-letter">
+                <span class="menu-letter__closed">u</span
+                ><span class="menu-letter__open">e</span>
+              </span>
+            </span>
           </button>
         </div>
       </div>
@@ -236,6 +258,7 @@
               >
                 <img
                   class="hero-illustration"
+                  draggable="false"
                   id="hero-illustration"
                   src="Images/Home/0_2_Illustration_theme_1.png"
                   alt=""
@@ -369,7 +392,7 @@
                     class="work-card-title work-card-title--dark type-heading"
                     data-i18n="project_descriptive_titles.skills"
                   >
-                    Gamified Skills Development Platform
+                    Skills Development Platform
                   </p>
                   <p class="work-card-summary type-body">
                     Motivating employees to develop skills needed by the
@@ -615,15 +638,22 @@
           </div>
           <!-- ABOUT: ILLUSTRATION & FACTS -->
           <div class="about-extra-grid">
-            <div class="about-extra-illustration">
+            <button
+              type="button"
+              class="about-extra-illustration"
+              id="grid-toggle"
+              aria-label="Toggle column guides"
+              aria-pressed="false"
+            >
               <img
                 class="about-extra-image"
+                draggable="false"
                 src="Images/Home/0_about_illustration_theme_1.png"
                 data-theme-src="Images/Home/0_about_illustration_theme_{theme}.png"
                 alt=""
                 loading="lazy"
-              />
-            </div>
+              /></button
+            >.
             <div class="about-extra-facts">
               <div class="about-fact">
                 <div class="icon" aria-hidden="true">

@@ -45,8 +45,8 @@ function applyTheme(index) {
   }
 }
 let themeIndex = parseInt(localStorage.getItem("theme-index"), 10) || 0;
-updateHeroIllustration(themeIndex);
-updateThemeImages(themeIndex);
+
+applyTheme(themeIndex);
 document.getElementById("theme-toggle").addEventListener("click", () => {
   themeIndex = (themeIndex + 1) % themes.length;
   applyTheme(themeIndex);
@@ -663,6 +663,11 @@ function unsort() {
   prepareReveal(about.querySelector(".about-editorial-photo"), "visual", 0);
   prepareReveal(about.querySelector(".about-editorial-label"), "text", 40);
   prepareReveal(about.querySelector(".about-editorial-copy"), "text", 90);
+
+  prepareReveal(document.querySelector(".testimonials-editorial"), "text", 0);
+
+  prepareReveal(about.querySelector(".about-extra-facts"), "text", 0);
+  prepareReveal(about.querySelector(".about-extra-illustration"), "fade", 90);
   /* =============================================
      HERO OPENING ANIMATION
      Always plays when entering the homepage
@@ -829,6 +834,35 @@ document.querySelectorAll(".process").forEach((process) => {
       };
     });
 
+    if (window.matchMedia("(max-width: 760px)").matches) {
+      const twoColumns = window.matchMedia("(max-width: 500px)").matches;
+      const iconRects = icons.map((icon) => icon.getBoundingClientRect());
+      const segments = [];
+
+      for (let index = 0; index < iconRects.length - 1; index++) {
+        const start = iconRects[index];
+        const end = iconRects[index + 1];
+        const goesRight = !twoColumns && index % 2 === 0;
+
+        const startX = (goesRight ? start.right : start.left) - bounds.left;
+        const endX = (goesRight ? end.right : end.left) - bounds.left;
+        const startY = start.top - bounds.top + start.height / 2;
+        const endY = end.top - bounds.top + end.height / 2;
+
+        const controlX = goesRight
+          ? Math.min(bounds.width - 2, startX + 160)
+          : Math.max(2, startX - 110);
+
+        segments.push(
+          `M ${startX} ${startY}
+           C ${controlX} ${startY}, ${controlX} ${endY}, ${endX} ${endY}`,
+        );
+      }
+
+      path.setAttribute("d", segments.join(" "));
+      return;
+    }
+
     const topRowBottom =
       Math.max(
         ...steps.slice(0, 2).map((step) => step.getBoundingClientRect().bottom),
@@ -838,9 +872,9 @@ document.querySelectorAll(".process").forEach((process) => {
     const middleY = (topRowBottom + buildTop) / 2;
 
     const rightX = bounds.width - 2;
-    const leftX = build.x - 80;
+    const leftX = Math.max(2, build.x - 80);
     const rightTurn = Math.min(80, (rightX - design.x) / 2);
-    const leftTurn = 40;
+    const leftTurn = Math.min(40, build.x - leftX);
 
     path.setAttribute(
       "d",
@@ -1040,12 +1074,22 @@ document.querySelectorAll(".project-story").forEach((story) => {
 
   function updateNotes() {
     frame = null;
-    const trigger = window.innerHeight * 0.5;
     let active = steps[0].dataset.storyStep;
 
-    for (const step of steps) {
-      if (step.getBoundingClientRect().top > trigger) break;
-      active = step.dataset.storyStep;
+    if (window.matchMedia("(max-width: 760px)").matches) {
+      for (let index = 0; index < steps.length - 1; index++) {
+        const painCard = steps[index].querySelector(".project-story__card");
+        if (painCard.getBoundingClientRect().bottom > 24) break;
+
+        active = steps[index + 1].dataset.storyStep;
+      }
+    } else {
+      const trigger = window.innerHeight * 0.5;
+
+      for (const step of steps) {
+        if (step.getBoundingClientRect().top > trigger) break;
+        active = step.dataset.storyStep;
+      }
     }
 
     notes.forEach((group) => {
@@ -1082,11 +1126,32 @@ document.querySelectorAll(".project-story__visual").forEach((figure) => {
 
     svg.setAttribute("viewBox", `0 0 ${frame.width} ${frame.height}`);
 
-    const gap = parseFloat(
-      getComputedStyle(figure).getPropertyValue("--note-gap"),
-    );
+    const visualStyle = getComputedStyle(figure);
+    const gap = parseFloat(visualStyle.getPropertyValue("--note-gap"));
     const gutter = parseFloat(getComputedStyle(grid).columnGap) || 0;
-    const columnStep = (frame.width + gutter) / 8;
+    const visualColumns =
+      Number(visualStyle.gridColumnEnd) - Number(visualStyle.gridColumnStart);
+    const columnStep = (frame.width + gutter) / visualColumns;
+
+    if (window.matchMedia("(760px < width <= 1020px)").matches) {
+      // Calculate the five-column height even if the image is currently compact.
+      const wideImageWidth = 5 * columnStep - gutter;
+      const wideImageHeight = screen.height * (wideImageWidth / screen.width);
+      const notesSpace =
+        parseFloat(visualStyle.paddingTop) +
+        parseFloat(visualStyle.paddingBottom);
+      const stickyTop = parseFloat(visualStyle.top);
+      const bottomClearance = 12;
+      const needsCompact =
+        stickyTop + wideImageHeight + notesSpace + bottomClearance >
+        window.innerHeight;
+
+      if (figure.classList.contains("is-compact") !== needsCompact) {
+        figure.classList.toggle("is-compact", needsCompact);
+        // The ResizeObserver will reposition the notes at the new width.
+        return;
+      }
+    }
 
     const imageLeft = screen.left - frame.left;
     const imageTop = screen.top - frame.top;
@@ -1135,30 +1200,51 @@ document.querySelectorAll(".project-story__visual").forEach((figure) => {
         labelX = (column - 4) * columnStep;
       }
 
+      const stackedStory = window.matchMedia("(width <= 760px)").matches;
+      const sameSideNotes = [...note.parentElement.children].filter(
+        (item) => item.dataset.side === note.dataset.side,
+      );
+      const noteIndex = sameSideNotes.indexOf(note);
+      const useSideConnector = false;
+      const offset = 0;
+
+      if (stackedStory) {
+        labelX = Math.min(noteIndex, 1) * columnStep;
+      }
+
       const lineX = labelX + labelWidth / 2;
-      const labelY = imageEdge + (above ? -gap : gap);
+      const labelY = imageEdge + (above ? -1 : 1) * (gap + offset);
       const lineEndY = labelY + (above ? 6 : -6);
       const bendY = (imageEdge + lineEndY) / 2;
 
-      // Attach to the edge facing the label, a little in from the corners.
+      label.setAttribute("x", labelX);
+      label.setAttribute("y", labelY);
+
+      const textBounds = label.getBBox();
+      const sideX = textBounds.x + textBounds.width + 6;
+      const sideY = textBounds.y + textBounds.height / 2;
+      const elbowX = sideX + 10;
+      const targetX = useSideConnector ? elbowX : lineX;
+
       const inset = Math.min(8, boxWidth / 2);
       const anchorX = Math.max(
         boxX + inset,
-        Math.min(lineX, boxX + boxWidth - inset),
+        Math.min(targetX, boxX + boxWidth - inset),
       );
       const anchorY = above ? boxY : boxY + boxHeight;
 
-      label.setAttribute("x", labelX);
-      label.setAttribute("y", labelY);
       line.setAttribute(
         "d",
-        `M ${anchorX} ${anchorY} V ${bendY} H ${lineX} V ${lineEndY}`,
+        useSideConnector
+          ? `M ${anchorX} ${anchorY} V ${bendY} H ${elbowX} V ${sideY} H ${sideX}`
+          : `M ${anchorX} ${anchorY} V ${bendY} H ${lineX} V ${lineEndY}`,
       );
     });
   }
   const observer = new ResizeObserver(positionNotes);
   observer.observe(figure);
   observer.observe(image);
+  window.addEventListener("resize", positionNotes);
   document.fonts.ready.then(positionNotes);
 });
 
@@ -1230,7 +1316,9 @@ document.querySelectorAll(".project-story").forEach((story) => {
     let currentLink = null;
 
     for (const { link, section } of sections) {
-      if (section.getBoundingClientRect().top <= readingLine) {
+      const { top, bottom } = section.getBoundingClientRect();
+
+      if (top <= readingLine && bottom > readingLine) {
         currentLink = link;
       }
     }
@@ -1263,4 +1351,79 @@ document.querySelectorAll(".project-story").forEach((story) => {
   window.addEventListener("resize", scheduleUpdate);
   window.addEventListener("pageshow", scheduleUpdate);
   scheduleUpdate();
+})();
+
+document.querySelectorAll(".hero-languages").forEach((row) => {
+  function updateLanguageFade() {
+    const maxScroll = row.scrollWidth - row.clientWidth;
+
+    row.toggleAttribute("data-fade-left", row.scrollLeft > 1);
+    row.toggleAttribute("data-fade-right", maxScroll - row.scrollLeft > 1);
+  }
+
+  row.addEventListener("scroll", updateLanguageFade, { passive: true });
+
+  const observer = new ResizeObserver(updateLanguageFade);
+  observer.observe(row);
+  row.querySelectorAll("button").forEach((button) => observer.observe(button));
+
+  updateLanguageFade();
+});
+
+(() => {
+  const sidebar = document.querySelector(".left-sidebar");
+  if (!sidebar) return;
+
+  const links = document.querySelectorAll(".left-sidebar a, #theme-toggle");
+  const desktop = window.matchMedia("(width > 1020px)");
+  let frame = null;
+
+  function updateSidebarColors() {
+    frame = null;
+
+    const footer = desktop.matches
+      ? document.querySelector(".contact-footer")
+      : null;
+    const footerBounds = footer?.getBoundingClientRect();
+
+    links.forEach((link) => {
+      const bounds = link.getBoundingClientRect();
+      const midpoint = bounds.top + bounds.height / 2;
+      const overFooter =
+        footerBounds &&
+        midpoint >= footerBounds.top &&
+        midpoint < footerBounds.bottom;
+
+      link.classList.toggle("is-over-footer", Boolean(overFooter));
+    });
+  }
+
+  function scheduleSidebarUpdate() {
+    if (frame === null) {
+      frame = requestAnimationFrame(updateSidebarColors);
+    }
+  }
+
+  window.addEventListener("scroll", scheduleSidebarUpdate, { passive: true });
+  window.addEventListener("resize", scheduleSidebarUpdate);
+  window.addEventListener("load", scheduleSidebarUpdate);
+  scheduleSidebarUpdate();
+})();
+(() => {
+  const key = "portfolio-show-grid";
+  const button = document.getElementById("grid-toggle");
+
+  function setGridVisible(visible) {
+    document.body.classList.toggle("show-grid", visible);
+    button?.setAttribute("aria-pressed", String(visible));
+  }
+
+  setGridVisible(localStorage.getItem(key) === "true");
+
+  button?.addEventListener("click", () => {
+    const visible = !document.body.classList.contains("show-grid");
+
+    setGridVisible(visible);
+    localStorage.setItem(key, String(visible));
+  });
 })();

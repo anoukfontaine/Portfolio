@@ -1,6 +1,7 @@
-/* =============================================
-   THEME TOGGLE
-============================================= */
+/* ============================================================
+   01 — THEMES & THEME-DEPENDENT IMAGES
+   Colour palettes, persisted theme, animated eye, and image variants.
+   ============================================================ */
 const themes = [
   {
     bg: "#FAF6ED",
@@ -9,7 +10,6 @@ const themes = [
     p1: "#001268",
     p4: "#CD4834",
     p2: "#94A4F3",
-
     imageFilter: "none",
   },
   {
@@ -19,7 +19,6 @@ const themes = [
     p1: "#B892FF",
     p4: "#95F8D8",
     p2: "#6120DB",
-
     imageFilter: "brightness(.97) saturate(.95) contrast(.97)",
   },
 ];
@@ -38,19 +37,16 @@ function applyTheme(index) {
   updateHeroIllustration(index);
   updateThemeImages(index);
   const logoImage = document.getElementById("site-logo");
-
   if (logoImage) {
     logoImage.src =
       index === 1
-        ? "Images/Home/0_logo_AF_theme_2.png"
-        : "Images/Home/0_logo_AF_theme_1.png";
+        ? "/Images/Home/0_logo_AF_theme_2.png"
+        : "/Images/Home/0_logo_AF_theme_1.png";
   }
 }
-
 let themeIndex = parseInt(localStorage.getItem("theme-index"), 10) || 0;
 updateHeroIllustration(themeIndex);
 updateThemeImages(themeIndex);
-
 document.getElementById("theme-toggle").addEventListener("click", () => {
   themeIndex = (themeIndex + 1) % themes.length;
   applyTheme(themeIndex);
@@ -60,10 +56,8 @@ const eyeButton = document.getElementById("theme-toggle");
 const eyeLid = eyeButton.querySelector(".eye-lid");
 const eyeUpperLine = eyeButton.querySelector(".eye-upper-line");
 const eyeLashes = eyeButton.querySelector(".eye-lashes");
-
 const eyeHover = window.matchMedia("(hover: hover)");
 const eyeReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-
 let eyeHovered = false;
 let eyeFrame;
 let eyeProgress = themeIndex === 1 ? 1 : 0;
@@ -71,62 +65,49 @@ let eyeProgress = themeIndex === 1 ? 1 : 0;
 function drawEye(progress) {
   // 0 = open, 1 = closed.
   const lidCurve = -6 + 68 * progress;
-
   eyeLid.setAttribute("d", `M3 28 Q40 -6 77 28 Q40 ${lidCurve} 3 28Z`);
-
   eyeUpperLine.setAttribute("d", `M3 28 Q40 ${lidCurve} 77 28`);
-
   eyeLashes.style.transform = `scaleY(${1 - 2 * progress})`;
 }
+
 function animateEye() {
   cancelAnimationFrame(eyeFrame);
-
   const normallyClosed = themeIndex === 1;
   const target = Number(eyeHovered ? !normallyClosed : normallyClosed);
-
   const start = eyeProgress;
   const startedAt = performance.now();
-
   if (eyeReducedMotion.matches) {
     eyeProgress = target;
     drawEye(target);
     return;
   }
-
   function frame(now) {
     const time = Math.min((now - startedAt) / 350, 1);
     const eased = time * time * (3 - 2 * time);
-
     eyeProgress = start + (target - start) * eased;
     drawEye(eyeProgress);
-
     if (time < 1) {
       eyeFrame = requestAnimationFrame(frame);
     }
   }
-
   eyeFrame = requestAnimationFrame(frame);
 }
-
 eyeButton.addEventListener("pointerenter", () => {
   if (!eyeHover.matches) return;
   eyeHovered = true;
   animateEye();
 });
-
 eyeButton.addEventListener("pointerleave", () => {
   eyeHovered = false;
   animateEye();
 });
-
 // Your existing click listener changes themeIndex first.
 eyeButton.addEventListener("click", animateEye);
-
 drawEye(eyeProgress);
+
 function updateHeroIllustration(index) {
   const illustration = document.getElementById("hero-illustration");
   if (!illustration) return;
-
   illustration.src = `/Images/Home/0_2_Illustration_theme_${index + 1}.png`;
 }
 
@@ -134,18 +115,17 @@ function updateThemeImages(index) {
   document.querySelectorAll("[data-theme-src]").forEach((image) => {
     const pattern = image.dataset.themeSrc;
     if (!pattern) return;
-
     image.src = pattern.replace("{theme}", index + 1);
   });
 }
-/* =============================================
-                   CONTACT VERBS
-============================================= */
+
+/* ============================================================
+   02 — CONTACT VERB INTERACTION
+   Cycles the interactive verb in the contact footer.
+   ============================================================ */
 document.addEventListener("click", (event) => {
   const word = event.target.closest("#contact-verb");
-
   if (!word) return;
-
   const words = window.contactVerbs?.length
     ? window.contactVerbs
     : [
@@ -158,84 +138,66 @@ document.addEventListener("click", (event) => {
         "design",
         "create",
       ];
-
   const current = words.indexOf(word.textContent.trim());
   const next = (current + 1) % words.length;
-
   word.textContent = words[next];
   window.contactVerbIndex = next;
 });
-/* =============================================
-                   CUSTOM CURSOR
-============================================= */
-const cursor = document.getElementById("cursor");
 
+/* ============================================================
+   03 — CUSTOM CURSOR
+   Activates the cursor for fine pointers and restores the system cursor when appropriate.
+   ============================================================ */
+const cursor = document.getElementById("cursor");
 if (cursor) {
   const finePointer = window.matchMedia("(hover: hover) and (pointer: fine)");
-
   const blendModeSupported =
     typeof CSS !== "undefined" &&
     typeof CSS.supports === "function" &&
     CSS.supports("mix-blend-mode", "difference");
-
   let customCursorActive = false;
-
   const canUseCustomCursor = () => finePointer.matches && blendModeSupported;
-
   const deactivateCustomCursor = () => {
     customCursorActive = false;
-
     document.documentElement.classList.remove("custom-cursor");
-
     cursor.classList.remove("hovering");
     cursor.style.opacity = "0";
   };
-
   const moveCustomCursor = (e) => {
     if (!canUseCustomCursor()) {
       deactivateCustomCursor();
       return;
     }
-
     /* First position + show the custom cursor */
     cursor.style.left = e.clientX + "px";
     cursor.style.top = e.clientY + "px";
     cursor.style.opacity = "1";
-
     /* Only now hide the native cursor */
     if (!customCursorActive) {
       document.documentElement.classList.add("custom-cursor");
       customCursorActive = true;
     }
   };
-
   document.addEventListener("mousemove", moveCustomCursor);
-
   const hoverables = 'a, button, [role="button"], .cursor-grow';
-
   document.addEventListener("mouseover", (e) => {
     if (!customCursorActive) return;
-
     if (e.target.matches(hoverables) || e.target.closest(hoverables)) {
       cursor.classList.add("hovering");
     }
   });
-
   document.addEventListener("mouseout", (e) => {
     if (e.target.matches(hoverables) || e.target.closest(hoverables)) {
       cursor.classList.remove("hovering");
     }
   });
-
   /* Restore normal cursor if we leave the page */
   document.documentElement.addEventListener(
     "mouseleave",
     deactivateCustomCursor,
   );
-
   /* Restore normal cursor if browser/window loses focus */
   window.addEventListener("blur", deactivateCustomCursor);
-
   /* Restore it if device switches to touch/pen etc. */
   if (typeof finePointer.addEventListener === "function") {
     finePointer.addEventListener("change", (e) => {
@@ -246,84 +208,50 @@ if (cursor) {
   }
 }
 
-/* =============================================
-   NAV — language switch & theme toggle
-============================================= */
-const languages = ["EN", "DE" /*, "FR"*/];
-
-const savedLang = localStorage.getItem("lang");
-const browserLang = (navigator.language || "en").slice(0, 2).toLowerCase();
-
-const initialLang = ["en", "de"].includes(savedLang)
-  ? savedLang
-  : browserLang === "de"
-    ? "de"
-    : "en";
-
-let langIndex = languages.indexOf(initialLang.toUpperCase());
-const langBtn = document.querySelector(".nav-lang");
-langBtn.childNodes[0].textContent = languages[langIndex];
-
-langBtn.addEventListener("mouseenter", () => {
-  const nextIndex = (langIndex + 1) % languages.length;
-  langBtn.childNodes[0].textContent = languages[nextIndex];
-});
-
-langBtn.addEventListener("mouseleave", () => {
-  langBtn.childNodes[0].textContent = languages[langIndex];
-});
-
-langBtn.addEventListener("click", () => {
-  const nextIndex = (langIndex + 1) % languages.length;
-
-  document.documentElement.classList.add("lang-switching");
-
-  setTimeout(async () => {
-    langIndex = nextIndex;
-    langBtn.childNodes[0].textContent = languages[langIndex];
-
-    const newLanguage = languages[langIndex].toLowerCase();
-
-    if (window.applyLanguage) {
-      await window.applyLanguage(newLanguage);
-    }
-
-    updateTestimonialLanguageState(newLanguage);
-
-    requestAnimationFrame(() => {
-      document.documentElement.classList.remove("lang-switching");
-    });
-  }, 120);
-});
-
-let moonRotation = themeIndex * 90;
-const themeNavBtn = document.querySelector(".nav-theme");
-themeNavBtn.addEventListener("click", function () {
-  moonRotation += 90;
-  document.documentElement.style.setProperty(
-    "--moon-rotation",
-    `${moonRotation}deg`,
-  );
-});
-
-/* =============================================
-   NAV — sidebar, mobile menu & scroll
-============================================= */
+/* ============================================================
+   04 — MOBILE MENU & SCROLL NAVIGATION
+   Opens and closes mobile navigation; routes links to homepage sections.
+   ============================================================ */
 const hamburger = document.getElementById("nav-hamburger");
 const mobileMenu = document.getElementById("mobile-menu");
+const sidebarDrawer = document.getElementById("site-sidebar");
+const drawerViewport = window.matchMedia("(max-width: 1020px)");
 
-hamburger.addEventListener("click", () => {
-  const isOpen = !mobileMenu.classList.contains("open");
+if (hamburger && sidebarDrawer) {
+  function setDrawerOpen(open) {
+    hamburger.classList.toggle("open", open);
+    hamburger.setAttribute("aria-expanded", String(open));
+    hamburger.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+    document.body.classList.toggle("menu-open", open);
+    document.documentElement.classList.toggle("menu-open", open);
+  }
 
-  hamburger.classList.toggle("open", isOpen);
-  mobileMenu.classList.toggle("open", isOpen);
+  hamburger.addEventListener("click", () => {
+    const open = hamburger.getAttribute("aria-expanded") === "true";
+    setDrawerOpen(!open);
 
-  document.body.classList.toggle("menu-open", isOpen);
-  document.documentElement.classList.toggle("menu-open", isOpen);
+    if (!open) sidebarDrawer.querySelector("a")?.focus();
+  });
 
-  hamburger.setAttribute("aria-expanded", String(isOpen));
-  mobileMenu.setAttribute("aria-hidden", String(!isOpen));
-});
+  sidebarDrawer.addEventListener("click", (event) => {
+    if (drawerViewport.matches && event.target.closest("a")) {
+      setDrawerOpen(false);
+      hamburger.focus({ preventScroll: true });
+    }
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (
+      event.key === "Escape" &&
+      hamburger.getAttribute("aria-expanded") === "true"
+    ) {
+      setDrawerOpen(false);
+      hamburger.focus();
+    }
+  });
+
+  drawerViewport.addEventListener("change", () => setDrawerOpen(false));
+}
 
 function smoothScrollTo(href, offset) {
   const target = document.querySelector(href);
@@ -333,36 +261,29 @@ function smoothScrollTo(href, offset) {
     behavior: "smooth",
   });
 }
-
 document.querySelectorAll(".mobile-menu-link").forEach((link) => {
   link.addEventListener("click", (e) => {
     const href = link.getAttribute("href");
-
     // Extract the section hash whether the link is "#work", "/#work"
     // or an older path such as "../index.html#work".
     const hash = href && href.includes("#") ? `#${href.split("#")[1]}` : href;
     const target =
       hash && hash.startsWith("#") ? document.querySelector(hash) : null;
-
     hamburger.classList.remove("open");
     mobileMenu.classList.remove("open");
     document.body.classList.remove("menu-open");
     document.documentElement.classList.remove("menu-open");
-
     /*
      * Homepage:
      * The section exists, so scroll to it smoothly.
      */
     if (target) {
       e.preventDefault();
-
       requestAnimationFrame(() => {
         smoothScrollTo(hash, hash === "#contact" ? 100 : 72);
       });
-
       return;
     }
-
     /*
      * Case-study page:
      * The section does not exist here, so go back to
@@ -374,26 +295,23 @@ document.querySelectorAll(".mobile-menu-link").forEach((link) => {
 });
 
 function getHomeSectionUrl(hash) {
-  return `/${hash}`;
+  return `/index_2.html${hash}`;
 }
-/* =============================================
-   GLOBAL LEFT SIDEBAR NAVIGATION
-============================================= */
 
+/* ============================================================
+   05 — DESKTOP SIDEBAR NAVIGATION
+   Smooth section scrolling, active links, and case-study sub-navigation.
+   ============================================================ */
 const sidebarLinks = document.querySelectorAll(".left-sidebar a[data-target]");
 const sidebarSub = document.querySelector(".left-sidebar-sub");
 const sidebarSubLinks = document.querySelectorAll(".left-sidebar-sub-item");
-
 const sidebarSubSectionIds = Array.from(sidebarSubLinks).map(
   (link) => link.dataset.target,
 );
-
 sidebarLinks.forEach((link) => {
   link.addEventListener("click", (e) => {
     e.preventDefault();
-
     const target = document.getElementById(link.dataset.target);
-
     if (target) {
       target.scrollIntoView({ behavior: "smooth" });
     }
@@ -403,10 +321,8 @@ sidebarLinks.forEach((link) => {
 const onSidebarScroll = () => {
   let current = null;
   let currentSub = null;
-
   sidebarLinks.forEach((link) => {
     const target = document.getElementById(link.dataset.target);
-
     if (
       target &&
       target.getBoundingClientRect().top <= window.innerHeight * 0.5
@@ -414,10 +330,8 @@ const onSidebarScroll = () => {
       current = link.dataset.target;
     }
   });
-
   sidebarSubSectionIds.forEach((id) => {
     const section = document.getElementById(id);
-
     if (
       section &&
       section.getBoundingClientRect().top <= window.innerHeight * 0.5
@@ -425,594 +339,66 @@ const onSidebarScroll = () => {
       currentSub = id;
     }
   });
-
   const processEl = document.getElementById("section-process");
   const productEl = document.getElementById("section-product");
-
   const showSub =
     processEl &&
     productEl &&
     processEl.getBoundingClientRect().top <= window.innerHeight * 0.5 &&
     productEl.getBoundingClientRect().top > 0;
-
   if (!showSub) {
     currentSub = null;
   }
-
   if (sidebarSub) {
     sidebarSub.classList.toggle("visible", showSub);
   }
-
   sidebarLinks.forEach((link) => {
     const target = link.dataset.target;
     const isSubItem = link.classList.contains("left-sidebar-sub-item");
-
     let isActive = false;
-
     if (isSubItem) {
       isActive = target === currentSub;
     } else {
       isActive = target === current && !currentSub;
     }
-
     link.classList.toggle("active", isActive);
   });
 };
-
 if (sidebarLinks.length > 0) {
   window.addEventListener("scroll", onSidebarScroll);
   onSidebarScroll();
 }
-/* =============================================
-   NAV — logo collapse on scroll
-============================================= */
-const hideOrder = [14, 13, 12, 11, 10, 9, 8, 6, 5, 4, 3, 2, 1];
-const showOrder = [...hideOrder].reverse();
-const logoLetters = document.querySelectorAll(".logo .l[data-i]");
-const byIndex = {};
-logoLetters.forEach((el) => (byIndex[el.dataset.i] = el));
 
-const isCasePage = document.body.classList.contains("case-page");
-
-let isScrolled = false;
-let timers = [];
-
-function clearTimers() {
-  timers.forEach(clearTimeout);
-  timers = [];
-}
-
-function showFull() {
-  clearTimers();
-  showOrder.forEach((i, pos) => {
-    timers.push(
-      setTimeout(() => byIndex[i].classList.remove("hide"), pos * 35),
-    );
-  });
-}
-
-function showShort() {
-  clearTimers();
-  hideOrder.forEach((i, pos) => {
-    timers.push(setTimeout(() => byIndex[i].classList.add("hide"), pos * 35));
-  });
-}
-
-window.addEventListener("scroll", () => {
-  if (isCasePage) return;
-
-  const scrolled = window.scrollY > 60;
-  if (scrolled === isScrolled) return;
-
-  isScrolled = scrolled;
-
-  if (scrolled) showShort();
-  else if (window.innerWidth >= 900) showFull();
-});
-
-const logo = document.querySelector(".logo");
-
-function checkLogoWidth() {
-  if (isCasePage) {
-    showShort();
-    return;
-  }
-
-  if (window.innerWidth < 900) showShort();
-  else if (!isScrolled) showFull();
-}
-
-checkLogoWidth();
-window.addEventListener("resize", checkLogoWidth);
-
-logo.addEventListener("mouseenter", () => {
-  if (window.innerWidth >= 900) showFull();
-});
-
-logo.addEventListener("mouseleave", () => {
-  if (isCasePage) {
-    showShort();
-    return;
-  }
-
-  if (isScrolled && window.innerWidth >= 900) showShort();
-});
-
-/* =============================================
-                   CASE STUDY
-                ============================================= */
-/* =============================================
-   CASE STUDY PROCESS BAR LINE
-============================================= */
-
-const alignProcessLine = () => {
-  const dot = document.querySelector(".cs-process-bar-dot");
-  const steps = document.querySelector(".cs-process-bar-steps");
-
-  if (!dot || !steps) return;
-
-  const dotRect = dot.getBoundingClientRect();
-  const stepsRect = steps.getBoundingClientRect();
-
-  const topOffset = dotRect.top - stepsRect.top + dotRect.height / 2;
-
-  steps.style.setProperty("--line-top", topOffset + "px");
-};
-
-alignProcessLine();
-window.addEventListener("resize", alignProcessLine);
-
-/* =============================================
-   CASE STUDY LIGHTBOX
-============================================= */
-
-const lightbox = document.getElementById("lightbox");
-const lightboxImg = document.getElementById("lightbox-img");
-const lightboxClose = document.getElementById("lightbox-close");
-
-document.querySelectorAll(".cs-lightbox-trigger").forEach((img) => {
-  img.addEventListener("click", () => {
-    if (!lightbox || !lightboxImg) return;
-
-    lightboxImg.src = img.src;
-    lightboxImg.alt = img.alt;
-    lightbox.classList.add("open");
-  });
-});
-
-if (lightboxClose && lightbox) {
-  lightboxClose.addEventListener("click", () => {
-    lightbox.classList.remove("open");
-  });
-}
-
-if (lightbox) {
-  lightbox.addEventListener("click", (e) => {
-    if (e.target === e.currentTarget) {
-      lightbox.classList.remove("open");
-    }
-  });
-}
-
-/* =============================================
-   CASE STUDY TESTIMONIAL MODAL
-============================================= */
-
-const testimonialModal = document.getElementById("testimonial-modal");
-const testimonialModalQuote = document.getElementById(
-  "testimonial-modal-quote",
-);
-const testimonialModalAuthor = document.getElementById(
-  "testimonial-modal-author",
-);
-const testimonialModalClose = document.getElementById(
-  "testimonial-modal-close",
-);
-
-const testimonialCards = document.querySelectorAll(
-  ".cs-testimonial-card--interactive",
-);
-
-let lastFocusedTestimonial = null;
-
-function openTestimonial(card) {
-  if (!testimonialModal || !testimonialModalQuote || !testimonialModalAuthor)
-    return;
-
-  const fullQuote = card.querySelector(".cs-testimonial-full-quote");
-  const fullAuthor = card.querySelector(".cs-testimonial-full-author");
-
-  if (!fullQuote || !fullAuthor) return;
-
-  lastFocusedTestimonial = card;
-
-  testimonialModalQuote.innerHTML = fullQuote.innerHTML;
-  testimonialModalAuthor.innerHTML = fullAuthor.innerHTML;
-
-  testimonialModal.classList.add("open");
-  testimonialModal.setAttribute("aria-hidden", "false");
-
-  document.body.style.overflow = "hidden";
-
-  testimonialModalClose?.focus();
-}
-
-function closeTestimonial() {
-  if (!testimonialModal) return;
-
-  testimonialModal.classList.remove("open");
-  testimonialModal.setAttribute("aria-hidden", "true");
-
-  document.body.style.overflow = "";
-
-  lastFocusedTestimonial?.focus();
-}
-
-testimonialCards.forEach((card) => {
-  card.addEventListener("click", () => {
-    openTestimonial(card);
-  });
-
-  card.addEventListener("keydown", (e) => {
-    if (e.key === "Enter" || e.key === " ") {
-      e.preventDefault();
-      openTestimonial(card);
-    }
-  });
-});
-
-testimonialModalClose?.addEventListener("click", closeTestimonial);
-
-testimonialModal?.addEventListener("click", (e) => {
-  if (e.target === e.currentTarget) {
-    closeTestimonial();
-  }
-});
-
-document.addEventListener("keydown", (e) => {
-  if (e.key === "Escape" && testimonialModal?.classList.contains("open")) {
-    closeTestimonial();
-  }
-});
-/* =============================================
- CASE STUDY ITERATIONS TOGGLE + AUTOPLAY
-============================================= */
-
-(() => {
-  const iterations = document.querySelector(".cs-iterations");
-  if (!iterations) return;
-
-  const buttons = Array.from(iterations.querySelectorAll(".pill-btn--toggle"));
-  const before = document.getElementById("iterations-before");
-  const after = document.getElementById("iterations-after");
-
-  if (!buttons.length || !before || !after) return;
-
-  const AUTOPLAY_DELAY = 3500;
-  const FADE_DURATION = 220;
-  const AUW_ANIMATION_DURATION = 650;
-
-  const isAuwSolution = iterations.classList.contains(
-    "cs-iterations--auw-solution",
-  );
-
-  let autoPlay = null;
-  let transitionTimer = null;
-  let directionalTimer = null;
-  let currentState = "before";
-  let userHasInteracted = false;
-
-  function updateButtons(state) {
-    buttons.forEach((button) => {
-      const isActive = button.dataset.target === state;
-      button.classList.toggle("active", isActive);
-      button.setAttribute("aria-pressed", String(isActive));
-    });
-  }
-
-  function clearDirectionalAnimation() {
-    clearTimeout(directionalTimer);
-
-    before.classList.remove("is-shrinking-out");
-    after.classList.remove("is-growing-in");
-  }
-
-  function showIteration(state, { animate = true } = {}) {
-    if (state !== "before" && state !== "after") return;
-
-    clearTimeout(transitionTimer);
-    clearDirectionalAnimation();
-
-    const previousState = currentState;
-    const incoming = state === "before" ? before : after;
-    const outgoing = state === "before" ? after : before;
-
-    const useAuwForwardAnimation =
-      isAuwSolution && previousState === "before" && state === "after";
-
-    currentState = state;
-    updateButtons(state);
-
-    if (!animate) {
-      before.classList.toggle("is-visible", state === "before");
-      before.classList.toggle("is-top", state === "before");
-      before.setAttribute("aria-hidden", String(state !== "before"));
-
-      after.classList.toggle("is-visible", state === "after");
-      after.classList.toggle("is-top", state === "after");
-      after.setAttribute("aria-hidden", String(state !== "after"));
-
-      return;
-    }
-
-    outgoing.classList.add("is-visible");
-    outgoing.classList.remove("is-top", "is-fading-out");
-    outgoing.setAttribute("aria-hidden", "false");
-
-    incoming.classList.remove("is-visible", "is-fading-out");
-    incoming.classList.add("is-top");
-    incoming.setAttribute("aria-hidden", "false");
-
-    requestAnimationFrame(() => {
-      incoming.classList.add("is-visible");
-      outgoing.classList.add("is-fading-out");
-
-      if (useAuwForwardAnimation) {
-        before.classList.add("is-shrinking-out");
-        after.classList.add("is-growing-in");
-
-        directionalTimer = setTimeout(
-          clearDirectionalAnimation,
-          AUW_ANIMATION_DURATION,
-        );
-      }
-    });
-
-    transitionTimer = setTimeout(
-      () => {
-        outgoing.classList.remove("is-visible", "is-fading-out");
-        outgoing.setAttribute("aria-hidden", "true");
-        incoming.setAttribute("aria-hidden", "false");
-      },
-      useAuwForwardAnimation ? AUW_ANIMATION_DURATION : FADE_DURATION,
-    );
-  }
-
-  function stopAutoPlay() {
-    userHasInteracted = true;
-
-    if (autoPlay) {
-      clearInterval(autoPlay);
-      autoPlay = null;
-    }
-  }
-
-  buttons.forEach((button) => {
-    button.addEventListener("click", () => {
-      stopAutoPlay();
-      showIteration(button.dataset.target);
-    });
-  });
-
-  showIteration("before", { animate: false });
-
-  autoPlay = setInterval(() => {
-    if (userHasInteracted) return;
-
-    showIteration(currentState === "before" ? "after" : "before");
-  }, AUTOPLAY_DELAY);
-})();
-
-/* =============================================
-   DESIGN DECISIONS
-============================================= */
-
-const decisionButtons = document.querySelectorAll("[data-decision-tab]");
-const decisionHotspots = document.querySelectorAll(".cs-hotspot");
-
-function showDecisionCategory(category) {
-  decisionHotspots.forEach((hotspot) => {
-    hotspot.classList.toggle(
-      "show-card",
-      hotspot.dataset.decisionCategory === category,
-    );
-  });
-}
-
-decisionButtons.forEach((button) => {
-  button.addEventListener("click", () => {
-    decisionButtons.forEach((btn) => btn.classList.remove("active"));
-    button.classList.add("active");
-
-    showDecisionCategory(button.dataset.decisionTab);
-  });
-});
-
-// Initial state
-showDecisionCategory("ia");
-/* =============================================
- CASE STUDY GALLERY
-============================================= */
-
-const gallery = document.querySelector(".cs-pdf-gallery");
-
-if (gallery) {
-  const slides = gallery.querySelectorAll("img");
-  const prevBtn = gallery.querySelector(".cs-gallery-prev");
-  const nextBtn = gallery.querySelector(".cs-gallery-next");
-
-  let current = 0;
-  let isTransitioning = false;
-  let autoPlay;
-
-  slides[current].classList.add("active");
-
-  function showSlide(next) {
-    if (isTransitioning || next === current) return;
-
-    isTransitioning = true;
-
-    slides[next].classList.add("active");
-
-    setTimeout(() => {
-      slides[current].classList.remove("active");
-      current = next;
-      isTransitioning = false;
-    }, 800);
-  }
-
-  function restartAutoPlay() {
-    clearInterval(autoPlay);
-
-    autoPlay = setInterval(() => {
-      showSlide((current + 1) % slides.length);
-    }, 3000);
-  }
-
-  nextBtn?.addEventListener("click", () => {
-    showSlide((current + 1) % slides.length);
-    restartAutoPlay();
-  });
-
-  prevBtn?.addEventListener("click", () => {
-    showSlide((current - 1 + slides.length) % slides.length);
-    restartAutoPlay();
-  });
-
-  restartAutoPlay();
-}
-
-/* =============================================
- CASE STUDY DESIGN DECISIONs - HOTSPOTS
-============================================= */
-
-const spotlightZones = document.querySelectorAll(".cs-spotlight-zone");
-
-const spotlightImage = document.querySelector(".cs-spotlight-image--visible");
-
-if (spotlightImage) {
-  spotlightImage.addEventListener(
-    "mouseenter",
-    () => {
-      document.querySelectorAll(".initial-active").forEach((zone) => {
-        zone.classList.remove("initial-active");
-      });
-    },
-    { once: true },
-  );
-}
-
-document.addEventListener("mousemove", (event) => {
-  let hoveredZone = null;
-
-  spotlightZones.forEach((zone) => {
-    const rect = zone.getBoundingClientRect();
-
-    const isInside =
-      event.clientX >= rect.left &&
-      event.clientX <= rect.right &&
-      event.clientY >= rect.top &&
-      event.clientY <= rect.bottom;
-
-    if (isInside) {
-      if (!hoveredZone) {
-        hoveredZone = zone;
-      }
-
-      const hoveredArea = hoveredZone.offsetWidth * hoveredZone.offsetHeight;
-      const currentArea = zone.offsetWidth * zone.offsetHeight;
-
-      if (currentArea < hoveredArea) {
-        hoveredZone = zone;
-      }
-    }
-  });
-
-  spotlightZones.forEach((zone) => {
-    zone.classList.remove("group-active");
-  });
-
-  if (hoveredZone) {
-    const group = hoveredZone.dataset.group;
-
-    if (group) {
-      document
-        .querySelectorAll(`.cs-spotlight-zone[data-group="${group}"]`)
-        .forEach((zone) => zone.classList.add("group-active"));
-    } else {
-      hoveredZone.classList.add("group-active");
-    }
-  }
-});
-
-/* =============================================
-                   MAIN PAGE
-                ============================================= */
-
-/* =============================================
-                   HERO — clock
-                ============================================= */
-function updateClock() {
-  const clock = document.getElementById("cet-clock");
-
-  if (!clock) return;
-
-  const cet = new Date(
-    new Date().toLocaleString("en-US", {
-      timeZone: "Europe/Zurich",
-    }),
-  );
-
-  clock.textContent = [cet.getHours(), cet.getMinutes(), cet.getSeconds()]
-    .map((n) => String(n).padStart(2, "0"))
-    .join(":");
-}
-
-updateClock();
-setInterval(updateClock, 1000);
-
-/* =============================================
-   HERO — "Tidy up data" animation
-   Illustration toggles between sort() and unsort()
-============================================= */
-
+/* ============================================================
+   06 — INTERACTIVE HERO
+   Sorts hero letters into groups when the illustration is clicked; restores them on the next click.
+   ============================================================ */
 const heroIllustrationToggle = document.getElementById(
   "hero-illustration-toggle",
 );
-
 let isCleaned = false,
   sortedEls = [],
   originalHidden = [];
-
 // Elements whose text will be scattered into individual letter spans
-const textTargets = [
-  ".hero-headline",
-  ".hero-languages",
-  ".hero-links .link-text",
-  ".hero-description",
-  ".availability-text",
-  ".hero-location",
-];
-
+const textTargets = [".hero-headline", ".hero-languages"];
 // Toggle between sort and unsort when clicking the illustration
 if (heroIllustrationToggle) {
   heroIllustrationToggle.addEventListener("click", () => {
     isCleaned ? unsort() : sort();
     isCleaned = !isCleaned;
-
     heroIllustrationToggle.setAttribute(
       "aria-label",
       isCleaned ? "Restore text" : "Sort data",
     );
   });
 }
+
 function sort() {
   // --- STEP 1: Get hero dimensions for layout calculations ---
   const heroRect = document.querySelector(".hero").getBoundingClientRect();
   const vw = window.innerWidth,
     vh = heroRect.height,
     topY = heroRect.top + window.scrollY;
-
   // --- STEP 2: Wrap every character in textTargets into individual spans ---
   // Letters get .char-span, non-letter visible chars get .misc-span
   textTargets.forEach((sel) => {
@@ -1042,7 +428,6 @@ function sort() {
       originalHidden.push({ el });
     });
   });
-
   // --- STEP 3: Collect all .char-span elements with their position and style ---
   let allChars = [];
   textTargets.forEach((sel) => {
@@ -1072,7 +457,6 @@ function sort() {
       });
     });
   });
-
   // --- STEP 4: Group characters by letter (case-insensitive) ---
   const groups = {};
   allChars.forEach((c) => {
@@ -1080,7 +464,6 @@ function sort() {
     if (!groups[key]) groups[key] = [];
     groups[key].push(c);
   });
-
   // --- STEP 5: Sort letter groups by total visual weight (font size based) ---
   // and assign target column positions along the bottom of the hero
   const padding = 48;
@@ -1102,7 +485,6 @@ function sort() {
       c.opacity = 1;
     });
   });
-
   // --- STEP 6: Animate each character to its target column position ---
   // Hide the original span, spawn a floating div clone, animate it to target
   allChars.forEach((c, i) => {
@@ -1124,21 +506,15 @@ function sort() {
       div.style.top = c.targetY + "px";
     }, i * 12);
   });
-
   // --- STEP 7: Fade out punctuation and link arrows, disable hero links ---
   document.querySelectorAll(".misc-span, .link-arrow").forEach((span) => {
     span.style.transition = "opacity 0.5s ease";
     span.style.opacity = "0";
   });
-
   // Hide underlines during sorting
   document.querySelectorAll(".hero-headline a, .hero-data").forEach((el) => {
     el.style.textDecorationColor = "transparent";
   });
-  document.querySelectorAll(".hero-links a").forEach((a) => {
-    a.style.pointerEvents = "none";
-  });
-
   // --- STEP 8: Fade out extra non-text elements (dot, clock) ---
   const extraEls = [
     document.querySelector(".availability-dot"),
@@ -1161,7 +537,6 @@ function unsort() {
   const reversed = [...sortedEls].reverse(),
     totalLetterTime = reversed.length * 12 + 800;
   const allSpans = [...document.querySelectorAll(".char-span, .misc-span")];
-
   // --- STEP 1: Animate floating letter divs back to their original positions ---
   reversed.forEach((div, i) => {
     setTimeout(() => {
@@ -1169,7 +544,6 @@ function unsort() {
         "left 0.8s cubic-bezier(0.76,0,0.24,1), top 0.8s cubic-bezier(0.76,0,0.24,1)";
       div.style.left = div.dataset.fromX + "px";
       div.style.top = div.dataset.fromY + "px";
-
       // Once back in place, restore the original hidden span and remove the clone
       setTimeout(() => {
         const fromX = parseFloat(div.dataset.fromX),
@@ -1191,7 +565,6 @@ function unsort() {
       }, 800);
     }, i * 12);
   });
-
   // --- STEP 2: Clean up all char/misc spans and remove floating letter divs ---
   setTimeout(() => {
     allSpans.forEach((s) => delete s.dataset.restored);
@@ -1201,13 +574,9 @@ function unsort() {
         span.style.transition = "none";
         span.style.opacity = "";
       });
-    document.querySelectorAll(".hero-links a").forEach((a) => {
-      a.style.pointerEvents = "";
-    });
     sortedEls.forEach((el) => el.remove());
     sortedEls = [];
   }, totalLetterTime);
-
   // --- STEP 3: Restore extra elements (dot, clock, button) after letters settle ---
   setTimeout(() => {
     // Restore underlines
@@ -1226,77 +595,275 @@ function unsort() {
   }, totalLetterTime + 300);
 }
 
-/* =============================================
-                   ABOUT — accordion
-                ============================================= */
-document.querySelectorAll(".accordion-trigger").forEach((trigger) => {
-  trigger.addEventListener("click", () => {
-    const item = trigger.closest(".accordion-item"),
-      isOpen = item.classList.contains("open");
-    document
-      .querySelectorAll(".accordion-item")
-      .forEach((i) => i.classList.remove("open"));
-    if (!isOpen) item.classList.add("open");
+/* ============================================================
+   07 — HOMEPAGE ENTRANCE & SCROLL REVEALS
+   Sets up scroll-triggered reveal animations and resets them on page revisits.
+   ============================================================ */
+(() => {
+  const services = document.querySelector("#services");
+  const work = document.querySelector("#work");
+  const about = document.querySelector("#about");
+  /*
+   * Homepage only.
+   */
+  if (
+    document.body.classList.contains("case-page") ||
+    !services ||
+    !work ||
+    !about ||
+    !("IntersectionObserver" in window)
+  ) {
+    document.documentElement.classList.remove("page-entering");
+    return;
+  }
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+  if (reducedMotion.matches) return;
+  const revealElements = new Set();
+  /* ---------------------------------------------
+     Helper
+  --------------------------------------------- */
+  const prepareReveal = (element, type = "text", delay = 0) => {
+    if (!element || element.dataset.homeRevealReady === "true") {
+      return;
+    }
+    element.dataset.homeRevealReady = "true";
+    element.classList.add(`home-reveal-${type}`);
+    element.style.setProperty("--home-reveal-delay", `${delay}ms`);
+    revealElements.add(element);
+  };
+  /*
+   * Only now activate the hidden states.
+   * If JS fails, the homepage remains completely visible.
+   */
+  document.documentElement.classList.add("home-motion-ready");
+  /* =============================================
+     HERO
+     Gentle load sequence
+  ============================================= */
+  prepareReveal(document.querySelector(".hero-headline"), "text", 60);
+  /*
+   * Fade only:
+   * .hero-illustration-btn already uses transform
+   * for its horizontal positioning.
+   */
+  prepareReveal(document.querySelector(".hero-illustration-btn"), "fade", 180);
+  /* =============================================
+     SERVICES
+  ============================================= */
+  prepareReveal(services.querySelector(".expertise-content"), "text", 0);
+  /* =============================================
+     SELECTED WORK
+  ============================================= */
+  work.querySelectorAll(".work-list .work-card").forEach((card, index) => {
+    prepareReveal(card, "visual", index * 70);
+  });
+  /* =============================================
+     ABOUT
+  ============================================= */
+  prepareReveal(about.querySelector(".about-editorial-photo"), "visual", 0);
+  prepareReveal(about.querySelector(".about-editorial-label"), "text", 40);
+  prepareReveal(about.querySelector(".about-editorial-copy"), "text", 90);
+  /* =============================================
+     HERO OPENING ANIMATION
+     Always plays when entering the homepage
+  ============================================= */
+  const heroOpeningElements = [
+    document.querySelector(".hero-headline"),
+    document.querySelector(".hero-illustration-btn"),
+  ].filter(Boolean);
+  const heroOpeningElementsSet = new Set(heroOpeningElements);
+  /* =============================================
+     OBSERVER
+     Everything after the hero
+  ============================================= */
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("is-visible");
+        observer.unobserve(entry.target);
+      });
+    },
+    {
+      threshold: 0.05,
+      rootMargin: "0px 0px -10% 0px",
+    },
+  );
+  function resetAndStartHomepage() {
+    /*
+     * Forget all reveals from the previous visit.
+     */
+    revealElements.forEach((element) => {
+      element.classList.remove("is-visible");
+    });
+    /*
+     * Stop old observer state.
+     */
+    observer.disconnect();
+    /*
+     * Force the hidden state to register.
+     */
+    void document.documentElement.offsetHeight;
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        /*
+         * Hero appears immediately and smoothly.
+         */
+        heroOpeningElements.forEach((element) => {
+          element.classList.add("is-visible");
+        });
+        document.documentElement.classList.remove("page-entering");
+        /*
+         * Everything below the hero waits for scroll.
+         */
+        revealElements.forEach((element) => {
+          if (!heroOpeningElementsSet.has(element)) {
+            observer.observe(element);
+          }
+        });
+      });
+    });
+  }
+  /*
+   * First visit.
+   */
+  resetAndStartHomepage();
+  /*
+   * Every time the homepage is shown again,
+   * treat it like a completely fresh visit.
+   */
+  window.addEventListener("pageshow", () => {
+    resetAndStartHomepage();
+  });
+})();
+
+/* ============================================================
+   08 — LANGUAGE GREETING BUTTONS
+   Synchronizes greeting selection with the active site language.
+   ============================================================ */
+const greetingButtons = document.querySelectorAll(
+  ".hero-languages button[data-lang]",
+);
+
+function syncGreetingButtons() {
+  const currentLanguage = document.documentElement.lang
+    .slice(0, 2)
+    .toLowerCase();
+  greetingButtons.forEach((button) => {
+    const selected = button.dataset.lang === currentLanguage;
+    button.classList.toggle("active", selected);
+    button.setAttribute("aria-pressed", String(selected));
+  });
+}
+let greetingLanguageSwitching = false;
+greetingButtons.forEach((button) => {
+  button.addEventListener("click", async () => {
+    if (greetingLanguageSwitching) return;
+    if (typeof window.applyLanguage !== "function") return;
+    const language = button.dataset.lang;
+    greetingLanguageSwitching = true;
+    try {
+      await window.applyLanguage(language);
+      syncGreetingButtons();
+    } catch (error) {
+      console.error("Could not switch language:", error);
+    } finally {
+      greetingLanguageSwitching = false;
+    }
   });
 });
+/* Keep selection correct after initial language detection
+   or a language change elsewhere on the page. */
+const greetingLanguageObserver = new MutationObserver(syncGreetingButtons);
+greetingLanguageObserver.observe(document.documentElement, {
+  attributes: true,
+  attributeFilter: ["lang"],
+});
+syncGreetingButtons();
 
-/* =============================================
-   NEXT PROJECT HOVER PREVIEW
-============================================= */
-
-function initProjectHoverPreview() {
-  const preview = document.querySelector(".cs-project-preview");
-  const projectLinks = document.querySelectorAll(".cs-next-row[data-preview]");
-
-  if (!preview || !projectLinks.length) return;
-
-  const previewImage = preview.querySelector("img");
-
-  if (!previewImage) return;
-
-  const cursorOffset = 24;
-  const viewportPadding = 16;
-
-  function positionPreview(event) {
-    const previewWidth = preview.offsetWidth;
-    const previewHeight = preview.offsetHeight;
-
-    let x = event.clientX + cursorOffset;
-    let y = event.clientY - previewHeight - cursorOffset;
-
-    if (x + previewWidth > window.innerWidth - viewportPadding) {
-      x = event.clientX - previewWidth - cursorOffset;
+/* ============================================================
+   09 — FOOTER VISIBILITY & THEME BUTTON
+   Hides the theme control when the contact footer is visible.
+   Works even when the footer is inserted after the script runs.
+   ============================================================ */
+function watchContactFooter() {
+  const footer = document.getElementById("contact");
+  const toggle = document.getElementById("theme-toggle");
+  if (!footer || !toggle) return false;
+  const observer = new IntersectionObserver(([entry]) => {
+    toggle.classList.toggle("is-hidden", entry.isIntersecting);
+  });
+  observer.observe(footer);
+  return true;
+}
+// Also handles a footer loaded after the main script.
+if (!watchContactFooter()) {
+  const footerLoaderObserver = new MutationObserver(() => {
+    if (watchContactFooter()) {
+      footerLoaderObserver.disconnect();
     }
-
-    if (y < viewportPadding) {
-      y = event.clientY + cursorOffset;
-    }
-
-    preview.style.setProperty("--preview-x", `${x}px`);
-    preview.style.setProperty("--preview-y", `${y}px`);
-  }
-
-  projectLinks.forEach((link) => {
-    link.addEventListener("mouseenter", (event) => {
-      const imagePath = link.dataset.preview;
-
-      if (!imagePath) return;
-
-      previewImage.src = imagePath;
-      preview.style.background = link.dataset.previewColor;
-      preview.classList.add("is-visible");
-      positionPreview(event);
-    });
-
-    link.addEventListener("mousemove", positionPreview);
-
-    link.addEventListener("mouseleave", () => {
-      preview.classList.remove("is-visible");
-    });
+  });
+  footerLoaderObserver.observe(document.body, {
+    childList: true,
+    subtree: true,
   });
 }
 
-initProjectHoverPreview();
+//line for the process project 1
+
+document.querySelectorAll(".process").forEach((process) => {
+  const path = process.querySelector(".process__connector path");
+  const icons = [...process.querySelectorAll(".process__step > .icon")];
+  const steps = icons.map((icon) => icon.parentElement);
+
+  if (!path || icons.length !== 4) return;
+
+  function drawConnector() {
+    const bounds = process.getBoundingClientRect();
+    const [observe, design, build, test] = icons.map((icon) => {
+      const rect = icon.getBoundingClientRect();
+
+      return {
+        x: rect.left - bounds.left + rect.width / 2,
+        y: rect.top - bounds.top + rect.height / 2,
+      };
+    });
+
+    const topRowBottom =
+      Math.max(
+        ...steps.slice(0, 2).map((step) => step.getBoundingClientRect().bottom),
+      ) - bounds.top;
+
+    const buildTop = icons[2].getBoundingClientRect().top - bounds.top;
+    const middleY = (topRowBottom + buildTop) / 2;
+
+    const rightX = bounds.width - 2;
+    const leftX = build.x - 80;
+    const rightTurn = Math.min(80, (rightX - design.x) / 2);
+    const leftTurn = 40;
+
+    path.setAttribute(
+      "d",
+      `
+      M ${observe.x} ${observe.y}
+      H ${rightX - rightTurn}
+      C ${rightX + rightTurn / 3} ${design.y},
+        ${rightX + rightTurn / 3} ${middleY},
+        ${rightX - rightTurn} ${middleY}
+      H ${leftX + leftTurn}
+      C ${leftX - leftTurn / 3} ${middleY},
+        ${leftX - leftTurn / 3} ${build.y},
+        ${leftX + leftTurn} ${build.y}
+      H ${test.x}
+    `,
+    );
+  }
+
+  const observer = new ResizeObserver(drawConnector);
+  observer.observe(process);
+  steps.forEach((step) => observer.observe(step));
+  drawConnector();
+});
 
 /* =============================================
    SOLUTION — AUTOMATED BEFORE / AFTER USER FLOW
@@ -1428,7 +995,10 @@ initProjectHoverPreview();
       userControlled = true;
       clearFlowTimer();
 
-      if (button.dataset.flowState === "after") {
+      const nextState = button.dataset.flowState;
+      updateButtons(nextState);
+
+      if (nextState === "after") {
         setAfter();
       } else {
         setBeforeSmooth();
@@ -1461,1319 +1031,236 @@ initProjectHoverPreview();
   });
 })();
 
-/* =============================================
-   CASE STUDY — HIDE SIDEBAR IN NEXT PROJECTS
-============================================= */
-(() => {
-  const nextProjects = document.querySelector(".cs-next");
-  const sidebar = document.querySelector(".left-sidebar");
+// Story notes: show the right notes for the current step in a project story.
 
-  if (!nextProjects || !sidebar) return;
+document.querySelectorAll(".project-story").forEach((story) => {
+  const steps = [...story.querySelectorAll("[data-story-step]")];
+  const notes = [...story.querySelectorAll("[data-story-notes]")];
+  let frame = null;
 
-  const observer = new IntersectionObserver(
-    ([entry]) => {
-      document.body.classList.toggle("cs-next-visible", entry.isIntersecting);
-    },
-    { threshold: 0.05 },
-  );
+  function updateNotes() {
+    frame = null;
+    const trigger = window.innerHeight * 0.5;
+    let active = steps[0].dataset.storyStep;
 
-  observer.observe(nextProjects);
-})();
-
-/* =============================================
-   TESTIMONIALS — cloud / cards morph
-============================================= */
-const testimonialStage = document.querySelector("[data-testimonial-stage]");
-const testimonialCloud = document.querySelector("[data-testimonial-cloud]");
-const testimonialGrid = document.querySelector("[data-testimonial-grid]");
-const testimonialMobileQuery = window.matchMedia("(max-width: 768px)");
-const testimonialReducedMotion = window.matchMedia(
-  "(prefers-reduced-motion: reduce)",
-);
-
-let testimonialMorphing = false;
-let testimonialTargetObserver = null;
-let testimonialTargetRebuildQueued = false;
-
-function setTestimonialsVisible(showTestimonials) {
-  if (!testimonialStage) return;
-
-  testimonialStage.classList.toggle(
-    "is-testimonials-visible",
-    showTestimonials,
-  );
-  testimonialStage.setAttribute("aria-pressed", String(showTestimonials));
-  testimonialStage.setAttribute(
-    "aria-label",
-    showTestimonials ? "Show testimonial highlights" : "Show testimonials",
-  );
-
-  testimonialCloud?.setAttribute("aria-hidden", String(showTestimonials));
-  testimonialGrid?.setAttribute("aria-hidden", String(!showTestimonials));
-}
-
-function normalizeTestimonialText(text) {
-  return (text || "").replace(/\s+/g, " ").trim();
-}
-
-function renderTestimonialCloudPhrases() {
-  if (!testimonialCloud) return;
-
-  testimonialCloud
-    .querySelectorAll(".testimonial-cloud-phrase[data-phrase-key][data-card]")
-    .forEach((phrase) => {
-      const phraseKey = phrase.dataset.phraseKey;
-      const card = phrase.dataset.card;
-      if (!phraseKey || !card) return;
-
-      /* If the phrase is already tokenized, keep the original phrase stored in
-         data-phrase-text. Reading textContent from separate token spans would
-         concatenate the words (e.g. "freshmomentum"), because the visible
-         spacing comes from CSS rather than text nodes.
-
-         When i18n changes language, it replaces the token spans with plain text.
-         In that case we read the new translated text and tokenize it again. */
-      const isAlreadyTokenized = Boolean(
-        phrase.querySelector(".testimonial-cloud-token"),
-      );
-
-      if (isAlreadyTokenized && phrase.dataset.phraseText) return;
-
-      const phraseText = normalizeTestimonialText(phrase.textContent);
-      if (!phraseText) return;
-
-      phrase.dataset.phraseText = phraseText;
-      const tokens = phraseText.split(/\s+/).filter(Boolean);
-      phrase.replaceChildren();
-
-      tokens.forEach((token, index) => {
-        const wrapper = document.createElement("span");
-        wrapper.className = "testimonial-cloud-token-wrap";
-
-        if (index === 0) {
-          const openingQuote = document.createElement("span");
-          openingQuote.className =
-            "testimonial-cloud-quote testimonial-cloud-quote--start";
-          openingQuote.dataset.card = card;
-          openingQuote.dataset.quoteSide = "start";
-          openingQuote.textContent = "“";
-          wrapper.append(openingQuote);
-        }
-
-        const span = document.createElement("span");
-        span.className = "testimonial-cloud-token";
-        span.dataset.motionKey = `${phraseKey}-${index}`;
-        span.dataset.card = card;
-        span.dataset.phraseKey = phraseKey;
-        span.textContent = token;
-
-        wrapper.append(span);
-
-        if (index === tokens.length - 1) {
-          const closingQuote = document.createElement("span");
-          closingQuote.className =
-            "testimonial-cloud-quote testimonial-cloud-quote--end";
-          closingQuote.dataset.card = card;
-          closingQuote.dataset.quoteSide = "end";
-          closingQuote.textContent = "”";
-          wrapper.append(closingQuote);
-        }
-
-        phrase.append(wrapper);
-      });
-    });
-}
-
-function getTestimonialCloudPhrases() {
-  if (!testimonialCloud) return [];
-
-  return Array.from(
-    testimonialCloud.querySelectorAll(
-      ".testimonial-cloud-phrase[data-phrase-key][data-card]",
-    ),
-  )
-    .map((phrase) => ({
-      phraseKey: phrase.dataset.phraseKey,
-      card: phrase.dataset.card,
-      text: normalizeTestimonialText(
-        phrase.dataset.phraseText || phrase.textContent,
-      ),
-      tokens: Array.from(
-        phrase.querySelectorAll(".testimonial-cloud-token"),
-      ).map((token, index) => ({
-        key: token.dataset.motionKey || `${phrase.dataset.phraseKey}-${index}`,
-        text: token.textContent,
-        node: token,
-      })),
-    }))
-    .filter(
-      ({ phraseKey, card, text, tokens }) =>
-        phraseKey && card && text && tokens.length,
-    );
-}
-
-function clearTestimonialMotionTargets() {
-  if (!testimonialGrid) return;
-
-  testimonialGrid
-    .querySelectorAll(
-      ".testimonial-motion-target, .testimonial-quote-motion-target",
-    )
-    .forEach((span) =>
-      span.replaceWith(document.createTextNode(span.textContent)),
-    );
-
-  testimonialGrid
-    .querySelectorAll(".testimonial-quote")
-    .forEach((quote) => quote.normalize());
-}
-
-function escapeTestimonialRegex(text) {
-  return text.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-}
-
-function getTestimonialPhraseMatch(originalText, phrase) {
-  /* HTML formatting can insert newlines/spaces inside a quote. Match the same
-     words while allowing any whitespace between them, so a source phrase still
-     maps to the right place even when the HTML source wraps across lines. */
-  const tokenPattern = phrase.tokens
-    .map((token) => escapeTestimonialRegex(token.text))
-    .join("\\s+");
-
-  if (!tokenPattern) return null;
-  return originalText.match(new RegExp(tokenPattern));
-}
-function wrapTestimonialQuoteMark(quote, cardKey, side) {
-  const mark = side === "start" ? "“" : "”";
-
-  const walker = document.createTreeWalker(quote, NodeFilter.SHOW_TEXT);
-
-  const textNodes = [];
-  let node;
-
-  while ((node = walker.nextNode())) {
-    textNodes.push(node);
-  }
-
-  if (side === "end") {
-    textNodes.reverse();
-  }
-
-  for (const textNode of textNodes) {
-    const index =
-      side === "start"
-        ? textNode.textContent.indexOf(mark)
-        : textNode.textContent.lastIndexOf(mark);
-
-    if (index === -1) continue;
-
-    const before = textNode.textContent.slice(0, index);
-    const after = textNode.textContent.slice(index + 1);
-
-    const span = document.createElement("span");
-    span.className = "testimonial-quote-motion-target";
-    span.dataset.card = cardKey;
-    span.dataset.quoteSide = side;
-    span.textContent = mark;
-
-    const fragment = document.createDocumentFragment();
-
-    if (before) {
-      fragment.append(document.createTextNode(before));
+    for (const step of steps) {
+      if (step.getBoundingClientRect().top > trigger) break;
+      active = step.dataset.storyStep;
     }
 
-    fragment.append(span);
-
-    if (after) {
-      fragment.append(document.createTextNode(after));
-    }
-
-    textNode.replaceWith(fragment);
-    break;
-  }
-}
-function wrapTestimonialMotionTargets() {
-  if (!testimonialGrid || !testimonialCloud) return;
-
-  testimonialTargetObserver?.disconnect();
-  clearTestimonialMotionTargets();
-
-  const phrasesByCard = new Map();
-  getTestimonialCloudPhrases().forEach((phrase) => {
-    if (!phrasesByCard.has(phrase.card)) phrasesByCard.set(phrase.card, []);
-    phrasesByCard.get(phrase.card).push(phrase);
-  });
-
-  phrasesByCard.forEach((phrases, cardKey) => {
-    const quote = testimonialGrid.querySelector(
-      `.testimonial-card--${cardKey} .testimonial-quote`,
-    );
-    if (!quote) return;
-
-    const originalText = quote.textContent;
-    const occurrences = [];
-
-    phrases
-      .slice()
-      .sort((a, b) => b.text.length - a.text.length)
-      .forEach((phrase) => {
-        const match = getTestimonialPhraseMatch(originalText, phrase);
-        if (!match || match.index == null) return;
-        occurrences.push({
-          ...phrase,
-          index: match.index,
-          end: match.index + match[0].length,
-        });
-      });
-
-    occurrences.sort((a, b) => a.index - b.index);
-    if (!occurrences.length) return;
-
-    const fragment = document.createDocumentFragment();
-    let cursor = 0;
-
-    occurrences.forEach((occurrence) => {
-      if (occurrence.index < cursor) return;
-
-      fragment.append(
-        document.createTextNode(originalText.slice(cursor, occurrence.index)),
-      );
-
-      occurrence.tokens.forEach((token, tokenIndex) => {
-        const span = document.createElement("span");
-        span.className = "testimonial-motion-target";
-        span.dataset.motionKey = token.key;
-        span.dataset.phraseKey = occurrence.phraseKey;
-        span.textContent = token.text;
-        fragment.append(span);
-
-        if (tokenIndex < occurrence.tokens.length - 1) {
-          fragment.append(document.createTextNode(" "));
-        }
-      });
-
-      cursor = occurrence.end;
-    });
-
-    fragment.append(document.createTextNode(originalText.slice(cursor)));
-    quote.replaceChildren(fragment);
-    wrapTestimonialQuoteMark(quote, cardKey, "start");
-    wrapTestimonialQuoteMark(quote, cardKey, "end");
-  });
-
-  observeTestimonialMorphText();
-}
-
-function observeTestimonialMorphText() {
-  if (!testimonialTargetObserver || !testimonialCloud || !testimonialGrid)
-    return;
-
-  testimonialTargetObserver.observe(testimonialCloud, {
-    childList: true,
-    characterData: true,
-    subtree: true,
-  });
-  testimonialTargetObserver.observe(testimonialGrid, {
-    childList: true,
-    characterData: true,
-    subtree: true,
-  });
-}
-
-function scheduleTestimonialTargetRebuild() {
-  if (testimonialMorphing || testimonialTargetRebuildQueued) return;
-  testimonialTargetRebuildQueued = true;
-
-  requestAnimationFrame(() => {
-    testimonialTargetRebuildQueued = false;
-    renderTestimonialCloudPhrases();
-    wrapTestimonialMotionTargets();
-  });
-}
-
-function makeTestimonialMorphClone(source) {
-  const rect = source.getBoundingClientRect();
-  const style = getComputedStyle(source);
-  const clone = document.createElement("span");
-
-  clone.className = "testimonial-morph-clone";
-  clone.textContent = source.textContent;
-  clone.style.left = `${rect.left}px`;
-  clone.style.top = `${rect.top}px`;
-  clone.style.fontFamily = style.fontFamily;
-  clone.style.fontSize = style.fontSize;
-  clone.style.fontWeight = style.fontWeight;
-  clone.style.fontStyle = style.fontStyle;
-  clone.style.lineHeight = style.lineHeight;
-  clone.style.letterSpacing = style.letterSpacing;
-  clone.style.color = style.color;
-
-  document.body.appendChild(clone);
-  return { clone, rect, style };
-}
-
-function getTestimonialMorphPairs(direction) {
-  if (!testimonialCloud || !testimonialGrid) return [];
-
-  const pairs = [];
-  testimonialCloud
-    .querySelectorAll(".testimonial-cloud-token[data-motion-key]")
-    .forEach((cloudWord) => {
-      const key = cloudWord.dataset.motionKey;
-      const quoteTarget = testimonialGrid.querySelector(
-        `.testimonial-motion-target[data-motion-key="${key}"]`,
-      );
-      if (!quoteTarget) return;
-
-      pairs.push(
-        direction === "to-cards"
-          ? { source: cloudWord, target: quoteTarget }
-          : { source: quoteTarget, target: cloudWord },
-      );
-    });
-  testimonialCloud
-    .querySelectorAll(".testimonial-cloud-quote[data-card][data-quote-side]")
-    .forEach((cloudQuote) => {
-      const card = cloudQuote.dataset.card;
-      const side = cloudQuote.dataset.quoteSide;
-
-      const quoteTarget = testimonialGrid.querySelector(
-        `.testimonial-quote-motion-target[data-card="${card}"][data-quote-side="${side}"]`,
-      );
-
-      if (!quoteTarget) return;
-
-      pairs.push(
-        direction === "to-cards"
-          ? { source: cloudQuote, target: quoteTarget }
-          : { source: quoteTarget, target: cloudQuote },
-      );
-    });
-  return pairs;
-}
-
-async function morphTestimonials(showTestimonials) {
-  if (!testimonialStage || testimonialMorphing) return;
-
-  if (
-    testimonialMobileQuery.matches ||
-    testimonialReducedMotion.matches ||
-    !testimonialCloud ||
-    !testimonialGrid
-  ) {
-    setTestimonialsVisible(showTestimonials);
-    return;
-  }
-
-  testimonialMorphing = true;
-  testimonialTargetObserver?.disconnect();
-  renderTestimonialCloudPhrases();
-  wrapTestimonialMotionTargets();
-
-  const direction = showTestimonials ? "to-cards" : "to-cloud";
-
-  testimonialStage.classList.add(
-    showTestimonials ? "is-measuring-cards" : "is-measuring-cloud",
-  );
-  testimonialStage.getBoundingClientRect();
-
-  const pairs = getTestimonialMorphPairs(direction);
-  const measurements = pairs.map(({ source, target }) => {
-    const sourceClone = makeTestimonialMorphClone(source);
-    const targetRect = target.getBoundingClientRect();
-    const targetStyle = getComputedStyle(target);
-    return { ...sourceClone, targetRect, targetStyle };
-  });
-
-  testimonialStage.classList.remove(
-    showTestimonials ? "is-measuring-cards" : "is-measuring-cloud",
-  );
-  testimonialStage.classList.add(
-    showTestimonials ? "is-morphing-to-cards" : "is-morphing-to-cloud",
-  );
-
-  setTestimonialsVisible(showTestimonials);
-
-  await new Promise((resolve) =>
-    requestAnimationFrame(() => requestAnimationFrame(resolve)),
-  );
-
-  const animations = measurements.map(
-    ({ clone, rect, style, targetRect, targetStyle }) =>
-      clone.animate(
-        [
-          {
-            left: `${rect.left}px`,
-            top: `${rect.top}px`,
-            fontSize: style.fontSize,
-            fontWeight: style.fontWeight,
-            lineHeight: style.lineHeight,
-            letterSpacing: style.letterSpacing,
-            color: style.color,
-            opacity: 1,
-          },
-          {
-            left: `${targetRect.left}px`,
-            top: `${targetRect.top}px`,
-            fontSize: targetStyle.fontSize,
-            fontWeight: targetStyle.fontWeight,
-            lineHeight: targetStyle.lineHeight,
-            letterSpacing: targetStyle.letterSpacing,
-            color: targetStyle.color,
-            opacity: 1,
-          },
-        ],
-        {
-          duration: 950,
-          easing: "cubic-bezier(0.76, 0, 0.24, 1)",
-          fill: "forwards",
-        },
-      ),
-  );
-
-  await Promise.allSettled(animations.map((animation) => animation.finished));
-
-  measurements.forEach(({ clone }) => clone.remove());
-  testimonialStage.classList.remove(
-    "is-morphing-to-cards",
-    "is-morphing-to-cloud",
-  );
-
-  testimonialMorphing = false;
-  observeTestimonialMorphText();
-}
-
-/* Testimonial Cloud 
-function syncTestimonialLayout() {
-  if (!testimonialStage) return;
-
-  if (testimonialMobileQuery.matches) {
-    setTestimonialsVisible(true);
-    testimonialStage.removeAttribute("role");
-    testimonialStage.removeAttribute("tabindex");
-    testimonialStage.removeAttribute("aria-label");
-    testimonialStage.removeAttribute("aria-pressed");
-    return;
-  }
-
-  testimonialStage.setAttribute("role", "button");
-  testimonialStage.setAttribute("tabindex", "0");
-  setTestimonialsVisible(false);
-} 
-
-if (testimonialStage) {
-  testimonialTargetObserver = new MutationObserver(
-    scheduleTestimonialTargetRebuild,
-  );
-  renderTestimonialCloudPhrases();
-  wrapTestimonialMotionTargets();
-
-  testimonialStage.addEventListener("click", () => {
-    if (testimonialMobileQuery.matches || testimonialMorphing) return;
-    morphTestimonials(
-      !testimonialStage.classList.contains("is-testimonials-visible"),
-    );
-  });
-
-  testimonialStage.addEventListener("keydown", (event) => {
-    if (testimonialMobileQuery.matches || testimonialMorphing) return;
-    if (event.key !== "Enter" && event.key !== " ") return;
-    event.preventDefault();
-    morphTestimonials(
-      !testimonialStage.classList.contains("is-testimonials-visible"),
-    );
-  });
-
-  syncTestimonialLayout();
-  testimonialMobileQuery.addEventListener?.("change", syncTestimonialLayout);
-}*/
-/* Testimonial Cloud deactivated for now:*/
-function syncTestimonialLayout() {
-  if (!testimonialStage) return;
-
-  // Static word cloud on desktop, testimonial cards on mobile
-  setTestimonialsVisible(testimonialMobileQuery.matches);
-
-  testimonialStage.removeAttribute("role");
-  testimonialStage.removeAttribute("tabindex");
-  testimonialStage.removeAttribute("aria-label");
-  testimonialStage.removeAttribute("aria-pressed");
-}
-
-if (testimonialStage) {
-  testimonialTargetObserver = new MutationObserver(
-    scheduleTestimonialTargetRebuild,
-  );
-
-  renderTestimonialCloudPhrases();
-  wrapTestimonialMotionTargets();
-
-  syncTestimonialLayout();
-
-  testimonialMobileQuery.addEventListener?.("change", syncTestimonialLayout);
-}
-
-/* =============================================
-   TESTIMONIALS — translation notes
-============================================= */
-function updateTestimonialLanguageState(language) {
-  if (!testimonialGrid) return;
-
-  const currentLanguage = (language || "en").toLowerCase();
-
-  const translationLabels = {
-    en: {
-      de: "Translated from German",
-      fr: "Translated from French",
-    },
-    de: {
-      en: "Aus dem Englischen übersetzt",
-      fr: "Aus dem Französischen übersetzt",
-    },
-    fr: {
-      de: "Traduit de l’allemand",
-      en: "Traduit de l’anglais",
-    },
-  };
-
-  testimonialGrid.querySelectorAll(".testimonial-card").forEach((card) => {
-    const originalLanguage = (
-      card.dataset.originalLang || currentLanguage
-    ).toLowerCase();
-    const note = card.querySelector(".testimonial-translation-note");
-    if (!note) return;
-
-    if (originalLanguage === currentLanguage) {
-      note.hidden = true;
-      note.textContent = "";
-      return;
-    }
-
-    const translatedLabel =
-      translationLabels[currentLanguage]?.[originalLanguage];
-    note.textContent =
-      translatedLabel ||
-      (currentLanguage === "fr"
-        ? "Traduit"
-        : currentLanguage === "de"
-          ? "Übersetzt"
-          : "Translated");
-    note.hidden = false;
-  });
-
-  renderTestimonialCloudPhrases();
-  wrapTestimonialMotionTargets();
-}
-
-updateTestimonialLanguageState(
-  (localStorage.getItem("lang") || "en").toLowerCase(),
-);
-
-/* =============================================
-   CASE STUDIES — SCROLL REVEALS
-============================================= */
-(() => {
-  const casePage = document.querySelector(".case-page");
-
-  if (!casePage || !("IntersectionObserver" in window)) return;
-
-  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-
-  if (reducedMotion.matches) return;
-
-  /*
-   * Only now do we activate the hidden starting states.
-   * If JS ever fails, all content remains visible normally.
-   */
-  document.documentElement.classList.add("case-motion-ready");
-
-  const revealElements = new Set();
-
-  /* ---------------------------------------------
-     Helper
-  --------------------------------------------- */
-
-  const prepareReveal = (element, type = "text", delay = 0) => {
-    if (!element || element.dataset.revealReady === "true") return;
-
-    element.dataset.revealReady = "true";
-    element.classList.add(`reveal-${type}`);
-
-    element.style.setProperty("--reveal-delay", `${delay}ms`);
-
-    revealElements.add(element);
-  };
-
-  const prepareAll = (selector, type = "text", stagger = 0) => {
-    casePage.querySelectorAll(selector).forEach((element, index) => {
-      prepareReveal(element, type, index * stagger);
-    });
-  };
-
-  /* =============================================
-   OVERVIEW
-============================================= */
-
-  /* Gentle opening sequence:
-   label → title → intro → hero image */
-
-  prepareReveal(casePage.querySelector(".cs-overview-label"), "text", 80);
-
-  prepareReveal(casePage.querySelector(".cs-headline"), "text", 160);
-
-  prepareReveal(casePage.querySelector(".cs-overview-intro"), "text", 280);
-
-  prepareReveal(
-    casePage.querySelector(".cs-overview-image-wrap"),
-    "visual",
-    400,
-  );
-
-  prepareAll(".cs-overview-meta-block", "text", 90);
-
-  /* =============================================
-     PROBLEM
-  ============================================= */
-
-  prepareReveal(
-    casePage.querySelector("#section-problem .cs-problem-top-left"),
-    "text",
-  );
-
-  prepareReveal(
-    casePage.querySelector("#section-problem .cs-problem-image"),
-    "visual",
-    100,
-  );
-
-  casePage
-    .querySelectorAll("#section-problem .cs-problem-point")
-    .forEach((element, index) => {
-      prepareReveal(element, "text", index * 100);
-    });
-
-  /* =============================================
-     SOLUTION
-  ============================================= */
-
-  prepareReveal(
-    casePage.querySelector("#section-solution .cs-solution-heading"),
-    "text",
-  );
-
-  casePage
-    .querySelectorAll("#section-solution .cs-problem-point")
-    .forEach((element, index) => {
-      prepareReveal(element, "text", index * 100);
-    });
-
-  prepareReveal(
-    casePage.querySelector("#section-solution .cs-solution-image-wrap"),
-    "visual",
-    80,
-  );
-
-  /* =============================================
-     IMPACT
-  ============================================= */
-
-  prepareReveal(casePage.querySelector(".cs-impact-card-top"), "text");
-
-  casePage.querySelectorAll(".cs-impact-number").forEach((element, index) => {
-    prepareReveal(element, "text", 120 + index * 110);
-  });
-
-  /* =============================================
-     PROCESS INTRO
-  ============================================= */
-
-  prepareReveal(
-    casePage.querySelector("#section-process > .section-heading"),
-    "text",
-  );
-
-  prepareReveal(
-    casePage.querySelector("#section-process .cs-process-bar"),
-    "visual",
-    80,
-  );
-
-  /* =============================================
-     PROCESS STEPS
-     Number → label → heading → text
-  ============================================= */
-
-  casePage.querySelectorAll(".cs-process-step-card").forEach((card) => {
-    prepareReveal(card.querySelector(".cs-process-step-card-num"), "text");
-
-    const right = card.querySelector(".cs-process-step-card-right");
-
-    if (!right) return;
-
-    /* Label */
-    prepareReveal(right.querySelector(".label"), "text", 70);
-
-    /* Heading */
-    prepareReveal(
-      right.querySelector(".section-title, .cs-process-step-title"),
-      "text",
-      140,
-    );
-
-    /* Body copy */
-    prepareReveal(right.querySelector(".cs-process-step-text"), "text", 220);
-  });
-
-  /* =============================================
-     KEY DECISION / KEY OUTCOME
-
-     We wrap the text so the line and copy
-     can animate independently.
-  ============================================= */
-
-  casePage.querySelectorAll(".cs-key-decision").forEach((decision) => {
-    if (!decision.querySelector(":scope > .cs-key-decision-content")) {
-      const content = document.createElement("span");
-
-      content.className = "cs-key-decision-content";
-
-      while (decision.firstChild) {
-        content.appendChild(decision.firstChild);
-      }
-
-      decision.appendChild(content);
-    }
-
-    prepareReveal(decision, "decision");
-  });
-
-  /* =============================================
-     PROCESS VISUALS
-  ============================================= */
-
-  prepareAll(".cs-process-step-media-item", "visual");
-
-  /* =============================================
-     FINAL PRODUCT / DELIVERABLE
-  ============================================= */
-
-  prepareReveal(
-    casePage.querySelector(".cs-product > .section-heading"),
-    "text",
-  );
-
-  casePage.querySelectorAll(".cs-product-card").forEach((element, index) => {
-    prepareReveal(element, "visual", index * 100);
-  });
-
-  /* =============================================
-     OPENING ANIMATION
-     Always plays when entering the case study
-  ============================================= */
-
-  const openingElements = [
-    casePage.querySelector(".cs-overview-label"),
-    casePage.querySelector(".cs-headline"),
-    casePage.querySelector(".cs-overview-intro"),
-    casePage.querySelector(".cs-overview-image-wrap"),
-  ].filter(Boolean);
-
-  const openingElementsSet = new Set(openingElements);
-
-  /* =============================================
-     OBSERVER
-     Everything below the opening screen
-  ============================================= */
-
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) return;
-
-        entry.target.classList.add("is-visible");
-        observer.unobserve(entry.target);
-      });
-    },
-    {
-      threshold: 0.01,
-      rootMargin: "0px 0px -10% 0px",
-    },
-  );
-
-  function resetAndStartCaseStudy() {
-    /*
-     * Forget all reveals from the previous visit.
-     */
-    revealElements.forEach((element) => {
-      element.classList.remove("is-visible");
-    });
-
-    /*
-     * Stop old observer state.
-     */
-    observer.disconnect();
-
-    /*
-     * Force the hidden state to register.
-     */
-    void document.documentElement.offsetHeight;
-
-    requestAnimationFrame(() => {
-      requestAnimationFrame(() => {
-        /*
-         * Opening content appears immediately and smoothly.
-         */
-        openingElements.forEach((element) => {
-          element.classList.add("is-visible");
-        });
-
-        document.documentElement.classList.remove("page-entering");
-        /*
-         * Everything else waits until scrolling down.
-         */
-        revealElements.forEach((element) => {
-          if (!openingElementsSet.has(element)) {
-            observer.observe(element);
-          }
-        });
-      });
+    notes.forEach((group) => {
+      group.classList.toggle("is-active", group.dataset.storyNotes === active);
     });
   }
 
-  /*
-   * First visit.
-   */
-  resetAndStartCaseStudy();
-
-  /*
-   * Every time this page is shown again,
-   * treat it like a fresh visit.
-   */
-  window.addEventListener("pageshow", () => {
-    resetAndStartCaseStudy();
-  });
-})();
-
-/* =============================================
-   HOMEPAGE — SCROLL REVEALS
-============================================= */
-(() => {
-  const services = document.querySelector("#services");
-  const work = document.querySelector("#work");
-  const about = document.querySelector("#about");
-  const contact = document.querySelector("#contact");
-
-  /*
-   * Homepage only.
-   */
-  if (
-    document.body.classList.contains("case-page") ||
-    !services ||
-    !work ||
-    !about ||
-    !("IntersectionObserver" in window)
-  ) {
-    document.documentElement.classList.remove("page-entering");
-    return;
+  function scheduleUpdate() {
+    if (frame === null) frame = requestAnimationFrame(updateNotes);
   }
 
-  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-
-  if (reducedMotion.matches) return;
-
-  const revealElements = new Set();
-
-  /* ---------------------------------------------
-     Helper
-  --------------------------------------------- */
-
-  const prepareReveal = (element, type = "text", delay = 0) => {
-    if (!element || element.dataset.homeRevealReady === "true") {
-      return;
-    }
-
-    element.dataset.homeRevealReady = "true";
-
-    element.classList.add(`home-reveal-${type}`);
-
-    element.style.setProperty("--home-reveal-delay", `${delay}ms`);
-
-    revealElements.add(element);
-  };
-
-  /*
-   * Only now activate the hidden states.
-   * If JS fails, the homepage remains completely visible.
-   */
-  document.documentElement.classList.add("home-motion-ready");
-
-  /* =============================================
-     HERO
-     Gentle load sequence
-  ============================================= */
-
-  prepareReveal(document.querySelector(".hero-location-wrap"), "text", 0);
-
-  prepareReveal(document.querySelector(".hero-headline"), "text", 60);
-
-  prepareReveal(document.querySelector(".hero-description"), "text", 140);
-
-  prepareReveal(document.querySelector(".hero-links-row"), "text", 220);
-
-  /*
-   * Fade only:
-   * .hero-illustration-btn already uses transform
-   * for its horizontal positioning.
-   */
-  prepareReveal(document.querySelector(".hero-illustration-btn"), "fade", 180);
-
-  /* =============================================
-     SERVICES
-  ============================================= */
-
-  prepareReveal(services.querySelector(".expertise-content"), "text", 0);
-
-  /* =============================================
-     SELECTED WORK
-  ============================================= */
-
-  prepareReveal(work.querySelector(":scope > .section-heading"), "text", 0);
-
-  work.querySelectorAll(".work-list .work-card").forEach((card, index) => {
-    prepareReveal(card, "visual", index * 70);
-  });
-
-  /* =============================================
-     TESTIMONIALS
-  ============================================= */
-
-  const testimonials = work.querySelector(".work-testimonials");
-
-  if (testimonials) {
-    prepareReveal(testimonials.querySelector(".section-heading"), "text", 0);
-
-    /*
-     * Again: animate the entire stage rather than
-     * testimonial-cloud itself, because the cloud
-     * already has its interactive scaling/morphing.
-     */
-    prepareReveal(
-      testimonials.querySelector(".testimonial-stage"),
-      "visual",
-      90,
-    );
-  }
-
-  /* =============================================
-     ABOUT
-  ============================================= */
-
-  prepareReveal(about.querySelector(".about-editorial-photo"), "visual", 0);
-
-  prepareReveal(about.querySelector(".about-editorial-label"), "text", 40);
-
-  prepareReveal(about.querySelector(".about-editorial-copy"), "text", 90);
-
-  /* =============================================
-     CONTACT
-  ============================================= */
-
-  /* =============================================
-     HERO OPENING ANIMATION
-     Always plays when entering the homepage
-  ============================================= */
-
-  const heroOpeningElements = [
-    document.querySelector(".hero-location-wrap"),
-    document.querySelector(".hero-headline"),
-    document.querySelector(".hero-description"),
-    document.querySelector(".hero-links-row"),
-    document.querySelector(".hero-illustration-btn"),
-  ].filter(Boolean);
-
-  const heroOpeningElementsSet = new Set(heroOpeningElements);
-
-  /* =============================================
-     OBSERVER
-     Everything after the hero
-  ============================================= */
-
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) return;
-
-        entry.target.classList.add("is-visible");
-        observer.unobserve(entry.target);
-      });
-    },
-    {
-      threshold: 0.05,
-      rootMargin: "0px 0px -10% 0px",
-    },
-  );
-
-  function resetAndStartHomepage() {
-    /*
-     * Forget all reveals from the previous visit.
-     */
-    revealElements.forEach((element) => {
-      element.classList.remove("is-visible");
-    });
-
-    /*
-     * Stop old observer state.
-     */
-    observer.disconnect();
-
-    /*
-     * Force the hidden state to register.
-     */
-    void document.documentElement.offsetHeight;
-
-    requestAnimationFrame(() => {
-      requestAnimationFrame(() => {
-        /*
-         * Hero appears immediately and smoothly.
-         */
-        heroOpeningElements.forEach((element) => {
-          element.classList.add("is-visible");
-        });
-
-        document.documentElement.classList.remove("page-entering");
-        /*
-         * Everything below the hero waits for scroll.
-         */
-        revealElements.forEach((element) => {
-          if (!heroOpeningElementsSet.has(element)) {
-            observer.observe(element);
-          }
-        });
-      });
-    });
-  }
-
-  /*
-   * First visit.
-   */
-  resetAndStartHomepage();
-
-  /*
-   * Every time the homepage is shown again,
-   * treat it like a completely fresh visit.
-   */
-  window.addEventListener("pageshow", () => {
-    resetAndStartHomepage();
-  });
-})();
-
-// Move the image far enough down to reveal all Problem/Solution text.
-(() => {
-  const cards = [...document.querySelectorAll(".work-card")];
-
-  const update = () => {
-    cards.forEach((card) => {
-      const details = card.querySelector(".work-card-details");
-      const image = card.querySelector(".work-card-img");
-
-      if (!details || !image) return;
-
-      if (getComputedStyle(details).position !== "absolute") {
-        card.style.removeProperty("--work-reveal-distance");
-        return;
-      }
-
-      const distance = Math.max(
-        image.offsetHeight * 0.35,
-        details.offsetTop + details.offsetHeight + 24 - image.offsetTop,
-        0,
-      );
-
-      card.style.setProperty("--work-reveal-distance", `${distance}px`);
-    });
-  };
-
-  if ("ResizeObserver" in window) {
-    const observer = new ResizeObserver(update);
-
-    cards.forEach((card) => {
-      [".work-card-inner", ".work-card-details", ".work-card-img"].forEach(
-        (selector) => {
-          const element = card.querySelector(selector);
-          if (element) observer.observe(element);
-        },
-      );
-    });
-  }
-
-  window.addEventListener("resize", update);
-
-  cards.forEach((card) => {
-    card.addEventListener("pointerenter", update);
-
-    const image = card.querySelector(".work-card-img");
-    if (image) image.addEventListener("load", update);
-  });
-
-  if (document.fonts) document.fonts.ready.then(update);
-
-  update();
-})();
-
-// Give phone cards a shared height based on their actual content.
-(() => {
-  const list = document.querySelector("body.home-page .work-list");
-  if (!list) return;
-
-  const cards = [...list.querySelectorAll(".work-card")];
-  let frame;
-
-  const update = () => {
-    const phoneLayout =
-      cards.length > 0 &&
-      cards.every((card) => {
-        const details = card.querySelector(".work-card-details");
-        return details && getComputedStyle(details).display === "none";
-      });
-
-    if (!phoneLayout) {
-      list.style.removeProperty("--phone-card-height");
-      list.style.removeProperty("--phone-card-header-space");
-      return;
-    }
-
-    let tallestHeader = 0;
-    let tallestImage = 0;
-
-    cards.forEach((card) => {
-      const header = card.querySelector(".work-card-footer");
-      const image = card.querySelector(".work-card-img");
-
-      if (header) {
-        tallestHeader = Math.max(tallestHeader, header.offsetHeight);
-      }
-
-      if (image) {
-        tallestImage = Math.max(tallestImage, image.offsetHeight);
-      }
-    });
-
-    if (!tallestImage) return;
-
-    const topPadding = 20;
-    const gap = 24;
-    const headerSpace = topPadding + tallestHeader + gap;
-
-    list.style.setProperty("--phone-card-header-space", `${headerSpace}px`);
-
-    list.style.setProperty(
-      "--phone-card-height",
-      `${Math.ceil(headerSpace + tallestImage)}px`,
-    );
-  };
-
-  const schedule = () => {
-    cancelAnimationFrame(frame);
-    frame = requestAnimationFrame(update);
-  };
-
-  if ("ResizeObserver" in window) {
-    const observer = new ResizeObserver(schedule);
-
-    cards.forEach((card) => {
-      const header = card.querySelector(".work-card-footer");
-      const image = card.querySelector(".work-card-img");
-
-      if (header) observer.observe(header);
-      if (image) observer.observe(image);
-    });
-  }
-
-  cards.forEach((card) => {
-    const image = card.querySelector(".work-card-img");
-    if (image) image.addEventListener("load", schedule);
-  });
-
-  window.addEventListener("resize", schedule);
-
-  if (document.fonts) document.fonts.ready.then(schedule);
-
-  schedule();
-})();
-
-const greetingButtons = document.querySelectorAll(
-  ".hero-languages button[data-lang]",
-);
-
-function syncGreetingButtons() {
-  const currentLanguage = document.documentElement.lang
-    .slice(0, 2)
-    .toLowerCase();
-
-  greetingButtons.forEach((button) => {
-    const selected = button.dataset.lang === currentLanguage;
-
-    button.classList.toggle("active", selected);
-    button.setAttribute("aria-pressed", String(selected));
-  });
-}
-
-let greetingLanguageSwitching = false;
-
-greetingButtons.forEach((button) => {
-  button.addEventListener("click", async () => {
-    if (greetingLanguageSwitching) return;
-    if (typeof window.applyLanguage !== "function") return;
-
-    const language = button.dataset.lang;
-
-    greetingLanguageSwitching = true;
-
-    try {
-      await window.applyLanguage(language);
-      syncGreetingButtons();
-    } catch (error) {
-      console.error("Could not switch language:", error);
-    } finally {
-      greetingLanguageSwitching = false;
-    }
-  });
+  window.addEventListener("scroll", scheduleUpdate, { passive: true });
+  window.addEventListener("resize", scheduleUpdate);
+  updateNotes();
 });
 
-/* Keep selection correct after initial language detection
-   or a language change elsewhere on the page. */
-const greetingLanguageObserver = new MutationObserver(syncGreetingButtons);
+document.querySelectorAll(".project-story__visual").forEach((figure) => {
+  const image = figure.querySelector("img");
+  const svg = figure.querySelector(".project-story__notes");
+  const grid = figure.closest(".layout-grid");
+  const stepsColumn = figure
+    .closest(".project-story")
+    ?.querySelector(".project-story__steps");
 
-greetingLanguageObserver.observe(document.documentElement, {
-  attributes: true,
-  attributeFilter: ["lang"],
+  if (!image || !svg || !grid || !stepsColumn) return;
+
+  const notes = svg.querySelectorAll("[data-side]");
+
+  function positionNotes() {
+    const frame = svg.getBoundingClientRect();
+    const screen = image.getBoundingClientRect();
+
+    if (!frame.width || !frame.height || !screen.height) return;
+
+    svg.setAttribute("viewBox", `0 0 ${frame.width} ${frame.height}`);
+
+    const gap = parseFloat(
+      getComputedStyle(figure).getPropertyValue("--note-gap"),
+    );
+    const gutter = parseFloat(getComputedStyle(grid).columnGap) || 0;
+    const columnStep = (frame.width + gutter) / 8;
+
+    const imageLeft = screen.left - frame.left;
+    const imageTop = screen.top - frame.top;
+    const imageBottom = imageTop + screen.height;
+    const labelRightEdge = Math.min(
+      frame.width,
+      stepsColumn.getBoundingClientRect().left - frame.left - 12,
+    );
+
+    notes.forEach((note) => {
+      const label = note.querySelector("text");
+      const line = note.querySelector("path");
+      const rect = note.querySelector("rect");
+      if (!label || !line || !rect || !note.dataset.box) return;
+
+      const [left, top, width, height] = note.dataset.box
+        .trim()
+        .split(/\s+/)
+        .map(Number);
+
+      const boxX = imageLeft + (screen.width * left) / 100;
+      const boxY = imageTop + (screen.height * top) / 100;
+      const boxWidth = (screen.width * width) / 100;
+      const boxHeight = (screen.height * height) / 100;
+
+      rect.setAttribute("x", boxX);
+      rect.setAttribute("y", boxY);
+      rect.setAttribute("width", boxWidth);
+      rect.setAttribute("height", boxHeight);
+
+      const above = note.dataset.side === "top";
+      const imageEdge = above ? imageTop : imageBottom;
+
+      label.setAttribute("text-anchor", "start");
+      label.setAttribute(
+        "dominant-baseline",
+        above ? "text-after-edge" : "text-before-edge",
+      );
+
+      const labelWidth = label.getComputedTextLength();
+      let column = Math.max(4, Math.min(7, Number(note.dataset.col) || 4));
+      let labelX = (column - 4) * columnStep;
+
+      while (column > 4 && labelX + labelWidth > labelRightEdge) {
+        column -= 1;
+        labelX = (column - 4) * columnStep;
+      }
+
+      const lineX = labelX + labelWidth / 2;
+      const labelY = imageEdge + (above ? -gap : gap);
+      const lineEndY = labelY + (above ? 6 : -6);
+      const bendY = (imageEdge + lineEndY) / 2;
+
+      // Attach to the edge facing the label, a little in from the corners.
+      const inset = Math.min(8, boxWidth / 2);
+      const anchorX = Math.max(
+        boxX + inset,
+        Math.min(lineX, boxX + boxWidth - inset),
+      );
+      const anchorY = above ? boxY : boxY + boxHeight;
+
+      label.setAttribute("x", labelX);
+      label.setAttribute("y", labelY);
+      line.setAttribute(
+        "d",
+        `M ${anchorX} ${anchorY} V ${bendY} H ${lineX} V ${lineEndY}`,
+      );
+    });
+  }
+  const observer = new ResizeObserver(positionNotes);
+  observer.observe(figure);
+  observer.observe(image);
+  document.fonts.ready.then(positionNotes);
 });
 
-syncGreetingButtons();
-function watchContactFooter() {
-  const footer = document.getElementById("contact");
-  const toggle = document.getElementById("theme-toggle");
+document.querySelectorAll(".project-story").forEach((story) => {
+  const visual = story.querySelector(".project-story__visual");
+  const steps = story.querySelector(".project-story__steps");
+  if (!visual || !steps) return;
 
-  if (!footer || !toggle) return false;
+  const desktopMotion = window.matchMedia(
+    "(min-width: 768px) and (prefers-reduced-motion: no-preference)",
+  );
+  const easeDistance = 160;
+  let frame = null;
 
-  const observer = new IntersectionObserver(([entry]) => {
-    toggle.classList.toggle("is-hidden", entry.isIntersecting);
-  });
+  function updateStickyEase() {
+    frame = null;
 
-  observer.observe(footer);
-  return true;
-}
-
-// Also handles a footer loaded after the main script.
-if (!watchContactFooter()) {
-  const footerLoaderObserver = new MutationObserver(() => {
-    if (watchContactFooter()) {
-      footerLoaderObserver.disconnect();
+    if (!desktopMotion.matches) {
+      visual.style.removeProperty("translate");
+      return;
     }
-  });
 
-  footerLoaderObserver.observe(document.body, {
-    childList: true,
-    subtree: true,
-  });
-}
+    const style = getComputedStyle(visual);
+    const naturalTop =
+      steps.getBoundingClientRect().top + parseFloat(style.marginTop);
+    const distance = naturalTop - parseFloat(style.top);
+
+    if (Math.abs(distance) >= easeDistance) {
+      visual.style.removeProperty("translate");
+      return;
+    }
+
+    const progress = (distance + easeDistance) / (2 * easeDistance);
+    const easedOffset = easeDistance * progress ** 2;
+    const stickyOffset = Math.max(distance, 0);
+
+    visual.style.translate = `0 ${easedOffset - stickyOffset}px`;
+  }
+
+  function scheduleUpdate() {
+    if (frame === null) {
+      frame = requestAnimationFrame(updateStickyEase);
+    }
+  }
+
+  window.addEventListener("scroll", scheduleUpdate, { passive: true });
+  window.addEventListener("resize", scheduleUpdate);
+  desktopMotion.addEventListener("change", scheduleUpdate);
+  scheduleUpdate();
+});
+
+(() => {
+  const links = document.querySelectorAll(
+    '.left-sidebar .sidebar-projects a[href^="#"]:not([aria-current="page"])',
+  );
+
+  const sections = Array.from(links, (link) => ({
+    link,
+    section: document.getElementById(link.hash.slice(1)),
+  })).filter(({ section }) => section);
+
+  if (!sections.length) return;
+
+  let framePending = false;
+
+  function updateActiveSection() {
+    framePending = false;
+    const readingLine = window.innerHeight * 0.25;
+    let currentLink = null;
+
+    for (const { link, section } of sections) {
+      if (section.getBoundingClientRect().top <= readingLine) {
+        currentLink = link;
+      }
+    }
+
+    const product = document.getElementById("product");
+
+    if (product && product.getBoundingClientRect().top <= readingLine) {
+      currentLink = null;
+    }
+
+    for (const { link } of sections) {
+      const active = link === currentLink;
+      link.classList.toggle("active", active);
+
+      if (active) {
+        link.setAttribute("aria-current", "location");
+      } else {
+        link.removeAttribute("aria-current");
+      }
+    }
+  }
+
+  function scheduleUpdate() {
+    if (framePending) return;
+    framePending = true;
+    requestAnimationFrame(updateActiveSection);
+  }
+
+  window.addEventListener("scroll", scheduleUpdate, { passive: true });
+  window.addEventListener("resize", scheduleUpdate);
+  window.addEventListener("pageshow", scheduleUpdate);
+  scheduleUpdate();
+})();

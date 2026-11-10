@@ -1,0 +1,1048 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <script>
+      document.documentElement.classList.add("page-entering");
+      if (localStorage.getItem("site-gate-unlocked") === "true") {
+        document.documentElement.classList.add("gate-already-unlocked");
+      }
+    </script>
+    <!--<script src="/password-gate.js"></script> -->
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title data-i18n="page_titles.yellow">
+      Case Study - Yellow is the New Green
+    </title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300;0,400;0,700;1,300;1,400&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link href="/Images/General/favicon_2.png" rel="icon" type="image/png" />
+    <link href="/style_2.css" rel="stylesheet" />
+    <script>
+      /* ============================================= AVOID FLICKER
+    ============================================= */
+
+      (function () {
+        const themes = [
+          {
+            bg: "#FAF6ED",
+            text: "#344ECD",
+            muted: "#8D9ADB",
+            p1: "#001268",
+            p4: "#CD4834",
+            p2: "#94A4F3",
+          },
+          {
+            bg: "#112228",
+            text: "#E6E8FF",
+            muted: "#868F9E",
+            p1: "#B892FF",
+            p4: "#95F8D8",
+            p2: "#6120DB",
+          },
+        ];
+        const i = parseInt(localStorage.getItem("theme-index"), 10) || 0;
+        const t = themes[i];
+        const root = document.documentElement.style;
+        root.setProperty("--color-bg", t.bg);
+        root.setProperty("--color-text", t.text);
+        root.setProperty("--color-text-muted", t.muted);
+        root.setProperty("--project-1", t.p1);
+        root.setProperty("--project-2", t.p2);
+        root.setProperty("--project-3", t.p3);
+        root.setProperty("--project-4", t.p4);
+        root.setProperty("--project-5", t.p5);
+      })();
+    </script>
+  </head>
+  <body class="case-page">
+    <div id="cursor"></div>
+    <!-- =============================================
+       NAV HTML  —  DO NOT MODIFY
+  ============================================= -->
+    <!-- 01 — GLOBAL NAVIGATION
+     Logo, animated theme eye, mobile menu controls, and mobile links. -->
+    <nav>
+      <a
+        class="logo"
+        href="/index_2.html"
+        data-home-link
+        aria-label="Anouk Fontaine, home"
+      >
+        <img id="site-logo" src="/Images/Home/0_logo_AF_theme_1.png" alt="" />
+        <span class="logo-name type-heading" aria-hidden="true"
+          >Anouk Fontaine</span
+        >
+      </a>
+
+      <div class="nav-right">
+        <div class="nav-controls">
+          <button
+            type="button"
+            class="nav-theme"
+            id="theme-toggle"
+            aria-label="Toggle theme"
+          >
+            <svg class="theme-eye" viewBox="0 0 80 56" aria-hidden="true">
+              <defs>
+                <clipPath id="theme-eye-clip">
+                  <path d="M3 28 Q40 -6 77 28 Q40 62 3 28Z" />
+                </clipPath>
+              </defs>
+              <g clip-path="url(#theme-eye-clip)">
+                <circle class="eye-pupil" cx="40" cy="28" r="12" />
+                <path class="eye-lid" d="M3 28 Q40 -6 77 28 Q40 -6 3 28Z" />
+              </g>
+              <path class="eye-outline" d="M3 28 Q40 62 77 28" />
+              <!-- Upper curve stays visible -->
+              <path class="eye-outline" d="M3 28 Q40 -6 77 28" />
+              <!-- Moving eyelid -->
+              <path class="eye-outline eye-upper-line" d="M3 28 Q40 -6 77 28" />
+              <g class="eye-lashes">
+                <path d="M22 15 L18 7 M40 11 L40 1 M58 15 L62 7" />
+              </g>
+            </svg>
+          </button>
+          <button
+            class="nav-hamburger type-small"
+            id="nav-hamburger"
+            type="button"
+            aria-label="Open menu"
+            aria-expanded="false"
+            aria-controls="site-sidebar"
+          >
+            Menu
+          </button>
+        </div>
+      </div>
+
+      <div class="mobile-menu" id="mobile-menu">
+        <a
+          class="mobile-menu-link"
+          href="/index_2.html#hello"
+          data-i18n="nav.hello"
+          >Hello</a
+        >
+        <a
+          class="mobile-menu-link"
+          href="/index_2.html#services"
+          data-i18n="nav.services"
+          >Services</a
+        >
+        <a
+          class="mobile-menu-link"
+          href="/index_2.html#work"
+          data-i18n="nav.work"
+          >Work</a
+        >
+        <a
+          class="mobile-menu-link"
+          href="/index_2.html#about"
+          data-i18n="nav.about"
+          >About</a
+        >
+        <a class="mobile-menu-link" href="#contact" data-i18n="nav.contact"
+          >Contact</a
+        >
+      </div>
+    </nav>
+    <!-- 02 — PASSWORD GATE
+     Shown before the portfolio is unlocked; keep its IDs for site-gate.js. -->
+    <section id="site-gate">
+      <div class="site-gate-box">
+        <p class="site-gate-title type-heading" data-i18n="gate.title">
+          Private Portfolio
+        </p>
+        <p class="site-gate-text type-small" data-i18n="gate.description">
+          This portfolio is currently shared with selected reviewers.<br />
+          Please enter the password to continue.
+        </p>
+        <input
+          type="password"
+          id="site-gate-input"
+          class="type-small"
+          data-i18n-placeholder="gate.placeholder"
+          placeholder="Password"
+          autofocus
+        />
+        <button
+          id="site-gate-submit"
+          class="type-small"
+          data-i18n="gate.button"
+        >
+          Enter portfolio
+        </button>
+        <p id="site-gate-error" class="type-small" data-i18n="gate.error">
+          Incorrect password.
+        </p>
+      </div>
+    </section>
+
+    <div id="site-content">
+      <aside class="left-sidebar" id="site-sidebar">
+        <a class="type-small" href="/index_2.html#hello" data-i18n="nav.hello"
+          >Hello</a
+        >
+        <a
+          class="type-small"
+          href="/index_2.html#services"
+          data-i18n="nav.services"
+          >Services</a
+        >
+        <div class="sidebar-work">
+          <a class="type-small active" href="/index_2.html#work">Work</a>
+
+          <ul
+            class="sidebar-projects"
+            aria-label="Dashboard and case study sections"
+          >
+            <li class="sidebar-work__heading">
+              <a
+                class="type-small active"
+                href="#dashboard"
+                aria-current="page"
+              >
+                Dashboard
+              </a>
+              <a
+                class="sidebar-work__next type-small"
+                href="/Work/auw/"
+                aria-label="Next case study: Workflow App"
+              >
+                <span aria-hidden="true">▸</span>
+              </a>
+            </li>
+
+            <li><a class="type-small" href="#overview">Overview</a></li>
+            <li><a class="type-small" href="#process">Process</a></li>
+            <li><a class="type-small" href="#problem">Problem</a></li>
+            <li><a class="type-small" href="#solution">Solution</a></li>
+            <li><a class="type-small" href="#impact">Impact</a></li>
+          </ul>
+        </div>
+        <a class="type-small" href="/index_2.html#about" data-i18n="nav.about"
+          >About</a
+        >
+        <a class="type-small" href="#contact" data-i18n="nav.contact"
+          >Contact</a
+        >
+      </aside>
+    </div>
+
+    <!-- ====================================
+     HERO CASE STUDY PAGE
+     =======================================-->
+    <main class="layout-grid" id="dashboard">
+      <header class="cs-hero">
+        <p class="cs-hero-label type-small">Financial Planning Dashboard</p>
+        <h1 class="type-display">Yellow is the New Green</h1>
+        <p class="type-body">
+          Automating an error-prone and cumbersome controlling process.
+        </p>
+      </header>
+
+      <!-- ============================================
+                  IMAGES
+       ==============================================-->
+
+      <section
+        class="project-row project-gallery project--1"
+        aria-label="Project showcase"
+      >
+        <figure class="project-display project-display--big">
+          <img
+            src="/Images/Yellow_2/1_overview.png"
+            alt="Financial Cockpit product view"
+            loading="lazy"
+          />
+        </figure>
+      </section>
+      <!-- ============================================
+                    OVERVIEW
+         ==============================================-->
+      <section
+        class="project-row"
+        aria-labelledby="cs-overview-title"
+        id="overview"
+      >
+        <div class="project-block project-block--left">
+          <h2 id="cs-overview-title" class="label">Overview</h2>
+
+          <div class="project-block__text">
+            <p class="type-heading">
+              Excel had supported financial planning for years. Power BI opened
+              up new ways to automate the process and explore the data. The main
+              challenge was learning a new tool while bringing everyone on board
+              with a new way of working.
+            </p>
+
+            <p class="type-small">
+              Note: To protect internal information, the illustrations and
+              mockups have been simplified. The main dashboard mockup is
+              fictional and illustrates the structure of the solution.
+            </p>
+          </div>
+        </div>
+
+        <dl class="project-block project-block--right project-block--facts">
+          <dt class="label">What</dt>
+          <dd class="type-body">Multi-page Power BI dashboard</dd>
+
+          <dt class="label">Role</dt>
+          <dd class="type-body">
+            End-to-end ownership of the project and product, from UX/UI design
+            through Power BI development, rollout and long-term maintenance.
+          </dd>
+
+          <dt class="label">Users</dt>
+          <dd class="type-body">
+            Decision-makers, data analysts and operational teams within the
+            Swiss federal administration.
+          </dd>
+
+          <dt class="label">Period</dt>
+          <dd class="type-body">2 years part-time</dd>
+        </dl>
+      </section>
+
+      <!-- ====================================
+    PROCESS
+     =======================================-->
+
+      <section
+        class="project-row process project--1"
+        aria-label="Design and development process"
+        id="process"
+      >
+        <ol class="process__steps">
+          <li class="project-block project-block--left">
+            <div class="project-block__text process__step">
+              <div class="icon" aria-hidden="true">
+                <svg viewBox="0 0 64 64" fill="none">
+                  <circle cx="32" cy="32" r="31" />
+                  <path d="M16 32Q32 17 48 32Q32 47 16 32Z" />
+                  <path d="M24 25L22 21M32 24V19M40 25L42 21" />
+                  <circle
+                    cx="32"
+                    cy="32"
+                    r="5"
+                    fill="currentColor"
+                    stroke="none"
+                  />
+                </svg>
+              </div>
+              <h2 class="type-heading">Observe</h2>
+              <p class="type-body">Interviews, user journeys, user flows</p>
+            </div>
+          </li>
+
+          <li class="project-block project-block--right">
+            <div class="project-block__text process__step">
+              <div class="icon" aria-hidden="true">
+                <svg viewBox="0 0 64 64" fill="none">
+                  <circle cx="32" cy="32" r="31" />
+                  <path
+                    d="M32 15C29 21 23 27 23 32C23 36 25 39 26 41H38
+             C39 39 41 36 41 32C41 27 35 21 32 15Z"
+                  />
+                  <path d="M32 15V30M25 41H39V49H25ZM25 45H39" />
+                  <circle cx="32" cy="33" r="2.5" />
+                </svg>
+              </div>
+              <h2 class="type-heading">Design</h2>
+              <p class="type-body">
+                Information architecture, prototypes, data visualization
+              </p>
+            </div>
+          </li>
+
+          <li class="project-block project-block--left">
+            <div class="project-block__text process__step">
+              <div class="icon" aria-hidden="true">
+                <svg viewBox="0 0 64 64" fill="none">
+                  <circle cx="32" cy="32" r="31" />
+                  <path
+                    d="M43 15C39 13 34 14 31 17C28 20 27 24 29 28
+             L15 42A4 4 0 0 0 21 48L35 34C39 36 44 35 47 32
+             C50 29 51 24 49 20L43 26L38 21Z"
+                  />
+                </svg>
+              </div>
+              <h2 class="type-heading">Build</h2>
+              <p class="type-body">
+                Power BI DAX, data modelling, access, data connectors
+              </p>
+            </div>
+          </li>
+
+          <li class="project-block project-block--right">
+            <div class="project-block__text process__step">
+              <div class="icon" aria-hidden="true">
+                <svg viewBox="0 0 64 64" fill="none">
+                  <circle cx="32" cy="32" r="31" />
+                  <path d="M18 32L27 45L47 19" />
+                </svg>
+              </div>
+              <h2 class="type-heading">Test</h2>
+              <p class="type-body">
+                Usability testing, questionnaire, iterations
+              </p>
+            </div>
+          </li>
+        </ol>
+        <svg class="process__connector" aria-hidden="true">
+          <path></path>
+        </svg>
+      </section>
+
+      <!-- ============================================
+                    PROBLEM
+         ==============================================-->
+
+      <section
+        class="project-row project-problem"
+        aria-labelledby="project-problem-title"
+        id="problem"
+      >
+        <div class="project-block project-block--wide project-problem__panel">
+          <div class="project-problem__copy">
+            <p class="label">Problem</p>
+
+            <div class="project-block__text">
+              <h2 id="project-problem-title" class="type-heading">
+                Everything, everywhere, all at once
+              </h2>
+              <p class="type-body">
+                Budget monitoring relied on Excel sheets stored in different
+                places. Each controller organised files differently, so finding
+                the right version took time. Errors crept in as the files were
+                updated throughout the year, making it harder for teams to trust
+                the figures.
+              </p>
+            </div>
+          </div>
+          <img
+            src="/Images/Yellow_2/2_problem.png"
+            alt="Three overlapping Excel sheets with budget tables and charts"
+            loading="lazy"
+          />
+        </div>
+      </section>
+      <!-- ============================================
+                    STORY - SOLUTION
+         ==============================================-->
+      <section
+        class="project-row project-story"
+        aria-label="Pain points and antidotes"
+        id="solution"
+      >
+        <div class="project-story__steps">
+          <div class="project-story__step" data-story-step="0">
+            <div class="project-story__card">
+              <p class="label">Pain Point 1/3</p>
+              <div>
+                <h3 class="type-body">
+                  Information was scattered across multiple manually maintained
+                  Excel sheets
+                </h3>
+                <p class="type-small">
+                  Maintaining the files took time and reduced trust in the data.
+                </p>
+              </div>
+            </div>
+
+            <div class="project-story__card project-story__card--antidote">
+              <p class="label">Antidote</p>
+              <div>
+                <h3 class="type-body">
+                  One Power BI application brings all financial information into
+                  one place
+                </h3>
+                <p class="type-small">
+                  Accessible via a web link, with automatically updated data.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-story__step" data-story-step="1">
+            <div class="project-story__card">
+              <p class="label">Pain Point 2/3</p>
+              <div>
+                <h3 class="type-body">
+                  Answering a budget question meant rebuilding the same Excel
+                  views
+                </h3>
+                <p class="type-small">
+                  Each new question meant another round of manual filtering.
+                </p>
+              </div>
+            </div>
+
+            <div class="project-story__card project-story__card--antidote">
+              <p class="label">Antidote</p>
+              <div>
+                <h3 class="type-body">
+                  Shared filters let users explore the same data from different
+                  angles
+                </h3>
+                <p class="type-small">
+                  Choose a year, country, or section and the charts and table
+                  update together.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-story__step" data-story-step="2">
+            <div class="project-story__card">
+              <p class="label">Pain Point 3/3</p>
+              <div>
+                <h3 class="type-body">
+                  A budget total gave little indication of what drove it
+                </h3>
+                <p class="type-small">
+                  Finding the projects behind a figure meant opening another
+                  file.
+                </p>
+              </div>
+            </div>
+
+            <div class="project-story__card project-story__card--antidote">
+              <p class="label">Antidote</p>
+              <div>
+                <h3 class="type-body">
+                  Users can go from a summary chart to the project-level details
+                </h3>
+                <p class="type-small">
+                  The figures and their underlying records are available in the
+                  same view.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <figure class="project-story__visual">
+          <img
+            src="/Images/Yellow_2/3_solution.png"
+            alt="Financial Cockpit dashboard with filters, summary charts, and a project table"
+          />
+
+          <svg class="project-story__notes" aria-hidden="true">
+            <!-- data-box = left top width height, as percentages of the image -->
+            <g class="is-active" data-story-notes="0">
+              <g data-side="top" data-col="4" data-box="2 3 15 93">
+                <rect></rect>
+                <path></path>
+                <text>One source</text>
+              </g>
+              <g data-side="top" data-col="7" data-box="60 3 39 43">
+                <rect></rect>
+                <path></path>
+                <text>Live figures</text>
+              </g>
+              <g data-side="bottom" data-col="5" data-box="19 49 31 47">
+                <rect></rect>
+                <path></path>
+                <text>Shared project data</text>
+              </g>
+            </g>
+
+            <g data-story-notes="1">
+              <g data-side="top" data-col="4" data-box="2 41 15 44">
+                <rect></rect>
+                <path></path>
+                <text>Filter by year or section</text>
+              </g>
+              <g data-side="bottom" data-col="7" data-box="51 48 47 48">
+                <rect></rect>
+                <path></path>
+                <text>Views update together</text>
+              </g>
+            </g>
+
+            <g data-story-notes="2">
+              <g data-side="top" data-col="7" data-box="37 3 22 43">
+                <rect></rect>
+                <path></path>
+                <text>Start with the total</text>
+              </g>
+              <g data-side="bottom" data-col="5" data-box="19 49 79 47">
+                <rect></rect>
+                <path></path>
+                <text>See the projects behind it</text>
+              </g>
+            </g>
+          </svg>
+        </figure>
+      </section>
+      <!-- ============================================
+                    IMPACT
+         ==============================================-->
+
+      <section
+        class="project-row project-impact"
+        aria-labelledby="project-impact-title"
+        id="impact"
+      >
+        <div class="project-block project-block--wide">
+          <h2 id="project-impact-title" class="label">Impact</h2>
+
+          <p class="project-block__text type-statement">
+            Cutting manual preparation work by 90% and achieving 100%
+            satisfaction among primary users.
+          </p>
+        </div>
+
+        <!-- ============================================
+                  User Flow
+       ==============================================-->
+
+        <div
+          aria-label="Before and after user flow"
+          class="cs-solution-flow"
+          data-solution-flow=""
+        >
+          <div
+            aria-label="Choose user flow state"
+            class="cs-solution-flow-toggle"
+          >
+            <button
+              aria-pressed="true"
+              class="pill-btn pill-btn--flow active"
+              data-i18n="shared.button.before_btn"
+              data-flow-state="before"
+              type="button"
+            >
+              Before
+            </button>
+            <button
+              aria-pressed="false"
+              class="pill-btn pill-btn--flow"
+              data-i18n="shared.button.after_btn"
+              data-flow-state="after"
+              type="button"
+            >
+              After
+            </button>
+          </div>
+          <div class="cs-solution-flow-scroll">
+            <div class="cs-solution-flow-stage">
+              <svg
+                aria-hidden="true"
+                class="cs-flow-lines cs-flow-lines--before"
+                preserveaspectratio="none"
+                viewbox="0 0 1600 700"
+              >
+                <defs>
+                  <marker
+                    id="solution-flow-arrow-before"
+                    markerheight="18"
+                    markerunits="userSpaceOnUse"
+                    markerwidth="18"
+                    orient="auto"
+                    refx="14.2"
+                    refy="9"
+                  >
+                    <path
+                      d="M2.1 2.4 L15.6 9 L2.1 15.6"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="miter"
+                      stroke-width="1.2"
+                      vector-effect="non-scaling-stroke"
+                    ></path>
+                  </marker>
+                </defs>
+                <!-- main path -->
+                <!-- These three arrows survive the simplification and grow. -->
+                <path
+                  class="cs-flow-line cs-flow-line--survivor cs-flow-arrow--start"
+                  d="M68.8 252 H111.7"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+                <path
+                  class="cs-flow-line cs-flow-line--fade"
+                  d="M294.4 252 H319.7"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+                <path
+                  class="cs-flow-line cs-flow-line--survivor cs-flow-arrow--middle"
+                  d="M492.8 252 H518.1"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+                <path
+                  class="cs-flow-line cs-flow-line--fade"
+                  d="M716.8 252 H735.7"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+                <path
+                  class="cs-flow-line cs-flow-line--survivor cs-flow-arrow--end"
+                  d="M950.4 252 H978.9"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+                <path
+                  class="cs-flow-line cs-flow-line--fade"
+                  d="M1180.8 252 H1203"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+                <!-- data not current -->
+                <path
+                  class="cs-flow-line cs-flow-line--fade"
+                  d="M619.2 338.8 V474.6 H557.1"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+                <path
+                  class="cs-flow-line cs-flow-line--fade"
+                  d="M336 474.6 H204.8 V300.3"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+                <!-- information available: yes -->
+                <path
+                  class="cs-flow-line cs-flow-line--fade"
+                  d="M1081.6 165.2 V2 H1540 V220.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+                <!-- information missing: alternatives -->
+                <path
+                  class="cs-flow-line cs-flow-line--plain cs-flow-line--fade"
+                  d="M1208 95.2 V595"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+                <path
+                  class="cs-flow-line cs-flow-line--fade"
+                  d="M1208 95.2 H1230.3"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+                <path
+                  class="cs-flow-line cs-flow-line--fade"
+                  d="M1208 195.3 H1230.3"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+                <path
+                  class="cs-flow-line cs-flow-line--fade"
+                  d="M1208 294.7 H1230.3"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+                <path
+                  class="cs-flow-line cs-flow-line--fade"
+                  d="M1208 394.8 H1230.3"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+                <path
+                  class="cs-flow-line cs-flow-line--fade"
+                  d="M1208 494.9 H1230.3"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+                <path
+                  class="cs-flow-line cs-flow-line--fade"
+                  d="M1208 595 H1230.3"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+                <path
+                  class="cs-flow-line cs-flow-line--plain cs-flow-line--fade"
+                  d="M1462.4 95.2 H1488 V595"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+                <path
+                  class="cs-flow-line cs-flow-line--plain cs-flow-line--fade"
+                  d="M1462.4 195.3 H1488"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+                <path
+                  class="cs-flow-line cs-flow-line--plain cs-flow-line--fade"
+                  d="M1462.4 294.7 H1488"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+                <path
+                  class="cs-flow-line cs-flow-line--plain cs-flow-line--fade"
+                  d="M1462.4 394.8 H1488"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+                <path
+                  class="cs-flow-line cs-flow-line--plain cs-flow-line--fade"
+                  d="M1462.4 494.9 H1488"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+                <path
+                  class="cs-flow-line cs-flow-line--plain cs-flow-line--fade"
+                  d="M1462.4 595 H1488"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+                <path
+                  class="cs-flow-line cs-flow-line--fade"
+                  d="M1488 252 H1506.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+                <text
+                  class="cs-flow-edge-label cs-flow-edge-label--fade"
+                  data-i18n="yellow.solution.flow_yes"
+                  x="720"
+                  y="235"
+                >
+                  Y
+                </text>
+                <text
+                  class="cs-flow-edge-label cs-flow-edge-label--fade"
+                  data-i18n="yellow.solution.flow_no"
+                  x="630"
+                  y="410"
+                >
+                  N
+                </text>
+                <text
+                  class="cs-flow-edge-label cs-flow-edge-label--fade"
+                  data-i18n="yellow.solution.flow_yes"
+                  x="1092"
+                  y="126"
+                >
+                  Y
+                </text>
+                <text
+                  class="cs-flow-edge-label cs-flow-edge-label--fade"
+                  data-i18n="yellow.solution.flow_no"
+                  x="1180"
+                  y="235"
+                >
+                  N
+                </text>
+              </svg>
+              <div
+                aria-hidden="true"
+                class="cs-flow-dot cs-flow-dot--start"
+              ></div>
+              <div
+                class="cs-flow-node cs-flow-node--acta cs-flow-remove cs-flow-remove--left"
+                data-i18n="yellow.solution.flow_navigate_acta"
+              >
+                Navigate to<br />Acta Nova
+              </div>
+              <div
+                class="cs-flow-node cs-flow-node--excel cs-flow-survivor cs-flow-survivor--link"
+              >
+                <span
+                  class="cs-flow-copy cs-flow-copy--before"
+                  data-i18n="yellow.solution.flow_open_excel"
+                  >Open Excel file</span
+                >
+                <span
+                  class="cs-flow-copy cs-flow-copy--after"
+                  data-i18n="yellow.solution.flow_open_link"
+                  >Open<br />Power BI link</span
+                >
+              </div>
+              <div
+                class="cs-flow-node cs-flow-node--diamond cs-flow-node--data cs-flow-remove cs-flow-remove--left"
+                data-i18n="yellow.solution.flow_data_current_question"
+              >
+                Is the data<br />up to date?
+              </div>
+              <div
+                class="cs-flow-node cs-flow-node--budget cs-flow-survivor cs-flow-survivor--cockpit"
+              >
+                <span
+                  class="cs-flow-copy cs-flow-copy--before"
+                  data-i18n="yellow.solution.flow_navigate_budget"
+                  >Explore budget<br />planning overview</span
+                >
+                <span
+                  class="cs-flow-copy cs-flow-copy--after"
+                  data-i18n="yellow.solution.flow_navigate_cockpit"
+                  >Explore <br />the cockpit</span
+                >
+              </div>
+              <div
+                class="cs-flow-node cs-flow-node--diamond cs-flow-node--info cs-flow-remove cs-flow-remove--right"
+                data-i18n="yellow.solution.flow_information_available_question"
+              >
+                Is the<br />information<br />available?
+              </div>
+              <div
+                class="cs-flow-node cs-flow-node--analyst cs-flow-remove cs-flow-remove--left"
+                data-i18n="yellow.solution.flow_ask_analyst_update"
+              >
+                Ask the data analyst<br />to update the data
+              </div>
+              <div
+                class="cs-flow-node cs-flow-branch cs-flow-branch--1 cs-flow-remove cs-flow-remove--right"
+                data-i18n="yellow.solution.flow_open_pending_disbursements"
+              >
+                Open the email listing pending<br />disbursements
+              </div>
+              <div
+                class="cs-flow-node cs-flow-branch cs-flow-branch--2 cs-flow-remove cs-flow-remove--right"
+                data-i18n="yellow.solution.flow_open_climate_evaluation"
+              >
+                Open the climate evaluation<br />Excel file
+              </div>
+              <div
+                class="cs-flow-node cs-flow-branch cs-flow-branch--3 cs-flow-remove cs-flow-remove--right"
+                data-i18n="yellow.solution.flow_open_year_end_monitoring"
+              >
+                Open the year-end disbursement<br />monitoring Excel file
+              </div>
+              <div
+                class="cs-flow-node cs-flow-branch cs-flow-branch--4 cs-flow-remove cs-flow-remove--right"
+                data-i18n="yellow.solution.flow_open_private_sector"
+              >
+                Open the private-sector<br />mobilization Excel file
+              </div>
+              <div
+                class="cs-flow-node cs-flow-branch cs-flow-branch--5 cs-flow-remove cs-flow-remove--right"
+                data-i18n="yellow.solution.flow_check_sap"
+              >
+                Check directly<br />in SAP
+              </div>
+              <div
+                class="cs-flow-node cs-flow-branch cs-flow-branch--6 cs-flow-remove cs-flow-remove--right"
+                data-i18n="yellow.solution.flow_ask_project_or_analyst"
+              >
+                Ask the project manager<br />or data analyst
+              </div>
+              <div
+                aria-hidden="true"
+                class="cs-flow-dot cs-flow-dot--end"
+              ></div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- ============================================
+                  IMAGES
+       ==============================================-->
+
+      <section
+        class="project-row project-gallery project--1"
+        aria-label="Project showcase"
+        id="product"
+      >
+        <figure class="project-display project-display--big">
+          <img
+            src="/Images/Yellow_2/4_product_1.png"
+            alt="Financial Cockpit product view"
+            loading="lazy"
+          />
+        </figure>
+
+        <figure class="project-display project-display--moderate">
+          <img
+            src="/Images/Yellow_2/4_product_2.png"
+            alt="Financial Cockpit detail view"
+            loading="lazy"
+          />
+        </figure>
+        <figure class="project-display project-display--middle">
+          <img
+            src="/Images/Yellow_2/4_product_3.png"
+            alt="Evolution of the Financial Cockpit design"
+            loading="lazy"
+          />
+        </figure>
+
+        <figure class="project-display project-display--big">
+          <img
+            src="/Images/Yellow_2/4_product_4.png"
+            alt="Additional Financial Cockpit product view"
+            loading="lazy"
+          />
+        </figure>
+      </section>
+      <!-- =============================================
+     NEXT PROJECTS
+  ============================================= -->
+      <section
+        class="project-row next-projects"
+        aria-labelledby="next-projects-title"
+      >
+        <div class="project-block project-block--left">
+          <h2 id="next-projects-title" class="label">Next projects</h2>
+
+          <a
+            class="project-block__text work-card cursor-grow"
+            href="/Work/auw/"
+          >
+            <h3 class="type-heading">End-to-End Workflow App</h3>
+
+            <div class="work-card-inner" style="background: var(--project-4)">
+              <img
+                class="work-card-img"
+                src="/Images/Home/0_work_4.png"
+                alt=""
+                loading="lazy"
+              />
+            </div>
+            <p class="type-small">
+              Removing HR administration from the organisation’s education
+              request process
+            </p>
+          </a>
+        </div>
+
+        <div class="project-block project-block--right">
+          <a
+            class="project-block__text work-card cursor-grow"
+            href="/Work/skills/"
+          >
+            <h3 class="type-heading">Skills Management Platform</h3>
+
+            <div class="work-card-inner" style="background: var(--project-2)">
+              <img
+                class="work-card-img"
+                src="/Images/Home/0_work_2.png"
+                alt=""
+                loading="lazy"
+              />
+            </div>
+            <p class="type-small">
+              Motivating employees to develop skills needed by the organisation
+              instead of outsourcing
+            </p>
+          </a>
+        </div>
+      </section>
+    </main>
+    <div id="footer"></div>
+    <!-- =============================================
+     PASSWORD GATE END OF CONTAINER
+  ============================================= -->
+
+    <script src="/loader.js"></script>
+    <script src="/script_2.js"></script>
+    <!-- =============================================
+  Password for the full site
+  ============================================= -->
+    <script src="/site-gate.js"></script>
+  </body>
+</html>

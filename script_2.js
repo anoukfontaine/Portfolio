@@ -953,11 +953,26 @@ document.querySelectorAll(".process").forEach((process) => {
     flow.classList.remove("is-resetting");
   };
 
+  const flowArrows = [
+    ["start", "M68.8 252 H111.7", "M68.8 252 H185.3"],
+    ["middle", "M492.8 252 H518.1", "M358.4 252 H474.9"],
+    ["end", "M950.4 252 H978.9", "M689.6 252 H806.1"],
+  ];
+
+  function updateFlowArrows(isAfter) {
+    for (const [name, before, after] of flowArrows) {
+      stage
+        .querySelector(`.cs-flow-arrow--${name}`)
+        ?.setAttribute("d", isAfter ? after : before);
+    }
+  }
+
   const setAfter = () => {
     cancelReturn();
     if (state === "after") return;
 
     stage.classList.add("is-after");
+    updateFlowArrows(true);
     state = "after";
     updateButtons(state);
   };
@@ -981,6 +996,7 @@ document.querySelectorAll(".process").forEach((process) => {
       flow.classList.add("is-resetting");
       stage.classList.add("is-resetting");
       stage.classList.remove("is-after");
+      updateFlowArrows(false);
       state = "before";
       updateButtons(state);
 

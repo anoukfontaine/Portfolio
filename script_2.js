@@ -1332,9 +1332,18 @@ document.querySelectorAll(".project-story").forEach((story) => {
     let currentLink = null;
 
     for (const { link, section } of sections) {
-      const { top, bottom } = section.getBoundingClientRect();
+      const relatedSections = document.querySelectorAll(
+        `[data-sidebar-section="${section.id}"]`,
+      );
 
-      if (top <= readingLine && bottom > readingLine) {
+      const allSections = [section, ...relatedSections];
+
+      const isActive = allSections.some((item) => {
+        const { top, bottom } = item.getBoundingClientRect();
+        return top <= readingLine && bottom > readingLine;
+      });
+
+      if (isActive) {
         currentLink = link;
       }
     }

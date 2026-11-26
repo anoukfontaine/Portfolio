@@ -236,9 +236,20 @@ html {
   padding-block: 0;
 }
 
-.project-row.project-impact {
-  row-gap: var(--space-5);
-  padding-block-end: var(--space-4);
+.project-row.project-statement {
+  row-gap: var(--space-8);
+}
+
+@media (width <= 1020px) {
+  .project-row.project-statement {
+    row-gap: var(--space-6);
+  }
+}
+
+@media (width <= 760px) {
+  .project-row.project-statement {
+    row-gap: var(--space-5);
+  }
 }
 
 .project-row.project-gallery {
@@ -1902,69 +1913,296 @@ body.home-page .about-editorial-label {
 }
 
 /* ============================================================================
-   PROBLEM
+   REUSABLE COLOURED PANEL (CHALLENGE)
    ============================================================================ */
 
-.project-problem__panel {
-  align-items: center;
-  padding-block: var(--space-6);
-  background: var(--project-1);
-  color: var(--color-bg);
-}
-
-.project-problem__copy {
-  grid-column: 1 / 6;
-  grid-row: 1;
+.project-split {
+  grid-column: 3 / -1;
   display: grid;
   grid-template-columns: subgrid;
-  align-self: center;
   align-items: start;
+  row-gap: var(--space-6);
+  min-width: 0;
 }
 
-.project-problem__copy > .label {
-  grid-column: 1;
-  grid-row: 1;
-  color: inherit;
-}
-
-.project-problem__copy > .project-block__text {
-  grid-column: 2 / -1;
-}
-
-.project-problem__panel h2 {
-  margin: 0 0 var(--space-4);
+.project-split--filled {
+  padding-block: var(--space-7);
+  background: var(--project-accent);
   color: var(--color-bg);
 }
 
-.project-problem__panel > img {
-  grid-column: 7 / -1;
-  grid-row: 1;
-  display: block;
-  width: 90%;
-  height: auto;
-  justify-self: center;
+.project-split--plain {
+  padding-block: 0;
+  background: transparent;
+  color: var(--color-text);
 }
 
-@media (width <= 760px) {
-  .project-problem__panel {
+.project-split > .label {
+  grid-column: 1;
+  grid-row: 1;
+  padding-top: var(--space-fixed-1);
+}
+
+.project-split--filled > .label {
+  color: var(--color-text-muted);
+}
+
+.project-split--plain > .label {
+  color: var(--color-text-muted);
+}
+
+.project-split__left {
+  grid-column: 2 / 6;
+  grid-row: 1;
+  min-width: 0;
+}
+
+.project-split__right {
+  grid-column: 7 / -1;
+  grid-row: 1;
+  min-width: 0;
+}
+
+.project-split h2 {
+  color: inherit;
+  margin-bottom: var(--space-3);
+}
+
+/* ============================================================================
+   REUSABLE STAIRCASE
+   ============================================================================ */
+
+.project-staircase {
+  --stair-rise: var(--space-6);
+  --stair-icon-size: 88px;
+  --stair-icon-color: var(--color-text-muted);
+
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: subgrid;
+  align-items: start;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.project-staircase__step {
+  grid-column: span 2;
+  grid-row: 1;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  min-width: 0;
+
+  margin-top: calc(var(--stair-offset) * var(--stair-rise));
+  padding-top: var(--space-6);
+  gap: var(--space-4);
+}
+
+/* Individual step heights */
+
+.project-staircase__step:nth-child(1) {
+  --stair-offset: 4;
+}
+
+.project-staircase__step:nth-child(2) {
+  --stair-offset: 3;
+}
+
+.project-staircase__step:nth-child(3) {
+  --stair-offset: 2;
+}
+
+.project-staircase__step:nth-child(4) {
+  --stair-offset: 1;
+}
+
+.project-staircase__step:nth-child(5) {
+  --stair-offset: 0;
+}
+
+/* Horizontal staircase line */
+
+.project-staircase__step::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: calc(var(--grid-gutter) / -2);
+  right: calc(var(--grid-gutter) / -2);
+  border-top: 1px solid currentColor;
+}
+
+/* Vertical staircase connection */
+
+.project-staircase__step:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  right: calc(var(--grid-gutter) / -2);
+  height: var(--stair-rise);
+  border-right: 1px solid currentColor;
+}
+
+/* Align first and last lines with panel edges */
+
+.project-staircase__step:first-child::before {
+  left: 0;
+}
+
+.project-staircase__step:last-child::before {
+  right: 0;
+}
+
+/* Reusable SVG icon styling */
+
+.project-staircase__step svg {
+  display: block;
+  width: var(--stair-icon-size);
+  max-width: 100%;
+  height: auto;
+  aspect-ratio: 1;
+  fill: none;
+  stroke: var(--stair-icon-color);
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* ============================================================================
+   PANEL & STAIRCASE — RESPONSIVE
+   ============================================================================ */
+
+/* TABLET — 6 COLUMNS */
+@media (width <= 1020px) {
+  .project-split {
     grid-column: 1 / -1;
-    grid-template-columns: minmax(0, 1fr);
-    gap: var(--space-4);
-    padding-inline: var(--space-4);
-  }
-  .project-problem__copy,
-  .project-problem__copy > .label,
-  .project-problem__copy > .project-block__text {
-    grid-column: 1 / -1;
-    grid-row: auto;
+    row-gap: var(--space-4);
   }
 
-  .project-problem__copy > .label {
+  .project-split--filled {
+    padding-block: var(--space-6);
+  }
+
+  .project-split--plain {
+    padding-block: 0;
+  }
+
+  .project-split > .label {
+    grid-column: 1 / -1;
+    grid-row: 1;
+    text-align: left;
+    padding-inline: var(--grid-gutter);
+  }
+
+  .project-split__left {
+    grid-column: 1 / 4;
+    grid-row: 2;
+    padding-inline-start: var(--grid-gutter);
+  }
+
+  .project-split__right {
+    grid-column: 4 / -1;
+    grid-row: 2;
+    padding-inline-end: var(--grid-gutter);
+  }
+
+  .project-staircase {
+    --stair-icon-size: 64px;
+
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    column-gap: 0;
+    margin-block-start: var(--space-4);
+  }
+
+  .project-staircase__step {
+    grid-column: span 1;
+    padding-inline: var(--space-2);
+  }
+
+  .project-staircase__step::before {
+    left: 0;
+    right: 0;
+  }
+
+  .project-staircase__step:not(:last-child)::after {
+    right: 0;
+  }
+}
+
+/* MOBILE — 3 COLUMNS */
+
+@media (width <= 760px) {
+  .project-split--filled {
+    padding-block: var(--space-5);
+  }
+
+  .project-split--plain {
+    padding-block: 0;
+  }
+
+  .project-split__left,
+  .project-split__right {
+    grid-column: 1 / -1;
+    grid-row: auto;
+    padding-inline: var(--grid-gutter);
+  }
+
+  .project-staircase {
+    grid-template-columns: subgrid;
+    row-gap: var(--space-5);
+    padding-block-start: var(--space-4);
+  }
+
+  .project-staircase__step {
+    grid-column: 1 / -1;
+    grid-row: auto;
+
+    display: grid;
+    grid-template-columns: subgrid;
+    align-items: center;
+
+    margin-top: 0;
+    padding-block: var(--space-3);
+    padding-inline: var(--grid-gutter);
     text-align: left;
   }
-  .project-problem__panel > img {
+
+  .project-staircase__step svg {
     grid-column: 1;
-    grid-row: auto;
+    justify-self: center;
+  }
+
+  .project-staircase__step p {
+    grid-column: 2 / -1;
+    font-size: var(--text-heading);
+    font-weight: var(--weight-medium);
+    line-height: var(--leading-heading);
+    letter-spacing: var(--tracking-heading);
+  }
+
+  .project-staircase__step::before,
+  .project-staircase__step::after {
+    display: none;
+  }
+}
+
+/* SMALL MOBILE — 2 COLUMNS */
+
+@media (width <= 500px) {
+  .project-staircase {
+    --stair-icon-size: 48px;
+
+    row-gap: var(--space-3);
+  }
+
+  .project-staircase__step svg {
+    grid-column: 1;
+  }
+
+  .project-staircase__step p {
+    grid-column: 2;
   }
 }
 /* ============================================================================
@@ -1986,7 +2224,7 @@ body.home-page .about-editorial-label {
   display: grid;
   grid-template-columns: subgrid;
   row-gap: var(--space-8);
-  margin: 0;
+  margin: var(--space-8) 0 0;
   padding: 0;
   list-style: none;
 }
@@ -2047,9 +2285,12 @@ body.home-page .about-editorial-label {
 .project-display {
   min-width: 0;
   margin: 0;
-  background: var(--project-1);
-
+  background: transparent;
   overflow: hidden;
+}
+
+.project-display--colored {
+  background: var(--project-accent);
 }
 
 .project-display--big {

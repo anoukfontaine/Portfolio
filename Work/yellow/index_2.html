@@ -238,8 +238,8 @@
             </li>
 
             <li><a class="type-small" href="#overview">Overview</a></li>
-            <li><a class="type-small" href="#process">Process</a></li>
             <li><a class="type-small" href="#problem">Problem</a></li>
+            <li><a class="type-small" href="#process">Approach</a></li>
             <li><a class="type-small" href="#solution">Solution</a></li>
             <li><a class="type-small" href="#impact">Impact</a></li>
           </ul>
@@ -273,7 +273,9 @@
         class="project-row project-gallery project--1"
         aria-label="Project showcase"
       >
-        <figure class="project-display project-display--big">
+        <figure
+          class="project-display project-display--big project-display--colored"
+        >
           <img
             src="/Images/Yellow_2/1_overview.png"
             alt="Financial Cockpit product view"
@@ -330,14 +332,212 @@
       </section>
 
       <!-- ====================================
-    PROCESS
+   PROBLEM
      =======================================-->
 
       <section
+        class="project-row project-statement"
+        aria-labelledby="project-problem-statement-title"
+        id="problem"
+      >
+        <div class="project-block project-block--wide">
+          <h2 id="project-problem-statement-title" class="label">Problem</h2>
+
+          <p class="project-block__text type-statement">
+            Numerous Excel-based financial cockpits and overviews scattered
+            information across different platforms and tools, making it hard for
+            users to find information and easy for errors to creep in.
+          </p>
+        </div>
+        <figure class="project-display project-display--big">
+          <img
+            src="/Images/Yellow_2/2_problem.png"
+            alt="Previous Excel-based financial planning tools"
+            loading="lazy"
+          />
+        </figure>
+      </section>
+
+      <!-- ============================================
+                    CHALLENGE
+         ==============================================-->
+      <section
+        class="project-row"
+        id="challenge"
+        data-sidebar-section="problem"
+      >
+        <div class="project-split project-split--filled project--1">
+          <p class="label">Challenge</p>
+
+          <div class="project-split__left">
+            <h2 class="type-heading">Scepticism</h2>
+            <p class="type-body">
+              Finding a solution meant challenging deeply rooted habits and
+              bringing everyone on board, including less obvious stakeholders.
+            </p>
+          </div>
+
+          <div class="project-split__right">
+            <h2 class="type-heading">Antidote</h2>
+            <p class="type-body">
+              Big changes in big organisations don’t happen without stakeholder
+              buy-in and management support. Winning people over, challenging
+              scepticism and navigating roadblocks became just as important as
+              designing a solution users would love.
+            </p>
+          </div>
+
+          <ol class="project-staircase">
+            <!-- STEP 1 — UNDERSTAND -->
+            <li class="project-staircase__step">
+              <svg viewBox="0 0 96 96" aria-hidden="true">
+                <path
+                  d="M24 39
+                 C24 12 64 8 73 32
+                 C82 56 60 65 57 79
+                 C54 94 32 92 31 76"
+                />
+                <path
+                  d="M35 43
+                 C29 23 59 21 60 40
+                 C61 51 48 51 47 62
+                 C45 74 34 72 35 64"
+                />
+                <path
+                  d="M35 43
+                 C48 37 55 51 43 57
+                 C37 60 43 65 38 68"
+                />
+              </svg>
+              <p class="type-small">Understand</p>
+            </li>
+
+            <!-- STEP 2 — DEMONSTRATE VALUE -->
+            <li class="project-staircase__step">
+              <svg viewBox="0 0 96 96" aria-hidden="true">
+                <path d="M26 20 H70 L84 43 L48 84 L12 43 Z" />
+                <path d="M12 43 H84" />
+                <path d="M39 20 L32 43 L48 84" />
+                <path d="M57 20 L64 43 L48 84" />
+              </svg>
+              <p class="type-small">Demonstrate value</p>
+            </li>
+
+            <!-- STEP 3 — DELIVER QUICK WINS -->
+            <li class="project-staircase__step">
+              <svg viewBox="0 0 96 96" aria-hidden="true">
+                <path
+                  d="M27 62
+                 C36 30 58 8 85 10
+                 C89 38 68 61 36 72 Z"
+                />
+                <circle cx="65" cy="31" r="9" />
+                <path d="M27 62 L20 70 L29 79 L36 72" />
+                <path
+                  d="M32 45
+                 C18 44 10 56 6 64
+                 L26 64"
+                />
+                <path
+                  d="M54 65
+                 C55 79 44 88 36 91
+                 L36 73"
+                />
+              </svg>
+              <p class="type-small">Deliver quick wins</p>
+            </li>
+
+            <!-- STEP 4 — INVOLVE EARLY -->
+            <li class="project-staircase__step">
+              <svg viewBox="0 0 96 96" aria-hidden="true">
+                <circle cx="48" cy="25" r="9" />
+                <circle cx="15" cy="35" r="8" />
+                <circle cx="81" cy="35" r="8" />
+
+                <path
+                  d="M30 83 V57
+                 C30 39 66 39 66 57
+                 V83"
+                />
+                <path
+                  d="M3 78 V60
+                 C3 48 25 48 25 60
+                 V78"
+                />
+                <path
+                  d="M71 78 V60
+                 C71 48 93 48 93 60
+                 V78"
+                />
+              </svg>
+              <p class="type-small">Involve early</p>
+            </li>
+
+            <!-- STEP 5 — COMMUNICATE OPENLY -->
+            <li class="project-staircase__step">
+              <svg viewBox="0 0 96 96" aria-hidden="true">
+                <path
+                  d="M55 62
+                 C40 69 24 65 19 61
+                 L7 68 L12 53
+                 C-2 32 16 12 35 12
+                 C51 12 64 23 65 38"
+                />
+                <path
+                  d="M65 35
+                 C83 35 94 47 94 61
+                 C94 72 88 79 80 82
+                 L85 91 L69 84
+                 C47 88 35 76 35 61
+                 C35 46 48 35 65 35 Z"
+                />
+              </svg>
+              <p class="type-small">Communicate openly</p>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- ====================================
+    PROCESS
+     =======================================-->
+      <section
         class="project-row process project--1"
-        aria-label="Design and development process"
+        aria-labelledby="project-approach-title"
         id="process"
       >
+        <div class="project-split project-split--plain">
+          <p class="label">Approach</p>
+
+          <div class="project-split__left">
+            <h2 id="project-approach-title" class="type-heading">
+              User-centred
+            </h2>
+            <p class="type-body">
+              The initial situation screamed for automation and better user
+              experiences. I had many ideas but if there’s one thing I’ve
+              learned as a UX designer, it’s never to trust an assumption
+              without putting it to the test. From the very first interviews and
+              user journey mapping to prototypes and usability testing, users
+              were never far from the drawing board.
+            </p>
+          </div>
+
+          <div class="project-split__right">
+            <h2 class="type-heading">Data-driven</h2>
+            <p class="type-body">
+              Rethinking and redesigning a jungle of data to make it more
+              accessible by applying data visualisation best practices is my cup
+              of tea. But behind it all lay a less glamorous world of data
+              models, calculations and technical constraints. Luckily, I’m
+              rather stubborn. If I can see it in my mind, I want to see it on
+              my screen. So I sought help where I could and learned what I
+              needed along the way to make ambitious ideas tangible. A win-win
+              for the project and my Power BI skills.
+            </p>
+          </div>
+        </div>
+
         <ol class="process__steps">
           <li class="project-block project-block--left">
             <div class="project-block__text process__step">
@@ -367,7 +567,7 @@
                   <circle cx="32" cy="32" r="31" />
                   <path
                     d="M32 15C29 21 23 27 23 32C23 36 25 39 26 41H38
-             C39 39 41 36 41 32C41 27 35 21 32 15Z"
+       C39 39 41 36 41 32C41 27 35 21 32 15Z"
                   />
                   <path d="M32 15V30M25 41H39V49H25ZM25 45H39" />
                   <circle cx="32" cy="33" r="2.5" />
@@ -387,8 +587,8 @@
                   <circle cx="32" cy="32" r="31" />
                   <path
                     d="M43 15C39 13 34 14 31 17C28 20 27 24 29 28
-             L15 42A4 4 0 0 0 21 48L35 34C39 36 44 35 47 32
-             C50 29 51 24 49 20L43 26L38 21Z"
+       L15 42A4 4 0 0 0 21 48L35 34C39 36 44 35 47 32
+       C50 29 51 24 49 20L43 26L38 21Z"
                   />
                 </svg>
               </div>
@@ -414,48 +614,12 @@
             </div>
           </li>
         </ol>
+
         <svg class="process__connector" aria-hidden="true">
           <path></path>
         </svg>
       </section>
 
-      <!-- ============================================
-                    PROBLEM
-         ==============================================-->
-
-      <section
-        class="project-row project-problem"
-        aria-labelledby="project-problem-title"
-        id="problem"
-      >
-        <div class="project-block project-block--wide project-problem__panel">
-          <div class="project-problem__copy">
-            <p class="label">Problem</p>
-
-            <div class="project-block__text">
-              <h2 id="project-problem-title" class="type-heading">
-                Everything, everywhere, all at once
-              </h2>
-              <p class="type-body">
-                Excel has been a loyal companion to many for years. But when
-                every organisational need leads to yet another Excel cockpit,
-                and scepticism has already created a cemetery of file versions,
-                the confusion in users’ eyes becomes all too real. Meanwhile, an
-                endless queue of files needs updating. All drawing from the same
-                data source: SAP.<br /><br />
-                Export. Copy. Paste. Update.<br />
-                Over and over again, hoping nobody accidentally breaks a
-                formula.
-              </p>
-            </div>
-          </div>
-          <img
-            src="/Images/Yellow_2/2_problem.png"
-            alt="Three overlapping Excel sheets with budget tables and charts"
-            loading="lazy"
-          />
-        </div>
-      </section>
       <!-- ============================================
                     STORY - SOLUTION
          ==============================================-->
@@ -603,7 +767,7 @@
          ==============================================-->
 
       <section
-        class="project-row project-impact"
+        class="project-row project-statement"
         aria-labelledby="project-impact-title"
         id="impact"
       >
@@ -962,7 +1126,9 @@
         aria-label="Project showcase"
         id="product"
       >
-        <figure class="project-display project-display--big">
+        <figure
+          class="project-display project-display--big project-display--colored"
+        >
           <img
             src="/Images/Yellow_2/4_product_1.png"
             alt="Financial Cockpit product view"
@@ -970,14 +1136,18 @@
           />
         </figure>
 
-        <figure class="project-display project-display--moderate">
+        <figure
+          class="project-display project-display--moderate project-display--colored"
+        >
           <img
             src="/Images/Yellow_2/4_product_2.png"
             alt="Financial Cockpit detail view"
             loading="lazy"
           />
         </figure>
-        <figure class="project-display project-display--middle">
+        <figure
+          class="project-display project-display--middle project-display--colored"
+        >
           <img
             src="/Images/Yellow_2/4_product_3.png"
             alt="Evolution of the Financial Cockpit design"
@@ -985,7 +1155,9 @@
           />
         </figure>
 
-        <figure class="project-display project-display--big">
+        <figure
+          class="project-display project-display--big project-display--colored"
+        >
           <img
             src="/Images/Yellow_2/4_product_4.png"
             alt="Additional Financial Cockpit product view"

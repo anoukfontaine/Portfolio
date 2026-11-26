@@ -618,157 +618,286 @@
         <svg class="process__connector" aria-hidden="true">
           <path></path>
         </svg>
+
+        <!-- PROCESS ARTEFACTS -->
+
+        <div class="project-deck">
+          <div class="project-deck__viewport">
+            <!-- OBSERVE -->
+
+            <article class="project-deck__card project-deck__card--1">
+              <header class="project-deck__header">
+                <div class="icon" aria-hidden="true">
+                  <svg viewBox="0 0 64 64" fill="none">
+                    <circle cx="32" cy="32" r="31" />
+                    <path d="M16 32Q32 17 48 32Q32 47 16 32Z" />
+                    <path d="M24 25L22 21M32 24V19M40 25L42 21" />
+                    <circle
+                      cx="32"
+                      cy="32"
+                      r="5"
+                      fill="currentColor"
+                      stroke="none"
+                    />
+                  </svg>
+                </div>
+
+                <div class="project-deck__heading">
+                  <p class="label">Observe</p>
+                  <h2 class="type-heading">User journey map</h2>
+                </div>
+              </header>
+
+              <figure class="project-deck__image">
+                <img
+                  src="/Images/Yellow_2/3_archetype_1.png"
+                  alt="User journey map of a section head"
+                  loading="lazy"
+                />
+              </figure>
+            </article>
+
+            <!-- DESIGN -->
+
+            <article class="project-deck__card project-deck__card--2">
+              <header class="project-deck__header">
+                <div class="icon" aria-hidden="true">
+                  <svg viewBox="0 0 64 64" fill="none">
+                    <circle cx="32" cy="32" r="31" />
+                    <path
+                      d="M32 15C29 21 23 27 23 32C23 36 25 39 26 41H38
+              C39 39 41 36 41 32C41 27 35 21 32 15Z"
+                    />
+                    <path d="M32 15V30M25 41H39V49H25ZM25 45H39" />
+                    <circle cx="32" cy="33" r="2.5" />
+                  </svg>
+                </div>
+
+                <div class="project-deck__heading">
+                  <p class="label">Design</p>
+                  <h2 class="type-heading">Design System</h2>
+                </div>
+              </header>
+
+              <figure class="project-deck__image">
+                <img
+                  src="/Images/Yellow_2/3_archetype_2.png"
+                  alt="Dashboard design system"
+                  loading="lazy"
+                />
+              </figure>
+            </article>
+
+            <!-- BUILD -->
+
+            <article class="project-deck__card project-deck__card--3">
+              <header class="project-deck__header">
+                <div class="icon" aria-hidden="true">
+                  <svg viewBox="0 0 64 64" fill="none">
+                    <circle cx="32" cy="32" r="31" />
+                    <path
+                      d="M43 15C39 13 34 14 31 17C28 20 27 24 29 28
+              L15 42A4 4 0 0 0 21 48L35 34C39 36 44 35 47 32
+              C50 29 51 24 49 20L43 26L38 21Z"
+                    />
+                  </svg>
+                </div>
+
+                <div class="project-deck__heading">
+                  <p class="label">Build</p>
+                  <h2 class="type-heading">Power BI DAX and development</h2>
+                </div>
+              </header>
+
+              <figure class="project-deck__image">
+                <img
+                  src="/Images/Yellow_2/3_archetype_3.png"
+                  alt="Power BI data model and development"
+                  loading="lazy"
+                />
+              </figure>
+            </article>
+
+            <!-- TEST -->
+
+            <article class="project-deck__card project-deck__card--4">
+              <header class="project-deck__header">
+                <div class="icon" aria-hidden="true">
+                  <svg viewBox="0 0 64 64" fill="none">
+                    <circle cx="32" cy="32" r="31" />
+                    <path d="M18 32L27 45L47 19" />
+                  </svg>
+                </div>
+
+                <div class="project-deck__heading">
+                  <p class="label">Test</p>
+                  <h2 class="type-heading">Questionnaire results</h2>
+                </div>
+              </header>
+
+              <figure class="project-deck__image">
+                <img
+                  src="/Images/Yellow_2/3_archetype_4.png"
+                  alt="User questionnaire results"
+                  loading="lazy"
+                />
+              </figure>
+            </article>
+          </div>
+        </div>
       </section>
 
       <!-- ============================================
                     STORY - SOLUTION
          ==============================================-->
       <section
-        class="project-row project-story"
-        aria-label="Pain points and antidotes"
+        class="project-row project-statement"
+        aria-labelledby="project-design-title"
         id="solution"
+        data-sidebar-section="solution"
       >
-        <div class="project-story__steps">
-          <div class="project-story__step" data-story-step="0">
-            <div class="project-story__card">
-              <p class="label">Pain Point 1/3</p>
-              <div>
-                <h2 id="project-problem-title" class="type-body">
-                  Scattered information
-                </h2>
-                <p class="type-small">
-                  Financial information was scattered across Excel files, making
-                  it hard to find the right figures and know which version to
-                  trust.
-                </p>
-              </div>
-            </div>
+        <div class="project-block project-block--wide">
+          <h2 id="project-design-title" class="label">Solution</h2>
 
-            <div class="project-story__card project-story__card--antidote">
-              <p class="label">Solution</p>
-              <div>
-                <h2 class="type-body">All in one</h2>
-                <p class="type-small">
-                  A central dashboard brings the essential figures together and
-                  gives users a single link to access them.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="project-story__step" data-story-step="1">
-            <div class="project-story__card">
-              <p class="label">Pain Point 2/3</p>
-              <div>
-                <h2 class="type-body">Untransparent numbers</h2>
-                <p class="type-small">
-                  Charts and tables showed the totals, but users struggled to
-                  see how they were calculated or which projects contributed to
-                  them.
-                </p>
-              </div>
-            </div>
-
-            <div class="project-story__card project-story__card--antidote">
-              <p class="label">Solution</p>
-              <div>
-                <h2 class="type-body">Traceable amounts</h2>
-                <p class="type-small">
-                  Interactive visuals and a connected project list let users
-                  explore the figures and see which projects contribute to each
-                  total.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="project-story__step" data-story-step="2">
-            <div class="project-story__card">
-              <p class="label">Pain Point 3/3</p>
-              <div>
-                <h2 class="type-body">High maintenance</h2>
-                <p class="type-small">
-                  Updating Excel files took hours, sometimes days. Every manual
-                  step created another opportunity for errors.
-                </p>
-              </div>
-            </div>
-
-            <div class="project-story__card project-story__card--antidote">
-              <p class="label">Solution</p>
-              <div>
-                <h2 class="type-body">Independent and automatic</h2>
-                <p class="type-small">
-                  A centralised data pipeline refreshes the dashboard
-                  automatically, replacing manual file updates and removing the
-                  need to rebuild reports each year.
-                </p>
-              </div>
-            </div>
-          </div>
+          <p class="project-block__text type-statement">
+            Research showed that the potential for a single source of truth and
+            automation was immense.
+          </p>
         </div>
 
-        <figure class="project-story__visual">
-          <img
-            src="/Images/Yellow_2/3_solution.png"
-            alt="Financial Cockpit dashboard with filters, summary charts, and a project table"
-          />
+        <!-- DESIGN DECISION 1 -->
 
-          <svg class="project-story__notes" aria-hidden="true">
-            <!-- data-box = left top width height, as percentages of the image -->
-            <g class="is-active" data-story-notes="0">
-              <g data-side="top" data-col="4" data-box="2 3 15 93">
-                <rect></rect>
-                <path></path>
-                <text>One source</text>
-              </g>
-              <g data-side="top" data-col="7" data-box="60 3 39 43">
-                <rect></rect>
-                <path></path>
-                <text>Live figures</text>
-              </g>
-              <g data-side="bottom" data-col="5" data-box="19 49 31 47">
-                <rect></rect>
-                <path></path>
-                <text>Shared project data</text>
-              </g>
-            </g>
+        <article class="project-decision project-decision--plain">
+          <figure class="project-decision__image">
+            <img
+              src="/Images/Yellow_2/3_design_decision_1.png"
+              alt="Multiple financial dashboard views"
+              loading="lazy"
+            />
+          </figure>
 
-            <g data-story-notes="1">
-              <g data-side="top" data-col="4" data-box="2 41 15 44">
-                <rect></rect>
-                <path></path>
-                <text>Filter by year or section</text>
-              </g>
-              <g data-side="bottom" data-col="7" data-box="51 48 47 48">
-                <rect></rect>
-                <path></path>
-                <text>Views update together</text>
-              </g>
-            </g>
+          <dl class="project-decision__copy">
+            <dt class="label">Key insight</dt>
+            <dd class="type-body">
+              Information was scattered across multiple manually maintained
+              Excel sheets, making it hard to find the right figures and know
+              which version to trust.
+            </dd>
 
-            <g data-story-notes="2">
-              <g data-side="top" data-col="7" data-box="37 3 22 43">
-                <rect></rect>
-                <path></path>
-                <text>Start with the total</text>
-              </g>
-              <g data-side="bottom" data-col="5" data-box="19 49 79 47">
-                <rect></rect>
-                <path></path>
-                <text>See the projects behind it</text>
-              </g>
-            </g>
-          </svg>
-        </figure>
+            <dt class="label">Design decision</dt>
+            <dd class="type-body">
+              Bring everything together in Power BI, a tool particularly well
+              suited to consolidating financial overviews.
+            </dd>
+          </dl>
+        </article>
+
+        <!-- DESIGN DECISION 2 -->
+
+        <article class="project-decision project-decision--filled project--1">
+          <figure class="project-decision__image">
+            <img
+              src="/Images/Yellow_2/3_design_decision_2.png"
+              alt="Financial bar chart and detailed data table"
+              loading="lazy"
+            />
+          </figure>
+
+          <dl class="project-decision__copy">
+            <dt class="label">Key insight</dt>
+            <dd class="type-body">
+              Information was scattered across multiple manually maintained
+              Excel sheets.
+            </dd>
+
+            <dt class="label">Design decision</dt>
+            <dd class="type-body">
+              One Power BI application that brings all financial information
+              together in one place.
+            </dd>
+          </dl>
+        </article>
+
+        <!-- DESIGN DECISION 3 -->
+
+        <article class="project-decision project-decision--plain">
+          <figure class="project-decision__image">
+            <img
+              src="/Images/Yellow_2/3_design_decision_3.png"
+              alt="Financial indicators and data visualisations"
+              loading="lazy"
+            />
+          </figure>
+
+          <dl class="project-decision__copy">
+            <dt class="label">Key insight</dt>
+            <dd class="type-body">
+              Information was scattered across multiple manually maintained
+              Excel sheets.
+            </dd>
+
+            <dt class="label">Design decision</dt>
+            <dd class="type-body">
+              One Power BI application that brings all financial information
+              together in one place.
+            </dd>
+          </dl>
+        </article>
+
+        <!-- DESIGN DECISION 4 -->
+
+        <article class="project-decision project-decision--filled project--1">
+          <figure class="project-decision__image">
+            <div class="project-decision__slideshow">
+              <img
+                src="/Images/Yellow_2/3_solution_1.png"
+                alt="Low-fidelity dashboard exploration, version 1"
+                loading="lazy"
+              />
+              <img
+                src="/Images/Yellow_2/3_solution_2.png"
+                alt="Low-fidelity dashboard exploration, version 2"
+                loading="lazy"
+              />
+              <img
+                src="/Images/Yellow_2/3_solution_3.png"
+                alt="High-fidelity dashboard prototype"
+                loading="lazy"
+              />
+              <img
+                src="/Images/Yellow_2/3_solution_4.png"
+                alt="Refined dashboard after testing"
+                loading="lazy"
+              />
+            </div>
+          </figure>
+
+          <dl class="project-decision__copy">
+            <dt class="label">Key insight</dt>
+            <dd class="type-body">
+              Users need a uniform information architecture to find their way.
+              When similar information is structured differently from one screen
+              to the next, orientation becomes harder than it should be.
+            </dd>
+
+            <dt class="label">Design decision</dt>
+            <dd class="type-body">
+              I explored different directions in low fidelity first, then
+              refined the strongest concept step by step into higher-fidelity
+              prototypes. This made it easier to compare options, test the
+              structure and improve the experience before building.
+            </dd>
+          </dl>
+        </article>
       </section>
+
       <!-- ============================================
                     IMPACT
          ==============================================-->
 
       <section
         class="project-row project-statement"
-        aria-labelledby="project-impact-title"
+        aria-labelledby="project-design-title"
         id="impact"
       >
         <div class="project-block project-block--wide">
@@ -812,7 +941,7 @@
               After
             </button>
           </div>
-          <div class="cs-solution-flow-scroll">
+          <div class="cs-solution-flow-scroll" data-scrollbar>
             <div class="cs-solution-flow-stage">
               <svg
                 aria-hidden="true"

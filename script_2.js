@@ -1081,237 +1081,6 @@ document.querySelectorAll(".process").forEach((process) => {
   });
 })();
 
-// Story notes: show the right notes for the current step in a project story.
-
-document.querySelectorAll(".project-story").forEach((story) => {
-  const steps = [...story.querySelectorAll("[data-story-step]")];
-  const notes = [...story.querySelectorAll("[data-story-notes]")];
-  let frame = null;
-
-  function updateNotes() {
-    frame = null;
-    let active = steps[0].dataset.storyStep;
-
-    if (window.matchMedia("(max-width: 760px)").matches) {
-      for (let index = 0; index < steps.length - 1; index++) {
-        const painCard = steps[index].querySelector(".project-story__card");
-        if (painCard.getBoundingClientRect().bottom > 24) break;
-
-        active = steps[index + 1].dataset.storyStep;
-      }
-    } else {
-      const trigger = window.innerHeight * 0.5;
-
-      for (const step of steps) {
-        if (step.getBoundingClientRect().top > trigger) break;
-        active = step.dataset.storyStep;
-      }
-    }
-
-    notes.forEach((group) => {
-      group.classList.toggle("is-active", group.dataset.storyNotes === active);
-    });
-  }
-
-  function scheduleUpdate() {
-    if (frame === null) frame = requestAnimationFrame(updateNotes);
-  }
-
-  window.addEventListener("scroll", scheduleUpdate, { passive: true });
-  window.addEventListener("resize", scheduleUpdate);
-  updateNotes();
-});
-
-document.querySelectorAll(".project-story__visual").forEach((figure) => {
-  const image = figure.querySelector("img");
-  const svg = figure.querySelector(".project-story__notes");
-  const grid = figure.closest(".layout-grid");
-  const stepsColumn = figure
-    .closest(".project-story")
-    ?.querySelector(".project-story__steps");
-
-  if (!image || !svg || !grid || !stepsColumn) return;
-
-  const notes = svg.querySelectorAll("[data-side]");
-
-  function positionNotes() {
-    const frame = svg.getBoundingClientRect();
-    const screen = image.getBoundingClientRect();
-
-    if (!frame.width || !frame.height || !screen.height) return;
-
-    svg.setAttribute("viewBox", `0 0 ${frame.width} ${frame.height}`);
-
-    const visualStyle = getComputedStyle(figure);
-    const gap = parseFloat(visualStyle.getPropertyValue("--note-gap"));
-    const gutter = parseFloat(getComputedStyle(grid).columnGap) || 0;
-    const visualColumns =
-      Number(visualStyle.gridColumnEnd) - Number(visualStyle.gridColumnStart);
-    const columnStep = (frame.width + gutter) / visualColumns;
-
-    if (window.matchMedia("(760px < width <= 1020px)").matches) {
-      // Calculate the five-column height even if the image is currently compact.
-      const wideImageWidth = 5 * columnStep - gutter;
-      const wideImageHeight = screen.height * (wideImageWidth / screen.width);
-      const notesSpace =
-        parseFloat(visualStyle.paddingTop) +
-        parseFloat(visualStyle.paddingBottom);
-      const stickyTop = parseFloat(visualStyle.top);
-      const bottomClearance = 12;
-      const needsCompact =
-        stickyTop + wideImageHeight + notesSpace + bottomClearance >
-        window.innerHeight;
-
-      if (figure.classList.contains("is-compact") !== needsCompact) {
-        figure.classList.toggle("is-compact", needsCompact);
-        // The ResizeObserver will reposition the notes at the new width.
-        return;
-      }
-    }
-
-    const imageLeft = screen.left - frame.left;
-    const imageTop = screen.top - frame.top;
-    const imageBottom = imageTop + screen.height;
-    const labelRightEdge = Math.min(
-      frame.width,
-      stepsColumn.getBoundingClientRect().left - frame.left - 12,
-    );
-
-    notes.forEach((note) => {
-      const label = note.querySelector("text");
-      const line = note.querySelector("path");
-      const rect = note.querySelector("rect");
-      if (!label || !line || !rect || !note.dataset.box) return;
-
-      const [left, top, width, height] = note.dataset.box
-        .trim()
-        .split(/\s+/)
-        .map(Number);
-
-      const boxX = imageLeft + (screen.width * left) / 100;
-      const boxY = imageTop + (screen.height * top) / 100;
-      const boxWidth = (screen.width * width) / 100;
-      const boxHeight = (screen.height * height) / 100;
-
-      rect.setAttribute("x", boxX);
-      rect.setAttribute("y", boxY);
-      rect.setAttribute("width", boxWidth);
-      rect.setAttribute("height", boxHeight);
-
-      const above = note.dataset.side === "top";
-      const imageEdge = above ? imageTop : imageBottom;
-
-      label.setAttribute("text-anchor", "start");
-      label.setAttribute(
-        "dominant-baseline",
-        above ? "text-after-edge" : "text-before-edge",
-      );
-
-      const labelWidth = label.getComputedTextLength();
-      let column = Math.max(4, Math.min(7, Number(note.dataset.col) || 4));
-      let labelX = (column - 4) * columnStep;
-
-      while (column > 4 && labelX + labelWidth > labelRightEdge) {
-        column -= 1;
-        labelX = (column - 4) * columnStep;
-      }
-
-      const stackedStory = window.matchMedia("(width <= 760px)").matches;
-      const sameSideNotes = [...note.parentElement.children].filter(
-        (item) => item.dataset.side === note.dataset.side,
-      );
-      const noteIndex = sameSideNotes.indexOf(note);
-      const useSideConnector = false;
-      const offset = 0;
-
-      if (stackedStory) {
-        labelX = Math.min(noteIndex, 1) * columnStep;
-      }
-
-      const lineX = labelX + labelWidth / 2;
-      const labelY = imageEdge + (above ? -1 : 1) * (gap + offset);
-      const lineEndY = labelY + (above ? 6 : -6);
-      const bendY = (imageEdge + lineEndY) / 2;
-
-      label.setAttribute("x", labelX);
-      label.setAttribute("y", labelY);
-
-      const textBounds = label.getBBox();
-      const sideX = textBounds.x + textBounds.width + 6;
-      const sideY = textBounds.y + textBounds.height / 2;
-      const elbowX = sideX + 10;
-      const targetX = useSideConnector ? elbowX : lineX;
-
-      const inset = Math.min(8, boxWidth / 2);
-      const anchorX = Math.max(
-        boxX + inset,
-        Math.min(targetX, boxX + boxWidth - inset),
-      );
-      const anchorY = above ? boxY : boxY + boxHeight;
-
-      line.setAttribute(
-        "d",
-        useSideConnector
-          ? `M ${anchorX} ${anchorY} V ${bendY} H ${elbowX} V ${sideY} H ${sideX}`
-          : `M ${anchorX} ${anchorY} V ${bendY} H ${lineX} V ${lineEndY}`,
-      );
-    });
-  }
-  const observer = new ResizeObserver(positionNotes);
-  observer.observe(figure);
-  observer.observe(image);
-  window.addEventListener("resize", positionNotes);
-  document.fonts.ready.then(positionNotes);
-});
-
-document.querySelectorAll(".project-story").forEach((story) => {
-  const visual = story.querySelector(".project-story__visual");
-  const steps = story.querySelector(".project-story__steps");
-  if (!visual || !steps) return;
-
-  const desktopMotion = window.matchMedia(
-    "(min-width: 768px) and (prefers-reduced-motion: no-preference)",
-  );
-  const easeDistance = 160;
-  let frame = null;
-
-  function updateStickyEase() {
-    frame = null;
-
-    if (!desktopMotion.matches) {
-      visual.style.removeProperty("translate");
-      return;
-    }
-
-    const style = getComputedStyle(visual);
-    const naturalTop =
-      steps.getBoundingClientRect().top + parseFloat(style.marginTop);
-    const distance = naturalTop - parseFloat(style.top);
-
-    if (Math.abs(distance) >= easeDistance) {
-      visual.style.removeProperty("translate");
-      return;
-    }
-
-    const progress = (distance + easeDistance) / (2 * easeDistance);
-    const easedOffset = easeDistance * progress ** 2;
-    const stickyOffset = Math.max(distance, 0);
-
-    visual.style.translate = `0 ${easedOffset - stickyOffset}px`;
-  }
-
-  function scheduleUpdate() {
-    if (frame === null) {
-      frame = requestAnimationFrame(updateStickyEase);
-    }
-  }
-
-  window.addEventListener("scroll", scheduleUpdate, { passive: true });
-  window.addEventListener("resize", scheduleUpdate);
-  desktopMotion.addEventListener("change", scheduleUpdate);
-  scheduleUpdate();
-});
-
 (() => {
   const links = document.querySelectorAll(
     '.left-sidebar .sidebar-projects a[href^="#"]:not([aria-current="page"])',
@@ -1443,7 +1212,11 @@ document.querySelectorAll(".hero-languages").forEach((row) => {
     button?.setAttribute("aria-pressed", String(visible));
   }
 
-  setGridVisible(localStorage.getItem(key) === "true");
+  function syncGridVisibility() {
+    setGridVisible(localStorage.getItem(key) === "true");
+  }
+
+  syncGridVisibility();
 
   button?.addEventListener("click", () => {
     const visible = !document.body.classList.contains("show-grid");
@@ -1451,4 +1224,299 @@ document.querySelectorAll(".hero-languages").forEach((row) => {
     setGridVisible(visible);
     localStorage.setItem(key, String(visible));
   });
+
+  window.addEventListener("storage", (event) => {
+    if (event.key === key) {
+      syncGridVisibility();
+    }
+  });
+
+  window.addEventListener("pageshow", syncGridVisibility);
+  window.addEventListener("focus", syncGridVisibility);
 })();
+
+/* ============================================================================
+   REUSABLE HORIZONTAL SCROLLBAR
+   ============================================================================ */
+
+document.querySelectorAll("[data-scrollbar]").forEach((scroller) => {
+  const scrollbar = document.createElement("div");
+  const thumb = document.createElement("div");
+
+  scrollbar.className = "project-scrollbar";
+  thumb.className = "project-scrollbar__thumb";
+
+  scrollbar.appendChild(thumb);
+  scroller.after(scrollbar);
+
+  scrollbar.tabIndex = 0;
+  scrollbar.setAttribute("role", "scrollbar");
+  scrollbar.setAttribute("aria-label", "Scroll horizontally");
+  scrollbar.setAttribute("aria-orientation", "horizontal");
+  scrollbar.setAttribute("aria-valuemin", "0");
+  scrollbar.setAttribute("aria-valuemax", "100");
+
+  if (!scroller.id) {
+    let index = 1;
+
+    while (document.getElementById(`scrollable-${index}`)) {
+      index++;
+    }
+
+    scroller.id = `scrollable-${index}`;
+  }
+
+  scrollbar.setAttribute("aria-controls", scroller.id);
+
+  let dragStart = 0;
+  let scrollStart = 0;
+  let dragging = false;
+
+  function updateScrollbar() {
+    const maxScroll = scroller.scrollWidth - scroller.clientWidth;
+
+    scrollbar.hidden = maxScroll <= 1;
+
+    if (scrollbar.hidden) return;
+
+    const trackWidth = scrollbar.clientWidth;
+
+    const thumbWidth =
+      (scroller.clientWidth / scroller.scrollWidth) * trackWidth;
+
+    const maxTravel = trackWidth - thumbWidth;
+
+    const progress = Math.min(1, Math.max(0, scroller.scrollLeft / maxScroll));
+
+    thumb.style.width = `${thumbWidth}px`;
+    thumb.style.left = `${progress * maxTravel}px`;
+
+    scrollbar.setAttribute("aria-valuenow", String(Math.round(progress * 100)));
+  }
+
+  scroller.addEventListener("scroll", updateScrollbar, {
+    passive: true,
+  });
+
+  scrollbar.addEventListener("pointerdown", (event) => {
+    event.preventDefault();
+
+    const track = scrollbar.getBoundingClientRect();
+    const maxScroll = scroller.scrollWidth - scroller.clientWidth;
+
+    const maxTravel = scrollbar.clientWidth - thumb.offsetWidth;
+
+    if (maxTravel <= 0) return;
+
+    if (event.target !== thumb) {
+      const position = event.clientX - track.left - thumb.offsetWidth / 2;
+
+      scroller.scrollLeft = (position / maxTravel) * maxScroll;
+    }
+
+    dragging = true;
+    dragStart = event.clientX;
+    scrollStart = scroller.scrollLeft;
+
+    scrollbar.setPointerCapture(event.pointerId);
+  });
+
+  scrollbar.addEventListener("pointermove", (event) => {
+    if (!dragging) return;
+
+    const maxScroll = scroller.scrollWidth - scroller.clientWidth;
+
+    const maxTravel = scrollbar.clientWidth - thumb.offsetWidth;
+
+    if (maxTravel <= 0) return;
+
+    const distance = event.clientX - dragStart;
+
+    scroller.scrollLeft = scrollStart + (distance / maxTravel) * maxScroll;
+  });
+
+  scrollbar.addEventListener("pointerup", () => {
+    dragging = false;
+  });
+
+  scrollbar.addEventListener("pointercancel", () => {
+    dragging = false;
+  });
+
+  scrollbar.addEventListener("lostpointercapture", () => {
+    dragging = false;
+  });
+
+  scrollbar.addEventListener("keydown", (event) => {
+    const step = scroller.clientWidth * 0.1;
+
+    if (event.key === "ArrowRight") {
+      scroller.scrollLeft += step;
+    } else if (event.key === "ArrowLeft") {
+      scroller.scrollLeft -= step;
+    } else if (event.key === "Home") {
+      scroller.scrollLeft = 0;
+    } else if (event.key === "End") {
+      scroller.scrollLeft = scroller.scrollWidth;
+    } else {
+      return;
+    }
+
+    event.preventDefault();
+  });
+
+  const observer = new ResizeObserver(updateScrollbar);
+
+  observer.observe(scroller);
+
+  [...scroller.children].forEach((child) => {
+    observer.observe(child);
+  });
+
+  window.addEventListener("load", updateScrollbar);
+
+  updateScrollbar();
+});
+
+/* ============================================================================
+   REUSABLE SCROLL-DRIVEN CARD DECK
+   ============================================================================ */
+
+document.querySelectorAll(".project-deck").forEach((deck) => {
+  const viewport = deck.querySelector(".project-deck__viewport");
+  const cards = [...deck.querySelectorAll(".project-deck__card")];
+
+  if (!viewport || !cards.length) return;
+
+  const desktopViewport = window.matchMedia("(min-width: 761px)");
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+  let startPositions = [];
+  let totalTravel = 0;
+  let stickyTop = 0;
+  let frame = null;
+  let resizeFrame = null;
+  let isAnimated = false;
+
+  const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
+
+  /* RESET */
+
+  function resetDeck() {
+    isAnimated = false;
+
+    deck.classList.remove("is-animated");
+    deck.style.removeProperty("height");
+
+    cards.forEach((card) => {
+      card.style.removeProperty("--deck-translate");
+    });
+  }
+
+  /* MEASURE CARD HEIGHTS AND SCROLL DISTANCES */
+
+  function measureDeck() {
+    resetDeck();
+
+    if (!desktopViewport.matches || reducedMotion.matches) {
+      return;
+    }
+
+    deck.classList.add("is-animated");
+
+    const viewportHeight = viewport.clientHeight;
+
+    stickyTop = parseFloat(getComputedStyle(viewport).top) || 0;
+
+    const cardGeometry = cards.map((card) => ({
+      top: card.offsetTop,
+      height: card.offsetHeight,
+    }));
+
+    startPositions = [0];
+
+    for (let index = 0; index < cards.length - 1; index++) {
+      const current = cardGeometry[index];
+      const next = cardGeometry[index + 1];
+
+      const distance = Math.max(0, current.top + current.height - next.top);
+
+      startPositions.push(startPositions[index] + distance);
+    }
+
+    const lastCard = cardGeometry[cardGeometry.length - 1];
+
+    const lastTravel = Math.max(
+      0,
+      lastCard.top + lastCard.height - viewportHeight,
+    );
+
+    totalTravel = startPositions[startPositions.length - 1] + lastTravel;
+
+    deck.style.height = `${viewportHeight + totalTravel}px`;
+
+    isAnimated = true;
+
+    updateDeck();
+  }
+
+  /* MOVE CARDS ACCORDING TO PAGE SCROLL */
+
+  function updateDeck() {
+    if (!isAnimated) return;
+
+    const deckTop = deck.getBoundingClientRect().top;
+
+    const scrollDistance = clamp(stickyTop - deckTop, 0, totalTravel);
+
+    cards.forEach((card, index) => {
+      const movement = Math.max(0, scrollDistance - startPositions[index]);
+
+      card.style.setProperty("--deck-translate", `${-movement}px`);
+    });
+  }
+
+  /* SCROLL PERFORMANCE */
+
+  function scheduleUpdate() {
+    if (frame !== null) return;
+
+    frame = requestAnimationFrame(() => {
+      frame = null;
+      updateDeck();
+    });
+  }
+
+  function scheduleMeasure() {
+    if (resizeFrame !== null) return;
+
+    resizeFrame = requestAnimationFrame(() => {
+      resizeFrame = null;
+      measureDeck();
+    });
+  }
+
+  /* EVENTS */
+
+  window.addEventListener("scroll", scheduleUpdate, {
+    passive: true,
+  });
+
+  window.addEventListener("resize", scheduleMeasure);
+  window.addEventListener("load", scheduleMeasure);
+
+  desktopViewport.addEventListener("change", scheduleMeasure);
+  reducedMotion.addEventListener("change", scheduleMeasure);
+
+  cards.forEach((card) => {
+    card.querySelectorAll("img").forEach((image) => {
+      image.addEventListener("load", scheduleMeasure);
+    });
+  });
+
+  if (document.fonts) {
+    document.fonts.ready.then(scheduleMeasure);
+  }
+
+  scheduleMeasure();
+});

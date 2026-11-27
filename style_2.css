@@ -58,6 +58,10 @@ html.custom-cursor *::after {
   --text-body: 24px;
   --text-small: 16px;
 
+  /* Icon sizes */
+  --icon-size: 80px;
+  --icon-size-large: 88px;
+
   /* Shared font weights */
   --weight-light: 300;
   --weight-regular: 400;
@@ -201,11 +205,11 @@ html {
 }
 
 .type-statement {
-  font-family: var(--font-body);
+  font-family: var(--font-display);
   font-size: var(--text-display);
-  font-weight: 300;
+  font-weight: var(--weight-regular);
   line-height: 1.14;
-  letter-spacing: -0.02;
+  letter-spacing: var(--tracking-display);
   text-wrap: pretty;
 }
 
@@ -1690,8 +1694,8 @@ body.home-page .testimonial-translation-note {
 /* --- About fact icons --- */
 
 .icon {
-  width: 80px;
-  height: 80px;
+  width: var(--icon-size);
+  height: var(--icon-size);
   color: var(--color-text-muted);
   margin-bottom: var(--space-fixed-3);
 }
@@ -2280,7 +2284,7 @@ body.home-page .about-editorial-label {
 
 .project-staircase {
   --stair-rise: var(--space-6);
-  --stair-icon-size: 88px;
+  --stair-icon-size: var(--icon-size-large);
   --stair-icon-color: var(--color-text-muted);
 
   grid-column: 1 / -1;
@@ -3567,6 +3571,9 @@ body:is(.home-page, .case-page).show-grid::after {
 @media (width > 1671px) {
   body:is(.home-page, .case-page) {
     --text-display: calc(60px * (100vw / 1671px));
+    --text-heading: calc(32px * (100vw / 1671px));
+    --icon-size: calc(80px * (100vw / 1671px));
+    --icon-size-large: calc(88px * (100vw / 1671px));
   }
 }
 @media (1020px < width <= 1400px) {

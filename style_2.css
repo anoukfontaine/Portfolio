@@ -1285,8 +1285,8 @@ body.home-page .hero-main-row {
   gap: calc(64 * var(--home-unit));
 }
 
-.hero-illustration-btn {
-  right: calc(-112 * var(--home-unit) - max(0px, (100vw - 1671px) / 2));
+body.home-page .hero-illustration-btn {
+  right: var(--grid-margin);
 }
 
 body.home-page .hero-main-row {
@@ -2871,7 +2871,7 @@ body.home-page .about-editorial-label {
 }
 
 .cs-solution-flow-scroll {
-  --flow-right-inset: calc(var(--grid-margin) + max(0px, (100vw - 1671px) / 2));
+  --flow-right-inset: var(--grid-margin);
   --flow-left-inset: calc(
     var(--flow-right-inset) + (100% + var(--grid-gutter)) / 3
   );
@@ -3551,7 +3551,7 @@ body:is(.home-page, .case-page).show-grid::after {
   content: "";
   position: fixed;
   inset-block: 0;
-  inset-inline: calc(var(--grid-margin) + var(--wide-inset, 0px));
+  inset-inline: var(--grid-margin);
   background-image: linear-gradient(
     to right,
     rgb(255 0 0 / 10%) 0 calc(100% - var(--grid-gutter)),
@@ -3566,24 +3566,9 @@ body:is(.home-page, .case-page).show-grid::after {
 
 @media (width > 1671px) {
   body:is(.home-page, .case-page) {
-    --wide-inset: calc((100% - 1671px) / 2);
-    --sidebar-left: calc((100vw - 1671px) / 2 + var(--grid-margin));
-  }
-
-  body:is(.home-page, .case-page) main {
-    max-width: 1671px;
-    margin-inline: auto;
-  }
-
-  body:is(.home-page, .case-page) .contact-footer {
-    padding-inline: calc(var(--wide-inset) + var(--space-fixed-6));
-  }
-
-  body:is(.home-page, .case-page).show-grid::after {
-    inset-inline: calc(var(--wide-inset) + var(--grid-margin));
+    --text-display: calc(60px * (100vw / 1671px));
   }
 }
-
 @media (1020px < width <= 1400px) {
   body.home-page .work-card {
     background: var(--work-card-bg);

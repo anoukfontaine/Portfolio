@@ -1388,7 +1388,7 @@ document.querySelectorAll(".project-deck").forEach((deck) => {
 
   if (!viewport || !cards.length) return;
 
-  const desktopViewport = window.matchMedia("(min-width: 761px)");
+  const desktopViewport = window.matchMedia("(width > 1020px)");
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
   let startPositions = [];
@@ -1397,8 +1397,80 @@ document.querySelectorAll(".project-deck").forEach((deck) => {
   let frame = null;
   let resizeFrame = null;
   let isAnimated = false;
+  let activeCard = 0;
 
   const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
+
+  /* ACCORDION */
+
+  function updateAccordion() {
+    const isAccordion = !desktopViewport.matches;
+
+    deck.classList.toggle("is-accordion", isAccordion);
+
+    cards.forEach((card, index) => {
+      const header = card.querySelector(".project-deck__header");
+      const isOpen = index === activeCard;
+
+      card.classList.toggle("is-open", isAccordion && isOpen);
+
+      if (!header) return;
+
+      if (isAccordion) {
+        header.setAttribute("role", "button");
+        header.setAttribute("tabindex", "0");
+        header.setAttribute("aria-expanded", String(isOpen));
+      } else {
+        header.removeAttribute("role");
+        header.removeAttribute("tabindex");
+        header.removeAttribute("aria-expanded");
+      }
+    });
+  }
+
+  cards.forEach((card, index) => {
+    const header = card.querySelector(".project-deck__header");
+
+    if (!header) return;
+
+    function openCard() {
+      if (desktopViewport.matches || activeCard === index) return;
+
+      const anchorTop = header.getBoundingClientRect().top;
+
+      activeCard = index;
+      updateAccordion();
+
+      const startTime = performance.now();
+
+      function preservePosition(now) {
+        const currentTop = header.getBoundingClientRect().top;
+        const difference = currentTop - anchorTop;
+
+        window.scrollBy({
+          top: difference,
+          behavior: "instant",
+        });
+
+        if (now - startTime < 700) {
+          requestAnimationFrame(preservePosition);
+        }
+      }
+
+      requestAnimationFrame(preservePosition);
+    }
+
+    header.addEventListener("click", openCard);
+
+    header.addEventListener("keydown", (event) => {
+      if (desktopViewport.matches) return;
+
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        openCard();
+      }
+    });
+  });
 
   /* RESET */
 
@@ -1417,6 +1489,7 @@ document.querySelectorAll(".project-deck").forEach((deck) => {
 
   function measureDeck() {
     resetDeck();
+    updateAccordion();
 
     if (!desktopViewport.matches || reducedMotion.matches) {
       return;
@@ -1453,7 +1526,9 @@ document.querySelectorAll(".project-deck").forEach((deck) => {
 
     totalTravel = startPositions[startPositions.length - 1] + lastTravel;
 
-    deck.style.height = `${viewportHeight + totalTravel}px`;
+    const remainingCardHeight = lastCard.top + lastCard.height - lastTravel;
+
+    deck.style.height = `${remainingCardHeight + totalTravel}px`;
 
     isAnimated = true;
 
